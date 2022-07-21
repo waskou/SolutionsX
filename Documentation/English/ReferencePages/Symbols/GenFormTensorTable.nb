@@ -1,0 +1,420 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     15796,        412]
+NotebookOptionsPosition[     11026,        316]
+NotebookOutlinePosition[     13165,        371]
+CellTagsIndexPosition[     13080,        366]
+WindowTitle->GenFormTensorTable - SolutionsX`SolutionsX`
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[GridBox[{
+   {Cell["SOLUTIONSX`SOLUTIONSX` SYMBOL", "PacletNameCell",ExpressionUUID->
+     "940b95cf-27ce-4c7a-9920-062d00ceaa97"], Cell[TextData[{
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"Tutorials \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"Title of tutorial 1\"\>":>
+       Documentation`HelpLookup[
+       "paclet:" <> "SolutionsX" <> 
+        "/tutorial/tutorialName1"], "\<\"Title of tutorial 2\"\>":>
+       Documentation`HelpLookup[
+       "paclet:" <> "SolutionsX" <> "/tutorial/tutorialName2"]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "d5f12211-9ef1-46a1-a021-747414bfbed7"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"See Also \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"Symbol1\"\>":>Documentation`HelpLookup[
+       "paclet:" <> "SolutionsX" <> "/ref/Symbol1"], "\<\"Symbol2\"\>":>
+       Documentation`HelpLookup["paclet:" <> "SolutionsX" <> "/ref/Symbol2"]},
+       
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "974e8023-98d9-4386-ab9f-0f683d95301e"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"More About \[RightGuillemet]\"\>",
+        StripOnInput->False], {"\<\"Guide 1\"\>":>Documentation`HelpLookup[
+       "paclet:" <> "SolutionsX" <> "/guide/Guide1"], "\<\"Guide 2\"\>":>
+       Documentation`HelpLookup["paclet:" <> "SolutionsX" <> "/guide/Guide2"]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "d0bf76a1-a8fb-464a-a748-00aad7c7269f"],
+     "\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\[ThickSpace]\
+\[ThickSpace]",
+     Cell[BoxData[
+      ActionMenuBox[
+       FrameBox["\<\"URL \[RightGuillemet]\"\>",
+        StripOnInput->
+         False], {"\<\"Go to SolutionsX/ref/GenFormTensorTable URL\"\>":>
+       FrontEndExecute[{
+         NotebookLocate[{
+           URL["your.website.goes.here/documentationIfAny"], None}]}], 
+       Delimiter, "\<\"Go to wolfram URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL[
+           "http://reference.wolfram.com/mathematica/guide/Mathematica.html"],
+            None}]}], "\<\"Go to authors URL\"\>":>FrontEndExecute[{
+         NotebookLocate[{
+           URL["your.website.goes.here"], None}]}]},
+       Appearance->None,
+       MenuAppearance->Automatic]],
+      LineSpacing->{1.4, 0},ExpressionUUID->
+      "a4266c40-8d0b-4408-a333-8c1b05c11a40"]
+    }], "AnchorBar",ExpressionUUID->"81cd4b53-9a1f-45e2-85a6-a7af8cd5d5ba"]}
+  }]], "AnchorBarGrid",ExpressionUUID->"5cdd68b0-5b91-4a67-8fb2-1695fd7cc751"],
+
+Cell[CellGroupData[{
+
+Cell["GenFormTensorTable", "ObjectName",ExpressionUUID->"67ed8ca7-3ae9-4076-8615-80bcb5208275"],
+
+Cell[BoxData[GridBox[{
+   {"", Cell[TextData[{
+     Cell[BoxData[
+      RowBox[{
+       ButtonBox["GenFormTensorTable",
+        BaseStyle->"Link",
+        ButtonData->"paclet:SolutionsX/ref/GenFormTensorTable"], "[", 
+       StyleBox["args", "TI"], "]"}]], "InlineFormula",ExpressionUUID->
+      "b881653e-3ea9-4a79-b729-4e223ada6b80"],
+     "\[LineSeparator]GenFormTensorTable[formKey] uses \
+$olution[$form,formKey,$expression] to generate the corresponding curved \
+tensor table with all indices down | It should only be used for forms that \
+have tensors associated to them"
+    }],ExpressionUUID->"788bdb12-9a1e-4550-8fc5-d8dc967620a9"]}
+  }]], "Usage",ExpressionUUID->"dc5cd2f9-a076-444e-9a78-c16c804916f9"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[Cell[BoxData[
+ ButtonBox[
+  FrameBox[
+   StyleBox[
+    RowBox[{"MORE", " ", "INFORMATION"}], "NotesFrameText"],
+   StripOnInput->False],
+  Appearance->{Automatic, None},
+  BaseStyle->None,
+  ButtonFunction:>(FrontEndExecute[{
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], All, ButtonCell], 
+     FrontEndToken["OpenCloseGroup"], 
+     FrontEnd`SelectionMove[
+      FrontEnd`SelectedNotebook[], After, CellContents]}]& ),
+  Evaluator->None,
+  Method->
+   "Preemptive"]],ExpressionUUID->"152000ff-9bb9-4734-9064-ff176b75fb26"]], \
+"NotesSection",
+ WholeCellGroupOpener->True,
+ CellGroupingRules->{
+  "SectionGrouping", 
+   50},ExpressionUUID->"63a5b06e-1731-4797-bc7e-7021f17a6e48"],
+
+Cell["Note about the function goes here.", "Notes",ExpressionUUID->"95bbd04e-f920-46ee-8c81-7e0e97396a4a"],
+
+Cell["Another Note about the function goes here.", "Notes",ExpressionUUID->"aebc641e-368e-4052-b8c9-5f8f6d520cce"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["EXAMPLES",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "PrimaryExamplesSection",
+ WholeCellGroupOpener->True,
+ CellTags->
+  "PrimaryExamplesSection",ExpressionUUID->"f19517e5-4f69-4675-9b69-\
+3688ae8e9857"],
+
+Cell[CellGroupData[{
+
+Cell[TextData[{
+ "Basic Examples",
+ "\[NonBreakingSpace]\[NonBreakingSpace]",
+ Cell["(#)", "ExampleCount",ExpressionUUID->
+  "ef6e11e8-24e9-4709-ba77-86aef3f99689"]
+}], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->
+  True,ExpressionUUID->"cdf936b4-a190-4945-8888-f3a3440b5ebc"],
+
+Cell["Use the ExampleText style to write cells like this one.", "ExampleText",ExpressionUUID->"6693e141-89dd-486e-9f69-d40f5fca1f72"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[Cell[TextData[{
+   "Scope",
+   "  ",
+   Cell["(#)", "ExampleCount",ExpressionUUID->
+    "b135022c-d0c8-4d39-a42f-035311a5a62f"]
+  }], "ExampleSection",ExpressionUUID->"87d40939-6c7d-4646-8ed1-577150c4f589"],
+  $Line = 0; Null]], "ExampleSection", "ExampleSection",
+ WholeCellGroupOpener->
+  True,ExpressionUUID->"35ad195b-c799-490e-a92d-16305aaccd65"],
+
+Cell["Use the ExampleText style to write cells like this one.", "ExampleText",ExpressionUUID->"1534b079-0a26-4420-8bdb-b61b20259484"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["SEE ALSO",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "SeeAlsoSection",
+ WholeCellGroupOpener->
+  True,ExpressionUUID->"3b50f1aa-df5b-4692-82d6-ea4fb35752b1"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  StyleBox[
+   ButtonBox["SymbolOne",
+    BaseStyle->"Link",
+    ButtonData->"paclet:SolutionsX/ref/SymbolOne"],
+   FontFamily->"Verdana"]], "InlineFormula",ExpressionUUID->
+  "b3d90d86-6ab7-425d-91b4-eac2b666d995"],
+ "\[NonBreakingSpace]",
+ StyleBox["\[MediumSpace]\[FilledVerySmallSquare]\[MediumSpace]", 
+  "InlineSeparator"],
+ " ",
+ Cell[BoxData[
+  StyleBox[
+   ButtonBox["SymbolTwo",
+    BaseStyle->"Link",
+    ButtonData->"paclet:SolutionsX/ref/SymbolTwo"],
+   FontFamily->"Verdana"]], "InlineFormula",ExpressionUUID->
+  "e82edd29-f3cf-40d6-8b56-7dc90d0ca267"]
+}], "SeeAlso",ExpressionUUID->"9496408b-a603-4fee-a73e-f1435b0111a1"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["TUTORIALS",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "TutorialsSection",
+ WholeCellGroupOpener->
+  True,ExpressionUUID->"00d9b427-e0bc-4b0e-8892-45293e98c12f"],
+
+Cell[TextData[ButtonBox["Tutorial Title 1",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SolutionsX/tutorial/tutorial1"]], "Tutorials",ExpressionU\
+UID->"66537449-230d-4781-8874-f1ddbe544f79"],
+
+Cell[TextData[ButtonBox["Tutorial Title 2",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SolutionsX/tutorial/tutorial2"]], "Tutorials",ExpressionU\
+UID->"2943e352-57cf-4fdf-b0b6-303e700ff62d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["MORE ABOUT",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "MoreAboutSection",
+ WholeCellGroupOpener->
+  True,ExpressionUUID->"a900321c-5fb7-4fd6-beda-dd79db6e519d"],
+
+Cell[TextData[ButtonBox["Title of Guide 1",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SolutionsX/guide/Guide1"]], "MoreAbout",ExpressionUUID->\
+"53163730-2316-4347-b1d3-acde4b6fdb9a"],
+
+Cell[TextData[ButtonBox["Title of Guide 2",
+ BaseStyle->"Link",
+ ButtonData->"paclet:SolutionsX/guide/Guide2"]], "MoreAbout",ExpressionUUID->\
+"075b586a-caae-4bf9-9295-39d56b381c1e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[TextData[ButtonBox["RELATED LINKS",
+ BaseStyle->None,
+ Appearance->{Automatic, None},
+ Evaluator->None,
+ Method->"Preemptive",
+ ButtonFunction:>(FrontEndExecute[{
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], All, ButtonCell], 
+    FrontEndToken["OpenCloseGroup"], 
+    FrontEnd`SelectionMove[
+     FrontEnd`SelectedNotebook[], After, 
+     CellContents]}]& )]], "RelatedLinksSection",
+ WholeCellGroupOpener->
+  True,ExpressionUUID->"7126161a-c0b4-4ff3-95ee-33a1bc9d4627"],
+
+Cell[TextData[ButtonBox["Link Title 1",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["URL.goes.here"], None}]], "RelatedLinks",ExpressionUUID->"f20d54b7-\
+c8a8-4f56-a0b2-50d2731e2ad5"],
+
+Cell[TextData[ButtonBox["Link Title 2",
+ BaseStyle->"Hyperlink",
+ ButtonData->{
+   URL["URL.goes.here"], None}]], "RelatedLinks",ExpressionUUID->"22581863-\
+ce52-4c67-a362-1c41e819b731"]
+}, Open  ]],
+
+Cell["Made for Mathematica 8  |  Last modified in March 2022", "History",ExpressionUUID->"e2d981d3-1966-454a-a7cf-f1378b99f3db"],
+
+Cell[" ", "FooterCell",ExpressionUUID->"94d4af42-c27d-4a29-a0da-7b19566a4715"]
+},
+Saveable->False,
+WindowSize->{394.4347826086956, 411.3391304347826},
+WindowMargins->{{404.45217391304345`, Automatic}, {
+  37.56521739130426, Automatic}},
+WindowTitle->"GenFormTensorTable - SolutionsX`SolutionsX`",
+DockedCells->FEPrivate`FrontEndResource[
+ "FEExpressions", "HelpViewerToolbar"],
+PageHeaders->{{None, None, None}, {None, None, 
+   Cell[
+    TextData[{
+      Cell[
+       TextData[{""}], "PageHeader"], 
+      Cell[
+       TextData[{
+         CounterBox["Page"]}], "PageNumber"]}], 
+    CellMargins -> {{Inherited, -29}, {Inherited, Inherited}}]}},
+PageFooters->{{None, None, None}, {
+   Cell[
+    TextData[{""}], "PageFooter"], None, None}},
+TaggingRules->{
+ "ModificationHighlight" -> False, 
+  "Metadata" -> {
+   "context" -> "SolutionsX`", 
+    "keywords" -> {"genformtensortable", "GENFORMTENSORTABLE"}, "index" -> 
+    True, "label" -> "SolutionsX`SolutionsX` Symbol", "language" -> "en", 
+    "paclet" -> "SolutionsX SolutionsX", "status" -> "", "summary" -> 
+    "GenFormTensorTable[formKey] uses $olution[$form,formKey,$expression] to \
+generate the corresponding curved tensor table with all indices down | It \
+should only be used for forms that have tensors associated to them", 
+    "synonyms" -> {"genformtensortable", "GENFORMTENSORTABLE"}, "title" -> 
+    "GenFormTensorTable", "windowTitle" -> "GenFormTensorTable", "type" -> 
+    "Symbol", "uri" -> "SolutionsX/ref/GenFormTensorTable", 
+    "WorkflowDockedCell" -> ""}, "SearchTextTranslated" -> "", "LinkTrails" -> 
+  "", "NewStyles" -> False},
+FrontEndVersion->"13.0 for Linux x86 (64-bit) (February 4, 2022)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"659f8ba3-1404-45c4-ac14-61cfe6f095d9"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[5350, 139, 530, 15, 23, "PrimaryExamplesSection",ExpressionUUID->"f19517e5-4f69-4675-9b69-3688ae8e9857",
+   CellTags->"PrimaryExamplesSection"]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 12904, 360}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[615, 21, 2887, 63, 84, "AnchorBarGrid",ExpressionUUID->"5cdd68b0-5b91-4a67-8fb2-1695fd7cc751"],
+Cell[CellGroupData[{
+Cell[3527, 88, 95, 0, 103, "ObjectName",ExpressionUUID->"67ed8ca7-3ae9-4076-8615-80bcb5208275"],
+Cell[3625, 90, 713, 14, 199, "Usage",ExpressionUUID->"dc5cd2f9-a076-444e-9a78-c16c804916f9"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4375, 109, 712, 21, 49, "NotesSection",ExpressionUUID->"63a5b06e-1731-4797-bc7e-7021f17a6e48",
+ CellGroupingRules->{"SectionGrouping", 50}],
+Cell[5090, 132, 106, 0, 36, "Notes",ExpressionUUID->"95bbd04e-f920-46ee-8c81-7e0e97396a4a"],
+Cell[5199, 134, 114, 0, 31, "Notes",ExpressionUUID->"aebc641e-368e-4052-b8c9-5f8f6d520cce"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5350, 139, 530, 15, 23, "PrimaryExamplesSection",ExpressionUUID->"f19517e5-4f69-4675-9b69-3688ae8e9857",
+ CellTags->"PrimaryExamplesSection"],
+Cell[CellGroupData[{
+Cell[5905, 158, 291, 7, 23, "ExampleSection",ExpressionUUID->"cdf936b4-a190-4945-8888-f3a3440b5ebc"],
+Cell[6199, 167, 133, 0, 23, "ExampleText",ExpressionUUID->"6693e141-89dd-486e-9f69-d40f5fca1f72"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6369, 172, 384, 9, 26, "ExampleSection",ExpressionUUID->"35ad195b-c799-490e-a92d-16305aaccd65"],
+Cell[6756, 183, 133, 0, 23, "ExampleText",ExpressionUUID->"1534b079-0a26-4420-8bdb-b61b20259484"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6938, 189, 483, 13, 23, "SeeAlsoSection",ExpressionUUID->"3b50f1aa-df5b-4692-82d6-ea4fb35752b1"],
+Cell[7424, 204, 667, 19, 28, "SeeAlso",ExpressionUUID->"9496408b-a603-4fee-a73e-f1435b0111a1"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8128, 228, 486, 13, 23, "TutorialsSection",ExpressionUUID->"00d9b427-e0bc-4b0e-8892-45293e98c12f"],
+Cell[8617, 243, 188, 3, 23, "Tutorials",ExpressionUUID->"66537449-230d-4781-8874-f1ddbe544f79"],
+Cell[8808, 248, 188, 3, 23, "Tutorials",ExpressionUUID->"2943e352-57cf-4fdf-b0b6-303e700ff62d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9033, 256, 487, 13, 23, "MoreAboutSection",ExpressionUUID->"a900321c-5fb7-4fd6-beda-dd79db6e519d"],
+Cell[9523, 271, 182, 3, 23, "MoreAbout",ExpressionUUID->"53163730-2316-4347-b1d3-acde4b6fdb9a"],
+Cell[9708, 276, 182, 3, 23, "MoreAbout",ExpressionUUID->"075b586a-caae-4bf9-9295-39d56b381c1e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9927, 284, 493, 13, 23, "RelatedLinksSection",ExpressionUUID->"7126161a-c0b4-4ff3-95ee-33a1bc9d4627"],
+Cell[10423, 299, 186, 4, 23, "RelatedLinks",ExpressionUUID->"f20d54b7-c8a8-4f56-a0b2-50d2731e2ad5"],
+Cell[10612, 305, 186, 4, 23, "RelatedLinks",ExpressionUUID->"22581863-ce52-4c67-a362-1c41e819b731"]
+}, Open  ]],
+Cell[10813, 312, 128, 0, 23, "History",ExpressionUUID->"e2d981d3-1966-454a-a7cf-f1378b99f3db"],
+Cell[10944, 314, 78, 0, 23, "FooterCell",ExpressionUUID->"94d4af42-c27d-4a29-a0da-7b19566a4715"]
+}
+]
+*)
+
