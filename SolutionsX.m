@@ -169,6 +169,7 @@ $blueprint::usage="$blueprint is an internal association that can be used as a t
 $olution::usage="$olution is an internal association that stores the data for the current working solution";
 $FieldsXVersionExpected::usage="Explain the usage here...";
 $Version::usage="Explain the usage here...";
+$prefix::usage="Explain the usage here...";
 
 (*Internal keys*)
 $info::usage="Explain the usage here...";
@@ -328,17 +329,22 @@ UnloadDeleteRule::usage="Explain...";
 UnloadDeleteAssumption::usage="Explain...";
 
 (*Database functions*)
+ValidateSaveSolution::usage="Explain...";
 SaveSolution::usage="Explain...";
 SaveCoordinateTransformation::usage="Explain...";
 ChangeContext::usage="Explain...";
+Load$olution::usage="Explain...";
 LoadSolution::usage="Explain...";
+ButtonLoadSolution::usage="Explain...";
 ValidateSolution::usage="Explain...";
 DeleteSolution::usage="Explain...";
+ButtonDeleteSolution::usage="Explain...";
 SaveGenerator::usage="Explain...";
 ToInitial::usage="Explain...";
 AttachTVs::usage="Explain...";
 Solution::usage="Explain...";
 PrintSolutions::usage="Explain...";
+Print$olution::usage="Explain...";
 ChangeCoord::usage="Explain...";
 ChangeXCoord::usage="Explain...";
 
@@ -474,6 +480,10 @@ CommutativityOfProduct[CircleTimes ]^="Commutative";
 Off[PrintAsCharacter::argx];
 Off[ToCanonical::cmods];
 SetOptions[Simplify,TimeConstraint->Infinity];
+Needs["TypeSystem`"]
+Needs["Dataset`"]
+Dataset`$DatasetTargetRowCount=10000;
+Dataset`$DatasetDefaultOptions={Alignment->{Left,Baseline},Background->None,DatasetDisplayPanel->{},DatasetTheme->Automatic,HeaderAlignment->{Left,Baseline},HeaderBackground->Automatic,HeaderDisplayFunction->Automatic,HeaderSize->Automatic,HeaderStyle->None,HiddenItems->None,ItemDisplayFunction->Automatic,ItemSize->10000,ItemStyle->None,MaxItems->Automatic,Method->Automatic,ScrollPosition->{1,1}}
 
 
 (* ::Input::Initialization:: *)
@@ -2108,8 +2118,8 @@ $olution[$assumption,$function]/.Table[(Head/@$olution[$function,$ymbol])[[ii]]-
 ]
 
 
-Options[LoadSolution]={Verbose->True};
-LoadSolution[OptionsPattern[]]:=Module[{
+Options[Load$olution]={Verbose->True};
+Load$olution[OptionsPattern[]]:=Module[{
 },
 LoadManifold[Verbose->OptionValue[Verbose]];
 LoadConstant[Verbose->OptionValue[Verbose]];
@@ -2127,6 +2137,9 @@ LoadBasis[Verbose->OptionValue[Verbose]];
 ]
 
 
+ValidateSaveSolution::collide="You can only overwrite this solution with prefix `1`, or save it with an entirely new prefix";
+
+
 SaveSolution[prefix_]:=Module[{
 dir=FileNameJoin[{
 Directory[],
@@ -2135,6 +2148,13 @@ $olution[$info,$identifier],
 $olution[$info,$coordinateSystem],
 ToString[$olution[$info,$ignature]],
 ToString[prefix]
+}],
+upDir=FileNameJoin[{
+Directory[],
+$olution[$info,$name],
+$olution[$info,$identifier],
+$olution[$info,$coordinateSystem],
+ToString[$olution[$info,$ignature]]
 }],
 dirInit=FileNameJoin[{
 Directory[],
@@ -2145,11 +2165,22 @@ ToString[$olution[$info,$ignature]],
 ToString[prefix]<>"_Init"
 }],
 init="Init.m",
-old=$olution
+old=$olution,
+existingPrefixes,
+putName
 },
+existingPrefixes=
+DeleteCases[$prefix]@(
+FileNameSplit[#][[-1]]&/@
+DeleteCases[FileNames[All,upDir],_?(StringContainsQ[#,"Init"]&)]
+);
+If[MemberQ[existingPrefixes,prefix],
+Catch@Throw@Message[ValidateSaveSolution::collide,FS@$prefix];Abort[];
+,
 Quiet[CreateDirectory[dir]];
 System`$Context="Global`";
-Put[$olution,FileNameJoin[{dir,StringReplace[DateString[{"ISODate","_","Time"}],":"->"-"]<>".m" }]];
+putName=FileNameJoin[{dir,StringReplace[DateString[{"ISODate","_","Time"}],":"->"-"]<>".m" }];
+Put[$olution,putName];
 System`$Context=GenContext[];
 If[TrueQ[Length@FileNames[All,dir]>5]==True,
 DeleteFile[Take[Sort[FileNames[All,dir]],1][[1]]];
@@ -2160,10 +2191,12 @@ System`$Context="Global`";
 Put[$olution,FileNameJoin[{dirInit,init}]];
 System`$Context=GenContext[];
 $olution=old;
+Print["Saved ",FB@"$olution" ," under the file name ",FS@putName];
+]
 ]
 
 
-SaveSolution[]:=SaveSolution["Default"]
+SaveSolution[]:=SaveSolution[$prefix]
 
 
 SaveCoordinateTransformation[{name_,identifier_,coordinateSystem_,signature_},coordinateTransformation_]:=Module[{
@@ -2205,7 +2238,29 @@ Directory[],
 "CoordinateTransformations"
 }]
 },
-syli=Complement[DeleteCases[Names[ToString[name]<>"`"<>ToString[identifier]<>"`"<>ToString[coordinateSystem]<>"`"<>ToString[signature]<>"`*"],_?(StringContainsQ[#,"$"]&)],ToString/@Values@Solution[{ToString[name],ToString[identifier],ToString[coordinateSystem],ToString[signature]}][$basis,$curved,$coordinate]];
+syli=Complement[
+DeleteCases[Names[ToString[name]<>"`"<>ToString[identifier]<>"`"<>ToString[coordinateSystem]<>"`"<>ToString[signature]<>"`*"],_?(StringContainsQ[#,"$"]&)],ToString/@Values@Solution[{ToString[name],ToString[identifier],ToString[coordinateSystem],ToString[signature]}][$basis,$curved,$coordinate]
+];
+nsyli=Table[System`$Context<>StringDrop[syli[[ii]],StringLength@(ToString[name]<>"`"<>ToString[identifier]<>"`"<>ToString[coordinateSystem]<>"`"<>ToString[signature]<>"`")],{ii,1,Length@syli}];
+Return[
+Table[Symbol@syli[[ii]]->Symbol@nsyli[[ii]],{ii,1,Length@syli}]
+];
+]
+
+
+ChangeContext[{name_,identifier_,coordinateSystem_,signature_},oldCoordList_]:=Module[{
+nct=ToString[name]<>"`"<>ToString[identifier]<>"`"<>ToString[coordinateSystem]<>"`"<>ToString[signature]<>"`",
+syli,
+nsyli,
+dirct=FileNameJoin[{
+Directory[],
+"CoordinateTransformations"
+}]
+},
+syli=Complement[
+DeleteCases[Names[ToString[name]<>"`"<>ToString[identifier]<>"`"<>ToString[coordinateSystem]<>"`"<>ToString[signature]<>"`*"],_?(StringContainsQ[#,"$"]&)],
+oldCoordList
+];
 nsyli=Table[System`$Context<>StringDrop[syli[[ii]],StringLength@(ToString[name]<>"`"<>ToString[identifier]<>"`"<>ToString[coordinateSystem]<>"`"<>ToString[signature]<>"`")],{ii,1,Length@syli}];
 Return[
 Table[Symbol@syli[[ii]]->Symbol@nsyli[[ii]],{ii,1,Length@syli}]
@@ -2220,9 +2275,13 @@ Directory[],
 }],
 ctname=ToString[name]<>"`"<>ToString[identifier]<>"`"<>ToString[coordinateSystem]<>"`"<>ToString[signature]<>"`"<>"->"<>System`$Context<>".m"
 },
+If[FileExistsQ[FileNameJoin[{dirct,ctname}]],
 Return[
 Get[FileNameJoin[{dirct,ctname}]][0]
-];
+];,
+Print["The coordinate transformation ",FS@ctname," doesn't exist | Did not change coordinates"];
+Return[{}];
+]
 ]
 
 
@@ -2233,9 +2292,13 @@ Directory[],
 }],
 ctname=ToString[name]<>"`"<>ToString[identifier]<>"`"<>ToString[coordinateSystem]<>"`"<>ToString[signature]<>"`"<>"->"<>System`$Context<>".m"
 },
+If[FileExistsQ[FileNameJoin[{dirct,ctname}]],
 Return[
 Get[FileNameJoin[{dirct,ctname}]][1]
-];
+];,
+Print["The coordinate transformation ",FS@ctname," doesn't exist | Did not change coordinates"];
+Return[{}];
+]
 ]
 
 
@@ -2277,19 +2340,21 @@ Evaluate@sy/:TensorValues[Evaluate@sy,cl[[ii]]]=Evaluate@frl[[ii]],
 ]
 
 
-LoadSolution[{name_,identifier_,coordinateSystem_,signature_,prefix_},{version_},OptionsPattern[]]:=Module[{
+Options[LoadSolution]={Version->1};
+LoadSolution[{name_,identifier_,coordinateSystem_,signature_,prefix_},OptionsPattern[]]:=Module[{
 n=ToString[name],
 i=ToString[identifier],
 c=ToString[coordinateSystem],
 s=ToString[signature],
 p=ToString[prefix],
-v=version,
+v=OptionValue[Version],
 dirInit=ToString[prefix]<>"_Init",
 init="Init.m"
 },
+$prefix=p;
 $olution=Get[FileNameJoin[{Directory[],n,i,c,s,dirInit,init}]];
 System`$Context=GenContext[];
-LoadSolution[Verbose->OptionValue[Verbose]];
+Load$olution[Verbose->True];
 $olution=Get[Take[ReverseSort[FileNames[All,FileNameJoin[{Directory[],n,i,c,s,p}]]]][[v]]];
 System`$Assumptions =And@@DeleteDuplicates@Join[
 {0<$infinity},
@@ -2326,7 +2391,7 @@ Print["Loaded solution version ",FS@v," from ",FS@FileNameJoin[{Directory[],n,i,
 ]
 
 
-LoadSolution[{name_,identifier_,coordinateSystem_,signature_,prefix_},OptionsPattern[]]:=Module[{
+(*LoadSolution[{name_,identifier_,coordinateSystem_,signature_,prefix_},OptionsPattern[]]:=Module[{
 n=ToString[name],
 i=ToString[identifier],
 c=ToString[coordinateSystem],
@@ -2336,11 +2401,11 @@ v=1,
 dirInit=ToString[prefix]<>"_Init",
 init="Init.m"
 },
-LoadSolution[{n,i,c,s,p},{v},Verbose->OptionValue[Verbose]];
-]
+LoadSolution[{n,i,c,s,p},{v},Verbose\[Rule]OptionValue[Verbose]];
+]*)
 
 
-LoadSolution[{name_,identifier_,coordinateSystem_,signature_},{version_},OptionsPattern[]]:=Module[{
+(*LoadSolution[{name_,identifier_,coordinateSystem_,signature_},{version_},OptionsPattern[]]:=Module[{
 n=ToString[name],
 i=ToString[identifier],
 c=ToString[coordinateSystem],
@@ -2348,11 +2413,39 @@ s=ToString[signature],
 p="Default",
 v=version
 },
-LoadSolution[{n,i,c,s,p},{v},Verbose->OptionValue[Verbose]];
+LoadSolution[{n,i,c,s,p},{v},Verbose\[Rule]OptionValue[Verbose]];
+]*)
+
+
+ButtonLoadSolution[fileName_]:=Module[{
+n=FileNameSplit[fileName][[-6]],
+i=FileNameSplit[fileName][[-5]],
+c=FileNameSplit[fileName][[-4]],
+s=FileNameSplit[fileName][[-3]],
+p=FileNameSplit[fileName][[-2]],
+v
+},
+If[StringContainsQ[fileName,"Init.m"],
+Button["Load Init",
+$olution=Get[fileName];
+System`$Context=GenContext[];
+Load$olution[Verbose->True];,
+Background->LightBlue
+]
+,
+v=(Flatten@Position[ReverseSort[FileNames[All,FileNameJoin[{Directory[],n,i,c,s,p}]]],fileName])[[1]];
+Button["Load version "<>ToString[v],
+LoadSolution[{n,i,c,s,p},Version->v];,
+Background->LightBlue
+]
+]
 ]
 
 
-LoadSolution[{name_,identifier_,coordinateSystem_,signature_},OptionsPattern[]]:=Module[{
+LoadSolution[{name_,identifier_,coordinateSystem_,signature_},OptionsPattern[]]:=LoadSolution[{name,identifier,coordinateSystem,signature,Default},Version->OptionValue[Version]]
+
+
+(*LoadSolution[{name_,identifier_,coordinateSystem_,signature_},OptionsPattern[]]:=Module[{
 n=ToString[name],
 i=ToString[identifier],
 c=ToString[coordinateSystem],
@@ -2360,20 +2453,56 @@ s=ToString[signature],
 p="Default",
 v=1
 },
-LoadSolution[{n,i,c,s,p},{v},Verbose->OptionValue[Verbose]];
-]
+LoadSolution[{n,i,c,s,p},{v},Verbose\[Rule]OptionValue[Verbose]];
+]*)
 
 
-DeleteSolution[{name_,identifier_,coordinateSystem_,signature_,prefix_}]:=Module[{
+Options[DeleteSolution]={Version->5};
+DeleteSolution[{name_,identifier_,coordinateSystem_,signature_,prefix_},OptionsPattern[]]:=Module[{
 n=ToString[name],
 i=ToString[identifier],
 c=ToString[coordinateSystem],
 s=ToString[signature],
-p=ToString[prefix]
+p=ToString[prefix],
+v=OptionValue[Version],
+fn,
+choice,
+dirInit=ToString[prefix]<>"_Init"
 },
-If[TrueQ[DirectoryQ[FileNameJoin[{Directory[],n,i,c,s,p}]]]==True,
-DeleteDirectory[FileNameJoin[{Directory[],n,i,c,s,p}],DeleteContents->True];
+fn=Take[ReverseSort[FileNames[All,FileNameJoin[{Directory[],n,i,c,s,p}]]]][[v]];
+If[FileExistsQ[fn],
+choice=ChoiceDialog[{"You are about to delete ",FS@fn}];
+If[choice==True,
+DeleteFile[fn];
+If[FileNames[All,FileNameJoin[{Directory[],n,i,c,s,p}]]=={},
+DeleteDirectory[FileNameJoin[{Directory[],n,i,c,s,p}]];
+DeleteDirectory[FileNameJoin[{Directory[],n,i,c,s,dirInit}],DeleteContents->True];
+Print["Deleted ",FS@fn," and the associated empty directories"];
+,
+Print["Deleted ",FS@fn];
+]
+]
 ];
+]
+
+
+ButtonDeleteSolution[fileName_]:=Module[{
+n=FileNameSplit[fileName][[-6]],
+i=FileNameSplit[fileName][[-5]],
+c=FileNameSplit[fileName][[-4]],
+s=FileNameSplit[fileName][[-3]],
+p=FileNameSplit[fileName][[-2]],
+v
+},
+If[StringContainsQ[fileName,"Init.m"],
+Button["Nothing",Background->LightGreen]
+,
+v=(Flatten@Position[ReverseSort[FileNames[All,FileNameJoin[{Directory[],n,i,c,s,p}]]],fileName])[[1]];
+Button["Delete version "<>ToString[v],
+DeleteSolution[{n,i,c,s,p},Version->v];,
+Method->"Queued",Background->LightRed
+]
+]
 ]
 
 
@@ -2438,20 +2567,29 @@ $olution[$pinor,spk[[ii]],$value]=$blueprint[$pinor,Symbol,$value];,
 ]
 
 
-Solution[{name_,identifier_,coordinateSystem_,signature_,prefix_},{version_},keyList_]:=Module[{
+Options[Solution]={Version->1};
+Solution[{name_,identifier_,coordinateSystem_,signature_,prefix_},keyList_,OptionsPattern[]]:=Module[{
 n=ToString[name],
 i=ToString[identifier],
 c=ToString[coordinateSystem],
 s=ToString[signature],
 p=ToString[prefix],
-v=version,
+v=OptionValue[Version],
 dirInit=ToString[prefix]<>"_Init",
 init="Init.m",
 old=$olution,
-ret
+oldCoordList,
+ret,
+mkl
 },
 $olution=Get[FileNameJoin[{Directory[],n,i,c,s,dirInit,init}]];
-LoadSolution[Verbose->False];
+oldCoordList=ToString/@Values@$olution[$basis,$curved,$coordinate];
+mkl=If[StringContainsQ[#,"$"]==False,
+Symbol[ToString[name]<>"`"<>ToString[identifier]<>"`"<>ToString[coordinateSystem]<>"`"<>ToString[signature]<>"`"<>#]
+,
+Symbol[#]
+]&/@(ToString/@keyList);
+Load$olution[Verbose->False];
 System`$Assumptions =And@@DeleteDuplicates@Join[
 Level[System`$Assumptions,1],
 {0<$infinity},
@@ -2461,31 +2599,45 @@ $olution[$assumption,$constant],
 $olution[$assumption,$function]/.Table[(Head/@$olution[$function,$ymbol])[[ii]]->($olution[$function,$ymbol])[[ii]],{ii,1,Length@$olution[$function,$ymbol]}],
 $olution[$assumption,$function]/.Table[(Head/@$olution[$function,$ymbol])[[ii]]->($olution[$function,$ymbol])[[ii]],{ii,1,Length@$olution[$function,$ymbol]}]/.ToXCoord
 ];
-ret=Get[Take[ReverseSort[FileNames[All,FileNameJoin[{Directory[],n,i,c,s,p}]]]][[v]]]@@keyList;
+ret=Get[Take[ReverseSort[FileNames[All,FileNameJoin[{Directory[],n,i,c,s,p}]]]][[v]]]@@mkl;
 $olution=old;
-Return[ret(*/.ChangeContext[{n,i,c,s}]/.ChangeXCoord[{n,i,c,s}]/.ChangeCoord[{n,i,c,s}]*)];
+Return[ret/.ChangeContext[{n,i,c,s},oldCoordList]/.ChangeXCoord[{n,i,c,s}]/.ChangeCoord[{n,i,c,s}]];
 ]
 
 
-Solution[{name_,identifier_,coordinateSystem_,signature_,prefix_},{version_}]:=Solution[{name,identifier,coordinateSystem,signature,prefix},{version},{}]
+Solution[{name_,identifier_,coordinateSystem_,signature_},keyList_,OptionsPattern[]]:=Solution[{name,identifier,coordinateSystem,signature,Default},keyList,Version->OptionValue[Version]]
 
 
-Solution[{name_,identifier_,coordinateSystem_,signature_,prefix_}]:=Solution[{name,identifier,coordinateSystem,signature,prefix},{1},{}]
+(*Solution[{name_,identifier_,coordinateSystem_,signature_,prefix_},{version_}]:=Solution[{name,identifier,coordinateSystem,signature,prefix},{version},{}]*)
+Solution[{name_,identifier_,coordinateSystem_,signature_,prefix_},OptionsPattern[]]:=Solution[{name,identifier,coordinateSystem,signature,prefix},{},Version->OptionValue[Version]]
 
 
-Solution[{name_,identifier_,coordinateSystem_,signature_},{version_}]:=Solution[{name,identifier,coordinateSystem,signature,"Default"},{version},{}]
+(*Solution[{name_,identifier_,coordinateSystem_,signature_,prefix_}]:=Solution[{name,identifier,coordinateSystem,signature,prefix},{1},{}]*)
 
 
-Solution[{name_,identifier_,coordinateSystem_,signature_}]:=Solution[{name,identifier,coordinateSystem,signature,"Default"},{1},{}]
+(*Solution[{name_,identifier_,coordinateSystem_,signature_},{version_}]:=Solution[{name,identifier,coordinateSystem,signature,"Default"},{version},{}]*)
+Solution[{name_,identifier_,coordinateSystem_,signature_},OptionsPattern[]]:=Solution[{name,identifier,coordinateSystem,signature,"Default"},{},Version->OptionValue[Version]]
 
 
-PrintSolutions[]:=Module[{
+(*Solution[{name_,identifier_,coordinateSystem_,signature_}]:=Solution[{name,identifier,coordinateSystem,signature,"Default"},{1},{}]*)
+
+
+(*PrintSolutions[]:=Module[{
 li=DeleteCases[FileNames[All,FileNameJoin[Directory[]],{5}],_?(StringContainsQ[#,"Init"]&)]
 },
 Return[
-Table[StringDrop[li[[ii]],(DeleteDuplicates[StringPosition[li[[ii]],"/"][[-5]]])[[1]]],{ii,1,Length@li}]//TableForm
+Table[StringDrop[li\[LeftDoubleBracket]ii\[RightDoubleBracket],(DeleteDuplicates[StringPosition[li\[LeftDoubleBracket]ii\[RightDoubleBracket],"/"]\[LeftDoubleBracket]-5\[RightDoubleBracket]])\[LeftDoubleBracket]1\[RightDoubleBracket]],{ii,1,Length@li}]//TableForm
 ]
-]
+]*)
+
+
+PrintSolutions[]:=Dataset[FileSystemMap[<|" "->ButtonLoadSolution[#],""->ButtonDeleteSolution[#]|>&,Directory[],{2,7}]]
+
+
+Print$olution[]:=TableForm[Normal@(Dataset[#]&/@$olution),TableAlignments->Center]
+
+
+Print$olution[keyList_]:=TableForm[Normal@(Dataset[#]&/@$olution@@keyList),TableAlignments->Center]
 
 
 GenerateMetric[basis_]:=Module[{
@@ -4550,17 +4702,22 @@ UnloadDeleteSpinor,
 UnloadDeleteRule,
 UnloadDeleteAssumption,
 
+ValidateSaveSolution,
 SaveSolution,
 SaveCoordinateTransformation,
 ChangeContext,
 LoadSolution,
+Load$olution,
+ButtonLoadSolution,
 ValidateSolution,
 DeleteSolution,
+ButtonDeleteSolution,
 SaveGenerator,
 ToInitial,
 AttachTVs,
 Solution,
 PrintSolutions,
+Print$olution,
 ChangeCoord,
 ChangeXCoord,
 
