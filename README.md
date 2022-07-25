@@ -78,7 +78,7 @@ TBA
 
 1. Email me on vasildimi@gmail.com, and I can give you rights to push your own solutions to the database or modifying the code in a different branch. Depending on interest, I might setup some quality control before your contributed solutions get uploaded.
 
-[^fast]: On the CCLP black hole example that I have most thoroughly tested this code the parallel computation of the tensors associated to the metric takes less than 2 hours on my laptop to `FullSimplify`. I have not been able to achieve that using other tools.
+[^fast]: On the CCLP black hole example that I have most thoroughly tested this code the parallel computation of the curvature tensors (Christoffels, Riemann, Ricci,... ) associated to the metric takes less than 2 hours on my laptop to `FullSimplify`. I have not been able to achieve that using other tools.
 
 [^xAct_differences]: Nowadays xAct provides similar functionality based on th `CTensor` framework, when it comes to the metric and its derived tensors (Christoffels, Riemann, Ricci,...). However, I personally found it difficult to extend the parallel code that the developers of xAct have provided to the case of tensors with indices on other vector bundles, such as the spin or the flat bundle. I will be very interested if anyone can show me a way to do that.
 
