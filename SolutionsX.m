@@ -226,6 +226,8 @@ $rule::usage="Explain the usage here...";
 (*Reserved words*)
 Euclidean::usage="Explain the usage here...";
 Lorentzian::usage="Explain the usage here...";
+ChangeContextQ::usage="Explain the usage here...";
+ChangeCoordQ::usage="Explain the usage here...";
 
 (*Miscellaneous functions*)
 ToXCoord::usage="ToXCoord converts ordinary symbol coordinates to xAct type coordinates, for example coord1\[Rule]coord1[]";
@@ -293,6 +295,7 @@ SetSpinor::usage=
 "SetSpinor[{key1,key2,...},{symbol1,symbol2,...},{print1,print2,...},{type1,type2,...},{internalRank1,internalRank2,...}] sets $olution[$pinor]. TODO: Validation";
 
 (*Load functions*)
+ContextMergeSymbol::usage="Explain...";
 LoadManifold::usage="Explain...";
 LoadChart::usage="Explain...";
 LoadConstant::usage="Explain...";
@@ -484,6 +487,7 @@ Needs["TypeSystem`"]
 Needs["Dataset`"]
 Dataset`$DatasetTargetRowCount=10000;
 Dataset`$DatasetDefaultOptions={Alignment->{Left,Baseline},Background->None,DatasetDisplayPanel->{},DatasetTheme->Automatic,HeaderAlignment->{Left,Baseline},HeaderBackground->Automatic,HeaderDisplayFunction->Automatic,HeaderSize->Automatic,HeaderStyle->None,HiddenItems->None,ItemDisplayFunction->Automatic,ItemSize->10000,ItemStyle->None,MaxItems->Automatic,Method->Automatic,ScrollPosition->{1,1}}
+$prefix=Default;
 
 
 (* ::Input::Initialization:: *)
@@ -1514,14 +1518,14 @@ cn[[4]]->KroneckerProduct[PauliMatrix@3,PauliMatrix@2],
 cn[[5]]->KroneckerProduct[PauliMatrix@3,PauliMatrix@3]
 |>;
 $olution[$gamma,$flat]=<|
-1-><|$ymbol->Symbol["Gamma"<>ToString[\[Eta]\[Eta]]<>"1"],$value->$blueprint[$gamma,$flat,1,$value]|>,
-2-><|$ymbol->Symbol["Gamma"<>ToString[\[Eta]\[Eta]]<>"2"],$value->$blueprint[$gamma,$flat,2,$value]|>,
-3-><|$ymbol->Symbol["Gamma"<>ToString[\[Eta]\[Eta]]<>"3"],$value->$blueprint[$gamma,$flat,3,$value]|>
+1-><|$ymbol->Symbol["Gamma"<>ToString[\[Eta]\[Eta]]<>"1"],$value->$blueprint[$gamma,$flat,Integer,$value]|>,
+2-><|$ymbol->Symbol["Gamma"<>ToString[\[Eta]\[Eta]]<>"2"],$value->$blueprint[$gamma,$flat,Integer,$value]|>,
+3-><|$ymbol->Symbol["Gamma"<>ToString[\[Eta]\[Eta]]<>"3"],$value->$blueprint[$gamma,$flat,Integer,$value]|>
 |>;
 $olution[$gamma,$curved]=<|
-1-><|$ymbol->Symbol["Gamma"<>ToString[gg]<>"1"],$value->$blueprint[$gamma,$curved,1,$value]|>,
-2-><|$ymbol->Symbol["Gamma"<>ToString[gg]<>"2"],$value->$blueprint[$gamma,$curved,2,$value]|>,
-3-><|$ymbol->Symbol["Gamma"<>ToString[gg]<>"3"],$value->$blueprint[$gamma,$curved,3,$value]|>
+1-><|$ymbol->Symbol["Gamma"<>ToString[gg]<>"1"],$value->$blueprint[$gamma,$curved,Integer,$value]|>,
+2-><|$ymbol->Symbol["Gamma"<>ToString[gg]<>"2"],$value->$blueprint[$gamma,$curved,Integer,$value]|>,
+3-><|$ymbol->Symbol["Gamma"<>ToString[gg]<>"3"],$value->$blueprint[$gamma,$curved,Integer,$value]|>
 |>;,
 Print["Dimensions different than 5 are still in construction"];
 ]
@@ -1536,6 +1540,22 @@ tl=typeList,
 irl=internalRankList
 },
 $olution[$pinor]=Table[kl[[ii]]-><|$ymbol->sl[[ii]],$print->pl[[ii]],$type->tl[[ii]],$internalRank->irl[[ii]],$value->$blueprint[$pinor,Symbol,$value]|>,{ii,1,Length@kl}]/.List[x__]:>Association[x];
+]
+
+
+ContextMergeSymbol[preSymbol_,symbol_]:=Module[{
+sys=ToString[symbol],
+psys=preSymbol,
+context,
+bsys
+},
+If[StringContainsQ[sys,"`"]==True,
+bsys=StringDrop[sys,StringPosition[sys,"`"][[-1,-1]]];
+context=StringDrop[sys,-(StringLength@sys-StringPosition[sys,"`"][[-1,-1]])];
+Return[Symbol[context<>psys<>bsys]];
+,
+Return[Symbol[psys<>sys]];
+]
 ]
 
 
@@ -1564,6 +1584,7 @@ cn=Keys@$olution[$basis,$curved,$coordinate],
 xc=Values@$olution[$basis,$curved,$coordinate]//.ToXCoord,
 curved=$olution[$basis,$curved,$ymbol],
 cc=$olution[$basis,$curved,$color],
+(*ChristoffelPDcurved=ContextMergeSymbol["ChristoffelPD",$olution[$basis,$curved,$ymbol]]*)
 ChristoffelPDcurved=Symbol@@{"ChristoffelPD"<>ToString[$olution[$basis,$curved,$ymbol]]}
 },
 If[TrueQ[$olution[$manifold]==$blueprint[$manifold]]==False,
@@ -1759,7 +1780,7 @@ If[xTensorQ[ee]==True,
 If[OptionValue[Verbose]==True,Print["Vielbein ",FS@ee," with flat metric ",FS@eta," is already defined"];];
 ];
 If[xTensorQ[ee]==False,
-DefFrameBundle[ee[-ci[[1]],fi[[1]] ],eta[-fi[[1]],-fi[[2]]],fi,PrintAs->{ep,etap} ];
+DefFrameBundle[ee[-ci[[1]],fi[[1]] ],eta[-fi[[1]],-fi[[2]]],fi,PrintAs->{ep,etap}];
 If[OptionValue[Verbose]==True,Print["Defined vielbein ",FS@ee," with flat metric ",FS@eta," and flat indices ",FS@fi ];];
 ]
 ]
@@ -1845,7 +1866,7 @@ sp=Table[($olution[$pinor][[ii]])[$print],{ii,1,Length@$olution[$pinor]}],
 st=Table[($olution[$pinor][[ii]])[$type],{ii,1,Length@$olution[$pinor]}],
 si=$olution[$basis,$spin,$index]
 },
-If[TrueQ[$olution[$pinor]==$blueprint[$pinor]==False],
+If[TrueQ[$olution[$pinor]==$blueprint[$pinor]]==False,
 If[SpinorQ/@ss==ConstantArray[True,Length@ss ],
 If[OptionValue[Verbose]==True,Print["Spinors ",FS@ss," are already defined"];];
 ];
@@ -1864,12 +1885,16 @@ cn=Keys@$olution[$frame,$form],
 fs=$olution[$basis,$flat,$ymbol],
 fc=$olution[$basis,$flat,$color],
 fi=$olution[$basis,$flat,$index],
-Fman=Symbol@@{"Frame"<>ToString[$olution[$manifold,$ymbol]]},
+Fman=ContextMergeSymbol["Frame",$olution[$manifold,$ymbol]],
+(*Fman=Symbol@@{"Frame"<>ToString[$olution[$manifold,$ymbol]]},*)
+(*ACfs=ContextMergeSymbol["AChristoffelPD",$olution[$basis,$flat,$ymbol]],*)
 ACfs=Symbol@@{"AChristoffelPD"<>ToString[$olution[$basis,$flat,$ymbol]]},
 ss=$olution[$basis,$spin,$ymbol],
 sc=$olution[$basis,$spin,$color],
 si=$olution[$basis,$spin,$index],
-Sman=Symbol@@{"Spin"<>ToString[$olution[$manifold,$ymbol]]},
+Sman=ContextMergeSymbol["Spin",$olution[$manifold,$ymbol]],
+(*Sman=Symbol@@{"Spin"<>ToString[$olution[$manifold,$ymbol]]},*)
+(*ACss=ContextMergeSymbol["AChristoffelPD",$olution[$basis,$spin,$ymbol]]*)
 ACss=Symbol@@{"AChristoffelPD"<>ToString[$olution[$basis,$spin,$ymbol]]}
 },
 If[TrueQ[$olution[$manifold]==$blueprint[$manifold]]==False,
@@ -1884,7 +1909,7 @@ If[OptionValue[Verbose]==True,Print["Defined ",fc," basis ",FS@fs," on the vecto
 ];
 If[BasisQ[ss ]==True,
 If[OptionValue[Verbose]==True,Print["Basis ",FS@ss," is already defined"];];,
-DefBasis[ss,Sman,Table[jj,{jj,1,DimOfVBundle[Sman ]} ],BasisColor->sc ];
+DefBasis[ss,Sman,Table[jj,{jj,1,DimOfVBundle[Sman]} ],BasisColor->sc ];
 ACss[__ ]:=0;
 If[OptionValue[Verbose]==True,Print["Defined " ,sc," basis ",FS@ss," on the vector bundle ",FS@Sman," | Set ",FS@ACss," to zero" ];];
 ];
@@ -2199,11 +2224,70 @@ Print["Saved ",FB@"$olution" ," under the file name ",FS@putName];
 SaveSolution[]:=SaveSolution[$prefix]
 
 
-SaveCoordinateTransformation[{name_,identifier_,coordinateSystem_,signature_},coordinateTransformation_]:=Module[{
+Options[Solution]={Version->1,ChangeContextQ->True,ChangeCoordQ->True};
+Solution[{name_,identifier_,coordinateSystem_,signature_,prefix_},keyList_,OptionsPattern[]]:=Module[{
+n=ToString[name],
+i=ToString[identifier],
+c=ToString[coordinateSystem],
+s=ToString[signature],
+p=ToString[prefix],
+v=OptionValue[Version],
+dirInit=ToString[prefix]<>"_Init",
+init="Init.m",
+targetContext=ToString[name]<>"`"<>ToString[identifier]<>"`"<>ToString[coordinateSystem]<>"`"<>ToString[signature]<>"`",
+targetCoordList,
+old=$olution,
+oldContext=GenContext[],
+ret,
+mkl
+},
+(*prepare stuff from the target input*)
+$olution=Get[FileNameJoin[{Directory[],n,i,c,s,dirInit,init}]];
+targetCoordList=ToString/@Values@$olution[$basis,$curved,$coordinate];
+mkl=If[StringContainsQ[#,"$"]==False,Symbol[targetContext<>#],Symbol[#]]&/@(ToString/@keyList);
+(*load the new new solution, prepare the return and set $olution to old*)
+System`$Context=GenContext[];
+Load$olution[Verbose->False];
+System`$Context=oldContext;
+System`$Assumptions =And@@DeleteDuplicates@Join[
+Level[System`$Assumptions,1],
+{0<$infinity},
+$olution[$assumption,$coordinate],
+$olution[$assumption,$coordinate]/.ToXCoord,
+$olution[$assumption,$constant],
+$olution[$assumption,$function]/.Table[(Head/@$olution[$function,$ymbol])[[ii]]->($olution[$function,$ymbol])[[ii]],{ii,1,Length@$olution[$function,$ymbol]}],
+$olution[$assumption,$function]/.Table[(Head/@$olution[$function,$ymbol])[[ii]]->($olution[$function,$ymbol])[[ii]],{ii,1,Length@$olution[$function,$ymbol]}]/.ToXCoord
+];
+ret=Get[Take[ReverseSort[FileNames[All,FileNameJoin[{Directory[],n,i,c,s,p}]]]][[v]]]@@mkl;
+$olution=old;
+(*return ifs*)
+If[OptionValue[ChangeContextQ]==False&&OptionValue[ChangeCoordQ]==False,
+Return[ret];
+];
+If[OptionValue[ChangeContextQ]==True&&OptionValue[ChangeCoordQ]==False,
+Return[ret/.ChangeContext[{n,i,c,s},targetCoordList]];
+];
+If[OptionValue[ChangeContextQ]==True&&OptionValue[ChangeCoordQ]==True,
+Return[ret/.ChangeContext[{n,i,c,s},targetCoordList]/.ChangeXCoord[{n,i,c,s}]/.ChangeCoord[{n,i,c,s}]];
+]
+]
+
+
+Solution[{name_,identifier_,coordinateSystem_,signature_},keyList_,OptionsPattern[]]:=Solution[{name,identifier,coordinateSystem,signature,Default},keyList,Version->OptionValue[Version],ChangeContextQ->OptionValue[ChangeContextQ],ChangeCoordQ->OptionValue[ChangeCoordQ]]
+
+
+(*Solution[{name_,identifier_,coordinateSystem_,signature_,prefix_},OptionsPattern[]]:=Solution[{name,identifier,coordinateSystem,signature,prefix},{},Version\[Rule]OptionValue[Version],ChangeContextQ\[Rule]OptionValue[ChangeContextQ],ChangeCoordQ\[Rule]OptionValue[ChangeCoordQ]]*)
+
+
+(*Solution[{name_,identifier_,coordinateSystem_,signature_},OptionsPattern[]]:=Solution[{name,identifier,coordinateSystem,signature,"Default"},{},Version\[Rule]OptionValue[Version],ChangeContextQ\[Rule]OptionValue[ChangeContextQ],ChangeCoordQ\[Rule]OptionValue[ChangeCoordQ]]*)
+
+
+Options[SaveCoordinateTransformation]={ChangeContextQ->True}
+SaveCoordinateTransformation[{name_,identifier_,coordinateSystem_,signature_},coordinateTransformation_,OptionsPattern[]]:=Module[{
 nct=ToString[name]<>"`"<>ToString[identifier]<>"`"<>ToString[coordinateSystem]<>"`"<>ToString[signature]<>"`",
 oco=Values@$olution[$basis,$curved,$coordinate],
 nco=Symbol/@Table[
-StringDrop[(ToString/@Values@Solution[{name,identifier,coordinateSystem,signature}][$basis,$curved,$coordinate])[[ii]],(DeleteDuplicates[StringPosition[(ToString/@Values@Solution[{name,identifier,coordinateSystem,signature}][$basis,$curved,$coordinate])[[ii]],"`"][[-1]]])[[1]]],{ii,1,Length@(ToString/@Values@Solution[{name,identifier,coordinateSystem,signature}][$basis,$curved,$coordinate])}],
+StringDrop[(ToString/@Values@Solution[{name,identifier,coordinateSystem,signature},{$basis,$curved,$coordinate},ChangeContextQ->False,ChangeCoordQ->False])[[ii]],(DeleteDuplicates[StringPosition[(ToString/@Values@Solution[{name,identifier,coordinateSystem,signature},{$basis,$curved,$coordinate},ChangeContextQ->False,ChangeCoordQ->False])[[ii]],"`"][[-1]]])[[1]]],{ii,1,Length@(ToString/@Values@Solution[{name,identifier,coordinateSystem,signature},{$basis,$curved,$coordinate},ChangeContextQ->False,ChangeCoordQ->False])}],
 dirct=FileNameJoin[{
 Directory[],
 "CoordinateTransformations"
@@ -2218,8 +2302,12 @@ xret
 },
 toxcoord=Table[nco[[ii]]->nco[[ii]][],{ii,1,Length@nco}];
 cc=Table[nco[[ii]]->Symbol@(nct<>ToString[nco[[ii]]]),{ii,1,Length@nco}];
+If[OptionValue[ChangeContextQ]==True,
+ret=Table[(kcot)[[ii]]->(vcot/.cc/.ChangeContext[{name,identifier,coordinateSystem,signature},ChangeCoordQ->False,Reverse->True])[[ii]],{ii,1,Length@kcot}];
+xret=Table[(kcot/.ToXCoord)[[ii]]->(vcot/.toxcoord/.cc/.ChangeContext[{name,identifier,coordinateSystem,signature},ChangeCoordQ->False,Reverse->True])[[ii]],{ii,1,Length@kcot}];,
 ret=Table[(kcot)[[ii]]->(vcot/.cc)[[ii]],{ii,1,Length@kcot}];
 xret=Table[(kcot/.ToXCoord)[[ii]]->(vcot/.toxcoord/.cc)[[ii]],{ii,1,Length@kcot}];
+];
 System`$Context="Global`";
 Quiet[CreateDirectory[dirct]];
 Put[
@@ -2229,26 +2317,12 @@ System`$Context=GenContext[];
 ]
 
 
-ChangeContext[{name_,identifier_,coordinateSystem_,signature_}]:=Module[{
-nct=ToString[name]<>"`"<>ToString[identifier]<>"`"<>ToString[coordinateSystem]<>"`"<>ToString[signature]<>"`",
-syli,
-nsyli,
-dirct=FileNameJoin[{
-Directory[],
-"CoordinateTransformations"
-}]
-},
-syli=Complement[
-DeleteCases[Names[ToString[name]<>"`"<>ToString[identifier]<>"`"<>ToString[coordinateSystem]<>"`"<>ToString[signature]<>"`*"],_?(StringContainsQ[#,"$"]&)],ToString/@Values@Solution[{ToString[name],ToString[identifier],ToString[coordinateSystem],ToString[signature]}][$basis,$curved,$coordinate]
-];
-nsyli=Table[System`$Context<>StringDrop[syli[[ii]],StringLength@(ToString[name]<>"`"<>ToString[identifier]<>"`"<>ToString[coordinateSystem]<>"`"<>ToString[signature]<>"`")],{ii,1,Length@syli}];
-Return[
-Table[Symbol@syli[[ii]]->Symbol@nsyli[[ii]],{ii,1,Length@syli}]
-];
-]
-
-
 ChangeContext[{name_,identifier_,coordinateSystem_,signature_},oldCoordList_]:=Module[{
+n=ToString[name],
+i=ToString[identifier],
+c=ToString[coordinateSystem],
+s=ToString[signature],
+targetContext=ToString[name]<>"`"<>ToString[identifier]<>"`"<>ToString[coordinateSystem]<>"`"<>ToString[signature]<>"`",
 nct=ToString[name]<>"`"<>ToString[identifier]<>"`"<>ToString[coordinateSystem]<>"`"<>ToString[signature]<>"`",
 syli,
 nsyli,
@@ -2257,15 +2331,18 @@ Directory[],
 "CoordinateTransformations"
 }]
 },
-syli=Complement[
-DeleteCases[Names[ToString[name]<>"`"<>ToString[identifier]<>"`"<>ToString[coordinateSystem]<>"`"<>ToString[signature]<>"`*"],_?(StringContainsQ[#,"$"]&)],
-oldCoordList
-];
-nsyli=Table[System`$Context<>StringDrop[syli[[ii]],StringLength@(ToString[name]<>"`"<>ToString[identifier]<>"`"<>ToString[coordinateSystem]<>"`"<>ToString[signature]<>"`")],{ii,1,Length@syli}];
+syli=Complement[DeleteCases[Names[targetContext<>"*"],_?(StringContainsQ[#,"$"]&)],oldCoordList];
+nsyli=Table[System`$Context<>StringDrop[syli[[ii]],StringLength@targetContext],{ii,1,Length@syli}];
 Return[
 Table[Symbol@syli[[ii]]->Symbol@nsyli[[ii]],{ii,1,Length@syli}]
 ];
 ]
+
+
+Options[ChangeContext]={ChangeCoordQ->True,Reverse->False}
+ChangeContext[{name_,identifier_,coordinateSystem_,signature_},ChangeCoordQ->False]:=ChangeContext[{name,identifier,coordinateSystem,signature},Values@Solution[{name,identifier,coordinateSystem,signature},{$basis,$curved,$coordinate},ChangeContextQ->False,ChangeCoordQ->False]];
+ChangeContext[{name_,identifier_,coordinateSystem_,signature_},ChangeCoordQ->False,Reverse->True]:=
+(AssociationMap[Reverse,ChangeContext[{name,identifier,coordinateSystem,signature},ChangeCoordQ->False]/.List[x__]:>Association[x]]/.Association[x__]:>List[x])
 
 
 ChangeCoord[{name_,identifier_,coordinateSystem_,signature_}]:=Module[{
@@ -2391,30 +2468,7 @@ Print["Loaded solution version ",FS@v," from ",FS@FileNameJoin[{Directory[],n,i,
 ]
 
 
-(*LoadSolution[{name_,identifier_,coordinateSystem_,signature_,prefix_},OptionsPattern[]]:=Module[{
-n=ToString[name],
-i=ToString[identifier],
-c=ToString[coordinateSystem],
-s=ToString[signature],
-p=ToString[prefix],
-v=1,
-dirInit=ToString[prefix]<>"_Init",
-init="Init.m"
-},
-LoadSolution[{n,i,c,s,p},{v},Verbose\[Rule]OptionValue[Verbose]];
-]*)
-
-
-(*LoadSolution[{name_,identifier_,coordinateSystem_,signature_},{version_},OptionsPattern[]]:=Module[{
-n=ToString[name],
-i=ToString[identifier],
-c=ToString[coordinateSystem],
-s=ToString[signature],
-p="Default",
-v=version
-},
-LoadSolution[{n,i,c,s,p},{v},Verbose\[Rule]OptionValue[Verbose]];
-]*)
+LoadSolution[{name_,identifier_,coordinateSystem_,signature_},OptionsPattern[]]:=LoadSolution[{name,identifier,coordinateSystem,signature,Default},Version->OptionValue[Version]]
 
 
 ButtonLoadSolution[fileName_]:=Module[{
@@ -2440,21 +2494,6 @@ Background->LightBlue
 ]
 ]
 ]
-
-
-LoadSolution[{name_,identifier_,coordinateSystem_,signature_},OptionsPattern[]]:=LoadSolution[{name,identifier,coordinateSystem,signature,Default},Version->OptionValue[Version]]
-
-
-(*LoadSolution[{name_,identifier_,coordinateSystem_,signature_},OptionsPattern[]]:=Module[{
-n=ToString[name],
-i=ToString[identifier],
-c=ToString[coordinateSystem],
-s=ToString[signature],
-p="Default",
-v=1
-},
-LoadSolution[{n,i,c,s,p},{v},Verbose\[Rule]OptionValue[Verbose]];
-]*)
 
 
 Options[DeleteSolution]={Version->5};
@@ -2567,77 +2606,16 @@ $olution[$pinor,spk[[ii]],$value]=$blueprint[$pinor,Symbol,$value];,
 ]
 
 
-Options[Solution]={Version->1};
-Solution[{name_,identifier_,coordinateSystem_,signature_,prefix_},keyList_,OptionsPattern[]]:=Module[{
-n=ToString[name],
-i=ToString[identifier],
-c=ToString[coordinateSystem],
-s=ToString[signature],
-p=ToString[prefix],
-v=OptionValue[Version],
-dirInit=ToString[prefix]<>"_Init",
-init="Init.m",
-old=$olution,
-oldCoordList,
-ret,
-mkl
-},
-$olution=Get[FileNameJoin[{Directory[],n,i,c,s,dirInit,init}]];
-oldCoordList=ToString/@Values@$olution[$basis,$curved,$coordinate];
-mkl=If[StringContainsQ[#,"$"]==False,
-Symbol[ToString[name]<>"`"<>ToString[identifier]<>"`"<>ToString[coordinateSystem]<>"`"<>ToString[signature]<>"`"<>#]
-,
-Symbol[#]
-]&/@(ToString/@keyList);
-Load$olution[Verbose->False];
-System`$Assumptions =And@@DeleteDuplicates@Join[
-Level[System`$Assumptions,1],
-{0<$infinity},
-$olution[$assumption,$coordinate],
-$olution[$assumption,$coordinate]/.ToXCoord,
-$olution[$assumption,$constant],
-$olution[$assumption,$function]/.Table[(Head/@$olution[$function,$ymbol])[[ii]]->($olution[$function,$ymbol])[[ii]],{ii,1,Length@$olution[$function,$ymbol]}],
-$olution[$assumption,$function]/.Table[(Head/@$olution[$function,$ymbol])[[ii]]->($olution[$function,$ymbol])[[ii]],{ii,1,Length@$olution[$function,$ymbol]}]/.ToXCoord
-];
-ret=Get[Take[ReverseSort[FileNames[All,FileNameJoin[{Directory[],n,i,c,s,p}]]]][[v]]]@@mkl;
-$olution=old;
-Return[ret/.ChangeContext[{n,i,c,s},oldCoordList]/.ChangeXCoord[{n,i,c,s}]/.ChangeCoord[{n,i,c,s}]];
-]
-
-
-Solution[{name_,identifier_,coordinateSystem_,signature_},keyList_,OptionsPattern[]]:=Solution[{name,identifier,coordinateSystem,signature,Default},keyList,Version->OptionValue[Version]]
-
-
-(*Solution[{name_,identifier_,coordinateSystem_,signature_,prefix_},{version_}]:=Solution[{name,identifier,coordinateSystem,signature,prefix},{version},{}]*)
-Solution[{name_,identifier_,coordinateSystem_,signature_,prefix_},OptionsPattern[]]:=Solution[{name,identifier,coordinateSystem,signature,prefix},{},Version->OptionValue[Version]]
-
-
-(*Solution[{name_,identifier_,coordinateSystem_,signature_,prefix_}]:=Solution[{name,identifier,coordinateSystem,signature,prefix},{1},{}]*)
-
-
-(*Solution[{name_,identifier_,coordinateSystem_,signature_},{version_}]:=Solution[{name,identifier,coordinateSystem,signature,"Default"},{version},{}]*)
-Solution[{name_,identifier_,coordinateSystem_,signature_},OptionsPattern[]]:=Solution[{name,identifier,coordinateSystem,signature,"Default"},{},Version->OptionValue[Version]]
-
-
-(*Solution[{name_,identifier_,coordinateSystem_,signature_}]:=Solution[{name,identifier,coordinateSystem,signature,"Default"},{1},{}]*)
-
-
-(*PrintSolutions[]:=Module[{
-li=DeleteCases[FileNames[All,FileNameJoin[Directory[]],{5}],_?(StringContainsQ[#,"Init"]&)]
-},
-Return[
-Table[StringDrop[li\[LeftDoubleBracket]ii\[RightDoubleBracket],(DeleteDuplicates[StringPosition[li\[LeftDoubleBracket]ii\[RightDoubleBracket],"/"]\[LeftDoubleBracket]-5\[RightDoubleBracket]])\[LeftDoubleBracket]1\[RightDoubleBracket]],{ii,1,Length@li}]//TableForm
-]
-]*)
-
-
 PrintSolutions[]:=Dataset[FileSystemMap[<|" "->ButtonLoadSolution[#],""->ButtonDeleteSolution[#]|>&,Directory[],{2,7}]]
 
 
 Print$olution[]:=TableForm[Normal@(Dataset[#]&/@$olution),TableAlignments->Center]
 
 
-Print$olution[keyList_]:=TableForm[Normal@(Dataset[#]&/@$olution@@keyList),TableAlignments->Center]
+Print$olution[key_]:=If[Length@key==0,
+Return[TableForm[Normal@(Dataset[#]&/@$olution[key]),TableAlignments->Center]],
+Return[TableForm[Normal@(Dataset[#]&/@$olution@@key),TableAlignments->Center]]
+]
 
 
 GenerateMetric[basis_]:=Module[{
@@ -3116,9 +3094,9 @@ tb=ToValues@ComponentArray@Simplification@Simplification@TraceBasisDummy@ToBasis
 {ProgressIndicator[Appearance->"Necklace"],"Applying tensor symmetries to "ToBasis[flat]@ToBasis[spin]@sy[[3]][fi[[1]],fi[[2]],fi[[3]],-si[[1]],si[[2]]]}
 ];
 PrintComputeTensor[sy[[3]],{$flat,$flat,$flat,$spin,$spin},{1,1,1,-1,1},tb,s];
-$olution[$gamma,$flat,1,$value]=Table[TensorValIDs[sy][[ii]]->TensorValues[sy,Level[TensorValIDs[sy][[ii]],1][[2]]],{ii,1,Length@TensorValIDs[sy]}]/.List[x__]:>Association[x];
-$olution[$gamma,$flat,2,$value]=Table[TensorValIDs[sy][[ii]]->TensorValues[sy,Level[TensorValIDs[sy][[ii]],1][[2]]],{ii,1,Length@TensorValIDs[sy]}]/.List[x__]:>Association[x];
-$olution[$gamma,$flat,3,$value]=Table[TensorValIDs[sy][[ii]]->TensorValues[sy,Level[TensorValIDs[sy][[ii]],1][[2]]],{ii,1,Length@TensorValIDs[sy]}]/.List[x__]:>Association[x];
+$olution[$gamma,$flat,1,$value]=Table[TensorValIDs[sy[[1]]][[ii]]->TensorValues[sy[[1]],Level[TensorValIDs[sy[[1]]][[ii]],1][[2]]],{ii,1,Length@TensorValIDs[sy[[1]]]}]/.List[x__]:>Association[x];
+$olution[$gamma,$flat,2,$value]=Table[TensorValIDs[sy[[2]]][[ii]]->TensorValues[sy[[2]],Level[TensorValIDs[sy[[2]]][[ii]],1][[2]]],{ii,1,Length@TensorValIDs[sy[[2]]]}]/.List[x__]:>Association[x];
+$olution[$gamma,$flat,3,$value]=Table[TensorValIDs[sy[[3]]][[ii]]->TensorValues[sy[[3]],Level[TensorValIDs[sy[[3]]][[ii]],1][[2]]],{ii,1,Length@TensorValIDs[sy[[3]]]}]/.List[x__]:>Association[x];
 ]
 
 
@@ -3152,8 +3130,8 @@ tb=ToValues@ComponentArray@Simplification@TraceBasisDummy@ToBasis[curved]@ToBasi
 PrintComputeTensor[sy[[3]],{$curved,$curved,$curved,$spin,$spin},{1,1,1,-1,1},tb,s];
 PrintParallelMapSimplify[sy[[1]],ps];
 PrintParallelMapSimplify[sy[[3]],ps];
-$olution[$gamma,$curved,1,$value]=Table[TensorValIDs[sy][[ii]]->TensorValues[sy,Level[TensorValIDs[sy][[ii]],1][[2]]],{ii,1,Length@TensorValIDs[sy]}]/.List[x__]:>Association[x];
-$olution[$gamma,$curved,3,$value]=Table[TensorValIDs[sy][[ii]]->TensorValues[sy,Level[TensorValIDs[sy][[ii]],1][[2]]],{ii,1,Length@TensorValIDs[sy]}]/.List[x__]:>Association[x];
+$olution[$gamma,$curved,1,$value]=Table[TensorValIDs[sy[[1]]][[ii]]->TensorValues[sy[[1]],Level[TensorValIDs[sy[[1]]][[ii]],1][[2]]],{ii,1,Length@TensorValIDs[sy[[1]]]}]/.List[x__]:>Association[x];
+$olution[$gamma,$curved,3,$value]=Table[TensorValIDs[sy[[3]]][[ii]]->TensorValues[sy[[3]],Level[TensorValIDs[sy[[3]]][[ii]],1][[2]]],{ii,1,Length@TensorValIDs[sy[[3]]]}]/.List[x__]:>Association[x];
 ]
 
 
@@ -4634,6 +4612,9 @@ $tensorQ,
 IncludeCoordinatesQ,
 PrintContextQ,*)
 
+ChangeContextQ,
+ChangeCoordQ,
+
 GenFunctionRule,
 GenContext,
 ToValues2,
@@ -4669,6 +4650,7 @@ SetFrame,
 SetGamma,
 SetSpinor,
 
+ContextMergeSymbol,
 LoadManifold,
 LoadChart,
 LoadConstant,
