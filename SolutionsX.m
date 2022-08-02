@@ -355,6 +355,7 @@ ChangeXCoord::usage="Explain...";
 GenerateMetric::usage="Explain...";
 GenerateFormTensor::usage="Explain...";
 GenerateVielbein::usage="Explain...";
+Set$metric::usage="Explain...";
 
 (*Print compute functions*)
 PrintComputeMetric::usage="Explain...";
@@ -365,6 +366,8 @@ MapSimplify::usage="Explain...";
 ParallelMapSimplify::usage="Explain...";
 PrintMapSimplify::usage="Explain...";
 PrintParallelMapSimplify::usage="Explain...";
+PrintParallelMapSimplify2::usage="Explain...";
+PlusParallelMapSimplify::usage="Explain...";
 Compute::usage="Explain...";
 
 (*Prep tensor functions*)
@@ -2244,7 +2247,8 @@ mkl
 (*prepare stuff from the target input*)
 $olution=Get[FileNameJoin[{Directory[],n,i,c,s,dirInit,init}]];
 targetCoordList=ToString/@Values@$olution[$basis,$curved,$coordinate];
-mkl=If[StringContainsQ[#,"$"]==False,Symbol[targetContext<>#],Symbol[#]]&/@(ToString/@keyList);
+mkl=If[TrueQ[Head@#==Symbol]&&!StringContainsQ[ToString@#,"$"],Symbol[targetContext<>ToString@#],#]&/@keyList;
+(*Print[Symbol[targetContext<>ToString@#]&/@keyList];*)
 (*load the new new solution, prepare the return and set $olution to old*)
 System`$Context=GenContext[];
 Load$olution[Verbose->False];
@@ -2265,10 +2269,20 @@ If[OptionValue[ChangeContextQ]==False&&OptionValue[ChangeCoordQ]==False,
 Return[ret];
 ];
 If[OptionValue[ChangeContextQ]==True&&OptionValue[ChangeCoordQ]==False,
+If[TrueQ[Head@ret==Association],
+ret=ret/.Association[x__]:>List[x]/.ChangeContext[{n,i,c,s},targetCoordList]/.List[x__]:>Association[x];
+Return[ret];
+,
 Return[ret/.ChangeContext[{n,i,c,s},targetCoordList]];
+]
 ];
 If[OptionValue[ChangeContextQ]==True&&OptionValue[ChangeCoordQ]==True,
+If[TrueQ[Head@ret==Association],
+ret=ret/.Association[x__]:>List[x]/.ChangeContext[{n,i,c,s},targetCoordList]/.ChangeXCoord[{n,i,c,s}]/.ChangeCoord[{n,i,c,s}]/.List[x__]:>Association[x];
+Return[ret]
+,
 Return[ret/.ChangeContext[{n,i,c,s},targetCoordList]/.ChangeXCoord[{n,i,c,s}]/.ChangeCoord[{n,i,c,s}]];
+]
 ]
 ]
 
@@ -2282,7 +2296,7 @@ Solution[{name_,identifier_,coordinateSystem_,signature_},keyList_,OptionsPatter
 (*Solution[{name_,identifier_,coordinateSystem_,signature_},OptionsPattern[]]:=Solution[{name,identifier,coordinateSystem,signature,"Default"},{},Version\[Rule]OptionValue[Version],ChangeContextQ\[Rule]OptionValue[ChangeContextQ],ChangeCoordQ\[Rule]OptionValue[ChangeCoordQ]]*)
 
 
-Options[SaveCoordinateTransformation]={ChangeContextQ->True}
+Options[SaveCoordinateTransformation]={ChangeContextQ->True};
 SaveCoordinateTransformation[{name_,identifier_,coordinateSystem_,signature_},coordinateTransformation_,OptionsPattern[]]:=Module[{
 nct=ToString[name]<>"`"<>ToString[identifier]<>"`"<>ToString[coordinateSystem]<>"`"<>ToString[signature]<>"`",
 oco=Values@$olution[$basis,$curved,$coordinate],
@@ -2339,7 +2353,7 @@ Table[Symbol@syli[[ii]]->Symbol@nsyli[[ii]],{ii,1,Length@syli}]
 ]
 
 
-Options[ChangeContext]={ChangeCoordQ->True,Reverse->False}
+Options[ChangeContext]={ChangeCoordQ->True,Reverse->False};
 ChangeContext[{name_,identifier_,coordinateSystem_,signature_},ChangeCoordQ->False]:=ChangeContext[{name,identifier,coordinateSystem,signature},Values@Solution[{name,identifier,coordinateSystem,signature},{$basis,$curved,$coordinate},ChangeContextQ->False,ChangeCoordQ->False]];
 ChangeContext[{name_,identifier_,coordinateSystem_,signature_},ChangeCoordQ->False,Reverse->True]:=
 (AssociationMap[Reverse,ChangeContext[{name,identifier,coordinateSystem,signature},ChangeCoordQ->False]/.List[x__]:>Association[x]]/.Association[x__]:>List[x])
@@ -2716,6 +2730,14 @@ Coefficient[vv,Diff[xc[[ii]]]],
 ]
 
 
+Set$metric[table_]:=Module[{
+tb=table/.ToXCoord,
+dcli=Diff/@($olution[$basis,$curved,$coordinate]/.ToXCoord)
+},
+$olution[$metric,$curved,$ds2]=Total@Flatten@Table[tb[[ii,jj]]dcli[[ii]]\[CircleTimes]dcli[[jj]],{ii,1,Length@dcli},{jj,1,Length@dcli}]//Simplification
+]
+
+
 PrintComputed[symbol_,$bas_,indexPos_,simplify_,time_]:=Module[{
 b=Table[$olution[$basis,$bas[[ii]],$ymbol],{ii,1,Length@$bas}],
 i=Table[$olution[$basis,$bas[[ii]],$index],{ii,1,Length@$bas}],
@@ -2815,6 +2837,14 @@ ParallelMap[parallelSimplify,TensorValues[symbol,valID][[2]],Method->Automatic,P
 )
 
 
+ParallelMapSimplify[symbol_,valID_,parallelSimplify_,assump_]:=(
+symbol/:TensorValues[symbol,valID]=FoldedRule[
+TensorValues[symbol,valID][[1]],
+ParallelMap[parallelSimplify[#1,Assumptions->assump]&,TensorValues[symbol,valID][[2]],Method->Automatic,ProgressReporting->True]
+];
+)
+
+
 MapSimplify[symbol_,valID_,simplify_]:=(
 symbol/:TensorValues[symbol,valID]=FoldedRule[
 TensorValues[symbol,valID][[1]],
@@ -2838,6 +2868,53 @@ PrintSimplified[sy,vidl[[ii]],ps,at];,
 ];
 ];
 ]
+
+
+PrintParallelMapSimplify2[tvidl_,parallelSimplify_,assump_]:=Module[{
+sy,
+ps=parallelSimplify,
+vidl,
+at
+},
+sy=Level[tvidl[[1]],1][[1]];
+vidl=Table[Level[tvidl[[ii]],1][[2]],{ii,1,Length@tvidl}];
+at=AbsoluteTime[];
+If[TrueQ[ToString[ps]!=ToString[Identity]],
+Do[
+at=AbsoluteTime[];
+ParallelMapSimplify[sy,vidl[[ii]],ps,assump];
+PrintSimplified[sy,vidl[[ii]],ps,at];,
+{ii,1,Length@vidl}
+];
+];
+]
+
+
+PrintParallelMapSimplify[symbol_,parallelSimplify_,assump_]:=Module[{
+sy=symbol,
+ps=parallelSimplify,
+vidl=Table[Level[TensorValIDs[symbol][[ii]],1][[2]],{ii,1,Length@TensorValIDs[symbol]}],
+at
+},
+If[TrueQ[ToString[ps]!=ToString[Identity]],
+Do[
+at=AbsoluteTime[];
+ParallelMapSimplify[sy,vidl[[ii]],ps,assump];
+PrintSimplified[sy,vidl[[ii]],ps,at];,
+{ii,1,Length@vidl}
+];
+];
+]
+
+
+PlusParallelMapSimplify[expr_,termSimplify_,totalSimplify_,assump_]:=(
+If[TrueQ[Head@expr==Plus],
+Return[totalSimplify@Total@(ParallelMap[termSimplify[#1,Assumptions->assump]&,#]&/@Level[expr,1])];
+];
+If[TrueQ[Head@expr==Times],
+Return[totalSimplify@(Level[expr,1][[1]] Total@(ParallelMap[termSimplify[#1,Assumptions->assump]&,#,Method->Automatic,ProgressReporting->True]&/@Level[Level[expr,1][[2]],1]))];
+];
+)
 
 
 PrintMapSimplify[symbol_,simplify_]:=Module[{
@@ -2872,7 +2949,7 @@ PrintComputeMetric[sy,{$bas1,$bas1},{-1,-1},mt,s];
 imt=Inverse@mt;
 PrintComputeMetric[sy,{$bas1,$bas1},{1,1},imt,s];
 (*parallel simplify*)
-PrintParallelMapSimplify[sy,ps];
+PrintParallelMapSimplify[sy,ps,System`$Assumptions];
 (*store*)
 $olution[$metric,$bas1,$tensor,$value]=Table[TensorValIDs[sy][[ii]]->TensorValues[sy,Level[TensorValIDs[sy][[ii]],1][[2]]],{ii,1,Length@TensorValIDs[sy]}]/.List[x__]:>Association[x];
 (*det*)
@@ -2896,10 +2973,12 @@ tb
 Monitor[tb=ToValues@Simplification@ComponentArray@TraceBasisDummy@ToBasis[basis]@ToBasis[basis]@ChristoffelToGradMetric@sy[-i[[1,1]],-i[[2,2]],-i[[3,3]]];,
 {ProgressIndicator[Appearance->"Necklace"],"Applying tensor symmetries to "ToBasis[basis]@(sy@@Table[-i[[ii,ii]],{ii,1,Length@$bas}])}];
 PrintComputeTensor[sy,$bas,{-1,-1,-1},tb,s];
+PrintParallelMapSimplify2[{ValID[sy,{{-basis,-basis,-basis}}]},ps,System`$Assumptions];
 PrintComputeTensor[sy,$bas,{{1,-1,-1},{-1,-1,-1}},s];
+PrintParallelMapSimplify2[{ValID[sy,{{basis,-basis,-basis}}]},ps,System`$Assumptions];
 PrintComputeTensor[sy,$bas,{{1,1,-1},{1,-1,-1}},s];
 PrintComputeTensor[sy,$bas,{{1,-1,1},{1,-1,-1}},s];
-PrintParallelMapSimplify[sy,ps];
+PrintParallelMapSimplify2[{ValID[sy,{{basis,-basis,basis},{basis,basis,-basis}}]},ps,System`$Assumptions];
 $olution[$metric,$bas1,$christoffel,$value]=Table[TensorValIDs[sy][[ii]]->TensorValues[sy,Level[TensorValIDs[sy][[ii]],1][[2]]],{ii,1,Length@TensorValIDs[sy]}]/.List[x__]:>Association[x];
 ]
 
@@ -2936,10 +3015,12 @@ m=$olution[$metric,$curved,$tensor,$ymbol]
 Monitor[tb=ToValues@Simplification@ComponentArray@TraceBasisDummy@ToBasis[basis]@ToBasis[basis]@RiemannToChristoffel@sy[-i[[1,1]],-i[[2,2]]];,
 {ProgressIndicator[Appearance->"Necklace"],"Applying tensor symmetries to "ToBasis[basis]@(sy@@Table[-i[[ii,ii]],{ii,1,Length@$bas}])}];
 PrintComputeTensor[sy,$bas,{-1,-1},tb,s];
+PrintParallelMapSimplify2[{ValID[sy,{{-basis,-basis}}]},ps,System`$Assumptions];
 PrintComputeTensor[sy,$bas,{{1,-1},{-1,-1}},s];
 PrintComputeTensor[sy,$bas,{{-1,1},{-1,-1}},s];
+PrintParallelMapSimplify2[{ValID[sy,{{-basis,basis},{basis,-basis}}]},ps,System`$Assumptions];
 PrintComputeTensor[sy,$bas,{{1,1},{1,-1}},s];
-PrintParallelMapSimplify[sy,ps];
+PrintParallelMapSimplify2[{ValID[sy,{{basis,basis}}]},ps,System`$Assumptions];
 $olution[$metric,$bas1,$ricci,$value]=Table[TensorValIDs[sy][[ii]]->TensorValues[sy,Level[TensorValIDs[sy][[ii]],1][[2]]],{ii,1,Length@TensorValIDs[sy]}]/.List[x__]:>Association[x];
 If[TrueQ[$bas1==$curved],
 at=AbsoluteTime[ ];
@@ -2957,16 +3038,19 @@ basis=$olution[$basis,$curved,$ymbol]
 },
 If[$olution[$tensor,key,$rank]==1,
 PrintComputeTensor[sy,{$curved},{-1},GenerateFormTensor[key],s];
+PrintParallelMapSimplify2[{ValID[sy,{{-basis}}]},ps,System`$Assumptions];
 PrintComputeTensor[sy,{$curved},{{1},{-1}},s];
-PrintParallelMapSimplify[sy,ps];
+PrintParallelMapSimplify2[{ValID[sy,{{basis}}]},ps,System`$Assumptions];
 $olution[$tensor,key,$value]=Table[TensorValIDs[sy][[ii]]->TensorValues[sy,Level[TensorValIDs[sy][[ii]],1][[2]]],{ii,1,Length@TensorValIDs[sy]}]/.List[x__]:>Association[x];
 ];
 If[$olution[$tensor,key,$rank]==2,
 PrintComputeTensor[sy,{$curved,$curved},{-1,-1},GenerateFormTensor[key],s];
+PrintParallelMapSimplify2[{ValID[sy,{{-basis,-basis}}]},ps,System`$Assumptions];
 PrintComputeTensor[sy,{$curved,$curved},{{1,-1},{-1,-1}},s];
 PrintComputeTensor[sy,{$curved,$curved},{{-1,1},{-1,-1}},s];
+PrintParallelMapSimplify2[{ValID[sy,{{-basis,basis},{basis,-basis}}]},ps,System`$Assumptions];
 PrintComputeTensor[sy,{$curved,$curved},{{1,1},{1,-1}},s];
-PrintParallelMapSimplify[sy,ps];
+PrintParallelMapSimplify2[{ValID[sy,{{basis,basis}}]},ps,System`$Assumptions];
 $olution[$tensor,key,$value]=Table[TensorValIDs[sy][[ii]]->TensorValues[sy,Level[TensorValIDs[sy][[ii]],1][[2]]],{ii,1,Length@TensorValIDs[sy]}]/.List[x__]:>Association[x];
 ];
 ]
@@ -3038,13 +3122,18 @@ $olution[$tensor,key,$value]=Table[TensorValIDs[sy][[ii]]->TensorValues[sy,Level
 
 
 Compute[$frame,$vielbein,s_,ps_]:=Module[{
-sy=$olution[$frame,$vielbein,$ymbol]
+sy=$olution[$frame,$vielbein,$ymbol],
+curved=$olution[$basis,$curved,$ymbol],
+flat=$olution[$basis,$flat,$ymbol]
 },
 PrintComputeTensor[sy,{$curved,$flat},{-1,1},GenerateVielbein[],s];
+PrintParallelMapSimplify2[{ValID[sy,{{-curved,flat}}]},ps,System`$Assumptions];
 PrintComputeTensor[sy,{$curved,$flat},{{-1,-1},{-1,1}},s];
+PrintParallelMapSimplify2[{ValID[sy,{{-curved,-flat}}]},ps,System`$Assumptions];
 PrintComputeTensor[sy,{$curved,$flat},{{1,-1},{-1,-1}},s];
+PrintParallelMapSimplify2[{ValID[sy,{{curved,-flat}}]},ps,System`$Assumptions];
 PrintComputeTensor[sy,{$curved,$flat},{{1,1},{1,-1}},s];
-PrintParallelMapSimplify[sy,ps];
+PrintParallelMapSimplify2[{ValID[sy,{{curved,flat}}]},ps,System`$Assumptions];
 $olution[$frame,$vielbein,$value]=Table[TensorValIDs[sy][[ii]]->TensorValues[sy,Level[TensorValIDs[sy][[ii]],1][[2]]],{ii,1,Length@TensorValIDs[sy]}]/.List[x__]:>Association[x];
 ]
 
@@ -3055,14 +3144,14 @@ m=$olution[$metric,$curved,$tensor,$ymbol],
 i={$olution[$basis,$curved,$index],$olution[$basis,$flat,$index],$olution[$basis,$flat,$index]},
 curved=$olution[$basis,$curved,$ymbol],
 flat=$olution[$basis,$flat,$ymbol],
-tb
+tb,
+tmp
 },
-Monitor[tb=ToValues@(
-(ComponentArray@Simplification@TraceBasisDummy@
-ToBasis[curved]@ToBasis[flat]@ToBasis[curved]@ToBasis[flat]@ContractMetric[Expand@SpinConnectionToFrame[sy[-i[[1,1]],-i[[2,2]],-i[[3,3]]],sy],m]));,
+tmp=ToBasis[curved]@ToBasis[flat]@ToBasis[curved]@ToBasis[flat]@ContractMetric[Expand@SpinConnectionToFrame[sy[-i[[1,1]],-i[[2,2]],-i[[3,3]]],sy],m];
+Monitor[tb=ToValues@ComponentArray@Simplify@TraceBasisDummy@tmp;,
 {ProgressIndicator[Appearance->"Necklace"],"Applying tensor symmetries to "ToBasis[curved]@ToBasis[flat]@(sy[-i[[1,1]],-i[[2,2]],-i[[3,3]]])}];
 PrintComputeTensor[sy,{$curved,$flat,$flat},{-1,-1,-1},tb,s];
-PrintParallelMapSimplify[sy,ps];
+PrintParallelMapSimplify2[{ValID[sy,{{-curved,-flat,-flat}}]},ps,System`$Assumptions];
 $olution[$frame,$spinConnection,$value]=Table[TensorValIDs[sy][[ii]]->TensorValues[sy,Level[TensorValIDs[sy][[ii]],1][[2]]],{ii,1,Length@TensorValIDs[sy]}]/.List[x__]:>Association[x];
 ]
 
@@ -3080,17 +3169,17 @@ tb
 tb=Table[$olution[$gamma,$flatGammaU,ii],{ii,0,dim-1}];
 PrintComputeTensor[sy[[1]],{$flat,$spin,$spin},{1,-1,1},tb,s];
 Monitor[
-tb=ToValues@ComponentArray@Simplification@TraceBasisDummy@ToBasis[flat]@ToBasis[spin]@(fm[-fi[[1]],-fi[[-1]]]sy[[1]][fi[[-1]],-si[[1]],si[[2]]]);,
+tb=ToValues@ComponentArray@(*Simplification@*)TraceBasisDummy@ToBasis[flat]@ToBasis[spin]@(fm[-fi[[1]],-fi[[-1]]]sy[[1]][fi[[-1]],-si[[1]],si[[2]]]);,
 {ProgressIndicator[Appearance->"Necklace"],"Applying tensor symmetries to "ToBasis[flat]@ToBasis[spin]@(sy[[1]][-fi[[1]],-si[[1]],si[[2]]])}
 ];
 PrintComputeTensor[sy[[1]],{$flat,$spin,$spin},{-1,-1,1},tb,s];
 Monitor[
-tb=ToValues@ComponentArray@Simplification@TraceBasisDummy@ToBasis[flat]@ToBasis[spin]@(SplitGammaMatrix@ToBasis[flat]@ToBasis[spin]@sy[[2]][fi[[1]],fi[[2]],-si[[1]],si[[2]]]);,
+tb=ToValues@ComponentArray@(*Simplification@*)TraceBasisDummy@ToBasis[flat]@ToBasis[spin]@(SplitGammaMatrix@ToBasis[flat]@ToBasis[spin]@sy[[2]][fi[[1]],fi[[2]],-si[[1]],si[[2]]]);,
 {ProgressIndicator[Appearance->"Necklace"],"Applying tensor symmetries to "ToBasis[flat]@ToBasis[spin]@sy[[2]][fi[[1]],fi[[2]],-si[[1]],si[[2]]]}
 ];
 PrintComputeTensor[sy[[2]],{$flat,$flat,$spin,$spin},{1,1,-1,1},tb,s];
 Monitor[
-tb=ToValues@ComponentArray@Simplification@Simplification@TraceBasisDummy@ToBasis[flat]@ToBasis[spin]@(SplitGammaMatrix@ToBasis[flat]@ToBasis[spin]@sy[[3]][fi[[1]],fi[[2]],fi[[3]],-si[[1]],si[[2]]]);,
+tb=ToValues@ComponentArray@Simplification@TraceBasisDummy@ToBasis[flat]@ToBasis[spin]@(SplitGammaMatrix@ToBasis[flat]@ToBasis[spin]@sy[[3]][fi[[1]],fi[[2]],fi[[3]],-si[[1]],si[[2]]]);,
 {ProgressIndicator[Appearance->"Necklace"],"Applying tensor symmetries to "ToBasis[flat]@ToBasis[spin]@sy[[3]][fi[[1]],fi[[2]],fi[[3]],-si[[1]],si[[2]]]}
 ];
 PrintComputeTensor[sy[[3]],{$flat,$flat,$flat,$spin,$spin},{1,1,1,-1,1},tb,s];
@@ -3114,22 +3203,23 @@ spin=$olution[$basis,$spin,$ymbol],
 tb
 },
 Monitor[
-tb=ToValues@ComponentArray@Simplification@TraceBasisDummy@ToBasis[curved]@ToBasis[flat]@ToBasis[spin]@(ee[ci[[1]],-fi[[-1]]]syf[[1]][fi[[-1]],-si[[1]],si[[2]]]);,
+tb=ToValues@ComponentArray@(*Simplification@*)TraceBasisDummy@ToBasis[curved]@ToBasis[flat]@ToBasis[spin]@(ee[ci[[1]],-fi[[-1]]]syf[[1]][fi[[-1]],-si[[1]],si[[2]]]);,
 {ProgressIndicator[Appearance->"Necklace"],"Applying tensor symmetries to "ToBasis[curved]@ToBasis[spin]@(sy[[1]][ci[[1]],-si[[1]],si[[2]]])}
 ];
 PrintComputeTensor[sy[[1]],{$curved,$spin,$spin},{1,-1,1},tb,s];
+PrintParallelMapSimplify2[{ValID[sy[[1]],{{curved,-spin,spin}}]},ps,System`$Assumptions];
 Monitor[
-tb=ToValues@ComponentArray@Simplification@TraceBasisDummy@ToBasis[curved]@ToBasis[flat]@ToBasis[spin]@(ee[-ci[[1]],fi[[-1]]]syf[[1]][-fi[[-1]],-si[[1]],si[[2]]]);,
+tb=ToValues@ComponentArray@(*Simplification@*)TraceBasisDummy@ToBasis[curved]@ToBasis[flat]@ToBasis[spin]@(ee[-ci[[1]],fi[[-1]]]syf[[1]][-fi[[-1]],-si[[1]],si[[2]]]);,
 {ProgressIndicator[Appearance->"Necklace"],"Applying tensor symmetries to "ToBasis[curved]@ToBasis[spin]@(sy[[1]][-ci[[1]],-si[[1]],si[[2]]])}
 ];
 PrintComputeTensor[sy[[1]],{$curved,$spin,$spin},{-1,-1,1},tb,s];
+PrintParallelMapSimplify2[{ValID[sy[[1]],{{-curved,-spin,spin}}]},ps,System`$Assumptions];
 Monitor[
-tb=ToValues@ComponentArray@Simplification@TraceBasisDummy@ToBasis[curved]@ToBasis[flat]@ToBasis[spin]@(ee[ci[[1]],-fi[[-1]]]ee[ci[[2]],-fi[[-2]]]ee[ci[[3]],-fi[[-3]]]syf[[3]][fi[[-1]],fi[[-2]],fi[[-3]],-si[[1]],si[[2]]]);,
-{ProgressIndicator[Appearance->"Necklace"],"Applying tensor symmetries to "ToBasis[curved]@ToBasis[spin]@sy[[3]][ci[[1]],ci[[2]],ci[[3]],-si[[1]],si[[2]]]}
+tb=ToValues@ComponentArray@Simplification@TraceBasisDummy@ToBasis[curved]@ToBasis[flat]@ToBasis[spin]@(ee[-ci[[1]],-fi[[-1]]]ee[-ci[[2]],-fi[[-2]]]ee[-ci[[3]],-fi[[-3]]]syf[[3]][fi[[-1]],fi[[-2]],fi[[-3]],-si[[1]],si[[2]]]);,
+{ProgressIndicator[Appearance->"Necklace"],"Applying tensor symmetries to "ToBasis[curved]@ToBasis[spin]@sy[[3]][-ci[[1]],-ci[[2]],-ci[[3]],-si[[1]],si[[2]]]}
 ];
-PrintComputeTensor[sy[[3]],{$curved,$curved,$curved,$spin,$spin},{1,1,1,-1,1},tb,s];
-PrintParallelMapSimplify[sy[[1]],ps];
-PrintParallelMapSimplify[sy[[3]],ps];
+PrintComputeTensor[sy[[3]],{$curved,$curved,$curved,$spin,$spin},{-1,-1,-1,-1,1},tb,s];
+PrintParallelMapSimplify2[{ValID[sy[[3]],{{-curved,-curved,-curved,-spin,spin}}]},ps,System`$Assumptions];
 $olution[$gamma,$curved,1,$value]=Table[TensorValIDs[sy[[1]]][[ii]]->TensorValues[sy[[1]],Level[TensorValIDs[sy[[1]]][[ii]],1][[2]]],{ii,1,Length@TensorValIDs[sy[[1]]]}]/.List[x__]:>Association[x];
 $olution[$gamma,$curved,3,$value]=Table[TensorValIDs[sy[[3]]][[ii]]->TensorValues[sy[[3]],Level[TensorValIDs[sy[[3]]][[ii]],1][[2]]],{ii,1,Length@TensorValIDs[sy[[3]]]}]/.List[x__]:>Association[x];
 ]
@@ -4494,7 +4584,7 @@ cd=CovDOfMetric[metric],
 s=(If[$olution[$info,$ignature]==Lorentzian,Return[-1];];If[$olution[$info,$ignature]==Euclidean,Return[I]])
 },
 Return[
-ToBasis[curved]@ToBasis[curved]@CovDToChristoffel@(cd[-i[[-1]]][FF[i[[-1]],-i[[1]]]]+(s par[[2]])/(Sqrt[3]2!2!) epsilon[gg][-i[[1]],-i[[-1]],-i[[-2]],-i[[-3]],-i[[-4]]]FF[i[[-1]],i[[-2]]]FF[i[[-3]],i[[-4]]]/.epsilonToetaDown[gg,curved])
+ToBasis[curved]@ToBasis[curved]@CovDToChristoffel@(cd[-i[[-1]]][FF[i[[-1]],-i[[1]]]]+(s par[[2]]par[[3]])/(Sqrt[3]2!2!) epsilon[gg][-i[[1]],-i[[-1]],-i[[-2]],-i[[-3]],-i[[-4]]]FF[i[[-1]],i[[-2]]]FF[i[[-3]],i[[-4]]]/.epsilonToetaDown[gg,curved])
 ]
 ]
 
@@ -4706,6 +4796,7 @@ ChangeXCoord,
 GenerateMetric,
 GenerateFormTensor,
 GenerateVielbein,
+Set$metric,
 
 PrintComputeMetric,
 PrintComputeTensor,
@@ -4715,6 +4806,8 @@ MapSimplify,
 ParallelMapSimplify,
 PrintMapSimplify,
 PrintParallelMapSimplify,
+PrintParallelMapSimplify2,
+PlusParallelMapSimplify,
 
 (*PrepareMetric,
 PrepareChristoffel,
