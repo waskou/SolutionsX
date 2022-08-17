@@ -1,0 +1,332 @@
+<|$info -> <|$name -> "CCLP", $identifier -> "Asymptotic", 
+   $coordinateSystem -> "Hopf2", $ignature -> Lorentzian, $dimension -> 5, 
+   $reference -> <|String -> Hyperlink|>, $comment -> String|>, 
+ $manifold -> <|$ymbol -> CCLP`Asymptotic`Hopf2`Lorentzian`man, 
+   $dimension -> 5, $index -> {CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptA], 
+     CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptB], 
+     CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptC], 
+     CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptD], 
+     CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptE], 
+     CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptF], 
+     CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptG], 
+     CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptH], 
+     CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptI], 
+     CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptJ], 
+     CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptK], 
+     CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptL], 
+     CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptM], 
+     CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptN], 
+     CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptO], 
+     CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptP], 
+     CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptQ], 
+     CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptR], 
+     CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptS], 
+     CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptT], 
+     CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptU], 
+     CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptV], 
+     CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptW], 
+     CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptX], 
+     CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptY], 
+     CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptZ]}|>, 
+ $basis -> <|$curved -> <|$ymbol -> CCLP`Asymptotic`Hopf2`Lorentzian`curved, 
+     $color -> RGBColor[1, 0, 0], $index -> 
+      {CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptA], 
+       CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptB], 
+       CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptC], 
+       CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptD], 
+       CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptE], 
+       CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptF], 
+       CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptG], 
+       CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptH], 
+       CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptI], 
+       CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptJ], 
+       CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptK], 
+       CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptL], 
+       CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptM], 
+       CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptN], 
+       CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptO], 
+       CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptP], 
+       CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptQ], 
+       CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptR], 
+       CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptS], 
+       CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptT], 
+       CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptU], 
+       CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptV], 
+       CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptW], 
+       CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptX], 
+       CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptY], 
+       CCLP`Asymptotic`Hopf2`Lorentzian`\[ScriptZ]}, 
+     $coordinate -> <|0 -> CCLP`Asymptotic`Hopf2`Lorentzian`t, 
+       1 -> CCLP`Asymptotic`Hopf2`Lorentzian`r, 
+       2 -> CCLP`Asymptotic`Hopf2`Lorentzian`\[Theta], 
+       3 -> CCLP`Asymptotic`Hopf2`Lorentzian`\[Phi], 
+       4 -> CCLP`Asymptotic`Hopf2`Lorentzian`\[Psi]|>|>, 
+   $flat -> <|$ymbol -> Symbol, $color -> RGBColor, $index -> {Symbol}|>, 
+   $spin -> <|$ymbol -> Symbol, $color -> RGBColor, $index -> {Symbol}|>, 
+   $internal -> <|$ymbol -> Symbol, $color -> RGBColor, 
+     $index -> {Symbol}|>|>, $constant -> 
+  <|$ymbol -> {CCLP`Asymptotic`Hopf2`Lorentzian`a, 
+     CCLP`Asymptotic`Hopf2`Lorentzian`m, CCLP`Asymptotic`Hopf2`Lorentzian`q, 
+     CCLP`Asymptotic`Hopf2`Lorentzian`g, 
+     CCLP`Asymptotic`Hopf2`Lorentzian`\[Alpha], 
+     CCLP`Asymptotic`Hopf2`Lorentzian`Cx, 
+     CCLP`Asymptotic`Hopf2`Lorentzian`r0, 
+     CCLP`Asymptotic`Hopf2`Lorentzian`f1, 
+     CCLP`Asymptotic`Hopf2`Lorentzian`f2}|>, 
+ $function -> <|$ymbol -> {Symbol}|>, 
+ $assumption -> <|$coordinate -> 
+    {-$infinity < CCLP`Asymptotic`Hopf2`Lorentzian`t < $infinity, 
+     0 < CCLP`Asymptotic`Hopf2`Lorentzian`r < $infinity, 
+     0 < CCLP`Asymptotic`Hopf2`Lorentzian`\[Theta] < Pi, 
+     Inequality[0, LessEqual, CCLP`Asymptotic`Hopf2`Lorentzian`\[Phi], Less, 
+      4*Pi], Inequality[0, LessEqual, 
+      CCLP`Asymptotic`Hopf2`Lorentzian`\[Psi], Less, 2*Pi]}, 
+   $constant -> {0 < CCLP`Asymptotic`Hopf2`Lorentzian`g < $infinity, 
+     0 < CCLP`Asymptotic`Hopf2`Lorentzian`m < $infinity, 
+     -$infinity < CCLP`Asymptotic`Hopf2`Lorentzian`\[Alpha] < $infinity, 
+     -1 < CCLP`Asymptotic`Hopf2`Lorentzian`a*
+       CCLP`Asymptotic`Hopf2`Lorentzian`g < 1, 
+     0 < 2*CCLP`Asymptotic`Hopf2`Lorentzian`a + 
+       CCLP`Asymptotic`Hopf2`Lorentzian`a^2*
+        CCLP`Asymptotic`Hopf2`Lorentzian`g, 
+     0 < CCLP`Asymptotic`Hopf2`Lorentzian`q < 
+      CCLP`Asymptotic`Hopf2`Lorentzian`m/
+       (1 + 2*CCLP`Asymptotic`Hopf2`Lorentzian`a*
+         CCLP`Asymptotic`Hopf2`Lorentzian`g), 
+     0 < CCLP`Asymptotic`Hopf2`Lorentzian`r0 < $infinity}, $function -> {}|>, 
+ $scalar -> <|Symbol -> <|$ymbol -> Symbol, $print -> String, 
+     $internalRank -> Integer, $value -> Rule|>|>, 
+ $form -> <|CCLP`Asymptotic`Hopf2`Lorentzian`A -> 
+    <|$ymbol -> CCLP`Asymptotic`Hopf2`Lorentzian`fA, $print -> "A", 
+     $rank -> 1, $internalRank -> 0, $expression -> 
+      CCLP`Asymptotic`Hopf2`Lorentzian`\[Alpha]*
+        Diff[CCLP`Asymptotic`Hopf2`Lorentzian`t[], PD] + 
+       (-2*Sqrt[3]*CCLP`Asymptotic`Hopf2`Lorentzian`q*
+          Diff[CCLP`Asymptotic`Hopf2`Lorentzian`t[], PD] + 
+         Sqrt[3]*CCLP`Asymptotic`Hopf2`Lorentzian`a*
+          CCLP`Asymptotic`Hopf2`Lorentzian`q*
+          Diff[CCLP`Asymptotic`Hopf2`Lorentzian`\[Phi][], PD] + 
+         Sqrt[3]*CCLP`Asymptotic`Hopf2`Lorentzian`a*
+          CCLP`Asymptotic`Hopf2`Lorentzian`q*
+          Cos[CCLP`Asymptotic`Hopf2`Lorentzian`\[Theta][]]*
+          Diff[CCLP`Asymptotic`Hopf2`Lorentzian`\[Psi][], PD])/
+        (2*CCLP`Asymptotic`Hopf2`Lorentzian`Cx*
+         (-1 + CCLP`Asymptotic`Hopf2`Lorentzian`a^2*
+           CCLP`Asymptotic`Hopf2`Lorentzian`g^2)*
+         CCLP`Asymptotic`Hopf2`Lorentzian`r[]^2)|>, 
+   CCLP`Asymptotic`Hopf2`Lorentzian`F -> 
+    <|$ymbol -> CCLP`Asymptotic`Hopf2`Lorentzian`fF, $print -> "F", 
+     $rank -> 2, $internalRank -> 0, $expression -> 
+      (((4*Sqrt[3]*CCLP`Asymptotic`Hopf2`Lorentzian`q*
+            Diff[CCLP`Asymptotic`Hopf2`Lorentzian`r[], PD] \[Wedge] 
+             Diff[CCLP`Asymptotic`Hopf2`Lorentzian`t[], PD])/
+           CCLP`Asymptotic`Hopf2`Lorentzian`r[]^3 - 
+          (2*Sqrt[3]*CCLP`Asymptotic`Hopf2`Lorentzian`a*
+            CCLP`Asymptotic`Hopf2`Lorentzian`q*
+            Diff[CCLP`Asymptotic`Hopf2`Lorentzian`r[], PD] \[Wedge] 
+             Diff[CCLP`Asymptotic`Hopf2`Lorentzian`\[Phi][], PD])/
+           CCLP`Asymptotic`Hopf2`Lorentzian`r[]^3 - 
+          (2*Sqrt[3]*CCLP`Asymptotic`Hopf2`Lorentzian`a*
+            CCLP`Asymptotic`Hopf2`Lorentzian`q*
+            Cos[CCLP`Asymptotic`Hopf2`Lorentzian`\[Theta][]]*
+            Diff[CCLP`Asymptotic`Hopf2`Lorentzian`r[], PD] \[Wedge] 
+             Diff[CCLP`Asymptotic`Hopf2`Lorentzian`\[Psi][], PD])/
+           CCLP`Asymptotic`Hopf2`Lorentzian`r[]^3)/
+         (-1 + CCLP`Asymptotic`Hopf2`Lorentzian`a^2*
+           CCLP`Asymptotic`Hopf2`Lorentzian`g^2) - 
+        (Sqrt[3]*CCLP`Asymptotic`Hopf2`Lorentzian`a*
+          CCLP`Asymptotic`Hopf2`Lorentzian`q*
+          Sin[CCLP`Asymptotic`Hopf2`Lorentzian`\[Theta][]]*
+          Diff[CCLP`Asymptotic`Hopf2`Lorentzian`\[Theta][], PD] \[Wedge] 
+           Diff[CCLP`Asymptotic`Hopf2`Lorentzian`\[Psi][], PD])/
+         ((-1 + CCLP`Asymptotic`Hopf2`Lorentzian`a^2*
+            CCLP`Asymptotic`Hopf2`Lorentzian`g^2)*
+          CCLP`Asymptotic`Hopf2`Lorentzian`r[]^2))/
+       (2*CCLP`Asymptotic`Hopf2`Lorentzian`Cx)|>|>, 
+ $tensor -> <|CCLP`Asymptotic`Hopf2`Lorentzian`A -> 
+    <|$ymbol -> CCLP`Asymptotic`Hopf2`Lorentzian`AA, $print -> "A", 
+     $rank -> 1, $internalRank -> 0, $ymmetry -> Null, 
+     $value -> Association|>, CCLP`Asymptotic`Hopf2`Lorentzian`F -> 
+    <|$ymbol -> CCLP`Asymptotic`Hopf2`Lorentzian`FF, $print -> "F", 
+     $rank -> 2, $internalRank -> 0, $ymmetry -> Antisymmetric[{1, 2}], 
+     $value -> Association|>|>, 
+ $metric -> <|$curved -> <|$ignature -> -1, 
+     $covd -> CCLP`Asymptotic`Hopf2`Lorentzian`cd, 
+     $ds2 -> (Diff[CCLP`Asymptotic`Hopf2`Lorentzian`r[], PD] \[CircleTimes] 
+         Diff[CCLP`Asymptotic`Hopf2`Lorentzian`r[], PD])/
+        (CCLP`Asymptotic`Hopf2`Lorentzian`g^2*
+         CCLP`Asymptotic`Hopf2`Lorentzian`r[]^2) - 
+       (CCLP`Asymptotic`Hopf2`Lorentzian`a*
+         (2*CCLP`Asymptotic`Hopf2`Lorentzian`m + 
+          CCLP`Asymptotic`Hopf2`Lorentzian`q + 
+          CCLP`Asymptotic`Hopf2`Lorentzian`a^2*
+           CCLP`Asymptotic`Hopf2`Lorentzian`g^2*
+           CCLP`Asymptotic`Hopf2`Lorentzian`q)*
+         Diff[CCLP`Asymptotic`Hopf2`Lorentzian`t[], PD] \[CircleTimes] 
+          Diff[CCLP`Asymptotic`Hopf2`Lorentzian`\[Phi][], PD])/
+        ((-1 + CCLP`Asymptotic`Hopf2`Lorentzian`a^2*
+            CCLP`Asymptotic`Hopf2`Lorentzian`g^2)^2*
+         CCLP`Asymptotic`Hopf2`Lorentzian`r[]^2) - 
+       (CCLP`Asymptotic`Hopf2`Lorentzian`a*
+         (2*CCLP`Asymptotic`Hopf2`Lorentzian`m + 
+          CCLP`Asymptotic`Hopf2`Lorentzian`q + 
+          CCLP`Asymptotic`Hopf2`Lorentzian`a^2*
+           CCLP`Asymptotic`Hopf2`Lorentzian`g^2*
+           CCLP`Asymptotic`Hopf2`Lorentzian`q)*
+         Diff[CCLP`Asymptotic`Hopf2`Lorentzian`t[], PD] \[CircleTimes] 
+          Diff[CCLP`Asymptotic`Hopf2`Lorentzian`\[Psi][], PD]*
+         Cos[CCLP`Asymptotic`Hopf2`Lorentzian`\[Theta][]])/
+        ((-1 + CCLP`Asymptotic`Hopf2`Lorentzian`a^2*
+            CCLP`Asymptotic`Hopf2`Lorentzian`g^2)^2*
+         CCLP`Asymptotic`Hopf2`Lorentzian`r[]^2) + 
+       Diff[CCLP`Asymptotic`Hopf2`Lorentzian`\[Theta][], PD] \[CircleTimes] 
+         Diff[CCLP`Asymptotic`Hopf2`Lorentzian`\[Theta][], PD]*
+        (-1/8*1/CCLP`Asymptotic`Hopf2`Lorentzian`g^2 + 
+         (1 - 2*CCLP`Asymptotic`Hopf2`Lorentzian`a^2*
+            CCLP`Asymptotic`Hopf2`Lorentzian`g^2 + 
+           CCLP`Asymptotic`Hopf2`Lorentzian`a^4*
+            CCLP`Asymptotic`Hopf2`Lorentzian`g^4 + 
+           8*CCLP`Asymptotic`Hopf2`Lorentzian`g^2*
+            CCLP`Asymptotic`Hopf2`Lorentzian`m)/
+          ((64*CCLP`Asymptotic`Hopf2`Lorentzian`g^4 - 
+            64*CCLP`Asymptotic`Hopf2`Lorentzian`a^2*
+             CCLP`Asymptotic`Hopf2`Lorentzian`g^6)*
+           CCLP`Asymptotic`Hopf2`Lorentzian`r[]^2) + 
+         CCLP`Asymptotic`Hopf2`Lorentzian`r[]^2/
+          (4 - 4*CCLP`Asymptotic`Hopf2`Lorentzian`a^2*
+            CCLP`Asymptotic`Hopf2`Lorentzian`g^2)) + 
+       Diff[CCLP`Asymptotic`Hopf2`Lorentzian`\[Phi][], PD] \[CircleTimes] 
+         Diff[CCLP`Asymptotic`Hopf2`Lorentzian`\[Phi][], PD]*
+        (-1/8*1/CCLP`Asymptotic`Hopf2`Lorentzian`g^2 + 
+         (1 + 3*CCLP`Asymptotic`Hopf2`Lorentzian`a^4*
+            CCLP`Asymptotic`Hopf2`Lorentzian`g^4 - 
+           CCLP`Asymptotic`Hopf2`Lorentzian`a^6*
+            CCLP`Asymptotic`Hopf2`Lorentzian`g^6 + 
+           8*CCLP`Asymptotic`Hopf2`Lorentzian`g^2*
+            CCLP`Asymptotic`Hopf2`Lorentzian`m + 
+           CCLP`Asymptotic`Hopf2`Lorentzian`a^2*
+            CCLP`Asymptotic`Hopf2`Lorentzian`g^2*
+            (-3 + 8*CCLP`Asymptotic`Hopf2`Lorentzian`g^2*
+              (3*CCLP`Asymptotic`Hopf2`Lorentzian`m + 4*
+                CCLP`Asymptotic`Hopf2`Lorentzian`q)))/
+          (64*CCLP`Asymptotic`Hopf2`Lorentzian`g^4*
+           (-1 + CCLP`Asymptotic`Hopf2`Lorentzian`a^2*
+              CCLP`Asymptotic`Hopf2`Lorentzian`g^2)^2*
+           CCLP`Asymptotic`Hopf2`Lorentzian`r[]^2) + 
+         CCLP`Asymptotic`Hopf2`Lorentzian`r[]^2/
+          (4 - 4*CCLP`Asymptotic`Hopf2`Lorentzian`a^2*
+            CCLP`Asymptotic`Hopf2`Lorentzian`g^2)) + 
+       Diff[CCLP`Asymptotic`Hopf2`Lorentzian`\[Psi][], PD] \[CircleTimes] 
+         Diff[CCLP`Asymptotic`Hopf2`Lorentzian`\[Psi][], PD]*
+        (-1/8*1/CCLP`Asymptotic`Hopf2`Lorentzian`g^2 + 
+         (1 + 3*CCLP`Asymptotic`Hopf2`Lorentzian`a^4*
+            CCLP`Asymptotic`Hopf2`Lorentzian`g^4 - 
+           CCLP`Asymptotic`Hopf2`Lorentzian`a^6*
+            CCLP`Asymptotic`Hopf2`Lorentzian`g^6 + 
+           8*CCLP`Asymptotic`Hopf2`Lorentzian`g^2*
+            CCLP`Asymptotic`Hopf2`Lorentzian`m + 
+           CCLP`Asymptotic`Hopf2`Lorentzian`a^2*
+            CCLP`Asymptotic`Hopf2`Lorentzian`g^2*
+            (-3 + 8*CCLP`Asymptotic`Hopf2`Lorentzian`g^2*
+              (CCLP`Asymptotic`Hopf2`Lorentzian`m + 2*
+                CCLP`Asymptotic`Hopf2`Lorentzian`q)) + 
+           16*CCLP`Asymptotic`Hopf2`Lorentzian`a^2*
+            CCLP`Asymptotic`Hopf2`Lorentzian`g^4*
+            (CCLP`Asymptotic`Hopf2`Lorentzian`m + 
+             CCLP`Asymptotic`Hopf2`Lorentzian`q)*
+            Cos[2*CCLP`Asymptotic`Hopf2`Lorentzian`\[Theta][]])/
+          (64*CCLP`Asymptotic`Hopf2`Lorentzian`g^4*
+           (-1 + CCLP`Asymptotic`Hopf2`Lorentzian`a^2*
+              CCLP`Asymptotic`Hopf2`Lorentzian`g^2)^2*
+           CCLP`Asymptotic`Hopf2`Lorentzian`r[]^2) + 
+         CCLP`Asymptotic`Hopf2`Lorentzian`r[]^2/
+          (4 - 4*CCLP`Asymptotic`Hopf2`Lorentzian`a^2*
+            CCLP`Asymptotic`Hopf2`Lorentzian`g^2)) + 
+       Diff[CCLP`Asymptotic`Hopf2`Lorentzian`t[], PD] \[CircleTimes] 
+         Diff[CCLP`Asymptotic`Hopf2`Lorentzian`t[], PD]*
+        (-1/2 + (-1 - 3*CCLP`Asymptotic`Hopf2`Lorentzian`a^4*
+            CCLP`Asymptotic`Hopf2`Lorentzian`g^4 + 
+           CCLP`Asymptotic`Hopf2`Lorentzian`a^6*
+            CCLP`Asymptotic`Hopf2`Lorentzian`g^6 + 
+           24*CCLP`Asymptotic`Hopf2`Lorentzian`g^2*
+            CCLP`Asymptotic`Hopf2`Lorentzian`m + 
+           CCLP`Asymptotic`Hopf2`Lorentzian`a^2*
+            CCLP`Asymptotic`Hopf2`Lorentzian`g^2*
+            (3 + 8*CCLP`Asymptotic`Hopf2`Lorentzian`g^2*
+              (CCLP`Asymptotic`Hopf2`Lorentzian`m + 4*
+                CCLP`Asymptotic`Hopf2`Lorentzian`q)))/
+          (16*CCLP`Asymptotic`Hopf2`Lorentzian`g^2*
+           (-1 + CCLP`Asymptotic`Hopf2`Lorentzian`a^2*
+              CCLP`Asymptotic`Hopf2`Lorentzian`g^2)^2*
+           CCLP`Asymptotic`Hopf2`Lorentzian`r[]^2) + 
+         (CCLP`Asymptotic`Hopf2`Lorentzian`g^2*
+           CCLP`Asymptotic`Hopf2`Lorentzian`r[]^2)/
+          (-1 + CCLP`Asymptotic`Hopf2`Lorentzian`a^2*
+            CCLP`Asymptotic`Hopf2`Lorentzian`g^2)) + 
+       2*Diff[CCLP`Asymptotic`Hopf2`Lorentzian`\[Phi][], PD] \[CircleTimes] 
+         Diff[CCLP`Asymptotic`Hopf2`Lorentzian`\[Psi][], PD]*
+        (-1/8*Cos[CCLP`Asymptotic`Hopf2`Lorentzian`\[Theta][]]/
+           CCLP`Asymptotic`Hopf2`Lorentzian`g^2 - 
+         ((-1 - 3*CCLP`Asymptotic`Hopf2`Lorentzian`a^4*
+             CCLP`Asymptotic`Hopf2`Lorentzian`g^4 + 
+            CCLP`Asymptotic`Hopf2`Lorentzian`a^6*
+             CCLP`Asymptotic`Hopf2`Lorentzian`g^6 - 
+            8*CCLP`Asymptotic`Hopf2`Lorentzian`g^2*
+             CCLP`Asymptotic`Hopf2`Lorentzian`m + 
+            CCLP`Asymptotic`Hopf2`Lorentzian`a^2*
+             (3*CCLP`Asymptotic`Hopf2`Lorentzian`g^2 - 
+              8*CCLP`Asymptotic`Hopf2`Lorentzian`g^4*(
+                3*CCLP`Asymptotic`Hopf2`Lorentzian`m + 
+                4*CCLP`Asymptotic`Hopf2`Lorentzian`q)))*
+           Cos[CCLP`Asymptotic`Hopf2`Lorentzian`\[Theta][]])/
+          (64*CCLP`Asymptotic`Hopf2`Lorentzian`g^4*
+           (-1 + CCLP`Asymptotic`Hopf2`Lorentzian`a^2*
+              CCLP`Asymptotic`Hopf2`Lorentzian`g^2)^2*
+           CCLP`Asymptotic`Hopf2`Lorentzian`r[]^2) + 
+         (Cos[CCLP`Asymptotic`Hopf2`Lorentzian`\[Theta][]]*
+           CCLP`Asymptotic`Hopf2`Lorentzian`r[]^2)/
+          (4 - 4*CCLP`Asymptotic`Hopf2`Lorentzian`a^2*
+            CCLP`Asymptotic`Hopf2`Lorentzian`g^2)), 
+     $tensor -> <|$ymbol -> CCLP`Asymptotic`Hopf2`Lorentzian`gg, 
+       $print -> "g", $value -> Association|>, $christoffel -> 
+      <|$ymbol -> CCLP`Asymptotic`Hopf2`Lorentzian`Christoffelcd, 
+       $value -> Association|>, $riemann -> 
+      <|$ymbol -> CCLP`Asymptotic`Hopf2`Lorentzian`Riemanncd, 
+       $value -> Association|>, $ricci -> 
+      <|$ymbol -> CCLP`Asymptotic`Hopf2`Lorentzian`Riccicd, 
+       $value -> Association|>, $ricciScalar -> 
+      <|$ymbol -> CCLP`Asymptotic`Hopf2`Lorentzian`RicciScalarcd, 
+       $value -> Rule|>, $det -> 
+      <|$ymbol -> CCLP`Asymptotic`Hopf2`Lorentzian`Detggcurved, 
+       $value -> Rule|>|>, $flat -> 
+    <|$tensor -> <|$ymbol -> Symbol, $print -> String, 
+       $value -> Association|>|>, $internal -> <|$ignature -> 1 || -1, 
+     $covd -> Symbol, $ds2 -> Plus, $tensor -> <|$ymbol -> Symbol, 
+       $print -> String, $value -> Association|>, 
+     $christoffel -> <|$ymbol -> Symbol, $value -> Association|>, 
+     $riemann -> <|$ymbol -> Symbol, $value -> Association|>, 
+     $ricci -> <|$ymbol -> Symbol, $value -> Association|>, 
+     $ricciScalar -> <|$ymbol -> Symbol, $value -> Rule|>, 
+     $det -> <|$ymbol -> Symbol, $value -> Rule|>|>|>, 
+ $frame -> <|$form -> <|Integer -> <|$ymbol -> Symbol, $print -> String, 
+       $expression -> Plus || Times || Power || Diff|>|>, 
+   $vielbein -> <|$ymbol -> Symbol, $print -> String, 
+     $value -> Association|>, $spinConnection -> <|$ymbol -> Symbol, 
+     $print -> String, $value -> Association|>|>, 
+ $gamma -> <|$flatGammaU -> 
+    <|Integer -> {{Integer || Real || Rational || Complex}}|>, 
+   $flat -> <|Integer -> <|$ymbol -> Symbol, $value -> Association|>|>, 
+   $curved -> <|Integer -> <|$ymbol -> Symbol, $value -> Association|>|>, 
+   $internal -> <|Integer -> <|$ymbol -> Symbol, $value -> Association|>|>|>, 
+ $pinor -> <|Symbol -> <|$ymbol -> Symbol, $print -> String, 
+     $type -> Dirac || Majorana, $internalRank -> Integer, 
+     $value -> Association|>|>, 
+ $rule -> <|CCLP`Asymptotic`Hopf2`Lorentzian`const -> 
+    {CCLP`Asymptotic`Hopf2`Lorentzian`f1 -> 
+      -1/4*(1 + CCLP`Asymptotic`Hopf2`Lorentzian`a^2*
+          CCLP`Asymptotic`Hopf2`Lorentzian`g^2)/
+        CCLP`Asymptotic`Hopf2`Lorentzian`g^2, 
+     CCLP`Asymptotic`Hopf2`Lorentzian`f2 -> 
+      -1/8*(CCLP`Asymptotic`Hopf2`Lorentzian`a^2 - 
+         2*CCLP`Asymptotic`Hopf2`Lorentzian`m)/
+        CCLP`Asymptotic`Hopf2`Lorentzian`g^2}|>|>

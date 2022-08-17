@@ -153,8 +153,12 @@ black hole."|>, $manifold -> <|$ymbol -> CCLP`Bulk`Hopf1`Lorentzian`man,
       $infinity, 0 < CCLP`Bulk`Hopf1`Lorentzian`r < $infinity, 
      0 < CCLP`Bulk`Hopf1`Lorentzian`c\[Eta] < 1, Inequality[0, LessEqual, 
       CCLP`Bulk`Hopf1`Lorentzian`\[Xi]1, Less, 2*Pi], 
-     Inequality[0, LessEqual, CCLP`Bulk`Hopf1`Lorentzian`\[Xi]2, Less, 
-      2*Pi]}, $constant -> {0 < CCLP`Bulk`Hopf1`Lorentzian`g < $infinity, 
+     Inequality[0, LessEqual, CCLP`Bulk`Hopf1`Lorentzian`\[Xi]2, Less, 2*Pi], 
+     CCLP`Bulk`Hopf1`Lorentzian`a + CCLP`Bulk`Hopf1`Lorentzian`b + 
+       CCLP`Bulk`Hopf1`Lorentzian`a*CCLP`Bulk`Hopf1`Lorentzian`b*
+        CCLP`Bulk`Hopf1`Lorentzian`g < CCLP`Bulk`Hopf1`Lorentzian`g*
+       CCLP`Bulk`Hopf1`Lorentzian`r^2}, 
+   $constant -> {0 < CCLP`Bulk`Hopf1`Lorentzian`g < $infinity, 
      0 < CCLP`Bulk`Hopf1`Lorentzian`m < $infinity, 
      -$infinity < CCLP`Bulk`Hopf1`Lorentzian`\[Alpha] < $infinity, 
      -1 < CCLP`Bulk`Hopf1`Lorentzian`a*CCLP`Bulk`Hopf1`Lorentzian`g < 1, 

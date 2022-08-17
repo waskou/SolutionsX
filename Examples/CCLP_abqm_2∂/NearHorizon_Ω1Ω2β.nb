@@ -1,0 +1,4188 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    146679,       4180]
+NotebookOptionsPosition[    138049,       4061]
+NotebookOutlinePosition[    138557,       4079]
+CellTagsIndexPosition[    138514,       4076]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[
+ RowBox[{"<<", "SolutionsX`"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.8688670764524813`*^9, 3.868867079832658*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"c31a9afe-27d0-47dd-9c79-f81987dea443"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.86893854218795*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"d06ea06f-1e6d-4f39-bcd6-2eeddecd2212"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`xPerm`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"1.2.3\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2015", ",", "8", ",", "23"}], "}"}]}],
+  SequenceForm["Package xAct`xPerm`  version ", "1.2.3", ", ", {2015, 8, 23}],
+  
+  Editable->False]], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.868938542194188*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"7a4b11d4-55d5-4b5c-a413-fdbf9f552478"],
+
+Cell[BoxData["\<\"CopyRight (C) 2003-2020, Jose M. Martin-Garcia, under the \
+General Public License.\"\>"], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.868938542196979*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"880a8f64-c8d6-42a7-8adc-a24ad2c66f00"],
+
+Cell[BoxData["\<\"Connecting to external linux executable...\"\>"], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.868938542281107*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"116f8228-c950-406e-ae15-321decc32220"],
+
+Cell[BoxData["\<\"Connection established.\"\>"], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.8689385423566847`*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"cf233438-2c34-460e-9378-3a17677b16b1"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.868938542357915*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"48fbf7b3-9812-4443-8010-50a4a9ceddbe"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`xTensor`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"1.1.5\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2021", ",", "2", ",", "28"}], "}"}]}],
+  SequenceForm[
+  "Package xAct`xTensor`  version ", "1.1.5", ", ", {2021, 2, 28}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.86893854235892*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"44142917-e451-4604-9f5e-c80f4216fe10"],
+
+Cell[BoxData["\<\"CopyRight (C) 2002-2021, Jose M. Martin-Garcia, under the \
+General Public License.\"\>"], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.868938542359706*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"09b85482-f8ad-4675-a284-6b3018e0a4e7"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.8689385425856123`*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"c1bf250f-40a3-4db9-b6ce-4a6bc02fcc0d"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`xPert`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"1.0.6\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2018", ",", "2", ",", "28"}], "}"}]}],
+  SequenceForm["Package xAct`xPert`  version ", "1.0.6", ", ", {2018, 2, 28}],
+  
+  Editable->False]], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.868938542587463*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"dcbc653e-010c-45a5-856f-67571d4b5f0e"],
+
+Cell[BoxData["\<\"CopyRight (C) 2005-2020, David Brizuela, Jose M. \
+Martin-Garcia and Guillermo A. Mena Marugan, under the General Public \
+License.\"\>"], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.868938542588978*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"0c87fe2e-ab52-43fd-8525-dccaade3d1b7"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** Variable \"\>", "\[InvisibleSpace]", "$PrePrint", 
+   "\[InvisibleSpace]", "\<\" assigned value \"\>", "\[InvisibleSpace]", 
+   "ScreenDollarIndices"}],
+  SequenceForm[
+  "** Variable ", $PrePrint, " assigned value ", 
+   xAct`xTensor`ScreenDollarIndices],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.868938542612158*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"b3866df9-2769-4da3-be01-740f12ac0a9a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** Variable \"\>", "\[InvisibleSpace]", "$CovDFormat", 
+   "\[InvisibleSpace]", "\<\" changed from \"\>", 
+   "\[InvisibleSpace]", "\<\"Prefix\"\>", "\[InvisibleSpace]", "\<\" to \"\>",
+    "\[InvisibleSpace]", "\<\"Postfix\"\>"}],
+  SequenceForm[
+  "** Variable ", xAct`xTensor`$CovDFormat, " changed from ", "Prefix", 
+   " to ", "Postfix"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.868938542613702*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"d7c18e55-1bc7-4eef-ba41-5c93fcc83a53"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** Option \"\>", "\[InvisibleSpace]", "AllowUpperDerivatives", 
+   "\[InvisibleSpace]", "\<\" of \"\>", "\[InvisibleSpace]", "ContractMetric",
+    "\[InvisibleSpace]", "\<\" changed from \"\>", "\[InvisibleSpace]", 
+   "False", "\[InvisibleSpace]", "\<\" to \"\>", "\[InvisibleSpace]", "True"}],
+  SequenceForm[
+  "** Option ", xAct`xTensor`AllowUpperDerivatives, " of ", 
+   xAct`xTensor`ContractMetric, " changed from ", False, " to ", True],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.868938542615106*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"215fcab0-7a86-4c39-a197-dbf2014ac732"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** Option \"\>", "\[InvisibleSpace]", "MetricOn", 
+   "\[InvisibleSpace]", "\<\" of \"\>", "\[InvisibleSpace]", "MakeRule", 
+   "\[InvisibleSpace]", "\<\" changed from \"\>", "\[InvisibleSpace]", "None",
+    "\[InvisibleSpace]", "\<\" to \"\>", "\[InvisibleSpace]", "All"}],
+  SequenceForm[
+  "** Option ", xAct`xTensor`MetricOn, " of ", xAct`xTensor`MakeRule, 
+   " changed from ", None, " to ", All],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.868938542616294*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"de20ca94-d914-49f9-9a60-c0caef7b55f5"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** Option \"\>", "\[InvisibleSpace]", "ContractMetrics", 
+   "\[InvisibleSpace]", "\<\" of \"\>", "\[InvisibleSpace]", "MakeRule", 
+   "\[InvisibleSpace]", "\<\" changed from \"\>", "\[InvisibleSpace]", 
+   "False", "\[InvisibleSpace]", "\<\" to \"\>", "\[InvisibleSpace]", "True"}],
+  SequenceForm[
+  "** Option ", xAct`xTensor`ContractMetrics, " of ", xAct`xTensor`MakeRule, 
+   " changed from ", False, " to ", True],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.8689385426174192`*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"a7b2480b-aaa9-4f9b-a2f5-5b6899e34e3b"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.868938542636292*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"1e4e7d9a-cfd8-42ad-858f-1bc3a35a6413"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`Invar`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"2.0.5\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2013", ",", "7", ",", "1"}], "}"}]}],
+  SequenceForm["Package xAct`Invar`  version ", "2.0.5", ", ", {2013, 7, 1}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.868938542638476*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"01c5fc68-748a-4428-a680-30a98790bcf4"],
+
+Cell[BoxData["\<\"CopyRight (C) 2006-2020, J. M. Martin-Garcia, D. Yllanes \
+and R. Portugal, under the General Public License.\"\>"], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.868938542640025*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"dd1f6f1c-ba4c-4372-af72-a4ab1e91b948"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefConstantSymbol", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"constant symbol \"\>", "\[InvisibleSpace]", 
+   "sigma", "\[InvisibleSpace]", "\<\". \"\>", 
+   "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm[
+  "** ", xAct`xTensor`DefConstantSymbol, ": Defining ", "constant symbol ", 
+   xAct`Invar`sigma, ". ", ""],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.8689385426650953`*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"c157d378-6c9a-4048-9a97-8c5c66046c61"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** \"\>", "\[InvisibleSpace]", "DefConstantSymbol", 
+   "\[InvisibleSpace]", "\<\": Defining \"\>", 
+   "\[InvisibleSpace]", "\<\"constant symbol \"\>", "\[InvisibleSpace]", 
+   "dim", "\[InvisibleSpace]", "\<\". \"\>", "\[InvisibleSpace]", "\<\"\"\>"}],
+  SequenceForm[
+  "** ", xAct`xTensor`DefConstantSymbol, ": Defining ", "constant symbol ", 
+   xAct`Invar`dim, ". ", ""],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.8689385426666822`*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"d5518218-ec56-4c70-a63d-33d7fdf9e38c"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** Option \"\>", "\[InvisibleSpace]", "CurvatureRelations", 
+   "\[InvisibleSpace]", "\<\" of \"\>", "\[InvisibleSpace]", "DefCovD", 
+   "\[InvisibleSpace]", "\<\" changed from \"\>", "\[InvisibleSpace]", "True",
+    "\[InvisibleSpace]", "\<\" to \"\>", "\[InvisibleSpace]", "False"}],
+  SequenceForm[
+  "** Option ", xAct`xTensor`CurvatureRelations, " of ", xAct`xTensor`DefCovD,
+    " changed from ", True, " to ", False],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.868938542668022*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"6b1bbdbc-1c42-4c4e-a0bb-3de85729d82a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** Variable \"\>", "\[InvisibleSpace]", 
+   "$CommuteCovDsOnScalars", "\[InvisibleSpace]", "\<\" changed from \"\>", 
+   "\[InvisibleSpace]", "True", "\[InvisibleSpace]", "\<\" to \"\>", 
+   "\[InvisibleSpace]", "False"}],
+  SequenceForm[
+  "** Variable ", xAct`xTensor`$CommuteCovDsOnScalars, " changed from ", True,
+    " to ", False],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.868938542669138*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"a6031e8d-d997-4867-bbf0-787612eb80d9"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.868938542698697*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"28d55076-bb78-4f21-bbf4-a0e217af0a44"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`xCoba`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"0.8.6\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2021", ",", "2", ",", "28"}], "}"}]}],
+  SequenceForm["Package xAct`xCoba`  version ", "0.8.6", ", ", {2021, 2, 28}],
+  
+  Editable->False]], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.868938542700645*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"3dd71185-40c1-4903-892a-c1db77df540b"],
+
+Cell[BoxData["\<\"CopyRight (C) 2005-2021, David Yllanes and Jose M. \
+Martin-Garcia, under the General Public License.\"\>"], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.868938542702158*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"5f55316c-0600-45e2-bea4-02254beba369"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.868938543376391*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"4846907e-8347-45e1-af4f-722a0b9ecdbe"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`SymManipulator`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"0.9.4\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2016", ",", "11", ",", "29"}], "}"}]}],
+  SequenceForm[
+  "Package xAct`SymManipulator`  version ", "0.9.4", ", ", {2016, 11, 29}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.868938543377962*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"7a473ba0-b62d-4953-8238-7a25b4a6d289"],
+
+Cell[BoxData["\<\"CopyRight (C) 2011-2016, Thomas B\[ADoubleDot]ckdahl, under \
+the General Public License.\"\>"], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.868938543379154*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"b3370c69-1a48-431b-b6f2-15dab0fad63f"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.8689385434565277`*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"b4cf8224-cacc-409e-aea9-d0e5d80ff520"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`xTras`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"1.4.2\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2014", ",", "10", ",", "30"}], "}"}]}],
+  SequenceForm["Package xAct`xTras`  version ", "1.4.2", ", ", {2014, 10, 30}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.86893854345813*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"e3843492-e310-48f1-8ae6-a5327d43ad1e"],
+
+Cell[BoxData["\<\"CopyRight (C) 2012-2014, Teake Nutma, under the General \
+Public License.\"\>"], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.868938543459362*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"04beb5d8-0e1d-404d-9adb-4fcc70253e55"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** Variable \"\>", "\[InvisibleSpace]", "$CovDFormat", 
+   "\[InvisibleSpace]", "\<\" changed from \"\>", 
+   "\[InvisibleSpace]", "\<\"Postfix\"\>", 
+   "\[InvisibleSpace]", "\<\" to \"\>", 
+   "\[InvisibleSpace]", "\<\"Prefix\"\>"}],
+  SequenceForm[
+  "** Variable ", xAct`xTensor`$CovDFormat, " changed from ", "Postfix", 
+   " to ", "Prefix"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.8689385434604*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"a44919f6-056b-4a90-8448-44b5159387f3"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** Option \"\>", "\[InvisibleSpace]", "CurvatureRelations", 
+   "\[InvisibleSpace]", "\<\" of \"\>", "\[InvisibleSpace]", "DefCovD", 
+   "\[InvisibleSpace]", "\<\" changed from \"\>", "\[InvisibleSpace]", 
+   "False", "\[InvisibleSpace]", "\<\" to \"\>", "\[InvisibleSpace]", "True"}],
+  SequenceForm[
+  "** Option ", xAct`xTensor`CurvatureRelations, " of ", xAct`xTensor`DefCovD,
+    " changed from ", False, " to ", True],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.868938543461512*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"4c7d18ec-a4ad-43b7-a7ae-b96292892270"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.8689385448014383`*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"9d642afe-bb6c-4871-869b-aedc13e730ca"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`TexAct`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"0.4.2\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2021", ",", "2", ",", "19"}], "}"}]}],
+  SequenceForm["Package xAct`TexAct`  version ", "0.4.2", ", ", {2021, 2, 19}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.86893854480343*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"f7563d06-a45f-43bb-a3d8-5fc36aa999cd"],
+
+Cell[BoxData["\<\"CopyRight (C) 2008-2021, Thomas B\[ADoubleDot]ckdahl, Jose \
+M. Martin-Garcia and Barry Wardell, under the General Public License.\"\>"], \
+"Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.868938544805038*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"4a8828af-945b-46dc-b3a6-883fd6cb5cd8"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.868938544900507*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"54a25a42-81a1-41d7-97eb-3c58089e913a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`FieldsX` version \"\>", 
+   "\[InvisibleSpace]", "\<\"1.1.3\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2021", ",", "5", ",", "27"}], "}"}]}],
+  SequenceForm["Package xAct`FieldsX` version ", "1.1.3", ", ", {2021, 5, 27}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.868938544903084*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"f4b2d1ff-9bec-4cd0-9750-ce956e42ec85"],
+
+Cell[BoxData["\<\"Copyright \[Copyright] 2019-2021 Markus B. Fr\[ODoubleDot]b \
+under the GNU General Public License.\"\>"], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.868938544905251*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"dbb7540f-dd08-45a1-a803-b50f305041ca"],
+
+Cell[BoxData["\<\"FieldsX uses the Multisets package \[Copyright] 2011 David \
+Bevan under the Wolfram Library Archive License.\"\>"], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.868938544907466*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"43a8b10a-eccc-46d3-aec4-83625ef3e5c2"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"** Variable \"\>", "\[InvisibleSpace]", 
+   "$CommuteCovDsOnScalars", "\[InvisibleSpace]", "\<\" changed from \"\>", 
+   "\[InvisibleSpace]", "False", "\[InvisibleSpace]", "\<\" to \"\>", 
+   "\[InvisibleSpace]", "True"}],
+  SequenceForm[
+  "** Variable ", xAct`xTensor`$CommuteCovDsOnScalars, " changed from ", 
+   False, " to ", True],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.868938544928204*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"b66575fb-0c12-4f22-9af0-807ae83b0c2f"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.8689385451122017`*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"367c3fac-406a-40fb-b868-e306b84e0c91"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package xAct`xTerior`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"0.9.1\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2019", ",", "5", ",", "17"}], "}"}]}],
+  SequenceForm[
+  "Package xAct`xTerior`  version ", "0.9.1", ", ", {2019, 5, 17}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.8689385451139812`*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"f728c56b-3b6c-4f16-bae6-ec7c39d6a2ca"],
+
+Cell[BoxData["\<\"CopyRight (C) 2013, Alfonso Garcia-Parrado Gomez-Lobo and \
+Leo C. Stein, under the General Public License.\"\>"], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.868938545115506*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"127c571d-ae37-452f-bfbf-7f447c02141f"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.8689385451566257`*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"d908e206-a671-4507-afcc-d8e6481c11bf"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Package SolutionsX`SolutionsX`  version \"\>", 
+   "\[InvisibleSpace]", "\<\"0.0.1\"\>", "\[InvisibleSpace]", "\<\", \"\>", 
+   "\[InvisibleSpace]", 
+   RowBox[{"{", 
+    RowBox[{"2022", ",", "3", ",", "28"}], "}"}]}],
+  SequenceForm[
+  "Package SolutionsX`SolutionsX`  version ", "0.0.1", ", ", {2022, 3, 28}],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.868938545158245*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"29efce81-d96c-4fab-84d6-f221dce53408"],
+
+Cell[BoxData["\<\"Copyright (C) 2022, Vasil Dimitrov, under the General \
+Public License.\"\>"], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.868938545159554*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"19b89cb3-ba77-4366-a608-46660d07d4f1"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.868938545160883*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"14ea9eb8-bbb0-4558-930a-9f4c07e2a49b"],
+
+Cell[BoxData["\<\"These packages come with ABSOLUTELY NO WARRANTY; for \
+details type Disclaimer[]. This is free software, and you are welcome to \
+redistribute it under certain conditions. See the General Public License for \
+details.\"\>"], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.868938545162434*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"3cd88282-347f-458b-b543-6ccf38dbe97f"],
+
+Cell[BoxData["\<\"------------------------------------------------------------\
+\"\>"], "Print",
+ CellChangeTimes->{3.86886710180689*^9, 3.868938545165053*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"c39402f0-f7d9-486c-88fc-39b880f7b244"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Potentials from the near horizon geometry", "Section",
+ CellChangeTimes->{{3.8687787090572166`*^9, 
+  3.868778718368206*^9}},ExpressionUUID->"029b5a4e-38bb-4b11-97f0-\
+ccdf6bfb8661"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"LoadSolution", "[", 
+  RowBox[{"{", 
+   RowBox[{
+   "CCLP", ",", "Bulk", ",", "Hopf1", ",", "Lorentzian", ",", 
+    "\"\<thermo2\>\""}], "}"}], "]"}]], "Input",
+ CellChangeTimes->{{3.8687787226788883`*^9, 3.86877873830779*^9}, {
+  3.868778834382143*^9, 3.8687788371650133`*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"d1f5675b-052a-4ecb-a9e1-f6e9ad42fa53"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Defined manifold \"\>", "\[InvisibleSpace]", 
+   StyleBox["\<\"\\!\\(\\*FormBox[\\\"man\\\", TraditionalForm]\\)\"\>",
+    StripOnInput->False,
+    FontColor->RGBColor[0.5, 0, 0.5]], 
+   "\[InvisibleSpace]", "\<\" of dimension \"\>", "\[InvisibleSpace]", 
+   StyleBox["\<\"\\!\\(\\*FormBox[\\\"5\\\", TraditionalForm]\\)\"\>",
+    StripOnInput->False,
+    FontColor->RGBColor[0.5, 0, 0.5]], 
+   "\[InvisibleSpace]", "\<\" with indices \"\>", "\[InvisibleSpace]", 
+   StyleBox["\<\"\\!\\(\\*FormBox[RowBox[{\\\"{\\\", RowBox[{\\\"\[ScriptA]\\\
+\", \\\",\\\", \\\"\[ScriptB]\\\", \\\",\\\", \\\"\[ScriptC]\\\", \\\",\\\", \
+\\\"\[ScriptD]\\\", \\\",\\\", \\\"\[ScriptE]\\\", \\\",\\\", \
+\\\"\[ScriptF]\\\", \\\",\\\", \\\"\[ScriptG]\\\", \\\",\\\", \
+\\\"\[ScriptH]\\\", \\\",\\\", \\\"\[ScriptI]\\\", \\\",\\\", \
+\\\"\[ScriptJ]\\\", \\\",\\\", \\\"\[ScriptK]\\\", \\\",\\\", \
+\\\"\[ScriptL]\\\", \\\",\\\", \\\"\[ScriptM]\\\", \\\",\\\", \
+\\\"\[ScriptN]\\\", \\\",\\\", \\\"\[ScriptO]\\\", \\\",\\\", \
+\\\"\[ScriptP]\\\", \\\",\\\", \\\"\[ScriptQ]\\\", \\\",\\\", \
+\\\"\[ScriptR]\\\", \\\",\\\", \\\"\[ScriptS]\\\", \\\",\\\", \
+\\\"\[ScriptT]\\\", \\\",\\\", \\\"\[ScriptU]\\\", \\\",\\\", \
+\\\"\[ScriptV]\\\", \\\",\\\", \\\"\[ScriptW]\\\", \\\",\\\", \
+\\\"\[ScriptX]\\\", \\\",\\\", \\\"\[ScriptY]\\\", \\\",\\\", \
+\\\"\[ScriptZ]\\\"}], \\\"}\\\"}], TraditionalForm]\\)\"\>",
+    StripOnInput->False,
+    FontColor->RGBColor[0.5, 0, 0.5]]}],
+  SequenceForm["Defined manifold ", 
+   Style["\!\(\*FormBox[\"man\", TraditionalForm]\)", FontColor -> 
+    RGBColor[0.5, 0, 0.5]], " of dimension ", 
+   Style["\!\(\*FormBox[\"5\", TraditionalForm]\)", FontColor -> 
+    RGBColor[0.5, 0, 0.5]], " with indices ", 
+   Style["\!\(\*FormBox[RowBox[{\"{\", RowBox[{\"\[ScriptA]\", \",\", \"\
+\[ScriptB]\", \",\", \"\[ScriptC]\", \",\", \"\[ScriptD]\", \",\", \"\
+\[ScriptE]\", \",\", \"\[ScriptF]\", \",\", \"\[ScriptG]\", \",\", \"\
+\[ScriptH]\", \",\", \"\[ScriptI]\", \",\", \"\[ScriptJ]\", \",\", \"\
+\[ScriptK]\", \",\", \"\[ScriptL]\", \",\", \"\[ScriptM]\", \",\", \"\
+\[ScriptN]\", \",\", \"\[ScriptO]\", \",\", \"\[ScriptP]\", \",\", \"\
+\[ScriptQ]\", \",\", \"\[ScriptR]\", \",\", \"\[ScriptS]\", \",\", \"\
+\[ScriptT]\", \",\", \"\[ScriptU]\", \",\", \"\[ScriptV]\", \",\", \"\
+\[ScriptW]\", \",\", \"\[ScriptX]\", \",\", \"\[ScriptY]\", \",\", \"\
+\[ScriptZ]\"}], \"}\"}], TraditionalForm]\)", FontColor -> 
+    RGBColor[0.5, 0, 0.5]]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.868867112225574*^9},
+ CellLabel->
+  "During evaluation of \
+In[2]:=",ExpressionUUID->"85f583df-14d6-4820-a526-08934a2ec059"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Defined constant symbols \"\>", "\[InvisibleSpace]", 
+   StyleBox["\<\"\\!\\(\\*FormBox[RowBox[{\\\"{\\\", RowBox[{\\\"a\\\", \\\",\
+\\\", \\\"b\\\", \\\",\\\", \\\"m\\\", \\\",\\\", \\\"q\\\", \\\",\\\", \\\"g\
+\\\", \\\",\\\", \\\"\[Alpha]\\\", \\\",\\\", \\\"\[CapitalXi]a\\\", \
+\\\",\\\", \\\"\[CapitalXi]b\\\", \\\",\\\", \\\"Cx\\\", \\\",\\\", \
+\\\"rp\\\", \\\",\\\", \\\"\[CapitalOmega]1\\\", \\\",\\\", \\\"\
+\[CapitalOmega]2\\\", \\\",\\\", \\\"\[Beta]\\\", \\\",\\\", \
+\\\"\[CapitalPhi]\\\"}], \\\"}\\\"}], TraditionalForm]\\)\"\>",
+    StripOnInput->False,
+    FontColor->RGBColor[0.5, 0, 0.5]]}],
+  SequenceForm["Defined constant symbols ", 
+   Style["\!\(\*FormBox[RowBox[{\"{\", RowBox[{\"a\", \",\", \"b\", \",\", \
+\"m\", \",\", \"q\", \",\", \"g\", \",\", \"\[Alpha]\", \",\", \
+\"\[CapitalXi]a\", \",\", \"\[CapitalXi]b\", \",\", \"Cx\", \",\", \"rp\", \
+\",\", \"\[CapitalOmega]1\", \",\", \"\[CapitalOmega]2\", \",\", \"\[Beta]\", \
+\",\", \"\[CapitalPhi]\"}], \"}\"}], TraditionalForm]\)", FontColor -> 
+    RGBColor[0.5, 0, 0.5]]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.868867112241016*^9},
+ CellLabel->
+  "During evaluation of \
+In[2]:=",ExpressionUUID->"5bce1980-bc79-4870-82ac-ff88773f70fb"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Defined scalar functions \"\>", "\[InvisibleSpace]", 
+   StyleBox["\<\"\\!\\(\\*FormBox[RowBox[{\\\"{\\\", RowBox[{\\\"\
+\[CapitalDelta]r\\\", \\\",\\\", \\\"\[CapitalDelta]\[Eta]\\\", \\\",\\\", \\\
+\"\[Rho]2\\\", \\\",\\\", \\\"f\\\"}], \\\"}\\\"}], TraditionalForm]\\)\"\>",
+    StripOnInput->False,
+    FontColor->RGBColor[0.5, 0, 0.5]]}],
+  SequenceForm["Defined scalar functions ", 
+   Style["\!\(\*FormBox[RowBox[{\"{\", RowBox[{\"\[CapitalDelta]r\", \",\", \
+\"\[CapitalDelta]\[Eta]\", \",\", \"\[Rho]2\", \",\", \"f\"}], \"}\"}], \
+TraditionalForm]\)", FontColor -> RGBColor[0.5, 0, 0.5]]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8688671122669687`*^9},
+ CellLabel->
+  "During evaluation of \
+In[2]:=",ExpressionUUID->"fa162fb8-5bc2-478e-8654-e0b220a2623a"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Defined forms \"\>", "\[InvisibleSpace]", 
+   StyleBox["\<\"\\!\\(\\*FormBox[RowBox[{\\\"{\\\", RowBox[{\\\"fA\\\", \
+\\\",\\\", \\\"fF\\\"}], \\\"}\\\"}], TraditionalForm]\\)\"\>",
+    StripOnInput->False,
+    FontColor->RGBColor[0.5, 0, 0.5]], 
+   "\[InvisibleSpace]", "\<\" of ranks \"\>", "\[InvisibleSpace]", 
+   StyleBox["\<\"\\!\\(\\*FormBox[RowBox[{\\\"{\\\", RowBox[{\\\"1\\\", \\\",\
+\\\", \\\"2\\\"}], \\\"}\\\"}], TraditionalForm]\\)\"\>",
+    StripOnInput->False,
+    FontColor->RGBColor[0.5, 0, 0.5]], 
+   "\[InvisibleSpace]", "\<\" on the manifold \"\>", "\[InvisibleSpace]", 
+   StyleBox["\<\"\\!\\(\\*FormBox[\\\"man\\\", TraditionalForm]\\)\"\>",
+    StripOnInput->False,
+    FontColor->RGBColor[0.5, 0, 0.5]]}],
+  SequenceForm["Defined forms ", 
+   Style["\!\(\*FormBox[RowBox[{\"{\", RowBox[{\"fA\", \",\", \"fF\"}], \
+\"}\"}], TraditionalForm]\)", FontColor -> RGBColor[0.5, 0, 0.5]], 
+   " of ranks ", 
+   Style["\!\(\*FormBox[RowBox[{\"{\", RowBox[{\"1\", \",\", \"2\"}], \
+\"}\"}], TraditionalForm]\)", FontColor -> RGBColor[0.5, 0, 0.5]], 
+   " on the manifold ", 
+   Style["\!\(\*FormBox[\"man\", TraditionalForm]\)", FontColor -> 
+    RGBColor[0.5, 0, 0.5]]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.868867112268805*^9},
+ CellLabel->
+  "During evaluation of \
+In[2]:=",ExpressionUUID->"468dcb56-4abf-4b8f-ba0e-97f99fe97ba7"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Defined tensors \"\>", "\[InvisibleSpace]", 
+   StyleBox["\<\"\\!\\(\\*FormBox[RowBox[{\\\"{\\\", RowBox[{\\\"AA\\\", \
+\\\",\\\", \\\"FF\\\", \\\",\\\", \\\"VV\\\"}], \\\"}\\\"}], TraditionalForm]\
+\\)\"\>",
+    StripOnInput->False,
+    FontColor->RGBColor[0.5, 0, 0.5]], 
+   "\[InvisibleSpace]", "\<\" of ranks \"\>", "\[InvisibleSpace]", 
+   StyleBox["\<\"\\!\\(\\*FormBox[RowBox[{\\\"{\\\", RowBox[{\\\"1\\\", \\\",\
+\\\", \\\"2\\\", \\\",\\\", \\\"1\\\"}], \\\"}\\\"}], TraditionalForm]\\)\"\>",
+    StripOnInput->False,
+    FontColor->RGBColor[0.5, 0, 0.5]], 
+   "\[InvisibleSpace]", "\<\" and symmetries \"\>", "\[InvisibleSpace]", 
+   StyleBox["\<\"\\!\\(\\*FormBox[RowBox[{\\\"{\\\", RowBox[{\\\"Null\\\", \\\
+\",\\\", RowBox[{\\\"Antisymmetric\\\", \\\"[\\\", RowBox[{\\\"{\\\", \
+RowBox[{\\\"1\\\", \\\",\\\", \\\"2\\\"}], \\\"}\\\"}], \\\"]\\\"}], \
+\\\",\\\", \\\"Null\\\"}], \\\"}\\\"}], TraditionalForm]\\)\"\>",
+    StripOnInput->False,
+    FontColor->RGBColor[0.5, 0, 0.5]], 
+   "\[InvisibleSpace]", "\<\" on the manifold \"\>", "\[InvisibleSpace]", 
+   StyleBox["\<\"\\!\\(\\*FormBox[\\\"man\\\", TraditionalForm]\\)\"\>",
+    StripOnInput->False,
+    FontColor->RGBColor[0.5, 0, 0.5]]}],
+  SequenceForm["Defined tensors ", 
+   Style["\!\(\*FormBox[RowBox[{\"{\", RowBox[{\"AA\", \",\", \"FF\", \",\", \
+\"VV\"}], \"}\"}], TraditionalForm]\)", FontColor -> RGBColor[0.5, 0, 0.5]], 
+   " of ranks ", 
+   Style["\!\(\*FormBox[RowBox[{\"{\", RowBox[{\"1\", \",\", \"2\", \",\", \
+\"1\"}], \"}\"}], TraditionalForm]\)", FontColor -> RGBColor[0.5, 0, 0.5]], 
+   " and symmetries ", 
+   Style["\!\(\*FormBox[RowBox[{\"{\", RowBox[{\"Null\", \",\", \
+RowBox[{\"Antisymmetric\", \"[\", RowBox[{\"{\", RowBox[{\"1\", \",\", \
+\"2\"}], \"}\"}], \"]\"}], \",\", \"Null\"}], \"}\"}], TraditionalForm]\)", 
+    FontColor -> RGBColor[0.5, 0, 0.5]], " on the manifold ", 
+   Style["\!\(\*FormBox[\"man\", TraditionalForm]\)", FontColor -> 
+    RGBColor[0.5, 0, 0.5]]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.868867112270689*^9},
+ CellLabel->
+  "During evaluation of \
+In[2]:=",ExpressionUUID->"efa6ba67-f4d4-471c-ba40-8a455182e622"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Defined metric \"\>", "\[InvisibleSpace]", 
+   StyleBox["\<\"\\!\\(\\*FormBox[\\\"gg\\\", TraditionalForm]\\)\"\>",
+    StripOnInput->False,
+    FontColor->RGBColor[0.5, 0, 0.5]], 
+   "\[InvisibleSpace]", "\<\" of signature \"\>", "\[InvisibleSpace]", 
+   StyleBox["\<\"\\!\\(\\*FormBox[RowBox[{\\\"-\\\", \\\"1\\\"}], \
+TraditionalForm]\\)\"\>",
+    StripOnInput->False,
+    FontColor->RGBColor[0.5, 0, 0.5]], 
+   "\[InvisibleSpace]", "\<\" and covariant derivative \"\>", 
+   "\[InvisibleSpace]", 
+   StyleBox["\<\"\\!\\(\\*FormBox[\\\"cd\\\", TraditionalForm]\\)\"\>",
+    StripOnInput->False,
+    FontColor->RGBColor[0.5, 0, 0.5]], 
+   "\[InvisibleSpace]", "\<\" on the manifold \"\>", "\[InvisibleSpace]", 
+   StyleBox["\<\"\\!\\(\\*FormBox[\\\"man\\\", TraditionalForm]\\)\"\>",
+    StripOnInput->False,
+    FontColor->RGBColor[0.5, 0, 0.5]]}],
+  SequenceForm["Defined metric ", 
+   Style["\!\(\*FormBox[\"gg\", TraditionalForm]\)", FontColor -> 
+    RGBColor[0.5, 0, 0.5]], " of signature ", 
+   Style["\!\(\*FormBox[RowBox[{\"-\", \"1\"}], TraditionalForm]\)", 
+    FontColor -> RGBColor[0.5, 0, 0.5]], " and covariant derivative ", 
+   Style["\!\(\*FormBox[\"cd\", TraditionalForm]\)", FontColor -> 
+    RGBColor[0.5, 0, 0.5]], " on the manifold ", 
+   Style["\!\(\*FormBox[\"man\", TraditionalForm]\)", FontColor -> 
+    RGBColor[0.5, 0, 0.5]]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.868867112643812*^9},
+ CellLabel->
+  "During evaluation of \
+In[2]:=",ExpressionUUID->"98e7a8c3-7bb0-4c36-9f53-4704c3dd0270"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Defined \"\>", "\[InvisibleSpace]", 
+   TemplateBox[<|"color" -> RGBColor[1, 0, 0]|>,
+    "RGBColorSwatchTemplate"], "\[InvisibleSpace]", "\<\" chart \"\>", 
+   "\[InvisibleSpace]", 
+   StyleBox["\<\"\\!\\(\\*FormBox[\\\"curved\\\", TraditionalForm]\\)\"\>",
+    StripOnInput->False,
+    FontColor->RGBColor[0.5, 0, 0.5]], 
+   "\[InvisibleSpace]", "\<\" with coordinates \"\>", "\[InvisibleSpace]", 
+   StyleBox["\<\"\\!\\(\\*FormBox[RowBox[{\\\"{\\\", \
+RowBox[{RowBox[{\\\"t\\\", \\\"(\\\", \\\")\\\"}], \\\",\\\", RowBox[{\\\"r\\\
+\", \\\"(\\\", \\\")\\\"}], \\\",\\\", RowBox[{\\\"c\[Eta]\\\", \\\"(\\\", \\\
+\")\\\"}], \\\",\\\", RowBox[{\\\"\[Xi]1\\\", \\\"(\\\", \\\")\\\"}], \\\",\\\
+\", RowBox[{\\\"\[Xi]2\\\", \\\"(\\\", \\\")\\\"}]}], \\\"}\\\"}], \
+TraditionalForm]\\)\"\>",
+    StripOnInput->False,
+    FontColor->RGBColor[0.5, 0, 0.5]], 
+   "\[InvisibleSpace]", "\<\" on the manifold \"\>", "\[InvisibleSpace]", 
+   StyleBox["\<\"\\!\\(\\*FormBox[\\\"man\\\", TraditionalForm]\\)\"\>",
+    StripOnInput->False,
+    FontColor->RGBColor[0.5, 0, 0.5]], "\[InvisibleSpace]", "\<\" | Set \"\>",
+    "\[InvisibleSpace]", 
+   StyleBox["\<\"\\!\\(\\*FormBox[\\\"ChristoffelPDcurved\\\", \
+TraditionalForm]\\)\"\>",
+    StripOnInput->False,
+    FontColor->RGBColor[0.5, 0, 0.5]], 
+   "\[InvisibleSpace]", "\<\" to zero\"\>"}],
+  SequenceForm["Defined ", 
+   RGBColor[1, 0, 0], " chart ", 
+   Style["\!\(\*FormBox[\"curved\", TraditionalForm]\)", FontColor -> 
+    RGBColor[0.5, 0, 0.5]], " with coordinates ", 
+   Style["\!\(\*FormBox[RowBox[{\"{\", RowBox[{RowBox[{\"t\", \"(\", \")\"}], \
+\",\", RowBox[{\"r\", \"(\", \")\"}], \",\", RowBox[{\"c\[Eta]\", \"(\", \
+\")\"}], \",\", RowBox[{\"\[Xi]1\", \"(\", \")\"}], \",\", \
+RowBox[{\"\[Xi]2\", \"(\", \")\"}]}], \"}\"}], TraditionalForm]\)", FontColor -> 
+    RGBColor[0.5, 0, 0.5]], " on the manifold ", 
+   Style["\!\(\*FormBox[\"man\", TraditionalForm]\)", FontColor -> 
+    RGBColor[0.5, 0, 0.5]], " | Set ", 
+   Style["\!\(\*FormBox[\"ChristoffelPDcurved\", TraditionalForm]\)", 
+    FontColor -> RGBColor[0.5, 0, 0.5]], " to zero"],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.868867112822797*^9},
+ CellLabel->
+  "During evaluation of \
+In[2]:=",ExpressionUUID->"0aeb7cd0-70dc-453d-96b6-cfa8c1edf49b"],
+
+Cell[BoxData[
+ InterpretationBox[
+  RowBox[{"\<\"Loaded solution version \"\>", "\[InvisibleSpace]", 
+   StyleBox["\<\"\\!\\(\\*FormBox[\\\"1\\\", TraditionalForm]\\)\"\>",
+    StripOnInput->False,
+    FontColor->RGBColor[0.5, 0, 0.5]], "\[InvisibleSpace]", "\<\" from \"\>", 
+   "\[InvisibleSpace]", 
+   StyleBox["\<\"\\!\\(\\*FormBox[\\\"\\\\\\\"/home/vasko/.Mathematica/\
+Applications/SolutionsX/Data/CCLP/Bulk/Hopf1/Lorentzian/thermo2\\\\\\\"\\\", \
+TraditionalForm]\\)\"\>",
+    StripOnInput->False,
+    FontColor->RGBColor[0.5, 0, 0.5]]}],
+  SequenceForm["Loaded solution version ", 
+   Style["\!\(\*FormBox[\"1\", TraditionalForm]\)", FontColor -> 
+    RGBColor[0.5, 0, 0.5]], " from ", 
+   Style["\!\(\*FormBox[\"\\\"/home/vasko/.Mathematica/Applications/\
+SolutionsX/Data/CCLP/Bulk/Hopf1/Lorentzian/thermo2\\\"\", TraditionalForm]\)",
+     FontColor -> RGBColor[0.5, 0, 0.5]]],
+  Editable->False]], "Print",
+ CellChangeTimes->{3.8688671133982*^9},
+ CellLabel->
+  "During evaluation of \
+In[2]:=",ExpressionUUID->"8862231c-de70-4a55-8375-4ed4a535016b"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"f\[Nu]", "[", "]"}], "=", 
+   RowBox[{
+    RowBox[{"b", 
+     RowBox[{"(", 
+      RowBox[{"1", "-", 
+       SuperscriptBox[
+        RowBox[{"c\[Eta]", "[", "]"}], "2"]}], ")"}], 
+     RowBox[{"Diff", "[", 
+      RowBox[{"\[Xi]1", "[", "]"}], "]"}]}], "+", 
+    RowBox[{"a", " ", 
+     SuperscriptBox[
+      RowBox[{"c\[Eta]", "[", "]"}], "2"], 
+     RowBox[{"Diff", "[", 
+      RowBox[{"\[Xi]2", "[", "]"}], "]"}]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"f\[Omega]", "[", "]"}], "=", 
+   RowBox[{
+    RowBox[{
+     FractionBox[
+      RowBox[{"a", 
+       RowBox[{"(", 
+        RowBox[{"1", "-", 
+         SuperscriptBox[
+          RowBox[{"c\[Eta]", "[", "]"}], "2"]}], ")"}]}], "\[CapitalXi]a"], 
+     RowBox[{"Diff", "[", 
+      RowBox[{"\[Xi]1", "[", "]"}], "]"}]}], "+", 
+    RowBox[{
+     FractionBox[
+      RowBox[{"b", " ", 
+       SuperscriptBox[
+        RowBox[{"c\[Eta]", "[", "]"}], "2"]}], "\[CapitalXi]b"], 
+     RowBox[{"Diff", "[", 
+      RowBox[{"\[Xi]2", "[", "]"}], "]"}]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"$olution", "[", 
+    RowBox[{"$metric", ",", "$curved", ",", "$ds2"}], " ", "]"}], "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"\[CapitalDelta]\[Eta]", "[", 
+         RowBox[{"c\[Eta]", "[", "]"}], "]"}], 
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"1", "+", 
+              RowBox[{
+               SuperscriptBox["g", "2"], 
+               SuperscriptBox[
+                RowBox[{"r", "[", "]"}], "2"]}]}], ")"}], 
+            RowBox[{"\[Rho]2", "[", 
+             RowBox[{
+              RowBox[{"r", "[", "]"}], ",", 
+              RowBox[{"c\[Eta]", "[", "]"}]}], "]"}], 
+            RowBox[{"Diff", "[", 
+             RowBox[{"t", "[", "]"}], "]"}]}], "+", 
+           RowBox[{"2", "q", " ", 
+            RowBox[{"f\[Nu]", "[", "]"}]}]}], ")"}], "\[CircleTimes]", 
+         RowBox[{"Diff", "[", 
+          RowBox[{"t", "[", "]"}], "]"}]}]}], 
+       RowBox[{"\[CapitalXi]a", " ", "\[CapitalXi]b", " ", 
+        RowBox[{"\[Rho]2", "[", 
+         RowBox[{
+          RowBox[{"r", "[", "]"}], ",", 
+          RowBox[{"c\[Eta]", "[", "]"}]}], "]"}]}]]}], "+", 
+     FractionBox[
+      RowBox[{"2", "q", " ", 
+       RowBox[{
+        RowBox[{"f\[Nu]", "[", "]"}], " ", "\[CircleTimes]", 
+        RowBox[{"f\[Omega]", "[", "]"}]}]}], 
+      RowBox[{"\[Rho]2", "[", 
+       RowBox[{
+        RowBox[{"r", "[", "]"}], ",", 
+        RowBox[{"c\[Eta]", "[", "]"}]}], "]"}]], "+", 
+     RowBox[{
+      FractionBox[
+       RowBox[{"f", "[", 
+        RowBox[{
+         RowBox[{"r", "[", "]"}], ",", 
+         RowBox[{"c\[Eta]", "[", "]"}]}], "]"}], 
+       SuperscriptBox[
+        RowBox[{"\[Rho]2", "[", 
+         RowBox[{
+          RowBox[{"r", "[", "]"}], ",", 
+          RowBox[{"c\[Eta]", "[", "]"}]}], "]"}], "2"]], 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         FractionBox[
+          RowBox[{
+           RowBox[{"\[CapitalDelta]\[Eta]", "[", 
+            RowBox[{"c\[Eta]", "[", "]"}], "]"}], " ", 
+           RowBox[{"Diff", "[", 
+            RowBox[{"t", "[", "]"}], "]"}]}], 
+          RowBox[{"\[CapitalXi]a", " ", "\[CapitalXi]b"}]], "-", 
+         RowBox[{"f\[Omega]", "[", "]"}]}], ")"}], "\[CircleTimes]", 
+       RowBox[{"(", 
+        RowBox[{
+         FractionBox[
+          RowBox[{
+           RowBox[{"\[CapitalDelta]\[Eta]", "[", 
+            RowBox[{"c\[Eta]", "[", "]"}], "]"}], " ", 
+           RowBox[{"Diff", "[", 
+            RowBox[{"t", "[", "]"}], "]"}]}], 
+          RowBox[{"\[CapitalXi]a", " ", "\[CapitalXi]b"}]], "-", 
+         RowBox[{"f\[Omega]", "[", "]"}]}], ")"}]}]}], "+", 
+     FractionBox[
+      RowBox[{
+       RowBox[{"\[Rho]2", "[", 
+        RowBox[{
+         RowBox[{"r", "[", "]"}], ",", 
+         RowBox[{"c\[Eta]", "[", "]"}]}], "]"}], 
+       RowBox[{
+        RowBox[{"Diff", "[", 
+         RowBox[{"r", "[", "]"}], "]"}], "\[CircleTimes]", 
+        RowBox[{"Diff", "[", 
+         RowBox[{"r", "[", "]"}], "]"}]}]}], 
+      RowBox[{"\[CapitalDelta]r", "[", 
+       RowBox[{"r", "[", "]"}], "]"}]], "+", 
+     FractionBox[
+      RowBox[{
+       RowBox[{"\[Rho]2", "[", 
+        RowBox[{
+         RowBox[{"r", "[", "]"}], ",", 
+         RowBox[{"c\[Eta]", "[", "]"}]}], "]"}], 
+       RowBox[{
+        RowBox[{"Diff", "[", 
+         RowBox[{"c\[Eta]", "[", "]"}], "]"}], "\[CircleTimes]", 
+        RowBox[{"Diff", "[", 
+         RowBox[{"c\[Eta]", "[", "]"}], "]"}]}]}], 
+      RowBox[{
+       RowBox[{"\[CapitalDelta]\[Eta]", "[", 
+        RowBox[{"c\[Eta]", "[", "]"}], "]"}], 
+       RowBox[{"(", 
+        RowBox[{"1", "-", 
+         SuperscriptBox[
+          RowBox[{"c\[Eta]", "[", "]"}], "2"]}], ")"}]}]], "+", 
+     RowBox[{
+      FractionBox[
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"r", "[", "]"}], "2"], "+", 
+        SuperscriptBox["a", "2"]}], "\[CapitalXi]a"], 
+      RowBox[{"(", 
+       RowBox[{"1", "-", 
+        SuperscriptBox[
+         RowBox[{"c\[Eta]", "[", "]"}], "2"]}], ")"}], 
+      RowBox[{
+       RowBox[{"Diff", "[", 
+        RowBox[{"\[Xi]1", "[", "]"}], "]"}], "\[CircleTimes]", 
+       RowBox[{"Diff", "[", 
+        RowBox[{"\[Xi]1", "[", "]"}], "]"}]}]}], "+", 
+     RowBox[{
+      FractionBox[
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"r", "[", "]"}], "2"], "+", 
+        SuperscriptBox["b", "2"]}], "\[CapitalXi]b"], 
+      SuperscriptBox[
+       RowBox[{"c\[Eta]", "[", "]"}], "2"], 
+      RowBox[{
+       RowBox[{"Diff", "[", 
+        RowBox[{"\[Xi]2", "[", "]"}], "]"}], "\[CircleTimes]", 
+       RowBox[{"Diff", "[", 
+        RowBox[{"\[Xi]2", "[", "]"}], "]"}]}]}]}], "/.", 
+    RowBox[{
+     RowBox[{"r", "[", "]"}], "\[Rule]", 
+     RowBox[{"rp", "+", 
+      SuperscriptBox[
+       RowBox[{"r", "[", "]"}], "2"]}]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"met", "=", 
+   RowBox[{
+    RowBox[{"GenerateMetric", "[", "curved", "]"}], "/.", "ToCoord"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"gtt", "=", 
+  RowBox[{"Normal", "@", 
+   RowBox[{"Simplify", "@", 
+    RowBox[{"Series", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"met", "\[LeftDoubleBracket]", 
+         RowBox[{"1", ",", "1"}], "\[RightDoubleBracket]"}], "/.", 
+        RowBox[{
+         RowBox[{"\[CapitalDelta]r", "[", 
+          RowBox[{"rp", "+", 
+           SuperscriptBox["r", "2"]}], "]"}], ":>", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"\[CapitalDelta]r", "'"}], "[", "rp", "]"}], 
+          SuperscriptBox["r", "2"]}]}]}], "/.", 
+       RowBox[{
+        RowBox[{"\[Rho]2", "[", 
+         RowBox[{
+          RowBox[{"rp", "+", 
+           SuperscriptBox["r", "2"]}], ",", "c\[Eta]"}], "]"}], ":>", 
+        RowBox[{
+         RowBox[{"\[Rho]2", "[", 
+          RowBox[{"rp", ",", "c\[Eta]"}], "]"}], "+", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"D", "[", 
+             RowBox[{
+              RowBox[{"\[Rho]2", "[", 
+               RowBox[{"r", ",", "c\[Eta]"}], "]"}], ",", "r"}], "]"}], "/.", 
+            
+            RowBox[{"r", "\[Rule]", "rp"}]}], ")"}], 
+          SuperscriptBox["r", "2"]}]}]}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"r", ",", "0", ",", "2"}], "}"}]}], 
+     "]"}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"gt1", "=", 
+  RowBox[{"Normal", "@", 
+   RowBox[{"Simplify", "@", 
+    RowBox[{"Series", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"met", "\[LeftDoubleBracket]", 
+         RowBox[{"1", ",", "4"}], "\[RightDoubleBracket]"}], "/.", 
+        RowBox[{
+         RowBox[{"\[CapitalDelta]r", "[", 
+          RowBox[{"rp", "+", 
+           SuperscriptBox["r", "2"]}], "]"}], ":>", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"\[CapitalDelta]r", "'"}], "[", "rp", "]"}], 
+          SuperscriptBox["r", "2"]}]}]}], "/.", 
+       RowBox[{
+        RowBox[{"\[Rho]2", "[", 
+         RowBox[{
+          RowBox[{"rp", "+", 
+           SuperscriptBox["r", "2"]}], ",", "c\[Eta]"}], "]"}], ":>", 
+        RowBox[{
+         RowBox[{"\[Rho]2", "[", 
+          RowBox[{"rp", ",", "c\[Eta]"}], "]"}], "+", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"D", "[", 
+             RowBox[{
+              RowBox[{"\[Rho]2", "[", 
+               RowBox[{"r", ",", "c\[Eta]"}], "]"}], ",", "r"}], "]"}], "/.", 
+            
+            RowBox[{"r", "\[Rule]", "rp"}]}], ")"}], 
+          SuperscriptBox["r", "2"]}]}]}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"r", ",", "0", ",", "2"}], "}"}]}], 
+     "]"}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"gt2", "=", 
+  RowBox[{"Normal", "@", 
+   RowBox[{"Simplify", "@", 
+    RowBox[{"Series", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"met", "\[LeftDoubleBracket]", 
+         RowBox[{"1", ",", "5"}], "\[RightDoubleBracket]"}], "/.", 
+        RowBox[{
+         RowBox[{"\[CapitalDelta]r", "[", 
+          RowBox[{"rp", "+", 
+           SuperscriptBox["r", "2"]}], "]"}], ":>", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"\[CapitalDelta]r", "'"}], "[", "rp", "]"}], 
+          SuperscriptBox["r", "2"]}]}]}], "/.", 
+       RowBox[{
+        RowBox[{"\[Rho]2", "[", 
+         RowBox[{
+          RowBox[{"rp", "+", 
+           SuperscriptBox["r", "2"]}], ",", "c\[Eta]"}], "]"}], ":>", 
+        RowBox[{
+         RowBox[{"\[Rho]2", "[", 
+          RowBox[{"rp", ",", "c\[Eta]"}], "]"}], "+", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"D", "[", 
+             RowBox[{
+              RowBox[{"\[Rho]2", "[", 
+               RowBox[{"r", ",", "c\[Eta]"}], "]"}], ",", "r"}], "]"}], "/.", 
+            
+            RowBox[{"r", "\[Rule]", "rp"}]}], ")"}], 
+          SuperscriptBox["r", "2"]}]}]}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"r", ",", "0", ",", "2"}], "}"}]}], 
+     "]"}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"grr", "=", 
+  RowBox[{"Normal", "@", 
+   RowBox[{"Simplify", "@", 
+    RowBox[{"Series", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"met", "\[LeftDoubleBracket]", 
+         RowBox[{"2", ",", "2"}], "\[RightDoubleBracket]"}], "/.", 
+        RowBox[{
+         RowBox[{"\[CapitalDelta]r", "[", 
+          RowBox[{"rp", "+", 
+           SuperscriptBox["r", "2"]}], "]"}], ":>", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"\[CapitalDelta]r", "'"}], "[", "rp", "]"}], 
+          SuperscriptBox["r", "2"]}]}]}], "/.", 
+       RowBox[{
+        RowBox[{"\[Rho]2", "[", 
+         RowBox[{
+          RowBox[{"rp", "+", 
+           SuperscriptBox["r", "2"]}], ",", "c\[Eta]"}], "]"}], ":>", 
+        RowBox[{
+         RowBox[{"\[Rho]2", "[", 
+          RowBox[{"rp", ",", "c\[Eta]"}], "]"}], "+", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"D", "[", 
+             RowBox[{
+              RowBox[{"\[Rho]2", "[", 
+               RowBox[{"r", ",", "c\[Eta]"}], "]"}], ",", "r"}], "]"}], "/.", 
+            
+            RowBox[{"r", "\[Rule]", "rp"}]}], ")"}], 
+          SuperscriptBox["r", "2"]}]}]}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"r", ",", "0", ",", "1"}], "}"}]}], 
+     "]"}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"g\[Eta]\[Eta]", "=", 
+  RowBox[{"Normal", "@", 
+   RowBox[{"Simplify", "@", 
+    RowBox[{"Series", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"met", "\[LeftDoubleBracket]", 
+         RowBox[{"3", ",", "3"}], "\[RightDoubleBracket]"}], "/.", 
+        RowBox[{
+         RowBox[{"\[CapitalDelta]r", "[", 
+          RowBox[{"rp", "+", 
+           SuperscriptBox["r", "2"]}], "]"}], ":>", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"\[CapitalDelta]r", "'"}], "[", "rp", "]"}], 
+          SuperscriptBox["r", "2"]}]}]}], "/.", 
+       RowBox[{
+        RowBox[{"\[Rho]2", "[", 
+         RowBox[{
+          RowBox[{"rp", "+", 
+           SuperscriptBox["r", "2"]}], ",", "c\[Eta]"}], "]"}], ":>", 
+        RowBox[{
+         RowBox[{"\[Rho]2", "[", 
+          RowBox[{"rp", ",", "c\[Eta]"}], "]"}], "+", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"D", "[", 
+             RowBox[{
+              RowBox[{"\[Rho]2", "[", 
+               RowBox[{"r", ",", "c\[Eta]"}], "]"}], ",", "r"}], "]"}], "/.", 
+            
+            RowBox[{"r", "\[Rule]", "rp"}]}], ")"}], 
+          SuperscriptBox["r", "2"]}]}]}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"r", ",", "0", ",", "1"}], "}"}]}], 
+     "]"}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"g11", "=", 
+  RowBox[{"Normal", "@", 
+   RowBox[{"Simplify", "@", 
+    RowBox[{"Series", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"met", "\[LeftDoubleBracket]", 
+         RowBox[{"4", ",", "4"}], "\[RightDoubleBracket]"}], "/.", 
+        RowBox[{
+         RowBox[{"\[CapitalDelta]r", "[", 
+          RowBox[{"rp", "+", 
+           SuperscriptBox["r", "2"]}], "]"}], ":>", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"\[CapitalDelta]r", "'"}], "[", "rp", "]"}], 
+          SuperscriptBox["r", "2"]}]}]}], "/.", 
+       RowBox[{
+        RowBox[{"\[Rho]2", "[", 
+         RowBox[{
+          RowBox[{"rp", "+", 
+           SuperscriptBox["r", "2"]}], ",", "c\[Eta]"}], "]"}], ":>", 
+        RowBox[{
+         RowBox[{"\[Rho]2", "[", 
+          RowBox[{"rp", ",", "c\[Eta]"}], "]"}], "+", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"D", "[", 
+             RowBox[{
+              RowBox[{"\[Rho]2", "[", 
+               RowBox[{"r", ",", "c\[Eta]"}], "]"}], ",", "r"}], "]"}], "/.", 
+            
+            RowBox[{"r", "\[Rule]", "rp"}]}], ")"}], 
+          SuperscriptBox["r", "2"]}]}]}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"r", ",", "0", ",", "2"}], "}"}]}], 
+     "]"}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"g12", "=", 
+  RowBox[{"Normal", "@", 
+   RowBox[{"Simplify", "@", 
+    RowBox[{"Series", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"met", "\[LeftDoubleBracket]", 
+         RowBox[{"4", ",", "5"}], "\[RightDoubleBracket]"}], "/.", 
+        RowBox[{
+         RowBox[{"\[CapitalDelta]r", "[", 
+          RowBox[{"rp", "+", 
+           SuperscriptBox["r", "2"]}], "]"}], ":>", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"\[CapitalDelta]r", "'"}], "[", "rp", "]"}], 
+          SuperscriptBox["r", "2"]}]}]}], "/.", 
+       RowBox[{
+        RowBox[{"\[Rho]2", "[", 
+         RowBox[{
+          RowBox[{"rp", "+", 
+           SuperscriptBox["r", "2"]}], ",", "c\[Eta]"}], "]"}], ":>", 
+        RowBox[{
+         RowBox[{"\[Rho]2", "[", 
+          RowBox[{"rp", ",", "c\[Eta]"}], "]"}], "+", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"D", "[", 
+             RowBox[{
+              RowBox[{"\[Rho]2", "[", 
+               RowBox[{"r", ",", "c\[Eta]"}], "]"}], ",", "r"}], "]"}], "/.", 
+            
+            RowBox[{"r", "\[Rule]", "rp"}]}], ")"}], 
+          SuperscriptBox["r", "2"]}]}]}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"r", ",", "0", ",", "2"}], "}"}]}], 
+     "]"}]}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"g22", "=", 
+  RowBox[{"Normal", "@", 
+   RowBox[{"Simplify", "@", 
+    RowBox[{"Series", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        RowBox[{"met", "\[LeftDoubleBracket]", 
+         RowBox[{"5", ",", "5"}], "\[RightDoubleBracket]"}], "/.", 
+        RowBox[{
+         RowBox[{"\[CapitalDelta]r", "[", 
+          RowBox[{"rp", "+", 
+           SuperscriptBox["r", "2"]}], "]"}], ":>", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"\[CapitalDelta]r", "'"}], "[", "rp", "]"}], 
+          SuperscriptBox["r", "2"]}]}]}], "/.", 
+       RowBox[{
+        RowBox[{"\[Rho]2", "[", 
+         RowBox[{
+          RowBox[{"rp", "+", 
+           SuperscriptBox["r", "2"]}], ",", "c\[Eta]"}], "]"}], ":>", 
+        RowBox[{
+         RowBox[{"\[Rho]2", "[", 
+          RowBox[{"rp", ",", "c\[Eta]"}], "]"}], "+", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"D", "[", 
+             RowBox[{
+              RowBox[{"\[Rho]2", "[", 
+               RowBox[{"r", ",", "c\[Eta]"}], "]"}], ",", "r"}], "]"}], "/.", 
+            
+            RowBox[{"r", "\[Rule]", "rp"}]}], ")"}], 
+          SuperscriptBox["r", "2"]}]}]}]}], ",", 
+      RowBox[{"{", 
+       RowBox[{"r", ",", "0", ",", "2"}], "}"}]}], "]"}]}]}]}]}], "Input",
+ CellChangeTimes->{{3.868778929925804*^9, 3.868778936690027*^9}, {
+   3.868779032763069*^9, 3.868779035910054*^9}, {3.8687790781972027`*^9, 
+   3.868779103694645*^9}, {3.868779175074937*^9, 3.868779178217017*^9}, {
+   3.868779497920445*^9, 3.868779522611622*^9}, 3.868796183419286*^9, 
+   3.868796233405078*^9, 3.868796264602468*^9, {3.868796337409576*^9, 
+   3.86879633941994*^9}, {3.868796397004219*^9, 3.868796402999834*^9}, 
+   3.868796461710844*^9, {3.868796497846439*^9, 3.86879651827087*^9}, {
+   3.8687965520785933`*^9, 3.868796674457645*^9}, {3.868796731884637*^9, 
+   3.8687968014200897`*^9}, {3.868796834540031*^9, 3.8687968631393642`*^9}, {
+   3.868797114125292*^9, 3.868797127011756*^9}, {3.868797226473172*^9, 
+   3.868797234579056*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"7f9367ef-cba8-4a56-9a91-a964b148a2dc"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   RowBox[{
+    RowBox[{
+     InterpretationBox[
+      StyleBox["\[CapitalDelta]\[Eta]",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      CCLP`Bulk`Hopf1`Lorentzian`\[CapitalDelta]\[Eta],
+      Editable->False], "[", "c\[Eta]", "]"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        InterpretationBox[
+         StyleBox["f",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`f,
+         Editable->False], "[", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox["rp",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`rp,
+          Editable->False], ",", "c\[Eta]"}], "]"}], " ", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["\[CapitalDelta]\[Eta]",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`\[CapitalDelta]\[Eta],
+         Editable->False], "[", "c\[Eta]", "]"}]}], "-", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"1", "+", 
+         RowBox[{
+          SuperscriptBox[
+           InterpretationBox[
+            StyleBox["g",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            CCLP`Bulk`Hopf1`Lorentzian`g,
+            Editable->False], "2"], " ", 
+          SuperscriptBox[
+           InterpretationBox[
+            StyleBox["rp",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            CCLP`Bulk`Hopf1`Lorentzian`rp,
+            Editable->False], "2"]}]}], ")"}], " ", 
+       InterpretationBox[
+        StyleBox["\[CapitalXi]a",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]a,
+        Editable->False], " ", 
+       InterpretationBox[
+        StyleBox["\[CapitalXi]b",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]b,
+        Editable->False], " ", 
+       SuperscriptBox[
+        RowBox[{
+         InterpretationBox[
+          StyleBox["\[Rho]2",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+          Editable->False], "[", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox["rp",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`rp,
+           Editable->False], ",", "c\[Eta]"}], "]"}], "2"]}]}], ")"}]}], 
+   RowBox[{
+    SuperscriptBox[
+     InterpretationBox[
+      StyleBox["\[CapitalXi]a",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]a,
+      Editable->False], "2"], " ", 
+    SuperscriptBox[
+     InterpretationBox[
+      StyleBox["\[CapitalXi]b",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]b,
+      Editable->False], "2"], " ", 
+    SuperscriptBox[
+     RowBox[{
+      InterpretationBox[
+       StyleBox["\[Rho]2",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+       Editable->False], "[", 
+      RowBox[{
+       InterpretationBox[
+        StyleBox["rp",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`rp,
+        Editable->False], ",", "c\[Eta]"}], "]"}], "2"]}]], "+", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["r", "2"], " ", 
+    RowBox[{
+     InterpretationBox[
+      StyleBox["\[CapitalDelta]\[Eta]",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      CCLP`Bulk`Hopf1`Lorentzian`\[CapitalDelta]\[Eta],
+      Editable->False], "[", "c\[Eta]", "]"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "2"}], " ", 
+       SuperscriptBox[
+        InterpretationBox[
+         StyleBox["g",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`g,
+         Editable->False], "2"], " ", 
+       InterpretationBox[
+        StyleBox["rp",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`rp,
+        Editable->False], " ", 
+       InterpretationBox[
+        StyleBox["\[CapitalXi]a",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]a,
+        Editable->False], " ", 
+       InterpretationBox[
+        StyleBox["\[CapitalXi]b",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]b,
+        Editable->False], " ", 
+       SuperscriptBox[
+        RowBox[{
+         InterpretationBox[
+          StyleBox["\[Rho]2",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+          Editable->False], "[", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox["rp",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`rp,
+           Editable->False], ",", "c\[Eta]"}], "]"}], "3"]}], "+", 
+      RowBox[{
+       RowBox[{
+        InterpretationBox[
+         StyleBox["\[CapitalDelta]\[Eta]",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`\[CapitalDelta]\[Eta],
+         Editable->False], "[", "c\[Eta]", "]"}], " ", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["\[Rho]2",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+         Editable->False], "[", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox["rp",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`rp,
+          Editable->False], ",", "c\[Eta]"}], "]"}], " ", 
+       RowBox[{
+        SuperscriptBox[
+         InterpretationBox[
+          StyleBox["f",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`f,
+          Editable->False], 
+         TagBox[
+          RowBox[{"(", 
+           RowBox[{"1", ",", "0"}], ")"}],
+          Derivative],
+         MultilineFunction->None], "[", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox["rp",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`rp,
+          Editable->False], ",", "c\[Eta]"}], "]"}]}], "-", 
+      RowBox[{"2", " ", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["f",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`f,
+         Editable->False], "[", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox["rp",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`rp,
+          Editable->False], ",", "c\[Eta]"}], "]"}], " ", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["\[CapitalDelta]\[Eta]",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`\[CapitalDelta]\[Eta],
+         Editable->False], "[", "c\[Eta]", "]"}], " ", 
+       RowBox[{
+        SuperscriptBox[
+         InterpretationBox[
+          StyleBox["\[Rho]2",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+          Editable->False], 
+         TagBox[
+          RowBox[{"(", 
+           RowBox[{"1", ",", "0"}], ")"}],
+          Derivative],
+         MultilineFunction->None], "[", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox["rp",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`rp,
+          Editable->False], ",", "c\[Eta]"}], "]"}]}]}], ")"}]}], 
+   RowBox[{
+    SuperscriptBox[
+     InterpretationBox[
+      StyleBox["\[CapitalXi]a",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]a,
+      Editable->False], "2"], " ", 
+    SuperscriptBox[
+     InterpretationBox[
+      StyleBox["\[CapitalXi]b",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]b,
+      Editable->False], "2"], " ", 
+    SuperscriptBox[
+     RowBox[{
+      InterpretationBox[
+       StyleBox["\[Rho]2",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+       Editable->False], "[", 
+      RowBox[{
+       InterpretationBox[
+        StyleBox["rp",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`rp,
+        Editable->False], ",", "c\[Eta]"}], "]"}], "3"]}]]}]], "Output",
+ CellChangeTimes->{3.868867115631029*^9},
+ CellLabel->"Out[7]=",ExpressionUUID->"d6921929-be47-4bf0-82ce-c22b397d5d40"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", 
+      SuperscriptBox["c\[Eta]", "2"]}], ")"}], " ", 
+    RowBox[{
+     InterpretationBox[
+      StyleBox["\[CapitalDelta]\[Eta]",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      CCLP`Bulk`Hopf1`Lorentzian`\[CapitalDelta]\[Eta],
+      Editable->False], "[", "c\[Eta]", "]"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       InterpretationBox[
+        StyleBox["a",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`a,
+        Editable->False], " ", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["f",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`f,
+         Editable->False], "[", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox["rp",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`rp,
+          Editable->False], ",", "c\[Eta]"}], "]"}]}], "+", 
+      RowBox[{
+       InterpretationBox[
+        StyleBox["b",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`b,
+        Editable->False], " ", 
+       InterpretationBox[
+        StyleBox["q",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`q,
+        Editable->False], " ", 
+       InterpretationBox[
+        StyleBox["\[CapitalXi]a",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]a,
+        Editable->False], " ", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["\[Rho]2",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+         Editable->False], "[", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox["rp",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`rp,
+          Editable->False], ",", "c\[Eta]"}], "]"}]}]}], ")"}]}], 
+   RowBox[{
+    SuperscriptBox[
+     InterpretationBox[
+      StyleBox["\[CapitalXi]a",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]a,
+      Editable->False], "2"], " ", 
+    InterpretationBox[
+     StyleBox["\[CapitalXi]b",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]b,
+     Editable->False], " ", 
+    SuperscriptBox[
+     RowBox[{
+      InterpretationBox[
+       StyleBox["\[Rho]2",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+       Editable->False], "[", 
+      RowBox[{
+       InterpretationBox[
+        StyleBox["rp",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`rp,
+        Editable->False], ",", "c\[Eta]"}], "]"}], "2"]}]], "+", 
+  FractionBox[
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", 
+      SuperscriptBox["c\[Eta]", "2"]}], ")"}], " ", 
+    SuperscriptBox["r", "2"], " ", 
+    RowBox[{
+     InterpretationBox[
+      StyleBox["\[CapitalDelta]\[Eta]",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      CCLP`Bulk`Hopf1`Lorentzian`\[CapitalDelta]\[Eta],
+      Editable->False], "[", "c\[Eta]", "]"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", "2"}], " ", 
+       InterpretationBox[
+        StyleBox["a",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`a,
+        Editable->False], " ", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["f",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`f,
+         Editable->False], "[", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox["rp",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`rp,
+          Editable->False], ",", "c\[Eta]"}], "]"}], " ", 
+       RowBox[{
+        SuperscriptBox[
+         InterpretationBox[
+          StyleBox["\[Rho]2",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+          Editable->False], 
+         TagBox[
+          RowBox[{"(", 
+           RowBox[{"1", ",", "0"}], ")"}],
+          Derivative],
+         MultilineFunction->None], "[", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox["rp",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`rp,
+          Editable->False], ",", "c\[Eta]"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{
+        InterpretationBox[
+         StyleBox["\[Rho]2",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+         Editable->False], "[", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox["rp",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`rp,
+          Editable->False], ",", "c\[Eta]"}], "]"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          InterpretationBox[
+           StyleBox["a",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`a,
+           Editable->False], " ", 
+          RowBox[{
+           SuperscriptBox[
+            InterpretationBox[
+             StyleBox["f",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             CCLP`Bulk`Hopf1`Lorentzian`f,
+             Editable->False], 
+            TagBox[
+             RowBox[{"(", 
+              RowBox[{"1", ",", "0"}], ")"}],
+             Derivative],
+            MultilineFunction->None], "[", 
+           RowBox[{
+            InterpretationBox[
+             StyleBox["rp",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             CCLP`Bulk`Hopf1`Lorentzian`rp,
+             Editable->False], ",", "c\[Eta]"}], "]"}]}], "-", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox["b",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`b,
+           Editable->False], " ", 
+          InterpretationBox[
+           StyleBox["q",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`q,
+           Editable->False], " ", 
+          InterpretationBox[
+           StyleBox["\[CapitalXi]a",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]a,
+           Editable->False], " ", 
+          RowBox[{
+           SuperscriptBox[
+            InterpretationBox[
+             StyleBox["\[Rho]2",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+             Editable->False], 
+            TagBox[
+             RowBox[{"(", 
+              RowBox[{"1", ",", "0"}], ")"}],
+             Derivative],
+            MultilineFunction->None], "[", 
+           RowBox[{
+            InterpretationBox[
+             StyleBox["rp",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             CCLP`Bulk`Hopf1`Lorentzian`rp,
+             Editable->False], ",", "c\[Eta]"}], "]"}]}]}], ")"}]}]}], 
+     ")"}]}], 
+   RowBox[{
+    SuperscriptBox[
+     InterpretationBox[
+      StyleBox["\[CapitalXi]a",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]a,
+      Editable->False], "2"], " ", 
+    InterpretationBox[
+     StyleBox["\[CapitalXi]b",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]b,
+     Editable->False], " ", 
+    SuperscriptBox[
+     RowBox[{
+      InterpretationBox[
+       StyleBox["\[Rho]2",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+       Editable->False], "[", 
+      RowBox[{
+       InterpretationBox[
+        StyleBox["rp",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`rp,
+        Editable->False], ",", "c\[Eta]"}], "]"}], "3"]}]]}]], "Output",
+ CellChangeTimes->{3.868867115683835*^9},
+ CellLabel->"Out[8]=",ExpressionUUID->"f7d568e6-c5e3-4b62-9496-01e9053d7011"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   FractionBox[
+    RowBox[{
+     SuperscriptBox["c\[Eta]", "2"], " ", 
+     RowBox[{
+      InterpretationBox[
+       StyleBox["\[CapitalDelta]\[Eta]",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       CCLP`Bulk`Hopf1`Lorentzian`\[CapitalDelta]\[Eta],
+       Editable->False], "[", "c\[Eta]", "]"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        InterpretationBox[
+         StyleBox["b",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`b,
+         Editable->False], " ", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox["f",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`f,
+          Editable->False], "[", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox["rp",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`rp,
+           Editable->False], ",", "c\[Eta]"}], "]"}]}], "+", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["a",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`a,
+         Editable->False], " ", 
+        InterpretationBox[
+         StyleBox["q",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`q,
+         Editable->False], " ", 
+        InterpretationBox[
+         StyleBox["\[CapitalXi]b",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]b,
+         Editable->False], " ", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox["\[Rho]2",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+          Editable->False], "[", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox["rp",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`rp,
+           Editable->False], ",", "c\[Eta]"}], "]"}]}]}], ")"}]}], 
+    RowBox[{
+     InterpretationBox[
+      StyleBox["\[CapitalXi]a",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]a,
+      Editable->False], " ", 
+     SuperscriptBox[
+      InterpretationBox[
+       StyleBox["\[CapitalXi]b",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]b,
+       Editable->False], "2"], " ", 
+     SuperscriptBox[
+      RowBox[{
+       InterpretationBox[
+        StyleBox["\[Rho]2",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+        Editable->False], "[", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["rp",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`rp,
+         Editable->False], ",", "c\[Eta]"}], "]"}], "2"]}]]}], "+", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["c\[Eta]", "2"], " ", 
+    SuperscriptBox["r", "2"], " ", 
+    RowBox[{
+     InterpretationBox[
+      StyleBox["\[CapitalDelta]\[Eta]",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      CCLP`Bulk`Hopf1`Lorentzian`\[CapitalDelta]\[Eta],
+      Editable->False], "[", "c\[Eta]", "]"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"2", " ", 
+       InterpretationBox[
+        StyleBox["b",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`b,
+        Editable->False], " ", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["f",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`f,
+         Editable->False], "[", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox["rp",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`rp,
+          Editable->False], ",", "c\[Eta]"}], "]"}], " ", 
+       RowBox[{
+        SuperscriptBox[
+         InterpretationBox[
+          StyleBox["\[Rho]2",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+          Editable->False], 
+         TagBox[
+          RowBox[{"(", 
+           RowBox[{"1", ",", "0"}], ")"}],
+          Derivative],
+         MultilineFunction->None], "[", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox["rp",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`rp,
+          Editable->False], ",", "c\[Eta]"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{
+        InterpretationBox[
+         StyleBox["\[Rho]2",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+         Editable->False], "[", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox["rp",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`rp,
+          Editable->False], ",", "c\[Eta]"}], "]"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", 
+           InterpretationBox[
+            StyleBox["b",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            CCLP`Bulk`Hopf1`Lorentzian`b,
+            Editable->False]}], " ", 
+          RowBox[{
+           SuperscriptBox[
+            InterpretationBox[
+             StyleBox["f",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             CCLP`Bulk`Hopf1`Lorentzian`f,
+             Editable->False], 
+            TagBox[
+             RowBox[{"(", 
+              RowBox[{"1", ",", "0"}], ")"}],
+             Derivative],
+            MultilineFunction->None], "[", 
+           RowBox[{
+            InterpretationBox[
+             StyleBox["rp",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             CCLP`Bulk`Hopf1`Lorentzian`rp,
+             Editable->False], ",", "c\[Eta]"}], "]"}]}], "+", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox["a",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`a,
+           Editable->False], " ", 
+          InterpretationBox[
+           StyleBox["q",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`q,
+           Editable->False], " ", 
+          InterpretationBox[
+           StyleBox["\[CapitalXi]b",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]b,
+           Editable->False], " ", 
+          RowBox[{
+           SuperscriptBox[
+            InterpretationBox[
+             StyleBox["\[Rho]2",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+             Editable->False], 
+            TagBox[
+             RowBox[{"(", 
+              RowBox[{"1", ",", "0"}], ")"}],
+             Derivative],
+            MultilineFunction->None], "[", 
+           RowBox[{
+            InterpretationBox[
+             StyleBox["rp",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             CCLP`Bulk`Hopf1`Lorentzian`rp,
+             Editable->False], ",", "c\[Eta]"}], "]"}]}]}], ")"}]}]}], 
+     ")"}]}], 
+   RowBox[{
+    InterpretationBox[
+     StyleBox["\[CapitalXi]a",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]a,
+     Editable->False], " ", 
+    SuperscriptBox[
+     InterpretationBox[
+      StyleBox["\[CapitalXi]b",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]b,
+      Editable->False], "2"], " ", 
+    SuperscriptBox[
+     RowBox[{
+      InterpretationBox[
+       StyleBox["\[Rho]2",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+       Editable->False], "[", 
+      RowBox[{
+       InterpretationBox[
+        StyleBox["rp",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`rp,
+        Editable->False], ",", "c\[Eta]"}], "]"}], "3"]}]]}]], "Output",
+ CellChangeTimes->{3.868867115715406*^9},
+ CellLabel->"Out[9]=",ExpressionUUID->"8f71c33e-a790-4371-aff6-3411dae7ba93"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"4", " ", 
+   RowBox[{
+    InterpretationBox[
+     StyleBox["\[Rho]2",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+     Editable->False], "[", 
+    RowBox[{
+     InterpretationBox[
+      StyleBox["rp",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      CCLP`Bulk`Hopf1`Lorentzian`rp,
+      Editable->False], ",", "c\[Eta]"}], "]"}]}], 
+  RowBox[{
+   SuperscriptBox[
+    InterpretationBox[
+     StyleBox["\[CapitalDelta]r",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     CCLP`Bulk`Hopf1`Lorentzian`\[CapitalDelta]r,
+     Editable->False], "\[Prime]",
+    MultilineFunction->None], "[", 
+   InterpretationBox[
+    StyleBox["rp",
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    CCLP`Bulk`Hopf1`Lorentzian`rp,
+    Editable->False], "]"}]]], "Output",
+ CellChangeTimes->{3.868867115746388*^9},
+ CellLabel->"Out[10]=",ExpressionUUID->"6c9f0108-d837-4484-9c94-eccd51b758f5"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   InterpretationBox[
+    StyleBox["\[Rho]2",
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+    Editable->False], "[", 
+   RowBox[{
+    InterpretationBox[
+     StyleBox["rp",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     CCLP`Bulk`Hopf1`Lorentzian`rp,
+     Editable->False], ",", "c\[Eta]"}], "]"}], 
+  RowBox[{
+   RowBox[{
+    InterpretationBox[
+     StyleBox["\[CapitalDelta]\[Eta]",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     CCLP`Bulk`Hopf1`Lorentzian`\[CapitalDelta]\[Eta],
+     Editable->False], "[", "c\[Eta]", "]"}], "-", 
+   RowBox[{
+    SuperscriptBox["c\[Eta]", "2"], " ", 
+    RowBox[{
+     InterpretationBox[
+      StyleBox["\[CapitalDelta]\[Eta]",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      CCLP`Bulk`Hopf1`Lorentzian`\[CapitalDelta]\[Eta],
+      Editable->False], "[", "c\[Eta]", "]"}]}]}]]], "Output",
+ CellChangeTimes->{3.8688671157483473`*^9},
+ CellLabel->"Out[11]=",ExpressionUUID->"1212df04-b425-4e54-ba31-21f12bec301e"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", 
+      SuperscriptBox["c\[Eta]", "2"]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       SuperscriptBox[
+        InterpretationBox[
+         StyleBox["a",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`a,
+         Editable->False], "2"], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "1"}], "+", 
+         SuperscriptBox["c\[Eta]", "2"]}], ")"}], " ", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["f",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`f,
+         Editable->False], "[", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox["rp",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`rp,
+          Editable->False], ",", "c\[Eta]"}], "]"}]}], "-", 
+      RowBox[{
+       InterpretationBox[
+        StyleBox["\[CapitalXi]a",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]a,
+        Editable->False], " ", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["\[Rho]2",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+         Editable->False], "[", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox["rp",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`rp,
+          Editable->False], ",", "c\[Eta]"}], "]"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", "2"}], " ", 
+          InterpretationBox[
+           StyleBox["a",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`a,
+           Editable->False], " ", 
+          InterpretationBox[
+           StyleBox["b",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`b,
+           Editable->False], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"-", "1"}], "+", 
+            SuperscriptBox["c\[Eta]", "2"]}], ")"}], " ", 
+          InterpretationBox[
+           StyleBox["q",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`q,
+           Editable->False]}], "+", 
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{
+            SuperscriptBox[
+             InterpretationBox[
+              StyleBox["a",
+               ShowAutoStyles->False,
+               AutoSpacing->False],
+              CCLP`Bulk`Hopf1`Lorentzian`a,
+              Editable->False], "2"], "+", 
+            SuperscriptBox[
+             InterpretationBox[
+              StyleBox["rp",
+               ShowAutoStyles->False,
+               AutoSpacing->False],
+              CCLP`Bulk`Hopf1`Lorentzian`rp,
+              Editable->False], "2"]}], ")"}], " ", 
+          RowBox[{
+           InterpretationBox[
+            StyleBox["\[Rho]2",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+            Editable->False], "[", 
+           RowBox[{
+            InterpretationBox[
+             StyleBox["rp",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             CCLP`Bulk`Hopf1`Lorentzian`rp,
+             Editable->False], ",", "c\[Eta]"}], "]"}]}]}], ")"}]}]}], 
+     ")"}]}], 
+   RowBox[{
+    SuperscriptBox[
+     InterpretationBox[
+      StyleBox["\[CapitalXi]a",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]a,
+      Editable->False], "2"], " ", 
+    SuperscriptBox[
+     RowBox[{
+      InterpretationBox[
+       StyleBox["\[Rho]2",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+       Editable->False], "[", 
+      RowBox[{
+       InterpretationBox[
+        StyleBox["rp",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`rp,
+        Editable->False], ",", "c\[Eta]"}], "]"}], "2"]}]], "-", 
+  FractionBox[
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", 
+      SuperscriptBox["c\[Eta]", "2"]}], ")"}], " ", 
+    SuperscriptBox["r", "2"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"2", " ", 
+       InterpretationBox[
+        StyleBox["rp",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`rp,
+        Editable->False], " ", 
+       InterpretationBox[
+        StyleBox["\[CapitalXi]a",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]a,
+        Editable->False], " ", 
+       SuperscriptBox[
+        RowBox[{
+         InterpretationBox[
+          StyleBox["\[Rho]2",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+          Editable->False], "[", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox["rp",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`rp,
+           Editable->False], ",", "c\[Eta]"}], "]"}], "3"]}], "+", 
+      RowBox[{"2", " ", 
+       SuperscriptBox[
+        InterpretationBox[
+         StyleBox["a",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`a,
+         Editable->False], "2"], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "1"}], "+", 
+         SuperscriptBox["c\[Eta]", "2"]}], ")"}], " ", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["f",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`f,
+         Editable->False], "[", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox["rp",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`rp,
+          Editable->False], ",", "c\[Eta]"}], "]"}], " ", 
+       RowBox[{
+        SuperscriptBox[
+         InterpretationBox[
+          StyleBox["\[Rho]2",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+          Editable->False], 
+         TagBox[
+          RowBox[{"(", 
+           RowBox[{"1", ",", "0"}], ")"}],
+          Derivative],
+         MultilineFunction->None], "[", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox["rp",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`rp,
+          Editable->False], ",", "c\[Eta]"}], "]"}]}], "-", 
+      RowBox[{
+       InterpretationBox[
+        StyleBox["a",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`a,
+        Editable->False], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"-", "1"}], "+", 
+         SuperscriptBox["c\[Eta]", "2"]}], ")"}], " ", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["\[Rho]2",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+         Editable->False], "[", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox["rp",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`rp,
+          Editable->False], ",", "c\[Eta]"}], "]"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          InterpretationBox[
+           StyleBox["a",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`a,
+           Editable->False], " ", 
+          RowBox[{
+           SuperscriptBox[
+            InterpretationBox[
+             StyleBox["f",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             CCLP`Bulk`Hopf1`Lorentzian`f,
+             Editable->False], 
+            TagBox[
+             RowBox[{"(", 
+              RowBox[{"1", ",", "0"}], ")"}],
+             Derivative],
+            MultilineFunction->None], "[", 
+           RowBox[{
+            InterpretationBox[
+             StyleBox["rp",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             CCLP`Bulk`Hopf1`Lorentzian`rp,
+             Editable->False], ",", "c\[Eta]"}], "]"}]}], "-", 
+         RowBox[{"2", " ", 
+          InterpretationBox[
+           StyleBox["b",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`b,
+           Editable->False], " ", 
+          InterpretationBox[
+           StyleBox["q",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`q,
+           Editable->False], " ", 
+          InterpretationBox[
+           StyleBox["\[CapitalXi]a",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]a,
+           Editable->False], " ", 
+          RowBox[{
+           SuperscriptBox[
+            InterpretationBox[
+             StyleBox["\[Rho]2",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+             Editable->False], 
+            TagBox[
+             RowBox[{"(", 
+              RowBox[{"1", ",", "0"}], ")"}],
+             Derivative],
+            MultilineFunction->None], "[", 
+           RowBox[{
+            InterpretationBox[
+             StyleBox["rp",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             CCLP`Bulk`Hopf1`Lorentzian`rp,
+             Editable->False], ",", "c\[Eta]"}], "]"}]}]}], ")"}]}]}], 
+     ")"}]}], 
+   RowBox[{
+    SuperscriptBox[
+     InterpretationBox[
+      StyleBox["\[CapitalXi]a",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]a,
+      Editable->False], "2"], " ", 
+    SuperscriptBox[
+     RowBox[{
+      InterpretationBox[
+       StyleBox["\[Rho]2",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+       Editable->False], "[", 
+      RowBox[{
+       InterpretationBox[
+        StyleBox["rp",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`rp,
+        Editable->False], ",", "c\[Eta]"}], "]"}], "3"]}]]}]], "Output",
+ CellChangeTimes->{3.868867115843872*^9},
+ CellLabel->"Out[12]=",ExpressionUUID->"561fc9a0-9dfd-4628-85c4-0ab27c9f153f"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"-", 
+   FractionBox[
+    RowBox[{
+     SuperscriptBox["c\[Eta]", "2"], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", 
+       SuperscriptBox["c\[Eta]", "2"]}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        InterpretationBox[
+         StyleBox["a",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`a,
+         Editable->False], " ", 
+        InterpretationBox[
+         StyleBox["b",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`b,
+         Editable->False], " ", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox["f",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`f,
+          Editable->False], "[", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox["rp",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`rp,
+           Editable->False], ",", "c\[Eta]"}], "]"}]}], "+", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["q",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`q,
+         Editable->False], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           SuperscriptBox[
+            InterpretationBox[
+             StyleBox["b",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             CCLP`Bulk`Hopf1`Lorentzian`b,
+             Editable->False], "2"], " ", 
+           InterpretationBox[
+            StyleBox["\[CapitalXi]a",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]a,
+            Editable->False]}], "+", 
+          RowBox[{
+           SuperscriptBox[
+            InterpretationBox[
+             StyleBox["a",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             CCLP`Bulk`Hopf1`Lorentzian`a,
+             Editable->False], "2"], " ", 
+           InterpretationBox[
+            StyleBox["\[CapitalXi]b",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]b,
+            Editable->False]}]}], ")"}], " ", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox["\[Rho]2",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+          Editable->False], "[", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox["rp",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`rp,
+           Editable->False], ",", "c\[Eta]"}], "]"}]}]}], ")"}]}], 
+    RowBox[{
+     InterpretationBox[
+      StyleBox["\[CapitalXi]a",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]a,
+      Editable->False], " ", 
+     InterpretationBox[
+      StyleBox["\[CapitalXi]b",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]b,
+      Editable->False], " ", 
+     SuperscriptBox[
+      RowBox[{
+       InterpretationBox[
+        StyleBox["\[Rho]2",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+        Editable->False], "[", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["rp",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`rp,
+         Editable->False], ",", "c\[Eta]"}], "]"}], "2"]}]]}], "+", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["c\[Eta]", "2"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", "1"}], "+", 
+      SuperscriptBox["c\[Eta]", "2"]}], ")"}], " ", 
+    SuperscriptBox["r", "2"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"2", " ", 
+       InterpretationBox[
+        StyleBox["a",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`a,
+        Editable->False], " ", 
+       InterpretationBox[
+        StyleBox["b",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`b,
+        Editable->False], " ", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["f",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`f,
+         Editable->False], "[", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox["rp",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`rp,
+          Editable->False], ",", "c\[Eta]"}], "]"}], " ", 
+       RowBox[{
+        SuperscriptBox[
+         InterpretationBox[
+          StyleBox["\[Rho]2",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+          Editable->False], 
+         TagBox[
+          RowBox[{"(", 
+           RowBox[{"1", ",", "0"}], ")"}],
+          Derivative],
+         MultilineFunction->None], "[", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox["rp",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`rp,
+          Editable->False], ",", "c\[Eta]"}], "]"}]}], "+", 
+      RowBox[{
+       RowBox[{
+        InterpretationBox[
+         StyleBox["\[Rho]2",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+         Editable->False], "[", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox["rp",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`rp,
+          Editable->False], ",", "c\[Eta]"}], "]"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"-", 
+           InterpretationBox[
+            StyleBox["a",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            CCLP`Bulk`Hopf1`Lorentzian`a,
+            Editable->False]}], " ", 
+          InterpretationBox[
+           StyleBox["b",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`b,
+           Editable->False], " ", 
+          RowBox[{
+           SuperscriptBox[
+            InterpretationBox[
+             StyleBox["f",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             CCLP`Bulk`Hopf1`Lorentzian`f,
+             Editable->False], 
+            TagBox[
+             RowBox[{"(", 
+              RowBox[{"1", ",", "0"}], ")"}],
+             Derivative],
+            MultilineFunction->None], "[", 
+           RowBox[{
+            InterpretationBox[
+             StyleBox["rp",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             CCLP`Bulk`Hopf1`Lorentzian`rp,
+             Editable->False], ",", "c\[Eta]"}], "]"}]}], "+", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox["q",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`q,
+           Editable->False], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{
+             SuperscriptBox[
+              InterpretationBox[
+               StyleBox["b",
+                ShowAutoStyles->False,
+                AutoSpacing->False],
+               CCLP`Bulk`Hopf1`Lorentzian`b,
+               Editable->False], "2"], " ", 
+             InterpretationBox[
+              StyleBox["\[CapitalXi]a",
+               ShowAutoStyles->False,
+               AutoSpacing->False],
+              CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]a,
+              Editable->False]}], "+", 
+            RowBox[{
+             SuperscriptBox[
+              InterpretationBox[
+               StyleBox["a",
+                ShowAutoStyles->False,
+                AutoSpacing->False],
+               CCLP`Bulk`Hopf1`Lorentzian`a,
+               Editable->False], "2"], " ", 
+             InterpretationBox[
+              StyleBox["\[CapitalXi]b",
+               ShowAutoStyles->False,
+               AutoSpacing->False],
+              CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]b,
+              Editable->False]}]}], ")"}], " ", 
+          RowBox[{
+           SuperscriptBox[
+            InterpretationBox[
+             StyleBox["\[Rho]2",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+             Editable->False], 
+            TagBox[
+             RowBox[{"(", 
+              RowBox[{"1", ",", "0"}], ")"}],
+             Derivative],
+            MultilineFunction->None], "[", 
+           RowBox[{
+            InterpretationBox[
+             StyleBox["rp",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             CCLP`Bulk`Hopf1`Lorentzian`rp,
+             Editable->False], ",", "c\[Eta]"}], "]"}]}]}], ")"}]}]}], 
+     ")"}]}], 
+   RowBox[{
+    InterpretationBox[
+     StyleBox["\[CapitalXi]a",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]a,
+     Editable->False], " ", 
+    InterpretationBox[
+     StyleBox["\[CapitalXi]b",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]b,
+     Editable->False], " ", 
+    SuperscriptBox[
+     RowBox[{
+      InterpretationBox[
+       StyleBox["\[Rho]2",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+       Editable->False], "[", 
+      RowBox[{
+       InterpretationBox[
+        StyleBox["rp",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`rp,
+        Editable->False], ",", "c\[Eta]"}], "]"}], "3"]}]]}]], "Output",
+ CellChangeTimes->{3.868867115921545*^9},
+ CellLabel->"Out[13]=",ExpressionUUID->"b846a1f7-45af-445e-96f5-1d564e654624"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   RowBox[{
+    RowBox[{
+     SuperscriptBox[
+      InterpretationBox[
+       StyleBox["b",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       CCLP`Bulk`Hopf1`Lorentzian`b,
+       Editable->False], "2"], " ", 
+     SuperscriptBox["c\[Eta]", "4"], " ", 
+     RowBox[{
+      InterpretationBox[
+       StyleBox["f",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       CCLP`Bulk`Hopf1`Lorentzian`f,
+       Editable->False], "[", 
+      RowBox[{
+       InterpretationBox[
+        StyleBox["rp",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`rp,
+        Editable->False], ",", "c\[Eta]"}], "]"}]}], "+", 
+    RowBox[{
+     SuperscriptBox["c\[Eta]", "2"], " ", 
+     InterpretationBox[
+      StyleBox["\[CapitalXi]b",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]b,
+      Editable->False], " ", 
+     RowBox[{
+      InterpretationBox[
+       StyleBox["\[Rho]2",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+       Editable->False], "[", 
+      RowBox[{
+       InterpretationBox[
+        StyleBox["rp",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`rp,
+        Editable->False], ",", "c\[Eta]"}], "]"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"2", " ", 
+        InterpretationBox[
+         StyleBox["a",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`a,
+         Editable->False], " ", 
+        InterpretationBox[
+         StyleBox["b",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`b,
+         Editable->False], " ", 
+        SuperscriptBox["c\[Eta]", "2"], " ", 
+        InterpretationBox[
+         StyleBox["q",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`q,
+         Editable->False]}], "+", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox[
+           InterpretationBox[
+            StyleBox["b",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            CCLP`Bulk`Hopf1`Lorentzian`b,
+            Editable->False], "2"], "+", 
+          SuperscriptBox[
+           InterpretationBox[
+            StyleBox["rp",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            CCLP`Bulk`Hopf1`Lorentzian`rp,
+            Editable->False], "2"]}], ")"}], " ", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox["\[Rho]2",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+          Editable->False], "[", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox["rp",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`rp,
+           Editable->False], ",", "c\[Eta]"}], "]"}]}]}], ")"}]}]}], 
+   RowBox[{
+    SuperscriptBox[
+     InterpretationBox[
+      StyleBox["\[CapitalXi]b",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]b,
+      Editable->False], "2"], " ", 
+    SuperscriptBox[
+     RowBox[{
+      InterpretationBox[
+       StyleBox["\[Rho]2",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+       Editable->False], "[", 
+      RowBox[{
+       InterpretationBox[
+        StyleBox["rp",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`rp,
+        Editable->False], ",", "c\[Eta]"}], "]"}], "2"]}]], "+", 
+  FractionBox[
+   RowBox[{
+    SuperscriptBox["r", "2"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"2", " ", 
+       SuperscriptBox["c\[Eta]", "2"], " ", 
+       InterpretationBox[
+        StyleBox["rp",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`rp,
+        Editable->False], " ", 
+       InterpretationBox[
+        StyleBox["\[CapitalXi]b",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]b,
+        Editable->False], " ", 
+       SuperscriptBox[
+        RowBox[{
+         InterpretationBox[
+          StyleBox["\[Rho]2",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+          Editable->False], "[", 
+         RowBox[{
+          InterpretationBox[
+           StyleBox["rp",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`rp,
+           Editable->False], ",", "c\[Eta]"}], "]"}], "3"]}], "-", 
+      RowBox[{"2", " ", 
+       SuperscriptBox[
+        InterpretationBox[
+         StyleBox["b",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`b,
+         Editable->False], "2"], " ", 
+       SuperscriptBox["c\[Eta]", "4"], " ", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["f",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`f,
+         Editable->False], "[", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox["rp",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`rp,
+          Editable->False], ",", "c\[Eta]"}], "]"}], " ", 
+       RowBox[{
+        SuperscriptBox[
+         InterpretationBox[
+          StyleBox["\[Rho]2",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+          Editable->False], 
+         TagBox[
+          RowBox[{"(", 
+           RowBox[{"1", ",", "0"}], ")"}],
+          Derivative],
+         MultilineFunction->None], "[", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox["rp",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`rp,
+          Editable->False], ",", "c\[Eta]"}], "]"}]}], "+", 
+      RowBox[{
+       InterpretationBox[
+        StyleBox["b",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`b,
+        Editable->False], " ", 
+       SuperscriptBox["c\[Eta]", "4"], " ", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["\[Rho]2",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+         Editable->False], "[", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox["rp",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`rp,
+          Editable->False], ",", "c\[Eta]"}], "]"}], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          InterpretationBox[
+           StyleBox["b",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`b,
+           Editable->False], " ", 
+          RowBox[{
+           SuperscriptBox[
+            InterpretationBox[
+             StyleBox["f",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             CCLP`Bulk`Hopf1`Lorentzian`f,
+             Editable->False], 
+            TagBox[
+             RowBox[{"(", 
+              RowBox[{"1", ",", "0"}], ")"}],
+             Derivative],
+            MultilineFunction->None], "[", 
+           RowBox[{
+            InterpretationBox[
+             StyleBox["rp",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             CCLP`Bulk`Hopf1`Lorentzian`rp,
+             Editable->False], ",", "c\[Eta]"}], "]"}]}], "-", 
+         RowBox[{"2", " ", 
+          InterpretationBox[
+           StyleBox["a",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`a,
+           Editable->False], " ", 
+          InterpretationBox[
+           StyleBox["q",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`q,
+           Editable->False], " ", 
+          InterpretationBox[
+           StyleBox["\[CapitalXi]b",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]b,
+           Editable->False], " ", 
+          RowBox[{
+           SuperscriptBox[
+            InterpretationBox[
+             StyleBox["\[Rho]2",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+             Editable->False], 
+            TagBox[
+             RowBox[{"(", 
+              RowBox[{"1", ",", "0"}], ")"}],
+             Derivative],
+            MultilineFunction->None], "[", 
+           RowBox[{
+            InterpretationBox[
+             StyleBox["rp",
+              ShowAutoStyles->False,
+              AutoSpacing->False],
+             CCLP`Bulk`Hopf1`Lorentzian`rp,
+             Editable->False], ",", "c\[Eta]"}], "]"}]}]}], ")"}]}]}], 
+     ")"}]}], 
+   RowBox[{
+    SuperscriptBox[
+     InterpretationBox[
+      StyleBox["\[CapitalXi]b",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      CCLP`Bulk`Hopf1`Lorentzian`\[CapitalXi]b,
+      Editable->False], "2"], " ", 
+    SuperscriptBox[
+     RowBox[{
+      InterpretationBox[
+       StyleBox["\[Rho]2",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       CCLP`Bulk`Hopf1`Lorentzian`\[Rho]2,
+       Editable->False], "[", 
+      RowBox[{
+       InterpretationBox[
+        StyleBox["rp",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`rp,
+        Editable->False], ",", "c\[Eta]"}], "]"}], "3"]}]]}]], "Output",
+ CellChangeTimes->{3.868867115998567*^9},
+ CellLabel->"Out[14]=",ExpressionUUID->"52941489-4c72-4190-bd16-b4894c3c0e3d"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"ds2g", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"Hold", "[", "gtt", "]"}], " ", 
+     SuperscriptBox["dt", "2"]}], "+", 
+    RowBox[{"2", 
+     RowBox[{"Hold", "[", "gt1", "]"}], "dt", " ", "d1"}], "+", 
+    RowBox[{"2", 
+     RowBox[{"Hold", "[", "gt2", "]"}], "dt", " ", "d2"}], "+", 
+    RowBox[{
+     RowBox[{"Hold", "[", "grr", "]"}], 
+     SuperscriptBox["dr", "2"]}], "+", 
+    RowBox[{
+     RowBox[{"Hold", "[", "g\[Eta]\[Eta]", "]"}], 
+     SuperscriptBox["d\[Eta]", "2"]}], "+", 
+    RowBox[{
+     RowBox[{"Hold", "[", "g11", "]"}], 
+     SuperscriptBox["d1", "2"]}], "+", 
+    RowBox[{"2", 
+     RowBox[{"Hold", "[", "g12", "]"}], "d1", " ", "d2"}], "+", 
+    RowBox[{
+     RowBox[{"Hold", "[", "g22", "]"}], 
+     SuperscriptBox["d2", "2"]}]}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ds2h", "=", 
+   RowBox[{
+    RowBox[{"hrr", 
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox["dr", "2"], "-", 
+       RowBox[{
+        FractionBox[
+         RowBox[{"4", 
+          SuperscriptBox["\[Pi]", "2"]}], "\[Beta]2"], " ", 
+        SuperscriptBox["r", "2"], 
+        SuperscriptBox["dt", "2"]}]}], ")"}]}], "+", 
+    RowBox[{"h\[Eta]\[Eta]", " ", 
+     SuperscriptBox["d\[Eta]", "2"]}], "+", 
+    RowBox[{"h11", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"d1", "-", 
+        RowBox[{"\[CapitalOmega]1", " ", "dt"}]}], ")"}], "2"]}], "+", 
+    RowBox[{"h22", 
+     SuperscriptBox[
+      RowBox[{"(", 
+       RowBox[{"d2", "-", 
+        RowBox[{"\[CapitalOmega]2", " ", "dt"}]}], ")"}], "2"]}], "+", 
+    RowBox[{"2", "h12", 
+     RowBox[{"(", 
+      RowBox[{"d1", "-", 
+       RowBox[{"\[CapitalOmega]1", " ", "dt"}]}], ")"}], 
+     RowBox[{"(", 
+      RowBox[{"d2", "-", 
+       RowBox[{"\[CapitalOmega]2", " ", "dt"}]}], ")"}]}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"ds2g", "-", "ds2h"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"Coefficient", "[", 
+     RowBox[{"%", ",", 
+      SuperscriptBox["dt", "2"]}], "]"}], ",", 
+    RowBox[{"Coefficient", "[", 
+     RowBox[{"%", ",", 
+      RowBox[{"dt", " ", "d1"}]}], "]"}], ",", 
+    RowBox[{"Coefficient", "[", 
+     RowBox[{"%", ",", 
+      RowBox[{"dt", " ", "d2"}]}], "]"}], ",", 
+    RowBox[{"Coefficient", "[", 
+     RowBox[{"%", ",", 
+      SuperscriptBox["dr", "2"]}], "]"}], ",", 
+    RowBox[{"Coefficient", "[", 
+     RowBox[{"%", ",", 
+      SuperscriptBox["d\[Eta]", "2"]}], "]"}], ",", 
+    RowBox[{"Coefficient", "[", 
+     RowBox[{"%", ",", 
+      SuperscriptBox["d1", "2"]}], "]"}], ",", 
+    RowBox[{"Coefficient", "[", 
+     RowBox[{"%", ",", 
+      RowBox[{"d1", " ", "d2"}]}], "]"}], ",", 
+    RowBox[{"Coefficient", "[", 
+     RowBox[{"%", ",", 
+      SuperscriptBox["d2", "2"]}], "]"}]}], "}"}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"sol", "=", 
+  RowBox[{
+   RowBox[{"Solve", "[", 
+    RowBox[{
+     RowBox[{"%", "==", 
+      RowBox[{"ConstantArray", "[", 
+       RowBox[{"0", ",", "8"}], "]"}]}], ",", 
+     RowBox[{"{", 
+      RowBox[{
+      "hrr", ",", "h\[Eta]\[Eta]", ",", "h11", ",", "h22", ",", "h12", ",", 
+       "\[Beta]2", ",", "\[CapitalOmega]1", ",", "\[CapitalOmega]2"}], "}"}], 
+     ",", 
+     RowBox[{"Assumptions", "\[Rule]", "True"}]}], "]"}], "//", 
+   "Flatten"}]}]}], "Input",
+ CellChangeTimes->{{3.861091013771351*^9, 3.861091026141181*^9}, {
+   3.8610910931762753`*^9, 3.861091164304172*^9}, {3.861091196278227*^9, 
+   3.8610912143135777`*^9}, {3.8610912850197163`*^9, 
+   3.8610912930060873`*^9}, {3.8610922631358747`*^9, 3.861092279564711*^9}, {
+   3.861429722574649*^9, 3.861429754562558*^9}, {3.8614298909325457`*^9, 
+   3.861429899693184*^9}, {3.861429995955463*^9, 3.861429997494104*^9}, 
+   3.861430039312994*^9, {3.8615110517179813`*^9, 3.861511166986244*^9}, {
+   3.861511416175426*^9, 3.861511551381917*^9}, 3.8615115856317873`*^9, {
+   3.86151181117229*^9, 3.8615118526285133`*^9}, {3.86151188813314*^9, 
+   3.861511938670644*^9}, {3.861511986256043*^9, 3.861512002510518*^9}, {
+   3.861513282048711*^9, 3.8615133479840193`*^9}, {3.86151338597031*^9, 
+   3.861513494540678*^9}, {3.861513525670182*^9, 3.861513597667536*^9}, {
+   3.861950905582266*^9, 3.861951033086109*^9}, {3.861951087400519*^9, 
+   3.861951133364668*^9}, {3.861951195372612*^9, 3.8619512086119967`*^9}, {
+   3.8619512485603237`*^9, 3.861951265963595*^9}, {3.8619512963802347`*^9, 
+   3.8619514130216007`*^9}, {3.861951444058304*^9, 3.861951449616083*^9}, {
+   3.861951598698626*^9, 3.861951798643463*^9}, 3.861951834241884*^9, {
+   3.8619518656306353`*^9, 3.861951906208829*^9}, {3.8619520091111*^9, 
+   3.861952048307453*^9}, {3.861952130654236*^9, 3.861952160952365*^9}, {
+   3.861952219855385*^9, 3.861952264380958*^9}, {3.86195230342142*^9, 
+   3.861952328844509*^9}, {3.86195260538557*^9, 3.861952605545218*^9}, {
+   3.861952728965419*^9, 3.861952745817971*^9}, {3.861952924484467*^9, 
+   3.8619529293647127`*^9}, {3.861952968495418*^9, 3.861952991844726*^9}, {
+   3.861956404324718*^9, 3.861956416252594*^9}, 3.861957271190999*^9, {
+   3.8619574237368803`*^9, 3.8619574267768908`*^9}, {3.861959704932132*^9, 
+   3.8619597052216063`*^9}, {3.868796915672785*^9, 3.8687970729164267`*^9}, {
+   3.8687972521685457`*^9, 3.868797385726081*^9}, {3.868797444427092*^9, 
+   3.868797445618045*^9}},
+ CellLabel->"In[15]:=",ExpressionUUID->"246f7db3-c455-45c5-8cd5-ee5e12328429"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"hrr", "\[Rule]", 
+    RowBox[{"Hold", "[", "grr", "]"}]}], ",", 
+   RowBox[{"h\[Eta]\[Eta]", "\[Rule]", 
+    RowBox[{"Hold", "[", "g\[Eta]\[Eta]", "]"}]}], ",", 
+   RowBox[{"h11", "\[Rule]", 
+    RowBox[{"Hold", "[", "g11", "]"}]}], ",", 
+   RowBox[{"h22", "\[Rule]", 
+    RowBox[{"Hold", "[", "g22", "]"}]}], ",", 
+   RowBox[{"h12", "\[Rule]", 
+    RowBox[{"Hold", "[", "g12", "]"}]}], ",", 
+   RowBox[{"\[Beta]2", "\[Rule]", 
+    RowBox[{"-", 
+     FractionBox[
+      RowBox[{"4", " ", 
+       SuperscriptBox["\[Pi]", "2"], " ", 
+       SuperscriptBox["r", "2"], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox[
+          RowBox[{"Hold", "[", "g12", "]"}], "2"], "-", 
+         RowBox[{
+          RowBox[{"Hold", "[", "g11", "]"}], " ", 
+          RowBox[{"Hold", "[", "g22", "]"}]}]}], ")"}], " ", 
+       RowBox[{"Hold", "[", "grr", "]"}]}], 
+      RowBox[{
+       RowBox[{
+        RowBox[{"Hold", "[", "g22", "]"}], " ", 
+        SuperscriptBox[
+         RowBox[{"Hold", "[", "gt1", "]"}], "2"]}], "-", 
+       RowBox[{"2", " ", 
+        RowBox[{"Hold", "[", "g12", "]"}], " ", 
+        RowBox[{"Hold", "[", "gt1", "]"}], " ", 
+        RowBox[{"Hold", "[", "gt2", "]"}]}], "+", 
+       RowBox[{
+        RowBox[{"Hold", "[", "g11", "]"}], " ", 
+        SuperscriptBox[
+         RowBox[{"Hold", "[", "gt2", "]"}], "2"]}], "+", 
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"Hold", "[", "g12", "]"}], "2"], " ", 
+        RowBox[{"Hold", "[", "gtt", "]"}]}], "-", 
+       RowBox[{
+        RowBox[{"Hold", "[", "g11", "]"}], " ", 
+        RowBox[{"Hold", "[", "g22", "]"}], " ", 
+        RowBox[{"Hold", "[", "gtt", "]"}]}]}]]}]}], ",", 
+   RowBox[{
+    InterpretationBox[
+     StyleBox["\[CapitalOmega]1",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     CCLP`Bulk`Hopf1`Lorentzian`\[CapitalOmega]1,
+     Editable->False], "\[Rule]", 
+    FractionBox[
+     RowBox[{
+      RowBox[{
+       RowBox[{"Hold", "[", "g22", "]"}], " ", 
+       RowBox[{"Hold", "[", "gt1", "]"}]}], "-", 
+      RowBox[{
+       RowBox[{"Hold", "[", "g12", "]"}], " ", 
+       RowBox[{"Hold", "[", "gt2", "]"}]}]}], 
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"Hold", "[", "g12", "]"}], "2"], "-", 
+      RowBox[{
+       RowBox[{"Hold", "[", "g11", "]"}], " ", 
+       RowBox[{"Hold", "[", "g22", "]"}]}]}]]}], ",", 
+   RowBox[{
+    InterpretationBox[
+     StyleBox["\[CapitalOmega]2",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     CCLP`Bulk`Hopf1`Lorentzian`\[CapitalOmega]2,
+     Editable->False], "\[Rule]", 
+    FractionBox[
+     RowBox[{
+      RowBox[{
+       RowBox[{"-", 
+        RowBox[{"Hold", "[", "g12", "]"}]}], " ", 
+       RowBox[{"Hold", "[", "gt1", "]"}]}], "+", 
+      RowBox[{
+       RowBox[{"Hold", "[", "g11", "]"}], " ", 
+       RowBox[{"Hold", "[", "gt2", "]"}]}]}], 
+     RowBox[{
+      SuperscriptBox[
+       RowBox[{"Hold", "[", "g12", "]"}], "2"], "-", 
+      RowBox[{
+       RowBox[{"Hold", "[", "g11", "]"}], " ", 
+       RowBox[{"Hold", "[", "g22", "]"}]}]}]]}]}], "}"}]], "Output",
+ CellChangeTimes->{3.868867117611392*^9},
+ CellLabel->"Out[19]=",ExpressionUUID->"bce364f1-6518-4be8-9620-2d4a5510e0b6"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[Beta]2", "/.", "sol"}], "//", "ReleaseHold"}], ")"}], "/.", 
+     
+     RowBox[{"$olution", "[", 
+      RowBox[{"$rule", ",", "func"}], "]"}]}], "/.", 
+    RowBox[{"$olution", "[", 
+     RowBox[{"$rule", ",", "const"}], "]"}]}], "/.", 
+   RowBox[{"$olution", "[", 
+    RowBox[{"$rule", ",", "mTrp"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Normal", "@", 
+  RowBox[{"Simplify", "@", 
+   RowBox[{"Series", "[", 
+    RowBox[{"%", ",", 
+     RowBox[{"{", 
+      RowBox[{"r", ",", "0", ",", "0"}], "}"}]}], 
+    "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"%", "-", 
+    SuperscriptBox["\[Beta]", "2"]}], "/.", 
+   RowBox[{"$olution", "[", 
+    RowBox[{"$rule", ",", "potentials"}], "]"}]}], "//", 
+  "Simplify"}]}], "Input",
+ CellChangeTimes->{{3.8687975917103577`*^9, 3.868797820195525*^9}},
+ CellLabel->"In[20]:=",ExpressionUUID->"230d9077-805a-4eb9-99c9-3c16d2c87775"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{"4", " ", 
+   SuperscriptBox["\[Pi]", "2"], " ", 
+   SuperscriptBox[
+    InterpretationBox[
+     StyleBox["rp",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     CCLP`Bulk`Hopf1`Lorentzian`rp,
+     Editable->False], "2"], " ", 
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       InterpretationBox[
+        StyleBox["a",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`a,
+        Editable->False], " ", 
+       InterpretationBox[
+        StyleBox["b",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`b,
+        Editable->False], " ", 
+       InterpretationBox[
+        StyleBox["q",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`q,
+        Editable->False]}], "+", 
+      RowBox[{
+       SuperscriptBox[
+        InterpretationBox[
+         StyleBox["a",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`a,
+         Editable->False], "2"], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox[
+          InterpretationBox[
+           StyleBox["b",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`b,
+           Editable->False], "2"], "+", 
+         SuperscriptBox[
+          InterpretationBox[
+           StyleBox["rp",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`rp,
+           Editable->False], "2"]}], ")"}]}], "+", 
+      RowBox[{
+       SuperscriptBox[
+        InterpretationBox[
+         StyleBox["rp",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`rp,
+         Editable->False], "2"], " ", 
+       RowBox[{"(", 
+        RowBox[{
+         SuperscriptBox[
+          InterpretationBox[
+           StyleBox["b",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`b,
+           Editable->False], "2"], "+", 
+         SuperscriptBox[
+          InterpretationBox[
+           StyleBox["rp",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`rp,
+           Editable->False], "2"]}], ")"}]}]}], ")"}], "2"]}], 
+  SuperscriptBox[
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"2", " ", 
+      InterpretationBox[
+       StyleBox["a",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       CCLP`Bulk`Hopf1`Lorentzian`a,
+       Editable->False], " ", 
+      InterpretationBox[
+       StyleBox["b",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       CCLP`Bulk`Hopf1`Lorentzian`b,
+       Editable->False], " ", 
+      InterpretationBox[
+       StyleBox["q",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       CCLP`Bulk`Hopf1`Lorentzian`q,
+       Editable->False]}], "+", 
+     SuperscriptBox[
+      InterpretationBox[
+       StyleBox["q",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       CCLP`Bulk`Hopf1`Lorentzian`q,
+       Editable->False], "2"], "-", 
+     RowBox[{
+      SuperscriptBox[
+       InterpretationBox[
+        StyleBox["rp",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`rp,
+        Editable->False], "4"], " ", 
+      RowBox[{"(", 
+       RowBox[{"1", "+", 
+        RowBox[{
+         SuperscriptBox[
+          InterpretationBox[
+           StyleBox["b",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`b,
+           Editable->False], "2"], " ", 
+         SuperscriptBox[
+          InterpretationBox[
+           StyleBox["g",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`g,
+           Editable->False], "2"]}], "+", 
+        RowBox[{"2", " ", 
+         SuperscriptBox[
+          InterpretationBox[
+           StyleBox["g",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`g,
+           Editable->False], "2"], " ", 
+         SuperscriptBox[
+          InterpretationBox[
+           StyleBox["rp",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`rp,
+           Editable->False], "2"]}]}], ")"}]}], "+", 
+     RowBox[{
+      SuperscriptBox[
+       InterpretationBox[
+        StyleBox["a",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`a,
+        Editable->False], "2"], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox[
+         InterpretationBox[
+          StyleBox["b",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          CCLP`Bulk`Hopf1`Lorentzian`b,
+          Editable->False], "2"], "-", 
+        RowBox[{
+         SuperscriptBox[
+          InterpretationBox[
+           StyleBox["g",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`g,
+           Editable->False], "2"], " ", 
+         SuperscriptBox[
+          InterpretationBox[
+           StyleBox["rp",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           CCLP`Bulk`Hopf1`Lorentzian`rp,
+           Editable->False], "4"]}]}], ")"}]}]}], ")"}], "2"]]], "Output",
+ CellChangeTimes->{3.8688671273975687`*^9},
+ CellLabel->"Out[21]=",ExpressionUUID->"54e599fb-69cb-4c97-8adf-000a55a6f5ae"],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{3.868867127399662*^9},
+ CellLabel->"Out[22]=",ExpressionUUID->"5424fdd3-00fc-4f52-a1d7-4b49d23ca4e0"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[CapitalOmega]1", "/.", "sol"}], "//", "ReleaseHold"}], 
+      ")"}], "/.", 
+     RowBox[{"$olution", "[", 
+      RowBox[{"$rule", ",", "func"}], "]"}]}], "/.", 
+    RowBox[{"$olution", "[", 
+     RowBox[{"$rule", ",", "const"}], "]"}]}], "/.", 
+   RowBox[{"$olution", "[", 
+    RowBox[{"$rule", ",", "mTrp"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Normal", "@", 
+  RowBox[{"Simplify", "@", 
+   RowBox[{"Series", "[", 
+    RowBox[{"%", ",", 
+     RowBox[{"{", 
+      RowBox[{"r", ",", "0", ",", "0"}], "}"}]}], 
+    "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"%", "-", "\[CapitalOmega]1"}], "/.", 
+   RowBox[{"$olution", "[", 
+    RowBox[{"$rule", ",", "potentials"}], "]"}]}], "//", 
+  "Simplify"}]}], "Input",
+ CellChangeTimes->{{3.868797837189765*^9, 3.868797849772904*^9}},
+ CellLabel->"In[23]:=",ExpressionUUID->"eb21b481-7481-4d4c-9d86-c46f4fd0983b"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   RowBox[{
+    InterpretationBox[
+     StyleBox["b",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     CCLP`Bulk`Hopf1`Lorentzian`b,
+     Editable->False], " ", 
+    InterpretationBox[
+     StyleBox["q",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     CCLP`Bulk`Hopf1`Lorentzian`q,
+     Editable->False]}], "+", 
+   RowBox[{
+    InterpretationBox[
+     StyleBox["a",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     CCLP`Bulk`Hopf1`Lorentzian`a,
+     Editable->False], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      SuperscriptBox[
+       InterpretationBox[
+        StyleBox["b",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`b,
+        Editable->False], "2"], "+", 
+      SuperscriptBox[
+       InterpretationBox[
+        StyleBox["rp",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`rp,
+        Editable->False], "2"]}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{"1", "+", 
+      RowBox[{
+       SuperscriptBox[
+        InterpretationBox[
+         StyleBox["g",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`g,
+         Editable->False], "2"], " ", 
+       SuperscriptBox[
+        InterpretationBox[
+         StyleBox["rp",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`rp,
+         Editable->False], "2"]}]}], ")"}]}]}], 
+  RowBox[{
+   RowBox[{
+    InterpretationBox[
+     StyleBox["a",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     CCLP`Bulk`Hopf1`Lorentzian`a,
+     Editable->False], " ", 
+    InterpretationBox[
+     StyleBox["b",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     CCLP`Bulk`Hopf1`Lorentzian`b,
+     Editable->False], " ", 
+    InterpretationBox[
+     StyleBox["q",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     CCLP`Bulk`Hopf1`Lorentzian`q,
+     Editable->False]}], "+", 
+   RowBox[{
+    SuperscriptBox[
+     InterpretationBox[
+      StyleBox["a",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      CCLP`Bulk`Hopf1`Lorentzian`a,
+      Editable->False], "2"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      SuperscriptBox[
+       InterpretationBox[
+        StyleBox["b",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`b,
+        Editable->False], "2"], "+", 
+      SuperscriptBox[
+       InterpretationBox[
+        StyleBox["rp",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`rp,
+        Editable->False], "2"]}], ")"}]}], "+", 
+   RowBox[{
+    SuperscriptBox[
+     InterpretationBox[
+      StyleBox["rp",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      CCLP`Bulk`Hopf1`Lorentzian`rp,
+      Editable->False], "2"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      SuperscriptBox[
+       InterpretationBox[
+        StyleBox["b",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`b,
+        Editable->False], "2"], "+", 
+      SuperscriptBox[
+       InterpretationBox[
+        StyleBox["rp",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`rp,
+        Editable->False], "2"]}], ")"}]}]}]]], "Output",
+ CellChangeTimes->{3.868867129786963*^9},
+ CellLabel->"Out[24]=",ExpressionUUID->"b6d96ff6-cefd-4e4c-9cb3-3f36cc120b68"],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{3.868867129788917*^9},
+ CellLabel->"Out[25]=",ExpressionUUID->"48824d95-3c15-4a0f-8884-6befd650a4c5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"\[CapitalOmega]2", "/.", "sol"}], "//", "ReleaseHold"}], 
+      ")"}], "/.", 
+     RowBox[{"$olution", "[", 
+      RowBox[{"$rule", ",", "func"}], "]"}]}], "/.", 
+    RowBox[{"$olution", "[", 
+     RowBox[{"$rule", ",", "const"}], "]"}]}], "/.", 
+   RowBox[{"$olution", "[", 
+    RowBox[{"$rule", ",", "mTrp"}], "]"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Normal", "@", 
+  RowBox[{"Simplify", "@", 
+   RowBox[{"Series", "[", 
+    RowBox[{"%", ",", 
+     RowBox[{"{", 
+      RowBox[{"r", ",", "0", ",", "0"}], "}"}]}], 
+    "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"%", "-", "\[CapitalOmega]2"}], "/.", 
+   RowBox[{"$olution", "[", 
+    RowBox[{"$rule", ",", "potentials"}], "]"}]}], "//", 
+  "Simplify"}]}], "Input",
+ CellChangeTimes->{{3.8687978591466703`*^9, 3.868797861398342*^9}},
+ CellLabel->"In[26]:=",ExpressionUUID->"3604d7cd-bc5e-4bb4-8e05-a0f9b99cc3f1"],
+
+Cell[BoxData[
+ FractionBox[
+  RowBox[{
+   RowBox[{
+    InterpretationBox[
+     StyleBox["a",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     CCLP`Bulk`Hopf1`Lorentzian`a,
+     Editable->False], " ", 
+    InterpretationBox[
+     StyleBox["q",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     CCLP`Bulk`Hopf1`Lorentzian`q,
+     Editable->False]}], "+", 
+   RowBox[{
+    InterpretationBox[
+     StyleBox["b",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     CCLP`Bulk`Hopf1`Lorentzian`b,
+     Editable->False], " ", 
+    SuperscriptBox[
+     InterpretationBox[
+      StyleBox["rp",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      CCLP`Bulk`Hopf1`Lorentzian`rp,
+      Editable->False], "2"], " ", 
+    RowBox[{"(", 
+     RowBox[{"1", "+", 
+      RowBox[{
+       SuperscriptBox[
+        InterpretationBox[
+         StyleBox["g",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`g,
+         Editable->False], "2"], " ", 
+       SuperscriptBox[
+        InterpretationBox[
+         StyleBox["rp",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`rp,
+         Editable->False], "2"]}]}], ")"}]}], "+", 
+   RowBox[{
+    SuperscriptBox[
+     InterpretationBox[
+      StyleBox["a",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      CCLP`Bulk`Hopf1`Lorentzian`a,
+      Editable->False], "2"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      InterpretationBox[
+       StyleBox["b",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       CCLP`Bulk`Hopf1`Lorentzian`b,
+       Editable->False], "+", 
+      RowBox[{
+       InterpretationBox[
+        StyleBox["b",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`b,
+        Editable->False], " ", 
+       SuperscriptBox[
+        InterpretationBox[
+         StyleBox["g",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`g,
+         Editable->False], "2"], " ", 
+       SuperscriptBox[
+        InterpretationBox[
+         StyleBox["rp",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         CCLP`Bulk`Hopf1`Lorentzian`rp,
+         Editable->False], "2"]}]}], ")"}]}]}], 
+  RowBox[{
+   RowBox[{
+    InterpretationBox[
+     StyleBox["a",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     CCLP`Bulk`Hopf1`Lorentzian`a,
+     Editable->False], " ", 
+    InterpretationBox[
+     StyleBox["b",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     CCLP`Bulk`Hopf1`Lorentzian`b,
+     Editable->False], " ", 
+    InterpretationBox[
+     StyleBox["q",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     CCLP`Bulk`Hopf1`Lorentzian`q,
+     Editable->False]}], "+", 
+   RowBox[{
+    SuperscriptBox[
+     InterpretationBox[
+      StyleBox["a",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      CCLP`Bulk`Hopf1`Lorentzian`a,
+      Editable->False], "2"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      SuperscriptBox[
+       InterpretationBox[
+        StyleBox["b",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`b,
+        Editable->False], "2"], "+", 
+      SuperscriptBox[
+       InterpretationBox[
+        StyleBox["rp",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`rp,
+        Editable->False], "2"]}], ")"}]}], "+", 
+   RowBox[{
+    SuperscriptBox[
+     InterpretationBox[
+      StyleBox["rp",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      CCLP`Bulk`Hopf1`Lorentzian`rp,
+      Editable->False], "2"], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      SuperscriptBox[
+       InterpretationBox[
+        StyleBox["b",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`b,
+        Editable->False], "2"], "+", 
+      SuperscriptBox[
+       InterpretationBox[
+        StyleBox["rp",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        CCLP`Bulk`Hopf1`Lorentzian`rp,
+        Editable->False], "2"]}], ")"}]}]}]]], "Output",
+ CellChangeTimes->{3.86886713104987*^9},
+ CellLabel->"Out[27]=",ExpressionUUID->"07f6e41e-00e6-44fa-ba9e-68f09d271119"],
+
+Cell[BoxData["0"], "Output",
+ CellChangeTimes->{3.868867131051956*^9},
+ CellLabel->"Out[28]=",ExpressionUUID->"1ace1507-ef3a-4533-af0c-1cff69cc6fa4"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"SaveExample", "[", 
+  RowBox[{
+  "\"\<CCLP_abqm_2\[PartialD]\>\"", ",", 
+   "\"\<NearHorizon_\[CapitalOmega]1\[CapitalOmega]2\[Beta]\>\""}], 
+  "]"}]], "Input",
+ CellChangeTimes->{{3.868867136076708*^9, 3.868867171900456*^9}, {
+  3.8689385535050907`*^9, 3.868938562713518*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"ffc175db-c4bd-43af-8801-d163fb26872b"]
+}, Open  ]]
+},
+WindowSize->{1202.086956521739, 595.4086956521738},
+WindowMargins->{{0, Automatic}, {37.56521739130437, Automatic}},
+TaggingRules-><|"TryRealOnly" -> False|>,
+Magnification:>0.75 Inherited,
+FrontEndVersion->"13.0 for Linux x86 (64-bit) (February 4, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"42cff582-64d6-4154-ab15-4067994f7f3f"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[580, 22, 228, 4, 34, "Input",ExpressionUUID->"c31a9afe-27d0-47dd-9c79-f81987dea443",
+ InitializationCell->True],
+Cell[CellGroupData[{
+Cell[833, 30, 262, 5, 18, "Print",ExpressionUUID->"d06ea06f-1e6d-4f39-bcd6-2eeddecd2212"],
+Cell[1098, 37, 535, 13, 18, "Print",ExpressionUUID->"7a4b11d4-55d5-4b5c-a413-fdbf9f552478"],
+Cell[1636, 52, 284, 5, 18, "Print",ExpressionUUID->"880a8f64-c8d6-42a7-8adc-a24ad2c66f00"],
+Cell[1923, 59, 243, 4, 18, "Print",ExpressionUUID->"116f8228-c950-406e-ae15-321decc32220"],
+Cell[2169, 65, 226, 4, 18, "Print",ExpressionUUID->"cf233438-2c34-460e-9378-3a17677b16b1"],
+Cell[2398, 71, 263, 5, 18, "Print",ExpressionUUID->"48fbf7b3-9812-4443-8010-50a4a9ceddbe"],
+Cell[2664, 78, 538, 13, 18, "Print",ExpressionUUID->"44142917-e451-4604-9f5e-c80f4216fe10"],
+Cell[3205, 93, 284, 5, 18, "Print",ExpressionUUID->"09b85482-f8ad-4675-a284-6b3018e0a4e7"],
+Cell[3492, 100, 265, 5, 18, "Print",ExpressionUUID->"c1bf250f-40a3-4db9-b6ce-4a6bc02fcc0d"],
+Cell[3760, 107, 535, 13, 18, "Print",ExpressionUUID->"dcbc653e-010c-45a5-856f-67571d4b5f0e"],
+Cell[4298, 122, 332, 6, 18, "Print",ExpressionUUID->"0c87fe2e-ab52-43fd-8525-dccaade3d1b7"],
+Cell[4633, 130, 505, 12, 18, "Print",ExpressionUUID->"b3866df9-2769-4da3-be01-740f12ac0a9a"],
+Cell[5141, 144, 589, 13, 18, "Print",ExpressionUUID->"d7c18e55-1bc7-4eef-ba41-5c93fcc83a53"],
+Cell[5733, 159, 690, 13, 18, "Print",ExpressionUUID->"215fcab0-7a86-4c39-a197-dbf2014ac732"],
+Cell[6426, 174, 648, 13, 18, "Print",ExpressionUUID->"de20ca94-d914-49f9-9a60-c0caef7b55f5"],
+Cell[7077, 189, 668, 13, 18, "Print",ExpressionUUID->"a7b2480b-aaa9-4f9b-a2f5-5b6899e34e3b"],
+Cell[7748, 204, 263, 5, 18, "Print",ExpressionUUID->"1e4e7d9a-cfd8-42ad-858f-1bc3a35a6413"],
+Cell[8014, 211, 530, 12, 18, "Print",ExpressionUUID->"01c5fc68-748a-4428-a680-30a98790bcf4"],
+Cell[8547, 225, 310, 5, 18, "Print",ExpressionUUID->"dd1f6f1c-ba4c-4372-af72-a4ab1e91b948"],
+Cell[8860, 232, 633, 14, 18, "Print",ExpressionUUID->"c157d378-6c9a-4048-9a97-8c5c66046c61"],
+Cell[9496, 248, 625, 13, 18, "Print",ExpressionUUID->"d5518218-ec56-4c70-a63d-33d7fdf9e38c"],
+Cell[10124, 263, 670, 13, 18, "Print",ExpressionUUID->"6b1bbdbc-1c42-4c4e-a0bb-3de85729d82a"],
+Cell[10797, 278, 583, 13, 18, "Print",ExpressionUUID->"a6031e8d-d997-4867-bbf0-787612eb80d9"],
+Cell[11383, 293, 263, 5, 18, "Print",ExpressionUUID->"28d55076-bb78-4f21-bbf4-a0e217af0a44"],
+Cell[11649, 300, 535, 13, 18, "Print",ExpressionUUID->"3dd71185-40c1-4903-892a-c1db77df540b"],
+Cell[12187, 315, 302, 5, 18, "Print",ExpressionUUID->"5f55316c-0600-45e2-bea4-02254beba369"],
+Cell[12492, 322, 263, 5, 18, "Print",ExpressionUUID->"4846907e-8347-45e1-af4f-722a0b9ecdbe"],
+Cell[12758, 329, 555, 13, 18, "Print",ExpressionUUID->"7a473ba0-b62d-4953-8238-7a25b4a6d289"],
+Cell[13316, 344, 290, 5, 18, "Print",ExpressionUUID->"b3370c69-1a48-431b-b6f2-15dab0fad63f"],
+Cell[13609, 351, 265, 5, 18, "Print",ExpressionUUID->"b4cf8224-cacc-409e-aea9-d0e5d80ff520"],
+Cell[13877, 358, 533, 12, 18, "Print",ExpressionUUID->"e3843492-e310-48f1-8ae6-a5327d43ad1e"],
+Cell[14413, 372, 274, 5, 18, "Print",ExpressionUUID->"04beb5d8-0e1d-404d-9adb-4fcc70253e55"],
+Cell[14690, 379, 591, 14, 18, "Print",ExpressionUUID->"a44919f6-056b-4a90-8448-44b5159387f3"],
+Cell[15284, 395, 670, 13, 18, "Print",ExpressionUUID->"4c7d18ec-a4ad-43b7-a7ae-b96292892270"],
+Cell[15957, 410, 265, 5, 18, "Print",ExpressionUUID->"9d642afe-bb6c-4871-869b-aedc13e730ca"],
+Cell[16225, 417, 533, 12, 18, "Print",ExpressionUUID->"f7563d06-a45f-43bb-a3d8-5fc36aa999cd"],
+Cell[16761, 431, 333, 6, 18, "Print",ExpressionUUID->"4a8828af-945b-46dc-b3a6-883fd6cb5cd8"],
+Cell[17097, 439, 263, 5, 18, "Print",ExpressionUUID->"54a25a42-81a1-41d7-97eb-3c58089e913a"],
+Cell[17363, 446, 534, 12, 18, "Print",ExpressionUUID->"f4b2d1ff-9bec-4cd0-9750-ce956e42ec85"],
+Cell[17900, 460, 300, 5, 18, "Print",ExpressionUUID->"dbb7540f-dd08-45a1-a803-b50f305041ca"],
+Cell[18203, 467, 310, 5, 18, "Print",ExpressionUUID->"43a8b10a-eccc-46d3-aec4-83625ef3e5c2"],
+Cell[18516, 474, 583, 13, 18, "Print",ExpressionUUID->"b66575fb-0c12-4f22-9af0-807ae83b0c2f"],
+Cell[19102, 489, 265, 5, 18, "Print",ExpressionUUID->"367c3fac-406a-40fb-b868-e306b84e0c91"],
+Cell[19370, 496, 541, 13, 18, "Print",ExpressionUUID->"f728c56b-3b6c-4f16-bae6-ec7c39d6a2ca"],
+Cell[19914, 511, 308, 5, 18, "Print",ExpressionUUID->"127c571d-ae37-452f-bfbf-7f447c02141f"],
+Cell[20225, 518, 265, 5, 18, "Print",ExpressionUUID->"d908e206-a671-4507-afcc-d8e6481c11bf"],
+Cell[20493, 525, 557, 13, 18, "Print",ExpressionUUID->"29efce81-d96c-4fab-84d6-f221dce53408"],
+Cell[21053, 540, 272, 5, 18, "Print",ExpressionUUID->"19b89cb3-ba77-4366-a608-46660d07d4f1"],
+Cell[21328, 547, 263, 5, 18, "Print",ExpressionUUID->"14ea9eb8-bbb0-4558-930a-9f4c07e2a49b"],
+Cell[21594, 554, 418, 7, 32, "Print",ExpressionUUID->"3cd88282-347f-458b-b543-6ccf38dbe97f"],
+Cell[22015, 563, 263, 5, 18, "Print",ExpressionUUID->"c39402f0-f7d9-486c-88fc-39b880f7b244"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[22327, 574, 188, 3, 51, "Section",ExpressionUUID->"029b5a4e-38bb-4b11-97f0-ccdf6bfb8661"],
+Cell[CellGroupData[{
+Cell[22540, 581, 380, 8, 22, "Input",ExpressionUUID->"d1f5675b-052a-4ecb-a9e1-f6e9ad42fa53"],
+Cell[CellGroupData[{
+Cell[22945, 593, 2673, 47, 18, "Print",ExpressionUUID->"85f583df-14d6-4820-a526-08934a2ec059"],
+Cell[25621, 642, 1281, 23, 18, "Print",ExpressionUUID->"5bce1980-bc79-4870-82ac-ff88773f70fb"],
+Cell[26905, 667, 826, 16, 18, "Print",ExpressionUUID->"fa162fb8-5bc2-478e-8654-e0b220a2623a"],
+Cell[27734, 685, 1411, 29, 18, "Print",ExpressionUUID->"468dcb56-4abf-4b8f-ba0e-97f99fe97ba7"],
+Cell[29148, 716, 2196, 41, 18, "Print",ExpressionUUID->"efa6ba67-f4d4-471c-ba40-8a455182e622"],
+Cell[31347, 759, 1580, 33, 18, "Print",ExpressionUUID->"98e7a8c3-7bb0-4c36-9f53-4704c3dd0270"],
+Cell[32930, 794, 2321, 45, 18, "Print",ExpressionUUID->"0aeb7cd0-70dc-453d-96b6-cfa8c1edf49b"],
+Cell[35254, 841, 1060, 22, 18, "Print",ExpressionUUID->"8862231c-de70-4a55-8375-4ed4a535016b"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[36363, 869, 17313, 497, 298, "Input",ExpressionUUID->"7f9367ef-cba8-4a56-9a91-a964b148a2dc"],
+Cell[53679, 1368, 8835, 279, 44, "Output",ExpressionUUID->"d6921929-be47-4bf0-82ce-c22b397d5d40"],
+Cell[62517, 1649, 8459, 272, 44, "Output",ExpressionUUID->"f7d568e6-c5e3-4b62-9496-01e9053d7011"],
+Cell[70979, 1923, 8431, 267, 44, "Output",ExpressionUUID->"8f71c33e-a790-4371-aff6-3411dae7ba93"],
+Cell[79413, 2192, 995, 33, 40, "Output",ExpressionUUID->"6c9f0108-d837-4484-9c94-eccd51b758f5"],
+Cell[80411, 2227, 1081, 34, 41, "Output",ExpressionUUID->"1212df04-b425-4e54-ba31-21f12bec301e"],
+Cell[81495, 2263, 10681, 339, 82, "Output",ExpressionUUID->"561fc9a0-9dfd-4628-85c4-0ab27c9f153f"],
+Cell[92179, 2604, 9984, 313, 44, "Output",ExpressionUUID->"b846a1f7-45af-445e-96f5-1d564e654624"],
+Cell[102166, 2919, 9923, 317, 44, "Output",ExpressionUUID->"52941489-4c72-4190-bd16-b4894c3c0e3d"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[112126, 3241, 5396, 130, 107, "Input",ExpressionUUID->"246f7db3-c455-45c5-8cd5-ee5e12328429"],
+Cell[117525, 3373, 3224, 92, 101, "Output",ExpressionUUID->"bce364f1-6518-4be8-9620-2d4a5510e0b6"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[120786, 3470, 1014, 30, 54, "Input",ExpressionUUID->"230d9077-805a-4eb9-99c9-3c16d2c87775"],
+Cell[121803, 3502, 5534, 183, 47, "Output",ExpressionUUID->"54e599fb-69cb-4c97-8adf-000a55a6f5ae"],
+Cell[127340, 3687, 149, 2, 25, "Output",ExpressionUUID->"5424fdd3-00fc-4f52-a1d7-4b49d23ca4e0"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[127526, 3694, 1004, 29, 54, "Input",ExpressionUUID->"eb21b481-7481-4d4c-9d86-c46f4fd0983b"],
+Cell[128533, 3725, 3484, 125, 46, "Output",ExpressionUUID->"b6d96ff6-cefd-4e4c-9cb3-3f36cc120b68"],
+Cell[132020, 3852, 149, 2, 25, "Output",ExpressionUUID->"48824d95-3c15-4a0f-8884-6befd650a4c5"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[132206, 3859, 1006, 29, 54, "Input",ExpressionUUID->"3604d7cd-bc5e-4bb4-8e05-a0f9b99cc3f1"],
+Cell[133215, 3890, 4272, 153, 46, "Output",ExpressionUUID->"07f6e41e-00e6-44fa-ba9e-68f09d271119"],
+Cell[137490, 4045, 149, 2, 25, "Output",ExpressionUUID->"1ace1507-ef3a-4533-af0c-1cff69cc6fa4"]
+}, Open  ]],
+Cell[137654, 4050, 379, 8, 22, "Input",ExpressionUUID->"ffc175db-c4bd-43af-8801-d163fb26872b"]
+}, Open  ]]
+}
+]
+*)
+

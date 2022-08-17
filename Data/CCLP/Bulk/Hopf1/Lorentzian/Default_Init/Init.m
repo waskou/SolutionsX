@@ -4,8 +4,17 @@
       Hyperlink["https://arxiv.org/abs/1810.11442"], 
      "Chong:2005hr" -> Hyperlink["http://arxiv.org/abs/hep-th/0506029"]|>, 
    $comment -> "This is a four parameter \!\(\*Cell[\"(a,b,m,q)\"]\) non-susy \
-black hole."|>, $manifold -> <|$ymbol -> CCLP`Bulk`Hopf1`Lorentzian`man, 
-   $dimension -> 5, $index -> {CCLP`Bulk`Hopf1`Lorentzian`\[ScriptA], 
+black hole. \!\(\*Cell[\"q\"]\) can be eliminated and \!\(\*Cell[\"m\"]\) \
+redefined to obtain a three parameter \
+\!\(\*Cell[TextData[{\nCell[BoxData[FormBox[\n  RowBox[{\"(\", \n    \
+RowBox[{\"a\", \",\", \"b\", \",\", \nOverscriptBox[\"m\", \"~\"]}]}], \n   \
+TraditionalForm]],FormatType->TraditionalForm],\n\")\"\n}]]\) supersymmetric \
+black hole. Finally, when \!\(\*Cell[TextData[Cell[BoxData[FormBox[\n \
+RowBox[{\nOverscriptBox[\"m\", \"~\"], \"=\", \"0\"}], \
+TraditionalForm]],FormatType->TraditionalForm]]]\) we have a two parameter \
+\!\(\*Cell[\"(a,b)\"]\)supersymmetric and extremal (or BPS) black hole."|>, 
+ $manifold -> <|$ymbol -> CCLP`Bulk`Hopf1`Lorentzian`man, $dimension -> 5, 
+   $index -> {CCLP`Bulk`Hopf1`Lorentzian`\[ScriptA], 
      CCLP`Bulk`Hopf1`Lorentzian`\[ScriptB], 
      CCLP`Bulk`Hopf1`Lorentzian`\[ScriptC], 
      CCLP`Bulk`Hopf1`Lorentzian`\[ScriptD], 
