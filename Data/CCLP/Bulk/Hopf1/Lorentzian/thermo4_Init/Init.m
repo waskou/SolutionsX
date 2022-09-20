@@ -10455,4 +10455,993 @@ black hole."|>, $manifold -> <|$ymbol -> CCLP`Bulk`Hopf1`Lorentzian`man,
            (1 + (CCLP`Bulk`Hopf1`Lorentzian`a^2 + 
               CCLP`Bulk`Hopf1`Lorentzian`b^2)*CCLP`Bulk`Hopf1`Lorentzian`g^2)*
            CCLP`Bulk`Hopf1`Lorentzian`rp^16 + 2*CCLP`Bulk`Hopf1`Lorentzian`g^
-            6*CCLP`Bulk`Hopf1`Lorentzian`rp^18))}|>|>
+            6*CCLP`Bulk`Hopf1`Lorentzian`rp^18))}, 
+   CCLP`Bulk`Hopf1`Lorentzian`HDbpsCharges -> 
+    {CCLP`Bulk`Hopf1`Lorentzian`Q -> 
+      (1 - 144*Sqrt[3]*CCLP`Bulk`Hopf1`Lorentzian`c2*
+         CCLP`Bulk`Hopf1`Lorentzian`g^2*CCLP`Bulk`Hopf1`Lorentzian`G5*Pi + 
+        (16*CCLP`Bulk`Hopf1`Lorentzian`c1*CCLP`Bulk`Hopf1`Lorentzian`g*
+          (CCLP`Bulk`Hopf1`Lorentzian`a^7*CCLP`Bulk`Hopf1`Lorentzian`g^6*
+            (1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)*
+            (-1 + 5*CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g) - CCLP`Bulk`Hopf1`Lorentzian`a^6*
+            CCLP`Bulk`Hopf1`Lorentzian`g^5*(26 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g*(57 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(34 + 
+                 7*CCLP`Bulk`Hopf1`Lorentzian`b*
+                  CCLP`Bulk`Hopf1`Lorentzian`g))) - 
+           CCLP`Bulk`Hopf1`Lorentzian`b*(1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+               CCLP`Bulk`Hopf1`Lorentzian`g)^2*
+            (3 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (14 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                (31 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                  CCLP`Bulk`Hopf1`Lorentzian`g*(24 + 
+                   CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g)))) - 
+           CCLP`Bulk`Hopf1`Lorentzian`a^5*CCLP`Bulk`Hopf1`Lorentzian`g^4*
+            (80 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (322 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(427 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (244 + 55*CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g)))) - 
+           CCLP`Bulk`Hopf1`Lorentzian`a^4*CCLP`Bulk`Hopf1`Lorentzian`g^3*
+            (100 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (586 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(1142 + 
+                 5*CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (197 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g*(80 + 11*
+                      CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g))))) - 
+           CCLP`Bulk`Hopf1`Lorentzian`a^3*CCLP`Bulk`Hopf1`Lorentzian`g^2*
+            (62 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (516 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(1410 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (1688 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g*(985 + 
+                     CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g*(244 + 
+                       7*CCLP`Bulk`Hopf1`Lorentzian`b*
+                        CCLP`Bulk`Hopf1`Lorentzian`g)))))) + 
+           CCLP`Bulk`Hopf1`Lorentzian`a*(-3 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g*(-44 + 
+               CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                (-220 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                  CCLP`Bulk`Hopf1`Lorentzian`g*(-516 + 
+                   CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                    (-586 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g*(-322 + 
+                       CCLP`Bulk`Hopf1`Lorentzian`b*
+                        CCLP`Bulk`Hopf1`Lorentzian`g*(-57 + 
+                         4*CCLP`Bulk`Hopf1`Lorentzian`b*
+                          CCLP`Bulk`Hopf1`Lorentzian`g))))))) + 
+           CCLP`Bulk`Hopf1`Lorentzian`a^2*CCLP`Bulk`Hopf1`Lorentzian`g*
+            (-20 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (-220 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(-844 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (-1410 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g*(-1142 + 
+                     CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g*(-427 + 
+                       CCLP`Bulk`Hopf1`Lorentzian`b*
+                        CCLP`Bulk`Hopf1`Lorentzian`g*(-34 + 
+                         5*CCLP`Bulk`Hopf1`Lorentzian`b*
+                          CCLP`Bulk`Hopf1`Lorentzian`g))))))))*
+          CCLP`Bulk`Hopf1`Lorentzian`G5*Pi)/(Sqrt[3]*
+          (CCLP`Bulk`Hopf1`Lorentzian`a + CCLP`Bulk`Hopf1`Lorentzian`b)^2*
+          (1 + CCLP`Bulk`Hopf1`Lorentzian`a*CCLP`Bulk`Hopf1`Lorentzian`g)*
+          (1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)*
+          (1 + CCLP`Bulk`Hopf1`Lorentzian`g*(CCLP`Bulk`Hopf1`Lorentzian`a^4*
+              CCLP`Bulk`Hopf1`Lorentzian`g^3 - 2*CCLP`Bulk`Hopf1`Lorentzian`a^
+               3*CCLP`Bulk`Hopf1`Lorentzian`g^2*
+              (1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g) + CCLP`Bulk`Hopf1`Lorentzian`b*
+              (2 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)*
+              (-1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                (-4 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                  CCLP`Bulk`Hopf1`Lorentzian`g)) - 
+             2*CCLP`Bulk`Hopf1`Lorentzian`a*(1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g)*(1 + 
+               CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                (11 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                  CCLP`Bulk`Hopf1`Lorentzian`g)) - 
+             3*CCLP`Bulk`Hopf1`Lorentzian`a^2*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (3 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                (8 + 3*CCLP`Bulk`Hopf1`Lorentzian`b*
+                  CCLP`Bulk`Hopf1`Lorentzian`g))))))*
+       CCLP`Bulk`Hopf1`Lorentzian`Q, CCLP`Bulk`Hopf1`Lorentzian`J1 -> 
+      CCLP`Bulk`Hopf1`Lorentzian`J1*(1 - 144*Sqrt[3]*
+         CCLP`Bulk`Hopf1`Lorentzian`c2*CCLP`Bulk`Hopf1`Lorentzian`g^2*
+         CCLP`Bulk`Hopf1`Lorentzian`G5*Pi + 
+        (16*Sqrt[3]*CCLP`Bulk`Hopf1`Lorentzian`c1*
+          CCLP`Bulk`Hopf1`Lorentzian`g*(CCLP`Bulk`Hopf1`Lorentzian`a^8*
+            CCLP`Bulk`Hopf1`Lorentzian`g^6*(1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g)*(-1 + 
+             3*CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g) - 
+           2*CCLP`Bulk`Hopf1`Lorentzian`a^7*CCLP`Bulk`Hopf1`Lorentzian`g^5*
+            (3 + 2*CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)*
+            (5 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (8 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g)) - 
+           2*CCLP`Bulk`Hopf1`Lorentzian`a^6*CCLP`Bulk`Hopf1`Lorentzian`g^4*
+            (1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)*
+            (50 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (146 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(92 + 
+                 19*CCLP`Bulk`Hopf1`Lorentzian`b*
+                  CCLP`Bulk`Hopf1`Lorentzian`g))) + 
+           CCLP`Bulk`Hopf1`Lorentzian`b^2*(-1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g*(-16 + 
+               CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                (-52 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                  CCLP`Bulk`Hopf1`Lorentzian`g*(-48 - 12*
+                    CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g + 
+                   CCLP`Bulk`Hopf1`Lorentzian`b^3*
+                    CCLP`Bulk`Hopf1`Lorentzian`g^3)))) - 
+           2*CCLP`Bulk`Hopf1`Lorentzian`a^5*CCLP`Bulk`Hopf1`Lorentzian`g^3*
+            (63 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (377 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(707 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (543 + 8*CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g*(23 + 
+                     3*CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g))))) - 
+           2*CCLP`Bulk`Hopf1`Lorentzian`a^4*CCLP`Bulk`Hopf1`Lorentzian`g^2*
+            (1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)*
+            (33 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (291 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(626 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (406 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g*(103 + 
+                     6*CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g))))) + 
+           2*CCLP`Bulk`Hopf1`Lorentzian`a*CCLP`Bulk`Hopf1`Lorentzian`b*
+            (-3 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (-32 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(-131 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (-204 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g*(-118 - 23*
+                      CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g + 
+                     CCLP`Bulk`Hopf1`Lorentzian`b^3*
+                      CCLP`Bulk`Hopf1`Lorentzian`g^3))))) + 
+           2*CCLP`Bulk`Hopf1`Lorentzian`a^3*CCLP`Bulk`Hopf1`Lorentzian`g*
+            (-12 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (-147 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(-617 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (-1013 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g*(-699 + 
+                     CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g*(-201 + 
+                       CCLP`Bulk`Hopf1`Lorentzian`b*
+                        CCLP`Bulk`Hopf1`Lorentzian`g*(-18 + 
+                         CCLP`Bulk`Hopf1`Lorentzian`b*
+                          CCLP`Bulk`Hopf1`Lorentzian`g))))))) + 
+           CCLP`Bulk`Hopf1`Lorentzian`a^2*(1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g)*(-5 + 
+             CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (-71 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(-371 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (-705 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g*(-369 + 
+                     CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g*(-59 + 
+                       CCLP`Bulk`Hopf1`Lorentzian`b*
+                        CCLP`Bulk`Hopf1`Lorentzian`g*(1 + 
+                         CCLP`Bulk`Hopf1`Lorentzian`b*
+                          CCLP`Bulk`Hopf1`Lorentzian`g))))))))*
+          CCLP`Bulk`Hopf1`Lorentzian`G5*Pi)/
+         ((CCLP`Bulk`Hopf1`Lorentzian`a + CCLP`Bulk`Hopf1`Lorentzian`b)^2*
+          (1 + CCLP`Bulk`Hopf1`Lorentzian`a*CCLP`Bulk`Hopf1`Lorentzian`g)*
+          (1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)*
+          (CCLP`Bulk`Hopf1`Lorentzian`b + CCLP`Bulk`Hopf1`Lorentzian`a*
+            (2 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g))*
+          (1 + CCLP`Bulk`Hopf1`Lorentzian`g*(CCLP`Bulk`Hopf1`Lorentzian`a^4*
+              CCLP`Bulk`Hopf1`Lorentzian`g^3 - 2*CCLP`Bulk`Hopf1`Lorentzian`a^
+               3*CCLP`Bulk`Hopf1`Lorentzian`g^2*
+              (1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g) + CCLP`Bulk`Hopf1`Lorentzian`b*
+              (2 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)*
+              (-1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                (-4 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                  CCLP`Bulk`Hopf1`Lorentzian`g)) - 
+             2*CCLP`Bulk`Hopf1`Lorentzian`a*(1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g)*(1 + 
+               CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                (11 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                  CCLP`Bulk`Hopf1`Lorentzian`g)) - 
+             3*CCLP`Bulk`Hopf1`Lorentzian`a^2*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (3 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                (8 + 3*CCLP`Bulk`Hopf1`Lorentzian`b*
+                  CCLP`Bulk`Hopf1`Lorentzian`g)))))), 
+     CCLP`Bulk`Hopf1`Lorentzian`J2 -> CCLP`Bulk`Hopf1`Lorentzian`J2*
+       (1 - 144*Sqrt[3]*CCLP`Bulk`Hopf1`Lorentzian`c2*
+         CCLP`Bulk`Hopf1`Lorentzian`g^2*CCLP`Bulk`Hopf1`Lorentzian`G5*Pi + 
+        (16*Sqrt[3]*CCLP`Bulk`Hopf1`Lorentzian`c1*
+          CCLP`Bulk`Hopf1`Lorentzian`g*(2*CCLP`Bulk`Hopf1`Lorentzian`a^7*
+            CCLP`Bulk`Hopf1`Lorentzian`b^2*CCLP`Bulk`Hopf1`Lorentzian`g^7*
+            (1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g) + 
+           CCLP`Bulk`Hopf1`Lorentzian`a^8*CCLP`Bulk`Hopf1`Lorentzian`g^6*
+            (1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)^
+             2 - 2*CCLP`Bulk`Hopf1`Lorentzian`a^6*
+            CCLP`Bulk`Hopf1`Lorentzian`g^4*(1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g)*(6 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g*(17 + 6*
+                CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                (2 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                  CCLP`Bulk`Hopf1`Lorentzian`g))) - 
+           2*CCLP`Bulk`Hopf1`Lorentzian`a^5*CCLP`Bulk`Hopf1`Lorentzian`g^3*
+            (24 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (118 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(214 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (201 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g*(109 + 24*
+                      CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g))))) - 
+           CCLP`Bulk`Hopf1`Lorentzian`b^2*(5 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g*(24 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(66 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (126 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g*(100 + 
+                     CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g*(30 + 
+                       CCLP`Bulk`Hopf1`Lorentzian`b*
+                        CCLP`Bulk`Hopf1`Lorentzian`g)))))) - 
+           2*CCLP`Bulk`Hopf1`Lorentzian`a^3*CCLP`Bulk`Hopf1`Lorentzian`g*
+            (1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)*
+            (8 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (123 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(415 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (598 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g*(434 + 
+                     CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g*(109 + 
+                       2*CCLP`Bulk`Hopf1`Lorentzian`b*
+                        CCLP`Bulk`Hopf1`Lorentzian`g)))))) - 
+           2*CCLP`Bulk`Hopf1`Lorentzian`a^4*CCLP`Bulk`Hopf1`Lorentzian`g^2*
+            (26 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (204 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(537 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (699 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g*(509 + 
+                     CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g*(184 + 19*
+                        CCLP`Bulk`Hopf1`Lorentzian`b*
+                        CCLP`Bulk`Hopf1`Lorentzian`g)))))) + 
+           2*CCLP`Bulk`Hopf1`Lorentzian`a*CCLP`Bulk`Hopf1`Lorentzian`b*
+            (-3 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (-38 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(-147 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (-324 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g*(-377 + 
+                     CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g*(-196 + 
+                       CCLP`Bulk`Hopf1`Lorentzian`b*
+                        CCLP`Bulk`Hopf1`Lorentzian`g*(-34 + 
+                         CCLP`Bulk`Hopf1`Lorentzian`b*
+                          CCLP`Bulk`Hopf1`Lorentzian`g))))))) + 
+           CCLP`Bulk`Hopf1`Lorentzian`a^2*(1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g)*(-1 + 
+             CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (-63 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(-379 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (-855 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g*(-979 + 
+                     CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g*(-435 + 
+                       CCLP`Bulk`Hopf1`Lorentzian`b*
+                        CCLP`Bulk`Hopf1`Lorentzian`g*(-41 + 
+                         3*CCLP`Bulk`Hopf1`Lorentzian`b*
+                          CCLP`Bulk`Hopf1`Lorentzian`g))))))))*
+          CCLP`Bulk`Hopf1`Lorentzian`G5*Pi)/
+         ((CCLP`Bulk`Hopf1`Lorentzian`a + CCLP`Bulk`Hopf1`Lorentzian`b)^2*
+          (1 + CCLP`Bulk`Hopf1`Lorentzian`a*CCLP`Bulk`Hopf1`Lorentzian`g)*
+          (1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)*
+          (CCLP`Bulk`Hopf1`Lorentzian`a + 2*CCLP`Bulk`Hopf1`Lorentzian`b + 
+           CCLP`Bulk`Hopf1`Lorentzian`a*CCLP`Bulk`Hopf1`Lorentzian`b*
+            CCLP`Bulk`Hopf1`Lorentzian`g)*(1 + CCLP`Bulk`Hopf1`Lorentzian`g*
+            (CCLP`Bulk`Hopf1`Lorentzian`a^4*CCLP`Bulk`Hopf1`Lorentzian`g^3 - 
+             2*CCLP`Bulk`Hopf1`Lorentzian`a^3*CCLP`Bulk`Hopf1`Lorentzian`g^2*
+              (1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g) + CCLP`Bulk`Hopf1`Lorentzian`b*
+              (2 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)*
+              (-1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                (-4 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                  CCLP`Bulk`Hopf1`Lorentzian`g)) - 
+             2*CCLP`Bulk`Hopf1`Lorentzian`a*(1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g)*(1 + 
+               CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                (11 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                  CCLP`Bulk`Hopf1`Lorentzian`g)) - 
+             3*CCLP`Bulk`Hopf1`Lorentzian`a^2*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (3 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                (8 + 3*CCLP`Bulk`Hopf1`Lorentzian`b*
+                  CCLP`Bulk`Hopf1`Lorentzian`g)))))), 
+     CCLP`Bulk`Hopf1`Lorentzian`En -> CCLP`Bulk`Hopf1`Lorentzian`En*
+       (1 - 144*Sqrt[3]*CCLP`Bulk`Hopf1`Lorentzian`c2*
+         CCLP`Bulk`Hopf1`Lorentzian`g^2*CCLP`Bulk`Hopf1`Lorentzian`G5*Pi + 
+        (16*Sqrt[3]*CCLP`Bulk`Hopf1`Lorentzian`c1*
+          CCLP`Bulk`Hopf1`Lorentzian`g*(CCLP`Bulk`Hopf1`Lorentzian`a^9*
+            CCLP`Bulk`Hopf1`Lorentzian`g^8*(1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+               CCLP`Bulk`Hopf1`Lorentzian`g)^2 + CCLP`Bulk`Hopf1`Lorentzian`a^
+             8*CCLP`Bulk`Hopf1`Lorentzian`g^7*
+            (-1 + CCLP`Bulk`Hopf1`Lorentzian`b^2*CCLP`Bulk`Hopf1`Lorentzian`g^
+               2) - CCLP`Bulk`Hopf1`Lorentzian`a^7*
+            CCLP`Bulk`Hopf1`Lorentzian`g^6*(1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g)*(7 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g*(37 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(31 + 
+                 9*CCLP`Bulk`Hopf1`Lorentzian`b*
+                  CCLP`Bulk`Hopf1`Lorentzian`g))) - 
+           CCLP`Bulk`Hopf1`Lorentzian`a^6*CCLP`Bulk`Hopf1`Lorentzian`g^5*
+            (-10 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (109 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(414 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (464 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g*(208 + 31*
+                      CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g))))) - 
+           CCLP`Bulk`Hopf1`Lorentzian`a^5*CCLP`Bulk`Hopf1`Lorentzian`g^4*
+            (1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)*
+            (-102 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (-110 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(547 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (803 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g*(319 + 31*
+                      CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g))))) - 
+           CCLP`Bulk`Hopf1`Lorentzian`a^3*CCLP`Bulk`Hopf1`Lorentzian`g^2*
+            (1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)*
+            (-81 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (-641 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(-1203 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (-93 + 2*CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g*(463 + 
+                     4*CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g*(53 + 
+                       5*CCLP`Bulk`Hopf1`Lorentzian`b*
+                        CCLP`Bulk`Hopf1`Lorentzian`g)))))) + 
+           CCLP`Bulk`Hopf1`Lorentzian`b*(3 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g*(23 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(81 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (140 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g*(102 + 
+                     CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g*(-2 + 
+                       CCLP`Bulk`Hopf1`Lorentzian`b*
+                        CCLP`Bulk`Hopf1`Lorentzian`g)*(-5 + 
+                       CCLP`Bulk`Hopf1`Lorentzian`b*
+                        CCLP`Bulk`Hopf1`Lorentzian`g*(1 + 
+                         CCLP`Bulk`Hopf1`Lorentzian`b*
+                          CCLP`Bulk`Hopf1`Lorentzian`g))))))) - 
+           CCLP`Bulk`Hopf1`Lorentzian`a^4*CCLP`Bulk`Hopf1`Lorentzian`g^3*
+            (-140 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (-760 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(-846 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (833 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g*(1974 + 
+                     CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g*(1122 + 
+                       CCLP`Bulk`Hopf1`Lorentzian`b*
+                        CCLP`Bulk`Hopf1`Lorentzian`g*(208 + 
+                         9*CCLP`Bulk`Hopf1`Lorentzian`b*
+                          CCLP`Bulk`Hopf1`Lorentzian`g))))))) + 
+           CCLP`Bulk`Hopf1`Lorentzian`a*(3 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g*(50 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(288 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (722 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g*(760 + 
+                     CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g*(212 + 
+                       CCLP`Bulk`Hopf1`Lorentzian`b*
+                        CCLP`Bulk`Hopf1`Lorentzian`g*(-109 - 44*
+                          CCLP`Bulk`Hopf1`Lorentzian`b*
+                          CCLP`Bulk`Hopf1`Lorentzian`g + 2*
+                          CCLP`Bulk`Hopf1`Lorentzian`b^3*
+                          CCLP`Bulk`Hopf1`Lorentzian`g^3))))))) + 
+           CCLP`Bulk`Hopf1`Lorentzian`a^2*CCLP`Bulk`Hopf1`Lorentzian`g*
+            (23 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (288 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(1180 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (1844 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g*(846 + 
+                     CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g*(-437 + 
+                       CCLP`Bulk`Hopf1`Lorentzian`b*
+                        CCLP`Bulk`Hopf1`Lorentzian`g*(-414 + 
+                         CCLP`Bulk`Hopf1`Lorentzian`b*
+                          CCLP`Bulk`Hopf1`Lorentzian`g*(-68 + 
+                          CCLP`Bulk`Hopf1`Lorentzian`b*
+                          CCLP`Bulk`Hopf1`Lorentzian`g*(1 + 
+                          CCLP`Bulk`Hopf1`Lorentzian`b*
+                          CCLP`Bulk`Hopf1`Lorentzian`g))))))))))*
+          CCLP`Bulk`Hopf1`Lorentzian`G5*Pi)/
+         ((CCLP`Bulk`Hopf1`Lorentzian`a + CCLP`Bulk`Hopf1`Lorentzian`b)^2*
+          (1 + CCLP`Bulk`Hopf1`Lorentzian`a*CCLP`Bulk`Hopf1`Lorentzian`g)*
+          (1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)*
+          (-3 + CCLP`Bulk`Hopf1`Lorentzian`g^2*(CCLP`Bulk`Hopf1`Lorentzian`a^
+              2 - CCLP`Bulk`Hopf1`Lorentzian`a*CCLP`Bulk`Hopf1`Lorentzian`b + 
+             CCLP`Bulk`Hopf1`Lorentzian`b^2 + CCLP`Bulk`Hopf1`Lorentzian`a*
+              CCLP`Bulk`Hopf1`Lorentzian`b*(CCLP`Bulk`Hopf1`Lorentzian`a + 
+               CCLP`Bulk`Hopf1`Lorentzian`b)*CCLP`Bulk`Hopf1`Lorentzian`g))*
+          (1 + CCLP`Bulk`Hopf1`Lorentzian`g*(CCLP`Bulk`Hopf1`Lorentzian`a^4*
+              CCLP`Bulk`Hopf1`Lorentzian`g^3 - 2*CCLP`Bulk`Hopf1`Lorentzian`a^
+               3*CCLP`Bulk`Hopf1`Lorentzian`g^2*
+              (1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g) + CCLP`Bulk`Hopf1`Lorentzian`b*
+              (2 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)*
+              (-1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                (-4 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                  CCLP`Bulk`Hopf1`Lorentzian`g)) - 
+             2*CCLP`Bulk`Hopf1`Lorentzian`a*(1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g)*(1 + 
+               CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                (11 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                  CCLP`Bulk`Hopf1`Lorentzian`g)) - 
+             3*CCLP`Bulk`Hopf1`Lorentzian`a^2*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (3 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                (8 + 3*CCLP`Bulk`Hopf1`Lorentzian`b*
+                  CCLP`Bulk`Hopf1`Lorentzian`g)))))), 
+     CCLP`Bulk`Hopf1`Lorentzian`S -> 
+      (1 - 144*Sqrt[3]*CCLP`Bulk`Hopf1`Lorentzian`c2*
+         CCLP`Bulk`Hopf1`Lorentzian`g^2*CCLP`Bulk`Hopf1`Lorentzian`G5*Pi + 
+        (16*Sqrt[3]*CCLP`Bulk`Hopf1`Lorentzian`c1*
+          CCLP`Bulk`Hopf1`Lorentzian`g^2*(-(CCLP`Bulk`Hopf1`Lorentzian`a^6*
+             CCLP`Bulk`Hopf1`Lorentzian`g^4*(1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+               CCLP`Bulk`Hopf1`Lorentzian`g)) + CCLP`Bulk`Hopf1`Lorentzian`a^
+             7*CCLP`Bulk`Hopf1`Lorentzian`g^5*
+            (1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g) - 
+           CCLP`Bulk`Hopf1`Lorentzian`a^5*CCLP`Bulk`Hopf1`Lorentzian`g^3*
+            (23 + 3*CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (21 + 4*CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(4 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*
+                  CCLP`Bulk`Hopf1`Lorentzian`g))) - 
+           CCLP`Bulk`Hopf1`Lorentzian`a^4*CCLP`Bulk`Hopf1`Lorentzian`g^2*
+            (59 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (245 + 26*CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(12 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (6 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g)))) - 
+           CCLP`Bulk`Hopf1`Lorentzian`a^3*CCLP`Bulk`Hopf1`Lorentzian`g*
+            (1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)*
+            (45 + 4*CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (67 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                (88 + 3*CCLP`Bulk`Hopf1`Lorentzian`b*
+                  CCLP`Bulk`Hopf1`Lorentzian`g*(12 + 
+                   CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g)))) - 
+           CCLP`Bulk`Hopf1`Lorentzian`a^2*(1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g)*(11 + 
+             4*CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (37 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                (89 + 6*CCLP`Bulk`Hopf1`Lorentzian`b*
+                  CCLP`Bulk`Hopf1`Lorentzian`g*(11 + 
+                   2*CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g)))) + 
+           CCLP`Bulk`Hopf1`Lorentzian`b^2*(-11 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g*(-45 + 
+               CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                (-59 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                  CCLP`Bulk`Hopf1`Lorentzian`g*(-23 + 
+                   CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                    (-1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g))))) + 
+           CCLP`Bulk`Hopf1`Lorentzian`a*CCLP`Bulk`Hopf1`Lorentzian`b*
+            (-26 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (-159 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(-313 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (-245 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g*(-63 + 
+                     CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g*(-1 + 
+                       CCLP`Bulk`Hopf1`Lorentzian`b*
+                        CCLP`Bulk`Hopf1`Lorentzian`g)))))))*
+          CCLP`Bulk`Hopf1`Lorentzian`G5*Pi)/
+         ((CCLP`Bulk`Hopf1`Lorentzian`a + CCLP`Bulk`Hopf1`Lorentzian`b)^2*
+          (1 + CCLP`Bulk`Hopf1`Lorentzian`a*CCLP`Bulk`Hopf1`Lorentzian`g)*
+          (1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)*
+          (1 + CCLP`Bulk`Hopf1`Lorentzian`g*(CCLP`Bulk`Hopf1`Lorentzian`a^4*
+              CCLP`Bulk`Hopf1`Lorentzian`g^3 - 2*CCLP`Bulk`Hopf1`Lorentzian`a^
+               3*CCLP`Bulk`Hopf1`Lorentzian`g^2*
+              (1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g) + CCLP`Bulk`Hopf1`Lorentzian`b*
+              (2 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)*
+              (-1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                (-4 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                  CCLP`Bulk`Hopf1`Lorentzian`g)) - 
+             2*CCLP`Bulk`Hopf1`Lorentzian`a*(1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g)*(1 + 
+               CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                (11 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                  CCLP`Bulk`Hopf1`Lorentzian`g)) - 
+             3*CCLP`Bulk`Hopf1`Lorentzian`a^2*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (3 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                (8 + 3*CCLP`Bulk`Hopf1`Lorentzian`b*
+                  CCLP`Bulk`Hopf1`Lorentzian`g))))))*
+       CCLP`Bulk`Hopf1`Lorentzian`S}, 
+   CCLP`Bulk`Hopf1`Lorentzian`HDbpsChargeCorrections -> 
+    {CCLP`Bulk`Hopf1`Lorentzian`q -> (8*CCLP`Bulk`Hopf1`Lorentzian`g*
+        (CCLP`Bulk`Hopf1`Lorentzian`a^7*CCLP`Bulk`Hopf1`Lorentzian`g^6*
+          (1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)*
+          (-1 + 5*CCLP`Bulk`Hopf1`Lorentzian`b*
+            CCLP`Bulk`Hopf1`Lorentzian`g) - CCLP`Bulk`Hopf1`Lorentzian`a^6*
+          CCLP`Bulk`Hopf1`Lorentzian`g^5*(26 + CCLP`Bulk`Hopf1`Lorentzian`b*
+            CCLP`Bulk`Hopf1`Lorentzian`g*(57 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g*(34 + 7*
+                CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g))) - 
+         CCLP`Bulk`Hopf1`Lorentzian`b*(1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+             CCLP`Bulk`Hopf1`Lorentzian`g)^2*
+          (3 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+            (14 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (31 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                (24 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                  CCLP`Bulk`Hopf1`Lorentzian`g)))) - 
+         CCLP`Bulk`Hopf1`Lorentzian`a^5*CCLP`Bulk`Hopf1`Lorentzian`g^4*
+          (80 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+            (322 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (427 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(244 + 
+                 55*CCLP`Bulk`Hopf1`Lorentzian`b*
+                  CCLP`Bulk`Hopf1`Lorentzian`g)))) - 
+         CCLP`Bulk`Hopf1`Lorentzian`a^4*CCLP`Bulk`Hopf1`Lorentzian`g^3*
+          (100 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+            (586 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (1142 + 5*CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(197 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (80 + 11*CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g))))) - 
+         CCLP`Bulk`Hopf1`Lorentzian`a^3*CCLP`Bulk`Hopf1`Lorentzian`g^2*
+          (62 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+            (516 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (1410 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(1688 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (985 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g*(244 + 
+                     7*CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g)))))) + 
+         CCLP`Bulk`Hopf1`Lorentzian`a*(-3 + CCLP`Bulk`Hopf1`Lorentzian`b*
+            CCLP`Bulk`Hopf1`Lorentzian`g*(-44 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g*(-220 + 
+               CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                (-516 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                  CCLP`Bulk`Hopf1`Lorentzian`g*(-586 + 
+                   CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                    (-322 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g*(-57 + 
+                       4*CCLP`Bulk`Hopf1`Lorentzian`b*
+                        CCLP`Bulk`Hopf1`Lorentzian`g))))))) + 
+         CCLP`Bulk`Hopf1`Lorentzian`a^2*CCLP`Bulk`Hopf1`Lorentzian`g*
+          (-20 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+            (-220 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (-844 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(-1410 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (-1142 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g*(-427 + 
+                     CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g*(-34 + 
+                       5*CCLP`Bulk`Hopf1`Lorentzian`b*
+                        CCLP`Bulk`Hopf1`Lorentzian`g)))))))))/
+       (3*(CCLP`Bulk`Hopf1`Lorentzian`a + CCLP`Bulk`Hopf1`Lorentzian`b)^2*
+        (1 + CCLP`Bulk`Hopf1`Lorentzian`a*CCLP`Bulk`Hopf1`Lorentzian`g)*
+        (1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)*
+        (1 + CCLP`Bulk`Hopf1`Lorentzian`g*(CCLP`Bulk`Hopf1`Lorentzian`a^4*
+            CCLP`Bulk`Hopf1`Lorentzian`g^3 - 2*CCLP`Bulk`Hopf1`Lorentzian`a^3*
+            CCLP`Bulk`Hopf1`Lorentzian`g^2*(1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g) + CCLP`Bulk`Hopf1`Lorentzian`b*
+            (2 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)*
+            (-1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (-4 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g)) - 
+           2*CCLP`Bulk`Hopf1`Lorentzian`a*(1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g)*(1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g*(11 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g)) - 
+           3*CCLP`Bulk`Hopf1`Lorentzian`a^2*CCLP`Bulk`Hopf1`Lorentzian`g*
+            (3 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (8 + 3*CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g))))), 
+     CCLP`Bulk`Hopf1`Lorentzian`j1 -> (8*CCLP`Bulk`Hopf1`Lorentzian`g*
+        (CCLP`Bulk`Hopf1`Lorentzian`a^8*CCLP`Bulk`Hopf1`Lorentzian`g^6*
+          (1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)*
+          (-1 + 3*CCLP`Bulk`Hopf1`Lorentzian`b*
+            CCLP`Bulk`Hopf1`Lorentzian`g) - 2*CCLP`Bulk`Hopf1`Lorentzian`a^7*
+          CCLP`Bulk`Hopf1`Lorentzian`g^5*(3 + 2*CCLP`Bulk`Hopf1`Lorentzian`b*
+            CCLP`Bulk`Hopf1`Lorentzian`g)*(5 + CCLP`Bulk`Hopf1`Lorentzian`b*
+            CCLP`Bulk`Hopf1`Lorentzian`g*(8 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g)) - 2*CCLP`Bulk`Hopf1`Lorentzian`a^
+           6*CCLP`Bulk`Hopf1`Lorentzian`g^4*(1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+            CCLP`Bulk`Hopf1`Lorentzian`g)*(50 + CCLP`Bulk`Hopf1`Lorentzian`b*
+            CCLP`Bulk`Hopf1`Lorentzian`g*(146 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g*(92 + 19*
+                CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g))) + 
+         CCLP`Bulk`Hopf1`Lorentzian`b^2*(-1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+            CCLP`Bulk`Hopf1`Lorentzian`g*(-16 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g*(-52 + 
+               CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                (-48 - 12*CCLP`Bulk`Hopf1`Lorentzian`b*
+                  CCLP`Bulk`Hopf1`Lorentzian`g + CCLP`Bulk`Hopf1`Lorentzian`b^
+                   3*CCLP`Bulk`Hopf1`Lorentzian`g^3)))) - 
+         2*CCLP`Bulk`Hopf1`Lorentzian`a^5*CCLP`Bulk`Hopf1`Lorentzian`g^3*
+          (63 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+            (377 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (707 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(543 + 
+                 8*CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (23 + 3*CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g))))) - 
+         2*CCLP`Bulk`Hopf1`Lorentzian`a^4*CCLP`Bulk`Hopf1`Lorentzian`g^2*
+          (1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)*
+          (33 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+            (291 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (626 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(406 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (103 + 6*CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g))))) + 
+         2*CCLP`Bulk`Hopf1`Lorentzian`a*CCLP`Bulk`Hopf1`Lorentzian`b*
+          (-3 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+            (-32 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (-131 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(-204 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (-118 - 23*CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g + 
+                   CCLP`Bulk`Hopf1`Lorentzian`b^3*
+                    CCLP`Bulk`Hopf1`Lorentzian`g^3))))) + 
+         2*CCLP`Bulk`Hopf1`Lorentzian`a^3*CCLP`Bulk`Hopf1`Lorentzian`g*
+          (-12 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+            (-147 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (-617 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(-1013 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (-699 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g*(-201 + 
+                     CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g*(-18 + 
+                       CCLP`Bulk`Hopf1`Lorentzian`b*
+                        CCLP`Bulk`Hopf1`Lorentzian`g))))))) + 
+         CCLP`Bulk`Hopf1`Lorentzian`a^2*(1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+            CCLP`Bulk`Hopf1`Lorentzian`g)*(-5 + CCLP`Bulk`Hopf1`Lorentzian`b*
+            CCLP`Bulk`Hopf1`Lorentzian`g*(-71 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g*(-371 + 
+               CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                (-705 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                  CCLP`Bulk`Hopf1`Lorentzian`g*(-369 + 
+                   CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                    (-59 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g*(1 + 
+                       CCLP`Bulk`Hopf1`Lorentzian`b*
+                        CCLP`Bulk`Hopf1`Lorentzian`g)))))))))/
+       ((CCLP`Bulk`Hopf1`Lorentzian`a + CCLP`Bulk`Hopf1`Lorentzian`b)^2*
+        (1 + CCLP`Bulk`Hopf1`Lorentzian`a*CCLP`Bulk`Hopf1`Lorentzian`g)*
+        (1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)*
+        (CCLP`Bulk`Hopf1`Lorentzian`b + CCLP`Bulk`Hopf1`Lorentzian`a*
+          (2 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g))*
+        (1 + CCLP`Bulk`Hopf1`Lorentzian`g*(CCLP`Bulk`Hopf1`Lorentzian`a^4*
+            CCLP`Bulk`Hopf1`Lorentzian`g^3 - 2*CCLP`Bulk`Hopf1`Lorentzian`a^3*
+            CCLP`Bulk`Hopf1`Lorentzian`g^2*(1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g) + CCLP`Bulk`Hopf1`Lorentzian`b*
+            (2 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)*
+            (-1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (-4 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g)) - 
+           2*CCLP`Bulk`Hopf1`Lorentzian`a*(1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g)*(1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g*(11 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g)) - 
+           3*CCLP`Bulk`Hopf1`Lorentzian`a^2*CCLP`Bulk`Hopf1`Lorentzian`g*
+            (3 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (8 + 3*CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g))))), 
+     CCLP`Bulk`Hopf1`Lorentzian`j2 -> (8*CCLP`Bulk`Hopf1`Lorentzian`g*
+        (2*CCLP`Bulk`Hopf1`Lorentzian`a^7*CCLP`Bulk`Hopf1`Lorentzian`b^2*
+          CCLP`Bulk`Hopf1`Lorentzian`g^7*(1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+            CCLP`Bulk`Hopf1`Lorentzian`g) + CCLP`Bulk`Hopf1`Lorentzian`a^8*
+          CCLP`Bulk`Hopf1`Lorentzian`g^6*(1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+             CCLP`Bulk`Hopf1`Lorentzian`g)^2 - 2*CCLP`Bulk`Hopf1`Lorentzian`a^
+           6*CCLP`Bulk`Hopf1`Lorentzian`g^4*(1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+            CCLP`Bulk`Hopf1`Lorentzian`g)*(6 + CCLP`Bulk`Hopf1`Lorentzian`b*
+            CCLP`Bulk`Hopf1`Lorentzian`g*(17 + 6*CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g*(2 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g))) - 
+         2*CCLP`Bulk`Hopf1`Lorentzian`a^5*CCLP`Bulk`Hopf1`Lorentzian`g^3*
+          (24 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+            (118 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (214 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(201 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (109 + 24*CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g))))) - 
+         CCLP`Bulk`Hopf1`Lorentzian`b^2*(5 + CCLP`Bulk`Hopf1`Lorentzian`b*
+            CCLP`Bulk`Hopf1`Lorentzian`g*(24 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g*(66 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(126 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (100 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g*(30 + 
+                     CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g)))))) - 
+         2*CCLP`Bulk`Hopf1`Lorentzian`a^3*CCLP`Bulk`Hopf1`Lorentzian`g*
+          (1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)*
+          (8 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+            (123 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (415 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(598 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (434 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g*(109 + 
+                     2*CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g)))))) - 
+         2*CCLP`Bulk`Hopf1`Lorentzian`a^4*CCLP`Bulk`Hopf1`Lorentzian`g^2*
+          (26 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+            (204 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (537 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(699 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (509 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g*(184 + 19*
+                      CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g)))))) + 
+         2*CCLP`Bulk`Hopf1`Lorentzian`a*CCLP`Bulk`Hopf1`Lorentzian`b*
+          (-3 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+            (-38 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (-147 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(-324 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (-377 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g*(-196 + 
+                     CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g*(-34 + 
+                       CCLP`Bulk`Hopf1`Lorentzian`b*
+                        CCLP`Bulk`Hopf1`Lorentzian`g))))))) + 
+         CCLP`Bulk`Hopf1`Lorentzian`a^2*(1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+            CCLP`Bulk`Hopf1`Lorentzian`g)*(-1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+            CCLP`Bulk`Hopf1`Lorentzian`g*(-63 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g*(-379 + 
+               CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                (-855 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                  CCLP`Bulk`Hopf1`Lorentzian`g*(-979 + 
+                   CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                    (-435 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g*(-41 + 
+                       3*CCLP`Bulk`Hopf1`Lorentzian`b*
+                        CCLP`Bulk`Hopf1`Lorentzian`g)))))))))/
+       ((CCLP`Bulk`Hopf1`Lorentzian`a + CCLP`Bulk`Hopf1`Lorentzian`b)^2*
+        (1 + CCLP`Bulk`Hopf1`Lorentzian`a*CCLP`Bulk`Hopf1`Lorentzian`g)*
+        (1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)*
+        (CCLP`Bulk`Hopf1`Lorentzian`a + 2*CCLP`Bulk`Hopf1`Lorentzian`b + 
+         CCLP`Bulk`Hopf1`Lorentzian`a*CCLP`Bulk`Hopf1`Lorentzian`b*
+          CCLP`Bulk`Hopf1`Lorentzian`g)*(1 + CCLP`Bulk`Hopf1`Lorentzian`g*
+          (CCLP`Bulk`Hopf1`Lorentzian`a^4*CCLP`Bulk`Hopf1`Lorentzian`g^3 - 
+           2*CCLP`Bulk`Hopf1`Lorentzian`a^3*CCLP`Bulk`Hopf1`Lorentzian`g^2*
+            (1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g) + 
+           CCLP`Bulk`Hopf1`Lorentzian`b*(2 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g)*(-1 + 
+             CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (-4 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g)) - 
+           2*CCLP`Bulk`Hopf1`Lorentzian`a*(1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g)*(1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g*(11 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g)) - 
+           3*CCLP`Bulk`Hopf1`Lorentzian`a^2*CCLP`Bulk`Hopf1`Lorentzian`g*
+            (3 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (8 + 3*CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g))))), 
+     CCLP`Bulk`Hopf1`Lorentzian`en -> (8*CCLP`Bulk`Hopf1`Lorentzian`g*
+        (CCLP`Bulk`Hopf1`Lorentzian`a^9*CCLP`Bulk`Hopf1`Lorentzian`g^8*
+          (1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)^2 + 
+         CCLP`Bulk`Hopf1`Lorentzian`a^8*CCLP`Bulk`Hopf1`Lorentzian`g^7*
+          (-1 + CCLP`Bulk`Hopf1`Lorentzian`b^2*CCLP`Bulk`Hopf1`Lorentzian`g^
+             2) - CCLP`Bulk`Hopf1`Lorentzian`a^7*CCLP`Bulk`Hopf1`Lorentzian`g^
+           6*(1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)*
+          (7 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+            (37 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (31 + 9*CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g))) - 
+         CCLP`Bulk`Hopf1`Lorentzian`a^6*CCLP`Bulk`Hopf1`Lorentzian`g^5*
+          (-10 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+            (109 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (414 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(464 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (208 + 31*CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g))))) - 
+         CCLP`Bulk`Hopf1`Lorentzian`a^5*CCLP`Bulk`Hopf1`Lorentzian`g^4*
+          (1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)*
+          (-102 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+            (-110 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (547 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(803 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (319 + 31*CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g))))) - 
+         CCLP`Bulk`Hopf1`Lorentzian`a^3*CCLP`Bulk`Hopf1`Lorentzian`g^2*
+          (1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)*
+          (-81 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+            (-641 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (-1203 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(-93 + 
+                 2*CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (463 + 4*CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g*(53 + 
+                     5*CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g)))))) + 
+         CCLP`Bulk`Hopf1`Lorentzian`b*(3 + CCLP`Bulk`Hopf1`Lorentzian`b*
+            CCLP`Bulk`Hopf1`Lorentzian`g*(23 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g*(81 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(140 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (102 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g*(-2 + 
+                     CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g)*(-5 + 
+                     CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g*(1 + 
+                       CCLP`Bulk`Hopf1`Lorentzian`b*
+                        CCLP`Bulk`Hopf1`Lorentzian`g))))))) - 
+         CCLP`Bulk`Hopf1`Lorentzian`a^4*CCLP`Bulk`Hopf1`Lorentzian`g^3*
+          (-140 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+            (-760 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (-846 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(833 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (1974 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g*(1122 + 
+                     CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g*(208 + 
+                       9*CCLP`Bulk`Hopf1`Lorentzian`b*
+                        CCLP`Bulk`Hopf1`Lorentzian`g))))))) + 
+         CCLP`Bulk`Hopf1`Lorentzian`a*(3 + CCLP`Bulk`Hopf1`Lorentzian`b*
+            CCLP`Bulk`Hopf1`Lorentzian`g*(50 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g*(288 + 
+               CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                (722 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                  CCLP`Bulk`Hopf1`Lorentzian`g*(760 + 
+                   CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                    (212 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g*(-109 - 44*
+                        CCLP`Bulk`Hopf1`Lorentzian`b*
+                        CCLP`Bulk`Hopf1`Lorentzian`g + 2*
+                        CCLP`Bulk`Hopf1`Lorentzian`b^3*
+                        CCLP`Bulk`Hopf1`Lorentzian`g^3))))))) + 
+         CCLP`Bulk`Hopf1`Lorentzian`a^2*CCLP`Bulk`Hopf1`Lorentzian`g*
+          (23 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+            (288 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (1180 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(1844 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (846 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g*(-437 + 
+                     CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g*(-414 + 
+                       CCLP`Bulk`Hopf1`Lorentzian`b*
+                        CCLP`Bulk`Hopf1`Lorentzian`g*(-68 + 
+                         CCLP`Bulk`Hopf1`Lorentzian`b*
+                          CCLP`Bulk`Hopf1`Lorentzian`g*(1 + 
+                          CCLP`Bulk`Hopf1`Lorentzian`b*
+                          CCLP`Bulk`Hopf1`Lorentzian`g)))))))))))/
+       ((CCLP`Bulk`Hopf1`Lorentzian`a + CCLP`Bulk`Hopf1`Lorentzian`b)^2*
+        (1 + CCLP`Bulk`Hopf1`Lorentzian`a*CCLP`Bulk`Hopf1`Lorentzian`g)*
+        (1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)*
+        (-3 + CCLP`Bulk`Hopf1`Lorentzian`g^2*(CCLP`Bulk`Hopf1`Lorentzian`a^
+            2 - CCLP`Bulk`Hopf1`Lorentzian`a*CCLP`Bulk`Hopf1`Lorentzian`b + 
+           CCLP`Bulk`Hopf1`Lorentzian`b^2 + CCLP`Bulk`Hopf1`Lorentzian`a*
+            CCLP`Bulk`Hopf1`Lorentzian`b*(CCLP`Bulk`Hopf1`Lorentzian`a + 
+             CCLP`Bulk`Hopf1`Lorentzian`b)*CCLP`Bulk`Hopf1`Lorentzian`g))*
+        (1 + CCLP`Bulk`Hopf1`Lorentzian`g*(CCLP`Bulk`Hopf1`Lorentzian`a^4*
+            CCLP`Bulk`Hopf1`Lorentzian`g^3 - 2*CCLP`Bulk`Hopf1`Lorentzian`a^3*
+            CCLP`Bulk`Hopf1`Lorentzian`g^2*(1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g) + CCLP`Bulk`Hopf1`Lorentzian`b*
+            (2 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)*
+            (-1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (-4 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g)) - 
+           2*CCLP`Bulk`Hopf1`Lorentzian`a*(1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g)*(1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g*(11 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g)) - 
+           3*CCLP`Bulk`Hopf1`Lorentzian`a^2*CCLP`Bulk`Hopf1`Lorentzian`g*
+            (3 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (8 + 3*CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g))))), 
+     CCLP`Bulk`Hopf1`Lorentzian`s -> (8*CCLP`Bulk`Hopf1`Lorentzian`g^2*
+        (-(CCLP`Bulk`Hopf1`Lorentzian`a^6*CCLP`Bulk`Hopf1`Lorentzian`g^4*
+           (1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)) + 
+         CCLP`Bulk`Hopf1`Lorentzian`a^7*CCLP`Bulk`Hopf1`Lorentzian`g^5*
+          (1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g) - 
+         CCLP`Bulk`Hopf1`Lorentzian`a^5*CCLP`Bulk`Hopf1`Lorentzian`g^3*
+          (23 + 3*CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+            (21 + 4*CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (4 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g))) - 
+         CCLP`Bulk`Hopf1`Lorentzian`a^4*CCLP`Bulk`Hopf1`Lorentzian`g^2*
+          (59 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+            (245 + 26*CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g*(12 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(6 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*
+                  CCLP`Bulk`Hopf1`Lorentzian`g)))) - 
+         CCLP`Bulk`Hopf1`Lorentzian`a^3*CCLP`Bulk`Hopf1`Lorentzian`g*
+          (1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)*
+          (45 + 4*CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+            (67 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (88 + 3*CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(12 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*
+                  CCLP`Bulk`Hopf1`Lorentzian`g)))) - 
+         CCLP`Bulk`Hopf1`Lorentzian`a^2*(1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+            CCLP`Bulk`Hopf1`Lorentzian`g)*
+          (11 + 4*CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+            (37 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (89 + 6*CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(11 + 
+                 2*CCLP`Bulk`Hopf1`Lorentzian`b*
+                  CCLP`Bulk`Hopf1`Lorentzian`g)))) + 
+         CCLP`Bulk`Hopf1`Lorentzian`b^2*(-11 + CCLP`Bulk`Hopf1`Lorentzian`b*
+            CCLP`Bulk`Hopf1`Lorentzian`g*(-45 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g*(-59 + 
+               CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                (-23 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                  CCLP`Bulk`Hopf1`Lorentzian`g*(-1 + 
+                   CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g))))) + 
+         CCLP`Bulk`Hopf1`Lorentzian`a*CCLP`Bulk`Hopf1`Lorentzian`b*
+          (-26 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+            (-159 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (-313 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g*(-245 + 
+                 CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+                  (-63 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                    CCLP`Bulk`Hopf1`Lorentzian`g*(-1 + 
+                     CCLP`Bulk`Hopf1`Lorentzian`b*
+                      CCLP`Bulk`Hopf1`Lorentzian`g))))))))/
+       ((CCLP`Bulk`Hopf1`Lorentzian`a + CCLP`Bulk`Hopf1`Lorentzian`b)^2*
+        (1 + CCLP`Bulk`Hopf1`Lorentzian`a*CCLP`Bulk`Hopf1`Lorentzian`g)*
+        (1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)*
+        (1 + CCLP`Bulk`Hopf1`Lorentzian`g*(CCLP`Bulk`Hopf1`Lorentzian`a^4*
+            CCLP`Bulk`Hopf1`Lorentzian`g^3 - 2*CCLP`Bulk`Hopf1`Lorentzian`a^3*
+            CCLP`Bulk`Hopf1`Lorentzian`g^2*(1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g) + CCLP`Bulk`Hopf1`Lorentzian`b*
+            (2 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g)*
+            (-1 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (-4 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g)) - 
+           2*CCLP`Bulk`Hopf1`Lorentzian`a*(1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g)*(1 + CCLP`Bulk`Hopf1`Lorentzian`b*
+              CCLP`Bulk`Hopf1`Lorentzian`g*(11 + CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g)) - 
+           3*CCLP`Bulk`Hopf1`Lorentzian`a^2*CCLP`Bulk`Hopf1`Lorentzian`g*
+            (3 + CCLP`Bulk`Hopf1`Lorentzian`b*CCLP`Bulk`Hopf1`Lorentzian`g*
+              (8 + 3*CCLP`Bulk`Hopf1`Lorentzian`b*
+                CCLP`Bulk`Hopf1`Lorentzian`g)))))}|>|>

@@ -611,8 +611,8 @@ TraditionalForm]],FormatType->TraditionalForm]]]\) we have a two parameter \
            CCLP`Bulk`Hopf1`Lorentzian`b - I*CCLP`Bulk`Hopf1`Lorentzian`rs))*
         CCLP`Bulk`Hopf1`Lorentzian`rs)}, 
    CCLP`Bulk`Hopf1`Lorentzian`newBpsAction -> 
-    (CCLP`Bulk`Hopf1`Lorentzian`Cx^3*Pi*
-      CCLP`Bulk`Hopf1`Lorentzian`\[CurlyPhi]^3)/
-     (12*Sqrt[3]*CCLP`Bulk`Hopf1`Lorentzian`G5*
-      CCLP`Bulk`Hopf1`Lorentzian`\[Omega]1*
-      CCLP`Bulk`Hopf1`Lorentzian`\[Omega]2)|>|>
+    {CCLP`Bulk`Hopf1`Lorentzian`Iren -> (CCLP`Bulk`Hopf1`Lorentzian`Cx^3*Pi*
+        CCLP`Bulk`Hopf1`Lorentzian`\[CurlyPhi]^3)/
+       (12*Sqrt[3]*CCLP`Bulk`Hopf1`Lorentzian`G5*
+        CCLP`Bulk`Hopf1`Lorentzian`\[Omega]1*
+        CCLP`Bulk`Hopf1`Lorentzian`\[Omega]2)}|>|>
