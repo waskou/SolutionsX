@@ -1,0 +1,2722 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    107366,       2714]
+NotebookOptionsPosition[    102529,       2637]
+NotebookOutlinePosition[    102963,       2654]
+CellTagsIndexPosition[    102920,       2651]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{"<<", "VasilDimitrov`SolutionsX`"}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.8958215052159986`*^9, 3.895821512822934*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"e5295b36-d71c-419f-a0c5-e3b5a8512501"],
+
+Cell[CellGroupData[{
+
+Cell["Setup", "Section",
+ CellChangeTimes->{{3.895821521111821*^9, 
+  3.895821521705171*^9}},ExpressionUUID->"5651841a-b6b3-4791-819e-\
+3f47a96c8c97"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"sol", "=", 
+   RowBox[{
+   "Retrieve", "[", "\"\<AdS_5dL_Global-Euler_Original_vasko-Mac-15232\>\"", 
+    "]"}]}], ";"}]], "Input",
+ CellChangeTimes->{{3.8953939010289707`*^9, 3.895393913417417*^9}, {
+  3.895395714713266*^9, 3.895395716015778*^9}},
+ CellLabel->"In[3]:=",ExpressionUUID->"96696bad-adb5-467a-adac-f1b60087446e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{"sol", "[", 
+    RowBox[{"$info", ",", "\"\<AdS\>\"", ",", "CoordSystem"}], "]"}], "=", 
+   "\"\<Global-Hopf\>\""}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"sol", "[", 
+    RowBox[{"$chart", ",", "curved", ",", "Coord"}], "]"}], "=", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"t", "[", "]"}], ",", 
+     RowBox[{"r", "[", "]"}], ",", 
+     RowBox[{"\[Eta]", "[", "]"}], ",", 
+     RowBox[{"\[Xi]1", "[", "]"}], ",", 
+     RowBox[{"\[Xi]2", "[", "]"}]}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sol", "[", 
+   RowBox[{"$assumption", ",", "\"\<coord\>\"", ",", "Value"}], "]"}], "=", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"t", "[", "]"}], "\[Element]", 
+     TemplateBox[{},
+      "Reals"]}], ",", 
+    RowBox[{"0", "<", 
+     RowBox[{"r", "[", "]"}]}], ",", 
+    RowBox[{"0", "<", 
+     RowBox[{"\[Eta]", "[", "]"}], "<", 
+     FractionBox["\[Pi]", "2"]}], ",", 
+    RowBox[{"0", "\[LessEqual]", 
+     RowBox[{"\[Xi]1", "[", "]"}], "<", 
+     RowBox[{"2", " ", "\[Pi]"}]}], ",", 
+    RowBox[{"0", "\[LessEqual]", 
+     RowBox[{"\[Xi]2", "[", "]"}], "<", 
+     RowBox[{"2", " ", "\[Pi]"}]}]}], "}"}]}], "\[IndentingNewLine]", 
+ RowBox[{"Load", "@", "sol"}]}], "Input",
+ CellChangeTimes->{{3.895387915417194*^9, 3.895387920035323*^9}, {
+   3.8953879797531424`*^9, 3.895387996557235*^9}, {3.895388075414859*^9, 
+   3.8953880768784323`*^9}, {3.895388142288579*^9, 3.8953881427152643`*^9}, {
+   3.895388333885797*^9, 3.8953883356743717`*^9}, {3.89538898349345*^9, 
+   3.895388984170951*^9}, {3.895393922373927*^9, 3.8953939229561357`*^9}, {
+   3.8954914124217653`*^9, 3.8954914682835407`*^9}, 3.895735042311314*^9},
+ CellLabel->"In[4]:=",ExpressionUUID->"c78711f4-7cd0-4478-b8be-eefc6b40066a"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"t", "[", "]"}], "\[Element]", 
+    TemplateBox[{},
+     "Reals"]}], ",", 
+   RowBox[{"0", "<", 
+    RowBox[{"r", "[", "]"}]}], ",", 
+   RowBox[{"0", "<", 
+    RowBox[{"\[Eta]", "[", "]"}], "<", 
+    FractionBox["\[Pi]", "2"]}], ",", 
+   RowBox[{"0", "\[LessEqual]", 
+    RowBox[{"\[Xi]1", "[", "]"}], "<", 
+    RowBox[{"2", " ", "\[Pi]"}]}], ",", 
+   RowBox[{"0", "\[LessEqual]", 
+    RowBox[{"\[Xi]2", "[", "]"}], "<", 
+    RowBox[{"2", " ", "\[Pi]"}]}]}], "}"}]], "Output",
+ CellChangeTimes->{{3.895821566563312*^9, 3.895821587832754*^9}, 
+   3.895826746329398*^9, 3.8958309542199173`*^9, 3.895831338646658*^9, 
+   3.895831812031636*^9, 3.895832423891693*^9, 3.895832566053307*^9, 
+   3.895839173777027*^9, 3.895879731865938*^9, 3.895884876462812*^9, 
+   3.895884952431793*^9, 3.895885038451931*^9, 3.8958853136448402`*^9, 
+   3.895887307468307*^9, 3.895889473537036*^9, 3.895890164561503*^9, 
+   3.895890228685636*^9, 3.8958904170800753`*^9, 3.895890523376745*^9, 
+   3.8958906831664753`*^9, 3.895890822082712*^9, 3.89589652479004*^9, 
+   3.8958969967988367`*^9, 3.895900052084564*^9, 3.895902211034636*^9, 
+   3.8959050006126413`*^9, 3.8959052057084227`*^9, 3.895905441164505*^9, 
+   3.895912869591606*^9, 3.895914265853469*^9, 3.895914745685528*^9, 
+   3.8959156491878767`*^9, 3.895915873094907*^9, 3.8959167941817713`*^9, 
+   3.895918089812381*^9, 3.895920067743989*^9, 3.895932804500449*^9, 
+   3.895932834913639*^9, 3.9078582593526897`*^9, 3.9078592521264353`*^9},
+ CellLabel->"Out[6]=",ExpressionUUID->"f1a19dcd-ebdf-4b69-bba2-22665c9bf194"],
+
+Cell[BoxData[
+ InterpretationBox[GridBox[{
+    {
+     StyleBox["\<\"Loaded\"\>",
+      StripOnInput->False,
+      LineColor->RGBColor[0, 
+        Rational[2, 3], 0],
+      FrontFaceColor->RGBColor[0, 
+        Rational[2, 3], 0],
+      BackFaceColor->RGBColor[0, 
+        Rational[2, 3], 0],
+      GraphicsColor->RGBColor[0, 
+        Rational[2, 3], 0],
+      FontColor->RGBColor[0, 
+        Rational[2, 3], 0]], "\<\"sol\"\>", GridBox[{
+       {"\<\"man\"\>", "\<\"gg\"\>", "\<\"ee\"\>", "\<\"\[Eta]\[Eta]\"\>", \
+"\<\"\[Omega]\[Omega]\"\>", "\<\"curved\"\>", "\<\"flat\"\>", "\<\"spin\"\>", \
+"\<\"fA\"\>", "\<\"AA\"\>", "\<\"\[Epsilon]\[Epsilon]\"\>", "\<\"g\"\>", \
+"\<\"\[Alpha]\"\>", "\<\"\[Epsilon]01\"\>", "\<\"\[Epsilon]02\"\>", "\<\"\
+\[Epsilon]03\"\>", "\<\"\[Epsilon]04\"\>", "\<\"Cx\"\>", "\<\"C\[Alpha]\"\>", \
+"\<\"\\\"coord\\\"\"\>", "\<\"\[DoubleStruckCapitalE]gg\"\>", "\<\"\[Delta]\
+\[Psi]\[Psi]\"\>"}
+      },
+      GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.7]}, 
+          Offset[0.27999999999999997`]}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.1]}, 
+          Offset[0.2]}}]}
+   },
+   GridBoxAlignment->{"Columns" -> {{Left}}, "Rows" -> {{Baseline}}},
+   GridBoxSpacings->{"Columns" -> {
+       Offset[0.27999999999999997`], {
+        Offset[2.0999999999999996`]}, 
+       Offset[0.27999999999999997`]}, "Rows" -> {
+       Offset[0.2], {
+        Offset[0.4]}, 
+       Offset[0.2]}}],
+  TableForm[{{
+     Style["Loaded", 
+      RGBColor[0, 
+       Rational[2, 3], 0]], 
+     "sol", {{"man", "gg", "ee", "\[Eta]\[Eta]", "\[Omega]\[Omega]", "curved",
+        "flat", "spin", "fA", "AA", "\[Epsilon]\[Epsilon]", "g", "\[Alpha]", 
+       "\[Epsilon]01", "\[Epsilon]02", "\[Epsilon]03", "\[Epsilon]04", "Cx", 
+       "C\[Alpha]", "\"coord\"", "\[DoubleStruckCapitalE]gg", 
+       "\[Delta]\[Psi]\[Psi]"}}}}]]], "Echo",
+ CellChangeTimes->{
+  3.907859252702136*^9},ExpressionUUID->"6b2e18b3-b8b3-4030-9a91-\
+2cee879f5ca8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"sol", "[", 
+   RowBox[{"$metric", ",", "gg", ",", "Expr"}], "]"}], "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"sol", "[", 
+     RowBox[{"$metric", ",", "gg", ",", "Expr"}], "]"}], "/.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"\[Theta]", "[", "]"}], "->", 
+       RowBox[{"2", 
+        RowBox[{"\[Eta]", "[", "]"}]}]}], ",", 
+      RowBox[{
+       RowBox[{"\[Phi]", "[", "]"}], "->", 
+       RowBox[{
+        RowBox[{"\[Xi]1", "[", "]"}], "+", 
+        RowBox[{"\[Xi]2", "[", "]"}]}]}], ",", 
+      RowBox[{
+       RowBox[{"\[Psi]", "[", "]"}], "->", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"\[Xi]2", "[", "]"}], "-", 
+         RowBox[{"\[Xi]1", "[", "]"}]}], ")"}]}]}], "}"}]}], "//", 
+   "Simplification"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sol", "[", 
+   RowBox[{"$frame", ",", "ee", ",", "Expr"}], "]"}], "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"sol", "[", 
+     RowBox[{"$frame", ",", "ee", ",", "Expr"}], "]"}], "/.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"\[Theta]", "[", "]"}], "->", 
+       RowBox[{"2", 
+        RowBox[{"\[Eta]", "[", "]"}]}]}], ",", 
+      RowBox[{
+       RowBox[{"\[Phi]", "[", "]"}], "->", 
+       RowBox[{
+        RowBox[{"\[Xi]1", "[", "]"}], "+", 
+        RowBox[{"\[Xi]2", "[", "]"}]}]}], ",", 
+      RowBox[{
+       RowBox[{"\[Psi]", "[", "]"}], "->", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"\[Xi]2", "[", "]"}], "-", 
+         RowBox[{"\[Xi]1", "[", "]"}]}], ")"}]}]}], "}"}]}], "//", 
+   "Simplification"}]}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"sol", "[", 
+   RowBox[{"$form", ",", "fA", ",", "Expr"}], "]"}], "=", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"sol", "[", 
+     RowBox[{"$form", ",", "fA", ",", "Expr"}], "]"}], "/.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"\[Theta]", "[", "]"}], "->", 
+       RowBox[{"2", 
+        RowBox[{"\[Eta]", "[", "]"}]}]}], ",", 
+      RowBox[{
+       RowBox[{"\[Phi]", "[", "]"}], "->", 
+       RowBox[{
+        RowBox[{"\[Xi]1", "[", "]"}], "+", 
+        RowBox[{"\[Xi]2", "[", "]"}]}]}], ",", 
+      RowBox[{
+       RowBox[{"\[Psi]", "[", "]"}], "->", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"\[Xi]2", "[", "]"}], "-", 
+         RowBox[{"\[Xi]1", "[", "]"}]}], ")"}]}]}], "}"}]}], "//", 
+   "Simplification"}]}]}], "Input",
+ CellChangeTimes->{{3.895491522445425*^9, 3.895491541642606*^9}},
+ CellLabel->"In[8]:=",ExpressionUUID->"56a71784-9b5a-4393-8cd2-cc2039f018ca"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   RowBox[{
+    InterpretationBox[
+     StyleBox[
+      RowBox[{"d", "[", 
+       InterpretationBox[
+        StyleBox["r",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`r[],
+        Editable->False], "]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     xAct`xTerior`Diff[
+      $CellContext`r[], xAct`xTensor`PD],
+     Editable->False], "\[CircleTimes]", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{"d", "[", 
+       InterpretationBox[
+        StyleBox["r",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`r[],
+        Editable->False], "]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     xAct`xTerior`Diff[
+      $CellContext`r[], xAct`xTensor`PD],
+     Editable->False]}], 
+   RowBox[{"1", "+", 
+    RowBox[{
+     SuperscriptBox[
+      InterpretationBox[
+       StyleBox["g",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`g,
+       Editable->False], "2"], " ", 
+     SuperscriptBox[
+      InterpretationBox[
+       StyleBox["r",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`r[],
+       Editable->False], "2"]}]}]], "-", 
+  RowBox[{
+   RowBox[{
+    InterpretationBox[
+     StyleBox[
+      RowBox[{"d", "[", 
+       InterpretationBox[
+        StyleBox["t",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`t[],
+        Editable->False], "]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     xAct`xTerior`Diff[
+      $CellContext`t[], xAct`xTensor`PD],
+     Editable->False], "\[CircleTimes]", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{"d", "[", 
+       InterpretationBox[
+        StyleBox["t",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`t[],
+        Editable->False], "]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     xAct`xTerior`Diff[
+      $CellContext`t[], xAct`xTensor`PD],
+     Editable->False]}], " ", 
+   RowBox[{"(", 
+    RowBox[{"1", "+", 
+     RowBox[{
+      SuperscriptBox[
+       InterpretationBox[
+        StyleBox["g",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`g,
+        Editable->False], "2"], " ", 
+      SuperscriptBox[
+       InterpretationBox[
+        StyleBox["r",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`r[],
+        Editable->False], "2"]}]}], ")"}]}], "+", 
+  RowBox[{
+   SuperscriptBox[
+    InterpretationBox[
+     StyleBox["r",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`r[],
+     Editable->False], "2"], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      InterpretationBox[
+       StyleBox[
+        RowBox[{"d", "[", 
+         InterpretationBox[
+          StyleBox["\[Eta]",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`\[Eta][],
+          Editable->False], "]"}],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       xAct`xTerior`Diff[
+        $CellContext`\[Eta][], xAct`xTensor`PD],
+       Editable->False], "\[CircleTimes]", 
+      InterpretationBox[
+       StyleBox[
+        RowBox[{"d", "[", 
+         InterpretationBox[
+          StyleBox["\[Eta]",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`\[Eta][],
+          Editable->False], "]"}],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       xAct`xTerior`Diff[
+        $CellContext`\[Eta][], xAct`xTensor`PD],
+       Editable->False]}], "+", 
+     RowBox[{
+      RowBox[{
+       InterpretationBox[
+        StyleBox[
+         RowBox[{"d", "[", 
+          InterpretationBox[
+           StyleBox["\[Xi]2",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`\[Xi]2[],
+           Editable->False], "]"}],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        xAct`xTerior`Diff[
+         $CellContext`\[Xi]2[], xAct`xTensor`PD],
+        Editable->False], "\[CircleTimes]", 
+       InterpretationBox[
+        StyleBox[
+         RowBox[{"d", "[", 
+          InterpretationBox[
+           StyleBox["\[Xi]2",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`\[Xi]2[],
+           Editable->False], "]"}],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        xAct`xTerior`Diff[
+         $CellContext`\[Xi]2[], xAct`xTensor`PD],
+        Editable->False]}], " ", 
+      SuperscriptBox[
+       RowBox[{
+        InterpretationBox[
+         StyleBox["Cos",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         Cos,
+         Editable->False], "[", 
+        InterpretationBox[
+         StyleBox["\[Eta]",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`\[Eta][],
+         Editable->False], "]"}], "2"]}], "+", 
+     RowBox[{
+      RowBox[{
+       InterpretationBox[
+        StyleBox[
+         RowBox[{"d", "[", 
+          InterpretationBox[
+           StyleBox["\[Xi]1",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`\[Xi]1[],
+           Editable->False], "]"}],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        xAct`xTerior`Diff[
+         $CellContext`\[Xi]1[], xAct`xTensor`PD],
+        Editable->False], "\[CircleTimes]", 
+       InterpretationBox[
+        StyleBox[
+         RowBox[{"d", "[", 
+          InterpretationBox[
+           StyleBox["\[Xi]1",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`\[Xi]1[],
+           Editable->False], "]"}],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        xAct`xTerior`Diff[
+         $CellContext`\[Xi]1[], xAct`xTensor`PD],
+        Editable->False]}], " ", 
+      SuperscriptBox[
+       RowBox[{
+        InterpretationBox[
+         StyleBox["Sin",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         Sin,
+         Editable->False], "[", 
+        InterpretationBox[
+         StyleBox["\[Eta]",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`\[Eta][],
+         Editable->False], "]"}], "2"]}]}], ")"}]}]}]], "Output",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGDQAOL+noeLN7C9dXx3uE5rM5BWy28w3Qqkry+pTwXR784v
+WwCiHfZJvgXRO6Y8+AeiXfSuWOwE0nH2j9jOAulv0mc7zwPpqMl+k0E02+r3
+c0H0FNvSAyD6w63ZOy8A6XlFNScuAulZVzbLXQLSRp8PqIHoD4GJdiC6KmCG
+N4j2PtkYD6JVDbQKQfQnocOWV4G08ZHdbSB6gabq52tA+oFsB8MNIK0VaBZ7
+E0gz3rlRBqLVGlqngOjWu1dM7gLp0EWFj0F0+5ZA+XsgewVKJ4JoiUO+a0A0
+z/8V8veB9J3T5QdBtMKj0zseAOkrv7d9eAak/T43fgHRv+L3vloq+9Zx2/Or
+acuANAAxNagM
+  "],
+ CellLabel->"Out[8]=",ExpressionUUID->"80690912-a7f3-46cd-9c81-0155e42c00d9"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    InterpretationBox[
+     StyleBox[
+      RowBox[{"d", "[", 
+       InterpretationBox[
+        StyleBox["t",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`t[],
+        Editable->False], "]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     xAct`xTerior`Diff[
+      $CellContext`t[], xAct`xTensor`PD],
+     Editable->False], " ", 
+    SqrtBox[
+     RowBox[{"1", "+", 
+      RowBox[{
+       SuperscriptBox[
+        InterpretationBox[
+         StyleBox["g",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`g,
+         Editable->False], "2"], " ", 
+       SuperscriptBox[
+        InterpretationBox[
+         StyleBox["r",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`r[],
+         Editable->False], "2"]}]}]]}], ",", 
+   FractionBox[
+    InterpretationBox[
+     StyleBox[
+      RowBox[{"d", "[", 
+       InterpretationBox[
+        StyleBox["r",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`r[],
+        Editable->False], "]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     xAct`xTerior`Diff[
+      $CellContext`r[], xAct`xTensor`PD],
+     Editable->False], 
+    SqrtBox[
+     RowBox[{"1", "+", 
+      RowBox[{
+       SuperscriptBox[
+        InterpretationBox[
+         StyleBox["g",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`g,
+         Editable->False], "2"], " ", 
+       SuperscriptBox[
+        InterpretationBox[
+         StyleBox["r",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`r[],
+         Editable->False], "2"]}]}]]], ",", 
+   RowBox[{
+    FractionBox["1", "2"], " ", 
+    InterpretationBox[
+     StyleBox["r",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`r[],
+     Editable->False], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{
+        InterpretationBox[
+         StyleBox["Cos",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         Cos,
+         Editable->False], "[", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox["\[Xi]1",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`\[Xi]1[],
+          Editable->False], "+", 
+         InterpretationBox[
+          StyleBox["\[Xi]2",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`\[Xi]2[],
+          Editable->False]}], "]"}], " ", 
+       InterpretationBox[
+        StyleBox[
+         RowBox[{"d", "[", 
+          InterpretationBox[
+           StyleBox["\[Xi]1",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`\[Xi]1[],
+           Editable->False], "]"}],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        xAct`xTerior`Diff[
+         $CellContext`\[Xi]1[], xAct`xTensor`PD],
+        Editable->False], " ", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["Sin",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         Sin,
+         Editable->False], "[", 
+        RowBox[{"2", " ", 
+         InterpretationBox[
+          StyleBox["\[Eta]",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`\[Eta][],
+          Editable->False]}], "]"}]}], "-", 
+      RowBox[{
+       RowBox[{
+        InterpretationBox[
+         StyleBox["Cos",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         Cos,
+         Editable->False], "[", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox["\[Xi]1",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`\[Xi]1[],
+          Editable->False], "+", 
+         InterpretationBox[
+          StyleBox["\[Xi]2",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`\[Xi]2[],
+          Editable->False]}], "]"}], " ", 
+       InterpretationBox[
+        StyleBox[
+         RowBox[{"d", "[", 
+          InterpretationBox[
+           StyleBox["\[Xi]2",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`\[Xi]2[],
+           Editable->False], "]"}],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        xAct`xTerior`Diff[
+         $CellContext`\[Xi]2[], xAct`xTensor`PD],
+        Editable->False], " ", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["Sin",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         Sin,
+         Editable->False], "[", 
+        RowBox[{"2", " ", 
+         InterpretationBox[
+          StyleBox["\[Eta]",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`\[Eta][],
+          Editable->False]}], "]"}]}], "+", 
+      RowBox[{"2", " ", 
+       InterpretationBox[
+        StyleBox[
+         RowBox[{"d", "[", 
+          InterpretationBox[
+           StyleBox["\[Eta]",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`\[Eta][],
+           Editable->False], "]"}],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        xAct`xTerior`Diff[
+         $CellContext`\[Eta][], xAct`xTensor`PD],
+        Editable->False], " ", 
+       RowBox[{
+        InterpretationBox[
+         StyleBox["Sin",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         Sin,
+         Editable->False], "[", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox["\[Xi]1",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`\[Xi]1[],
+          Editable->False], "+", 
+         InterpretationBox[
+          StyleBox["\[Xi]2",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`\[Xi]2[],
+          Editable->False]}], "]"}]}]}], ")"}]}], ",", 
+   RowBox[{
+    InterpretationBox[
+     StyleBox["r",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`r[],
+     Editable->False], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       SuperscriptBox[
+        RowBox[{
+         InterpretationBox[
+          StyleBox["Cos",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          Cos,
+          Editable->False], "[", 
+         InterpretationBox[
+          StyleBox["\[Eta]",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`\[Eta][],
+          Editable->False], "]"}], "2"], " ", 
+       InterpretationBox[
+        StyleBox[
+         RowBox[{"d", "[", 
+          InterpretationBox[
+           StyleBox["\[Xi]2",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`\[Xi]2[],
+           Editable->False], "]"}],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        xAct`xTerior`Diff[
+         $CellContext`\[Xi]2[], xAct`xTensor`PD],
+        Editable->False]}], "+", 
+      RowBox[{
+       InterpretationBox[
+        StyleBox[
+         RowBox[{"d", "[", 
+          InterpretationBox[
+           StyleBox["\[Xi]1",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`\[Xi]1[],
+           Editable->False], "]"}],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        xAct`xTerior`Diff[
+         $CellContext`\[Xi]1[], xAct`xTensor`PD],
+        Editable->False], " ", 
+       SuperscriptBox[
+        RowBox[{
+         InterpretationBox[
+          StyleBox["Sin",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          Sin,
+          Editable->False], "[", 
+         InterpretationBox[
+          StyleBox["\[Eta]",
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          $CellContext`\[Eta][],
+          Editable->False], "]"}], "2"]}]}], ")"}]}], ",", 
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      InterpretationBox[
+       StyleBox["Cos",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       Cos,
+       Editable->False], "[", 
+      RowBox[{
+       InterpretationBox[
+        StyleBox["\[Xi]1",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`\[Xi]1[],
+        Editable->False], "+", 
+       InterpretationBox[
+        StyleBox["\[Xi]2",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`\[Xi]2[],
+        Editable->False]}], "]"}], " ", 
+     InterpretationBox[
+      StyleBox[
+       RowBox[{"d", "[", 
+        InterpretationBox[
+         StyleBox["\[Eta]",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`\[Eta][],
+         Editable->False], "]"}],
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      xAct`xTerior`Diff[
+       $CellContext`\[Eta][], xAct`xTensor`PD],
+      Editable->False], " ", 
+     InterpretationBox[
+      StyleBox["r",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`r[],
+      Editable->False]}], "+", 
+    RowBox[{
+     FractionBox["1", "2"], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        InterpretationBox[
+         StyleBox[
+          RowBox[{"d", "[", 
+           InterpretationBox[
+            StyleBox["\[Xi]1",
+             ShowAutoStyles->False,
+             AutoSpacing->False],
+            $CellContext`\[Xi]1[],
+            Editable->False], "]"}],
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         xAct`xTerior`Diff[
+          $CellContext`\[Xi]1[], xAct`xTensor`PD],
+         Editable->False]}], "+", 
+       InterpretationBox[
+        StyleBox[
+         RowBox[{"d", "[", 
+          InterpretationBox[
+           StyleBox["\[Xi]2",
+            ShowAutoStyles->False,
+            AutoSpacing->False],
+           $CellContext`\[Xi]2[],
+           Editable->False], "]"}],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        xAct`xTerior`Diff[
+         $CellContext`\[Xi]2[], xAct`xTensor`PD],
+        Editable->False]}], ")"}], " ", 
+     InterpretationBox[
+      StyleBox["r",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`r[],
+      Editable->False], " ", 
+     RowBox[{
+      InterpretationBox[
+       StyleBox["Sin",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       Sin,
+       Editable->False], "[", 
+      RowBox[{"2", " ", 
+       InterpretationBox[
+        StyleBox["\[Eta]",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`\[Eta][],
+        Editable->False]}], "]"}], " ", 
+     RowBox[{
+      InterpretationBox[
+       StyleBox["Sin",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       Sin,
+       Editable->False], "[", 
+      RowBox[{
+       InterpretationBox[
+        StyleBox["\[Xi]1",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`\[Xi]1[],
+        Editable->False], "+", 
+       InterpretationBox[
+        StyleBox["\[Xi]2",
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`\[Xi]2[],
+        Editable->False]}], "]"}]}]}]}], "}"}]], "Output",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGDQAOL+noeLN7C9dXx3uE5rM5BWy28w3Qqkry+pTwXR784v
+WwCiHfZJvgXRO6Y8+AeiXfSuWOwE0nH2j9jOAulv0mc7zwPpqMl+k0E02+r3
+c0H0FNvSAyD6w63ZOy8A6XlFNScuAulZVzbLXQLSRp8PqIHoD4GJdiC6KmCG
+N4j2PtkYD6JVDbQKQfQnocOWV4G08ZHdbSB6gabq52tA+oFsB8MNIK0VaBZ7
+E0gz3rlRBqLVGlqngOjWu1dM7gLp0EWFj0F0+5ZA+XsgewVKJ4JoiUO+a0A0
+z/8V8veB9J3T5QdBtMKj0zseAOkrv7d9eAak/T43fgHRv+L3vloq+9Yx7PmN
+tGVAGgAuR6ev
+  "],
+ CellLabel->"Out[9]=",ExpressionUUID->"408f8773-47a5-4fcd-92f9-b701718b1c9d"],
+
+Cell[BoxData[
+ RowBox[{
+  InterpretationBox[
+   StyleBox["\[Alpha]",
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   $CellContext`\[Alpha],
+   Editable->False], " ", 
+  InterpretationBox[
+   StyleBox[
+    RowBox[{"d", "[", 
+     InterpretationBox[
+      StyleBox["t",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      $CellContext`t[],
+      Editable->False], "]"}],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   xAct`xTerior`Diff[
+    $CellContext`t[], xAct`xTensor`PD],
+   Editable->False]}]], "Output",
+ CellChangeTimes->CompressedData["
+1:eJxTTMoPSmVkYGDQAOL+noeLN7C9dXx3uE5rM5BWy28w3Qqkry+pTwXR784v
+WwCiHfZJvgXRO6Y8+AeiXfSuWOwE0nH2j9jOAulv0mc7zwPpqMl+k0E02+r3
+c0H0FNvSAyD6w63ZOy8A6XlFNScuAulZVzbLXQLSRp8PqIHoD4GJdiC6KmCG
+N4j2PtkYD6JVDbQKQfQnocOWV4G08ZHdbSB6gabq52tA+oFsB8MNIK0VaBZ7
+E0gz3rlRBqLVGlqngOjWu1dM7gLp0EWFj0F0+5ZA+XsgewVKJ4JoiUO+a0A0
+z/8V8veB9J3T5QdBtMKj0zseAOkrv7d9eAak/T43fgHRv+L3vloq+9Zx49sb
+acuANAAxSagQ
+  "],
+ CellLabel->"Out[10]=",ExpressionUUID->"543ff58d-5f38-4670-9425-d3494eb15810"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Store", "@", "sol"}]], "Input",
+ CellChangeTimes->{{3.895821600721096*^9, 3.8958216030835648`*^9}, {
+  3.8958313409673357`*^9, 3.895831342080769*^9}},
+ CellLabel->"In[11]:=",ExpressionUUID->"9acc479b-5483-4401-a471-5753d89494c4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Compute", "Section",
+ CellChangeTimes->{{3.895821630225411*^9, 
+  3.895821631337241*^9}},ExpressionUUID->"2f9a0859-5b70-48a2-b238-\
+5e63616c7bd4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Compute", "[", 
+  RowBox[{"sol", "[", 
+   RowBox[{"$metric", ",", "gg"}], "]"}], "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Compute", "[", 
+     RowBox[{"sol", "[", 
+      RowBox[{"$metric", ",", "gg", ",", "#"}], "]"}], "]"}], "&"}], "/@", 
+   RowBox[{"{", 
+    RowBox[{"Det", ",", "Christoffel", ",", "Ricci", ",", "RicciScalar"}], 
+    "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Compute", "[", 
+     RowBox[{"sol", "[", 
+      RowBox[{"$frame", ",", "ee", ",", "#"}], "]"}], "]"}], "&"}], "/@", 
+   RowBox[{"{", 
+    RowBox[{"MetricTensor", ",", "Vielbein"}], "}"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Compute", "[", 
+  RowBox[{"sol", "[", 
+   RowBox[{"$spin", ",", "\[Omega]\[Omega]"}], "]"}], 
+  "]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Compute", "[", 
+     RowBox[{"sol", "[", 
+      RowBox[{
+      "$spin", ",", "\[Omega]\[Omega]", ",", "Gamma", ",", "\[Eta]\[Eta]", 
+       ",", "#"}], "]"}], "]"}], "&"}], "/@", 
+   RowBox[{"{", 
+    RowBox[{"1", ",", "2"}], "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"Compute", "[", 
+     RowBox[{"sol", "[", 
+      RowBox[{
+      "$spin", ",", "\[Omega]\[Omega]", ",", "Gamma", ",", "gg", ",", "#"}], 
+      "]"}], "]"}], "&"}], "/@", 
+   RowBox[{"{", "1", "}"}]}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Compute", "[", 
+  RowBox[{"sol", "[", 
+   RowBox[{"$tensor", ",", "AA"}], "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.895829450430093*^9, 3.895829457217516*^9}, {
+  3.895887364605556*^9, 3.895887448166211*^9}, {3.8959328119453583`*^9, 
+  3.895932842631482*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"817155ae-3072-4e11-a42d-ca396dddd107"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TemplateBox[{"\"Applied \"", 
+   StyleBox[
+   "Together", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" and \"", 
+   StyleBox[
+   "Simplify", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" to \"", 
+   RowBox[{
+     InterpretationBox[
+      StyleBox[
+       GridBox[{{"g", 
+          StyleBox[
+           
+           GridBox[{{" ", " "}, {
+             "\!\(\*StyleBox[\"\[ScriptA]\",FontColor->RGBColor[1., 0., \
+0.]]\)", "\!\(\*StyleBox[\"\[ScriptB]\",FontColor->RGBColor[1., 0., 0.]]\)"}},
+             RowSpacings -> 0, ColumnSpacings -> 0.05, 
+            GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+           Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+        Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+      $CellContext`gg[{-$CellContext`\[ScriptA], -$CellContext`curved}, \
+{-$CellContext`\[ScriptB], -$CellContext`curved}], Editable -> False], 
+     "\[Equal]", 
+     RowBox[{"Hold", "[", 
+       RowBox[{
+         RowBox[{"ToArray", "[", "$solution", "]"}], "[", 
+         RowBox[{"$solution", "[", 
+           RowBox[{"$metric", ",", 
+             RowBox[{"MakeSymbol", "[", "\"gg\"", "]"}], ",", "Expr"}], "]"}],
+          "]"}], "]"}]}], "\" in \"", 
+   TemplateBox[{"0", "6", 
+     RowBox[{"\[ThinSpace]", "\"min\""}], 
+     RowBox[{"\[ThinSpace]", "\"s\""}], "minutes,seconds", 
+     RowBox[{"{", 
+       RowBox[{"\"Minutes\"", ",", "\"Seconds\""}], "}"}]}, 
+    "QuantityMixedUnit2"]},
+  "RowDefault"]], "Echo",
+ CellChangeTimes->{
+  3.9078582813772087`*^9},ExpressionUUID->"1f0cbfee-3ca2-462f-b822-\
+d2477a08be0b"],
+
+Cell[BoxData[
+ TemplateBox[{"\"Applied \"", 
+   StyleBox[
+   "Together", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" and \"", 
+   StyleBox[
+   "Simplify", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" to \"", 
+   RowBox[{
+     InterpretationBox[
+      StyleBox[
+       GridBox[{{"g", 
+          StyleBox[
+           
+           GridBox[{{
+             "\!\(\*StyleBox[\"\[ScriptA]\",FontColor->RGBColor[1., 0., \
+0.]]\)", "\!\(\*StyleBox[\"\[ScriptB]\",FontColor->RGBColor[1., 0., 0.]]\)"}, \
+{" ", " "}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+            GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+           Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+        Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+      $CellContext`gg[{$CellContext`\[ScriptA], $CellContext`curved}, \
+{$CellContext`\[ScriptB], $CellContext`curved}], Editable -> False], 
+     "\[Equal]", 
+     RowBox[{"Inverse", "[", 
+       RowBox[{"Hold", "[", 
+         RowBox[{
+           RowBox[{"ToArray", "[", "$solution", "]"}], "[", 
+           RowBox[{"$solution", "[", 
+             RowBox[{"$metric", ",", 
+               RowBox[{"MakeSymbol", "[", "\"gg\"", "]"}], ",", "Expr"}], 
+             "]"}], "]"}], "]"}], "]"}]}], "\" in \"", 
+   TemplateBox[{"0", "2", 
+     RowBox[{"\[ThinSpace]", "\"min\""}], 
+     RowBox[{"\[ThinSpace]", "\"s\""}], "minutes,seconds", 
+     RowBox[{"{", 
+       RowBox[{"\"Minutes\"", ",", "\"Seconds\""}], "}"}]}, 
+    "QuantityMixedUnit2"]},
+  "RowDefault"]], "Echo",
+ CellChangeTimes->{
+  3.90785828343512*^9},ExpressionUUID->"bdf84c8b-9201-4704-b015-17a9c877a7d8"],
+
+Cell[BoxData[
+ TemplateBox[{"\"Applied \"", 
+   StyleBox[
+   "Together", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" and \"", 
+   StyleBox[
+   "Simplify", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" to \"", 
+   RowBox[{
+     InterpretationBox[
+      StyleBox[
+      "\!\(g\&\*StyleBox[\"~\",FontColor->RGBColor[1, 0, \
+0]]\&\*StyleBox[\"~\",FontColor->RGBColor[1, 0, 0]]\)", AutoSpacing -> False, 
+       ShowAutoStyles -> False], 
+      $CellContext`Detggcurved[], Editable -> False], "\[Equal]", 
+     RowBox[{"Hold", "[", 
+       RowBox[{
+         RowBox[{"ToArray", "[", "$solution", "]"}], "[", 
+         RowBox[{"Det", "[", 
+           RowBox[{
+             RowBox[{"ToArray", "[", "$solution", "]"}], "[", 
+             RowBox[{
+               RowBox[{"MakeSymbol", "[", "\"gg\"", "]"}], "[", 
+               RowBox[{
+                 RowBox[{"-", 
+                   RowBox[{"MakeSymbol", "[", "\"\[ScriptA]\"", "]"}]}], ",", 
+                 
+                 RowBox[{"-", 
+                   RowBox[{"MakeSymbol", "[", "\"\[ScriptB]\"", "]"}]}]}], 
+               "]"}], "]"}], "]"}], "]"}], "]"}]}], "\" in \"", 
+   TemplateBox[{"0", "0", 
+     RowBox[{"\[ThinSpace]", "\"min\""}], 
+     RowBox[{"\[ThinSpace]", "\"s\""}], "minutes,seconds", 
+     RowBox[{"{", 
+       RowBox[{"\"Minutes\"", ",", "\"Seconds\""}], "}"}]}, 
+    "QuantityMixedUnit2"]},
+  "RowDefault"]], "Echo",
+ CellChangeTimes->{
+  3.907858283456986*^9},ExpressionUUID->"91ea5b8b-4e02-451a-9a1c-\
+d79d82d2f4dd"],
+
+Cell[BoxData[
+ TemplateBox[{"\"Applied \"", 
+   StyleBox[
+   "Together", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" and \"", 
+   StyleBox[
+   "Simplify", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" to \"", 
+   RowBox[{
+     InterpretationBox[
+      StyleBox[
+       GridBox[{{"\[CapitalGamma][\[EmptyDownTriangle]]", 
+          StyleBox[
+           
+           GridBox[{{" ", " ", " "}, {
+             "\!\(\*StyleBox[\"\[ScriptA]\",FontColor->RGBColor[1., 0., \
+0.]]\)", "\!\(\*StyleBox[\"\[ScriptB]\",FontColor->RGBColor[1., 0., 0.]]\)", 
+              "\!\(\*StyleBox[\"\[ScriptC]\",FontColor->RGBColor[1., 0., 0.]]\
+\)"}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+            GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+           Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+        Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+      $CellContext`Christoffelcd[{-$CellContext`\[ScriptA], \
+-$CellContext`curved}, {-$CellContext`\[ScriptB], -$CellContext`curved}, \
+{-$CellContext`\[ScriptC], -$CellContext`curved}], Editable -> False], 
+     "\[Equal]", 
+     RowBox[{
+       RowBox[{
+         RowBox[{"-", 
+           FractionBox["1", "2"]}], " ", 
+         InterpretationBox[
+          StyleBox[
+           RowBox[{
+             SubscriptBox[
+             "\[PartialD]", 
+              "\!\(\*StyleBox[\"\[ScriptA]\",FontColor->RGBColor[1., 0., 0.]]\
+\)"], 
+             GridBox[{{"g", 
+                StyleBox[
+                 
+                 GridBox[{{" ", " "}, {
+                   "\!\(\*StyleBox[\"\[ScriptB]\",FontColor->RGBColor[1., 0., \
+0.]]\)", "\!\(\*StyleBox[\"\[ScriptC]\",FontColor->RGBColor[1., 0., 0.]]\)"}},
+                   RowSpacings -> 0, ColumnSpacings -> 0.05, 
+                  GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+                 Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+              Center]}], AutoSpacing -> False, ShowAutoStyles -> False], 
+          xAct`xTensor`PD[{-$CellContext`\[ScriptA], -$CellContext`curved}][
+           $CellContext`gg[{-$CellContext`\[ScriptB], -$CellContext`curved}, \
+{-$CellContext`\[ScriptC], -$CellContext`curved}]], Editable -> False]}], "+", 
+       RowBox[{
+         FractionBox["1", "2"], " ", 
+         InterpretationBox[
+          StyleBox[
+           RowBox[{
+             SubscriptBox[
+             "\[PartialD]", 
+              "\!\(\*StyleBox[\"\[ScriptB]\",FontColor->RGBColor[1., 0., 0.]]\
+\)"], 
+             GridBox[{{"g", 
+                StyleBox[
+                 
+                 GridBox[{{" ", " "}, {
+                   "\!\(\*StyleBox[\"\[ScriptC]\",FontColor->RGBColor[1., 0., \
+0.]]\)", "\!\(\*StyleBox[\"\[ScriptA]\",FontColor->RGBColor[1., 0., 0.]]\)"}},
+                   RowSpacings -> 0, ColumnSpacings -> 0.05, 
+                  GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+                 Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+              Center]}], AutoSpacing -> False, ShowAutoStyles -> False], 
+          xAct`xTensor`PD[{-$CellContext`\[ScriptB], -$CellContext`curved}][
+           $CellContext`gg[{-$CellContext`\[ScriptC], -$CellContext`curved}, \
+{-$CellContext`\[ScriptA], -$CellContext`curved}]], Editable -> False]}], "+", 
+       RowBox[{
+         FractionBox["1", "2"], " ", 
+         InterpretationBox[
+          StyleBox[
+           RowBox[{
+             SubscriptBox[
+             "\[PartialD]", 
+              "\!\(\*StyleBox[\"\[ScriptC]\",FontColor->RGBColor[1., 0., 0.]]\
+\)"], 
+             GridBox[{{"g", 
+                StyleBox[
+                 
+                 GridBox[{{" ", " "}, {
+                   "\!\(\*StyleBox[\"\[ScriptB]\",FontColor->RGBColor[1., 0., \
+0.]]\)", "\!\(\*StyleBox[\"\[ScriptA]\",FontColor->RGBColor[1., 0., 0.]]\)"}},
+                   RowSpacings -> 0, ColumnSpacings -> 0.05, 
+                  GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+                 Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+              Center]}], AutoSpacing -> False, ShowAutoStyles -> False], 
+          xAct`xTensor`PD[{-$CellContext`\[ScriptC], -$CellContext`curved}][
+           $CellContext`gg[{-$CellContext`\[ScriptB], -$CellContext`curved}, \
+{-$CellContext`\[ScriptA], -$CellContext`curved}]], Editable -> False]}]}]}], 
+   "\" in \"", 
+   TemplateBox[{"0", "2", 
+     RowBox[{"\[ThinSpace]", "\"min\""}], 
+     RowBox[{"\[ThinSpace]", "\"s\""}], "minutes,seconds", 
+     RowBox[{"{", 
+       RowBox[{"\"Minutes\"", ",", "\"Seconds\""}], "}"}]}, 
+    "QuantityMixedUnit2"]},
+  "RowDefault"]], "Echo",
+ CellChangeTimes->{
+  3.9078582855475616`*^9},ExpressionUUID->"2ea7e233-9834-43cb-8b59-\
+8aa07c8ec900"],
+
+Cell[BoxData[
+ TemplateBox[{"\"Applied \"", 
+   StyleBox[
+   "Together", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" and \"", 
+   StyleBox[
+   "Simplify", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" to \"", 
+   TemplateBox[{"\[ThinSpace]", "\" \"", 
+     InterpretationBox[
+      StyleBox[
+       GridBox[{{"\[CapitalGamma][\[EmptyDownTriangle]]", 
+          StyleBox[
+           
+           GridBox[{{
+             "\!\(\*StyleBox[\"\[ScriptA]\",FontColor->RGBColor[1., 0., \
+0.]]\)", " ", " "}, {
+             " ", "\!\(\*StyleBox[\"\[ScriptB]\",FontColor->RGBColor[1., 0., \
+0.]]\)", "\!\(\*StyleBox[\"\[ScriptC]\",FontColor->RGBColor[1., 0., 0.]]\)"}},
+             RowSpacings -> 0, ColumnSpacings -> 0.05, 
+            GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+           Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+        Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+      $CellContext`Christoffelcd[{$CellContext`\[ScriptA], \
+$CellContext`curved}, {-$CellContext`\[ScriptB], -$CellContext`curved}, \
+{-$CellContext`\[ScriptC], -$CellContext`curved}], Editable -> False], 
+     InterpretationBox[
+      StyleBox[
+       GridBox[{{"\[CapitalGamma][\[EmptyDownTriangle]]", 
+          StyleBox[
+           
+           GridBox[{{
+             " ", "\!\(\*StyleBox[\"\[ScriptB]\",FontColor->RGBColor[1., 0., \
+0.]]\)", " "}, {
+             "\!\(\*StyleBox[\"\[ScriptA]\",FontColor->RGBColor[1., 0., \
+0.]]\)", " ", 
+              "\!\(\*StyleBox[\"\[ScriptC]\",FontColor->RGBColor[1., 0., 0.]]\
+\)"}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+            GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+           Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+        Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+      $CellContext`Christoffelcd[{-$CellContext`\[ScriptA], \
+-$CellContext`curved}, {$CellContext`\[ScriptB], $CellContext`curved}, \
+{-$CellContext`\[ScriptC], -$CellContext`curved}], Editable -> False], 
+     InterpretationBox[
+      StyleBox[
+       GridBox[{{"\[CapitalGamma][\[EmptyDownTriangle]]", 
+          StyleBox[
+           
+           GridBox[{{
+             " ", " ", 
+              "\!\(\*StyleBox[\"\[ScriptC]\",FontColor->RGBColor[1., 0., 0.]]\
+\)"}, {"\!\(\*StyleBox[\"\[ScriptA]\",FontColor->RGBColor[1., 0., 0.]]\)", 
+              "\!\(\*StyleBox[\"\[ScriptB]\",FontColor->RGBColor[1., 0., 0.]]\
+\)", " "}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+            GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+           Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+        Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+      $CellContext`Christoffelcd[{-$CellContext`\[ScriptA], \
+-$CellContext`curved}, {-$CellContext`\[ScriptB], -$CellContext`curved}, \
+{$CellContext`\[ScriptC], $CellContext`curved}], Editable -> False]}, 
+    "RowWithSeparators"], "\" in \"", 
+   TemplateBox[{"0", "5", 
+     RowBox[{"\[ThinSpace]", "\"min\""}], 
+     RowBox[{"\[ThinSpace]", "\"s\""}], "minutes,seconds", 
+     RowBox[{"{", 
+       RowBox[{"\"Minutes\"", ",", "\"Seconds\""}], "}"}]}, 
+    "QuantityMixedUnit2"]},
+  "RowDefault"]], "Echo",
+ CellChangeTimes->{
+  3.9078582901307373`*^9},ExpressionUUID->"d42ab780-b748-40ac-bbd0-\
+9d074d2010f5"],
+
+Cell[BoxData[
+ TemplateBox[{"\"Applied \"", 
+   StyleBox[
+   "Together", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" and \"", 
+   StyleBox[
+   "Simplify", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" to \"", 
+   TemplateBox[{"\[ThinSpace]", "\" \"", 
+     InterpretationBox[
+      StyleBox[
+       GridBox[{{"\[CapitalGamma][\[EmptyDownTriangle]]", 
+          StyleBox[
+           
+           GridBox[{{
+             "\!\(\*StyleBox[\"\[ScriptA]\",FontColor->RGBColor[1., 0., \
+0.]]\)", "\!\(\*StyleBox[\"\[ScriptB]\",FontColor->RGBColor[1., 0., 0.]]\)", 
+              " "}, {" ", " ", 
+              "\!\(\*StyleBox[\"\[ScriptC]\",FontColor->RGBColor[1., 0., 0.]]\
+\)"}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+            GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+           Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+        Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+      $CellContext`Christoffelcd[{$CellContext`\[ScriptA], \
+$CellContext`curved}, {$CellContext`\[ScriptB], $CellContext`curved}, \
+{-$CellContext`\[ScriptC], -$CellContext`curved}], Editable -> False], 
+     InterpretationBox[
+      StyleBox[
+       GridBox[{{"\[CapitalGamma][\[EmptyDownTriangle]]", 
+          StyleBox[
+           
+           GridBox[{{
+             "\!\(\*StyleBox[\"\[ScriptA]\",FontColor->RGBColor[1., 0., \
+0.]]\)", " ", 
+              "\!\(\*StyleBox[\"\[ScriptC]\",FontColor->RGBColor[1., 0., 0.]]\
+\)"}, {" ", 
+              "\!\(\*StyleBox[\"\[ScriptB]\",FontColor->RGBColor[1., 0., 0.]]\
+\)", " "}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+            GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+           Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+        Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+      $CellContext`Christoffelcd[{$CellContext`\[ScriptA], \
+$CellContext`curved}, {-$CellContext`\[ScriptB], -$CellContext`curved}, \
+{$CellContext`\[ScriptC], $CellContext`curved}], Editable -> False], 
+     InterpretationBox[
+      StyleBox[
+       GridBox[{{"\[CapitalGamma][\[EmptyDownTriangle]]", 
+          StyleBox[
+           
+           GridBox[{{
+             " ", "\!\(\*StyleBox[\"\[ScriptB]\",FontColor->RGBColor[1., 0., \
+0.]]\)", "\!\(\*StyleBox[\"\[ScriptC]\",FontColor->RGBColor[1., 0., 0.]]\)"}, \
+{"\!\(\*StyleBox[\"\[ScriptA]\",FontColor->RGBColor[1., 0., 0.]]\)", " ", 
+              " "}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+            GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+           Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+        Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+      $CellContext`Christoffelcd[{-$CellContext`\[ScriptA], \
+-$CellContext`curved}, {$CellContext`\[ScriptB], $CellContext`curved}, \
+{$CellContext`\[ScriptC], $CellContext`curved}], Editable -> False]}, 
+    "RowWithSeparators"], "\" in \"", 
+   TemplateBox[{"0", "5", 
+     RowBox[{"\[ThinSpace]", "\"min\""}], 
+     RowBox[{"\[ThinSpace]", "\"s\""}], "minutes,seconds", 
+     RowBox[{"{", 
+       RowBox[{"\"Minutes\"", ",", "\"Seconds\""}], "}"}]}, 
+    "QuantityMixedUnit2"]},
+  "RowDefault"]], "Echo",
+ CellChangeTimes->{
+  3.9078582950570993`*^9},ExpressionUUID->"498b6782-7f2a-41ee-afc7-\
+7cc39609f4eb"],
+
+Cell[BoxData[
+ TemplateBox[{"\"Applied \"", 
+   StyleBox[
+   "Together", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" and \"", 
+   StyleBox[
+   "Simplify", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" to \"", 
+   TemplateBox[{"\[ThinSpace]", "\" \"", 
+     InterpretationBox[
+      StyleBox[
+       GridBox[{{"\[CapitalGamma][\[EmptyDownTriangle]]", 
+          StyleBox[
+           
+           GridBox[{{
+             "\!\(\*StyleBox[\"\[ScriptA]\",FontColor->RGBColor[1., 0., \
+0.]]\)", "\!\(\*StyleBox[\"\[ScriptB]\",FontColor->RGBColor[1., 0., 0.]]\)", 
+              "\!\(\*StyleBox[\"\[ScriptC]\",FontColor->RGBColor[1., 0., 0.]]\
+\)"}, {" ", " ", " "}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+            GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+           Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+        Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+      $CellContext`Christoffelcd[{$CellContext`\[ScriptA], \
+$CellContext`curved}, {$CellContext`\[ScriptB], $CellContext`curved}, \
+{$CellContext`\[ScriptC], $CellContext`curved}], Editable -> False]}, 
+    "RowWithSeparators"], "\" in \"", 
+   TemplateBox[{"0", "2", 
+     RowBox[{"\[ThinSpace]", "\"min\""}], 
+     RowBox[{"\[ThinSpace]", "\"s\""}], "minutes,seconds", 
+     RowBox[{"{", 
+       RowBox[{"\"Minutes\"", ",", "\"Seconds\""}], "}"}]}, 
+    "QuantityMixedUnit2"]},
+  "RowDefault"]], "Echo",
+ CellChangeTimes->{
+  3.9078582974146223`*^9},ExpressionUUID->"b87471c6-48c8-4d88-a93c-\
+df4008742b98"],
+
+Cell[BoxData[
+ TemplateBox[{"\"Applied \"", 
+   StyleBox[
+   "Together", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" and \"", 
+   StyleBox[
+   "Simplify", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" to \"", 
+   RowBox[{
+     InterpretationBox[
+      StyleBox[
+       GridBox[{{"R[\[EmptyDownTriangle]]", 
+          StyleBox[
+           
+           GridBox[{{" ", " "}, {
+             "\!\(\*StyleBox[\"\[ScriptA]\",FontColor->RGBColor[1., 0., \
+0.]]\)", "\!\(\*StyleBox[\"\[ScriptB]\",FontColor->RGBColor[1., 0., 0.]]\)"}},
+             RowSpacings -> 0, ColumnSpacings -> 0.05, 
+            GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+           Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+        Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+      $CellContext`Riccicd[{-$CellContext`\[ScriptA], -$CellContext`curved}, \
+{-$CellContext`\[ScriptB], -$CellContext`curved}], Editable -> False], 
+     "\[Equal]", 
+     RowBox[{
+       RowBox[{
+         InterpretationBox[
+          StyleBox[
+           GridBox[{{"\[CapitalGamma][\[EmptyDownTriangle]]", 
+              StyleBox[
+               
+               GridBox[{{
+                 "\!\(\*StyleBox[\"\[ScriptY]\",FontColor->RGBColor[1., 0., \
+0.]]\)", " ", " "}, {
+                 " ", "\!\(\*StyleBox[\"\[ScriptY]\",FontColor->RGBColor[1., \
+0., 0.]]\)", 
+                  "\!\(\*StyleBox[\"\[ScriptZ]\",FontColor->RGBColor[1., 0., \
+0.]]\)"}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+                GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+               Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+            Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+          $CellContext`Christoffelcd[{$CellContext`\[ScriptY], \
+$CellContext`curved}, {-$CellContext`\[ScriptY], -$CellContext`curved}, \
+{-$CellContext`\[ScriptZ], -$CellContext`curved}], Editable -> False], " ", 
+         InterpretationBox[
+          StyleBox[
+           GridBox[{{"\[CapitalGamma][\[EmptyDownTriangle]]", 
+              StyleBox[
+               
+               GridBox[{{
+                 "\!\(\*StyleBox[\"\[ScriptZ]\",FontColor->RGBColor[1., 0., \
+0.]]\)", " ", " "}, {
+                 " ", "\!\(\*StyleBox[\"\[ScriptA]\",FontColor->RGBColor[1., \
+0., 0.]]\)", 
+                  "\!\(\*StyleBox[\"\[ScriptB]\",FontColor->RGBColor[1., 0., \
+0.]]\)"}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+                GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+               Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+            Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+          $CellContext`Christoffelcd[{$CellContext`\[ScriptZ], \
+$CellContext`curved}, {-$CellContext`\[ScriptA], -$CellContext`curved}, \
+{-$CellContext`\[ScriptB], -$CellContext`curved}], Editable -> False]}], "-", 
+       
+       RowBox[{
+         InterpretationBox[
+          StyleBox[
+           GridBox[{{"\[CapitalGamma][\[EmptyDownTriangle]]", 
+              StyleBox[
+               
+               GridBox[{{
+                 "\!\(\*StyleBox[\"\[ScriptY]\",FontColor->RGBColor[1., 0., \
+0.]]\)", " ", " "}, {
+                 " ", "\!\(\*StyleBox[\"\[ScriptA]\",FontColor->RGBColor[1., \
+0., 0.]]\)", 
+                  "\!\(\*StyleBox[\"\[ScriptZ]\",FontColor->RGBColor[1., 0., \
+0.]]\)"}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+                GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+               Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+            Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+          $CellContext`Christoffelcd[{$CellContext`\[ScriptY], \
+$CellContext`curved}, {-$CellContext`\[ScriptA], -$CellContext`curved}, \
+{-$CellContext`\[ScriptZ], -$CellContext`curved}], Editable -> False], " ", 
+         InterpretationBox[
+          StyleBox[
+           GridBox[{{"\[CapitalGamma][\[EmptyDownTriangle]]", 
+              StyleBox[
+               
+               GridBox[{{
+                 "\!\(\*StyleBox[\"\[ScriptZ]\",FontColor->RGBColor[1., 0., \
+0.]]\)", " ", " "}, {
+                 " ", "\!\(\*StyleBox[\"\[ScriptY]\",FontColor->RGBColor[1., \
+0., 0.]]\)", 
+                  "\!\(\*StyleBox[\"\[ScriptB]\",FontColor->RGBColor[1., 0., \
+0.]]\)"}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+                GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+               Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+            Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+          $CellContext`Christoffelcd[{$CellContext`\[ScriptZ], \
+$CellContext`curved}, {-$CellContext`\[ScriptY], -$CellContext`curved}, \
+{-$CellContext`\[ScriptB], -$CellContext`curved}], Editable -> False]}], "-", 
+       
+       InterpretationBox[
+        StyleBox[
+         RowBox[{
+           SubscriptBox[
+           "\[PartialD]", 
+            "\!\(\*StyleBox[\"\[ScriptA]\",FontColor->RGBColor[1., 0., \
+0.]]\)"], 
+           GridBox[{{"\[CapitalGamma][\[EmptyDownTriangle]]", 
+              StyleBox[
+               
+               GridBox[{{
+                 "\!\(\*StyleBox[\"\[ScriptY]\",FontColor->RGBColor[1., 0., \
+0.]]\)", " ", " "}, {
+                 " ", "\!\(\*StyleBox[\"\[ScriptY]\",FontColor->RGBColor[1., \
+0., 0.]]\)", 
+                  "\!\(\*StyleBox[\"\[ScriptB]\",FontColor->RGBColor[1., 0., \
+0.]]\)"}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+                GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+               Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+            Center]}], AutoSpacing -> False, ShowAutoStyles -> False], 
+        xAct`xTensor`PD[{-$CellContext`\[ScriptA], -$CellContext`curved}][
+         $CellContext`Christoffelcd[{$CellContext`\[ScriptY], \
+$CellContext`curved}, {-$CellContext`\[ScriptY], -$CellContext`curved}, \
+{-$CellContext`\[ScriptB], -$CellContext`curved}]], Editable -> False], "+", 
+       InterpretationBox[
+        StyleBox[
+         RowBox[{
+           SubscriptBox[
+           "\[PartialD]", 
+            "\!\(\*StyleBox[\"\[ScriptY]\",FontColor->RGBColor[1., 0., \
+0.]]\)"], 
+           GridBox[{{"\[CapitalGamma][\[EmptyDownTriangle]]", 
+              StyleBox[
+               
+               GridBox[{{
+                 "\!\(\*StyleBox[\"\[ScriptY]\",FontColor->RGBColor[1., 0., \
+0.]]\)", " ", " "}, {
+                 " ", "\!\(\*StyleBox[\"\[ScriptA]\",FontColor->RGBColor[1., \
+0., 0.]]\)", 
+                  "\!\(\*StyleBox[\"\[ScriptB]\",FontColor->RGBColor[1., 0., \
+0.]]\)"}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+                GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+               Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+            Center]}], AutoSpacing -> False, ShowAutoStyles -> False], 
+        xAct`xTensor`PD[{-$CellContext`\[ScriptY], -$CellContext`curved}][
+         $CellContext`Christoffelcd[{$CellContext`\[ScriptY], \
+$CellContext`curved}, {-$CellContext`\[ScriptA], -$CellContext`curved}, \
+{-$CellContext`\[ScriptB], -$CellContext`curved}]], Editable -> False]}]}], 
+   "\" in \"", 
+   TemplateBox[{"0", "3", 
+     RowBox[{"\[ThinSpace]", "\"min\""}], 
+     RowBox[{"\[ThinSpace]", "\"s\""}], "minutes,seconds", 
+     RowBox[{"{", 
+       RowBox[{"\"Minutes\"", ",", "\"Seconds\""}], "}"}]}, 
+    "QuantityMixedUnit2"]},
+  "RowDefault"]], "Echo",
+ CellChangeTimes->{
+  3.9078582999618483`*^9},ExpressionUUID->"5dd76b9e-3c5e-411c-9e3e-\
+b59ab8a1cd69"],
+
+Cell[BoxData[
+ TemplateBox[{"\"Applied \"", 
+   StyleBox[
+   "Together", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" and \"", 
+   StyleBox[
+   "Simplify", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" to \"", 
+   TemplateBox[{"\[ThinSpace]", "\" \"", 
+     InterpretationBox[
+      StyleBox[
+       GridBox[{{"R[\[EmptyDownTriangle]]", 
+          StyleBox[
+           
+           GridBox[{{
+             "\!\(\*StyleBox[\"\[ScriptA]\",FontColor->RGBColor[1., 0., \
+0.]]\)", " "}, {
+             " ", "\!\(\*StyleBox[\"\[ScriptB]\",FontColor->RGBColor[1., 0., \
+0.]]\)"}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+            GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+           Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+        Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+      $CellContext`Riccicd[{$CellContext`\[ScriptA], $CellContext`curved}, \
+{-$CellContext`\[ScriptB], -$CellContext`curved}], Editable -> False], 
+     InterpretationBox[
+      StyleBox[
+       GridBox[{{"R[\[EmptyDownTriangle]]", 
+          StyleBox[
+           
+           GridBox[{{
+             " ", "\!\(\*StyleBox[\"\[ScriptB]\",FontColor->RGBColor[1., 0., \
+0.]]\)"}, {"\!\(\*StyleBox[\"\[ScriptA]\",FontColor->RGBColor[1., 0., 0.]]\)",
+               " "}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+            GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+           Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+        Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+      $CellContext`Riccicd[{-$CellContext`\[ScriptA], -$CellContext`curved}, \
+{$CellContext`\[ScriptB], $CellContext`curved}], Editable -> False]}, 
+    "RowWithSeparators"], "\" in \"", 
+   TemplateBox[{"0", "2", 
+     RowBox[{"\[ThinSpace]", "\"min\""}], 
+     RowBox[{"\[ThinSpace]", "\"s\""}], "minutes,seconds", 
+     RowBox[{"{", 
+       RowBox[{"\"Minutes\"", ",", "\"Seconds\""}], "}"}]}, 
+    "QuantityMixedUnit2"]},
+  "RowDefault"]], "Echo",
+ CellChangeTimes->{
+  3.907858302007428*^9},ExpressionUUID->"57b8b197-d801-4cd2-9b85-\
+875216fa0397"],
+
+Cell[BoxData[
+ TemplateBox[{"\"Applied \"", 
+   StyleBox[
+   "Together", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" and \"", 
+   StyleBox[
+   "Simplify", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" to \"", 
+   TemplateBox[{"\[ThinSpace]", "\" \"", 
+     InterpretationBox[
+      StyleBox[
+       GridBox[{{"R[\[EmptyDownTriangle]]", 
+          StyleBox[
+           
+           GridBox[{{
+             "\!\(\*StyleBox[\"\[ScriptA]\",FontColor->RGBColor[1., 0., \
+0.]]\)", "\!\(\*StyleBox[\"\[ScriptB]\",FontColor->RGBColor[1., 0., 0.]]\)"}, \
+{" ", " "}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+            GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+           Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+        Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+      $CellContext`Riccicd[{$CellContext`\[ScriptA], $CellContext`curved}, \
+{$CellContext`\[ScriptB], $CellContext`curved}], Editable -> False]}, 
+    "RowWithSeparators"], "\" in \"", 
+   TemplateBox[{"0", "2", 
+     RowBox[{"\[ThinSpace]", "\"min\""}], 
+     RowBox[{"\[ThinSpace]", "\"s\""}], "minutes,seconds", 
+     RowBox[{"{", 
+       RowBox[{"\"Minutes\"", ",", "\"Seconds\""}], "}"}]}, 
+    "QuantityMixedUnit2"]},
+  "RowDefault"]], "Echo",
+ CellChangeTimes->{
+  3.907858304038644*^9},ExpressionUUID->"0c5918ca-088f-4be3-bdb9-\
+add0c42cbfb5"],
+
+Cell[BoxData[
+ TemplateBox[{"\"Applied \"", 
+   StyleBox[
+   "Together", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" and \"", 
+   StyleBox[
+   "Simplify", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" to \"", 
+   RowBox[{
+     InterpretationBox[
+      StyleBox[
+      "R[\[EmptyDownTriangle]]", AutoSpacing -> False, ShowAutoStyles -> 
+       False], 
+      $CellContext`RicciScalarcd[], Editable -> False], "\[Equal]", 
+     RowBox[{"Hold", "[", 
+       RowBox[{
+         RowBox[{"ToArray", "[", "$solution", "]"}], "[", 
+         RowBox[{"Tr", "[", 
+           RowBox[{
+             RowBox[{"ToArray", "[", "$solution", "]"}], "[", 
+             RowBox[{
+               RowBox[{"MakeSymbol", "[", "\"Riccicd\"", "]"}], "[", 
+               RowBox[{
+                 RowBox[{"MakeSymbol", "[", "\"\[ScriptA]\"", "]"}], ",", 
+                 RowBox[{"-", 
+                   RowBox[{"MakeSymbol", "[", "\"\[ScriptB]\"", "]"}]}]}], 
+               "]"}], "]"}], "]"}], "]"}], "]"}]}], "\" in \"", 
+   TemplateBox[{"0", "0", 
+     RowBox[{"\[ThinSpace]", "\"min\""}], 
+     RowBox[{"\[ThinSpace]", "\"s\""}], "minutes,seconds", 
+     RowBox[{"{", 
+       RowBox[{"\"Minutes\"", ",", "\"Seconds\""}], "}"}]}, 
+    "QuantityMixedUnit2"]},
+  "RowDefault"]], "Echo",
+ CellChangeTimes->{
+  3.907858304053876*^9},ExpressionUUID->"b31b0758-737a-47e0-8ce2-\
+fb67c5fae026"],
+
+Cell[BoxData[
+ TemplateBox[{"\"Applied \"", 
+   StyleBox[
+   "Identity", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" and \"", 
+   StyleBox[
+   "Identity", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" to \"", 
+   RowBox[{
+     InterpretationBox[
+      StyleBox[
+       GridBox[{{"\[Eta]", 
+          StyleBox[
+           
+           GridBox[{{" ", " "}, {
+             "\!\(\*StyleBox[\"\[GothicA]\",FontColor->RGBColor[0., 0., \
+1.]]\)", "\!\(\*StyleBox[\"\[GothicB]\",FontColor->RGBColor[0., 0., 1.]]\)"}},
+             RowSpacings -> 0, ColumnSpacings -> 0.05, 
+            GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+           Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+        Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+      $CellContext`\[Eta]\[Eta][{-$CellContext`\[GothicA], \
+-$CellContext`flat}, {-$CellContext`\[GothicB], -$CellContext`flat}], 
+      Editable -> False], "\[Equal]", 
+     RowBox[{"Hold", "[", 
+       RowBox[{
+         RowBox[{"ToArray", "[", "$solution", "]"}], "[", 
+         RowBox[{"GenFlatMetric", "[", "$solution", "]"}], "]"}], "]"}]}], 
+   "\" in \"", 
+   TemplateBox[{"0", "2", 
+     RowBox[{"\[ThinSpace]", "\"min\""}], 
+     RowBox[{"\[ThinSpace]", "\"s\""}], "minutes,seconds", 
+     RowBox[{"{", 
+       RowBox[{"\"Minutes\"", ",", "\"Seconds\""}], "}"}]}, 
+    "QuantityMixedUnit2"]},
+  "RowDefault"]], "Echo",
+ CellChangeTimes->{
+  3.907858306035571*^9},ExpressionUUID->"f1663e7d-7710-4463-8790-\
+78831eafe56b"],
+
+Cell[BoxData[
+ TemplateBox[{"\"Applied \"", 
+   StyleBox[
+   "Identity", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" and \"", 
+   StyleBox[
+   "Identity", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" to \"", 
+   RowBox[{
+     InterpretationBox[
+      StyleBox[
+       GridBox[{{"\[Eta]", 
+          StyleBox[
+           
+           GridBox[{{
+             "\!\(\*StyleBox[\"\[GothicA]\",FontColor->RGBColor[0., 0., \
+1.]]\)", "\!\(\*StyleBox[\"\[GothicB]\",FontColor->RGBColor[0., 0., 1.]]\)"}, \
+{" ", " "}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+            GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+           Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+        Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+      $CellContext`\[Eta]\[Eta][{$CellContext`\[GothicA], $CellContext`flat}, \
+{$CellContext`\[GothicB], $CellContext`flat}], Editable -> False], "\[Equal]", 
+     RowBox[{"Inverse", "[", 
+       RowBox[{"Hold", "[", 
+         RowBox[{
+           RowBox[{"ToArray", "[", "$solution", "]"}], "[", 
+           RowBox[{"GenFlatMetric", "[", "$solution", "]"}], "]"}], "]"}], 
+       "]"}]}], "\" in \"", 
+   TemplateBox[{"0", "2", 
+     RowBox[{"\[ThinSpace]", "\"min\""}], 
+     RowBox[{"\[ThinSpace]", "\"s\""}], "minutes,seconds", 
+     RowBox[{"{", 
+       RowBox[{"\"Minutes\"", ",", "\"Seconds\""}], "}"}]}, 
+    "QuantityMixedUnit2"]},
+  "RowDefault"]], "Echo",
+ CellChangeTimes->{
+  3.907858308055373*^9},ExpressionUUID->"0e8d107d-3ebc-487c-af94-\
+50ece842f84e"],
+
+Cell[BoxData[
+ TemplateBox[{"\"Applied \"", 
+   StyleBox[
+   "Together", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" and \"", 
+   StyleBox[
+   "Simplify", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" to \"", 
+   RowBox[{
+     InterpretationBox[
+      StyleBox[
+       GridBox[{{"e", 
+          StyleBox[
+           
+           GridBox[{{
+             " ", "\!\(\*StyleBox[\"\[GothicB]\",FontColor->RGBColor[0., 0., \
+1.]]\)"}, {"\!\(\*StyleBox[\"\[ScriptA]\",FontColor->RGBColor[1., 0., 0.]]\)",
+               " "}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+            GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+           Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+        Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+      $CellContext`ee[{-$CellContext`\[ScriptA], -$CellContext`curved}, \
+{$CellContext`\[GothicB], $CellContext`flat}], Editable -> False], "\[Equal]", 
+     RowBox[{"Hold", "[", 
+       RowBox[{
+         RowBox[{"ToArray", "[", "$solution", "]"}], "[", 
+         RowBox[{"Transpose", "[", 
+           RowBox[{
+             RowBox[{"ToArray", "[", "$solution", "]"}], "[", 
+             RowBox[{"$solution", "[", 
+               RowBox[{"$frame", ",", 
+                 RowBox[{"MakeSymbol", "[", "\"ee\"", "]"}], ",", "Expr"}], 
+               "]"}], "]"}], "]"}], "]"}], "]"}]}], "\" in \"", 
+   TemplateBox[{"0", "2", 
+     RowBox[{"\[ThinSpace]", "\"min\""}], 
+     RowBox[{"\[ThinSpace]", "\"s\""}], "minutes,seconds", 
+     RowBox[{"{", 
+       RowBox[{"\"Minutes\"", ",", "\"Seconds\""}], "}"}]}, 
+    "QuantityMixedUnit2"]},
+  "RowDefault"]], "Echo",
+ CellChangeTimes->{
+  3.907858310111425*^9},ExpressionUUID->"8ab0a2fd-a51f-4fbf-9cb9-\
+c475e88bbe56"],
+
+Cell[BoxData[
+ TemplateBox[{"\"Applied \"", 
+   StyleBox[
+   "Together", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" and \"", 
+   StyleBox[
+   "Simplify", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" to \"", 
+   TemplateBox[{"\[ThinSpace]", "\" \"", 
+     InterpretationBox[
+      StyleBox[
+       GridBox[{{"e", 
+          StyleBox[
+           
+           GridBox[{{
+             "\!\(\*StyleBox[\"\[ScriptA]\",FontColor->RGBColor[1., 0., \
+0.]]\)", "\!\(\*StyleBox[\"\[GothicB]\",FontColor->RGBColor[0., 0., 1.]]\)"}, \
+{" ", " "}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+            GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+           Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+        Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+      $CellContext`ee[{$CellContext`\[ScriptA], $CellContext`curved}, \
+{$CellContext`\[GothicB], $CellContext`flat}], Editable -> False], 
+     InterpretationBox[
+      StyleBox[
+       GridBox[{{"e", 
+          StyleBox[
+           
+           GridBox[{{" ", " "}, {
+             "\!\(\*StyleBox[\"\[ScriptA]\",FontColor->RGBColor[1., 0., \
+0.]]\)", "\!\(\*StyleBox[\"\[GothicB]\",FontColor->RGBColor[0., 0., 1.]]\)"}},
+             RowSpacings -> 0, ColumnSpacings -> 0.05, 
+            GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+           Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+        Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+      $CellContext`ee[{-$CellContext`\[ScriptA], -$CellContext`curved}, \
+{-$CellContext`\[GothicB], -$CellContext`flat}], Editable -> False]}, 
+    "RowWithSeparators"], "\" in \"", 
+   TemplateBox[{"0", "4", 
+     RowBox[{"\[ThinSpace]", "\"min\""}], 
+     RowBox[{"\[ThinSpace]", "\"s\""}], "minutes,seconds", 
+     RowBox[{"{", 
+       RowBox[{"\"Minutes\"", ",", "\"Seconds\""}], "}"}]}, 
+    "QuantityMixedUnit2"]},
+  "RowDefault"]], "Echo",
+ CellChangeTimes->{
+  3.907858314195753*^9},ExpressionUUID->"cfda63e2-d896-4ebe-a6cb-\
+4b69e35f2324"],
+
+Cell[BoxData[
+ TemplateBox[{"\"Applied \"", 
+   StyleBox[
+   "Together", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" and \"", 
+   StyleBox[
+   "Simplify", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" to \"", 
+   TemplateBox[{"\[ThinSpace]", "\" \"", 
+     InterpretationBox[
+      StyleBox[
+       GridBox[{{"e", 
+          StyleBox[
+           
+           GridBox[{{
+             "\!\(\*StyleBox[\"\[ScriptA]\",FontColor->RGBColor[1., 0., \
+0.]]\)", " "}, {
+             " ", "\!\(\*StyleBox[\"\[GothicB]\",FontColor->RGBColor[0., 0., \
+1.]]\)"}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+            GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+           Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+        Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+      $CellContext`ee[{$CellContext`\[ScriptA], $CellContext`curved}, \
+{-$CellContext`\[GothicB], -$CellContext`flat}], Editable -> False]}, 
+    "RowWithSeparators"], "\" in \"", 
+   TemplateBox[{"0", "2", 
+     RowBox[{"\[ThinSpace]", "\"min\""}], 
+     RowBox[{"\[ThinSpace]", "\"s\""}], "minutes,seconds", 
+     RowBox[{"{", 
+       RowBox[{"\"Minutes\"", ",", "\"Seconds\""}], "}"}]}, 
+    "QuantityMixedUnit2"]},
+  "RowDefault"]], "Echo",
+ CellChangeTimes->{
+  3.907858316243534*^9},ExpressionUUID->"5843f122-ebef-4b96-aed8-\
+ca57eb7ebe30"],
+
+Cell[BoxData[
+ TemplateBox[{"\"Applied \"", 
+   StyleBox[
+   "Together", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" and \"", 
+   StyleBox[
+   "Simplify", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" to \"", 
+   RowBox[{
+     InterpretationBox[
+      StyleBox[
+       GridBox[{{"\[Omega]", 
+          StyleBox[
+           
+           GridBox[{{" ", " ", " "}, {
+             "\!\(\*StyleBox[\"\[ScriptA]\",FontColor->RGBColor[1., 0., \
+0.]]\)", "\!\(\*StyleBox[\"\[GothicB]\",FontColor->RGBColor[0., 0., 1.]]\)", 
+              "\!\(\*StyleBox[\"\[GothicC]\",FontColor->RGBColor[0., 0., 1.]]\
+\)"}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+            GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+           Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+        Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+      $CellContext`\[Omega]\[Omega][{-$CellContext`\[ScriptA], \
+-$CellContext`curved}, {-$CellContext`\[GothicB], -$CellContext`flat}, \
+{-$CellContext`\[GothicC], -$CellContext`flat}], Editable -> False], 
+     "\[Equal]", 
+     RowBox[{
+       RowBox[{
+         InterpretationBox[
+          StyleBox[
+           GridBox[{{"\[CapitalGamma][\[EmptyDownTriangle]]", 
+              StyleBox[
+               
+               GridBox[{{
+                 "\!\(\*StyleBox[\"\[ScriptX]\",FontColor->RGBColor[1., 0., \
+0.]]\)", " ", " "}, {
+                 " ", "\!\(\*StyleBox[\"\[ScriptW]\",FontColor->RGBColor[1., \
+0., 0.]]\)", 
+                  "\!\(\*StyleBox[\"\[ScriptA]\",FontColor->RGBColor[1., 0., \
+0.]]\)"}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+                GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+               Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+            Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+          $CellContext`Christoffelcd[{$CellContext`\[ScriptX], \
+$CellContext`curved}, {-$CellContext`\[ScriptW], -$CellContext`curved}, \
+{-$CellContext`\[ScriptA], -$CellContext`curved}], Editable -> False], " ", 
+         InterpretationBox[
+          StyleBox[
+           GridBox[{{"e", 
+              StyleBox[
+               
+               GridBox[{{
+                 "\!\(\*StyleBox[\"\[ScriptW]\",FontColor->RGBColor[1., 0., \
+0.]]\)", " "}, {" ", 
+                  "\!\(\*StyleBox[\"\[GothicB]\",FontColor->RGBColor[0., 0., \
+1.]]\)"}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+                GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+               Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+            Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+          $CellContext`ee[{$CellContext`\[ScriptW], $CellContext`curved}, \
+{-$CellContext`\[GothicB], -$CellContext`flat}], Editable -> False], " ", 
+         InterpretationBox[
+          StyleBox[
+           GridBox[{{"e", 
+              StyleBox[
+               
+               GridBox[{{" ", " "}, {
+                 "\!\(\*StyleBox[\"\[ScriptX]\",FontColor->RGBColor[1., 0., \
+0.]]\)", "\!\(\*StyleBox[\"\[GothicA]\",FontColor->RGBColor[0., 0., 1.]]\)"}},
+                 RowSpacings -> 0, ColumnSpacings -> 0.05, 
+                GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+               Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+            Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+          $CellContext`ee[{-$CellContext`\[ScriptX], -$CellContext`curved}, \
+{-$CellContext`\[GothicA], -$CellContext`flat}], Editable -> False]}], "-", 
+       RowBox[{
+         InterpretationBox[
+          StyleBox[
+           GridBox[{{"e", 
+              StyleBox[
+               
+               GridBox[{{
+                 "\!\(\*StyleBox[\"\[ScriptW]\",FontColor->RGBColor[1., 0., \
+0.]]\)", " "}, {" ", 
+                  "\!\(\*StyleBox[\"\[GothicB]\",FontColor->RGBColor[0., 0., \
+1.]]\)"}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+                GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+               Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+            Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+          $CellContext`ee[{$CellContext`\[ScriptW], $CellContext`curved}, \
+{-$CellContext`\[GothicB], -$CellContext`flat}], Editable -> False], " ", 
+         InterpretationBox[
+          StyleBox[
+           GridBox[{{"\[Eta]", 
+              StyleBox[
+               
+               GridBox[{{" ", " "}, {
+                 "\!\(\*StyleBox[\"\[GothicW]\",FontColor->RGBColor[0., 0., \
+1.]]\)", "\!\(\*StyleBox[\"\[GothicA]\",FontColor->RGBColor[0., 0., 1.]]\)"}},
+                 RowSpacings -> 0, ColumnSpacings -> 0.05, 
+                GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+               Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+            Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+          $CellContext`\[Eta]\[Eta][{-$CellContext`\[GothicW], \
+-$CellContext`flat}, {-$CellContext`\[GothicA], -$CellContext`flat}], 
+          Editable -> False], " ", 
+         InterpretationBox[
+          StyleBox[
+           RowBox[{
+             SubscriptBox[
+             "\[PartialD]", 
+              "\!\(\*StyleBox[\"\[ScriptA]\",FontColor->RGBColor[1., 0., 0.]]\
+\)"], 
+             GridBox[{{"e", 
+                StyleBox[
+                 
+                 GridBox[{{
+                   " ", "\!\(\*StyleBox[\"\[GothicW]\",FontColor->RGBColor[0.,\
+ 0., 1.]]\)"}, {
+                   "\!\(\*StyleBox[\"\[ScriptW]\",FontColor->RGBColor[1., 0., \
+0.]]\)", " "}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+                  GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+                 Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+              Center]}], AutoSpacing -> False, ShowAutoStyles -> False], 
+          xAct`xTensor`PD[{-$CellContext`\[ScriptA], -$CellContext`curved}][
+           $CellContext`ee[{-$CellContext`\[ScriptW], -$CellContext`curved}, \
+{$CellContext`\[GothicW], $CellContext`flat}]], Editable -> False]}]}]}], 
+   "\" in \"", 
+   TemplateBox[{"0", "4", 
+     RowBox[{"\[ThinSpace]", "\"min\""}], 
+     RowBox[{"\[ThinSpace]", "\"s\""}], "minutes,seconds", 
+     RowBox[{"{", 
+       RowBox[{"\"Minutes\"", ",", "\"Seconds\""}], "}"}]}, 
+    "QuantityMixedUnit2"]},
+  "RowDefault"]], "Echo",
+ CellChangeTimes->{
+  3.907858320525241*^9},ExpressionUUID->"6ff573e4-2e8d-45c9-bb2d-\
+f9d9904fbae7"],
+
+Cell[BoxData[
+ TemplateBox[{"\"Applied \"", 
+   StyleBox[
+   "Identity", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" and \"", 
+   StyleBox[
+   "Identity", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" to \"", 
+   RowBox[{
+     InterpretationBox[
+      StyleBox[
+       GridBox[{{"\[Gamma][\[Eta]]", 
+          StyleBox[
+           
+           GridBox[{{
+             "\!\(\*StyleBox[\"\[GothicA]\",FontColor->RGBColor[0., 0., \
+1.]]\)", " ", 
+              "\!\(\*StyleBox[\"\[DoubleStruckCapitalC]\",FontColor->RGBColor[\
+0., 0.666667, 0.]]\)"}, {
+             " ", "\!\(\*StyleBox[\"\[DoubleStruckCapitalB]\",FontColor->\
+RGBColor[0., 0.666667, 0.]]\)", " "}}, RowSpacings -> 0, ColumnSpacings -> 
+            0.05, GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+           Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+        Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+      $CellContext`Gamma\[Eta]\[Eta]1[{$CellContext`\[GothicA], \
+$CellContext`flat}, {-$CellContext`\[DoubleStruckCapitalB], \
+-$CellContext`spin}, {$CellContext`\[DoubleStruckCapitalC], \
+$CellContext`spin}], Editable -> False], "\[Equal]", 
+     RowBox[{"Hold", "[", 
+       RowBox[{
+         RowBox[{"ToArray", "[", "$solution", "]"}], "[", 
+         RowBox[{"GenFlatGamma", "[", 
+           RowBox[{"$solution", ",", 
+             RowBox[{"$solution", "[", 
+               RowBox[{"$chart", ",", 
+                 RowBox[{"MakeSymbol", "[", "\"curved\"", "]"}], ",", 
+                 "CNumber"}], "]"}]}], "]"}], "]"}], "]"}]}], "\" in \"", 
+   TemplateBox[{"0", "2", 
+     RowBox[{"\[ThinSpace]", "\"min\""}], 
+     RowBox[{"\[ThinSpace]", "\"s\""}], "minutes,seconds", 
+     RowBox[{"{", 
+       RowBox[{"\"Minutes\"", ",", "\"Seconds\""}], "}"}]}, 
+    "QuantityMixedUnit2"]},
+  "RowDefault"]], "Echo",
+ CellChangeTimes->{
+  3.907858322586278*^9},ExpressionUUID->"d6eec23f-2b89-43cc-8018-\
+ff4336dc2588"],
+
+Cell[BoxData[
+ TemplateBox[{"\"Applied \"", 
+   StyleBox[
+   "Identity", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" and \"", 
+   StyleBox[
+   "Identity", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" to \"", 
+   TemplateBox[{"\[ThinSpace]", "\" \"", 
+     InterpretationBox[
+      StyleBox[
+       GridBox[{{"\[Gamma][\[Eta]]", 
+          StyleBox[
+           
+           GridBox[{{
+             " ", " ", 
+              "\!\(\*StyleBox[\"\[DoubleStruckCapitalC]\",FontColor->RGBColor[\
+0., 0.666667, 0.]]\)"}, {
+             "\!\(\*StyleBox[\"\[GothicA]\",FontColor->RGBColor[0., 0., \
+1.]]\)", "\!\(\*StyleBox[\"\[DoubleStruckCapitalB]\",FontColor->RGBColor[0., \
+0.666667, 0.]]\)", " "}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+            GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+           Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+        Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+      $CellContext`Gamma\[Eta]\[Eta]1[{-$CellContext`\[GothicA], \
+-$CellContext`flat}, {-$CellContext`\[DoubleStruckCapitalB], \
+-$CellContext`spin}, {$CellContext`\[DoubleStruckCapitalC], \
+$CellContext`spin}], Editable -> False]}, "RowWithSeparators"], "\" in \"", 
+   TemplateBox[{"0", "2", 
+     RowBox[{"\[ThinSpace]", "\"min\""}], 
+     RowBox[{"\[ThinSpace]", "\"s\""}], "minutes,seconds", 
+     RowBox[{"{", 
+       RowBox[{"\"Minutes\"", ",", "\"Seconds\""}], "}"}]}, 
+    "QuantityMixedUnit2"]},
+  "RowDefault"]], "Echo",
+ CellChangeTimes->{
+  3.907858324729987*^9},ExpressionUUID->"b4880ae5-043b-4355-ac2a-\
+564a282d8110"],
+
+Cell[BoxData[
+ TemplateBox[{"\"Applied \"", 
+   StyleBox[
+   "Identity", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" and \"", 
+   StyleBox[
+   "Identity", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" to \"", 
+   RowBox[{
+     InterpretationBox[
+      StyleBox[
+       GridBox[{{"\[Gamma][\[Eta]]", 
+          StyleBox[
+           
+           GridBox[{{
+             "\!\(\*StyleBox[\"\[GothicA]\",FontColor->RGBColor[0., 0., \
+1.]]\)", "\!\(\*StyleBox[\"\[GothicB]\",FontColor->RGBColor[0., 0., 1.]]\)", 
+              " ", "\!\(\*StyleBox[\"\[DoubleStruckCapitalD]\",FontColor->\
+RGBColor[0., 0.666667, 0.]]\)"}, {
+             " ", " ", 
+              "\!\(\*StyleBox[\"\[DoubleStruckCapitalC]\",FontColor->RGBColor[\
+0., 0.666667, 0.]]\)", " "}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+            GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+           Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+        Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+      $CellContext`Gamma\[Eta]\[Eta]2[{$CellContext`\[GothicA], \
+$CellContext`flat}, {$CellContext`\[GothicB], $CellContext`flat}, \
+{-$CellContext`\[DoubleStruckCapitalC], -$CellContext`spin}, {$CellContext`\
+\[DoubleStruckCapitalD], $CellContext`spin}], Editable -> False], "\[Equal]", 
+     
+     RowBox[{
+       RowBox[{
+         RowBox[{"-", 
+           FractionBox["1", "2"]}], " ", 
+         InterpretationBox[
+          StyleBox[
+           GridBox[{{"\[Gamma][\[Eta]]", 
+              StyleBox[
+               
+               GridBox[{{
+                 "\!\(\*StyleBox[\"\[GothicA]\",FontColor->RGBColor[0., 0., \
+1.]]\)", " ", 
+                  "\!\(\*StyleBox[\"\[DoubleStruckCapitalB]\",FontColor->\
+RGBColor[0., 0.666667, 0.]]\)"}, {
+                 " ", "\!\(\*StyleBox[\"\[DoubleStruckCapitalZ]\",FontColor->\
+RGBColor[0., 0.666667, 0.]]\)", " "}}, RowSpacings -> 0, ColumnSpacings -> 
+                0.05, GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+               Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+            Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+          $CellContext`Gamma\[Eta]\[Eta]1[{$CellContext`\[GothicA], \
+$CellContext`flat}, {-$CellContext`\[DoubleStruckCapitalZ], \
+-$CellContext`spin}, {$CellContext`\[DoubleStruckCapitalB], \
+$CellContext`spin}], Editable -> False], " ", 
+         InterpretationBox[
+          StyleBox[
+           GridBox[{{"\[Gamma][\[Eta]]", 
+              StyleBox[
+               
+               GridBox[{{
+                 "\!\(\*StyleBox[\"\[GothicB]\",FontColor->RGBColor[0., 0., \
+1.]]\)", " ", 
+                  "\!\(\*StyleBox[\"\[DoubleStruckCapitalZ]\",FontColor->\
+RGBColor[0., 0.666667, 0.]]\)"}, {
+                 " ", "\!\(\*StyleBox[\"\[DoubleStruckCapitalA]\",FontColor->\
+RGBColor[0., 0.666667, 0.]]\)", " "}}, RowSpacings -> 0, ColumnSpacings -> 
+                0.05, GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+               Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+            Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+          $CellContext`Gamma\[Eta]\[Eta]1[{$CellContext`\[GothicB], \
+$CellContext`flat}, {-$CellContext`\[DoubleStruckCapitalA], \
+-$CellContext`spin}, {$CellContext`\[DoubleStruckCapitalZ], \
+$CellContext`spin}], Editable -> False]}], "+", 
+       RowBox[{
+         FractionBox["1", "2"], " ", 
+         InterpretationBox[
+          StyleBox[
+           GridBox[{{"\[Gamma][\[Eta]]", 
+              StyleBox[
+               
+               GridBox[{{
+                 "\!\(\*StyleBox[\"\[GothicA]\",FontColor->RGBColor[0., 0., \
+1.]]\)", " ", 
+                  "\!\(\*StyleBox[\"\[DoubleStruckCapitalZ]\",FontColor->\
+RGBColor[0., 0.666667, 0.]]\)"}, {
+                 " ", "\!\(\*StyleBox[\"\[DoubleStruckCapitalA]\",FontColor->\
+RGBColor[0., 0.666667, 0.]]\)", " "}}, RowSpacings -> 0, ColumnSpacings -> 
+                0.05, GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+               Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+            Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+          $CellContext`Gamma\[Eta]\[Eta]1[{$CellContext`\[GothicA], \
+$CellContext`flat}, {-$CellContext`\[DoubleStruckCapitalA], \
+-$CellContext`spin}, {$CellContext`\[DoubleStruckCapitalZ], \
+$CellContext`spin}], Editable -> False], " ", 
+         InterpretationBox[
+          StyleBox[
+           GridBox[{{"\[Gamma][\[Eta]]", 
+              StyleBox[
+               
+               GridBox[{{
+                 "\!\(\*StyleBox[\"\[GothicB]\",FontColor->RGBColor[0., 0., \
+1.]]\)", " ", 
+                  "\!\(\*StyleBox[\"\[DoubleStruckCapitalB]\",FontColor->\
+RGBColor[0., 0.666667, 0.]]\)"}, {
+                 " ", "\!\(\*StyleBox[\"\[DoubleStruckCapitalZ]\",FontColor->\
+RGBColor[0., 0.666667, 0.]]\)", " "}}, RowSpacings -> 0, ColumnSpacings -> 
+                0.05, GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+               Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+            Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+          $CellContext`Gamma\[Eta]\[Eta]1[{$CellContext`\[GothicB], \
+$CellContext`flat}, {-$CellContext`\[DoubleStruckCapitalZ], \
+-$CellContext`spin}, {$CellContext`\[DoubleStruckCapitalB], \
+$CellContext`spin}], Editable -> False]}]}]}], "\" in \"", 
+   TemplateBox[{"0", "4", 
+     RowBox[{"\[ThinSpace]", "\"min\""}], 
+     RowBox[{"\[ThinSpace]", "\"s\""}], "minutes,seconds", 
+     RowBox[{"{", 
+       RowBox[{"\"Minutes\"", ",", "\"Seconds\""}], "}"}]}, 
+    "QuantityMixedUnit2"]},
+  "RowDefault"]], "Echo",
+ CellChangeTimes->{
+  3.907858328676639*^9},ExpressionUUID->"122c31f9-5913-422b-81df-\
+8170f80d4197"],
+
+Cell[BoxData[
+ TemplateBox[{"\"Applied \"", 
+   StyleBox[
+   "Together", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" and \"", 
+   StyleBox[
+   "Simplify", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" to \"", 
+   RowBox[{
+     InterpretationBox[
+      StyleBox[
+       GridBox[{{"\[Gamma][g]", 
+          StyleBox[
+           
+           GridBox[{{
+             "\!\(\*StyleBox[\"\[ScriptA]\",FontColor->RGBColor[1., 0., \
+0.]]\)", " ", 
+              "\!\(\*StyleBox[\"\[DoubleStruckCapitalC]\",FontColor->RGBColor[\
+0., 0.666667, 0.]]\)"}, {
+             " ", "\!\(\*StyleBox[\"\[DoubleStruckCapitalB]\",FontColor->\
+RGBColor[0., 0.666667, 0.]]\)", " "}}, RowSpacings -> 0, ColumnSpacings -> 
+            0.05, GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+           Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+        Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+      $CellContext`Gammagg1[{$CellContext`\[ScriptA], $CellContext`curved}, \
+{-$CellContext`\[DoubleStruckCapitalB], -$CellContext`spin}, {$CellContext`\
+\[DoubleStruckCapitalC], $CellContext`spin}], Editable -> False], "\[Equal]", 
+     
+     RowBox[{
+       InterpretationBox[
+        StyleBox[
+         GridBox[{{"e", 
+            StyleBox[
+             
+             GridBox[{{
+               "\!\(\*StyleBox[\"\[ScriptA]\",FontColor->RGBColor[1., 0., \
+0.]]\)", " "}, {
+               " ", "\!\(\*StyleBox[\"\[GothicZ]\",FontColor->RGBColor[0., \
+0., 1.]]\)"}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+              GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+             Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+          Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+        $CellContext`ee[{$CellContext`\[ScriptA], $CellContext`curved}, \
+{-$CellContext`\[GothicZ], -$CellContext`flat}], Editable -> False], " ", 
+       InterpretationBox[
+        StyleBox[
+         GridBox[{{"\[Gamma][\[Eta]]", 
+            StyleBox[
+             
+             GridBox[{{
+               "\!\(\*StyleBox[\"\[GothicZ]\",FontColor->RGBColor[0., 0., \
+1.]]\)", " ", 
+                "\!\(\*StyleBox[\"\[DoubleStruckCapitalB]\",FontColor->\
+RGBColor[0., 0.666667, 0.]]\)"}, {
+               " ", "\!\(\*StyleBox[\"\[DoubleStruckCapitalA]\",FontColor->\
+RGBColor[0., 0.666667, 0.]]\)", " "}}, RowSpacings -> 0, ColumnSpacings -> 
+              0.05, GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+             Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+          Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+        $CellContext`Gamma\[Eta]\[Eta]1[{$CellContext`\[GothicZ], \
+$CellContext`flat}, {-$CellContext`\[DoubleStruckCapitalA], \
+-$CellContext`spin}, {$CellContext`\[DoubleStruckCapitalB], \
+$CellContext`spin}], Editable -> False]}]}], "\" in \"", 
+   TemplateBox[{"0", "2", 
+     RowBox[{"\[ThinSpace]", "\"min\""}], 
+     RowBox[{"\[ThinSpace]", "\"s\""}], "minutes,seconds", 
+     RowBox[{"{", 
+       RowBox[{"\"Minutes\"", ",", "\"Seconds\""}], "}"}]}, 
+    "QuantityMixedUnit2"]},
+  "RowDefault"]], "Echo",
+ CellChangeTimes->{
+  3.9078583310273533`*^9},ExpressionUUID->"0f190831-2a54-43b2-8d49-\
+e3a6ab5492c4"],
+
+Cell[BoxData[
+ TemplateBox[{"\"Applied \"", 
+   StyleBox[
+   "Together", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" and \"", 
+   StyleBox[
+   "Simplify", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" to \"", 
+   TemplateBox[{"\[ThinSpace]", "\" \"", 
+     InterpretationBox[
+      StyleBox[
+       GridBox[{{"\[Gamma][g]", 
+          StyleBox[
+           
+           GridBox[{{
+             " ", " ", 
+              "\!\(\*StyleBox[\"\[DoubleStruckCapitalC]\",FontColor->RGBColor[\
+0., 0.666667, 0.]]\)"}, {
+             "\!\(\*StyleBox[\"\[ScriptA]\",FontColor->RGBColor[1., 0., \
+0.]]\)", "\!\(\*StyleBox[\"\[DoubleStruckCapitalB]\",FontColor->RGBColor[0., \
+0.666667, 0.]]\)", " "}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+            GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+           Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+        Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+      $CellContext`Gammagg1[{-$CellContext`\[ScriptA], -$CellContext`curved}, \
+{-$CellContext`\[DoubleStruckCapitalB], -$CellContext`spin}, {$CellContext`\
+\[DoubleStruckCapitalC], $CellContext`spin}], Editable -> False]}, 
+    "RowWithSeparators"], "\" in \"", 
+   TemplateBox[{"0", "2", 
+     RowBox[{"\[ThinSpace]", "\"min\""}], 
+     RowBox[{"\[ThinSpace]", "\"s\""}], "minutes,seconds", 
+     RowBox[{"{", 
+       RowBox[{"\"Minutes\"", ",", "\"Seconds\""}], "}"}]}, 
+    "QuantityMixedUnit2"]},
+  "RowDefault"]], "Echo",
+ CellChangeTimes->{
+  3.9078583332464647`*^9},ExpressionUUID->"0fdca70b-0a69-4176-bd93-\
+ea3ae1cd2762"],
+
+Cell[BoxData[
+ TemplateBox[{"\"Applied \"", 
+   StyleBox[
+   "Together", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" and \"", 
+   StyleBox[
+   "Simplify", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" to \"", 
+   RowBox[{
+     InterpretationBox[
+      StyleBox[
+       GridBox[{{"AA", 
+          StyleBox[
+           
+           GridBox[{{" "}, {
+             "\!\(\*StyleBox[\"\[ScriptA]\",FontColor->RGBColor[1., 0., \
+0.]]\)"}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+            GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+           Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+        Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+      $CellContext`AA[{-$CellContext`\[ScriptA], -$CellContext`curved}], 
+      Editable -> False], "\[Equal]", 
+     RowBox[{"Hold", "[", 
+       RowBox[{
+         RowBox[{"ToArray", "[", "$solution", "]"}], "[", 
+         RowBox[{"$solution", "[", 
+           RowBox[{"$form", ",", "fA", ",", "Expr"}], "]"}], "]"}], "]"}]}], 
+   "\" in \"", 
+   TemplateBox[{"0", "2", 
+     RowBox[{"\[ThinSpace]", "\"min\""}], 
+     RowBox[{"\[ThinSpace]", "\"s\""}], "minutes,seconds", 
+     RowBox[{"{", 
+       RowBox[{"\"Minutes\"", ",", "\"Seconds\""}], "}"}]}, 
+    "QuantityMixedUnit2"]},
+  "RowDefault"]], "Echo",
+ CellChangeTimes->{
+  3.90785833524853*^9},ExpressionUUID->"f5225dd7-489f-4949-b47a-9a00cd5b66fc"],
+
+Cell[BoxData[
+ TemplateBox[{"\"Applied \"", 
+   StyleBox[
+   "Together", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" and \"", 
+   StyleBox[
+   "Simplify", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" to \"", 
+   TemplateBox[{"\[ThinSpace]", "\" \"", 
+     InterpretationBox[
+      StyleBox[
+       GridBox[{{"AA", 
+          StyleBox[
+           
+           GridBox[{{
+             "\!\(\*StyleBox[\"\[ScriptA]\",FontColor->RGBColor[1., 0., \
+0.]]\)"}, {" "}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+            GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+           Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+        Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+      $CellContext`AA[{$CellContext`\[ScriptA], $CellContext`curved}], 
+      Editable -> False]}, "RowWithSeparators"], "\" in \"", 
+   TemplateBox[{"0", "2", 
+     RowBox[{"\[ThinSpace]", "\"min\""}], 
+     RowBox[{"\[ThinSpace]", "\"s\""}], "minutes,seconds", 
+     RowBox[{"{", 
+       RowBox[{"\"Minutes\"", ",", "\"Seconds\""}], "}"}]}, 
+    "QuantityMixedUnit2"]},
+  "RowDefault"]], "Echo",
+ CellChangeTimes->{
+  3.90785833725953*^9},ExpressionUUID->"50ecc4a1-50af-48b7-bbab-608036e7ffae"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"$array", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"ToArray", "[", "sol", "]"}], "@", 
+     RowBox[{"\[Epsilon]\[Epsilon]", "[", 
+      RowBox[{"-", "\[DoubleStruckCapitalA]"}], "]"}]}], "/.", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"\[Theta]", "[", "]"}], "->", 
+       RowBox[{"2", 
+        RowBox[{"\[Eta]", "[", "]"}]}]}], ",", 
+      RowBox[{
+       RowBox[{"\[Phi]", "[", "]"}], "->", 
+       RowBox[{
+        RowBox[{"\[Xi]1", "[", "]"}], "+", 
+        RowBox[{"\[Xi]2", "[", "]"}]}]}], ",", 
+      RowBox[{
+       RowBox[{"\[Psi]", "[", "]"}], "->", 
+       RowBox[{
+        RowBox[{"\[Xi]2", "[", "]"}], "-", 
+        RowBox[{"\[Xi]1", "[", "]"}]}]}]}], "}"}]}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"Compute", "[", 
+  RowBox[{"sol", "[", 
+   RowBox[{"$spinor", ",", "\[Epsilon]\[Epsilon]"}], "]"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.8958856421137*^9, 3.8958856947059717`*^9}, 
+   3.895932850160132*^9},
+ CellLabel->"In[19]:=",ExpressionUUID->"735ce2bc-934d-49ce-a40d-67d585584dec"],
+
+Cell[BoxData[
+ TemplateBox[{"\"Applied \"", 
+   StyleBox[
+   "Together", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" and \"", 
+   StyleBox[
+   "Simplify", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" to \"", 
+   RowBox[{
+     InterpretationBox[
+      StyleBox[
+       GridBox[{{"\[Epsilon]\[Epsilon]", 
+          StyleBox[
+           
+           GridBox[{{" "}, {
+             "\!\(\*StyleBox[\"\[DoubleStruckCapitalA]\",FontColor->RGBColor[\
+0., 0.666667, 0.]]\)"}}, RowSpacings -> 0, ColumnSpacings -> 0.05, 
+            GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+           Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+        Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+      $CellContext`\[Epsilon]\[Epsilon][{-$CellContext`\[DoubleStruckCapitalA]\
+, -$CellContext`spin}], Editable -> False], "\[Equal]", 
+     RowBox[{"Hold", "[", 
+       RowBox[{
+         RowBox[{"ToArray", "[", "$solution", "]"}], "[", "$array", "]"}], 
+       "]"}]}], "\" in \"", 
+   TemplateBox[{"0", "3", 
+     RowBox[{"\[ThinSpace]", "\"min\""}], 
+     RowBox[{"\[ThinSpace]", "\"s\""}], "minutes,seconds", 
+     RowBox[{"{", 
+       RowBox[{"\"Minutes\"", ",", "\"Seconds\""}], "}"}]}, 
+    "QuantityMixedUnit2"]},
+  "RowDefault"]], "Echo",
+ CellChangeTimes->{
+  3.907858355519238*^9},ExpressionUUID->"8915ab17-0fc5-4e7e-9107-\
+00acd52d4356"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Verify", "Section",
+ CellChangeTimes->{{3.895887266830831*^9, 
+  3.895887268331493*^9}},ExpressionUUID->"41b2e6a7-f53d-4975-a483-\
+b3aa4f67ad9f"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Simplify", "@", 
+  RowBox[{
+   RowBox[{"ToArray", "[", "sol", "]"}], "@", 
+   RowBox[{"\[DoubleStruckCapitalE]gg", "[", 
+    RowBox[{
+     RowBox[{"-", "\[ScriptA]"}], ",", 
+     RowBox[{"-", "\[ScriptB]"}]}], "]"}]}]}], "\[IndentingNewLine]", 
+ RowBox[{"Simplify", "@", 
+  RowBox[{
+   RowBox[{"ToArray", "[", "sol", "]"}], "@", 
+   RowBox[{"\[Delta]\[Psi]\[Psi]", "[", 
+    RowBox[{
+     RowBox[{"-", "\[ScriptA]"}], ",", 
+     RowBox[{"-", "\[DoubleStruckCapitalA]"}]}], "]"}]}]}]}], "Input",
+ CellChangeTimes->{{3.8952288156032248`*^9, 3.8952288501498833`*^9}, {
+  3.8952913100162773`*^9, 3.895291310306444*^9}, {3.895388922070135*^9, 
+  3.895388946061266*^9}, {3.895887260312428*^9, 3.895887260672699*^9}},
+ CellLabel->"In[21]:=",ExpressionUUID->"a352cc6f-f8e5-4435-b24d-386c93613502"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0", ",", "0", ",", "0"}], "}"}]}], 
+  "}"}]], "Output",
+ CellChangeTimes->{3.8958857294693727`*^9, 3.895887612394383*^9, 
+  3.8958966638486433`*^9, 3.8959171357842007`*^9, 3.895920202433527*^9, 
+  3.895932936528439*^9, 3.9078583605893507`*^9},
+ CellLabel->"Out[21]=",ExpressionUUID->"2d028495-a6c4-4ca9-8d38-ab6d5f31abaa"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}], ",", 
+   RowBox[{"{", 
+    RowBox[{"0", ",", "0", ",", "0", ",", "0"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.8958857294693727`*^9, 3.895887612394383*^9, 
+  3.8958966638486433`*^9, 3.8959171357842007`*^9, 3.895920202433527*^9, 
+  3.895932936528439*^9, 3.907858362336379*^9},
+ CellLabel->"Out[22]=",ExpressionUUID->"29733439-d35c-4a13-9fec-705f6acf8f9d"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Store", "@", "sol"}]], "Input",
+ CellChangeTimes->{{3.895917145432262*^9, 3.895917147066391*^9}},
+ CellLabel->"In[23]:=",ExpressionUUID->"595d8063-c4e2-4fdd-821f-bc543c187e3a"]
+}, Open  ]]
+},
+WindowSize->{1504, 908},
+WindowMargins->{{4, Automatic}, {Automatic, 4}},
+TaggingRules-><|"TryRealOnly" -> False|>,
+FrontEndVersion->"13.3 for Mac OS X ARM (64-bit) (July 24, 2023)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"809f3f95-e474-4102-a7ea-c6def8216a0c"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 242, 4, 46, "Input",ExpressionUUID->"e5295b36-d71c-419f-a0c5-e3b5a8512501",
+ InitializationCell->True],
+Cell[CellGroupData[{
+Cell[825, 28, 150, 3, 67, "Section",ExpressionUUID->"5651841a-b6b3-4791-819e-3f47a96c8c97"],
+Cell[978, 33, 361, 8, 30, "Input",ExpressionUUID->"96696bad-adb5-467a-adac-f1b60087446e"],
+Cell[CellGroupData[{
+Cell[1364, 45, 1798, 44, 109, "Input",ExpressionUUID->"c78711f4-7cd0-4478-b8be-eefc6b40066a"],
+Cell[3165, 91, 1615, 32, 46, "Output",ExpressionUUID->"f1a19dcd-ebdf-4b69-bba2-22665c9bf194"],
+Cell[4783, 125, 2077, 51, 26, "Echo",ExpressionUUID->"6b2e18b3-b8b3-4030-9a91-2cee879f5ca8"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6897, 181, 2521, 77, 73, "Input",ExpressionUUID->"56a71784-9b5a-4393-8cd2-cc2039f018ca"],
+Cell[9421, 260, 6766, 231, 55, "Output",ExpressionUUID->"80690912-a7f3-46cd-9c81-0155e42c00d9"],
+Cell[16190, 493, 11623, 401, 97, "Output",ExpressionUUID->"408f8773-47a5-4fcd-92f9-b701718b1c9d"],
+Cell[27816, 896, 1036, 31, 57, "Output",ExpressionUUID->"543ff58d-5f38-4670-9425-d3494eb15810"]
+}, Open  ]],
+Cell[28867, 930, 253, 4, 30, "Input",ExpressionUUID->"9acc479b-5483-4401-a471-5753d89494c4"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[29157, 939, 152, 3, 67, "Section",ExpressionUUID->"2f9a0859-5b70-48a2-b238-5e63616c7bd4"],
+Cell[CellGroupData[{
+Cell[29334, 946, 1786, 51, 157, "Input",ExpressionUUID->"817155ae-3072-4e11-a42d-ca396dddd107"],
+Cell[CellGroupData[{
+Cell[31145, 1001, 1796, 42, 30, "Echo",ExpressionUUID->"1f0cbfee-3ca2-462f-b822-d2477a08be0b"],
+Cell[32944, 1045, 1829, 42, 30, "Echo",ExpressionUUID->"bdf84c8b-9201-4704-b015-17a9c877a7d8"],
+Cell[34776, 1089, 1702, 41, 27, "Echo",ExpressionUUID->"91ea5b8b-4e02-451a-9a1c-d79d82d2f4dd"],
+Cell[36481, 1132, 4907, 106, 39, "Echo",ExpressionUUID->"2ea7e233-9834-43cb-8b59-8aa07c8ec900"],
+Cell[41391, 1240, 3495, 73, 30, "Echo",ExpressionUUID->"d42ab780-b748-40ac-bbd0-9d074d2010f5"],
+Cell[44889, 1315, 3478, 72, 30, "Echo",ExpressionUUID->"498b6782-7f2a-41ee-afc7-7cc39609f4eb"],
+Cell[48370, 1389, 1726, 37, 30, "Echo",ExpressionUUID->"b87471c6-48c8-4d88-a93c-df4008742b98"],
+Cell[50099, 1428, 7670, 161, 30, "Echo",ExpressionUUID->"5dd76b9e-3c5e-411c-9e3e-b59ab8a1cd69"],
+Cell[57772, 1591, 2296, 50, 30, "Echo",ExpressionUUID->"57b8b197-d801-4cd2-9b85-875216fa0397"],
+Cell[60071, 1643, 1566, 35, 30, "Echo",ExpressionUUID->"0c5918ca-088f-4be3-bdb9-add0c42cbfb5"],
+Cell[61640, 1680, 1573, 38, 25, "Echo",ExpressionUUID->"b31b0758-737a-47e0-8ce2-fb67c5fae026"],
+Cell[63216, 1720, 1708, 40, 30, "Echo",ExpressionUUID->"f1663e7d-7710-4463-8790-78831eafe56b"],
+Cell[64927, 1762, 1735, 40, 30, "Echo",ExpressionUUID->"0e8d107d-3ebc-487c-af94-50ece842f84e"],
+Cell[66665, 1804, 1936, 44, 30, "Echo",ExpressionUUID->"8ab0a2fd-a51f-4fbf-9cb9-c475e88bbe56"],
+Cell[68604, 1850, 2222, 49, 30, "Echo",ExpressionUUID->"cfda63e2-d896-4ebe-a6cb-4b69e35f2324"],
+Cell[70829, 1901, 1553, 36, 30, "Echo",ExpressionUUID->"5843f122-ebef-4b96-aed8-ca57eb7ebe30"],
+Cell[72385, 1939, 6627, 139, 30, "Echo",ExpressionUUID->"6ff573e4-2e8d-45c9-bb2d-f9d9904fbae7"],
+Cell[79015, 2080, 2132, 48, 30, "Echo",ExpressionUUID->"d6eec23f-2b89-43cc-8018-ff4336dc2588"],
+Cell[81150, 2130, 1783, 39, 30, "Echo",ExpressionUUID->"b4880ae5-043b-4355-ac2a-564a282d8110"],
+Cell[82936, 2171, 5936, 123, 39, "Echo",ExpressionUUID->"122c31f9-5913-422b-81df-8170f80d4197"],
+Cell[88875, 2296, 3411, 74, 30, "Echo",ExpressionUUID->"0f190831-2a54-43b2-8d49-e3a6ab5492c4"],
+Cell[92289, 2372, 1775, 39, 30, "Echo",ExpressionUUID->"0fdca70b-0a69-4176-bd93-ea3ae1cd2762"],
+Cell[94067, 2413, 1595, 38, 30, "Echo",ExpressionUUID->"f5225dd7-489f-4949-b47a-9a00cd5b66fc"],
+Cell[95665, 2453, 1414, 32, 30, "Echo",ExpressionUUID->"50ecc4a1-50af-48b7-bbab-608036e7ffae"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[97128, 2491, 1066, 30, 52, "Input",ExpressionUUID->"735ce2bc-934d-49ce-a40d-67d585584dec"],
+Cell[98197, 2523, 1575, 37, 30, "Echo",ExpressionUUID->"8915ab17-0fc5-4e7e-9107-00acd52d4356"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[99821, 2566, 151, 3, 67, "Section",ExpressionUUID->"41b2e6a7-f53d-4975-a483-b3aa4f67ad9f"],
+Cell[CellGroupData[{
+Cell[99997, 2573, 814, 18, 52, "Input",ExpressionUUID->"a352cc6f-f8e5-4435-b24d-386c93613502"],
+Cell[100814, 2593, 768, 17, 34, "Output",ExpressionUUID->"2d028495-a6c4-4ca9-8d38-ab6d5f31abaa"],
+Cell[101585, 2612, 713, 16, 34, "Output",ExpressionUUID->"29733439-d35c-4a13-9fec-705f6acf8f9d"]
+}, Open  ]],
+Cell[102313, 2631, 200, 3, 60, "Input",ExpressionUUID->"595d8063-c4e2-4fdd-821f-bc543c187e3a"]
+}, Open  ]]
+}
+]
+*)
+
