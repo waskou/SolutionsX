@@ -1,0 +1,442 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     15896,        433]
+NotebookOptionsPosition[     11517,        335]
+NotebookOutlinePosition[     12664,        367]
+CellTagsIndexPosition[     12579,        362]
+WindowTitle->LocateData
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Categorization", "CategorizationSection",
+ CellID->214,ExpressionUUID->"c3b13afa-5436-4b53-b2c7-d47fdf7aed38"],
+
+Cell["Symbol", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->215,ExpressionUUID->"5fdd8994-bd6b-4593-8fcb-0d709a498d08"],
+
+Cell["VasilDimitrov/SolutionsX", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->216,ExpressionUUID->"2666aa72-87a7-4d61-a8e8-0fbcafd637e6"],
+
+Cell["VasilDimitrov`SolutionsX`", "Categorization",
+ CellLabel->"Context",
+ CellID->217,ExpressionUUID->"7898c778-0860-4a96-9f30-d0bfcbdba1ad"],
+
+Cell["VasilDimitrov/SolutionsX/ref/LocateData", "Categorization",
+ CellLabel->"URI",
+ CellID->218,ExpressionUUID->"8885f8c2-4b51-44cf-83f3-1ff1ac48ef7e"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->223,ExpressionUUID->"d6eaf4df-6554-4c3c-851a-9ac007a1640c"],
+
+Cell["LocateData", "Keywords",
+ CellID->219,ExpressionUUID->"5ca9c2ad-804c-466a-9aab-c149cc0d69a3"],
+
+Cell["SolutionsX", "Keywords",
+ CellID->220,ExpressionUUID->"11f57949-9f51-4120-ba96-753bcc85bf05"],
+
+Cell["supergravity", "Keywords",
+ CellID->221,ExpressionUUID->"50db23d2-dabd-48d1-a627-43984b28bdc7"],
+
+Cell["xAct", "Keywords",
+ CellID->222,ExpressionUUID->"2872d5bd-2f7e-4416-9306-09f5f27bd49b"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["LocateData", "ObjectName",
+ CellID->224,ExpressionUUID->"2e106b66-2f81-4201-90fc-cac85a7224e3"],
+
+Cell[TextData[{
+ Cell["   ", "ModInfo",ExpressionUUID->"9c8b01e6-3470-49c2-a975-9116e8b81115"],
+ Cell[BoxData[
+  RowBox[{
+   TemplateBox[{
+     Cell[
+      TextData["LocateData"]], 
+     "paclet:VasilDimitrov/SolutionsX/ref/LocateData", 
+     "VasilDimitrov Package Symbol"},
+    "PackageLink",
+    BaseStyle->"InlineFormula"], "[", "]"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "8428fa69-55c5-41aa-9d88-baf79eadc0c1"],
+ "\[LineSeparator]points ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$DataDirectory"]], 
+    "paclet:VasilDimitrov/SolutionsX/ref/$DataDirectory", 
+    "VasilDimitrov Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "4ef7a136-9238-4211-b857-ffd090d20b4f"],
+ " at the data tree containing the current notebook, for this session only, \
+then displays the package load panel and the Data status.\n",
+ Cell["   ", "ModInfo",ExpressionUUID->"754fae2b-c5fa-42e5-a9ed-20750afd3af0"],
+ Cell[BoxData[
+  RowBox[{
+   TemplateBox[{
+     Cell[
+      TextData["LocateData"]], 
+     "paclet:VasilDimitrov/SolutionsX/ref/LocateData", 
+     "VasilDimitrov Package Symbol"},
+    "PackageLink",
+    BaseStyle->"InlineFormula"], "[", 
+   StyleBox["dir", "TI"], "]"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "ffb6f36b-b3d0-455a-9167-937ad00aef01"],
+ "\[LineSeparator]does the same for an explicit entry directory path.\n",
+ Cell["   ", "ModInfo",ExpressionUUID->"ef38b06c-0396-401e-a378-7bec63339359"],
+ "It relocates only when the notebook sits inside a Data entry directory (\
+\[Ellipsis]/Data/",
+ Cell[BoxData[
+  StyleBox["alias", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "21ddc686-7b36-46d4-87ce-3de4bb6ec3de"],
+ "/",
+ Cell[BoxData[
+  StyleBox["name", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "f546bc43-1858-4fa6-857c-23fdd974171f"],
+ "/) or at a SolutionsX repository root; anywhere else it leaves the \
+configured values untouched and just displays them. It is the display line of \
+",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["NewData"]], "paclet:VasilDimitrov/SolutionsX/ref/NewData", 
+    "VasilDimitrov Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "352a8ff4-e9f4-4db0-8c49-d181882c2f7e"],
+ "'s initialization cell."
+}], "Usage",
+ CellID->225,ExpressionUUID->"c88f4b02-1f13-45af-a6b6-de85f93f79de"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["LocateData"]], 
+    "paclet:VasilDimitrov/SolutionsX/ref/LocateData", 
+    "VasilDimitrov Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "7f7d6c9e-74b6-46d3-ad6d-502bfa455925"],
+ "[] points ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$DataDirectory"]], 
+    "paclet:VasilDimitrov/SolutionsX/ref/$DataDirectory", 
+    "VasilDimitrov Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "4e9985b6-2944-4fbc-9d44-f7cc1366b1f8"],
+ " at the data tree containing the current notebook, for this session only, \
+then displays the package load panel and the Data status line. It is the \
+display line of ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["NewData"]], "paclet:VasilDimitrov/SolutionsX/ref/NewData", 
+    "VasilDimitrov Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "e06b1e4a-f46d-48a7-bd75-3fcfa0cc2a5a"],
+ "'s initialization cell."
+}], "Notes",
+ CellID->226,ExpressionUUID->"e56fef3e-9a51-485c-bf93-566e654d26a7"],
+
+Cell[TextData[{
+ "It relocates only when the notebook's position identifies the tree: inside \
+a Data entry directory (",
+ Cell[BoxData[
+  StyleBox[
+   RowBox[{
+    RowBox[{
+     RowBox[{
+      RowBox[{"\[Ellipsis]", "/", "Data"}], "/", "alias"}], "/", "name"}], 
+    "/"}], "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "f56814dc-b70a-4934-9eba-e6652b694781"],
+ ", where ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["SaveData"]], "paclet:VasilDimitrov/SolutionsX/ref/SaveData", 
+    "VasilDimitrov Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "5e2f4cec-c69b-479c-85da-ba02a975aa9d"],
+ " puts notebooks), or at a SolutionsX repository root (a PacletInfo.wl \
+beside a Data directory). Anywhere else it leaves the configured values \
+untouched and just displays them."
+}], "Notes",
+ CellID->227,ExpressionUUID->"b801bdb9-6e15-41d1-9088-e933b7e63b08"],
+
+Cell[TextData[{
+ "The relocation is derived state, never stored: the cell carries no absolute \
+paths, so an entry moved or cloned to another machine finds its tree by \
+position alone. Identity is untouched \[LongDash] ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$Alias"]], "paclet:VasilDimitrov/SolutionsX/ref/$Alias", 
+    "VasilDimitrov Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "65afb3fc-ed22-4b4a-b54c-fa2a544f363c"],
+ " always comes from the user configuration."
+}], "Notes",
+ CellID->228,ExpressionUUID->"0402f651-bc28-4f8c-82df-9bda4b871a17"],
+
+Cell["\<\
+In a front end the package load itself prints nothing; LocateData[] \
+reproduces the same panel and status on every evaluation, so re-running the \
+initialization cell is idempotent by construction. Headless, loading prints \
+verbatim and LocateData[] adds the status line.\
+\>", "Notes",
+ CellID->229,ExpressionUUID->"dfc95b53-2419-465b-91bd-2527a8edf8df"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["LocateData"]], 
+    "paclet:VasilDimitrov/SolutionsX/ref/LocateData", 
+    "VasilDimitrov Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "460d638a-28d9-4044-9d0b-2130d5f4434e"],
+ "[",
+ Cell[BoxData[
+  StyleBox["dir", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "805848a7-831c-455a-ae50-ab2ab2a8577f"],
+ "] does the same for an explicit entry directory path."
+}], "Notes",
+ CellID->230,ExpressionUUID->"57a4326e-0623-4a64-8f87-c2c5ca5ea8a7"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Examples", "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->231,ExpressionUUID->"ca35205f-cad4-46b0-8604-f0d78151980b"],
+
+Cell["\<\
+The following requires a front end, or a populated data directory, and so is \
+shown without output.\
+\>", "ExampleText",
+ CellID->232,ExpressionUUID->"7ba773aa-94d6-4cb6-988b-97d4aab64f1d"],
+
+Cell["Basic Examples", "ExampleSection",
+ CellID->233,ExpressionUUID->"a13ab433-2744-409a-b815-f7f390f7d71f"],
+
+Cell["\<\
+The display line of every initialization cell \[LongDash] relocate if the \
+notebook's position identifies a data tree, then show the load panel and the \
+Data status:\
+\>", "ExampleText",
+ CellID->234,ExpressionUUID->"1c6b8a48-d6f8-4977-b60c-a26cc73fbe80"],
+
+Cell[BoxData[
+ RowBox[{"LocateData", "[", "]"}]], "Input",
+ CellLabel->"In[ ]:=",
+ CellID->235,ExpressionUUID->"9fd5474e-37b2-4a41-b12b-c3676eb8bf20"],
+
+Cell["Point the session at an explicit entry directory:", "ExampleText",
+ CellID->236,ExpressionUUID->"b8c3c3b3-2224-42ce-babd-c87a04fdde2f"],
+
+Cell[BoxData[
+ RowBox[{"LocateData", "[", "\"\<path/to/Data/alias/name\>\"", "]"}]], "Input",\
+
+ CellLabel->"In[ ]:=",
+ CellID->237,ExpressionUUID->"1b97a00d-2991-45cc-9563-4b5f6a1b3db3"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["See Also", "SeeAlsoSection",
+ CellID->238,ExpressionUUID->"638a71af-eeb3-4ba4-a7a8-b611032fea33"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["NewData",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/NewData"]], 
+  "InlineFormula",ExpressionUUID->"1488dcff-f0c9-4811-8968-352d9c8aec7c"],
+ " \[FilledVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["SetDataDirectory",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/SetDataDirectory"]], 
+  "InlineFormula",ExpressionUUID->"e3449168-c413-45ce-8a90-4461f060346f"],
+ " \[FilledVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["SetAlias",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/SetAlias"]], 
+  "InlineFormula",ExpressionUUID->"ab0285d1-b8ce-434e-87c1-0fec945dff34"],
+ " \[FilledVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["ResumeAs",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/ResumeAs"]], 
+  "InlineFormula",ExpressionUUID->"055c5a16-540e-4eb4-b10b-6feb4d7d07f8"],
+ " \[FilledVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["GetData",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/GetData"]], 
+  "InlineFormula",ExpressionUUID->"05d00f73-0af8-4510-8db7-12cc945ab33c"]
+}], "SeeAlso",
+ CellID->239,ExpressionUUID->"38c7be0f-614e-4c0b-a34b-f8630bba93d5"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tech Notes", "TechNotesSection",
+ CellID->240,ExpressionUUID->"ada4c947-5d68-4175-ba2f-71681506833b"],
+
+Cell[TextData[ButtonBox["Storing and retrieving",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:VasilDimitrov/SolutionsX/tutorial/StoringAndRetrieving"]], \
+"Tutorials",
+ CellID->241,ExpressionUUID->"81a12872-f292-4a5e-87a5-437d8c2bb010"]
+}, Open  ]]
+},
+WindowTitle->"LocateData",
+TaggingRules-><|
+ "Metadata" -> <|
+   "title" -> "LocateData", "summary" -> 
+    "points the session at the data tree the notebook lives in, and displays \
+the load panel and Data status", "context" -> "VasilDimitrov`SolutionsX`", 
+    "paclet" -> "VasilDimitrov/SolutionsX", "type" -> "Symbol", "language" -> 
+    "en", "status" -> "None", "index" -> True, "uri" -> 
+    "VasilDimitrov/SolutionsX/ref/LocateData", "keywords" -> {"LocateData"}, 
+    "synonyms" -> {}, "titlemodifier" -> ""|>|>,
+FrontEndVersion->"13.3 for Mac OS X ARM (64-bit) (July 24, 2023)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"90fc236b-a7fc-4e8a-8a0f-3f1f628efdb9"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[8511, 248, 148, 2, 70, "PrimaryExamplesSection",ExpressionUUID->"ca35205f-cad4-46b0-8604-f0d78151980b",
+   CellTags->"PrimaryExamplesSection",
+   CellID->231]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 12388, 355}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[604, 23, 116, 1, 70, "CategorizationSection",ExpressionUUID->"c3b13afa-5436-4b53-b2c7-d47fdf7aed38",
+ CellID->214],
+Cell[723, 26, 128, 2, 70, "Categorization",ExpressionUUID->"5fdd8994-bd6b-4593-8fcb-0d709a498d08",
+ CellID->215],
+Cell[854, 30, 146, 2, 70, "Categorization",ExpressionUUID->"2666aa72-87a7-4d61-a8e8-0fbcafd637e6",
+ CellID->216],
+Cell[1003, 34, 143, 2, 70, "Categorization",ExpressionUUID->"7898c778-0860-4a96-9f30-d0bfcbdba1ad",
+ CellID->217],
+Cell[1149, 38, 153, 2, 70, "Categorization",ExpressionUUID->"8885f8c2-4b51-44cf-83f3-1ff1ac48ef7e",
+ CellID->218]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1339, 45, 104, 1, 70, "KeywordsSection",ExpressionUUID->"d6eaf4df-6554-4c3c-851a-9ac007a1640c",
+ CellID->223],
+Cell[1446, 48, 99, 1, 70, "Keywords",ExpressionUUID->"5ca9c2ad-804c-466a-9aab-c149cc0d69a3",
+ CellID->219],
+Cell[1548, 51, 99, 1, 70, "Keywords",ExpressionUUID->"11f57949-9f51-4120-ba96-753bcc85bf05",
+ CellID->220],
+Cell[1650, 54, 101, 1, 70, "Keywords",ExpressionUUID->"50db23d2-dabd-48d1-a627-43984b28bdc7",
+ CellID->221],
+Cell[1754, 57, 93, 1, 70, "Keywords",ExpressionUUID->"2872d5bd-2f7e-4416-9306-09f5f27bd49b",
+ CellID->222]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1884, 63, 101, 1, 70, "ObjectName",ExpressionUUID->"2e106b66-2f81-4201-90fc-cac85a7224e3",
+ CellID->224],
+Cell[1988, 66, 2545, 66, 70, "Usage",ExpressionUUID->"c88f4b02-1f13-45af-a6b6-de85f93f79de",
+ CellID->225],
+Cell[4536, 134, 1280, 36, 70, "Notes",ExpressionUUID->"e56fef3e-9a51-485c-bf93-566e654d26a7",
+ CellID->226],
+Cell[5819, 172, 984, 26, 70, "Notes",ExpressionUUID->"b801bdb9-6e15-41d1-9088-e933b7e63b08",
+ CellID->227],
+Cell[6806, 200, 661, 15, 70, "Notes",ExpressionUUID->"0402f651-bc28-4f8c-82df-9bda4b871a17",
+ CellID->228],
+Cell[7470, 217, 367, 6, 70, "Notes",ExpressionUUID->"dfc95b53-2419-465b-91bd-2527a8edf8df",
+ CellID->229],
+Cell[7840, 225, 634, 18, 70, "Notes",ExpressionUUID->"57a4326e-0623-4a64-8f87-c2c5ca5ea8a7",
+ CellID->230]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8511, 248, 148, 2, 70, "PrimaryExamplesSection",ExpressionUUID->"ca35205f-cad4-46b0-8604-f0d78151980b",
+ CellTags->"PrimaryExamplesSection",
+ CellID->231],
+Cell[8662, 252, 200, 4, 70, "ExampleText",ExpressionUUID->"7ba773aa-94d6-4cb6-988b-97d4aab64f1d",
+ CellID->232],
+Cell[8865, 258, 109, 1, 70, "ExampleSection",ExpressionUUID->"a13ab433-2744-409a-b815-f7f390f7d71f",
+ CellID->233],
+Cell[8977, 261, 267, 5, 70, "ExampleText",ExpressionUUID->"1c6b8a48-d6f8-4977-b60c-a26cc73fbe80",
+ CellID->234],
+Cell[9247, 268, 150, 3, 70, "Input",ExpressionUUID->"9fd5474e-37b2-4a41-b12b-c3676eb8bf20",
+ CellID->235],
+Cell[9400, 273, 141, 1, 70, "ExampleText",ExpressionUUID->"b8c3c3b3-2224-42ce-babd-c87a04fdde2f",
+ CellID->236],
+Cell[9544, 276, 187, 4, 70, "Input",ExpressionUUID->"1b97a00d-2991-45cc-9563-4b5f6a1b3db3",
+ CellID->237]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9768, 285, 103, 1, 70, "SeeAlsoSection",ExpressionUUID->"638a71af-eeb3-4ba4-a7a8-b611032fea33",
+ CellID->238],
+Cell[9874, 288, 1244, 31, 70, "SeeAlso",ExpressionUUID->"38c7be0f-614e-4c0b-a34b-f8630bba93d5",
+ CellID->239]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[11155, 324, 107, 1, 70, "TechNotesSection",ExpressionUUID->"ada4c947-5d68-4175-ba2f-71681506833b",
+ CellID->240],
+Cell[11265, 327, 236, 5, 70, "Tutorials",ExpressionUUID->"81a12872-f292-4a5e-87a5-437d8c2bb010",
+ CellID->241]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

@@ -1,0 +1,896 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     32283,        887]
+NotebookOptionsPosition[     23045,        703]
+NotebookOutlinePosition[     23907,        728]
+CellTagsIndexPosition[     23864,        725]
+WindowTitle->SolutionsX
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Categorization", "CategorizationSection",
+ CellID->1268,ExpressionUUID->"b6037366-dade-43db-9d12-988ea134bfc1"],
+
+Cell["Guide", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->1269,ExpressionUUID->"9075803c-400a-473f-80d3-0de0f9e2ff13"],
+
+Cell["VasilDimitrov/SolutionsX", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->1270,ExpressionUUID->"50d402fd-5df2-4798-8f35-fda4f7883eef"],
+
+Cell["VasilDimitrov`SolutionsX`", "Categorization",
+ CellLabel->"Context",
+ CellID->1271,ExpressionUUID->"bd4c51fc-c7b2-4f5f-b4ea-4a054e07827f"],
+
+Cell["VasilDimitrov/SolutionsX/guide/SolutionsX", "Categorization",
+ CellLabel->"URI",
+ CellID->1272,ExpressionUUID->"99863fab-b767-4746-b3c0-9f376ce295d4"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->1277,ExpressionUUID->"3fa491a9-4938-4238-a946-abe0eeed7e85"],
+
+Cell["SolutionsX", "Keywords",
+ CellID->1273,ExpressionUUID->"15159788-aa6a-47bc-986b-ef1ef4f1b507"],
+
+Cell["supergravity", "Keywords",
+ CellID->1274,ExpressionUUID->"aeae2128-0282-491a-ac0a-9740f6c5550e"],
+
+Cell["xAct", "Keywords",
+ CellID->1275,ExpressionUUID->"659a44e5-8370-41ac-9701-ec92389c2968"],
+
+Cell["solutions", "Keywords",
+ CellID->1276,ExpressionUUID->"75d80210-1749-423f-9646-5d597118e49a"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["SolutionsX", "GuideTitle",
+ CellID->1278,ExpressionUUID->"1d124c37-aae3-456d-98e4-96b5784be9f5"],
+
+Cell["Storing, verifying and reusing supergravity solutions.", "GuideAbstract",
+ CellID->1279,ExpressionUUID->"51f51266-aafa-4bd3-b4ac-3eba1022eb3d"],
+
+Cell["\<\
+xAct defines geometric objects by mutating global kernel state, which cannot \
+be saved. SolutionsX keeps, instead, an association recording the arguments \
+of every definition you would have made, and replays it on demand. The \
+association is ordinary data, so it compresses to a file; replaying it \
+reconstructs the same xAct state, together with the components already \
+computed and the recipes that produced them.\
+\>", "GuideAbstract",
+ CellID->1280,ExpressionUUID->"8b557060-5599-49b8-bdc8-bfa20bde3a34"],
+
+Cell["\t", "GuideDelimiterSubsection",
+ CellID->1281,ExpressionUUID->"488d47a1-d7b5-4a08-bd10-7eb00cd84e00"],
+
+Cell[CellGroupData[{
+
+Cell["Setting up", "GuideFunctionsSubsection",
+ CellID->1282,ExpressionUUID->"c364028b-4ea4-49d2-812f-8baa96dcea99"],
+
+Cell["Where entries are kept, and under whose name.", "GuideText",
+ CellID->1283,ExpressionUUID->"cefe39fe-9dda-4278-a710-c0f681f4ae03"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["$DefaultDataDirectory",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/$DefaultDataDirectory"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "19c08ce5-6448-4058-90db-8b9c934525cf"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " the path used for data when no other is set"
+}], "GuideText",
+ CellID->1284,ExpressionUUID->"8fe4250a-fbcf-46f8-a00e-85fbafb1eb18"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["$DataDirectory",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/$DataDirectory"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "4dadf5a0-93d6-47ee-b9e2-70bcb1b78bd4"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " the path under which entries are stored and retrieved"
+}], "GuideText",
+ CellID->1285,ExpressionUUID->"bb839cd2-9e3f-4b3a-a430-0660c39b5fb9"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["$Alias",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/$Alias"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "68724153-67fc-4612-bfc8-d6ef9eb920fa"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " the sub-directory of $DataDirectory holding the current user's entries"
+}], "GuideText",
+ CellID->1286,ExpressionUUID->"7db581b0-6f09-419b-b388-8cf9f02bb6e2"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["SetAlias",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/SetAlias"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "ca1c19d5-7f07-4d02-a542-a26a2c194317"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " sets the alias under which data is stored and retrieved"
+}], "GuideText",
+ CellID->1287,ExpressionUUID->"c0d18743-4146-4443-9b91-9f2f419b05fc"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["SetCurator",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/SetCurator"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "44bc8b2d-0c60-4441-9f6d-6d78333b8515"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " marks this user as the curator of the Curated corpus"
+}], "GuideText",
+ CellID->1288,ExpressionUUID->"f02cab85-3169-43f5-824b-e4253296cc06"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["$Curator",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/$Curator"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "7e742d9c-e0a0-4dbd-bc7c-9a98e365bf04"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " True when this user curates the published Curated corpus"
+}], "GuideText",
+ CellID->1289,ExpressionUUID->"e598ad9e-04c8-45fa-8a83-9a2a8d12c479"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["SetDataDirectory",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/SetDataDirectory"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "24977b66-f5d2-43d2-b8f1-525e72edcab7"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " sets the directory under which data is stored and retrieved"
+}], "GuideText",
+ CellID->1290,ExpressionUUID->"7043b637-c62c-4a72-97cc-523fc6dce5b2"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["NewData",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/NewData"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "8fe9b0d4-d70d-4b15-9192-316c1f9584b3"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " creates a notebook with the standard initialization cell"
+}], "GuideText",
+ CellID->1291,ExpressionUUID->"b557d031-6076-4a16-bd3a-e741147489f1"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["LocateData",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/LocateData"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "1b22d0d9-61ee-4e48-a817-f57301b1ae81"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " points the session at the data tree the notebook lives in, and displays \
+the load panel and Data status"
+}], "GuideText",
+ CellID->1292,ExpressionUUID->"3ea5f3c6-fe0c-4587-965e-8ff9ff8d93eb"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["EnableParallelComputations",
+   BaseStyle->"Link",
+   ButtonData->
+    "paclet:VasilDimitrov/SolutionsX/ref/EnableParallelComputations"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "9cdf3659-d30a-41be-8ece-f1eef1036da5"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " enables parallel evaluation of computed components"
+}], "GuideText",
+ CellID->1293,ExpressionUUID->"91cc244f-4188-4c30-9ba3-1ad8b739b5e4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Building a solution", "GuideFunctionsSubsection",
+ CellID->1294,ExpressionUUID->"68b0feb0-d6f8-4520-96c3-413d35fd1b7e"],
+
+Cell["\<\
+A solution is an association over eighteen object types. Each entry records \
+the arguments of an xAct definition, so that it can be stored and replayed.\
+\>", "GuideText",
+ CellID->1295,ExpressionUUID->"9d245d96-d16f-411b-8492-8598bd5b48f6"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["Instantiate",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/Instantiate"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "c9de42a6-5246-4250-9c21-fe1dcfaea21c"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " makes a symbol into an empty solution"
+}], "GuideText",
+ CellID->1296,ExpressionUUID->"aa8be46c-9588-4837-985f-745a777fb7fb"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["IncludeTo",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/IncludeTo"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "a72574b6-7460-4cd6-a8c8-6eedb071d02a"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " adds an entry to a solution and makes its xAct definition"
+}], "GuideText",
+ CellID->1297,ExpressionUUID->"fd06f5cd-89fa-4ad4-88ce-7e7cb8743647"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["DropFrom",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/DropFrom"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "e01652fa-0523-43fe-b301-ffd8db4beca3"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " undefines an entry and removes it from the solution"
+}], "GuideText",
+ CellID->1298,ExpressionUUID->"b9db5463-3249-4a0f-b976-a5f104e6bb3d"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["MergeWith",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/MergeWith"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "d276fac0-4f81-4cd8-9197-12105cd3302f"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " includes and loads every entry of another solution"
+}], "GuideText",
+ CellID->1299,ExpressionUUID->"cdf033d8-e127-4c0b-a0be-ca3352938dbc"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["ValidateObject",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/ValidateObject"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "29d11c33-3a9c-4250-834f-9a4bb1d2b31d"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " checks a description against the form for its object type"
+}], "GuideText",
+ CellID->1300,ExpressionUUID->"3e0465a2-e224-49e8-a0f8-a7ca5e830152"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Loading and unloading", "GuideFunctionsSubsection",
+ CellID->1301,ExpressionUUID->"207e3350-e766-47a8-a6fb-4d0a76315aa7"],
+
+Cell["\<\
+Making the stored definitions live, and taking them down again.\
+\>", "GuideText",
+ CellID->1302,ExpressionUUID->"fb33cd41-6ab0-4df0-8952-a77703d6a84a"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["Load",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/Load"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "a837f539-e7cc-47cf-8810-d27af1d5c808"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " makes the xAct definitions of a stored solution"
+}], "GuideText",
+ CellID->1303,ExpressionUUID->"bc816fc7-dc4f-43ba-8ad1-2e35649f3c13"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["ResumeAs",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/ResumeAs"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "de9f2244-4b90-4499-a4a2-a819a67f04ce"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " resumes the notebook's entry from disk, or re-shows what is already \
+loaded"
+}], "GuideText",
+ CellID->1304,ExpressionUUID->"c1f4703b-d2c0-402b-88b8-a56fd4c026a2"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["Unload",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/Unload"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "9eb307d0-2d6c-4c8f-b569-76fafac083e8"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " undefines the xAct objects of a solution, keeping the stored data"
+}], "GuideText",
+ CellID->1305,ExpressionUUID->"18b56a1c-50f6-4d5c-8f2e-615ef0aa9acd"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["Resurrect",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/Resurrect"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "0dd5def0-afa1-43fd-81bf-306705d79241"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " rebinds a symbol removed by an xAct Undef"
+}], "GuideText",
+ CellID->1306,ExpressionUUID->"a84866ae-6331-4cc7-b6e7-c9d5cd01ebba"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["Revive",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/Revive"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "42d5e1a9-2ce1-4955-be92-fe5d73cbf1a2"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " applies Resurrect throughout a solution"
+}], "GuideText",
+ CellID->1307,ExpressionUUID->"37ffc4fe-5a1e-4a3b-967e-a7dac57368aa"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Storing and retrieving", "GuideFunctionsSubsection",
+ CellID->1308,ExpressionUUID->"9e7acfa0-099b-49dd-88b0-cf0958f6e71a"],
+
+Cell["\<\
+An entry is a directory holding a compressed association and the notebook \
+that produced it. A solution with coordinates is named Sol, one without is \
+named Thr.\
+\>", "GuideText",
+ CellID->1309,ExpressionUUID->"c7a2c942-a908-4808-ac0c-ae4b23cde8ea"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["SaveData",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/SaveData"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "4f3027a0-b684-4122-9850-7c1e999f4d18"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " writes a solution and its notebook to the data directory"
+}], "GuideText",
+ CellID->1310,ExpressionUUID->"8e280572-0683-435c-8c33-791b78034cd4"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["GetData",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/GetData"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "0113b39d-0176-4e46-b379-f345c25885d3"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " retrieves a stored solution association"
+}], "GuideText",
+ CellID->1311,ExpressionUUID->"214bc6c0-fff7-49c6-a2da-8582c8110fd7"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["DeleteData",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/DeleteData"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "8d9563f1-58c5-4644-9830-4a77af04852e"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " permanently deletes a stored entry"
+}], "GuideText",
+ CellID->1312,ExpressionUUID->"fd52718a-7b6a-4458-879d-0d5850266e17"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["CopyData",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/CopyData"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "ccb0d0dd-ffdc-4185-b7b9-a06fb9eb0ff3"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " copies entries of another alias into your own"
+}], "GuideText",
+ CellID->1313,ExpressionUUID->"1182c21a-3b5c-4dbc-a87e-b0e681b0639c"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["CurateData",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/CurateData"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "57b150c7-264f-42bb-95b8-2780bc236b3d"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " publishes an entry of your own alias into the Curated corpus"
+}], "GuideText",
+ CellID->1314,ExpressionUUID->"ef4ba4c9-ebdd-40c3-b08d-d31c8155d444"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["OpenData",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/OpenData"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "99d4873f-6eb9-4397-921f-cff3beec3d01"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " opens the notebook of a stored entry"
+}], "GuideText",
+ CellID->1315,ExpressionUUID->"8ad366bd-1f6e-4038-a2e2-579dbe9f5b20"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Computing components", "GuideFunctionsSubsection",
+ CellID->1316,ExpressionUUID->"107eba96-80d6-44b7-97cc-7221413a5cd2"],
+
+Cell["\<\
+Each derived tensor carries a recipe as well as an answer, so a stored \
+solution can always be recomputed rather than merely trusted.\
+\>", "GuideText",
+ CellID->1317,ExpressionUUID->"af41f451-222b-452b-9631-074830d99980"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["$Apply",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/$Apply"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "9ceec518-1136-4b27-b8df-36ca96a349eb"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " the default value of the Apply option of Compute"
+}], "GuideText",
+ CellID->1318,ExpressionUUID->"7feb12b5-cc0e-4413-912d-8ed03971cae6"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["Compute",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/Compute"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "6270abfa-d665-4075-a59f-f3c3d28125b4"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " computes tensor components by walking a stored recipe"
+}], "GuideText",
+ CellID->1319,ExpressionUUID->"d331fb63-1cd0-4e60-9a08-84c0b16f0bda"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["RulesToChain",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/RulesToChain"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "f9c90929-8942-4a27-bdc7-8853b2e1e741"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " turns a chain of rules into the list of steps Compute expects"
+}], "GuideText",
+ CellID->1320,ExpressionUUID->"f42081e8-70e8-46b2-8fda-2d95c352a9c4"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["ToArray",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/ToArray"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "01715a26-6c3a-4e30-9b69-1faa1f6aa20b"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " gives the explicit component array of an expression"
+}], "GuideText",
+ CellID->1321,ExpressionUUID->"ba2aa39d-359c-4a91-b4b5-f9ca7e758093"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["ToBases",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/ToBases"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "f8282f56-e4b6-4493-bca3-58f82f4a7ee6"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " rewrites abstract indices in the basis of their vector bundle"
+}], "GuideText",
+ CellID->1322,ExpressionUUID->"de76d495-edf2-43d4-bfa8-83fcf66d0a7f"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["BasisOfVBundle",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/BasisOfVBundle"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "eb479d46-f6d7-4ab7-9690-3805e91aace8"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " gives the basis or chart defined over a vector bundle"
+}], "GuideText",
+ CellID->1323,ExpressionUUID->"da4e3fb5-9a33-4a3b-9426-6e4bf3003518"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Metrics and forms", "GuideFunctionsSubsection",
+ CellID->1324,ExpressionUUID->"770a2619-176c-4955-80ed-c64d6c0e8dbb"],
+
+Cell["\<\
+Moving between a line element or a differential form and its array of \
+components.\
+\>", "GuideText",
+ CellID->1325,ExpressionUUID->"8dc8c787-10ca-437f-9a14-aef63736a019"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["MakeArray",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/MakeArray"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "703665a5-51b8-4c62-af35-fbca9f420188"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " gives the component array of a line element or a differential form"
+}], "GuideText",
+ CellID->1326,ExpressionUUID->"2b24f2c3-c558-493e-860d-120348f4d09f"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["MakeMetric",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/MakeMetric"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "b2ae9662-7f78-4ed6-af5d-e610cd5ea3a1"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " gives the line element of a matrix of components"
+}], "GuideText",
+ CellID->1327,ExpressionUUID->"d4e7a9cc-8be3-47bf-82d4-cd5db6fd55b0"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["MakeForm",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/MakeForm"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "d0b5ff91-9e76-45ac-80f8-ec6026625df7"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " gives the differential form of an antisymmetric array of components"
+}], "GuideText",
+ CellID->1328,ExpressionUUID->"6be7a7ce-b0b9-42fa-907a-b7bcbe2af4cf"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["ExpandForms",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/ExpandForms"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "2277dc3d-1087-4b39-bc15-253a95607eff"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " rewrites the forms of a solution in terms of their component tensors"
+}], "GuideText",
+ CellID->1329,ExpressionUUID->"65e073e4-3621-4f0c-9d50-c941d750e250"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["WedgeCoeff",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/WedgeCoeff"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "5e15d622-37f8-4472-aa1e-662b0169c6fe"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " reads off the component tensor of a wedge-of-differentials form, dualized \
+to the lowest rank"
+}], "GuideText",
+ CellID->1330,ExpressionUUID->"ea9ca560-7f99-4468-a4bf-aadccbdd196d"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["ComputeDiffs",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/ComputeDiffs"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "dbaa3dde-40ae-4cb4-a812-2f7080f776e4"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " installs the canonicalisation rules for wedges of coordinate \
+differentials"
+}], "GuideText",
+ CellID->1331,ExpressionUUID->"532486bc-e2c2-4e16-8f70-76dba0db8362"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["Gen",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/Gen"]], 
+  "InlineGuideFunction",ExpressionUUID->
+  "2e5930cc-e23d-47fd-ab57-7b240d7d9755"],
+ " ",
+ StyleBox["\[LongDash]", "GuideEmDash"],
+ " gives the replacement rule stored for a function, form or rule entry"
+}], "GuideText",
+ CellID->1332,ExpressionUUID->"d24b1d4c-ab80-4375-8405-ce8c846fec9c"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tech Notes", "GuideTutorialsSection",
+ CellID->1333,ExpressionUUID->"67995efa-6b2e-46cf-935a-911be0c34882"],
+
+Cell[TextData[ButtonBox["Welcome to SolutionsX",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:VasilDimitrov/SolutionsX/tutorial/Welcome"]], "GuideTutorial",
+ CellID->1334,ExpressionUUID->"96ad21ac-1d2c-4d29-9d9b-028f3e87edfa"],
+
+Cell[TextData[ButtonBox["Objects in SolutionsX",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:VasilDimitrov/SolutionsX/tutorial/ObjectsInSolutionsX"]], \
+"GuideTutorial",
+ CellID->1335,ExpressionUUID->"69fdb92d-0119-4a82-b803-6773748131a0"],
+
+Cell[TextData[ButtonBox["Setting up an xAct environment",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:VasilDimitrov/SolutionsX/tutorial/SettingUpAnXActEnvironment"]], \
+"GuideTutorial",
+ CellID->1336,ExpressionUUID->"9554d2a9-1b06-4f9d-b497-f1b1dd277032"],
+
+Cell[TextData[ButtonBox["Storing and retrieving",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:VasilDimitrov/SolutionsX/tutorial/StoringAndRetrieving"]], \
+"GuideTutorial",
+ CellID->1337,ExpressionUUID->"90ed9276-8bc7-472e-bb5e-f15dfe804858"],
+
+Cell[TextData[ButtonBox["Object Keys",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:VasilDimitrov/SolutionsX/tutorial/ObjectKeys"]], "GuideTutorial",
+ CellID->1338,ExpressionUUID->"e46d34c1-c7c2-4607-9a57-cd24ce35f4ad"]
+}, Open  ]]
+},
+WindowTitle->"SolutionsX",
+TaggingRules-><|
+ "Metadata" -> <|
+   "title" -> "SolutionsX", "summary" -> 
+    "Storing, verifying and reusing supergravity solutions", "context" -> 
+    "VasilDimitrov`SolutionsX`", "paclet" -> "VasilDimitrov/SolutionsX", 
+    "type" -> "Guide", "language" -> "en", "status" -> "None", "index" -> 
+    True, "uri" -> "VasilDimitrov/SolutionsX/guide/SolutionsX", 
+    "keywords" -> {"SolutionsX"}, "synonyms" -> {}, "titlemodifier" -> 
+    ""|>|>,
+FrontEndVersion->"13.3 for Mac OS X ARM (64-bit) (July 24, 2023)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"90fc236b-a7fc-4e8a-8a0f-3f1f628efdb9"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[604, 23, 117, 1, 70, "CategorizationSection",ExpressionUUID->"b6037366-dade-43db-9d12-988ea134bfc1",
+ CellID->1268],
+Cell[724, 26, 128, 2, 70, "Categorization",ExpressionUUID->"9075803c-400a-473f-80d3-0de0f9e2ff13",
+ CellID->1269],
+Cell[855, 30, 147, 2, 70, "Categorization",ExpressionUUID->"50d402fd-5df2-4798-8f35-fda4f7883eef",
+ CellID->1270],
+Cell[1005, 34, 144, 2, 70, "Categorization",ExpressionUUID->"bd4c51fc-c7b2-4f5f-b4ea-4a054e07827f",
+ CellID->1271],
+Cell[1152, 38, 156, 2, 70, "Categorization",ExpressionUUID->"99863fab-b767-4746-b3c0-9f376ce295d4",
+ CellID->1272]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1345, 45, 105, 1, 70, "KeywordsSection",ExpressionUUID->"3fa491a9-4938-4238-a946-abe0eeed7e85",
+ CellID->1277],
+Cell[1453, 48, 100, 1, 70, "Keywords",ExpressionUUID->"15159788-aa6a-47bc-986b-ef1ef4f1b507",
+ CellID->1273],
+Cell[1556, 51, 102, 1, 70, "Keywords",ExpressionUUID->"aeae2128-0282-491a-ac0a-9740f6c5550e",
+ CellID->1274],
+Cell[1661, 54, 94, 1, 70, "Keywords",ExpressionUUID->"659a44e5-8370-41ac-9701-ec92389c2968",
+ CellID->1275],
+Cell[1758, 57, 99, 1, 70, "Keywords",ExpressionUUID->"75d80210-1749-423f-9646-5d597118e49a",
+ CellID->1276]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1894, 63, 102, 1, 70, "GuideTitle",ExpressionUUID->"1d124c37-aae3-456d-98e4-96b5784be9f5",
+ CellID->1278],
+Cell[1999, 66, 149, 1, 70, "GuideAbstract",ExpressionUUID->"51f51266-aafa-4bd3-b4ac-3eba1022eb3d",
+ CellID->1279],
+Cell[2151, 69, 523, 8, 70, "GuideAbstract",ExpressionUUID->"8b557060-5599-49b8-bdc8-bfa20bde3a34",
+ CellID->1280],
+Cell[2677, 79, 108, 1, 70, "GuideDelimiterSubsection",ExpressionUUID->"488d47a1-d7b5-4a08-bd10-7eb00cd84e00",
+ CellID->1281],
+Cell[CellGroupData[{
+Cell[2810, 84, 116, 1, 70, "GuideFunctionsSubsection",ExpressionUUID->"c364028b-4ea4-49d2-812f-8baa96dcea99",
+ CellID->1282],
+Cell[2929, 87, 136, 1, 70, "GuideText",ExpressionUUID->"cefe39fe-9dda-4278-a710-c0f681f4ae03",
+ CellID->1283],
+Cell[3068, 90, 434, 11, 70, "GuideText",ExpressionUUID->"8fe4250a-fbcf-46f8-a00e-85fbafb1eb18",
+ CellID->1284],
+Cell[3505, 103, 430, 11, 70, "GuideText",ExpressionUUID->"bb839cd2-9e3f-4b3a-a430-0660c39b5fb9",
+ CellID->1285],
+Cell[3938, 116, 431, 11, 70, "GuideText",ExpressionUUID->"7db581b0-6f09-419b-b388-8cf9f02bb6e2",
+ CellID->1286],
+Cell[4372, 129, 420, 11, 70, "GuideText",ExpressionUUID->"c0d18743-4146-4443-9b91-9f2f419b05fc",
+ CellID->1287],
+Cell[4795, 142, 421, 11, 70, "GuideText",ExpressionUUID->"f02cab85-3169-43f5-824b-e4253296cc06",
+ CellID->1288],
+Cell[5219, 155, 421, 11, 70, "GuideText",ExpressionUUID->"e598ad9e-04c8-45fa-8a83-9a2a8d12c479",
+ CellID->1289],
+Cell[5643, 168, 440, 11, 70, "GuideText",ExpressionUUID->"7043b637-c62c-4a72-97cc-523fc6dce5b2",
+ CellID->1290],
+Cell[6086, 181, 419, 11, 70, "GuideText",ExpressionUUID->"b557d031-6076-4a16-bd3a-e741147489f1",
+ CellID->1291],
+Cell[6508, 194, 473, 12, 70, "GuideText",ExpressionUUID->"3ea5f3c6-fe0c-4587-965e-8ff9ff8d93eb",
+ CellID->1292],
+Cell[6984, 208, 456, 12, 70, "GuideText",ExpressionUUID->"91cc244f-4188-4c30-9ba3-1ad8b739b5e4",
+ CellID->1293]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7477, 225, 125, 1, 70, "GuideFunctionsSubsection",ExpressionUUID->"68b0feb0-d6f8-4520-96c3-413d35fd1b7e",
+ CellID->1294],
+Cell[7605, 228, 252, 4, 70, "GuideText",ExpressionUUID->"9d245d96-d16f-411b-8492-8598bd5b48f6",
+ CellID->1295],
+Cell[7860, 234, 408, 11, 70, "GuideText",ExpressionUUID->"aa8be46c-9588-4837-985f-745a777fb7fb",
+ CellID->1296],
+Cell[8271, 247, 424, 11, 70, "GuideText",ExpressionUUID->"fd06f5cd-89fa-4ad4-88ce-7e7cb8743647",
+ CellID->1297],
+Cell[8698, 260, 416, 11, 70, "GuideText",ExpressionUUID->"b9db5463-3249-4a0f-b976-a5f104e6bb3d",
+ CellID->1298],
+Cell[9117, 273, 417, 11, 70, "GuideText",ExpressionUUID->"cdf033d8-e127-4c0b-a0be-ca3352938dbc",
+ CellID->1299],
+Cell[9537, 286, 434, 11, 70, "GuideText",ExpressionUUID->"3e0465a2-e224-49e8-a0f8-a7ca5e830152",
+ CellID->1300]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10008, 302, 127, 1, 70, "GuideFunctionsSubsection",ExpressionUUID->"207e3350-e766-47a8-a6fb-4d0a76315aa7",
+ CellID->1301],
+Cell[10138, 305, 162, 3, 70, "GuideText",ExpressionUUID->"fb33cd41-6ab0-4df0-8952-a77703d6a84a",
+ CellID->1302],
+Cell[10303, 310, 404, 11, 70, "GuideText",ExpressionUUID->"bc816fc7-dc4f-43ba-8ad1-2e35649f3c13",
+ CellID->1303],
+Cell[10710, 323, 441, 12, 70, "GuideText",ExpressionUUID->"c1f4703b-d2c0-402b-88b8-a56fd4c026a2",
+ CellID->1304],
+Cell[11154, 337, 426, 11, 70, "GuideText",ExpressionUUID->"18b56a1c-50f6-4d5c-8f2e-615ef0aa9acd",
+ CellID->1305],
+Cell[11583, 350, 408, 11, 70, "GuideText",ExpressionUUID->"a84866ae-6331-4cc7-b6e7-c9d5cd01ebba",
+ CellID->1306],
+Cell[11994, 363, 400, 11, 70, "GuideText",ExpressionUUID->"37ffc4fe-5a1e-4a3b-967e-a7dac57368aa",
+ CellID->1307]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[12431, 379, 128, 1, 70, "GuideFunctionsSubsection",ExpressionUUID->"9e7acfa0-099b-49dd-88b0-cf0958f6e71a",
+ CellID->1308],
+Cell[12562, 382, 262, 5, 70, "GuideText",ExpressionUUID->"c7a2c942-a908-4808-ac0c-ae4b23cde8ea",
+ CellID->1309],
+Cell[12827, 389, 421, 11, 70, "GuideText",ExpressionUUID->"8e280572-0683-435c-8c33-791b78034cd4",
+ CellID->1310],
+Cell[13251, 402, 402, 11, 70, "GuideText",ExpressionUUID->"214bc6c0-fff7-49c6-a2da-8582c8110fd7",
+ CellID->1311],
+Cell[13656, 415, 403, 11, 70, "GuideText",ExpressionUUID->"fd52718a-7b6a-4458-879d-0d5850266e17",
+ CellID->1312],
+Cell[14062, 428, 410, 11, 70, "GuideText",ExpressionUUID->"1182c21a-3b5c-4dbc-a87e-b0e681b0639c",
+ CellID->1313],
+Cell[14475, 441, 429, 11, 70, "GuideText",ExpressionUUID->"ef4ba4c9-ebdd-40c3-b08d-d31c8155d444",
+ CellID->1314],
+Cell[14907, 454, 401, 11, 70, "GuideText",ExpressionUUID->"8ad366bd-1f6e-4038-a2e2-579dbe9f5b20",
+ CellID->1315]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15345, 470, 126, 1, 70, "GuideFunctionsSubsection",ExpressionUUID->"107eba96-80d6-44b7-97cc-7221413a5cd2",
+ CellID->1316],
+Cell[15474, 473, 233, 4, 70, "GuideText",ExpressionUUID->"af41f451-222b-452b-9631-074830d99980",
+ CellID->1317],
+Cell[15710, 479, 409, 11, 70, "GuideText",ExpressionUUID->"7feb12b5-cc0e-4413-912d-8ed03971cae6",
+ CellID->1318],
+Cell[16122, 492, 416, 11, 70, "GuideText",ExpressionUUID->"d331fb63-1cd0-4e60-9a08-84c0b16f0bda",
+ CellID->1319],
+Cell[16541, 505, 434, 11, 70, "GuideText",ExpressionUUID->"f42081e8-70e8-46b2-8fda-2d95c352a9c4",
+ CellID->1320],
+Cell[16978, 518, 414, 11, 70, "GuideText",ExpressionUUID->"ba2aa39d-359c-4a91-b4b5-f9ca7e758093",
+ CellID->1321],
+Cell[17395, 531, 424, 11, 70, "GuideText",ExpressionUUID->"de76d495-edf2-43d4-bfa8-83fcf66d0a7f",
+ CellID->1322],
+Cell[17822, 544, 430, 11, 70, "GuideText",ExpressionUUID->"da4e3fb5-9a33-4a3b-9426-6e4bf3003518",
+ CellID->1323]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[18289, 560, 123, 1, 70, "GuideFunctionsSubsection",ExpressionUUID->"770a2619-176c-4955-80ed-c64d6c0e8dbb",
+ CellID->1324],
+Cell[18415, 563, 182, 4, 70, "GuideText",ExpressionUUID->"8dc8c787-10ca-437f-9a14-aef63736a019",
+ CellID->1325],
+Cell[18600, 569, 433, 11, 70, "GuideText",ExpressionUUID->"2b24f2c3-c558-493e-860d-120348f4d09f",
+ CellID->1326],
+Cell[19036, 582, 417, 11, 70, "GuideText",ExpressionUUID->"d4e7a9cc-8be3-47bf-82d4-cd5db6fd55b0",
+ CellID->1327],
+Cell[19456, 595, 432, 11, 70, "GuideText",ExpressionUUID->"6be7a7ce-b0b9-42fa-907a-b7bcbe2af4cf",
+ CellID->1328],
+Cell[19891, 608, 439, 11, 70, "GuideText",ExpressionUUID->"65e073e4-3621-4f0c-9d50-c941d750e250",
+ CellID->1329],
+Cell[20333, 621, 463, 12, 70, "GuideText",ExpressionUUID->"ea9ca560-7f99-4468-a4bf-aadccbdd196d",
+ CellID->1330],
+Cell[20799, 635, 449, 12, 70, "GuideText",ExpressionUUID->"532486bc-e2c2-4e16-8f70-76dba0db8362",
+ CellID->1331],
+Cell[21251, 649, 423, 11, 70, "GuideText",ExpressionUUID->"d24b1d4c-ab80-4375-8405-ce8c846fec9c",
+ CellID->1332]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[21723, 666, 113, 1, 70, "GuideTutorialsSection",ExpressionUUID->"67995efa-6b2e-46cf-935a-911be0c34882",
+ CellID->1333],
+Cell[21839, 669, 225, 4, 70, "GuideTutorial",ExpressionUUID->"96ad21ac-1d2c-4d29-9d9b-028f3e87edfa",
+ CellID->1334],
+Cell[22067, 675, 239, 5, 70, "GuideTutorial",ExpressionUUID->"69fdb92d-0119-4a82-b803-6773748131a0",
+ CellID->1335],
+Cell[22309, 682, 255, 5, 70, "GuideTutorial",ExpressionUUID->"9554d2a9-1b06-4f9d-b497-f1b1dd277032",
+ CellID->1336],
+Cell[22567, 689, 241, 5, 70, "GuideTutorial",ExpressionUUID->"90ed9276-8bc7-472e-bb5e-f15dfe804858",
+ CellID->1337],
+Cell[22811, 696, 218, 4, 70, "GuideTutorial",ExpressionUUID->"e46d34c1-c7c2-4607-9a57-cd24ce35f4ad",
+ CellID->1338]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

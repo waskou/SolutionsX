@@ -1,0 +1,278 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[      9612,        269]
+NotebookOptionsPosition[      5859,        182]
+NotebookOutlinePosition[      6935,        213]
+CellTagsIndexPosition[      6851,        208]
+WindowTitle->DeleteData
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Categorization", "CategorizationSection",
+ CellID->701,ExpressionUUID->"565f52b5-b1f2-44c9-990f-4bc988b28c3d"],
+
+Cell["Symbol", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->702,ExpressionUUID->"9a1d0034-03ba-4c06-b3ba-8a44fa47723e"],
+
+Cell["VasilDimitrov/SolutionsX", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->703,ExpressionUUID->"022d6e59-240e-4db1-aae2-93a4d7762fe1"],
+
+Cell["VasilDimitrov`SolutionsX`", "Categorization",
+ CellLabel->"Context",
+ CellID->704,ExpressionUUID->"ac947b91-3d5c-412c-bb74-1d4fd21f6ba8"],
+
+Cell["VasilDimitrov/SolutionsX/ref/DeleteData", "Categorization",
+ CellLabel->"URI",
+ CellID->705,ExpressionUUID->"166df69d-9af1-46e1-86f0-7444d1985f88"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->710,ExpressionUUID->"11a81074-20fd-4f72-979b-0e71b5f6d71c"],
+
+Cell["DeleteData", "Keywords",
+ CellID->706,ExpressionUUID->"39f93361-0f05-41d6-ae14-109405d35d21"],
+
+Cell["SolutionsX", "Keywords",
+ CellID->707,ExpressionUUID->"bb2c8ace-be6d-4a41-bca1-2322f89b628f"],
+
+Cell["supergravity", "Keywords",
+ CellID->708,ExpressionUUID->"0ca4f0ae-e026-4ff4-b10d-fea4e6601c51"],
+
+Cell["xAct", "Keywords",
+ CellID->709,ExpressionUUID->"601d7fc3-e4a6-47aa-bdcc-bbd81fade199"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["DeleteData", "ObjectName",
+ CellID->711,ExpressionUUID->"65370ac4-ee4c-4e46-af64-0c6247e1b2bc"],
+
+Cell[TextData[{
+ Cell["   ", "ModInfo",ExpressionUUID->"10e8732b-eae5-45f8-abde-ddf3be5b1021"],
+ Cell[BoxData[
+  RowBox[{
+   TemplateBox[{
+     Cell[
+      TextData["DeleteData"]], 
+     "paclet:VasilDimitrov/SolutionsX/ref/DeleteData", 
+     "VasilDimitrov Package Symbol"},
+    "PackageLink",
+    BaseStyle->"InlineFormula"], "[", 
+   StyleBox["name", "TI"], "]"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "d0a44c49-da29-4298-9554-206bfe4e71d8"],
+ "\[LineSeparator]permanently deletes the entry directory ",
+ Cell[BoxData[
+  StyleBox["name", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "d2b83bec-0564-4142-bd93-943f7a2275f0"],
+ " and all of its contents.\n",
+ Cell["   ", "ModInfo",ExpressionUUID->"0f086537-6186-4eb2-855b-56947651fa62"],
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["DeleteData"]], 
+    "paclet:VasilDimitrov/SolutionsX/ref/DeleteData", 
+    "VasilDimitrov Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "7eec9e6a-d321-463b-bc78-35426da703ea"],
+ " acts only under the user's own alias; entries of other aliases cannot be \
+deleted."
+}], "Usage",
+ CellID->712,ExpressionUUID->"06cc35f6-3b94-4c0a-b34b-f9238bb45fcb"],
+
+Cell["\<\
+DeleteData[name] removes the entry directory and everything in it, including \
+the notebook. There is no confirmation and no undo.\
+\>", "Notes",
+ CellID->713,ExpressionUUID->"f2a62dd1-8694-4c09-b569-5e7342bd0fe6"],
+
+Cell["\<\
+It issues DeleteData::missingname if the entry is not found under the current \
+$Alias.\
+\>", "Notes",
+ CellID->714,ExpressionUUID->"a279396b-ce50-4a4e-a4fc-b79814bed0cb"],
+
+Cell["\<\
+SaveData calls DeleteData internally when overwriting an existing entry.\
+\>", "Notes",
+ CellID->715,ExpressionUUID->"67019d97-a506-44ac-8656-bdc52f225368"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Examples", "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->716,ExpressionUUID->"a31bbf30-1d31-408b-98a4-70f19c954d05"],
+
+Cell["\<\
+The following requires a front end, or a populated data directory, and so is \
+shown without output.\
+\>", "ExampleText",
+ CellID->717,ExpressionUUID->"568ae00c-ea4a-421e-888c-c047676faa34"],
+
+Cell["Basic Examples", "ExampleSection",
+ CellID->718,ExpressionUUID->"d692ae33-0cc8-42bd-bab2-ad6f8f37d006"],
+
+Cell[BoxData[
+ RowBox[{"DeleteData", "[", "\"\<Sol__2dE__Sphere__Polar\>\"", "]"}]], "Input",\
+
+ CellLabel->"In[ ]:=",
+ CellID->719,ExpressionUUID->"2f28e6ff-df25-4d1f-8480-40bc7f57124b"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["See Also", "SeeAlsoSection",
+ CellID->720,ExpressionUUID->"a636c6f2-1443-4f4e-adbe-5dc76b82bb71"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["SaveData",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/SaveData"]], 
+  "InlineFormula",ExpressionUUID->"e167b774-9999-4d3d-bfe6-ef4217e13154"],
+ " \[FilledVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["GetData",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/GetData"]], 
+  "InlineFormula",ExpressionUUID->"7d20c0ec-c395-4154-9192-2dd5f7452c58"],
+ " \[FilledVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["OpenData",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/OpenData"]], 
+  "InlineFormula",ExpressionUUID->"bfd5e57d-dcb5-4f2d-8e40-8d1ed3ffe0c9"]
+}], "SeeAlso",
+ CellID->721,ExpressionUUID->"8dc97cf7-10ca-4814-8a79-9047d64e2891"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tech Notes", "TechNotesSection",
+ CellID->722,ExpressionUUID->"c86af87f-a8c0-4365-9109-bfaa787f1ba6"],
+
+Cell[TextData[ButtonBox["Storing and retrieving",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:VasilDimitrov/SolutionsX/tutorial/StoringAndRetrieving"]], \
+"Tutorials",
+ CellID->723,ExpressionUUID->"01b09e71-bb2a-47f5-9a3a-57ca0c843834"]
+}, Open  ]]
+},
+WindowTitle->"DeleteData",
+TaggingRules-><|
+ "Metadata" -> <|
+   "title" -> "DeleteData", "summary" -> "permanently deletes a stored entry",
+     "context" -> "VasilDimitrov`SolutionsX`", "paclet" -> 
+    "VasilDimitrov/SolutionsX", "type" -> "Symbol", "language" -> "en", 
+    "status" -> "None", "index" -> True, "uri" -> 
+    "VasilDimitrov/SolutionsX/ref/DeleteData", "keywords" -> {"DeleteData"}, 
+    "synonyms" -> {}, "titlemodifier" -> ""|>|>,
+FrontEndVersion->"13.3 for Mac OS X ARM (64-bit) (July 24, 2023)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"90fc236b-a7fc-4e8a-8a0f-3f1f628efdb9"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[3900, 122, 148, 2, 70, "PrimaryExamplesSection",ExpressionUUID->"a31bbf30-1d31-408b-98a4-70f19c954d05",
+   CellTags->"PrimaryExamplesSection",
+   CellID->716]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 6660, 201}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[604, 23, 116, 1, 70, "CategorizationSection",ExpressionUUID->"565f52b5-b1f2-44c9-990f-4bc988b28c3d",
+ CellID->701],
+Cell[723, 26, 128, 2, 70, "Categorization",ExpressionUUID->"9a1d0034-03ba-4c06-b3ba-8a44fa47723e",
+ CellID->702],
+Cell[854, 30, 146, 2, 70, "Categorization",ExpressionUUID->"022d6e59-240e-4db1-aae2-93a4d7762fe1",
+ CellID->703],
+Cell[1003, 34, 143, 2, 70, "Categorization",ExpressionUUID->"ac947b91-3d5c-412c-bb74-1d4fd21f6ba8",
+ CellID->704],
+Cell[1149, 38, 153, 2, 70, "Categorization",ExpressionUUID->"166df69d-9af1-46e1-86f0-7444d1985f88",
+ CellID->705]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1339, 45, 104, 1, 70, "KeywordsSection",ExpressionUUID->"11a81074-20fd-4f72-979b-0e71b5f6d71c",
+ CellID->710],
+Cell[1446, 48, 99, 1, 70, "Keywords",ExpressionUUID->"39f93361-0f05-41d6-ae14-109405d35d21",
+ CellID->706],
+Cell[1548, 51, 99, 1, 70, "Keywords",ExpressionUUID->"bb2c8ace-be6d-4a41-bca1-2322f89b628f",
+ CellID->707],
+Cell[1650, 54, 101, 1, 70, "Keywords",ExpressionUUID->"0ca4f0ae-e026-4ff4-b10d-fea4e6601c51",
+ CellID->708],
+Cell[1754, 57, 93, 1, 70, "Keywords",ExpressionUUID->"601d7fc3-e4a6-47aa-bdcc-bbd81fade199",
+ CellID->709]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1884, 63, 101, 1, 70, "ObjectName",ExpressionUUID->"65370ac4-ee4c-4e46-af64-0c6247e1b2bc",
+ CellID->711],
+Cell[1988, 66, 1295, 34, 70, "Usage",ExpressionUUID->"06cc35f6-3b94-4c0a-b34b-f9238bb45fcb",
+ CellID->712],
+Cell[3286, 102, 224, 4, 70, "Notes",ExpressionUUID->"f2a62dd1-8694-4c09-b569-5e7342bd0fe6",
+ CellID->713],
+Cell[3513, 108, 181, 4, 70, "Notes",ExpressionUUID->"a279396b-ce50-4a4e-a4fc-b79814bed0cb",
+ CellID->714],
+Cell[3697, 114, 166, 3, 70, "Notes",ExpressionUUID->"67019d97-a506-44ac-8656-bdc52f225368",
+ CellID->715]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[3900, 122, 148, 2, 70, "PrimaryExamplesSection",ExpressionUUID->"a31bbf30-1d31-408b-98a4-70f19c954d05",
+ CellTags->"PrimaryExamplesSection",
+ CellID->716],
+Cell[4051, 126, 200, 4, 70, "ExampleText",ExpressionUUID->"568ae00c-ea4a-421e-888c-c047676faa34",
+ CellID->717],
+Cell[4254, 132, 109, 1, 70, "ExampleSection",ExpressionUUID->"d692ae33-0cc8-42bd-bab2-ad6f8f37d006",
+ CellID->718],
+Cell[4366, 135, 187, 4, 70, "Input",ExpressionUUID->"2f28e6ff-df25-4d1f-8480-40bc7f57124b",
+ CellID->719]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4590, 144, 103, 1, 70, "SeeAlsoSection",ExpressionUUID->"a636c6f2-1443-4f4e-adbe-5dc76b82bb71",
+ CellID->720],
+Cell[4696, 147, 764, 19, 70, "SeeAlso",ExpressionUUID->"8dc97cf7-10ca-4814-8a79-9047d64e2891",
+ CellID->721]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5497, 171, 107, 1, 70, "TechNotesSection",ExpressionUUID->"c86af87f-a8c0-4365-9109-bfaa787f1ba6",
+ CellID->722],
+Cell[5607, 174, 236, 5, 70, "Tutorials",ExpressionUUID->"01b09e71-bb2a-47f5-9a3a-57ca0c843834",
+ CellID->723]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

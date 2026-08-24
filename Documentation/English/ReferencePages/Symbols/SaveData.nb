@@ -1,0 +1,370 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     13714,        361]
+NotebookOptionsPosition[      9304,        262]
+NotebookOutlinePosition[     10395,        293]
+CellTagsIndexPosition[     10310,        288]
+WindowTitle->SaveData
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Categorization", "CategorizationSection",
+ CellID->643,ExpressionUUID->"ab117ae6-b8fa-47ee-8d7e-0520e3a6e44a"],
+
+Cell["Symbol", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->644,ExpressionUUID->"efc4889f-63c0-4fae-8b0e-007b86391062"],
+
+Cell["VasilDimitrov/SolutionsX", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->645,ExpressionUUID->"e94fcc62-b8b3-43c4-a8d4-6019ee0cb1af"],
+
+Cell["VasilDimitrov`SolutionsX`", "Categorization",
+ CellLabel->"Context",
+ CellID->646,ExpressionUUID->"2da9619a-282f-477a-810e-3ddbc5993d9a"],
+
+Cell["VasilDimitrov/SolutionsX/ref/SaveData", "Categorization",
+ CellLabel->"URI",
+ CellID->647,ExpressionUUID->"51ee699f-0c40-4690-b847-afdb3999b161"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->652,ExpressionUUID->"169aabed-8df2-4fef-8b5a-b09d61fda14e"],
+
+Cell["SaveData", "Keywords",
+ CellID->648,ExpressionUUID->"b1adf8d3-c47a-4436-954c-65387c4af04f"],
+
+Cell["SolutionsX", "Keywords",
+ CellID->649,ExpressionUUID->"3708b314-a600-464d-a282-1d2eae3a1cf8"],
+
+Cell["supergravity", "Keywords",
+ CellID->650,ExpressionUUID->"2d72d916-d64f-49c1-9025-86ef5bbcd9a7"],
+
+Cell["xAct", "Keywords",
+ CellID->651,ExpressionUUID->"3fc03fc7-6296-4be2-a269-a08a90722c12"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["SaveData", "ObjectName",
+ CellID->653,ExpressionUUID->"bcf6915e-f75e-42e9-9045-e0a812f0594a"],
+
+Cell[TextData[{
+ Cell["   ", "ModInfo",ExpressionUUID->"0845fc18-606a-4a44-bc96-d5afbbecc8f2"],
+ Cell[BoxData[
+  RowBox[{
+   TemplateBox[{
+     Cell[
+      TextData["SaveData"]], "paclet:VasilDimitrov/SolutionsX/ref/SaveData", 
+     "VasilDimitrov Package Symbol"},
+    "PackageLink",
+    BaseStyle->"InlineFormula"], "[", 
+   StyleBox["sol", "TI"], "]"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "2b836634-e7bc-4944-b372-df139277a2f7"],
+ "\[LineSeparator]writes ",
+ Cell[BoxData[
+  StyleBox["sol", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "a50d0ec7-1f19-4118-9ba2-c116126c407f"],
+ " and the evaluation notebook into ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$DataDirectory"]], 
+    "paclet:VasilDimitrov/SolutionsX/ref/$DataDirectory", 
+    "VasilDimitrov Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "41d5ef92-6879-4a56-aa96-5361fe90c1ca"],
+ "/",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$Alias"]], "paclet:VasilDimitrov/SolutionsX/ref/$Alias", 
+    "VasilDimitrov Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "5f51f9f4-abc7-47ae-8da4-38ba05bb8b2a"],
+ "/",
+ Cell[BoxData[
+  StyleBox["name", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "45ed3cb5-43e8-43a4-92ec-0f3eda84d313"],
+ "/, and echoes the destination.\n",
+ Cell["   ", "ModInfo",ExpressionUUID->"6de9f766-d2b8-4737-9dc2-ccca192e5f03"],
+ "The name is built from the first manifold's Name and Dimension, the first \
+metric's Signature and the first chart's Name: an entry with a chart is a \
+Sol, one without is a Thr.\n",
+ Cell["   ", "ModInfo",ExpressionUUID->"950eaf70-de86-44f2-af9b-87484be271d8"],
+ "Every save stamps ",
+ Cell[BoxData[
+  StyleBox["sol", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "5fda860f-c87f-46fa-9cd5-25c939d9274a"],
+ "[$info]: SolutionsX version, the saving alias (LastEdit), date, and the \
+Wolfram and xAct versions. The stamp is machine-written and invisible to \
+validation."
+}], "Usage",
+ CellID->654,ExpressionUUID->"949857e1-8c25-450b-b6a5-6c0d469fd9a3"],
+
+Cell["\<\
+SaveData[sol] writes Compress[sol] to $DataDirectory/$Alias/name/name.m and \
+saves the evaluation notebook beside it as name.nb. It returns nothing: the \
+destination is echoed.\
+\>", "Notes",
+ CellID->655,ExpressionUUID->"d9118f56-d6ba-4f10-813b-09ebc41c6bab"],
+
+Cell["\<\
+Every save stamps sol[$info] -- the SolutionsX version, the author (Author, \
+set at the record's first save and preserved verbatim by every later one, \
+whoever saves), the saving alias (LastEdit), the date, and the Wolfram and \
+xAct versions in use. The stamp is machine-written, overwritten on each save, \
+and invisible to validation: records without it load unchanged, and nothing \
+ever inspects its content.\
+\>", "Notes",
+ CellID->656,ExpressionUUID->"351e8009-0e03-4528-88ad-646bcf2f038b"],
+
+Cell["\<\
+The name is built by inspecting the solution: the first manifold's Name and \
+Dimension, the first metric's Signature, and the first chart's Name. An entry \
+that has a chart is named Sol, one that has none is named Thr. So a theory \
+becomes a solution precisely when coordinates are added.\
+\>", "Notes",
+ CellID->657,ExpressionUUID->"171bc4ff-02a6-41e4-a930-36cc85fabb3e"],
+
+Cell["\<\
+Signature 1 gives E and signature -1 gives L, as in Sol__4dL__Black-hole__FG.\
+\
+\>", "Notes",
+ CellID->658,ExpressionUUID->"f20cebee-d18b-4143-994e-b8632e0f4e84"],
+
+Cell["\<\
+SaveData takes no name argument. The name is entirely a function of the \
+stored Name keys, so a solution built on a theory must have sol[$manifold, \
+mani, Name] and sol[$chart, chart, Name] reassigned before the first save, or \
+it will be written back over the theory it came from.\
+\>", "Notes",
+ CellID->659,ExpressionUUID->"85b00686-42ce-4958-8c94-322c1c88a0cd"],
+
+Cell["\<\
+SaveData refuses unless both $DataDirectory and $Alias are strings, and it \
+asks for confirmation before overwriting an entry other than the one the \
+current notebook belongs to.\
+\>", "Notes",
+ CellID->660,ExpressionUUID->"0c42b367-4654-4676-9cea-ead18994d170"],
+
+Cell["\<\
+Records are stored exactly as they live: nothing is wrapped or rewritten on \
+save, and stored expressions sit inert until the entry's symbols are defined \
+(the Grade guard makes the retrieval window safe).\
+\>", "Notes",
+ CellID->661,ExpressionUUID->"2808b3aa-3ce9-4b0d-804d-f4e23b2376f9"],
+
+Cell["\<\
+SaveData requires a front end, since it saves the evaluation notebook.\
+\>", "Notes",
+ CellID->662,ExpressionUUID->"3130cb2b-96a3-4e89-b775-8f07360f4523"],
+
+Cell["SaveData has the attribute HoldFirst.", "Notes",
+ CellID->663,ExpressionUUID->"d7632a4a-422f-4248-aab9-bb5737b49034"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Examples", "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->664,ExpressionUUID->"96d7c209-82eb-45d5-b958-737e627ad5b7"],
+
+Cell["\<\
+The following requires a front end, or a populated data directory, and so is \
+shown without output.\
+\>", "ExampleText",
+ CellID->665,ExpressionUUID->"853d64e0-3afa-42ff-bb20-f9d63627ff40"],
+
+Cell["Basic Examples", "ExampleSection",
+ CellID->666,ExpressionUUID->"d290c157-d1b6-4f05-82ab-eefd4555ba40"],
+
+Cell[BoxData[
+ RowBox[{"SaveData", "[", "sol", "]"}]], "Input",
+ CellLabel->"In[ ]:=",
+ CellID->667,ExpressionUUID->"9e183ef6-751f-4865-a450-ee5fc63eaccd"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["See Also", "SeeAlsoSection",
+ CellID->668,ExpressionUUID->"0d768cc2-00cf-4f9a-98e5-27adfe50ba99"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["GetData",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/GetData"]], 
+  "InlineFormula",ExpressionUUID->"62b1705c-a586-4390-82c3-97813e843cbd"],
+ " \[FilledVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["DeleteData",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/DeleteData"]], 
+  "InlineFormula",ExpressionUUID->"b8785e72-05ba-449d-9eca-2485c4c031f0"],
+ " \[FilledVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["OpenData",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/OpenData"]], 
+  "InlineFormula",ExpressionUUID->"e5bf4387-6c48-4be2-8c94-4676a07479f2"],
+ " \[FilledVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["NewData",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/NewData"]], 
+  "InlineFormula",ExpressionUUID->"d3eec6b6-6b0b-4d29-aefe-5a7f952a0b72"],
+ " \[FilledVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["$Alias",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/$Alias"]], 
+  "InlineFormula",ExpressionUUID->"2edaf9d5-f63c-4b9b-8890-e806110c1aa8"]
+}], "SeeAlso",
+ CellID->669,ExpressionUUID->"918eb545-378a-4bdc-a764-920880d4bb2c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tech Notes", "TechNotesSection",
+ CellID->670,ExpressionUUID->"1c8cbd00-29d5-4f99-94e1-2f2b0d661689"],
+
+Cell[TextData[ButtonBox["Storing and retrieving",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:VasilDimitrov/SolutionsX/tutorial/StoringAndRetrieving"]], \
+"Tutorials",
+ CellID->671,ExpressionUUID->"211f5820-574c-4b98-83f9-c2a955f508ab"]
+}, Open  ]]
+},
+WindowTitle->"SaveData",
+TaggingRules-><|
+ "Metadata" -> <|
+   "title" -> "SaveData", "summary" -> 
+    "writes a solution and its notebook to the data directory", "context" -> 
+    "VasilDimitrov`SolutionsX`", "paclet" -> "VasilDimitrov/SolutionsX", 
+    "type" -> "Symbol", "language" -> "en", "status" -> "None", "index" -> 
+    True, "uri" -> "VasilDimitrov/SolutionsX/ref/SaveData", 
+    "keywords" -> {"SaveData"}, "synonyms" -> {}, "titlemodifier" -> ""|>|>,
+FrontEndVersion->"13.3 for Mac OS X ARM (64-bit) (July 24, 2023)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"90fc236b-a7fc-4e8a-8a0f-3f1f628efdb9"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[6913, 191, 148, 2, 70, "PrimaryExamplesSection",ExpressionUUID->"96d7c209-82eb-45d5-b958-737e627ad5b7",
+   CellTags->"PrimaryExamplesSection",
+   CellID->664]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 10119, 281}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[602, 23, 116, 1, 70, "CategorizationSection",ExpressionUUID->"ab117ae6-b8fa-47ee-8d7e-0520e3a6e44a",
+ CellID->643],
+Cell[721, 26, 128, 2, 70, "Categorization",ExpressionUUID->"efc4889f-63c0-4fae-8b0e-007b86391062",
+ CellID->644],
+Cell[852, 30, 146, 2, 70, "Categorization",ExpressionUUID->"e94fcc62-b8b3-43c4-a8d4-6019ee0cb1af",
+ CellID->645],
+Cell[1001, 34, 143, 2, 70, "Categorization",ExpressionUUID->"2da9619a-282f-477a-810e-3ddbc5993d9a",
+ CellID->646],
+Cell[1147, 38, 151, 2, 70, "Categorization",ExpressionUUID->"51ee699f-0c40-4690-b847-afdb3999b161",
+ CellID->647]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1335, 45, 104, 1, 70, "KeywordsSection",ExpressionUUID->"169aabed-8df2-4fef-8b5a-b09d61fda14e",
+ CellID->652],
+Cell[1442, 48, 97, 1, 70, "Keywords",ExpressionUUID->"b1adf8d3-c47a-4436-954c-65387c4af04f",
+ CellID->648],
+Cell[1542, 51, 99, 1, 70, "Keywords",ExpressionUUID->"3708b314-a600-464d-a282-1d2eae3a1cf8",
+ CellID->649],
+Cell[1644, 54, 101, 1, 70, "Keywords",ExpressionUUID->"2d72d916-d64f-49c1-9025-86ef5bbcd9a7",
+ CellID->650],
+Cell[1748, 57, 93, 1, 70, "Keywords",ExpressionUUID->"3fc03fc7-6296-4be2-a269-a08a90722c12",
+ CellID->651]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1878, 63, 99, 1, 70, "ObjectName",ExpressionUUID->"bcf6915e-f75e-42e9-9045-e0a812f0594a",
+ CellID->653],
+Cell[1980, 66, 2290, 59, 70, "Usage",ExpressionUUID->"949857e1-8c25-450b-b6a5-6c0d469fd9a3",
+ CellID->654],
+Cell[4273, 127, 272, 5, 70, "Notes",ExpressionUUID->"d9118f56-d6ba-4f10-813b-09ebc41c6bab",
+ CellID->655],
+Cell[4548, 134, 509, 8, 70, "Notes",ExpressionUUID->"351e8009-0e03-4528-88ad-646bcf2f038b",
+ CellID->656],
+Cell[5060, 144, 385, 6, 70, "Notes",ExpressionUUID->"171bc4ff-02a6-41e4-a930-36cc85fabb3e",
+ CellID->657],
+Cell[5448, 152, 173, 4, 70, "Notes",ExpressionUUID->"f20cebee-d18b-4143-994e-b8632e0f4e84",
+ CellID->658],
+Cell[5624, 158, 378, 6, 70, "Notes",ExpressionUUID->"85b00686-42ce-4958-8c94-322c1c88a0cd",
+ CellID->659],
+Cell[6005, 166, 274, 5, 70, "Notes",ExpressionUUID->"0c42b367-4654-4676-9cea-ead18994d170",
+ CellID->660],
+Cell[6282, 173, 301, 5, 70, "Notes",ExpressionUUID->"2808b3aa-3ce9-4b0d-804d-f4e23b2376f9",
+ CellID->661],
+Cell[6586, 180, 164, 3, 70, "Notes",ExpressionUUID->"3130cb2b-96a3-4e89-b775-8f07360f4523",
+ CellID->662],
+Cell[6753, 185, 123, 1, 70, "Notes",ExpressionUUID->"d7632a4a-422f-4248-aab9-bb5737b49034",
+ CellID->663]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6913, 191, 148, 2, 70, "PrimaryExamplesSection",ExpressionUUID->"96d7c209-82eb-45d5-b958-737e627ad5b7",
+ CellTags->"PrimaryExamplesSection",
+ CellID->664],
+Cell[7064, 195, 200, 4, 70, "ExampleText",ExpressionUUID->"853d64e0-3afa-42ff-bb20-f9d63627ff40",
+ CellID->665],
+Cell[7267, 201, 109, 1, 70, "ExampleSection",ExpressionUUID->"d290c157-d1b6-4f05-82ab-eefd4555ba40",
+ CellID->666],
+Cell[7379, 204, 155, 3, 70, "Input",ExpressionUUID->"9e183ef6-751f-4865-a450-ee5fc63eaccd",
+ CellID->667]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7571, 212, 103, 1, 70, "SeeAlsoSection",ExpressionUUID->"0d768cc2-00cf-4f9a-98e5-27adfe50ba99",
+ CellID->668],
+Cell[7677, 215, 1228, 31, 70, "SeeAlso",ExpressionUUID->"918eb545-378a-4bdc-a764-920880d4bb2c",
+ CellID->669]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8942, 251, 107, 1, 70, "TechNotesSection",ExpressionUUID->"1c8cbd00-29d5-4f99-94e1-2f2b0d661689",
+ CellID->670],
+Cell[9052, 254, 236, 5, 70, "Tutorials",ExpressionUUID->"211f5820-574c-4b98-83f9-c2a955f508ab",
+ CellID->671]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

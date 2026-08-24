@@ -1,0 +1,358 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     11904,        349]
+NotebookOptionsPosition[      7813,        252]
+NotebookOutlinePosition[      8886,        283]
+CellTagsIndexPosition[      8802,        278]
+WindowTitle->$Apply
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Categorization", "CategorizationSection",
+ CellID->63,ExpressionUUID->"a767e4cf-366e-465b-b8ec-2e149944f8b7"],
+
+Cell["Symbol", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->64,ExpressionUUID->"97c3bb23-45a4-4d1a-93ce-e2c8d4b72689"],
+
+Cell["VasilDimitrov/SolutionsX", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->65,ExpressionUUID->"6a43c5b9-a66c-4d99-bbd0-017201b17c36"],
+
+Cell["VasilDimitrov`SolutionsX`", "Categorization",
+ CellLabel->"Context",
+ CellID->66,ExpressionUUID->"1efe7aa1-f539-4989-aa94-5f660563e4ac"],
+
+Cell["VasilDimitrov/SolutionsX/ref/$Apply", "Categorization",
+ CellLabel->"URI",
+ CellID->67,ExpressionUUID->"3558937e-c5ff-4b0b-8ff3-a28fb3980dbd"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->72,ExpressionUUID->"be00be0c-caba-4bce-8b8a-e973e06d77c8"],
+
+Cell["$Apply", "Keywords",
+ CellID->68,ExpressionUUID->"f4517f10-396a-4628-b315-bc3a61671ac1"],
+
+Cell["SolutionsX", "Keywords",
+ CellID->69,ExpressionUUID->"99c7c5e5-a857-4208-a99c-ba2330c669bf"],
+
+Cell["supergravity", "Keywords",
+ CellID->70,ExpressionUUID->"a869871a-3ffc-45f3-83dc-6c00c0856baa"],
+
+Cell["xAct", "Keywords",
+ CellID->71,ExpressionUUID->"6f4edca6-1fc8-4ce1-a440-b729d75d6ed9"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["$Apply", "ObjectName",
+ CellID->73,ExpressionUUID->"b3c6379e-827a-493c-bbd2-54b27e834d82"],
+
+Cell[TextData[{
+ Cell["   ", "ModInfo",ExpressionUUID->"23f169f5-2214-4d49-814a-9edbe2721541"],
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$Apply"]], "paclet:VasilDimitrov/SolutionsX/ref/$Apply", 
+    "VasilDimitrov Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "eecc2628-ccb0-4cfe-9b9a-fcb8d2e1955d"],
+ "\[LineSeparator]is the default value of the Apply option of ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Compute"]], "paclet:VasilDimitrov/SolutionsX/ref/Compute", 
+    "VasilDimitrov Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "1422ab9a-a810-4488-9035-7bcdb20d68d3"],
+ ".\n",
+ Cell["   ", "ModInfo",ExpressionUUID->"3b3676b7-c72a-4892-aa27-03969efde35c"],
+ "It is a list of rules whose keys are ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Map"]], "paclet:ref/Map"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "1eb12f2b-889f-4e94-a406-cb12c4de4fbd"],
+ " or ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ParallelMap"]], "paclet:ref/ParallelMap"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "62d3a603-96ee-43bc-ac37-d58549db90c5"],
+ " and whose values are applied to computed components; the default is {",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Map"]], "paclet:ref/Map"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "1f8c4403-bafe-4d90-9084-e751f24e4f8b"],
+ " -> ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Together"]], "paclet:ref/Together"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "c938d808-f1f0-46b5-9ca2-7d1edf8139ff"],
+ ", ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ParallelMap"]], "paclet:ref/ParallelMap"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "2e5e297d-2753-46ca-9a41-2b6289df2a19"],
+ " -> ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Simplify"]], "paclet:ref/Simplify"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "51c1cff0-9628-40e9-87a7-c1db58fad9f3"],
+ "}."
+}], "Usage",
+ CellID->74,ExpressionUUID->"3256a115-af47-42af-8d53-85004f0676c3"],
+
+Cell["\<\
+$Apply is a list of rules whose keys are Map or ParallelMap. Compute applies \
+each value to the components it has just computed.\
+\>", "Notes",
+ CellID->75,ExpressionUUID->"65f50856-0504-46a2-aeeb-a3f65ca072f3"],
+
+Cell["The default is {Map -> Together, ParallelMap -> Simplify}.", "Notes",
+ CellID->76,ExpressionUUID->"4dd67c3e-7fa0-45d3-9423-356298ff07d2"],
+
+Cell["\<\
+ParallelMap entries only take effect after EnableParallelComputations has \
+been called.\
+\>", "Notes",
+ CellID->77,ExpressionUUID->"dc01f6d2-08a4-4b78-be31-7532c135c5ee"],
+
+Cell["\<\
+Setting $Apply to something cheap, such as {Map -> Identity}, is the usual \
+way to speed up an exploratory computation.\
+\>", "Notes",
+ CellID->78,ExpressionUUID->"06bb1636-b3b9-4d23-ad11-4492558779eb"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Examples", "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->79,ExpressionUUID->"b0158ecb-4b9e-4cff-8637-c3a0c82ea690"],
+
+Cell["Basic Examples", "ExampleSection",
+ CellID->80,ExpressionUUID->"5b973647-cf52-4ba1-834d-4586a6b819fb"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["$Apply"], "Input",
+ CellLabel->"In[ ]:=",
+ CellID->81,ExpressionUUID->"11c7598e-5bcc-4cca-89ff-1ee96588214e"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"Map", "\[Rule]", "Together"}], ",", 
+   RowBox[{"ParallelMap", "\[Rule]", "Simplify"}]}], "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->82,ExpressionUUID->"8aac9e57-8d8d-4936-b3c9-0631331b3900"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$Apply", " ", "=", " ", 
+  RowBox[{"{", 
+   RowBox[{"Map", " ", "->", " ", "Identity"}], "}"}]}]], "Input",
+ CellLabel->"In[ ]:=",
+ CellID->83,ExpressionUUID->"cb353e2c-122d-4530-b2b6-4491ea0b9f96"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{"Map", "\[Rule]", "Identity"}], "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->84,ExpressionUUID->"1b1f808a-eb27-4996-a20e-00c19b895ee8"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$Apply", " ", "=", " ", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"Map", " ", "->", " ", "Together"}], ",", " ", 
+    RowBox[{"ParallelMap", " ", "->", " ", "Simplify"}]}], "}"}]}]], "Input",
+ CellLabel->"In[ ]:=",
+ CellID->85,ExpressionUUID->"ded00ad3-890d-48d6-8b9c-196798656662"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"Map", "\[Rule]", "Together"}], ",", 
+   RowBox[{"ParallelMap", "\[Rule]", "Simplify"}]}], "}"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->86,ExpressionUUID->"053c6618-e7e3-491e-a32b-6eb366476052"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["See Also", "SeeAlsoSection",
+ CellID->87,ExpressionUUID->"49b54d03-136c-410f-b4ef-3d1dbaf84bc2"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["Compute",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/Compute"]], 
+  "InlineFormula",ExpressionUUID->"9703a906-bd6c-4dd5-870e-af6b4f1cfd2d"],
+ " \[FilledVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["EnableParallelComputations",
+   BaseStyle->"Link",
+   ButtonData->
+    "paclet:VasilDimitrov/SolutionsX/ref/EnableParallelComputations"]], 
+  "InlineFormula",ExpressionUUID->"bd131220-1a05-4aab-b038-1ce8d05f3cad"]
+}], "SeeAlso",
+ CellID->88,ExpressionUUID->"3f07bdb7-e5e8-4247-998b-bd86fa51e9b7"]
+}, Open  ]]
+},
+WindowTitle->"$Apply",
+TaggingRules-><|
+ "Metadata" -> <|
+   "title" -> "$Apply", "summary" -> 
+    "the default value of the Apply option of Compute", "context" -> 
+    "VasilDimitrov`SolutionsX`", "paclet" -> "VasilDimitrov/SolutionsX", 
+    "type" -> "Symbol", "language" -> "en", "status" -> "None", "index" -> 
+    True, "uri" -> "VasilDimitrov/SolutionsX/ref/$Apply", 
+    "keywords" -> {"$Apply"}, "synonyms" -> {}, "titlemodifier" -> ""|>|>,
+FrontEndVersion->"13.3 for Mac OS X ARM (64-bit) (July 24, 2023)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"90fc236b-a7fc-4e8a-8a0f-3f1f628efdb9"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[5377, 171, 147, 2, 70, "PrimaryExamplesSection",ExpressionUUID->"b0158ecb-4b9e-4cff-8637-c3a0c82ea690",
+   CellTags->"PrimaryExamplesSection",
+   CellID->79]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 8612, 271}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[600, 23, 115, 1, 70, "CategorizationSection",ExpressionUUID->"a767e4cf-366e-465b-b8ec-2e149944f8b7",
+ CellID->63],
+Cell[718, 26, 127, 2, 70, "Categorization",ExpressionUUID->"97c3bb23-45a4-4d1a-93ce-e2c8d4b72689",
+ CellID->64],
+Cell[848, 30, 145, 2, 70, "Categorization",ExpressionUUID->"6a43c5b9-a66c-4d99-bbd0-017201b17c36",
+ CellID->65],
+Cell[996, 34, 142, 2, 70, "Categorization",ExpressionUUID->"1efe7aa1-f539-4989-aa94-5f660563e4ac",
+ CellID->66],
+Cell[1141, 38, 148, 2, 70, "Categorization",ExpressionUUID->"3558937e-c5ff-4b0b-8ff3-a28fb3980dbd",
+ CellID->67]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1326, 45, 103, 1, 70, "KeywordsSection",ExpressionUUID->"be00be0c-caba-4bce-8b8a-e973e06d77c8",
+ CellID->72],
+Cell[1432, 48, 94, 1, 70, "Keywords",ExpressionUUID->"f4517f10-396a-4628-b315-bc3a61671ac1",
+ CellID->68],
+Cell[1529, 51, 98, 1, 70, "Keywords",ExpressionUUID->"99c7c5e5-a857-4208-a99c-ba2330c669bf",
+ CellID->69],
+Cell[1630, 54, 100, 1, 70, "Keywords",ExpressionUUID->"a869871a-3ffc-45f3-83dc-6c00c0856baa",
+ CellID->70],
+Cell[1733, 57, 92, 1, 70, "Keywords",ExpressionUUID->"6f4edca6-1fc8-4ce1-a440-b729d75d6ed9",
+ CellID->71]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1862, 63, 96, 1, 70, "ObjectName",ExpressionUUID->"b3c6379e-827a-493c-bbd2-54b27e834d82",
+ CellID->73],
+Cell[1961, 66, 2608, 79, 70, "Usage",ExpressionUUID->"3256a115-af47-42af-8d53-85004f0676c3",
+ CellID->74],
+Cell[4572, 147, 222, 4, 70, "Notes",ExpressionUUID->"65f50856-0504-46a2-aeeb-a3f65ca072f3",
+ CellID->75],
+Cell[4797, 153, 143, 1, 70, "Notes",ExpressionUUID->"4dd67c3e-7fa0-45d3-9423-356298ff07d2",
+ CellID->76],
+Cell[4943, 156, 181, 4, 70, "Notes",ExpressionUUID->"dc01f6d2-08a4-4b78-be31-7532c135c5ee",
+ CellID->77],
+Cell[5127, 162, 213, 4, 70, "Notes",ExpressionUUID->"06bb1636-b3b9-4d23-ad11-4492558779eb",
+ CellID->78]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5377, 171, 147, 2, 70, "PrimaryExamplesSection",ExpressionUUID->"b0158ecb-4b9e-4cff-8637-c3a0c82ea690",
+ CellTags->"PrimaryExamplesSection",
+ CellID->79],
+Cell[5527, 175, 108, 1, 70, "ExampleSection",ExpressionUUID->"5b973647-cf52-4ba1-834d-4586a6b819fb",
+ CellID->80],
+Cell[CellGroupData[{
+Cell[5660, 180, 123, 2, 70, "Input",ExpressionUUID->"11c7598e-5bcc-4cca-89ff-1ee96588214e",
+ CellID->81],
+Cell[5786, 184, 250, 6, 70, "Output",ExpressionUUID->"8aac9e57-8d8d-4936-b3c9-0631331b3900",
+ CellID->82]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6073, 195, 222, 5, 70, "Input",ExpressionUUID->"cb353e2c-122d-4530-b2b6-4491ea0b9f96",
+ CellID->83],
+Cell[6298, 202, 179, 4, 70, "Output",ExpressionUUID->"1b1f808a-eb27-4996-a20e-00c19b895ee8",
+ CellID->84]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6514, 211, 305, 7, 70, "Input",ExpressionUUID->"ded00ad3-890d-48d6-8b9c-196798656662",
+ CellID->85],
+Cell[6822, 220, 250, 6, 70, "Output",ExpressionUUID->"053c6618-e7e3-491e-a32b-6eb366476052",
+ CellID->86]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7121, 232, 102, 1, 70, "SeeAlsoSection",ExpressionUUID->"49b54d03-136c-410f-b4ef-3d1dbaf84bc2",
+ CellID->87],
+Cell[7226, 235, 571, 14, 70, "SeeAlso",ExpressionUUID->"3f07bdb7-e5e8-4247-998b-bd86fa51e9b7",
+ CellID->88]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

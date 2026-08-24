@@ -1,0 +1,11 @@
+# Notebooks are structured documents: git must never line-diff or
+# line-merge them. An automatic .nb merge is silent corruption; a
+# conflict is honest.
+*.nb -diff -merge
+
+# Wolfram sources and records keep LF line endings everywhere, including
+# Windows clones -- autocrlf must not rewrite them.
+*.wl   text eol=lf
+*.wls  text eol=lf
+*.m    text eol=lf
+*.md   text eol=lf

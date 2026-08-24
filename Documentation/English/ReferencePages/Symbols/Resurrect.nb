@@ -1,0 +1,307 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     10417,        298]
+NotebookOptionsPosition[      6433,        205]
+NotebookOutlinePosition[      7512,        236]
+CellTagsIndexPosition[      7428,        231]
+WindowTitle->Resurrect
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Categorization", "CategorizationSection",
+ CellID->594,ExpressionUUID->"101599d7-bef4-4e51-a5ff-ce12ca3894e1"],
+
+Cell["Symbol", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->595,ExpressionUUID->"16fbe1f3-aed9-498e-9d42-ac139091788f"],
+
+Cell["VasilDimitrov/SolutionsX", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->596,ExpressionUUID->"fd75ec72-d63e-45c3-9136-81d8ef8d29b0"],
+
+Cell["VasilDimitrov`SolutionsX`", "Categorization",
+ CellLabel->"Context",
+ CellID->597,ExpressionUUID->"c66af611-c112-458d-87da-a8f14377651f"],
+
+Cell["VasilDimitrov/SolutionsX/ref/Resurrect", "Categorization",
+ CellLabel->"URI",
+ CellID->598,ExpressionUUID->"02c479ec-f87c-4c8a-a885-177144a2d081"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->603,ExpressionUUID->"1960482e-1a0c-4d3d-bcf9-6a7dec018aaf"],
+
+Cell["Resurrect", "Keywords",
+ CellID->599,ExpressionUUID->"224d827d-9885-4d23-b71e-4414ade12bab"],
+
+Cell["SolutionsX", "Keywords",
+ CellID->600,ExpressionUUID->"28bc55be-26e5-4334-8abe-fc10dd4d4c6f"],
+
+Cell["supergravity", "Keywords",
+ CellID->601,ExpressionUUID->"fedb3c96-94dd-4642-8e60-6a3a52cdff68"],
+
+Cell["xAct", "Keywords",
+ CellID->602,ExpressionUUID->"bedc6a28-e427-494f-b2b1-f92fc66dbe08"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Resurrect", "ObjectName",
+ CellID->604,ExpressionUUID->"756778fa-4946-40fd-83b9-9185d7e557b6"],
+
+Cell[TextData[{
+ Cell["   ", "ModInfo",ExpressionUUID->"8723475c-96c5-41e1-b24b-0ff20d456104"],
+ Cell[BoxData[
+  RowBox[{
+   TemplateBox[{
+     Cell[
+      TextData["Resurrect"]], "paclet:VasilDimitrov/SolutionsX/ref/Resurrect",
+      "VasilDimitrov Package Symbol"},
+    "PackageLink",
+    BaseStyle->"InlineFormula"], "[", 
+   StyleBox["symbol", "TI"], "]"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "a1a8ef56-7ea3-408f-996d-0a417de55c39"],
+ "\[LineSeparator]rebinds any symbol removed by an xAct Undef, by \
+round-tripping ",
+ Cell[BoxData[
+  StyleBox["symbol", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "417ac5ec-bd0d-4888-9762-5de1964908f5"],
+ " through ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Compress"]], "paclet:ref/Compress"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "d496143d-5656-44b6-bf57-c9c688099e3d"],
+ " and replacing Removed[",
+ Cell[BoxData[
+  StyleBox["name", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "da6bb1d2-4628-423c-9289-73552bce1242"],
+ "] by ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Symbol"]], "paclet:ref/Symbol"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "0a35f808-df9b-41ac-9b4b-c9b029fa1373"],
+ "[",
+ Cell[BoxData[
+  StyleBox["name", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "a6335471-ff24-45e6-9b4f-2cbcf8402da6"],
+ "]."
+}], "Usage",
+ CellID->605,ExpressionUUID->"96f537a3-6e12-48f2-a4f5-ee741c982226"],
+
+Cell["\<\
+xAct's Undef functions Remove the symbols they undefine, rather than merely \
+clearing them. Every reference held elsewhere then reads Removed[\"name\"].\
+\>", "Notes",
+ CellID->606,ExpressionUUID->"ae65cd63-7dd7-4278-89aa-1b962bb68bf9"],
+
+Cell["\<\
+Resurrect[symbol] round-trips symbol through Compress and Uncompress and \
+replaces each Removed[\"name\"] by Symbol[\"name\"], rebinding it to a fresh \
+symbol of the same name.\
+\>", "Notes",
+ CellID->607,ExpressionUUID->"0e90a459-05c0-4eec-b238-5339c572f96d"],
+
+Cell["\<\
+Revive does this throughout a whole solution, and is called after every \
+unload.\
+\>", "Notes",
+ CellID->608,ExpressionUUID->"3fed5312-6c47-4813-9ee6-7adff8cd4c3b"],
+
+Cell["Resurrect has the attribute HoldFirst.", "Notes",
+ CellID->609,ExpressionUUID->"0cd6d76f-76cf-49fc-a134-beabb05a330a"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Examples", "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->610,ExpressionUUID->"486c5b69-2a65-4777-87ff-fe6d522130e1"],
+
+Cell["Basic Examples", "ExampleSection",
+ CellID->611,ExpressionUUID->"67a087ce-7a71-4af1-bcf1-6493c2df52af"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"held", " ", "=", " ", 
+  RowBox[{"Hold", "[", 
+   RowBox[{"Removed", "[", "\"\<gone\>\"", "]"}], "]"}]}]], "Input",
+ CellLabel->"In[ ]:=",
+ CellID->612,ExpressionUUID->"98d397f3-eb67-4fab-b970-6ed2cd3295e7"],
+
+Cell[BoxData[
+ RowBox[{"Hold", "[", 
+  RowBox[{"Removed", "[", "\<\"gone\"\>", "]"}], "]"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->613,ExpressionUUID->"60933061-e119-4e9b-89b9-bdcf110c2832"]
+}, Open  ]],
+
+Cell[BoxData[
+ RowBox[{"Resurrect", "[", "held", "]"}]], "Input",
+ CellLabel->"In[ ]:=",
+ CellID->614,ExpressionUUID->"efb42207-41f4-4085-9e17-514f95492543"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData["held"], "Input",
+ CellLabel->"In[ ]:=",
+ CellID->615,ExpressionUUID->"1ef5edc0-cc58-4d23-9a75-5d15dad2caa7"],
+
+Cell[BoxData[
+ RowBox[{"Hold", "[", 
+  RowBox[{"Symbol", "[", "\<\"gone\"\>", "]"}], "]"}]], "Output",
+ CellLabel->"Out[1]=",
+ CellID->616,ExpressionUUID->"a3ffb2a6-b6c9-41f8-939a-868c4a5f9681"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["See Also", "SeeAlsoSection",
+ CellID->617,ExpressionUUID->"9c179ca2-1e00-46ca-8dfa-bdf5179e9eaa"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["Revive",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/Revive"]], 
+  "InlineFormula",ExpressionUUID->"0ec1445e-b230-4d26-9b06-c00cb5328845"],
+ " \[FilledVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["Unload",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/Unload"]], 
+  "InlineFormula",ExpressionUUID->"30efe216-3e84-4dff-a93f-684784ad604e"]
+}], "SeeAlso",
+ CellID->618,ExpressionUUID->"127f5743-0a6e-450c-8afc-8c539cc9eebd"]
+}, Open  ]]
+},
+WindowTitle->"Resurrect",
+TaggingRules-><|
+ "Metadata" -> <|
+   "title" -> "Resurrect", "summary" -> 
+    "rebinds a symbol removed by an xAct Undef", "context" -> 
+    "VasilDimitrov`SolutionsX`", "paclet" -> "VasilDimitrov/SolutionsX", 
+    "type" -> "Symbol", "language" -> "en", "status" -> "None", "index" -> 
+    True, "uri" -> "VasilDimitrov/SolutionsX/ref/Resurrect", 
+    "keywords" -> {"Resurrect"}, "synonyms" -> {}, "titlemodifier" -> ""|>|>,
+FrontEndVersion->"13.3 for Mac OS X ARM (64-bit) (July 24, 2023)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"90fc236b-a7fc-4e8a-8a0f-3f1f628efdb9"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[4507, 142, 148, 2, 70, "PrimaryExamplesSection",ExpressionUUID->"486c5b69-2a65-4777-87ff-fe6d522130e1",
+   CellTags->"PrimaryExamplesSection",
+   CellID->610]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 7237, 224}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[603, 23, 116, 1, 70, "CategorizationSection",ExpressionUUID->"101599d7-bef4-4e51-a5ff-ce12ca3894e1",
+ CellID->594],
+Cell[722, 26, 128, 2, 70, "Categorization",ExpressionUUID->"16fbe1f3-aed9-498e-9d42-ac139091788f",
+ CellID->595],
+Cell[853, 30, 146, 2, 70, "Categorization",ExpressionUUID->"fd75ec72-d63e-45c3-9136-81d8ef8d29b0",
+ CellID->596],
+Cell[1002, 34, 143, 2, 70, "Categorization",ExpressionUUID->"c66af611-c112-458d-87da-a8f14377651f",
+ CellID->597],
+Cell[1148, 38, 152, 2, 70, "Categorization",ExpressionUUID->"02c479ec-f87c-4c8a-a885-177144a2d081",
+ CellID->598]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1337, 45, 104, 1, 70, "KeywordsSection",ExpressionUUID->"1960482e-1a0c-4d3d-bcf9-6a7dec018aaf",
+ CellID->603],
+Cell[1444, 48, 98, 1, 70, "Keywords",ExpressionUUID->"224d827d-9885-4d23-b71e-4414ade12bab",
+ CellID->599],
+Cell[1545, 51, 99, 1, 70, "Keywords",ExpressionUUID->"28bc55be-26e5-4334-8abe-fc10dd4d4c6f",
+ CellID->600],
+Cell[1647, 54, 101, 1, 70, "Keywords",ExpressionUUID->"fedb3c96-94dd-4642-8e60-6a3a52cdff68",
+ CellID->601],
+Cell[1751, 57, 93, 1, 70, "Keywords",ExpressionUUID->"bedc6a28-e427-494f-b2b1-f92fc66dbe08",
+ CellID->602]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1881, 63, 100, 1, 70, "ObjectName",ExpressionUUID->"756778fa-4946-40fd-83b9-9185d7e557b6",
+ CellID->604],
+Cell[1984, 66, 1656, 49, 70, "Usage",ExpressionUUID->"96f537a3-6e12-48f2-a4f5-ee741c982226",
+ CellID->605],
+Cell[3643, 117, 247, 4, 70, "Notes",ExpressionUUID->"ae65cd63-7dd7-4278-89aa-1b962bb68bf9",
+ CellID->606],
+Cell[3893, 123, 272, 5, 70, "Notes",ExpressionUUID->"0e90a459-05c0-4eec-b238-5339c572f96d",
+ CellID->607],
+Cell[4168, 130, 175, 4, 70, "Notes",ExpressionUUID->"3fed5312-6c47-4813-9ee6-7adff8cd4c3b",
+ CellID->608],
+Cell[4346, 136, 124, 1, 70, "Notes",ExpressionUUID->"0cd6d76f-76cf-49fc-a134-beabb05a330a",
+ CellID->609]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[4507, 142, 148, 2, 70, "PrimaryExamplesSection",ExpressionUUID->"486c5b69-2a65-4777-87ff-fe6d522130e1",
+ CellTags->"PrimaryExamplesSection",
+ CellID->610],
+Cell[4658, 146, 109, 1, 70, "ExampleSection",ExpressionUUID->"67a087ce-7a71-4af1-bcf1-6493c2df52af",
+ CellID->611],
+Cell[CellGroupData[{
+Cell[4792, 151, 231, 5, 70, "Input",ExpressionUUID->"98d397f3-eb67-4fab-b970-6ed2cd3295e7",
+ CellID->612],
+Cell[5026, 158, 195, 4, 70, "Output",ExpressionUUID->"60933061-e119-4e9b-89b9-bdcf110c2832",
+ CellID->613]
+}, Open  ]],
+Cell[5236, 165, 157, 3, 70, "Input",ExpressionUUID->"efb42207-41f4-4085-9e17-514f95492543",
+ CellID->614],
+Cell[CellGroupData[{
+Cell[5418, 172, 122, 2, 70, "Input",ExpressionUUID->"1ef5edc0-cc58-4d23-9a75-5d15dad2caa7",
+ CellID->615],
+Cell[5543, 176, 194, 4, 70, "Output",ExpressionUUID->"a3ffb2a6-b6c9-41f8-939a-868c4a5f9681",
+ CellID->616]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5786, 186, 103, 1, 70, "SeeAlsoSection",ExpressionUUID->"9c179ca2-1e00-46ca-8dfa-bdf5179e9eaa",
+ CellID->617],
+Cell[5892, 189, 525, 13, 70, "SeeAlso",ExpressionUUID->"127f5743-0a6e-450c-8afc-8c539cc9eebd",
+ CellID->618]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

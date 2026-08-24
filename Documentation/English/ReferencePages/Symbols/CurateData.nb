@@ -1,0 +1,332 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     11727,        323]
+NotebookOptionsPosition[      7881,        235]
+NotebookOutlinePosition[      8988,        267]
+CellTagsIndexPosition[      8904,        262]
+WindowTitle->CurateData
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Categorization", "CategorizationSection",
+ CellID->753,ExpressionUUID->"157428a5-3d64-4cd8-b9d3-e5a21755208e"],
+
+Cell["Symbol", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->754,ExpressionUUID->"92918e38-c1ca-4660-8276-e55d4020b0d7"],
+
+Cell["VasilDimitrov/SolutionsX", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->755,ExpressionUUID->"dca59de9-7bf8-4243-8e63-ad0ff8976ca5"],
+
+Cell["VasilDimitrov`SolutionsX`", "Categorization",
+ CellLabel->"Context",
+ CellID->756,ExpressionUUID->"a0e72e52-7ae8-4238-bb40-64f7e0baf0c6"],
+
+Cell["VasilDimitrov/SolutionsX/ref/CurateData", "Categorization",
+ CellLabel->"URI",
+ CellID->757,ExpressionUUID->"2f4cc0e8-f0b9-4b83-a6ed-58fb435e20e8"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->762,ExpressionUUID->"5e5974c7-54e2-4787-b727-975654cccc68"],
+
+Cell["CurateData", "Keywords",
+ CellID->758,ExpressionUUID->"a7cea346-7f6c-4b26-a707-7caaa07acefe"],
+
+Cell["SolutionsX", "Keywords",
+ CellID->759,ExpressionUUID->"37bc4e2c-4bc7-46cc-90f3-57395b43e90a"],
+
+Cell["supergravity", "Keywords",
+ CellID->760,ExpressionUUID->"fda4dd58-0679-4fbc-9d94-1e5acc7311d2"],
+
+Cell["xAct", "Keywords",
+ CellID->761,ExpressionUUID->"609ba674-066e-4071-a48f-a1f1e43980b2"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["CurateData", "ObjectName",
+ CellID->763,ExpressionUUID->"96446e29-dd68-4aed-b7f4-95ca132fa91c"],
+
+Cell[TextData[{
+ Cell["   ", "ModInfo",ExpressionUUID->"1360d371-8a10-404a-9333-14bc77959764"],
+ Cell[BoxData[
+  RowBox[{
+   TemplateBox[{
+     Cell[
+      TextData["CurateData"]], 
+     "paclet:VasilDimitrov/SolutionsX/ref/CurateData", 
+     "VasilDimitrov Package Symbol"},
+    "PackageLink",
+    BaseStyle->"InlineFormula"], "[", 
+   StyleBox["\"\<name\>\"", "TI"], "]"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "4e5fdb7a-c249-4045-8186-cae090a2b449"],
+ "\[LineSeparator]publishes the entry ",
+ Cell[BoxData[
+  StyleBox["name", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "e0375151-63f7-4ee8-bd14-0b2c77af58c9"],
+ " of your own alias into the Curated corpus. Curator-only; enable with ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["SetCurator"]], 
+    "paclet:VasilDimitrov/SolutionsX/ref/SetCurator", 
+    "VasilDimitrov Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "3e793547-ff0f-4910-a19e-7055c8fcc0a4"],
+ "."
+}], "Usage",
+ CellID->764,ExpressionUUID->"23c844b9-18af-46cb-884e-90c7a8cd73fc"],
+
+Cell[TextData[{
+ "CurateData[\"name\"] copies the entry ",
+ Cell[BoxData[
+  StyleBox["name", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "3ff83b1f-22f3-4377-9e02-ac723840baeb"],
+ " of your own alias into Data/Curated, the published corpus that ships with \
+the repository. It requires the Curator mark: enable with ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["SetCurator"]], 
+    "paclet:VasilDimitrov/SolutionsX/ref/SetCurator", 
+    "VasilDimitrov Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "2a0b09d4-ec32-4245-ad29-f43cb1e2884f"],
+ "."
+}], "Notes",
+ CellID->765,ExpressionUUID->"41ff2a1d-f43c-4ab5-97e9-732bcb48c210"],
+
+Cell["\<\
+Data/Curated is git-tracked: the write is local to your clone until the \
+repository owner commits and pushes it. CurateData::tracked restates this on \
+every use; Off[CurateData::tracked] silences it once internalized.\
+\>", "Notes",
+ CellID->766,ExpressionUUID->"64f8c940-e4b5-464a-89e3-796353ea8efe"],
+
+Cell["\<\
+An existing Curated entry of the same name is replaced only after \
+confirmation; the Overwrite option works as in CopyData.\
+\>", "Notes",
+ CellID->767,ExpressionUUID->"92f1f519-ee40-4b9a-a075-624aa7b96a69"],
+
+Cell["\<\
+The copy is verbatim: curation is publication, not authorship, so the stored \
+$info -- Author included -- travels unchanged.\
+\>", "Notes",
+ CellID->768,ExpressionUUID->"ecfff06e-b45c-4e93-b48e-fdf0075f5016"],
+
+Cell[TextData[{
+ "CurateData publishes from your own alias only; fetch someone else's entry \
+with ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["CopyData"]], "paclet:VasilDimitrov/SolutionsX/ref/CopyData", 
+    "VasilDimitrov Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "5bd9f226-57a1-47a6-bb2b-32ed84c32a56"],
+ " first. Editing and deleting inside Curated is the curator's ordinary \
+workflow under the Curated alias -- see ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["SetAlias"]], "paclet:VasilDimitrov/SolutionsX/ref/SetAlias", 
+    "VasilDimitrov Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "ceb7a265-fbb9-412f-a9b8-f7c44ac4ebed"],
+ "."
+}], "Notes",
+ CellID->769,ExpressionUUID->"e8c55930-f010-4b42-a8e5-872b94508e1e"],
+
+Cell["\<\
+CurateData returns nothing: the ::tracked message and the echo are the record.\
+\>", "Notes",
+ CellID->770,ExpressionUUID->"ad7b31a7-72d6-49c8-ab44-69d5a838fd48"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Examples", "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->771,ExpressionUUID->"6d773ab2-fb53-4893-bd8f-cb433f585b4d"],
+
+Cell["\<\
+The following requires a front end, or a populated data directory, and so is \
+shown without output.\
+\>", "ExampleText",
+ CellID->772,ExpressionUUID->"a11bd936-4b63-4474-827a-9954981bd639"],
+
+Cell["Basic Examples", "ExampleSection",
+ CellID->773,ExpressionUUID->"892fc1ef-8bf0-4271-9db9-adeb71a5b57d"],
+
+Cell[BoxData[
+ RowBox[{"CurateData", "[", "\"\<Sol__4dL__Black-hole__Global\>\"", 
+  "]"}]], "Input",
+ CellLabel->"In[ ]:=",
+ CellID->774,ExpressionUUID->"1fe35378-f072-4b91-8b18-b51e2866df70"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["See Also", "SeeAlsoSection",
+ CellID->775,ExpressionUUID->"fc14e66c-3e88-4dc1-b65e-ef069df4dbd3"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["CopyData",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/CopyData"]], 
+  "InlineFormula",ExpressionUUID->"3ee5453d-7837-4997-bfc8-73ead947975b"],
+ " \[FilledVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["SetCurator",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/SetCurator"]], 
+  "InlineFormula",ExpressionUUID->"a1c9a3b4-423d-4c94-910b-e11deaf97ed8"],
+ " \[FilledVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["$Curator",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/$Curator"]], 
+  "InlineFormula",ExpressionUUID->"41d79d68-8f66-4f99-bddc-7ad3a5b04a7b"],
+ " \[FilledVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["SaveData",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/SaveData"]], 
+  "InlineFormula",ExpressionUUID->"c2f50f0a-181d-4cb6-83c6-f3561e4e7bef"],
+ " \[FilledVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["DeleteData",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/DeleteData"]], 
+  "InlineFormula",ExpressionUUID->"1b9fa337-12b3-409a-8318-56b6ee3f1fc6"]
+}], "SeeAlso",
+ CellID->776,ExpressionUUID->"cc596f6b-b675-4397-aa42-5f7030e2a7e6"]
+}, Open  ]]
+},
+WindowTitle->"CurateData",
+TaggingRules-><|
+ "Metadata" -> <|
+   "title" -> "CurateData", "summary" -> 
+    "publishes an entry of your own alias into the Curated corpus", "context" -> 
+    "VasilDimitrov`SolutionsX`", "paclet" -> "VasilDimitrov/SolutionsX", 
+    "type" -> "Symbol", "language" -> "en", "status" -> "None", "index" -> 
+    True, "uri" -> "VasilDimitrov/SolutionsX/ref/CurateData", 
+    "keywords" -> {"CurateData"}, "synonyms" -> {}, "titlemodifier" -> 
+    ""|>|>,
+FrontEndVersion->"13.3 for Mac OS X ARM (64-bit) (July 24, 2023)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"90fc236b-a7fc-4e8a-8a0f-3f1f628efdb9"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[5823, 176, 148, 2, 70, "PrimaryExamplesSection",ExpressionUUID->"6d773ab2-fb53-4893-bd8f-cb433f585b4d",
+   CellTags->"PrimaryExamplesSection",
+   CellID->771]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 8713, 255}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[604, 23, 116, 1, 70, "CategorizationSection",ExpressionUUID->"157428a5-3d64-4cd8-b9d3-e5a21755208e",
+ CellID->753],
+Cell[723, 26, 128, 2, 70, "Categorization",ExpressionUUID->"92918e38-c1ca-4660-8276-e55d4020b0d7",
+ CellID->754],
+Cell[854, 30, 146, 2, 70, "Categorization",ExpressionUUID->"dca59de9-7bf8-4243-8e63-ad0ff8976ca5",
+ CellID->755],
+Cell[1003, 34, 143, 2, 70, "Categorization",ExpressionUUID->"a0e72e52-7ae8-4238-bb40-64f7e0baf0c6",
+ CellID->756],
+Cell[1149, 38, 153, 2, 70, "Categorization",ExpressionUUID->"2f4cc0e8-f0b9-4b83-a6ed-58fb435e20e8",
+ CellID->757]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1339, 45, 104, 1, 70, "KeywordsSection",ExpressionUUID->"5e5974c7-54e2-4787-b727-975654cccc68",
+ CellID->762],
+Cell[1446, 48, 99, 1, 70, "Keywords",ExpressionUUID->"a7cea346-7f6c-4b26-a707-7caaa07acefe",
+ CellID->758],
+Cell[1548, 51, 99, 1, 70, "Keywords",ExpressionUUID->"37bc4e2c-4bc7-46cc-90f3-57395b43e90a",
+ CellID->759],
+Cell[1650, 54, 101, 1, 70, "Keywords",ExpressionUUID->"fda4dd58-0679-4fbc-9d94-1e5acc7311d2",
+ CellID->760],
+Cell[1754, 57, 93, 1, 70, "Keywords",ExpressionUUID->"609ba674-066e-4071-a48f-a1f1e43980b2",
+ CellID->761]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1884, 63, 101, 1, 70, "ObjectName",ExpressionUUID->"96446e29-dd68-4aed-b7f4-95ca132fa91c",
+ CellID->763],
+Cell[1988, 66, 1163, 32, 70, "Usage",ExpressionUUID->"23c844b9-18af-46cb-884e-90c7a8cd73fc",
+ CellID->764],
+Cell[3154, 100, 760, 20, 70, "Notes",ExpressionUUID->"41ff2a1d-f43c-4ab5-97e9-732bcb48c210",
+ CellID->765],
+Cell[3917, 122, 313, 5, 70, "Notes",ExpressionUUID->"64f8c940-e4b5-464a-89e3-796353ea8efe",
+ CellID->766],
+Cell[4233, 129, 218, 4, 70, "Notes",ExpressionUUID->"92f1f519-ee40-4b9a-a075-624aa7b96a69",
+ CellID->767],
+Cell[4454, 135, 219, 4, 70, "Notes",ExpressionUUID->"ecfff06e-b45c-4e93-b48e-fdf0075f5016",
+ CellID->768],
+Cell[4676, 141, 935, 25, 70, "Notes",ExpressionUUID->"e8c55930-f010-4b42-a8e5-872b94508e1e",
+ CellID->769],
+Cell[5614, 168, 172, 3, 70, "Notes",ExpressionUUID->"ad7b31a7-72d6-49c8-ab44-69d5a838fd48",
+ CellID->770]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[5823, 176, 148, 2, 70, "PrimaryExamplesSection",ExpressionUUID->"6d773ab2-fb53-4893-bd8f-cb433f585b4d",
+ CellTags->"PrimaryExamplesSection",
+ CellID->771],
+Cell[5974, 180, 200, 4, 70, "ExampleText",ExpressionUUID->"a11bd936-4b63-4474-827a-9954981bd639",
+ CellID->772],
+Cell[6177, 186, 109, 1, 70, "ExampleSection",ExpressionUUID->"892fc1ef-8bf0-4271-9db9-adeb71a5b57d",
+ CellID->773],
+Cell[6289, 189, 193, 4, 70, "Input",ExpressionUUID->"1fe35378-f072-4b91-8b18-b51e2866df70",
+ CellID->774]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6519, 198, 103, 1, 70, "SeeAlsoSection",ExpressionUUID->"fc14e66c-3e88-4dc1-b65e-ef069df4dbd3",
+ CellID->775],
+Cell[6625, 201, 1240, 31, 70, "SeeAlso",ExpressionUUID->"cc596f6b-b675-4397-aa42-5f7030e2a7e6",
+ CellID->776]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

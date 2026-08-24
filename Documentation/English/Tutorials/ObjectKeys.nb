@@ -1,0 +1,3581 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    141377,       3572]
+NotebookOptionsPosition[    122596,       3201]
+NotebookOutlinePosition[    123612,       3227]
+CellTagsIndexPosition[    123569,       3224]
+WindowTitle->Object Keys
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Categorization", "CategorizationSection",
+ CellID->1867,ExpressionUUID->"7b0bd450-4ed6-4e53-af02-976dcf2030a2"],
+
+Cell["Tech Note", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->1868,ExpressionUUID->"dfd253bd-0031-4e73-ba75-29f75f6d27ac"],
+
+Cell["VasilDimitrov/SolutionsX", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->1869,ExpressionUUID->"7f0ccdea-ee21-4516-948c-6b2e2de6ca92"],
+
+Cell["VasilDimitrov`SolutionsX`", "Categorization",
+ CellLabel->"Context",
+ CellID->1870,ExpressionUUID->"8db41ae4-898e-4026-87b0-4ab90eeb87f0"],
+
+Cell["VasilDimitrov/SolutionsX/tutorial/ObjectKeys", "Categorization",
+ CellLabel->"URI",
+ CellID->1871,ExpressionUUID->"ab0efc78-6d76-4794-be10-52729871a574"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->1876,ExpressionUUID->"9216487b-ffd3-4fc5-9eb8-c5f6ed708a10"],
+
+Cell["Object Keys", "Keywords",
+ CellID->1872,ExpressionUUID->"09d7534b-09ec-4cb0-a504-cde77f53aa3b"],
+
+Cell["SolutionsX", "Keywords",
+ CellID->1873,ExpressionUUID->"b4b75a31-e677-4a00-96e7-b5c499da6b8a"],
+
+Cell["supergravity", "Keywords",
+ CellID->1874,ExpressionUUID->"562e08b1-a234-4af7-9efc-ea3fea2800e0"],
+
+Cell["xAct", "Keywords",
+ CellID->1875,ExpressionUUID->"44f00a6d-779b-4d50-ba32-22136a4390cd"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Object Keys", "Title",
+ CellID->1877,ExpressionUUID->"1d3c3a47-4411-4745-8252-0717bfafd8c3"],
+
+Cell["\<\
+Each object type carries a fixed set of keys: the arguments and options of \
+one xAct definition, plus SolutionsX's own bookkeeping. This note is the \
+reference table for the keys of every object type.\
+\>", "Text",
+ CellID->1878,ExpressionUUID->"0cdaa6d0-0a90-4279-8f11-3571caf07309"],
+
+Cell["Load the package:", "MathCaption",
+ CellID->1879,ExpressionUUID->"d32bda85-6387-4de0-baea-2f992761f8fb"],
+
+Cell[BoxData[
+ RowBox[{"<<", " ", "VasilDimitrov`SolutionsX`"}]], "Input",
+ CellLabel->"In[1]:=",
+ CellID->1880,ExpressionUUID->"6438902a-05a1-45fa-92e2-e08c12df6a47"],
+
+Cell[TextData[{
+ "An object enters a solution as an association of key \[Rule] value pairs \
+(see ",
+ ButtonBox["Objects in SolutionsX",
+  BaseStyle->"Link",
+  ButtonData->
+   "paclet:VasilDimitrov/SolutionsX/tutorial/ObjectsInSolutionsX"],
+ "). This note is the reference for the keys: what each key of each object \
+type stands for. Keys come in three classes:"
+}], "Text",
+ CellID->1881,ExpressionUUID->"01b5decf-6bc4-47d0-bdc1-89a1d80a1cbc"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  StyleBox["essential", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "2aa086dc-9203-4a4b-9b01-fe2198b2d9a1"],
+ " \[LongDash] must be supplied for the object to validate (",
+ Cell[BoxData["PropKeysOf"], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "d48bc9ba-dc2e-4d78-89e4-fd7a6ce54de6"],
+ ")"
+}], "Item",
+ CellID->1882,ExpressionUUID->"6ff479b5-e7b9-49ae-a0e1-f98f868873e0"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  StyleBox["runtime", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "2ceb4e8e-f2ee-4a96-a134-7a9c50095a58"],
+ " \[LongDash] filled in or modified by SolutionsX as you work (",
+ Cell[BoxData["ModKeysOf"], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "f942108d-59f9-4c99-9c11-821ec4abb06c"],
+ ")"
+}], "Item",
+ CellID->1883,ExpressionUUID->"c3ffce3b-b8bb-4484-bccf-a5b57f7d205b"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  StyleBox["option", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "08dded48-95e1-4b23-8c8c-ca110151f6df"],
+ " \[LongDash] an option of the underlying xAct Def command, passed through \
+to it (",
+ Cell[BoxData["OptKeysOf"], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "66705467-0d83-4ad7-bc97-febdd1d03562"],
+ ")"
+}], "Item",
+ CellID->1884,ExpressionUUID->"7a94f9f6-ec37-41f2-9350-93c6670dd98c"],
+
+Cell["$manifold", "Section",
+ CellID->1885,ExpressionUUID->"e46e494f-f9c0-4881-8b64-204265659299"],
+
+Cell[TextData[{
+ "Records a ",
+ ButtonBox["DefManifold",
+  BaseStyle->"Link",
+  Appearance->None,
+  Evaluator->Automatic,
+  ButtonFunction:>NotebookOpen[
+    FindFile["xAct/Documentation/English/" <> "xTensorDoc.nb"]]],
+ " call: the manifold symbol, its dimension, and the abstract indices to \
+register on its tangent bundle. Undefined through ",
+ ButtonBox["UndefManifold",
+  BaseStyle->"Link",
+  Appearance->None,
+  Evaluator->Automatic,
+  ButtonFunction:>NotebookOpen[
+    FindFile["xAct/Documentation/English/" <> "xTensorDoc.nb"]]],
+ ", after first undefining every visitor of the manifold."
+}], "Text",
+ CellID->1886,ExpressionUUID->"ad661eb6-0150-45c3-aa1a-820c0a22856d"],
+
+Cell["\<\
+Called empty, the constructor spells out every key and the pattern its value \
+must match:\
+\>", "MathCaption",
+ CellID->1887,ExpressionUUID->"0837cf5e-975c-4b2a-bb36-723faf5352a7"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$manifold", "[", "]"}]], "Input",
+ CellLabel->"In[2]:=",
+ CellID->1888,ExpressionUUID->"71b37676-1f6c-4a0e-b9c3-4414517ecae4"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"Symbol", "\[Rule]", "_Symbol"}], ",", 
+   RowBox[{"Dimension", "\[Rule]", 
+    RowBox[{
+     RowBox[{"_Integer", "?", "Positive"}], "|", 
+     InterpretationBox[
+      StyleBox["d",
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      xAct`Invar`dim,
+      Editable->False]}]}], ",", 
+   RowBox[{"Index", "\[Rule]", 
+    RowBox[{"{", "__Symbol", "}"}]}], ",", 
+   RowBox[{"Name", "\[Rule]", 
+    RowBox[{"_String", "|", "name"}]}], ",", 
+   RowBox[{"Master", "\[Rule]", "_Symbol"}], ",", 
+   RowBox[{"PrintAs", "\[Rule]", 
+    RowBox[{"_String", "|", "Identity"}]}], ",", 
+   RowBox[{"ProtectNewSymbol", "\[RuleDelayed]", 
+    RowBox[{"ScreenDollarIndices", "[", 
+     RowBox[{"True", "|", "False"}], "]"}]}], ",", 
+   RowBox[{"DefInfo", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"_String", ",", "_String"}], "}"}]}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellLabel->"Out[2]=",
+ CellID->1889,ExpressionUUID->"b42ee244-e82c-4107-a3d2-c67577951e75"]
+}, Open  ]],
+
+Cell["The keys of $manifold, by class:", "Caption",
+ CellID->1890,ExpressionUUID->"573efb2a-1ae5-4cca-a22d-f48846967d8e"],
+
+Cell[BoxData[GridBox[{
+   {Cell["key", "TableHeader",ExpressionUUID->
+     "b225061e-3c15-458d-a91b-07ffcab15cd5"], Cell[
+    "class", "TableHeader",ExpressionUUID->
+     "48c5cb9e-379c-41d5-adee-f59d4c6b4774"], " "},
+   {"Symbol", 
+    StyleBox["essential", "TI"], Cell["\<\
+the symbol xAct defines, with its index slots where it has any; its bare head \
+is the name the object is stored and retrieved under\
+\>", "TableText",ExpressionUUID->"572b8f06-1f56-474c-9693-d6858d46fcdf"]},
+   {"Dimension", 
+    StyleBox["essential", "TI"], Cell[
+    "the dimension, a positive integer", "TableText",ExpressionUUID->
+     "c5b824a1-fe04-41e9-99d6-bc4974c954c2"]},
+   {"Index", 
+    StyleBox["essential", "TI"], Cell[
+    "the abstract indices to register, as a list of symbols", "TableText",
+     ExpressionUUID->"3698c0d9-cacb-42aa-9623-7442be5b0734"]},
+   {"Name", 
+    StyleBox["runtime", "TI"], Cell[TextData[{
+     "a string; ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["SaveData"]], 
+        "paclet:VasilDimitrov/SolutionsX/ref/SaveData", 
+        "VasilDimitrov Package Symbol"},
+       "PackageLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "8136fbd5-de54-4265-974a-ad7445478f60"],
+     " builds the entry name from the first manifold's Name and Dimension, \
+the first metric's Signature and the first chart's Name"
+    }], "TableText",ExpressionUUID->"9b99f554-2f2a-4c6c-9d2a-ab2f578d94be"]},
+   {"Master", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: the master symbol the definition is tied to; undefining the \
+master removes this object too\
+\>", "TableText",ExpressionUUID->"7e8d5ea1-ee86-4088-ac84-a9451b997179"]},
+   {"PrintAs", 
+    StyleBox["option", "TI"], Cell[
+    "xAct option: the glyph the symbol typesets as", "TableText",
+     ExpressionUUID->"e28dd50f-0d7f-431b-b89d-d0c3040ca605"]},
+   {"ProtectNewSymbol", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: whether the new symbol is protected after definition\
+\>", "TableText",ExpressionUUID->"c6b5f995-2fce-49f3-8c57-5674b4efcf23"]},
+   {"DefInfo", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: the informational message printed at definition time\
+\>", "TableText",ExpressionUUID->"89a6b95a-40ce-47e1-a17f-b9e25ed3c663"]}
+  }]], "DefinitionBox3Col",
+ CellID->1891,ExpressionUUID->"a30b922c-b5ea-44b8-9b1d-608c3e18695f"],
+
+Cell["$parameter", "Section",
+ CellID->1892,ExpressionUUID->"ad24de85-8130-49dc-826e-16ceeec6d60b"],
+
+Cell[TextData[{
+ "Records a ",
+ ButtonBox["DefParameter",
+  BaseStyle->"Link",
+  Appearance->None,
+  Evaluator->Automatic,
+  ButtonFunction:>NotebookOpen[
+    FindFile["xAct/Documentation/English/" <> "xTensorDoc.nb"]]],
+ " call: a real parameter that tensors and functions may depend on. Undefined \
+through ",
+ ButtonBox["UndefParameter",
+  BaseStyle->"Link",
+  Appearance->None,
+  Evaluator->Automatic,
+  ButtonFunction:>NotebookOpen[
+    FindFile["xAct/Documentation/English/" <> "xTensorDoc.nb"]]],
+ "."
+}], "Text",
+ CellID->1893,ExpressionUUID->"70c186bb-df17-41ee-9d6e-438f476c0582"],
+
+Cell["\<\
+Called empty, the constructor spells out every key and the pattern its value \
+must match:\
+\>", "MathCaption",
+ CellID->1894,ExpressionUUID->"2a955eba-18bc-44b0-9f86-8bde37bddb33"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$parameter", "[", "]"}]], "Input",
+ CellLabel->"In[3]:=",
+ CellID->1895,ExpressionUUID->"3b813161-a74f-4590-8194-f6dbadec2bce"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"Symbol", "\[Rule]", "_Symbol"}], ",", 
+   RowBox[{"Master", "\[Rule]", "_Symbol"}], ",", 
+   RowBox[{"PrintAs", "\[Rule]", 
+    RowBox[{"_String", "|", "Identity"}]}], ",", 
+   RowBox[{"ProtectNewSymbol", "\[RuleDelayed]", 
+    RowBox[{"ScreenDollarIndices", "[", 
+     RowBox[{"True", "|", "False"}], "]"}]}], ",", 
+   RowBox[{"DefInfo", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"_String", ",", "_String"}], "}"}]}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellLabel->"Out[3]=",
+ CellID->1896,ExpressionUUID->"86e45ef5-00a2-4702-a9aa-f50ed77e4ec8"]
+}, Open  ]],
+
+Cell["The keys of $parameter, by class:", "Caption",
+ CellID->1897,ExpressionUUID->"b7f57b3e-a1b8-40b8-bdca-3ab2687eaa2b"],
+
+Cell[BoxData[GridBox[{
+   {Cell["key", "TableHeader",ExpressionUUID->
+     "64da2a3e-0082-4677-9e55-af3f3133b1b2"], Cell[
+    "class", "TableHeader",ExpressionUUID->
+     "b4008b9f-d409-4245-b0b0-0eb79c613c39"], " "},
+   {"Symbol", 
+    StyleBox["essential", "TI"], Cell["\<\
+the symbol xAct defines, with its index slots where it has any; its bare head \
+is the name the object is stored and retrieved under\
+\>", "TableText",ExpressionUUID->"169399b7-aa9a-4c23-9af1-caa2848f7e78"]},
+   {"Master", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: the master symbol the definition is tied to; undefining the \
+master removes this object too\
+\>", "TableText",ExpressionUUID->"290a347e-f1f9-40c8-95f3-c287ae643018"]},
+   {"PrintAs", 
+    StyleBox["option", "TI"], Cell[
+    "xAct option: the glyph the symbol typesets as", "TableText",
+     ExpressionUUID->"2856104e-f952-4ce5-af4f-8bf0156ab83b"]},
+   {"ProtectNewSymbol", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: whether the new symbol is protected after definition\
+\>", "TableText",ExpressionUUID->"804cd6b0-6271-4eac-a936-c1c616c6cd05"]},
+   {"DefInfo", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: the informational message printed at definition time\
+\>", "TableText",ExpressionUUID->"c098b8ef-acab-4f6c-979a-8c3cd0861f0e"]}
+  }]], "DefinitionBox3Col",
+ CellID->1898,ExpressionUUID->"3e8111b3-3075-454f-94eb-0933a3fb8df1"],
+
+Cell["$metric", "Section",
+ CellID->1899,ExpressionUUID->"5f1235aa-7b4e-4750-803e-93a7e11fa516"],
+
+Cell[TextData[{
+ "Records a ",
+ ButtonBox["DefMetric",
+  BaseStyle->"Link",
+  Appearance->None,
+  Evaluator->Automatic,
+  ButtonFunction:>NotebookOpen[
+    FindFile["xAct/Documentation/English/" <> "xTensorDoc.nb"]]],
+ " call: the signature, the metric symbol, and the covariant derivative \
+defined alongside; the line element lives in ",
+ Cell[BoxData["Expression"], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "d05cbdc2-d425-489f-b361-58c782707616"],
+ ". Undefined through a SolutionsX wrapper around ",
+ ButtonBox["UndefMetric",
+  BaseStyle->"Link",
+  Appearance->None,
+  Evaluator->Automatic,
+  ButtonFunction:>NotebookOpen[
+    FindFile["xAct/Documentation/English/" <> "xTensorDoc.nb"]]],
+ "."
+}], "Text",
+ CellID->1900,ExpressionUUID->"0638eab9-b80c-48fd-b6ef-4d3d09500498"],
+
+Cell["\<\
+Called empty, the constructor spells out every key and the pattern its value \
+must match:\
+\>", "MathCaption",
+ CellID->1901,ExpressionUUID->"63e01665-96ee-4728-bf98-d4d38f68d374"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$metric", "[", "]"}]], "Input",
+ CellLabel->"In[4]:=",
+ CellID->1902,ExpressionUUID->"5609a7d6-3e27-441c-baf1-79e7b8075e2e"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"Signature", "\[Rule]", 
+    RowBox[{
+     RowBox[{"-", "1"}], "|", "1"}]}], ",", 
+   RowBox[{"Symbol", "\[Rule]", 
+    RowBox[{"_Symbol", "[", 
+     RowBox[{
+      RowBox[{"_Symbol", "|", 
+       RowBox[{"-", "_Symbol"}]}], ",", 
+      RowBox[{"_Symbol", "|", 
+       RowBox[{"-", "_Symbol"}]}]}], "]"}]}], ",", 
+   RowBox[{"CovD", "\[Rule]", "_Symbol"}], ",", 
+   RowBox[{"SymbolOfCovD", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"_String", ",", "_String"}], "}"}]}], ",", 
+   RowBox[{"Expression", "\[Rule]", "_"}], ",", 
+   RowBox[{"$auto", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{"_Symbol", "\[Rule]", 
+      RowBox[{
+       RowBox[{"\[LeftAssociation]", 
+        RowBox[{
+         RowBox[{"Routine", "\[Rule]", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"Chain", "\[Rule]", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"_", "\[Rule]", 
+                 RowBox[{"{", "___List", "}"}]}], ")"}], "..."}], "}"}]}], 
+            ",", 
+            RowBox[{"Apply", "\[Rule]", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"Map", "|", "ParallelMap"}], "\[Rule]", "_"}], ")"}],
+                "..."}], "}"}]}]}], "\[RightAssociation]"}]}], ",", 
+         RowBox[{"Value", "\[Rule]", "_"}]}], "\[RightAssociation]"}], 
+       "..."}]}], "\[RightAssociation]"}]}], ",", 
+   RowBox[{"PrintAs", "\[Rule]", 
+    RowBox[{"_String", "|", "Identity"}]}], ",", 
+   RowBox[{"FlatMetric", "\[Rule]", 
+    RowBox[{"True", "|", "False"}]}], ",", 
+   RowBox[{"InducedFrom", "\[Rule]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"_Symbol", ",", "_Symbol"}], "}"}], "|", "Null"}]}], ",", 
+   RowBox[{"ConformalTo", "\[Rule]", 
+    RowBox[{"_", "|", "Null"}]}], ",", 
+   RowBox[{"OtherDependencies", "\[Rule]", 
+    RowBox[{"{", "___Symbol", "}"}]}], ",", 
+   RowBox[{"WeightedWithBasis", "\[Rule]", 
+    RowBox[{"_Symbol", "|", "Null"}]}], ",", 
+   RowBox[{"epsilonOrientationInBasis", "\[RuleDelayed]", 
+    RowBox[{"ScreenDollarIndices", "[", 
+     RowBox[{"{", 
+      RowBox[{"_Symbol", ",", 
+       RowBox[{"1", "|", 
+        RowBox[{"-", "1"}]}]}], "}"}], "]"}]}], ",", 
+   RowBox[{"Master", "\[Rule]", "_Symbol"}], ",", 
+   RowBox[{"ProtectNewSymbol", "\[RuleDelayed]", 
+    RowBox[{"ScreenDollarIndices", "[", 
+     RowBox[{"True", "|", "False"}], "]"}]}], ",", 
+   RowBox[{"DefInfo", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"_String", ",", "_String"}], "}"}]}], ",", 
+   RowBox[{"DefMetricPerturbation", "\[Rule]", 
+    RowBox[{"True", "|", "False"}]}], ",", 
+   RowBox[{"Torsion", "\[Rule]", 
+    RowBox[{"True", "|", "False"}]}], ",", 
+   RowBox[{"Curvature", "\[Rule]", 
+    RowBox[{"True", "|", "False"}]}], ",", 
+   RowBox[{"SymCovDQ", "\[Rule]", 
+    RowBox[{"True", "|", "False"}]}]}], "\[RightAssociation]"}]], "Output",
+ CellLabel->"Out[4]=",
+ CellID->1903,ExpressionUUID->"daf7a59d-c072-4bc6-8737-a0dfc22986e2"]
+}, Open  ]],
+
+Cell["The keys of $metric, by class:", "Caption",
+ CellID->1904,ExpressionUUID->"b8a1c26e-2064-41f8-b19b-05b7e421d507"],
+
+Cell[BoxData[GridBox[{
+   {Cell["key", "TableHeader",ExpressionUUID->
+     "eaf9bc89-15d7-4e28-9e4e-dd621a01c6a7"], Cell[
+    "class", "TableHeader",ExpressionUUID->
+     "f0291550-8e8b-4447-811f-9009a8c468ec"], " "},
+   {"Signature", 
+    StyleBox["essential", "TI"], Cell[TextData[{
+     "the sign of the metric determinant; ",
+     ButtonBox["DefMetric",
+      BaseStyle->"Link",
+      Appearance->None,
+      Evaluator->Automatic,
+      ButtonFunction:>NotebookOpen[
+        FindFile["xAct/Documentation/English/" <> "xTensorDoc.nb"]]],
+     "'s first argument (-1 Lorentzian, +1 Euclidean)"
+    }], "TableText",ExpressionUUID->"aed0df11-1bcc-40e4-b2a6-e40e57bb064e"]},
+   {"Symbol", 
+    StyleBox["essential", "TI"], Cell["\<\
+the symbol xAct defines, with its index slots where it has any; its bare head \
+is the name the object is stored and retrieved under\
+\>", "TableText",ExpressionUUID->"71f45cc3-4aa1-4f17-8d26-85240e429bfc"]},
+   {"CovD", 
+    StyleBox["essential", "TI"], Cell["\<\
+the symbol of the associated covariant derivative: defined alongside a \
+$metric, built from for a $spinConnection\
+\>", "TableText",ExpressionUUID->"f7b11c96-6e55-4c96-87c0-41b7fbf6d2f0"]},
+   {"SymbolOfCovD", 
+    StyleBox["essential", "TI"], Cell["\<\
+the pair of display strings for the covariant derivative, like {\";\", \"\
+\[Del]\"}\
+\>", "TableText",ExpressionUUID->"72a8d126-62c8-4567-aabc-3a59288a5fac"]},
+   {"Expression", 
+    StyleBox["runtime", "TI"], Cell["\<\
+the stored expression \[LongDash] the physically relevant data, replayed when \
+the object is loaded\
+\>", "TableText",ExpressionUUID->"a5b07da9-18fa-465d-8726-acbc29cedd74"]},
+   {"$auto", 
+    StyleBox["runtime", "TI"], Cell[TextData[{
+     "slots for the symbols xAct creates alongside the definition; each \
+carries a ",
+     Cell[BoxData["Routine"], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "47819165-3b64-4fcf-8453-6512e346f25c"],
+     " (the ",
+     Cell[BoxData["Chain"], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "844cb5df-ea29-4e2b-9342-a4e4df6ceb9e"],
+     " recipe that ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["Compute"]], "paclet:VasilDimitrov/SolutionsX/ref/Compute", 
+        "VasilDimitrov Package Symbol"},
+       "PackageLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "5f91747f-0c58-4b3c-84f5-8952ce68fa55"],
+     " follows) and its computed ",
+     Cell[BoxData["Value"], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "0c27f770-4ae1-40de-8858-5abedc486210"]
+    }], "TableText",ExpressionUUID->"a21f57ea-9347-48ad-96f1-2b26aac5b47c"]},
+   {"PrintAs", 
+    StyleBox["option", "TI"], Cell[
+    "xAct option: the glyph the symbol typesets as", "TableText",
+     ExpressionUUID->"1739ecb0-91e8-45ae-850c-623e541b4b55"]},
+   {"FlatMetric", 
+    StyleBox["option", "TI"], Cell[
+    "xAct option: whether the defined metric is flat", "TableText",
+     ExpressionUUID->"71553a08-3bee-4ce8-b843-f89b90cff623"]},
+   {"InducedFrom", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: define the metric as induced on a hypersurface, as {metric, \
+normal vector}\
+\>", "TableText",ExpressionUUID->"2829894b-e7fb-4a77-99c7-8ab3a2d0182d"]},
+   {"ConformalTo", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: define the metric as conformal to another, as {metric, conformal \
+factor}\
+\>", "TableText",ExpressionUUID->"64bb22ed-38ed-4f6c-be8d-a4cdcd53dcee"]},
+   {"OtherDependencies", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: extra manifolds and parameters everything defined here depends on\
+\>", "TableText",ExpressionUUID->"b20c9e66-ecbf-445f-bae3-914189ed74a5"]},
+   {"WeightedWithBasis", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: extend the Levi-Civita connection to densities of the given basis\
+\>", "TableText",ExpressionUUID->"3da06bf3-e3bf-40d6-9b28-7cdcf8f8d6b6"]},
+   {"epsilonOrientationInBasis", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: {basis, sign} fixing the orientation factor between the metric's \
+epsilon and the basis' eta tensors\
+\>", "TableText",ExpressionUUID->"a7c4964e-e035-433d-9f3b-cdeeca0b00f1"]},
+   {"Master", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: the master symbol the definition is tied to; undefining the \
+master removes this object too\
+\>", "TableText",ExpressionUUID->"9fff74f4-e002-43e3-85f5-8aa4d75f7b84"]},
+   {"ProtectNewSymbol", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: whether the new symbol is protected after definition\
+\>", "TableText",ExpressionUUID->"c18eb477-6223-4fae-90dd-81d81f6a87b2"]},
+   {"DefInfo", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: the informational message printed at definition time\
+\>", "TableText",ExpressionUUID->"7716ddab-2d60-4348-b064-3d32e61e3c1c"]},
+   {"DefMetricPerturbation", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option (xTras): also define the metric's perturbation and its expansion \
+parameter\
+\>", "TableText",ExpressionUUID->"4d9a4d93-ab86-48de-a223-aea1da08c8ad"]},
+   {"Torsion", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: whether the covariant derivative carries torsion\
+\>", "TableText",ExpressionUUID->"d54f175f-5538-4b13-98db-bc39087022be"]},
+   {"Curvature", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: whether, and on which bundles, the derivative has curvature\
+\>", "TableText",ExpressionUUID->"bcab639e-2ca7-4c8a-b412-140e0b3bb4f1"]},
+   {"SymCovDQ", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option (xTras): register the derivative as symmetrizable\
+\>", "TableText",ExpressionUUID->"04a73961-efb0-4fdb-b211-f74fe23d5402"]}
+  }]], "DefinitionBox3Col",
+ CellID->1905,ExpressionUUID->"2a95e452-a3cc-4ebc-a879-a14e2f3e86c3"],
+
+Cell["$frame", "Section",
+ CellID->1906,ExpressionUUID->"9cc322c1-8c4a-4824-ae19-85948ef249d6"],
+
+Cell[TextData[{
+ "Records a ",
+ Cell[BoxData["DefFrameBundle"], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "df63e2a1-0c5c-462b-b2f0-7ba69e0ecac7"],
+ " call (FieldsX): the vielbein, the flat metric, and the flat indices of an \
+orthonormal frame bundle. Undefined through ",
+ Cell[BoxData["UndefFrameBundle"], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "a1ecd66f-c0b5-4a19-9874-7a28ff38ca27"],
+ "."
+}], "Text",
+ CellID->1907,ExpressionUUID->"2a6924c0-62ce-45aa-9c05-d3770b7069ce"],
+
+Cell["\<\
+Called empty, the constructor spells out every key and the pattern its value \
+must match:\
+\>", "MathCaption",
+ CellID->1908,ExpressionUUID->"a1f6c429-aad9-449b-b93d-67cd4a2bf38d"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$frame", "[", "]"}]], "Input",
+ CellLabel->"In[5]:=",
+ CellID->1909,ExpressionUUID->"ad32ee34-7c1e-4f5a-b2f0-cdd1d67f3017"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"Symbol", "\[Rule]", 
+    RowBox[{"_Symbol", "[", 
+     RowBox[{
+      RowBox[{"-", "_Symbol"}], ",", "_Symbol"}], "]"}]}], ",", 
+   RowBox[{"Metric", "\[Rule]", 
+    RowBox[{"_Symbol", "[", 
+     RowBox[{
+      RowBox[{"-", "_Symbol"}], ",", 
+      RowBox[{"-", "_Symbol"}]}], "]"}]}], ",", 
+   RowBox[{"Index", "\[Rule]", 
+    RowBox[{"{", "__Symbol", "}"}]}], ",", 
+   RowBox[{"Expression", "\[Rule]", "_"}], ",", 
+   RowBox[{"$auto", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{"_Symbol", "\[Rule]", 
+      RowBox[{
+       RowBox[{"\[LeftAssociation]", 
+        RowBox[{
+         RowBox[{"Routine", "\[Rule]", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"Chain", "\[Rule]", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"_", "\[Rule]", 
+                 RowBox[{"{", "___List", "}"}]}], ")"}], "..."}], "}"}]}], 
+            ",", 
+            RowBox[{"Apply", "\[Rule]", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"Map", "|", "ParallelMap"}], "\[Rule]", "_"}], ")"}],
+                "..."}], "}"}]}]}], "\[RightAssociation]"}]}], ",", 
+         RowBox[{"Value", "\[Rule]", "_"}]}], "\[RightAssociation]"}], 
+       "..."}]}], "\[RightAssociation]"}]}], ",", 
+   RowBox[{"PrintAs", "\[Rule]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"_String", ",", "_String"}], "}"}], "|", 
+     RowBox[{"{", "}"}]}]}], ",", 
+   RowBox[{"ProtectNewSymbol", "\[RuleDelayed]", 
+    RowBox[{"ScreenDollarIndices", "[", 
+     RowBox[{"True", "|", "False"}], "]"}]}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellLabel->"Out[5]=",
+ CellID->1910,ExpressionUUID->"1fc4db59-6348-4879-bb96-f3d85e24361c"]
+}, Open  ]],
+
+Cell["The keys of $frame, by class:", "Caption",
+ CellID->1911,ExpressionUUID->"6095f96b-0804-45e2-a570-4b0ea937c463"],
+
+Cell[BoxData[GridBox[{
+   {Cell["key", "TableHeader",ExpressionUUID->
+     "0075f82e-b562-4cff-909b-80e1786de112"], Cell[
+    "class", "TableHeader",ExpressionUUID->
+     "fd75a64e-a593-453a-a9d1-33ce76262d2f"], " "},
+   {"Symbol", 
+    StyleBox["essential", "TI"], Cell["\<\
+the symbol xAct defines, with its index slots where it has any; its bare head \
+is the name the object is stored and retrieved under\
+\>", "TableText",ExpressionUUID->"ed535977-cc97-4d20-a7b4-e8e59762e1be"]},
+   {"Metric", 
+    StyleBox["essential", "TI"], Cell["\<\
+the metric the construction builds on: the frame's flat metric, the spin \
+structure's base metric, or the bundle's fiber metric\
+\>", "TableText",ExpressionUUID->"91ac3bfa-a5b4-4075-a530-8d996fff8f37"]},
+   {"Index", 
+    StyleBox["essential", "TI"], Cell[
+    "the abstract indices to register, as a list of symbols", "TableText",
+     ExpressionUUID->"c73feb53-77d3-43d6-bee4-d416db05d2b0"]},
+   {"Expression", 
+    StyleBox["runtime", "TI"], Cell["\<\
+the stored expression \[LongDash] the physically relevant data, replayed when \
+the object is loaded\
+\>", "TableText",ExpressionUUID->"15aeed86-4d9b-4e47-ae80-67949bdfd615"]},
+   {"$auto", 
+    StyleBox["runtime", "TI"], Cell[TextData[{
+     "slots for the symbols xAct creates alongside the definition; each \
+carries a ",
+     Cell[BoxData["Routine"], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "4f4313e5-d67b-4599-91d9-df05faadd6cf"],
+     " (the ",
+     Cell[BoxData["Chain"], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "b70d39df-8fdb-4099-b75e-4ece273be2f3"],
+     " recipe that ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["Compute"]], "paclet:VasilDimitrov/SolutionsX/ref/Compute", 
+        "VasilDimitrov Package Symbol"},
+       "PackageLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "4d4664e0-0c83-4db1-bd17-0507e5a210a6"],
+     " follows) and its computed ",
+     Cell[BoxData["Value"], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "908e72fd-a88f-4eb8-b27c-655b56e74267"]
+    }], "TableText",ExpressionUUID->"ce910e8a-c832-4477-aa9f-428d2bcfa362"]},
+   {"PrintAs", 
+    StyleBox["option", "TI"], Cell[
+    "xAct option: the glyph the symbol typesets as", "TableText",
+     ExpressionUUID->"d5497197-1aa9-41ea-9ff8-d2b30a6b5ac8"]},
+   {"ProtectNewSymbol", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: whether the new symbol is protected after definition\
+\>", "TableText",ExpressionUUID->"be0df456-2024-45c3-a8e7-465738ec71da"]}
+  }]], "DefinitionBox3Col",
+ CellID->1912,ExpressionUUID->"a31217d1-18b7-4529-b2ef-063b3626a8a0"],
+
+Cell["$spinStructure", "Section",
+ CellID->1913,ExpressionUUID->"5acafd85-9c88-4411-812b-57ae6d86ee94"],
+
+Cell[TextData[{
+ "Records a ",
+ Cell[BoxData["DefSpinStructure"], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "698c0388-a82d-45af-b051-79c23054af18"],
+ " call (FieldsX): the spinor bundle over a metric, with its spinor indices. \
+Undefined through ",
+ Cell[BoxData["UndefSpinStructure"], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "384bcfa1-f93e-4ec4-872b-e26a0a165a59"],
+ "."
+}], "Text",
+ CellID->1914,ExpressionUUID->"1acc2345-f70b-4946-86fe-2e9667fe3153"],
+
+Cell["\<\
+Called empty, the constructor spells out every key and the pattern its value \
+must match:\
+\>", "MathCaption",
+ CellID->1915,ExpressionUUID->"d25d5050-18da-485d-a900-dc012faf85bb"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$spinStructure", "[", "]"}]], "Input",
+ CellLabel->"In[6]:=",
+ CellID->1916,ExpressionUUID->"f911908a-9c36-4b66-90a7-54c7db967767"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"Metric", "\[Rule]", "_Symbol"}], ",", 
+   RowBox[{"Index", "\[Rule]", 
+    RowBox[{"{", "__Symbol", "}"}]}], ",", 
+   RowBox[{"$auto", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{"_Symbol", "\[Rule]", 
+      RowBox[{
+       RowBox[{"\[LeftAssociation]", 
+        RowBox[{
+         RowBox[{"Routine", "\[Rule]", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"Chain", "\[Rule]", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"_", "\[Rule]", 
+                 RowBox[{"{", "___List", "}"}]}], ")"}], "..."}], "}"}]}], 
+            ",", 
+            RowBox[{"Apply", "\[Rule]", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"Map", "|", "ParallelMap"}], "\[Rule]", "_"}], ")"}],
+                "..."}], "}"}]}]}], "\[RightAssociation]"}]}], ",", 
+         RowBox[{"Value", "\[Rule]", "_"}]}], "\[RightAssociation]"}], 
+       "..."}]}], "\[RightAssociation]"}]}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellLabel->"Out[6]=",
+ CellID->1917,ExpressionUUID->"294bfa6e-ccd0-48c4-9bfe-1c8ae726c8e7"]
+}, Open  ]],
+
+Cell["The keys of $spinStructure, by class:", "Caption",
+ CellID->1918,ExpressionUUID->"c45dbe6a-3f98-4d4e-9a28-b66688f89790"],
+
+Cell[BoxData[GridBox[{
+   {Cell["key", "TableHeader",ExpressionUUID->
+     "0737af25-4f73-4444-b6df-623b7fcfa348"], Cell[
+    "class", "TableHeader",ExpressionUUID->
+     "955e0065-f131-483a-bf83-153a4b90a5e1"], " "},
+   {"Metric", 
+    StyleBox["essential", "TI"], Cell["\<\
+the metric the construction builds on: the frame's flat metric, the spin \
+structure's base metric, or the bundle's fiber metric\
+\>", "TableText",ExpressionUUID->"65c7a217-351a-4685-ac67-fbc15725c8f2"]},
+   {"Index", 
+    StyleBox["essential", "TI"], Cell[
+    "the abstract indices to register, as a list of symbols", "TableText",
+     ExpressionUUID->"e7d5590a-925d-4879-a7ae-c74c693ceb0a"]},
+   {"$auto", 
+    StyleBox["runtime", "TI"], Cell[TextData[{
+     "slots for the symbols xAct creates alongside the definition; each \
+carries a ",
+     Cell[BoxData["Routine"], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "249a463b-e770-4208-b5e4-119a217c5487"],
+     " (the ",
+     Cell[BoxData["Chain"], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "d9914956-c25b-4e1c-a8db-9271d6c5fcd3"],
+     " recipe that ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["Compute"]], "paclet:VasilDimitrov/SolutionsX/ref/Compute", 
+        "VasilDimitrov Package Symbol"},
+       "PackageLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "a59415e4-10c9-4a29-abd9-a1b42abe67d3"],
+     " follows) and its computed ",
+     Cell[BoxData["Value"], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "34a05860-d852-4ed3-a43a-1545e5912f40"]
+    }], "TableText",ExpressionUUID->"f489d704-eb84-4edf-a55f-e03dea13883f"]}
+  }]], "DefinitionBox3Col",
+ CellID->1919,ExpressionUUID->"376543cc-c043-4e33-9aa9-e33759ec5a3c"],
+
+Cell["$spinConnection", "Section",
+ CellID->1920,ExpressionUUID->"179f11ec-3dbd-4e5f-8e4a-0787594e23ba"],
+
+Cell[TextData[{
+ "Records a ",
+ Cell[BoxData["DefSpinConnection"], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "78c22130-533b-42ae-8742-f68246fbbbb3"],
+ " call (FieldsX): the spin connection associated to a covariant derivative. \
+Undefined through ",
+ Cell[BoxData["UndefSpinConnection"], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "768e9488-577d-4768-b11e-59e2a9570087"],
+ "."
+}], "Text",
+ CellID->1921,ExpressionUUID->"dc52e574-74b2-4def-af56-4f02c102e705"],
+
+Cell["\<\
+Called empty, the constructor spells out every key and the pattern its value \
+must match:\
+\>", "MathCaption",
+ CellID->1922,ExpressionUUID->"a104a8b7-0f47-4b7c-8e35-021deafb3e79"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$spinConnection", "[", "]"}]], "Input",
+ CellLabel->"In[7]:=",
+ CellID->1923,ExpressionUUID->"3e3b2603-bdd3-4996-8abb-56a9b8315105"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"Symbol", "\[Rule]", 
+    RowBox[{"_Symbol", "[", 
+     RowBox[{
+      RowBox[{"-", "_Symbol"}], ",", 
+      RowBox[{"-", "_Symbol"}], ",", 
+      RowBox[{"-", "_Symbol"}]}], "]"}]}], ",", 
+   RowBox[{"CovD", "\[Rule]", "_Symbol"}], ",", 
+   RowBox[{"$auto", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{"_Symbol", "\[Rule]", 
+      RowBox[{
+       RowBox[{"\[LeftAssociation]", 
+        RowBox[{
+         RowBox[{"Routine", "\[Rule]", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"Chain", "\[Rule]", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"_", "\[Rule]", 
+                 RowBox[{"{", "___List", "}"}]}], ")"}], "..."}], "}"}]}], 
+            ",", 
+            RowBox[{"Apply", "\[Rule]", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"Map", "|", "ParallelMap"}], "\[Rule]", "_"}], ")"}],
+                "..."}], "}"}]}]}], "\[RightAssociation]"}]}], ",", 
+         RowBox[{"Value", "\[Rule]", "_"}]}], "\[RightAssociation]"}], 
+       "..."}]}], "\[RightAssociation]"}]}], ",", 
+   RowBox[{"PrintAs", "\[Rule]", 
+    RowBox[{"_String", "|", "Identity"}]}], ",", 
+   RowBox[{"CurvatureRelations", "\[Rule]", 
+    RowBox[{"True", "|", "False"}]}], ",", 
+   RowBox[{"ProtectNewSymbol", "\[RuleDelayed]", 
+    RowBox[{"ScreenDollarIndices", "[", 
+     RowBox[{"True", "|", "False"}], "]"}]}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellLabel->"Out[7]=",
+ CellID->1924,ExpressionUUID->"61162c03-2640-4231-8164-cf5af1e042a7"]
+}, Open  ]],
+
+Cell["The keys of $spinConnection, by class:", "Caption",
+ CellID->1925,ExpressionUUID->"6bd383b7-c8fd-4412-bd1a-7b744f415b42"],
+
+Cell[BoxData[GridBox[{
+   {Cell["key", "TableHeader",ExpressionUUID->
+     "1c547b2e-f5a8-4fc1-b381-c20e224b4043"], Cell[
+    "class", "TableHeader",ExpressionUUID->
+     "bfbef945-841c-49ed-8924-bf0c7ef4a61d"], " "},
+   {"Symbol", 
+    StyleBox["essential", "TI"], Cell["\<\
+the symbol xAct defines, with its index slots where it has any; its bare head \
+is the name the object is stored and retrieved under\
+\>", "TableText",ExpressionUUID->"04002aea-3214-4a35-aa7a-1828e4903160"]},
+   {"CovD", 
+    StyleBox["essential", "TI"], Cell["\<\
+the symbol of the associated covariant derivative: defined alongside a \
+$metric, built from for a $spinConnection\
+\>", "TableText",ExpressionUUID->"f58f564b-77f7-444c-9856-4d547e15aa65"]},
+   {"$auto", 
+    StyleBox["runtime", "TI"], Cell[TextData[{
+     "slots for the symbols xAct creates alongside the definition; each \
+carries a ",
+     Cell[BoxData["Routine"], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "074c14f5-b0d2-435a-b4aa-377de900c299"],
+     " (the ",
+     Cell[BoxData["Chain"], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "a636069e-6d35-4d57-ad5a-b145ca42dcf4"],
+     " recipe that ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["Compute"]], "paclet:VasilDimitrov/SolutionsX/ref/Compute", 
+        "VasilDimitrov Package Symbol"},
+       "PackageLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "b71ad9b8-2e55-4041-b8d7-b6ae1d9512f6"],
+     " follows) and its computed ",
+     Cell[BoxData["Value"], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "2784ab93-66e6-44eb-b838-cbd827b71e96"]
+    }], "TableText",ExpressionUUID->"4f8a8a41-ab2d-4db0-9661-6f32985b81fc"]},
+   {"PrintAs", 
+    StyleBox["option", "TI"], Cell[
+    "xAct option: the glyph the symbol typesets as", "TableText",
+     ExpressionUUID->"e1182750-d265-4991-b228-49e8715e7cc1"]},
+   {"CurvatureRelations", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: install the automatic rules relating the curvature tensors\
+\>", "TableText",ExpressionUUID->"b91071f8-b903-4fee-a837-706f527adeb7"]},
+   {"ProtectNewSymbol", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: whether the new symbol is protected after definition\
+\>", "TableText",ExpressionUUID->"52e0c230-ed2a-4c5f-82be-642be1908c5c"]}
+  }]], "DefinitionBox3Col",
+ CellID->1926,ExpressionUUID->"130dd746-2427-4ec4-91cd-8f8b91bca2f5"],
+
+Cell["$bundle", "Section",
+ CellID->1927,ExpressionUUID->"66e13904-8f15-4cba-86bf-644619e5c822"],
+
+Cell[TextData[{
+ "Records a ",
+ ButtonBox["DefVBundle",
+  BaseStyle->"Link",
+  Appearance->None,
+  Evaluator->Automatic,
+  ButtonFunction:>NotebookOpen[
+    FindFile["xAct/Documentation/English/" <> "xTensorDoc.nb"]]],
+ " or ",
+ Cell[BoxData["DefVBundleWithMetric"], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "f28a5ff3-3285-458d-a049-aa37770d672d"],
+ " call: an inner vector bundle over a manifold, optionally with a fiber \
+metric. Undefined through ",
+ ButtonBox["UndefVBundle",
+  BaseStyle->"Link",
+  Appearance->None,
+  Evaluator->Automatic,
+  ButtonFunction:>NotebookOpen[
+    FindFile["xAct/Documentation/English/" <> "xTensorDoc.nb"]]],
+ ", after first undefining every visitor."
+}], "Text",
+ CellID->1928,ExpressionUUID->"d7763594-53d7-45ba-bd0d-a837df6f8926"],
+
+Cell["\<\
+Called empty, the constructor spells out every key and the pattern its value \
+must match:\
+\>", "MathCaption",
+ CellID->1929,ExpressionUUID->"a9673473-232c-403e-a619-716f97998a1c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$bundle", "[", "]"}]], "Input",
+ CellLabel->"In[8]:=",
+ CellID->1930,ExpressionUUID->"198389ce-289b-4fe3-85b7-95b5c16fda8c"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"Symbol", "\[Rule]", "_Symbol"}], ",", 
+   RowBox[{"Manifold", "\[Rule]", "_Symbol"}], ",", 
+   RowBox[{"Dimension", "\[Rule]", 
+    RowBox[{
+     RowBox[{"_Integer", "?", "Positive"}], "|", 
+     InterpretationBox[
+      StyleBox[
+       SubscriptBox["d", "G"],
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      VasilDimitrov`SolutionsX`gaugeDim,
+      Editable->False], "|", 
+     InterpretationBox[
+      StyleBox[
+       SubscriptBox["d", "I"],
+       ShowAutoStyles->False,
+       AutoSpacing->False],
+      VasilDimitrov`SolutionsX`internalDim,
+      Editable->False]}]}], ",", 
+   RowBox[{"Index", "\[Rule]", 
+    RowBox[{"{", "__Symbol", "}"}]}], ",", 
+   RowBox[{"Metric", "\[Rule]", 
+    RowBox[{"_Symbol", "|", "None"}]}], ",", 
+   RowBox[{"InvariantTraceTensor", "\[Rule]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{"3", ",", "Antisymmetric"}], "}"}], "|", 
+     RowBox[{"{", 
+      RowBox[{"3", ",", "Symmetric"}], "}"}], "|", 
+     RowBox[{"{", 
+      RowBox[{"_Integer", "?", "Positive"}], "}"}], "|", "None"}]}], ",", 
+   RowBox[{"$auto", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{"_Symbol", "\[Rule]", 
+      RowBox[{
+       RowBox[{"\[LeftAssociation]", 
+        RowBox[{
+         RowBox[{"Routine", "\[Rule]", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"Chain", "\[Rule]", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"_", "\[Rule]", 
+                 RowBox[{"{", "___List", "}"}]}], ")"}], "..."}], "}"}]}], 
+            ",", 
+            RowBox[{"Apply", "\[Rule]", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"Map", "|", "ParallelMap"}], "\[Rule]", "_"}], ")"}],
+                "..."}], "}"}]}]}], "\[RightAssociation]"}]}], ",", 
+         RowBox[{"Value", "\[Rule]", "_"}]}], "\[RightAssociation]"}], 
+       "..."}]}], "\[RightAssociation]"}]}], ",", 
+   RowBox[{"Dagger", "\[Rule]", 
+    RowBox[{"Real", "|", "Complex"}]}], ",", 
+   RowBox[{"Master", "\[Rule]", "_Symbol"}], ",", 
+   RowBox[{"PrintAs", "\[Rule]", 
+    RowBox[{"_String", "|", "Identity"}]}], ",", 
+   RowBox[{"ProtectNewSymbol", "\[RuleDelayed]", 
+    RowBox[{"ScreenDollarIndices", "[", 
+     RowBox[{"True", "|", "False"}], "]"}]}], ",", 
+   RowBox[{"DefInfo", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"_String", ",", "_String"}], "}"}]}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellLabel->"Out[8]=",
+ CellID->1931,ExpressionUUID->"2a5b7d3d-04b1-4bb1-917d-771ffbf1227e"]
+}, Open  ]],
+
+Cell["The keys of $bundle, by class:", "Caption",
+ CellID->1932,ExpressionUUID->"0d253bfe-def5-4155-a865-e64a81bca7bf"],
+
+Cell[BoxData[GridBox[{
+   {Cell["key", "TableHeader",ExpressionUUID->
+     "4e268fa6-56f0-4d2b-a3bd-bdac577a138e"], Cell[
+    "class", "TableHeader",ExpressionUUID->
+     "5077d5a3-8319-41a2-bc79-f0eb8b480943"], " "},
+   {"Symbol", 
+    StyleBox["essential", "TI"], Cell["\<\
+the symbol xAct defines, with its index slots where it has any; its bare head \
+is the name the object is stored and retrieved under\
+\>", "TableText",ExpressionUUID->"d2b3dde8-a919-4b85-b197-46aaa70a6537"]},
+   {"Manifold", 
+    StyleBox["essential", "TI"], Cell["\<\
+the base manifold (or list of manifolds) the object lives on; the Def \
+command's manifold argument\
+\>", "TableText",ExpressionUUID->"6a700597-cf10-4d40-b90a-2f22f1024dbb"]},
+   {"Dimension", 
+    StyleBox["essential", "TI"], Cell[
+    "the dimension, a positive integer", "TableText",ExpressionUUID->
+     "4e8a12c2-9e12-45a1-a779-58bbce797feb"]},
+   {"Index", 
+    StyleBox["essential", "TI"], Cell[
+    "the abstract indices to register, as a list of symbols", "TableText",
+     ExpressionUUID->"6f1fa80d-4fe0-4819-9887-cb1be8bdc55b"]},
+   {"Metric", 
+    StyleBox["essential", "TI"], Cell["\<\
+the metric the construction builds on: the frame's flat metric, the spin \
+structure's base metric, or the bundle's fiber metric\
+\>", "TableText",ExpressionUUID->"9d46d53c-a3bb-4e0e-b013-4181997abcb2"]},
+   {"InvariantTraceTensor", 
+    StyleBox["runtime", "TI"], Cell["\<\
+the inner bundle's invariant trace tensor (FieldsX), recorded when computed\
+\>", "TableText",ExpressionUUID->"732275a2-db96-47bd-9e08-c690289d2132"]},
+   {"$auto", 
+    StyleBox["runtime", "TI"], Cell[TextData[{
+     "slots for the symbols xAct creates alongside the definition; each \
+carries a ",
+     Cell[BoxData["Routine"], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "2964f695-cbac-4fd4-b9c0-1279a15ee85b"],
+     " (the ",
+     Cell[BoxData["Chain"], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "dbcb2b6a-e223-4148-a215-ddf6d8c0018b"],
+     " recipe that ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["Compute"]], "paclet:VasilDimitrov/SolutionsX/ref/Compute", 
+        "VasilDimitrov Package Symbol"},
+       "PackageLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "4323e66d-cb9e-4d98-bd7d-82d6748378b4"],
+     " follows) and its computed ",
+     Cell[BoxData["Value"], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "ed4f197e-0106-4e75-bade-31e1525a7580"]
+    }], "TableText",ExpressionUUID->"c6afe939-5d32-43a2-9877-0a1cefff2efb"]},
+   {"Dagger", 
+    StyleBox["option", "TI"], Cell[TextData[{
+     "xAct option: ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["Real"]], "paclet:ref/Real"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "87e38b01-4e18-4ebb-bd36-8ed1f2546fdc"],
+     " or ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["Complex"]], "paclet:ref/Complex"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "78f32653-86ff-4c06-8cbc-8aa812fc5b8f"],
+     " behaviour under complex conjugation"
+    }], "TableText",ExpressionUUID->"d44a78b9-09f7-4642-9e04-6459a032b7a4"]},
+   {"Master", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: the master symbol the definition is tied to; undefining the \
+master removes this object too\
+\>", "TableText",ExpressionUUID->"c6539a63-abc9-4177-b1c8-31a80fc2330f"]},
+   {"PrintAs", 
+    StyleBox["option", "TI"], Cell[
+    "xAct option: the glyph the symbol typesets as", "TableText",
+     ExpressionUUID->"ff677c56-cf93-4487-9c4d-98a8c8bdce2f"]},
+   {"ProtectNewSymbol", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: whether the new symbol is protected after definition\
+\>", "TableText",ExpressionUUID->"14dd613e-350b-4696-9591-bff043babf01"]},
+   {"DefInfo", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: the informational message printed at definition time\
+\>", "TableText",ExpressionUUID->"6d6d9517-b8d5-40ae-a214-da3c25ac5e19"]}
+  }]], "DefinitionBox3Col",
+ CellID->1933,ExpressionUUID->"23930a59-41f9-4b60-94f5-126b52eabc76"],
+
+Cell["$covd", "Section",
+ CellID->1934,ExpressionUUID->"c1d9c5d8-eab2-496e-86f7-3a40fec8f346"],
+
+Cell[TextData[{
+ "Records a ",
+ ButtonBox["DefCovD",
+  BaseStyle->"Link",
+  Appearance->None,
+  Evaluator->Automatic,
+  ButtonFunction:>NotebookOpen[
+    FindFile["xAct/Documentation/English/" <> "xTensorDoc.nb"]]],
+ " call: an extra covariant derivative on a vector bundle. Undefined through ",
+ ButtonBox["UndefCovD",
+  BaseStyle->"Link",
+  Appearance->None,
+  Evaluator->Automatic,
+  ButtonFunction:>NotebookOpen[
+    FindFile["xAct/Documentation/English/" <> "xTensorDoc.nb"]]],
+ "."
+}], "Text",
+ CellID->1935,ExpressionUUID->"df6f40ec-4cd2-41b9-b408-29c846049b92"],
+
+Cell["\<\
+Called empty, the constructor spells out every key and the pattern its value \
+must match:\
+\>", "MathCaption",
+ CellID->1936,ExpressionUUID->"ae7dd45f-abfd-4feb-a019-cd49e207d3c8"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$covd", "[", "]"}]], "Input",
+ CellLabel->"In[9]:=",
+ CellID->1937,ExpressionUUID->"d8834a2a-9014-46f7-b51c-bccdfd2decdf"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"Symbol", "\[Rule]", 
+    RowBox[{"_Symbol", "[", 
+     RowBox[{"_Symbol", "|", 
+      RowBox[{"-", "_Symbol"}]}], "]"}]}], ",", 
+   RowBox[{"VBundle", "\[Rule]", 
+    RowBox[{"{", "___Symbol", "}"}]}], ",", 
+   RowBox[{"SymbolOfCovD", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"_String", ",", "_String"}], "}"}]}], ",", 
+   RowBox[{"$auto", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{"_Symbol", "\[Rule]", 
+      RowBox[{
+       RowBox[{"\[LeftAssociation]", 
+        RowBox[{
+         RowBox[{"Routine", "\[Rule]", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"Chain", "\[Rule]", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"_", "\[Rule]", 
+                 RowBox[{"{", "___List", "}"}]}], ")"}], "..."}], "}"}]}], 
+            ",", 
+            RowBox[{"Apply", "\[Rule]", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"Map", "|", "ParallelMap"}], "\[Rule]", "_"}], ")"}],
+                "..."}], "}"}]}]}], "\[RightAssociation]"}]}], ",", 
+         RowBox[{"Value", "\[Rule]", "_"}]}], "\[RightAssociation]"}], 
+       "..."}]}], "\[RightAssociation]"}]}], ",", 
+   RowBox[{"Torsion", "\[Rule]", 
+    RowBox[{"True", "|", "False"}]}], ",", 
+   RowBox[{"Curvature", "\[Rule]", 
+    RowBox[{"True", "|", "False"}]}], ",", 
+   RowBox[{"FromMetric", "\[Rule]", "_Symbol"}], ",", 
+   RowBox[{"CurvatureRelations", "\[Rule]", 
+    RowBox[{"True", "|", "False"}]}], ",", 
+   RowBox[{"ExtendedFrom", "\[Rule]", "_Symbol"}], ",", 
+   RowBox[{"OtherDependencies", "\[Rule]", 
+    RowBox[{"{", "___Symbol", "}"}]}], ",", 
+   RowBox[{"OrthogonalTo", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"_Symbol", "[", 
+       RowBox[{"_Symbol", "|", 
+        RowBox[{"-", "_Symbol"}]}], "]"}], "..."}], "}"}]}], ",", 
+   RowBox[{"ProjectedWith", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"_Symbol", "[", 
+       RowBox[{
+        RowBox[{"_Symbol", "|", 
+         RowBox[{"-", "_Symbol"}]}], ",", 
+        RowBox[{"_Symbol", "|", 
+         RowBox[{"-", "_Symbol"}]}]}], "]"}], "..."}], "}"}]}], ",", 
+   RowBox[{"WeightedWithBasis", "\[Rule]", 
+    RowBox[{"_Symbol", "|", "Null"}]}], ",", 
+   RowBox[{"ProtectNewSymbol", "\[RuleDelayed]", 
+    RowBox[{"ScreenDollarIndices", "[", 
+     RowBox[{"True", "|", "False"}], "]"}]}], ",", 
+   RowBox[{"Master", "\[Rule]", "_Symbol"}], ",", 
+   RowBox[{"DefInfo", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"_String", ",", "_String"}], "}"}]}], ",", 
+   RowBox[{"SymCovDQ", "\[Rule]", 
+    RowBox[{"True", "|", "False"}]}]}], "\[RightAssociation]"}]], "Output",
+ CellLabel->"Out[9]=",
+ CellID->1938,ExpressionUUID->"c46f541d-aa00-49d9-85ac-0c6ef9d43bad"]
+}, Open  ]],
+
+Cell["The keys of $covd, by class:", "Caption",
+ CellID->1939,ExpressionUUID->"4ac871b6-c79f-44f3-af4d-5e09ef1f2c54"],
+
+Cell[BoxData[GridBox[{
+   {Cell["key", "TableHeader",ExpressionUUID->
+     "764a3212-f091-454a-b7b1-661c5c5f62a9"], Cell[
+    "class", "TableHeader",ExpressionUUID->
+     "97eaa6c8-3c9a-4192-9ceb-8f64e26608f3"], " "},
+   {"Symbol", 
+    StyleBox["essential", "TI"], Cell["\<\
+the symbol xAct defines, with its index slots where it has any; its bare head \
+is the name the object is stored and retrieved under\
+\>", "TableText",ExpressionUUID->"42305091-ca9c-4da5-be8d-a03d5d5fda21"]},
+   {"VBundle", 
+    StyleBox["essential", "TI"], Cell["\<\
+the vector bundle the derivative or basis acts on; the Def command's bundle \
+argument\
+\>", "TableText",ExpressionUUID->"e0ea33db-ac8d-47da-9861-13aa5ed4737a"]},
+   {"SymbolOfCovD", 
+    StyleBox["essential", "TI"], Cell["\<\
+the pair of display strings for the covariant derivative, like {\";\", \"\
+\[Del]\"}\
+\>", "TableText",ExpressionUUID->"576ce461-6640-48b7-bd11-72f6d1d6a256"]},
+   {"$auto", 
+    StyleBox["runtime", "TI"], Cell[TextData[{
+     "slots for the symbols xAct creates alongside the definition; each \
+carries a ",
+     Cell[BoxData["Routine"], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "2ebd9315-be74-40c0-959c-7c3c95f08832"],
+     " (the ",
+     Cell[BoxData["Chain"], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "ea6ec25e-cc58-438b-b5c5-25a8c8a59aca"],
+     " recipe that ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["Compute"]], "paclet:VasilDimitrov/SolutionsX/ref/Compute", 
+        "VasilDimitrov Package Symbol"},
+       "PackageLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "0705f2ff-a8ad-4dd0-be19-90c2f9e0dc42"],
+     " follows) and its computed ",
+     Cell[BoxData["Value"], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "34e0affb-18af-4a37-a911-3ec1de502265"]
+    }], "TableText",ExpressionUUID->"7c687f60-4284-492c-9fa4-05e9210d118a"]},
+   {"Torsion", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: whether the covariant derivative carries torsion\
+\>", "TableText",ExpressionUUID->"e3200337-24f7-440d-9409-89234c71320d"]},
+   {"Curvature", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: whether, and on which bundles, the derivative has curvature\
+\>", "TableText",ExpressionUUID->"0a0e0d78-4c3e-48be-bf85-2f3b6c63ae3e"]},
+   {"FromMetric", 
+    StyleBox["option", "TI"], Cell[
+    "xAct option: the metric the derivative descends from", "TableText",
+     ExpressionUUID->"00e52e19-1967-4329-8063-21d4017d7223"]},
+   {"CurvatureRelations", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: install the automatic rules relating the curvature tensors\
+\>", "TableText",ExpressionUUID->"1dc83047-02b0-4b69-ba0e-6c0c1186a755"]},
+   {"ExtendedFrom", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: share the curvature and torsion tensors with an existing \
+derivative\
+\>", "TableText",ExpressionUUID->"424c6360-c91d-4987-bb78-eb1c7ddb52cd"]},
+   {"OtherDependencies", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: extra manifolds and parameters everything defined here depends on\
+\>", "TableText",ExpressionUUID->"8af4201a-59d9-4da2-9a67-5c72b45fb70a"]},
+   {"OrthogonalTo", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: vectors the defined tensor is orthogonal to, one per index\
+\>", "TableText",ExpressionUUID->"eb898310-44d0-4f57-ba4b-3bf35bae3d8c"]},
+   {"ProjectedWith", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: projectors that map the defined tensor into itself, one per index\
+\>", "TableText",ExpressionUUID->"ae983709-5697-4cf7-9412-641f2c31f601"]},
+   {"WeightedWithBasis", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: extend the Levi-Civita connection to densities of the given basis\
+\>", "TableText",ExpressionUUID->"0e74e1d8-4425-498c-8c76-d022d3b2cd61"]},
+   {"ProtectNewSymbol", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: whether the new symbol is protected after definition\
+\>", "TableText",ExpressionUUID->"ec19c26b-c6ad-4be3-bfd0-f3d999bba0d4"]},
+   {"Master", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: the master symbol the definition is tied to; undefining the \
+master removes this object too\
+\>", "TableText",ExpressionUUID->"34f00cb0-dd85-4e39-aea2-3547ab06f796"]},
+   {"DefInfo", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: the informational message printed at definition time\
+\>", "TableText",ExpressionUUID->"e9030630-8609-4e27-a684-395fb571d9f9"]},
+   {"SymCovDQ", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option (xTras): register the derivative as symmetrizable\
+\>", "TableText",ExpressionUUID->"ffa28af9-1634-4c8f-b3aa-c13dd844f526"]}
+  }]], "DefinitionBox3Col",
+ CellID->1940,ExpressionUUID->"cd1dbcd9-14af-4edc-bbd8-2027feff185a"],
+
+Cell["$chart", "Section",
+ CellID->1941,ExpressionUUID->"a9340c1c-4fa2-43cb-b473-b2ec6ff82886"],
+
+Cell[TextData[{
+ "Records a ",
+ ButtonBox["DefChart",
+  BaseStyle->"Link",
+  Appearance->None,
+  Evaluator->Automatic,
+  ButtonFunction:>NotebookOpen[
+    FindFile["xAct/Documentation/English/" <> "xCobaDoc.nb"]]],
+ " call (xCoba): coordinates on a manifold \[LongDash] the chart symbol, its \
+coordinate numbers, and its coordinate scalars. Undefined through ",
+ ButtonBox["UndefChart",
+  BaseStyle->"Link",
+  Appearance->None,
+  Evaluator->Automatic,
+  ButtonFunction:>NotebookOpen[
+    FindFile["xAct/Documentation/English/" <> "xCobaDoc.nb"]]],
+ "."
+}], "Text",
+ CellID->1942,ExpressionUUID->"4c5543be-3634-4b07-a70e-12bc095fa508"],
+
+Cell["\<\
+Called empty, the constructor spells out every key and the pattern its value \
+must match:\
+\>", "MathCaption",
+ CellID->1943,ExpressionUUID->"4822ac3f-8278-45f7-a315-4f9c559b8349"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$chart", "[", "]"}]], "Input",
+ CellLabel->"In[10]:=",
+ CellID->1944,ExpressionUUID->"b18b704d-60b3-4f4d-96b7-051d9ad1bbf3"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"Symbol", "\[Rule]", "_Symbol"}], ",", 
+   RowBox[{"Manifold", "\[Rule]", "_Symbol"}], ",", 
+   RowBox[{"CNumbersOf", "\[Rule]", 
+    RowBox[{"{", "__Integer", "}"}]}], ",", 
+   RowBox[{"ScalarsOfChart", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"_Symbol", "[", "]"}], ".."}], "}"}]}], ",", 
+   RowBox[{"Name", "\[Rule]", 
+    RowBox[{"_String", "|", "chart"}]}], ",", 
+   RowBox[{"ChartColor", "\[Rule]", "_RGBColor"}], ",", 
+   RowBox[{"FormatBasis", "\[Rule]", "Automatic"}], ",", 
+   RowBox[{"ProtectNewSymbol", "\[RuleDelayed]", 
+    RowBox[{"ScreenDollarIndices", "[", 
+     RowBox[{"True", "|", "False"}], "]"}]}], ",", 
+   RowBox[{"Dagger", "\[Rule]", 
+    RowBox[{"Real", "|", "Complex"}]}], ",", 
+   RowBox[{"MetricInBasis", "\[Rule]", 
+    RowBox[{"{", "}"}]}], ",", 
+   RowBox[{"epsilonOrientationOfMetric", "\[RuleDelayed]", 
+    RowBox[{"ScreenDollarIndices", "[", 
+     RowBox[{"{", 
+      RowBox[{"_Symbol", ",", 
+       RowBox[{"1", "|", 
+        RowBox[{"-", "1"}]}]}], "}"}], "]"}]}], ",", 
+   RowBox[{"ExtendedCoordinateDerivatives", "\[Rule]", 
+    RowBox[{"True", "|", "False"}]}], ",", 
+   RowBox[{"DefInfo", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"_String", ",", "_String"}], "}"}]}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellLabel->"Out[10]=",
+ CellID->1945,ExpressionUUID->"7fb2947b-7c11-4551-865e-cd334953918d"]
+}, Open  ]],
+
+Cell["The keys of $chart, by class:", "Caption",
+ CellID->1946,ExpressionUUID->"e6dbbb61-3a95-4803-aea1-a83e26f9f5d7"],
+
+Cell[BoxData[GridBox[{
+   {Cell["key", "TableHeader",ExpressionUUID->
+     "a10173f9-9481-4c9f-b47e-e2da0cac2e95"], Cell[
+    "class", "TableHeader",ExpressionUUID->
+     "277274f4-c090-4688-8ae6-15d8a6711245"], " "},
+   {"Symbol", 
+    StyleBox["essential", "TI"], Cell["\<\
+the symbol xAct defines, with its index slots where it has any; its bare head \
+is the name the object is stored and retrieved under\
+\>", "TableText",ExpressionUUID->"31cd5019-3ce9-407a-98f4-25b6ec39bcb5"]},
+   {"Manifold", 
+    StyleBox["essential", "TI"], Cell["\<\
+the base manifold (or list of manifolds) the object lives on; the Def \
+command's manifold argument\
+\>", "TableText",ExpressionUUID->"8df70888-941a-40ff-86cb-5447e5a03d3f"]},
+   {"CNumbersOf", 
+    StyleBox["essential", "TI"], Cell["\<\
+the coordinate numbers of the chart or basis, as a list of integers\
+\>", "TableText",ExpressionUUID->"9962d70c-085c-483a-ad34-8f492987b16a"]},
+   {"ScalarsOfChart", 
+    StyleBox["essential", "TI"], Cell["\<\
+the coordinate scalar fields of the chart, in coordinate-number order\
+\>", "TableText",ExpressionUUID->"8d76bc56-4a1b-483c-a7b8-972850569cb7"]},
+   {"Name", 
+    StyleBox["runtime", "TI"], Cell[TextData[{
+     "a string; ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["SaveData"]], 
+        "paclet:VasilDimitrov/SolutionsX/ref/SaveData", 
+        "VasilDimitrov Package Symbol"},
+       "PackageLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "560dae37-baa5-4d19-8e8f-6f97c7501a9f"],
+     " builds the entry name from the first manifold's Name and Dimension, \
+the first metric's Signature and the first chart's Name"
+    }], "TableText",ExpressionUUID->"b0e99acd-996f-4be7-b9cf-50b0c1db9159"]},
+   {"ChartColor", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: the display colour of the chart's indices and objects\
+\>", "TableText",ExpressionUUID->"9e51c622-606c-4d91-a07f-5451e913c04a"]},
+   {"FormatBasis", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: display formats for the basis vectors and covectors\
+\>", "TableText",ExpressionUUID->"5da34ce3-9328-4e99-b7c2-9637ea35662c"]},
+   {"ProtectNewSymbol", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: whether the new symbol is protected after definition\
+\>", "TableText",ExpressionUUID->"8e35eee2-ca93-45cf-9f9b-445a0f9ea772"]},
+   {"Dagger", 
+    StyleBox["option", "TI"], Cell[TextData[{
+     "xAct option: ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["Real"]], "paclet:ref/Real"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "db07d154-f90a-45a6-b6bb-48521558ea8a"],
+     " or ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["Complex"]], "paclet:ref/Complex"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "4d29e4c0-a26d-41d4-b314-88126cd7f640"],
+     " behaviour under complex conjugation"
+    }], "TableText",ExpressionUUID->"c551c0da-c23a-49b2-a84c-a56ad487b476"]},
+   {"MetricInBasis", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: component values of a metric in this chart or basis, given at \
+definition time\
+\>", "TableText",ExpressionUUID->"07f098e2-c09c-4891-838f-2f987d04a921"]},
+   {"epsilonOrientationOfMetric", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: {metric, sign} fixing the orientation factor between the \
+metric's epsilon and the basis' eta tensors\
+\>", "TableText",ExpressionUUID->"e81f49de-2163-42aa-a37c-c7b7518c2ca2"]},
+   {"ExtendedCoordinateDerivatives", 
+    StyleBox["option", "TI"], Cell[TextData[{
+     "xAct option: convert covariant derivatives of the coordinate scalars \
+into ",
+     ButtonBox["Basis",
+      BaseStyle->"Link",
+      Appearance->None,
+      Evaluator->Automatic,
+      ButtonFunction:>NotebookOpen[
+        FindFile["xAct/Documentation/English/" <> "xTensorDoc.nb"]]],
+     " objects automatically"
+    }], "TableText",ExpressionUUID->"5a51368d-f373-46ef-a04c-0418c7c2cb10"]},
+   {"DefInfo", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: the informational message printed at definition time\
+\>", "TableText",ExpressionUUID->"72b0c42c-a05e-46e3-b1bf-78ce3ae237a7"]}
+  }]], "DefinitionBox3Col",
+ CellID->1947,ExpressionUUID->"7ffb283b-7903-4d4d-acdb-2a5b16b897ae"],
+
+Cell["$basis", "Section",
+ CellID->1948,ExpressionUUID->"4d7487bd-7010-4c48-ad38-0bfbe54cf111"],
+
+Cell[TextData[{
+ "Records a ",
+ ButtonBox["DefBasis",
+  BaseStyle->"Link",
+  Appearance->None,
+  Evaluator->Automatic,
+  ButtonFunction:>NotebookOpen[
+    FindFile["xAct/Documentation/English/" <> "xCobaDoc.nb"]]],
+ " call (xCoba): a frame of basis vectors on a vector bundle. Undefined \
+through ",
+ ButtonBox["UndefBasis",
+  BaseStyle->"Link",
+  Appearance->None,
+  Evaluator->Automatic,
+  ButtonFunction:>NotebookOpen[
+    FindFile["xAct/Documentation/English/" <> "xCobaDoc.nb"]]],
+ "."
+}], "Text",
+ CellID->1949,ExpressionUUID->"4c13e666-a877-4c05-aa70-49750be65771"],
+
+Cell["\<\
+Called empty, the constructor spells out every key and the pattern its value \
+must match:\
+\>", "MathCaption",
+ CellID->1950,ExpressionUUID->"20e5a81c-a1b3-448f-b316-0208d15f87ef"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$basis", "[", "]"}]], "Input",
+ CellLabel->"In[11]:=",
+ CellID->1951,ExpressionUUID->"5fb40353-770a-4413-80be-3441cbc90621"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"Symbol", "\[Rule]", "_Symbol"}], ",", 
+   RowBox[{"VBundle", "\[Rule]", "_Symbol"}], ",", 
+   RowBox[{"CNumbersOf", "\[Rule]", 
+    RowBox[{"{", "__Integer", "}"}]}], ",", 
+   RowBox[{"BasisColor", "\[Rule]", "_RGBColor"}], ",", 
+   RowBox[{"FormatBasis", "\[Rule]", "Automatic"}], ",", 
+   RowBox[{"ProtectNewSymbol", "\[RuleDelayed]", 
+    RowBox[{"ScreenDollarIndices", "[", 
+     RowBox[{"True", "|", "False"}], "]"}]}], ",", 
+   RowBox[{"Dagger", "\[Rule]", 
+    RowBox[{"Real", "|", "Complex"}]}], ",", 
+   RowBox[{"ExtendedFrom", "\[Rule]", "Null"}], ",", 
+   RowBox[{"MetricInBasis", "\[Rule]", 
+    RowBox[{"{", "}"}]}], ",", 
+   RowBox[{"BasisChange", "\[Rule]", "Null"}], ",", 
+   RowBox[{"epsilonOrientationOfMetric", "\[RuleDelayed]", 
+    RowBox[{"ScreenDollarIndices", "[", 
+     RowBox[{"{", 
+      RowBox[{"_Symbol", ",", 
+       RowBox[{"1", "|", 
+        RowBox[{"-", "1"}]}]}], "}"}], "]"}]}], ",", 
+   RowBox[{"DependenciesOfBasis", "\[Rule]", 
+    RowBox[{"{", "___Symbol", "}"}]}], ",", 
+   RowBox[{"DefInfo", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"_String", ",", "_String"}], "}"}]}], ",", 
+   RowBox[{"Master", "\[Rule]", "_Symbol"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellLabel->"Out[11]=",
+ CellID->1952,ExpressionUUID->"403e0ff7-0bb5-45e7-a591-c28a95865ed9"]
+}, Open  ]],
+
+Cell["The keys of $basis, by class:", "Caption",
+ CellID->1953,ExpressionUUID->"fc893e0b-a854-47fa-8c80-abc0f1e1da0c"],
+
+Cell[BoxData[GridBox[{
+   {Cell["key", "TableHeader",ExpressionUUID->
+     "aa338954-cf77-4453-8652-6f60fd37ed93"], Cell[
+    "class", "TableHeader",ExpressionUUID->
+     "b00621db-9b83-46ef-ab58-29ff6a0607bc"], " "},
+   {"Symbol", 
+    StyleBox["essential", "TI"], Cell["\<\
+the symbol xAct defines, with its index slots where it has any; its bare head \
+is the name the object is stored and retrieved under\
+\>", "TableText",ExpressionUUID->"c3432058-f66f-4dd7-94cc-743af1bc912f"]},
+   {"VBundle", 
+    StyleBox["essential", "TI"], Cell["\<\
+the vector bundle the derivative or basis acts on; the Def command's bundle \
+argument\
+\>", "TableText",ExpressionUUID->"0f62c037-6594-4cbe-9a9f-ef7e1087257a"]},
+   {"CNumbersOf", 
+    StyleBox["essential", "TI"], Cell["\<\
+the coordinate numbers of the chart or basis, as a list of integers\
+\>", "TableText",ExpressionUUID->"496e213f-1581-4f18-ba08-b3275ec005c2"]},
+   {"BasisColor", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: the display colour of the basis' indices and objects\
+\>", "TableText",ExpressionUUID->"781f00e3-c45e-4cca-82c5-7ab94a661ffa"]},
+   {"FormatBasis", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: display formats for the basis vectors and covectors\
+\>", "TableText",ExpressionUUID->"689417c9-b795-4a54-8575-7c016baca749"]},
+   {"ProtectNewSymbol", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: whether the new symbol is protected after definition\
+\>", "TableText",ExpressionUUID->"85015b54-7244-4b0d-bf08-9d11b7c76fe4"]},
+   {"Dagger", 
+    StyleBox["option", "TI"], Cell[TextData[{
+     "xAct option: ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["Real"]], "paclet:ref/Real"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "f72fc710-5376-4dad-a419-80ba71940d80"],
+     " or ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["Complex"]], "paclet:ref/Complex"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "bb1a4ff8-a850-4829-a605-e454a63ac028"],
+     " behaviour under complex conjugation"
+    }], "TableText",ExpressionUUID->"75c2b4f4-0912-44b0-9236-b70603eeae96"]},
+   {"ExtendedFrom", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: share the curvature and torsion tensors with an existing \
+derivative\
+\>", "TableText",ExpressionUUID->"67e6eced-d567-4024-b562-b3694795fd62"]},
+   {"MetricInBasis", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: component values of a metric in this chart or basis, given at \
+definition time\
+\>", "TableText",ExpressionUUID->"5f26839b-3fcc-4860-b413-36f0516fd317"]},
+   {"BasisChange", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: the change-of-basis tensor from a previously defined basis\
+\>", "TableText",ExpressionUUID->"6de0ca06-7c96-4733-adf2-9f6822d2af51"]},
+   {"epsilonOrientationOfMetric", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: {metric, sign} fixing the orientation factor between the \
+metric's epsilon and the basis' eta tensors\
+\>", "TableText",ExpressionUUID->"348c7e70-b206-488f-8b0c-5c9817bcd218"]},
+   {"DependenciesOfBasis", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: the manifolds and parameters the basis depends on\
+\>", "TableText",ExpressionUUID->"9493cac2-f678-4af4-803e-d978dfa06fad"]},
+   {"DefInfo", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: the informational message printed at definition time\
+\>", "TableText",ExpressionUUID->"23371c78-20bf-43ac-90ff-d04bb6f196aa"]},
+   {"Master", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: the master symbol the definition is tied to; undefining the \
+master removes this object too\
+\>", "TableText",ExpressionUUID->"b74468eb-1a2d-4d98-bf5e-8ab08852c904"]}
+  }]], "DefinitionBox3Col",
+ CellID->1954,ExpressionUUID->"04862bc6-699d-4314-8d10-81aa06d63cac"],
+
+Cell["$form", "Section",
+ CellID->1955,ExpressionUUID->"b0dc7603-ef92-486e-87ed-2f65d793d285"],
+
+Cell[TextData[{
+ "Records a ",
+ ButtonBox["DefDiffForm",
+  BaseStyle->"Link",
+  Appearance->None,
+  Evaluator->Automatic,
+  ButtonFunction:>NotebookOpen[
+    FindFile["xAct/Documentation/English/" <> "xTeriorDoc.nb"]]],
+ " call (xTerior): a differential form of fixed degree, tensor-valued when \
+its ",
+ Cell[BoxData["Symbol"], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "abedfd23-38af-4a3f-a2a0-07a584262a54"],
+ " carries bundle indices. Undefined through ",
+ ButtonBox["UndefTensor",
+  BaseStyle->"Link",
+  Appearance->None,
+  Evaluator->Automatic,
+  ButtonFunction:>NotebookOpen[
+    FindFile["xAct/Documentation/English/" <> "xTensorDoc.nb"]]],
+ "."
+}], "Text",
+ CellID->1956,ExpressionUUID->"6be9a300-caf4-49a2-a313-0deeda40c9fc"],
+
+Cell["\<\
+Called empty, the constructor spells out every key and the pattern its value \
+must match:\
+\>", "MathCaption",
+ CellID->1957,ExpressionUUID->"e713024e-efd4-4a61-80c8-48709477c53b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$form", "[", "]"}]], "Input",
+ CellLabel->"In[12]:=",
+ CellID->1958,ExpressionUUID->"c72d318c-09b1-4eed-91eb-b3d063a72f8c"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"Symbol", "\[Rule]", 
+    RowBox[{"_Symbol", "[", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"_Symbol", "|", 
+        RowBox[{"-", "_Symbol"}]}], ")"}], "..."}], "]"}]}], ",", 
+   RowBox[{"Manifold", "\[Rule]", 
+    RowBox[{
+     RowBox[{"{", "__Symbol", "}"}], "|", "_Symbol"}]}], ",", 
+   RowBox[{"Deg", "\[Rule]", 
+    RowBox[{"_Integer", "?", "Positive"}]}], ",", 
+   RowBox[{"Symmetry", "\[Rule]", 
+    RowBox[{
+     RowBox[{"Symmetric", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"__Symbol", ",", "__"}], "}"}], "|", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "__Symbol"}], ",", "__"}], "}"}]}], "]"}], "|", 
+     RowBox[{"Antisymmetric", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"__Symbol", ",", "__"}], "}"}], "|", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "__Symbol"}], ",", "__"}], "}"}]}], "]"}], "|", 
+     RowBox[{"GenSet", "[", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox[
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"__Integer", "?", "Positive"}], "|", "__Symbol"}], ",", 
+            "__", ")"}],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          xAct`xPerm`Cycles[{
+            Alternatives[
+             PatternTest[
+              BlankSequence[Integer], Positive], 
+             BlankSequence[Symbol]], 
+            BlankSequence[]}],
+          Editable->False], "|", 
+         InterpretationBox[
+          StyleBox[
+           RowBox[{"-", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"__Integer", "?", "Positive"}], "|", "__Symbol"}], ",", 
+             "__", ")"}]}],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          -xAct`xPerm`Cycles[{
+             Alternatives[
+              PatternTest[
+               BlankSequence[Integer], Positive], 
+              BlankSequence[Symbol]], 
+             BlankSequence[]}],
+          Editable->False]}], ")"}], "..."}], "]"}], "|", "None"}]}], ",", 
+   RowBox[{"Expression", "\[Rule]", "_"}], ",", 
+   RowBox[{"$auto", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{"_Symbol", "\[Rule]", 
+      RowBox[{
+       RowBox[{"\[LeftAssociation]", 
+        RowBox[{
+         RowBox[{"Routine", "\[Rule]", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"Chain", "\[Rule]", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"_", "\[Rule]", 
+                 RowBox[{"{", "___List", "}"}]}], ")"}], "..."}], "}"}]}], 
+            ",", 
+            RowBox[{"Apply", "\[Rule]", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"Map", "|", "ParallelMap"}], "\[Rule]", "_"}], ")"}],
+                "..."}], "}"}]}]}], "\[RightAssociation]"}]}], ",", 
+         RowBox[{"Value", "\[Rule]", "_"}]}], "\[RightAssociation]"}], 
+       "..."}]}], "\[RightAssociation]"}]}], ",", 
+   RowBox[{"Dagger", "\[Rule]", 
+    RowBox[{"Real", "|", "Complex"}]}], ",", 
+   RowBox[{"Master", "\[Rule]", "_Symbol"}], ",", 
+   RowBox[{"PrintAs", "\[Rule]", 
+    RowBox[{"_String", "|", "Identity"}]}], ",", 
+   RowBox[{"VanishingQ", "\[Rule]", 
+    RowBox[{"True", "|", "False"}]}], ",", 
+   RowBox[{"ForceSymmetries", "\[Rule]", 
+    RowBox[{"True", "|", "False"}]}], ",", 
+   RowBox[{"WeightOfTensor", "\[Rule]", 
+    RowBox[{
+     RowBox[{"_Integer", " ", "_Symbol"}], "|", "0"}]}], ",", 
+   RowBox[{"GradeOfTensor", "\[Rule]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"_Symbol", "\[Rule]", 
+         RowBox[{"_Integer", "?", "Positive"}]}], ")"}], ".."}], "}"}], "|", 
+     "0"}]}], ",", 
+   RowBox[{"FrobeniusQ", "\[Rule]", 
+    RowBox[{"True", "|", "False"}]}], ",", 
+   RowBox[{"OrthogonalTo", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"_Symbol", "[", 
+       RowBox[{"_Symbol", "|", 
+        RowBox[{"-", "_Symbol"}]}], "]"}], "..."}], "}"}]}], ",", 
+   RowBox[{"ProjectedWith", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"_Symbol", "[", 
+       RowBox[{
+        RowBox[{"_Symbol", "|", 
+         RowBox[{"-", "_Symbol"}]}], ",", 
+        RowBox[{"_Symbol", "|", 
+         RowBox[{"-", "_Symbol"}]}]}], "]"}], "..."}], "}"}]}], ",", 
+   RowBox[{"ProtectNewSymbol", "\[RuleDelayed]", 
+    RowBox[{"ScreenDollarIndices", "[", 
+     RowBox[{"True", "|", "False"}], "]"}]}], ",", 
+   RowBox[{"DefInfo", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"_String", ",", "_String"}], "}"}]}], ",", 
+   RowBox[{"TensorID", "\[Rule]", "_"}], ",", 
+   RowBox[{"KillingVectorOf", "\[Rule]", "_Symbol"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellLabel->"Out[12]=",
+ CellID->1959,ExpressionUUID->"211d5822-83ed-479d-b77f-8be4280df859"]
+}, Open  ]],
+
+Cell["The keys of $form, by class:", "Caption",
+ CellID->1960,ExpressionUUID->"74673406-6549-49de-b950-2d62ebedbd60"],
+
+Cell[BoxData[GridBox[{
+   {Cell["key", "TableHeader",ExpressionUUID->
+     "ca3afa8e-d417-46b6-b5e1-118acac1a801"], Cell[
+    "class", "TableHeader",ExpressionUUID->
+     "fab2bcc0-8fca-4efa-8ca7-ae0e5cf10bc3"], " "},
+   {"Symbol", 
+    StyleBox["essential", "TI"], Cell["\<\
+the symbol xAct defines, with its index slots where it has any; its bare head \
+is the name the object is stored and retrieved under\
+\>", "TableText",ExpressionUUID->"49ebd495-e003-4622-94b7-232926ec141f"]},
+   {"Manifold", 
+    StyleBox["essential", "TI"], Cell["\<\
+the base manifold (or list of manifolds) the object lives on; the Def \
+command's manifold argument\
+\>", "TableText",ExpressionUUID->"dda4e754-5225-406b-b4a4-8499510f9c0f"]},
+   {"Deg", 
+    StyleBox["essential", "TI"], Cell[TextData[{
+     "the degree of the form; ",
+     ButtonBox["DefDiffForm",
+      BaseStyle->"Link",
+      Appearance->None,
+      Evaluator->Automatic,
+      ButtonFunction:>NotebookOpen[
+        FindFile["xAct/Documentation/English/" <> "xTeriorDoc.nb"]]],
+     "'s degree argument"
+    }], "TableText",ExpressionUUID->"212ea0a6-6632-4806-8c4c-5b888b2c1f5a"]},
+   {"Symmetry", 
+    StyleBox["essential", "TI"], Cell[TextData[{
+     "the index symmetry \[LongDash] ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["Symmetric"]], "paclet:ref/Symmetric"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "27a0e00c-2e57-4e19-ae3f-e08e8c2394b9"],
+     ", ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["Antisymmetric"]], "paclet:ref/Antisymmetric"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "1a684575-c433-4626-be8f-f118f49c7b64"],
+     ", a ",
+     ButtonBox["GenSet",
+      BaseStyle->"Link",
+      Appearance->None,
+      Evaluator->Automatic,
+      ButtonFunction:>NotebookOpen[
+        FindFile["xAct/Documentation/English/" <> "xPermDoc.nb"]]],
+     ", or ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["None"]], "paclet:ref/None"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "c2662f78-df67-48ae-b933-ed852fa5b361"],
+     "; the Def command's symmetry argument"
+    }], "TableText",ExpressionUUID->"fd51d67c-6bf5-4308-99d8-a27bade10469"]},
+   {"Expression", 
+    StyleBox["runtime", "TI"], Cell["\<\
+the stored expression \[LongDash] the physically relevant data, replayed when \
+the object is loaded\
+\>", "TableText",ExpressionUUID->"6c5e3c61-91ed-4083-8507-cc213e9f999a"]},
+   {"$auto", 
+    StyleBox["runtime", "TI"], Cell[TextData[{
+     "slots for the symbols xAct creates alongside the definition; each \
+carries a ",
+     Cell[BoxData["Routine"], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "eba4933c-e3a6-4480-901f-a266bc1fe702"],
+     " (the ",
+     Cell[BoxData["Chain"], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "06b688d6-efa9-4470-8460-b29eab392407"],
+     " recipe that ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["Compute"]], "paclet:VasilDimitrov/SolutionsX/ref/Compute", 
+        "VasilDimitrov Package Symbol"},
+       "PackageLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "7ea1a5ca-53d2-4eb4-992f-32e28d6ef93e"],
+     " follows) and its computed ",
+     Cell[BoxData["Value"], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "d57094ea-f081-4362-b7e8-942e45e0426f"]
+    }], "TableText",ExpressionUUID->"0fa12a95-25db-4cd9-a98d-8849c4b82d60"]},
+   {"Dagger", 
+    StyleBox["option", "TI"], Cell[TextData[{
+     "xAct option: ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["Real"]], "paclet:ref/Real"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "fcf34e6e-7c68-4c45-b9e3-bc9be471aa2b"],
+     " or ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["Complex"]], "paclet:ref/Complex"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "92fc6c56-4b57-48ba-b1d3-581b43c0e236"],
+     " behaviour under complex conjugation"
+    }], "TableText",ExpressionUUID->"f3a65f15-a79d-4ccc-b8ef-c84bdaaf868e"]},
+   {"Master", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: the master symbol the definition is tied to; undefining the \
+master removes this object too\
+\>", "TableText",ExpressionUUID->"8b05f8a2-e9b2-4a56-9c7e-4982a25c3fc8"]},
+   {"PrintAs", 
+    StyleBox["option", "TI"], Cell[
+    "xAct option: the glyph the symbol typesets as", "TableText",
+     ExpressionUUID->"0b0c7773-caed-4a4f-86ee-e5387a1607c5"]},
+   {"VanishingQ", 
+    StyleBox["option", "TI"], Cell[
+    "xAct option: define the tensor as identically zero", "TableText",
+     ExpressionUUID->"86da2b09-795c-4602-9526-433300f16ace"]},
+   {"ForceSymmetries", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: register the symmetry even when the index characters do not match\
+\>", "TableText",ExpressionUUID->"d3633153-1256-48a5-a27b-8065007b99ab"]},
+   {"WeightOfTensor", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: the density weight, a linear combination of basis names\
+\>", "TableText",ExpressionUUID->"499043f5-8ea5-4bfd-8e2b-df3971be6c46"]},
+   {"GradeOfTensor", 
+    StyleBox["option", "TI"], Cell[
+    "xAct option: the grade of the symbol in graded products", "TableText",
+     ExpressionUUID->"7025202a-9f2f-4299-b801-19484175fac5"]},
+   {"FrobeniusQ", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: the defined vector obeys the Frobenius condition\
+\>", "TableText",ExpressionUUID->"ed283c7f-1028-4ac1-99dc-227aee051a88"]},
+   {"OrthogonalTo", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: vectors the defined tensor is orthogonal to, one per index\
+\>", "TableText",ExpressionUUID->"0786970e-c208-4c5d-bd6f-0fba16ccf80d"]},
+   {"ProjectedWith", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: projectors that map the defined tensor into itself, one per index\
+\>", "TableText",ExpressionUUID->"49395e3a-31e0-41f2-b180-e6ebd8b07c22"]},
+   {"ProtectNewSymbol", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: whether the new symbol is protected after definition\
+\>", "TableText",ExpressionUUID->"cc75c355-7cca-4844-839c-116190e09527"]},
+   {"DefInfo", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: the informational message printed at definition time\
+\>", "TableText",ExpressionUUID->"fb4be1f3-fe20-464b-834a-e0110d4360d1"]},
+   {"TensorID", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: xCoba's bookkeeping for how the components are computed\
+\>", "TableText",ExpressionUUID->"3e2fbed6-754b-4d16-8ab2-64935e7460af"]},
+   {"KillingVectorOf", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option (xTras): declare the defined tensor a Killing vector of a metric\
+\>", "TableText",ExpressionUUID->"2007c3b3-6f7a-4a56-a0f0-687704eb1cb4"]}
+  }]], "DefinitionBox3Col",
+ CellID->1961,ExpressionUUID->"a95c0f17-6c3a-4034-b225-4b814a980205"],
+
+Cell["$tensor", "Section",
+ CellID->1962,ExpressionUUID->"47ee58eb-2724-4faf-b959-0020d5f619d3"],
+
+Cell[TextData[{
+ "Records a ",
+ ButtonBox["DefTensor",
+  BaseStyle->"Link",
+  Appearance->None,
+  Evaluator->Automatic,
+  ButtonFunction:>NotebookOpen[
+    FindFile["xAct/Documentation/English/" <> "xTensorDoc.nb"]]],
+ " call: a tensor field with its symmetry; components, when computed, live \
+under ",
+ Cell[BoxData["$auto"], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "5c7750a4-7905-4e84-9219-b835f1bac241"],
+ ". Undefined through ",
+ ButtonBox["UndefTensor",
+  BaseStyle->"Link",
+  Appearance->None,
+  Evaluator->Automatic,
+  ButtonFunction:>NotebookOpen[
+    FindFile["xAct/Documentation/English/" <> "xTensorDoc.nb"]]],
+ "."
+}], "Text",
+ CellID->1963,ExpressionUUID->"6eaf3e52-0e39-4530-b5cb-803515d9c2a6"],
+
+Cell["\<\
+Called empty, the constructor spells out every key and the pattern its value \
+must match:\
+\>", "MathCaption",
+ CellID->1964,ExpressionUUID->"375d58b3-2117-4fec-9702-d1bc914cba97"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$tensor", "[", "]"}]], "Input",
+ CellLabel->"In[13]:=",
+ CellID->1965,ExpressionUUID->"02557f16-5fa7-47a1-8f58-8e4a6ee4811e"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"Symbol", "\[Rule]", 
+    RowBox[{"_Symbol", "[", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"_Symbol", "|", 
+        RowBox[{"-", "_Symbol"}]}], ")"}], "..."}], "]"}]}], ",", 
+   RowBox[{"Manifold", "\[Rule]", 
+    RowBox[{
+     RowBox[{"{", "__Symbol", "}"}], "|", "_Symbol"}]}], ",", 
+   RowBox[{"Symmetry", "\[Rule]", 
+    RowBox[{
+     RowBox[{"Symmetric", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"__Symbol", ",", "__"}], "}"}], "|", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "__Symbol"}], ",", "__"}], "}"}]}], "]"}], "|", 
+     RowBox[{"Antisymmetric", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"__Symbol", ",", "__"}], "}"}], "|", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "__Symbol"}], ",", "__"}], "}"}]}], "]"}], "|", 
+     RowBox[{"GenSet", "[", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox[
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"__Integer", "?", "Positive"}], "|", "__Symbol"}], ",", 
+            "__", ")"}],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          xAct`xPerm`Cycles[{
+            Alternatives[
+             PatternTest[
+              BlankSequence[Integer], Positive], 
+             BlankSequence[Symbol]], 
+            BlankSequence[]}],
+          Editable->False], "|", 
+         InterpretationBox[
+          StyleBox[
+           RowBox[{"-", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"__Integer", "?", "Positive"}], "|", "__Symbol"}], ",", 
+             "__", ")"}]}],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          -xAct`xPerm`Cycles[{
+             Alternatives[
+              PatternTest[
+               BlankSequence[Integer], Positive], 
+              BlankSequence[Symbol]], 
+             BlankSequence[]}],
+          Editable->False]}], ")"}], "..."}], "]"}], "|", "None"}]}], ",", 
+   RowBox[{"$auto", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{"_Symbol", "\[Rule]", 
+      RowBox[{
+       RowBox[{"\[LeftAssociation]", 
+        RowBox[{
+         RowBox[{"Routine", "\[Rule]", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"Chain", "\[Rule]", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"_", "\[Rule]", 
+                 RowBox[{"{", "___List", "}"}]}], ")"}], "..."}], "}"}]}], 
+            ",", 
+            RowBox[{"Apply", "\[Rule]", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"Map", "|", "ParallelMap"}], "\[Rule]", "_"}], ")"}],
+                "..."}], "}"}]}]}], "\[RightAssociation]"}]}], ",", 
+         RowBox[{"Value", "\[Rule]", "_"}]}], "\[RightAssociation]"}], 
+       "..."}]}], "\[RightAssociation]"}]}], ",", 
+   RowBox[{"Dagger", "\[Rule]", 
+    RowBox[{"Real", "|", "Complex"}]}], ",", 
+   RowBox[{"Master", "\[Rule]", "_Symbol"}], ",", 
+   RowBox[{"PrintAs", "\[Rule]", 
+    RowBox[{"_String", "|", "Identity"}]}], ",", 
+   RowBox[{"VanishingQ", "\[Rule]", 
+    RowBox[{"True", "|", "False"}]}], ",", 
+   RowBox[{"ForceSymmetries", "\[Rule]", 
+    RowBox[{"True", "|", "False"}]}], ",", 
+   RowBox[{"WeightOfTensor", "\[Rule]", 
+    RowBox[{
+     RowBox[{"_Integer", " ", "_Symbol"}], "|", "0"}]}], ",", 
+   RowBox[{"GradeOfTensor", "\[Rule]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"_Symbol", "\[Rule]", 
+         RowBox[{"_Integer", "?", "Positive"}]}], ")"}], ".."}], "}"}], "|", 
+     "0"}]}], ",", 
+   RowBox[{"FrobeniusQ", "\[Rule]", 
+    RowBox[{"True", "|", "False"}]}], ",", 
+   RowBox[{"OrthogonalTo", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"_Symbol", "[", 
+       RowBox[{"_Symbol", "|", 
+        RowBox[{"-", "_Symbol"}]}], "]"}], "..."}], "}"}]}], ",", 
+   RowBox[{"ProjectedWith", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"_Symbol", "[", 
+       RowBox[{
+        RowBox[{"_Symbol", "|", 
+         RowBox[{"-", "_Symbol"}]}], ",", 
+        RowBox[{"_Symbol", "|", 
+         RowBox[{"-", "_Symbol"}]}]}], "]"}], "..."}], "}"}]}], ",", 
+   RowBox[{"ProtectNewSymbol", "\[RuleDelayed]", 
+    RowBox[{"ScreenDollarIndices", "[", 
+     RowBox[{"True", "|", "False"}], "]"}]}], ",", 
+   RowBox[{"DefInfo", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"_String", ",", "_String"}], "}"}]}], ",", 
+   RowBox[{"TensorID", "\[Rule]", "_"}], ",", 
+   RowBox[{"KillingVectorOf", "\[Rule]", "_Symbol"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellLabel->"Out[13]=",
+ CellID->1966,ExpressionUUID->"1d7c2f44-3dfc-4887-84c4-8e840a417c55"]
+}, Open  ]],
+
+Cell["The keys of $tensor, by class:", "Caption",
+ CellID->1967,ExpressionUUID->"db70a8f2-9e94-4bfd-9aab-8f089ce528be"],
+
+Cell[BoxData[GridBox[{
+   {Cell["key", "TableHeader",ExpressionUUID->
+     "69355cb3-2120-4970-819d-6e93d14a6924"], Cell[
+    "class", "TableHeader",ExpressionUUID->
+     "3df680b8-8feb-4f29-9b62-5f9db9ba55cf"], " "},
+   {"Symbol", 
+    StyleBox["essential", "TI"], Cell["\<\
+the symbol xAct defines, with its index slots where it has any; its bare head \
+is the name the object is stored and retrieved under\
+\>", "TableText",ExpressionUUID->"f5f1c8af-ea11-45e8-9191-3833f63970a1"]},
+   {"Manifold", 
+    StyleBox["essential", "TI"], Cell["\<\
+the base manifold (or list of manifolds) the object lives on; the Def \
+command's manifold argument\
+\>", "TableText",ExpressionUUID->"43a8b72a-aeab-430f-88ae-d6333bf3f322"]},
+   {"Symmetry", 
+    StyleBox["essential", "TI"], Cell[TextData[{
+     "the index symmetry \[LongDash] ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["Symmetric"]], "paclet:ref/Symmetric"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "c29aa773-7543-4981-b605-6c280e24f066"],
+     ", ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["Antisymmetric"]], "paclet:ref/Antisymmetric"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "5fe8fae4-ffa0-4e70-a053-12f6ed4046e0"],
+     ", a ",
+     ButtonBox["GenSet",
+      BaseStyle->"Link",
+      Appearance->None,
+      Evaluator->Automatic,
+      ButtonFunction:>NotebookOpen[
+        FindFile["xAct/Documentation/English/" <> "xPermDoc.nb"]]],
+     ", or ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["None"]], "paclet:ref/None"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "4dd2a25c-70c5-40db-9ea3-c8e93d53408e"],
+     "; the Def command's symmetry argument"
+    }], "TableText",ExpressionUUID->"92f3a4e5-495a-4318-86cf-860eb4ceb9c0"]},
+   {"$auto", 
+    StyleBox["runtime", "TI"], Cell[TextData[{
+     "slots for the symbols xAct creates alongside the definition; each \
+carries a ",
+     Cell[BoxData["Routine"], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "97fa9962-b5db-41dd-9c5e-3a5d74b865ec"],
+     " (the ",
+     Cell[BoxData["Chain"], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "4c9a311d-dc09-4a78-8765-924cb93d1134"],
+     " recipe that ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["Compute"]], "paclet:VasilDimitrov/SolutionsX/ref/Compute", 
+        "VasilDimitrov Package Symbol"},
+       "PackageLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "2f2eca53-4090-49b4-8a76-262abbfba43b"],
+     " follows) and its computed ",
+     Cell[BoxData["Value"], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "74646781-ca81-4fc8-b452-2905e20d3511"]
+    }], "TableText",ExpressionUUID->"8cde08ea-3083-40fd-92b8-649bfacd3322"]},
+   {"Dagger", 
+    StyleBox["option", "TI"], Cell[TextData[{
+     "xAct option: ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["Real"]], "paclet:ref/Real"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "3c5cf0bd-a53f-430a-ac35-4f56c8aac910"],
+     " or ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["Complex"]], "paclet:ref/Complex"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "7b68f962-ec3d-4000-aef4-d84c1e343ae9"],
+     " behaviour under complex conjugation"
+    }], "TableText",ExpressionUUID->"c4af5247-e72c-46bf-bb3c-0c4456565cb4"]},
+   {"Master", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: the master symbol the definition is tied to; undefining the \
+master removes this object too\
+\>", "TableText",ExpressionUUID->"86978c12-fb44-4528-8860-943563ca2c1e"]},
+   {"PrintAs", 
+    StyleBox["option", "TI"], Cell[
+    "xAct option: the glyph the symbol typesets as", "TableText",
+     ExpressionUUID->"9663735e-f8a6-40f8-bb36-6bbb9f430c5a"]},
+   {"VanishingQ", 
+    StyleBox["option", "TI"], Cell[
+    "xAct option: define the tensor as identically zero", "TableText",
+     ExpressionUUID->"752583b3-7e39-493a-b7c6-154ef7f8795e"]},
+   {"ForceSymmetries", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: register the symmetry even when the index characters do not match\
+\>", "TableText",ExpressionUUID->"8bfa1748-13cf-4079-8b80-73203eb8e035"]},
+   {"WeightOfTensor", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: the density weight, a linear combination of basis names\
+\>", "TableText",ExpressionUUID->"3584b843-5618-44ac-8d23-94cd92d2e907"]},
+   {"GradeOfTensor", 
+    StyleBox["option", "TI"], Cell[
+    "xAct option: the grade of the symbol in graded products", "TableText",
+     ExpressionUUID->"ff799b30-f978-4778-8126-88bc0fc1b64e"]},
+   {"FrobeniusQ", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: the defined vector obeys the Frobenius condition\
+\>", "TableText",ExpressionUUID->"c8e584e8-dd77-4e2e-b4b9-54a231da8019"]},
+   {"OrthogonalTo", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: vectors the defined tensor is orthogonal to, one per index\
+\>", "TableText",ExpressionUUID->"d9395c45-54e7-4658-a59f-7ef1942178e2"]},
+   {"ProjectedWith", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: projectors that map the defined tensor into itself, one per index\
+\>", "TableText",ExpressionUUID->"375ba643-3d12-439b-a005-d6cae006de64"]},
+   {"ProtectNewSymbol", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: whether the new symbol is protected after definition\
+\>", "TableText",ExpressionUUID->"e89578b0-9090-49d5-a4d4-9c5390146939"]},
+   {"DefInfo", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: the informational message printed at definition time\
+\>", "TableText",ExpressionUUID->"d13e31df-52d0-4510-9287-a1e2920e5c10"]},
+   {"TensorID", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: xCoba's bookkeeping for how the components are computed\
+\>", "TableText",ExpressionUUID->"6f4d03c3-c345-4f9b-bfe8-8e0c626c5f59"]},
+   {"KillingVectorOf", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option (xTras): declare the defined tensor a Killing vector of a metric\
+\>", "TableText",ExpressionUUID->"63a35f88-a52d-488a-95ca-873dcbf6b6c6"]}
+  }]], "DefinitionBox3Col",
+ CellID->1968,ExpressionUUID->"4fed2617-1fba-4c96-8545-e00ce4001b44"],
+
+Cell["$spinor", "Section",
+ CellID->1969,ExpressionUUID->"9e1dd43f-ce1b-4d8e-b6fc-d92636f3d680"],
+
+Cell[TextData[{
+ "Records a ",
+ Cell[BoxData["DefSpinor"], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "6bca93f3-42e2-45d3-9e7b-5b0ddef2ba56"],
+ " call (FieldsX): a spinor field with its symmetry and type. Undefined \
+through ",
+ Cell[BoxData["UndefSpinor"], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "49566668-2c0a-4271-b24d-7d7020cb3d65"],
+ "."
+}], "Text",
+ CellID->1970,ExpressionUUID->"c6ecd669-4d5a-474d-968a-596d245cc3fa"],
+
+Cell["\<\
+Called empty, the constructor spells out every key and the pattern its value \
+must match:\
+\>", "MathCaption",
+ CellID->1971,ExpressionUUID->"b23a7f26-f9be-4816-b090-1e592d451707"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$spinor", "[", "]"}]], "Input",
+ CellLabel->"In[14]:=",
+ CellID->1972,ExpressionUUID->"c63a760c-c356-4856-8000-8fdc4274e190"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"Symbol", "\[Rule]", 
+    RowBox[{"_Symbol", "[", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"_Symbol", "|", 
+        RowBox[{"-", "_Symbol"}]}], ")"}], "..."}], "]"}]}], ",", 
+   RowBox[{"Manifold", "\[Rule]", 
+    RowBox[{
+     RowBox[{"{", "__Symbol", "}"}], "|", "_Symbol"}]}], ",", 
+   RowBox[{"Symmetry", "\[Rule]", 
+    RowBox[{
+     RowBox[{"Symmetric", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"__Symbol", ",", "__"}], "}"}], "|", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "__Symbol"}], ",", "__"}], "}"}]}], "]"}], "|", 
+     RowBox[{"Antisymmetric", "[", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"__Symbol", ",", "__"}], "}"}], "|", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "__Symbol"}], ",", "__"}], "}"}]}], "]"}], "|", 
+     RowBox[{"GenSet", "[", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{
+         InterpretationBox[
+          StyleBox[
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"__Integer", "?", "Positive"}], "|", "__Symbol"}], ",", 
+            "__", ")"}],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          xAct`xPerm`Cycles[{
+            Alternatives[
+             PatternTest[
+              BlankSequence[Integer], Positive], 
+             BlankSequence[Symbol]], 
+            BlankSequence[]}],
+          Editable->False], "|", 
+         InterpretationBox[
+          StyleBox[
+           RowBox[{"-", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"__Integer", "?", "Positive"}], "|", "__Symbol"}], ",", 
+             "__", ")"}]}],
+           ShowAutoStyles->False,
+           AutoSpacing->False],
+          -xAct`xPerm`Cycles[{
+             Alternatives[
+              PatternTest[
+               BlankSequence[Integer], Positive], 
+              BlankSequence[Symbol]], 
+             BlankSequence[]}],
+          Editable->False]}], ")"}], "..."}], "]"}], "|", "None"}]}], ",", 
+   RowBox[{"$auto", "\[Rule]", 
+    RowBox[{"\[LeftAssociation]", 
+     RowBox[{"_Symbol", "\[Rule]", 
+      RowBox[{
+       RowBox[{"\[LeftAssociation]", 
+        RowBox[{
+         RowBox[{"Routine", "\[Rule]", 
+          RowBox[{"\[LeftAssociation]", 
+           RowBox[{
+            RowBox[{"Chain", "\[Rule]", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{"_", "\[Rule]", 
+                 RowBox[{"{", "___List", "}"}]}], ")"}], "..."}], "}"}]}], 
+            ",", 
+            RowBox[{"Apply", "\[Rule]", 
+             RowBox[{"{", 
+              RowBox[{
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"Map", "|", "ParallelMap"}], "\[Rule]", "_"}], ")"}],
+                "..."}], "}"}]}]}], "\[RightAssociation]"}]}], ",", 
+         RowBox[{"Value", "\[Rule]", "_"}]}], "\[RightAssociation]"}], 
+       "..."}]}], "\[RightAssociation]"}]}], ",", 
+   RowBox[{"GradeOfTensor", "\[Rule]", 
+    RowBox[{
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"_Symbol", "\[Rule]", 
+         RowBox[{"_Integer", "?", "Positive"}]}], ")"}], ".."}], "}"}], "|", 
+     "0"}]}], ",", 
+   RowBox[{"SpinorType", "\[Rule]", 
+    RowBox[{"Dirac", "|", "Majorana"}]}], ",", 
+   RowBox[{
+    InterpretationBox[
+     StyleBox["Conjugate",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     Conjugate,
+     Editable->False], "\[Rule]", 
+    RowBox[{"True", "|", "False"}]}]}], "\[RightAssociation]"}]], "Output",
+ CellLabel->"Out[14]=",
+ CellID->1973,ExpressionUUID->"773a061e-87ee-4fcf-93e1-b670c2911c4f"]
+}, Open  ]],
+
+Cell["The keys of $spinor, by class:", "Caption",
+ CellID->1974,ExpressionUUID->"2943501d-93c8-44ab-8c98-58eeeab99a9f"],
+
+Cell[BoxData[GridBox[{
+   {Cell["key", "TableHeader",ExpressionUUID->
+     "219383db-7b3c-48c5-928e-94863479e25b"], Cell[
+    "class", "TableHeader",ExpressionUUID->
+     "664144ca-1194-46f2-a1ad-c87ee249661d"], " "},
+   {"Symbol", 
+    StyleBox["essential", "TI"], Cell["\<\
+the symbol xAct defines, with its index slots where it has any; its bare head \
+is the name the object is stored and retrieved under\
+\>", "TableText",ExpressionUUID->"980f623b-0fc2-4459-88c5-5b3353014ed3"]},
+   {"Manifold", 
+    StyleBox["essential", "TI"], Cell["\<\
+the base manifold (or list of manifolds) the object lives on; the Def \
+command's manifold argument\
+\>", "TableText",ExpressionUUID->"a0473d3e-9a5f-4238-9997-57c8ff38c906"]},
+   {"Symmetry", 
+    StyleBox["essential", "TI"], Cell[TextData[{
+     "the index symmetry \[LongDash] ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["Symmetric"]], "paclet:ref/Symmetric"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "151692cd-0172-4ef0-aaf1-7f3e58742434"],
+     ", ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["Antisymmetric"]], "paclet:ref/Antisymmetric"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "6b5b3a75-1cb1-4ac3-b355-4c82bc1490aa"],
+     ", a ",
+     ButtonBox["GenSet",
+      BaseStyle->"Link",
+      Appearance->None,
+      Evaluator->Automatic,
+      ButtonFunction:>NotebookOpen[
+        FindFile["xAct/Documentation/English/" <> "xPermDoc.nb"]]],
+     ", or ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["None"]], "paclet:ref/None"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "4d8b1180-cc3c-4b6a-910e-7861c615eed6"],
+     "; the Def command's symmetry argument"
+    }], "TableText",ExpressionUUID->"d113e229-2d9b-46b4-baad-7acd0fe21bb8"]},
+   {"$auto", 
+    StyleBox["runtime", "TI"], Cell[TextData[{
+     "slots for the symbols xAct creates alongside the definition; each \
+carries a ",
+     Cell[BoxData["Routine"], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "acacf051-1845-42e2-bd7a-7b3ce60a5207"],
+     " (the ",
+     Cell[BoxData["Chain"], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "c4dbb735-5cc3-49a5-ae13-6fd071102fc8"],
+     " recipe that ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["Compute"]], "paclet:VasilDimitrov/SolutionsX/ref/Compute", 
+        "VasilDimitrov Package Symbol"},
+       "PackageLink",
+       BaseStyle->"InlineFormula"]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "93091888-6e08-49bd-8aa5-12dad339b28d"],
+     " follows) and its computed ",
+     Cell[BoxData["Value"], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "2ca4c3ac-57fa-4b2f-9741-c8ca1723818b"]
+    }], "TableText",ExpressionUUID->"a407bb3c-b4b9-479f-9e69-86254562e0ba"]},
+   {"GradeOfTensor", 
+    StyleBox["option", "TI"], Cell[
+    "xAct option: the grade of the symbol in graded products", "TableText",
+     ExpressionUUID->"1e8d3a15-2a23-4005-8aee-163cb60e0654"]},
+   {"SpinorType", 
+    StyleBox["option", "TI"], Cell[
+    "xAct option (FieldsX): the spinor type, Majorana by default", 
+     "TableText",ExpressionUUID->"68dbf33e-85ae-4823-9659-bb52967e4dc2"]},
+   {"Conjugate", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option (FieldsX): swap the roles of the spinor and its conjugate\
+\>", "TableText",ExpressionUUID->"34428201-4bba-4458-8f05-4d3710f59f34"]}
+  }]], "DefinitionBox3Col",
+ CellID->1975,ExpressionUUID->"205dad1f-5dd0-4e5e-bf46-d39e53d72f67"],
+
+Cell["$function", "Section",
+ CellID->1976,ExpressionUUID->"63b2d662-f76f-46a7-93c0-2bc46d73d8fb"],
+
+Cell[TextData[{
+ "Records a ",
+ ButtonBox["DefScalarFunction",
+  BaseStyle->"Link",
+  Appearance->None,
+  Evaluator->Automatic,
+  ButtonFunction:>NotebookOpen[
+    FindFile["xAct/Documentation/English/" <> "xTensorDoc.nb"]]],
+ " call: a scalar function; its definition, when it has one, lives in ",
+ Cell[BoxData["Expression"], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "4eacb3ad-a52e-43e2-90a3-85417f48d496"],
+ ". Undefined through ",
+ ButtonBox["UndefScalarFunction",
+  BaseStyle->"Link",
+  Appearance->None,
+  Evaluator->Automatic,
+  ButtonFunction:>NotebookOpen[
+    FindFile["xAct/Documentation/English/" <> "xTensorDoc.nb"]]],
+ "."
+}], "Text",
+ CellID->1977,ExpressionUUID->"cef7c18b-6753-487c-8b15-675531e7b173"],
+
+Cell["\<\
+Called empty, the constructor spells out every key and the pattern its value \
+must match:\
+\>", "MathCaption",
+ CellID->1978,ExpressionUUID->"87ec2537-e7de-4d86-aeb5-1ab98f0bb306"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$function", "[", "]"}]], "Input",
+ CellLabel->"In[15]:=",
+ CellID->1979,ExpressionUUID->"028ead3c-4fa9-4311-9345-031f570cb60e"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"Symbol", "\[Rule]", 
+    RowBox[{"_Symbol", "[", "___", "]"}]}], ",", 
+   RowBox[{"Expression", "\[Rule]", "_"}], ",", 
+   RowBox[{"Dagger", "\[Rule]", 
+    RowBox[{"Real", "|", "Complex"}]}], ",", 
+   RowBox[{"Master", "\[Rule]", "_Symbol"}], ",", 
+   RowBox[{"PrintAs", "\[Rule]", 
+    RowBox[{"_String", "|", "Identity"}]}], ",", 
+   RowBox[{"ProtectNewSymbol", "\[RuleDelayed]", 
+    RowBox[{"ScreenDollarIndices", "[", 
+     RowBox[{"True", "|", "False"}], "]"}]}], ",", 
+   RowBox[{"DefInfo", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"_String", ",", "_String"}], "}"}]}], ",", 
+   RowBox[{"Validate", "\[Rule]", 
+    RowBox[{"True", "|", "False"}]}]}], "\[RightAssociation]"}]], "Output",
+ CellLabel->"Out[15]=",
+ CellID->1980,ExpressionUUID->"05c17962-552c-40ea-9022-3b45bf5a0652"]
+}, Open  ]],
+
+Cell["The keys of $function, by class:", "Caption",
+ CellID->1981,ExpressionUUID->"984cde84-873b-4931-ad4a-c0bf9a7e7f79"],
+
+Cell[BoxData[GridBox[{
+   {Cell["key", "TableHeader",ExpressionUUID->
+     "63a9e07e-53ad-4b03-bc8b-1f9e9ab7d64f"], Cell[
+    "class", "TableHeader",ExpressionUUID->
+     "689a1592-4c52-4815-a5ca-d84d11c1bbf8"], " "},
+   {"Symbol", 
+    StyleBox["essential", "TI"], Cell["\<\
+the symbol xAct defines, with its index slots where it has any; its bare head \
+is the name the object is stored and retrieved under\
+\>", "TableText",ExpressionUUID->"656df475-5ef3-4e99-90e4-f39c8f998d96"]},
+   {"Expression", 
+    StyleBox["runtime", "TI"], Cell["\<\
+the stored expression \[LongDash] the physically relevant data, replayed when \
+the object is loaded\
+\>", "TableText",ExpressionUUID->"85716c3f-7be6-48e5-ae0d-937863c5faf4"]},
+   {"Dagger", 
+    StyleBox["option", "TI"], Cell[TextData[{
+     "xAct option: ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["Real"]], "paclet:ref/Real"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "b553f0a3-6b6c-4378-93d9-beca051b6638"],
+     " or ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["Complex"]], "paclet:ref/Complex"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "71866d65-01bb-4907-9924-1c09f53b705c"],
+     " behaviour under complex conjugation"
+    }], "TableText",ExpressionUUID->"fa2ca75e-d43a-4748-ab42-1eb1ab05a9fd"]},
+   {"Master", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: the master symbol the definition is tied to; undefining the \
+master removes this object too\
+\>", "TableText",ExpressionUUID->"428f2bfd-48fe-431e-8f4b-61032fc3b632"]},
+   {"PrintAs", 
+    StyleBox["option", "TI"], Cell[
+    "xAct option: the glyph the symbol typesets as", "TableText",
+     ExpressionUUID->"ba4168a1-8d44-4ef3-8090-abda9afd2e07"]},
+   {"ProtectNewSymbol", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: whether the new symbol is protected after definition\
+\>", "TableText",ExpressionUUID->"0a6b6fb1-701e-4d59-9b29-31c7ac5151ab"]},
+   {"DefInfo", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: the informational message printed at definition time\
+\>", "TableText",ExpressionUUID->"d6c5305e-d174-4ef9-bd89-785c4ff6b84d"]},
+   {"Validate", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: whether the new symbol is checked for validity before it is \
+defined\
+\>", "TableText",ExpressionUUID->"0248dba5-a35a-4365-aa60-299161fded96"]}
+  }]], "DefinitionBox3Col",
+ CellID->1982,ExpressionUUID->"8671ea99-d78b-4a72-b755-ce98c7256b81"],
+
+Cell["$constant", "Section",
+ CellID->1983,ExpressionUUID->"d70a785d-f8bc-4d66-a9cf-0511e3e12c7d"],
+
+Cell[TextData[{
+ "Records a ",
+ ButtonBox["DefConstantSymbol",
+  BaseStyle->"Link",
+  Appearance->None,
+  Evaluator->Automatic,
+  ButtonFunction:>NotebookOpen[
+    FindFile["xAct/Documentation/English/" <> "xTensorDoc.nb"]]],
+ " call: a constant symbol. Undefined through ",
+ ButtonBox["UndefConstantSymbol",
+  BaseStyle->"Link",
+  Appearance->None,
+  Evaluator->Automatic,
+  ButtonFunction:>NotebookOpen[
+    FindFile["xAct/Documentation/English/" <> "xTensorDoc.nb"]]],
+ "."
+}], "Text",
+ CellID->1984,ExpressionUUID->"552e791d-d2b1-469f-a284-c67a884163c0"],
+
+Cell["\<\
+Called empty, the constructor spells out every key and the pattern its value \
+must match:\
+\>", "MathCaption",
+ CellID->1985,ExpressionUUID->"665e93e2-c18e-4f86-9ee8-fa314d904b0e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$constant", "[", "]"}]], "Input",
+ CellLabel->"In[16]:=",
+ CellID->1986,ExpressionUUID->"4e7f3c4e-2901-42a6-8c0f-250c7d8aefd9"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"Symbol", "\[Rule]", "_Symbol"}], ",", 
+   RowBox[{"Dagger", "\[Rule]", 
+    RowBox[{"Real", "|", "Complex"}]}], ",", 
+   RowBox[{"Master", "\[Rule]", "_Symbol"}], ",", 
+   RowBox[{"PrintAs", "\[Rule]", 
+    RowBox[{"_String", "|", "Identity"}]}], ",", 
+   RowBox[{"ProtectNewSymbol", "\[RuleDelayed]", 
+    RowBox[{"ScreenDollarIndices", "[", 
+     RowBox[{"True", "|", "False"}], "]"}]}], ",", 
+   RowBox[{"DefInfo", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"_String", ",", "_String"}], "}"}]}], ",", 
+   RowBox[{"Validate", "\[Rule]", 
+    RowBox[{"True", "|", "False"}]}]}], "\[RightAssociation]"}]], "Output",
+ CellLabel->"Out[16]=",
+ CellID->1987,ExpressionUUID->"d59fcc77-c718-4f2d-8c7b-434adc7a607d"]
+}, Open  ]],
+
+Cell["The keys of $constant, by class:", "Caption",
+ CellID->1988,ExpressionUUID->"0a13de3c-a2af-4e1f-a1dc-cbafa747230f"],
+
+Cell[BoxData[GridBox[{
+   {Cell["key", "TableHeader",ExpressionUUID->
+     "ba7582b6-968f-4a75-a44f-88b81e9eac44"], Cell[
+    "class", "TableHeader",ExpressionUUID->
+     "177123a0-2621-4e90-a54d-52b8d1a238dc"], " "},
+   {"Symbol", 
+    StyleBox["essential", "TI"], Cell["\<\
+the symbol xAct defines, with its index slots where it has any; its bare head \
+is the name the object is stored and retrieved under\
+\>", "TableText",ExpressionUUID->"e9367639-cb5a-47c1-aef9-05eb7a6b0c96"]},
+   {"Dagger", 
+    StyleBox["option", "TI"], Cell[TextData[{
+     "xAct option: ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["Real"]], "paclet:ref/Real"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "c565db35-e2aa-4e84-bdd4-aae65cad41a3"],
+     " or ",
+     Cell[BoxData[
+      TemplateBox[{
+        Cell[
+         TextData["Complex"]], "paclet:ref/Complex"},
+       "RefLink",
+       BaseStyle->{"InlineFormula"}]], "InlineFormula",
+      FontFamily->"Source Sans Pro",ExpressionUUID->
+      "b08441c9-22bc-4083-852e-26aa9e6ed08a"],
+     " behaviour under complex conjugation"
+    }], "TableText",ExpressionUUID->"9877194f-556e-4313-99a2-5e22db6b94d1"]},
+   {"Master", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: the master symbol the definition is tied to; undefining the \
+master removes this object too\
+\>", "TableText",ExpressionUUID->"d0859cff-837e-4050-99cb-388b4cf47f70"]},
+   {"PrintAs", 
+    StyleBox["option", "TI"], Cell[
+    "xAct option: the glyph the symbol typesets as", "TableText",
+     ExpressionUUID->"47b43533-ba0a-479f-b47b-d1de493017ca"]},
+   {"ProtectNewSymbol", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: whether the new symbol is protected after definition\
+\>", "TableText",ExpressionUUID->"dd2f2413-7eec-4d1f-a218-385eab04bba2"]},
+   {"DefInfo", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: the informational message printed at definition time\
+\>", "TableText",ExpressionUUID->"27a9085e-5eda-4176-817c-8c8ae10460a6"]},
+   {"Validate", 
+    StyleBox["option", "TI"], Cell["\<\
+xAct option: whether the new symbol is checked for validity before it is \
+defined\
+\>", "TableText",ExpressionUUID->"94953801-d67a-4f19-b755-e51b8aa48e75"]}
+  }]], "DefinitionBox3Col",
+ CellID->1989,ExpressionUUID->"fa20ac4c-6f86-44f9-8788-d305fb3adfd5"],
+
+Cell["$assumption", "Section",
+ CellID->1990,ExpressionUUID->"a1d2b408-d6dd-4ca5-a41d-aa8fdb2f2a83"],
+
+Cell[TextData[{
+ "No xAct definition behind it: a place to store global assumptions (",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$Assumptions"]], "paclet:ref/$Assumptions"},
+   "RefLink",
+   BaseStyle->{"InlineFormula"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "09596e48-d255-483b-b209-2a2b213a26c2"],
+ " entries) so the next session can replay them."
+}], "Text",
+ CellID->1991,ExpressionUUID->"1cb69639-5d69-4fe0-b06b-eca9f9735899"],
+
+Cell["\<\
+Called empty, the constructor spells out every key and the pattern its value \
+must match:\
+\>", "MathCaption",
+ CellID->1992,ExpressionUUID->"5e33a028-e317-4e98-86db-8c4be89962c4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$assumption", "[", "]"}]], "Input",
+ CellLabel->"In[17]:=",
+ CellID->1993,ExpressionUUID->"13b0c45b-e98a-42dc-a49d-5a74bb660f21"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"Symbol", "\[Rule]", "_Symbol"}], ",", 
+   RowBox[{"Expression", "\[Rule]", 
+    RowBox[{
+    "_Equal", "|", "_Unequal", "|", "_Less", "|", "_LessEqual", "|", 
+     "_Greater", "|", "_GreaterEqual", "|", "_And", "|", "_Or", "|", "_Not", 
+     "|", "_Element", "|", "_Exists", "|", "_ForAll", "|", "_Inequality", "|",
+      "_Implies", "|", "_Equivalent", "|", 
+     RowBox[{"_List", "?", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"AllTrue", "[", 
+         RowBox[{"#1", ",", 
+          RowBox[{
+           RowBox[{"MatchQ", "[", 
+            RowBox[{"#1", ",", 
+             RowBox[{
+             "_Equal", "|", "_Unequal", "|", "_Less", "|", "_LessEqual", "|", 
+              "_Greater", "|", "_GreaterEqual", "|", "_And", "|", "_Or", "|", 
+              "_Not", "|", "_Element", "|", "_Exists", "|", "_ForAll", "|", 
+              "_Inequality", "|", "_Implies", "|", "_Equivalent", "|", 
+              RowBox[{"_List", "?", 
+               RowBox[{"(", 
+                RowBox[{
+                 RowBox[{"AllTrue", "[", 
+                  RowBox[{"#1", ",", 
+                   RowBox[{
+                    RowBox[{"MatchQ", "[", 
+                    RowBox[{"#1", ",", "#1"}], "]"}], "&"}]}], "]"}], "&"}], 
+                ")"}]}]}]}], "]"}], "&"}]}], "]"}], "&"}], ")"}]}]}]}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellLabel->"Out[17]=",
+ CellID->1994,ExpressionUUID->"425de484-f1ff-47f2-82ea-e3a0e8b1ccd0"]
+}, Open  ]],
+
+Cell["The keys of $assumption, by class:", "Caption",
+ CellID->1995,ExpressionUUID->"d65549ea-923f-41e0-9922-967a503b09b1"],
+
+Cell[BoxData[GridBox[{
+   {Cell["key", "TableHeader",ExpressionUUID->
+     "e5f6fd51-4cc5-4f40-b1ec-208757fd2c2f"], Cell[
+    "class", "TableHeader",ExpressionUUID->
+     "bdaa486c-4f18-4cf6-9606-1455b93850fd"], " "},
+   {"Symbol", 
+    StyleBox["essential", "TI"], Cell["\<\
+the symbol xAct defines, with its index slots where it has any; its bare head \
+is the name the object is stored and retrieved under\
+\>", "TableText",ExpressionUUID->"366dbcb3-d04e-4e7b-be38-1581f1ef5be3"]},
+   {"Expression", 
+    StyleBox["essential", "TI"], Cell["\<\
+the stored expression \[LongDash] the physically relevant data, replayed when \
+the object is loaded\
+\>", "TableText",ExpressionUUID->"657cd473-6837-4b4b-be33-bfb3406354fd"]}
+  }]], "DefinitionBox3Col",
+ CellID->1996,ExpressionUUID->"e5c2fccd-ad61-4455-bc95-bbaaf6fa8717"],
+
+Cell["$rule", "Section",
+ CellID->1997,ExpressionUUID->"a1492bcd-e306-4ca9-afe1-7fa16acec93d"],
+
+Cell["\<\
+No xAct definition behind it: a place to store custom rules \[LongDash] often \
+results that a different notebook needs.\
+\>", "Text",
+ CellID->1998,ExpressionUUID->"bb4c3222-fce8-4608-863a-870b1a26dbcd"],
+
+Cell["\<\
+Called empty, the constructor spells out every key and the pattern its value \
+must match:\
+\>", "MathCaption",
+ CellID->1999,ExpressionUUID->"828030fd-1e5d-417d-93ac-45d63c2e01f9"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$rule", "[", "]"}]], "Input",
+ CellLabel->"In[18]:=",
+ CellID->2000,ExpressionUUID->"77769b5e-661c-4ecf-98a3-fe946a12b04e"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"Symbol", "\[Rule]", "_Symbol"}], ",", 
+   RowBox[{"Expression", "\[Rule]", "_"}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellLabel->"Out[18]=",
+ CellID->2001,ExpressionUUID->"b792e0c4-b167-4c18-9f02-da738dffc2ce"]
+}, Open  ]],
+
+Cell["The keys of $rule, by class:", "Caption",
+ CellID->2002,ExpressionUUID->"ff14149f-a8bd-47a6-9742-ea13ff6b16da"],
+
+Cell[BoxData[GridBox[{
+   {Cell["key", "TableHeader",ExpressionUUID->
+     "c9bb2789-290d-4fe6-bac4-490b52509294"], Cell[
+    "class", "TableHeader",ExpressionUUID->
+     "3fc786ed-31f2-4f83-8b0a-76ac08756ad4"], " "},
+   {"Symbol", 
+    StyleBox["essential", "TI"], Cell["\<\
+the symbol xAct defines, with its index slots where it has any; its bare head \
+is the name the object is stored and retrieved under\
+\>", "TableText",ExpressionUUID->"bd5bc47b-9bf6-4145-9ffd-9633d6cf5378"]},
+   {"Expression", 
+    StyleBox["essential", "TI"], Cell["\<\
+the stored expression \[LongDash] the physically relevant data, replayed when \
+the object is loaded\
+\>", "TableText",ExpressionUUID->"2440645c-c56a-4408-9aaf-cc7051a3664b"]}
+  }]], "DefinitionBox3Col",
+ CellID->2003,ExpressionUUID->"6d23d096-e8bf-406d-8b5c-f2bc1e3a9f54"],
+
+Cell["$set", "Section",
+ CellID->2004,ExpressionUUID->"a186eb01-709e-4890-8aa9-afa67d9dfa8f"],
+
+Cell[TextData[{
+ "No xAct definition behind it: a place to store tensorial equations as held ",
+ ButtonBox["IndexSet",
+  BaseStyle->"Link",
+  Appearance->None,
+  Evaluator->Automatic,
+  ButtonFunction:>NotebookOpen[
+    FindFile["xAct/Documentation/English/" <> "xTensorDoc.nb"]]],
+ " definitions, replayed at ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["Load"]], "paclet:VasilDimitrov/SolutionsX/ref/Load", 
+    "VasilDimitrov Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "fc4565af-3761-4528-b432-dfd5105a5ba2"],
+ " \[LongDash] how a theory ships its equations of motion to every solution \
+built on it."
+}], "Text",
+ CellID->2005,ExpressionUUID->"d5f2d226-34b4-465f-8147-e27a9a667269"],
+
+Cell["\<\
+Called empty, the constructor spells out every key and the pattern its value \
+must match:\
+\>", "MathCaption",
+ CellID->2006,ExpressionUUID->"955d6d11-6773-443f-9513-a485921f6b9c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"$set", "[", "]"}]], "Input",
+ CellLabel->"In[19]:=",
+ CellID->2007,ExpressionUUID->"a3adb64f-3341-4213-90ea-77aa4c47327d"],
+
+Cell[BoxData[
+ RowBox[{"\[LeftAssociation]", 
+  RowBox[{
+   RowBox[{"Symbol", "\[Rule]", "_Symbol"}], ",", 
+   RowBox[{"Expression", "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"_HoldForm", ".."}], "}"}]}]}], 
+  "\[RightAssociation]"}]], "Output",
+ CellLabel->"Out[19]=",
+ CellID->2008,ExpressionUUID->"3cacfc43-0eff-42c7-b368-80e25f59005b"]
+}, Open  ]],
+
+Cell["The keys of $set, by class:", "Caption",
+ CellID->2009,ExpressionUUID->"3d06fcd0-9412-4a50-99f4-8c6c4fc42df7"],
+
+Cell[BoxData[GridBox[{
+   {Cell["key", "TableHeader",ExpressionUUID->
+     "6ce89c4b-1c8a-4409-948b-8af7c808baa6"], Cell[
+    "class", "TableHeader",ExpressionUUID->
+     "179ec520-9ca3-479d-8a03-c879f6c4e624"], " "},
+   {"Symbol", 
+    StyleBox["essential", "TI"], Cell["\<\
+the symbol xAct defines, with its index slots where it has any; its bare head \
+is the name the object is stored and retrieved under\
+\>", "TableText",ExpressionUUID->"3c851d12-ec0e-4a8b-96ab-fc6c3e7805e7"]},
+   {"Expression", 
+    StyleBox["essential", "TI"], Cell["\<\
+the stored expression \[LongDash] the physically relevant data, replayed when \
+the object is loaded\
+\>", "TableText",ExpressionUUID->"54f1386c-b7c3-4590-a050-36ba8358473f"]}
+  }]], "DefinitionBox3Col",
+ CellID->2010,ExpressionUUID->"4fafc338-8534-4088-b390-0db6945f83df"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["More About", "TutorialMoreAboutSection",
+ CellID->2011,ExpressionUUID->"a1be8e97-a7ad-4889-9086-8df456186aca"],
+
+Cell[TextData[ButtonBox["SolutionsX",
+ BaseStyle->"Link",
+ ButtonData->"paclet:VasilDimitrov/SolutionsX/guide/SolutionsX"]], "MoreAbout",\
+
+ CellID->2012,ExpressionUUID->"af409d11-22ff-40a8-9212-d8785382c007"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Related Tech Notes", "RelatedTutorialsSection",
+ CellID->2013,ExpressionUUID->"18aa82c6-1199-4fe6-8960-f08c409b5ad1"],
+
+Cell[TextData[ButtonBox["Welcome to SolutionsX",
+ BaseStyle->"Link",
+ ButtonData->"paclet:VasilDimitrov/SolutionsX/tutorial/Welcome"]], "Tutorials",\
+
+ CellID->2014,ExpressionUUID->"284e8a09-bf1d-4eed-b742-202ae13ff85f"],
+
+Cell[TextData[ButtonBox["Objects in SolutionsX",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:VasilDimitrov/SolutionsX/tutorial/ObjectsInSolutionsX"]], \
+"Tutorials",
+ CellID->2015,ExpressionUUID->"211d4330-0d30-455c-96ac-45b57ce49379"],
+
+Cell[TextData[ButtonBox["Setting up an xAct environment",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:VasilDimitrov/SolutionsX/tutorial/SettingUpAnXActEnvironment"]], \
+"Tutorials",
+ CellID->2016,ExpressionUUID->"b142bff9-148f-424a-a0aa-2ec3b4056e18"],
+
+Cell[TextData[ButtonBox["Storing and retrieving",
+ BaseStyle->"Link",
+ ButtonData->
+  "paclet:VasilDimitrov/SolutionsX/tutorial/StoringAndRetrieving"]], \
+"Tutorials",
+ CellID->2017,ExpressionUUID->"cc9d189d-d1d6-44fb-9be6-9cb1cfaa5a94"]
+}, Open  ]]
+},
+WindowTitle->"Object Keys",
+TaggingRules-><|
+ "Metadata" -> <|
+   "title" -> "Object Keys", "summary" -> 
+    "Each object type carries a fixed set of keys: the arguments and options \
+of one xAct definition, plus SolutionsX's own bookkeeping. This note is the \
+reference table for the keys of every object type.", "context" -> 
+    "VasilDimitrov`SolutionsX`", "paclet" -> "VasilDimitrov/SolutionsX", 
+    "type" -> "Tech Note", "language" -> "en", "status" -> "None", "index" -> 
+    True, "uri" -> "VasilDimitrov/SolutionsX/tutorial/ObjectKeys", 
+    "keywords" -> {"Object Keys"}, "synonyms" -> {}, "titlemodifier" -> ""|>|>,
+FrontEndVersion->"13.3 for Mac OS X ARM (64-bit) (July 24, 2023)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"90fc236b-a7fc-4e8a-8a0f-3f1f628efdb9"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[605, 23, 117, 1, 70, "CategorizationSection",ExpressionUUID->"7b0bd450-4ed6-4e53-af02-976dcf2030a2",
+ CellID->1867],
+Cell[725, 26, 132, 2, 70, "Categorization",ExpressionUUID->"dfd253bd-0031-4e73-ba75-29f75f6d27ac",
+ CellID->1868],
+Cell[860, 30, 147, 2, 70, "Categorization",ExpressionUUID->"7f0ccdea-ee21-4516-948c-6b2e2de6ca92",
+ CellID->1869],
+Cell[1010, 34, 144, 2, 70, "Categorization",ExpressionUUID->"8db41ae4-898e-4026-87b0-4ab90eeb87f0",
+ CellID->1870],
+Cell[1157, 38, 159, 2, 70, "Categorization",ExpressionUUID->"ab0efc78-6d76-4794-be10-52729871a574",
+ CellID->1871]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1353, 45, 105, 1, 70, "KeywordsSection",ExpressionUUID->"9216487b-ffd3-4fc5-9eb8-c5f6ed708a10",
+ CellID->1876],
+Cell[1461, 48, 101, 1, 70, "Keywords",ExpressionUUID->"09d7534b-09ec-4cb0-a504-cde77f53aa3b",
+ CellID->1872],
+Cell[1565, 51, 100, 1, 70, "Keywords",ExpressionUUID->"b4b75a31-e677-4a00-96e7-b5c499da6b8a",
+ CellID->1873],
+Cell[1668, 54, 102, 1, 70, "Keywords",ExpressionUUID->"562e08b1-a234-4af7-9efc-ea3fea2800e0",
+ CellID->1874],
+Cell[1773, 57, 94, 1, 70, "Keywords",ExpressionUUID->"44f00a6d-779b-4d50-ba32-22136a4390cd",
+ CellID->1875]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1904, 63, 98, 1, 70, "Title",ExpressionUUID->"1d3c3a47-4411-4745-8252-0717bfafd8c3",
+ CellID->1877],
+Cell[2005, 66, 296, 5, 70, "Text",ExpressionUUID->"0cdaa6d0-0a90-4279-8f11-3571caf07309",
+ CellID->1878],
+Cell[2304, 73, 110, 1, 70, "MathCaption",ExpressionUUID->"d32bda85-6387-4de0-baea-2f992761f8fb",
+ CellID->1879],
+Cell[2417, 76, 167, 3, 70, "Input",ExpressionUUID->"6438902a-05a1-45fa-92e2-e08c12df6a47",
+ CellID->1880],
+Cell[2587, 81, 445, 10, 70, "Text",ExpressionUUID->"01b5decf-6bc4-47d0-bdc1-89a1d80a1cbc",
+ CellID->1881],
+Cell[3035, 93, 459, 11, 70, "Item",ExpressionUUID->"6ff479b5-e7b9-49ae-a0e1-f98f868873e0",
+ CellID->1882],
+Cell[3497, 106, 460, 11, 70, "Item",ExpressionUUID->"c3ffce3b-b8bb-4484-bccf-a5b57f7d205b",
+ CellID->1883],
+Cell[3960, 119, 480, 12, 70, "Item",ExpressionUUID->"7a94f9f6-ec37-41f2-9350-93c6670dd98c",
+ CellID->1884],
+Cell[4443, 133, 98, 1, 70, "Section",ExpressionUUID->"e46e494f-f9c0-4881-8b64-204265659299",
+ CellID->1885],
+Cell[4544, 136, 679, 18, 70, "Text",ExpressionUUID->"ad661eb6-0150-45c3-aa1a-820c0a22856d",
+ CellID->1886],
+Cell[5226, 156, 191, 4, 70, "MathCaption",ExpressionUUID->"0837cf5e-975c-4b2a-bb36-723faf5352a7",
+ CellID->1887],
+Cell[CellGroupData[{
+Cell[5442, 164, 150, 3, 70, "Input",ExpressionUUID->"71b37676-1f6c-4a0e-b9c3-4414517ecae4",
+ CellID->1888],
+Cell[5595, 169, 1032, 28, 70, "Output",ExpressionUUID->"b42ee244-e82c-4107-a3d2-c67577951e75",
+ CellID->1889]
+}, Open  ]],
+Cell[6642, 200, 121, 1, 70, "Caption",ExpressionUUID->"573efb2a-1ae5-4cca-a22d-f48846967d8e",
+ CellID->1890],
+Cell[6766, 203, 2420, 52, 70, "DefinitionBox3Col",ExpressionUUID->"a30b922c-b5ea-44b8-9b1d-608c3e18695f",
+ CellID->1891],
+Cell[9189, 257, 99, 1, 70, "Section",ExpressionUUID->"ad24de85-8130-49dc-826e-16ceeec6d60b",
+ CellID->1892],
+Cell[9291, 260, 590, 18, 70, "Text",ExpressionUUID->"70c186bb-df17-41ee-9d6e-438f476c0582",
+ CellID->1893],
+Cell[9884, 280, 191, 4, 70, "MathCaption",ExpressionUUID->"2a955eba-18bc-44b0-9f86-8bde37bddb33",
+ CellID->1894],
+Cell[CellGroupData[{
+Cell[10100, 288, 151, 3, 70, "Input",ExpressionUUID->"3b813161-a74f-4590-8194-f6dbadec2bce",
+ CellID->1895],
+Cell[10254, 293, 622, 15, 70, "Output",ExpressionUUID->"86e45ef5-00a2-4702-a9aa-f50ed77e4ec8",
+ CellID->1896]
+}, Open  ]],
+Cell[10891, 311, 122, 1, 70, "Caption",ExpressionUUID->"b7f57b3e-a1b8-40b8-bdca-3ab2687eaa2b",
+ CellID->1897],
+Cell[11016, 314, 1404, 28, 70, "DefinitionBox3Col",ExpressionUUID->"3e8111b3-3075-454f-94eb-0933a3fb8df1",
+ CellID->1898],
+Cell[12423, 344, 96, 1, 70, "Section",ExpressionUUID->"5f1235aa-7b4e-4750-803e-93a7e11fa516",
+ CellID->1899],
+Cell[12522, 347, 806, 22, 70, "Text",ExpressionUUID->"0638eab9-b80c-48fd-b6ef-4d3d09500498",
+ CellID->1900],
+Cell[13331, 371, 191, 4, 70, "MathCaption",ExpressionUUID->"63e01665-96ee-4728-bf98-d4d38f68d374",
+ CellID->1901],
+Cell[CellGroupData[{
+Cell[13547, 379, 148, 3, 70, "Input",ExpressionUUID->"5609a7d6-3e27-441c-baf1-79e7b8075e2e",
+ CellID->1902],
+Cell[13698, 384, 3090, 79, 70, "Output",ExpressionUUID->"daf7a59d-c072-4bc6-8737-a0dfc22986e2",
+ CellID->1903]
+}, Open  ]],
+Cell[16803, 466, 119, 1, 70, "Caption",ExpressionUUID->"b8a1c26e-2064-41f8-b19b-05b7e421d507",
+ CellID->1904],
+Cell[16925, 469, 5827, 124, 70, "DefinitionBox3Col",ExpressionUUID->"2a95e452-a3cc-4ebc-a879-a14e2f3e86c3",
+ CellID->1905],
+Cell[22755, 595, 95, 1, 70, "Section",ExpressionUUID->"9cc322c1-8c4a-4824-ae19-85948ef249d6",
+ CellID->1906],
+Cell[22853, 598, 529, 12, 70, "Text",ExpressionUUID->"2a6924c0-62ce-45aa-9c05-d3770b7069ce",
+ CellID->1907],
+Cell[23385, 612, 191, 4, 70, "MathCaption",ExpressionUUID->"a1f6c429-aad9-449b-b93d-67cd4a2bf38d",
+ CellID->1908],
+Cell[CellGroupData[{
+Cell[23601, 620, 147, 3, 70, "Input",ExpressionUUID->"ad32ee34-7c1e-4f5a-b2f0-cdd1d67f3017",
+ CellID->1909],
+Cell[23751, 625, 1858, 50, 70, "Output",ExpressionUUID->"1fc4db59-6348-4879-bb96-f3d85e24361c",
+ CellID->1910]
+}, Open  ]],
+Cell[25624, 678, 118, 1, 70, "Caption",ExpressionUUID->"6095f96b-0804-45e2-a570-4b0ea937c463",
+ CellID->1911],
+Cell[25745, 681, 2744, 59, 70, "DefinitionBox3Col",ExpressionUUID->"a31217d1-18b7-4529-b2ef-063b3626a8a0",
+ CellID->1912],
+Cell[28492, 742, 103, 1, 70, "Section",ExpressionUUID->"5acafd85-9c88-4411-812b-57ae6d86ee94",
+ CellID->1913],
+Cell[28598, 745, 507, 12, 70, "Text",ExpressionUUID->"1acc2345-f70b-4946-86fe-2e9667fe3153",
+ CellID->1914],
+Cell[29108, 759, 191, 4, 70, "MathCaption",ExpressionUUID->"d25d5050-18da-485d-a900-dc012faf85bb",
+ CellID->1915],
+Cell[CellGroupData[{
+Cell[29324, 767, 155, 3, 70, "Input",ExpressionUUID->"f911908a-9c36-4b66-90a7-54c7db967767",
+ CellID->1916],
+Cell[29482, 772, 1256, 33, 70, "Output",ExpressionUUID->"294bfa6e-ccd0-48c4-9bfe-1c8ae726c8e7",
+ CellID->1917]
+}, Open  ]],
+Cell[30753, 808, 126, 1, 70, "Caption",ExpressionUUID->"c45dbe6a-3f98-4d4e-9a28-b66688f89790",
+ CellID->1918],
+Cell[30882, 811, 1852, 41, 70, "DefinitionBox3Col",ExpressionUUID->"376543cc-c043-4e33-9aa9-e33759ec5a3c",
+ CellID->1919],
+Cell[32737, 854, 104, 1, 70, "Section",ExpressionUUID->"179f11ec-3dbd-4e5f-8e4a-0787594e23ba",
+ CellID->1920],
+Cell[32844, 857, 509, 12, 70, "Text",ExpressionUUID->"dc52e574-74b2-4def-af56-4f02c102e705",
+ CellID->1921],
+Cell[33356, 871, 191, 4, 70, "MathCaption",ExpressionUUID->"a104a8b7-0f47-4b7c-8e35-021deafb3e79",
+ CellID->1922],
+Cell[CellGroupData[{
+Cell[33572, 879, 156, 3, 70, "Input",ExpressionUUID->"3e3b2603-bdd3-4996-8abb-56a9b8315105",
+ CellID->1923],
+Cell[33731, 884, 1695, 44, 70, "Output",ExpressionUUID->"61162c03-2640-4231-8164-cf5af1e042a7",
+ CellID->1924]
+}, Open  ]],
+Cell[35441, 931, 127, 1, 70, "Caption",ExpressionUUID->"6bd383b7-c8fd-4412-bd1a-7b744f415b42",
+ CellID->1925],
+Cell[35571, 934, 2515, 54, 70, "DefinitionBox3Col",ExpressionUUID->"130dd746-2427-4ec4-91cd-8f8b91bca2f5",
+ CellID->1926],
+Cell[38089, 990, 96, 1, 70, "Section",ExpressionUUID->"66e13904-8f15-4cba-86bf-644619e5c822",
+ CellID->1927],
+Cell[38188, 993, 794, 22, 70, "Text",ExpressionUUID->"d7763594-53d7-45ba-bd0d-a837df6f8926",
+ CellID->1928],
+Cell[38985, 1017, 191, 4, 70, "MathCaption",ExpressionUUID->"a9673473-232c-403e-a619-716f97998a1c",
+ CellID->1929],
+Cell[CellGroupData[{
+Cell[39201, 1025, 148, 3, 70, "Input",ExpressionUUID->"198389ce-289b-4fe3-85b7-95b5c16fda8c",
+ CellID->1930],
+Cell[39352, 1030, 2660, 72, 70, "Output",ExpressionUUID->"2a5b7d3d-04b1-4bb1-917d-771ffbf1227e",
+ CellID->1931]
+}, Open  ]],
+Cell[42027, 1105, 119, 1, 70, "Caption",ExpressionUUID->"0d253bfe-def5-4155-a865-e64a81bca7bf",
+ CellID->1932],
+Cell[42149, 1108, 4348, 98, 70, "DefinitionBox3Col",ExpressionUUID->"23930a59-41f9-4b60-94f5-126b52eabc76",
+ CellID->1933],
+Cell[46500, 1208, 94, 1, 70, "Section",ExpressionUUID->"c1d9c5d8-eab2-496e-86f7-3a40fec8f346",
+ CellID->1934],
+Cell[46597, 1211, 569, 17, 70, "Text",ExpressionUUID->"df6f40ec-4cd2-41b9-b408-29c846049b92",
+ CellID->1935],
+Cell[47169, 1230, 191, 4, 70, "MathCaption",ExpressionUUID->"ae7dd45f-abfd-4feb-a019-cd49e207d3c8",
+ CellID->1936],
+Cell[CellGroupData[{
+Cell[47385, 1238, 146, 3, 70, "Input",ExpressionUUID->"d8834a2a-9014-46f7-b51c-bccdfd2decdf",
+ CellID->1937],
+Cell[47534, 1243, 2879, 74, 70, "Output",ExpressionUUID->"c46f541d-aa00-49d9-85ac-0c6ef9d43bad",
+ CellID->1938]
+}, Open  ]],
+Cell[50428, 1320, 117, 1, 70, "Caption",ExpressionUUID->"4ac871b6-c79f-44f3-af4d-5e09ef1f2c54",
+ CellID->1939],
+Cell[50548, 1323, 4844, 101, 70, "DefinitionBox3Col",ExpressionUUID->"cd1dbcd9-14af-4edc-bbd8-2027feff185a",
+ CellID->1940],
+Cell[55395, 1426, 95, 1, 70, "Section",ExpressionUUID->"a9340c1c-4fa2-43cb-b473-b2ec6ff82886",
+ CellID->1941],
+Cell[55493, 1429, 635, 18, 70, "Text",ExpressionUUID->"4c5543be-3634-4b07-a70e-12bc095fa508",
+ CellID->1942],
+Cell[56131, 1449, 191, 4, 70, "MathCaption",ExpressionUUID->"4822ac3f-8278-45f7-a315-4f9c559b8349",
+ CellID->1943],
+Cell[CellGroupData[{
+Cell[56347, 1457, 148, 3, 70, "Input",ExpressionUUID->"b18b704d-60b3-4f4d-96b7-051d9ad1bbf3",
+ CellID->1944],
+Cell[56498, 1462, 1431, 35, 70, "Output",ExpressionUUID->"7fb2947b-7c11-4551-865e-cd334953918d",
+ CellID->1945]
+}, Open  ]],
+Cell[57944, 1500, 118, 1, 70, "Caption",ExpressionUUID->"e6dbbb61-3a95-4803-aea1-a83e26f9f5d7",
+ CellID->1946],
+Cell[58065, 1503, 4450, 100, 70, "DefinitionBox3Col",ExpressionUUID->"7ffb283b-7903-4d4d-acdb-2a5b16b897ae",
+ CellID->1947],
+Cell[62518, 1605, 95, 1, 70, "Section",ExpressionUUID->"4d7487bd-7010-4c48-ad38-0bfbe54cf111",
+ CellID->1948],
+Cell[62616, 1608, 572, 18, 70, "Text",ExpressionUUID->"4c13e666-a877-4c05-aa70-49750be65771",
+ CellID->1949],
+Cell[63191, 1628, 191, 4, 70, "MathCaption",ExpressionUUID->"20e5a81c-a1b3-448f-b316-0208d15f87ef",
+ CellID->1950],
+Cell[CellGroupData[{
+Cell[63407, 1636, 148, 3, 70, "Input",ExpressionUUID->"5fb40353-770a-4413-80be-3441cbc90621",
+ CellID->1951],
+Cell[63558, 1641, 1368, 32, 70, "Output",ExpressionUUID->"403e0ff7-0bb5-45e7-a591-c28a95865ed9",
+ CellID->1952]
+}, Open  ]],
+Cell[64941, 1676, 118, 1, 70, "Caption",ExpressionUUID->"fc893e0b-a854-47fa-8c80-abc0f1e1da0c",
+ CellID->1953],
+Cell[65062, 1679, 3960, 86, 70, "DefinitionBox3Col",ExpressionUUID->"04862bc6-699d-4314-8d10-81aa06d63cac",
+ CellID->1954],
+Cell[69025, 1767, 94, 1, 70, "Section",ExpressionUUID->"b0dc7603-ef92-486e-87ed-2f65d793d285",
+ CellID->1955],
+Cell[69122, 1770, 761, 22, 70, "Text",ExpressionUUID->"6be9a300-caf4-49a2-a313-0deeda40c9fc",
+ CellID->1956],
+Cell[69886, 1794, 191, 4, 70, "MathCaption",ExpressionUUID->"e713024e-efd4-4a61-80c8-48709477c53b",
+ CellID->1957],
+Cell[CellGroupData[{
+Cell[70102, 1802, 147, 3, 70, "Input",ExpressionUUID->"c72d318c-09b1-4eed-91eb-b3d063a72f8c",
+ CellID->1958],
+Cell[70252, 1807, 4919, 138, 70, "Output",ExpressionUUID->"211d5822-83ed-479d-b77f-8be4280df859",
+ CellID->1959]
+}, Open  ]],
+Cell[75186, 1948, 117, 1, 70, "Caption",ExpressionUUID->"74673406-6549-49de-b950-2d62ebedbd60",
+ CellID->1960],
+Cell[75306, 1951, 7327, 171, 70, "DefinitionBox3Col",ExpressionUUID->"a95c0f17-6c3a-4034-b225-4b814a980205",
+ CellID->1961],
+Cell[82636, 2124, 96, 1, 70, "Section",ExpressionUUID->"47ee58eb-2724-4faf-b959-0020d5f619d3",
+ CellID->1962],
+Cell[82735, 2127, 737, 22, 70, "Text",ExpressionUUID->"6eaf3e52-0e39-4530-b5cb-803515d9c2a6",
+ CellID->1963],
+Cell[83475, 2151, 191, 4, 70, "MathCaption",ExpressionUUID->"375d58b3-2117-4fec-9702-d1bc914cba97",
+ CellID->1964],
+Cell[CellGroupData[{
+Cell[83691, 2159, 149, 3, 70, "Input",ExpressionUUID->"02557f16-5fa7-47a1-8f58-8e4a6ee4811e",
+ CellID->1965],
+Cell[83843, 2164, 4789, 135, 70, "Output",ExpressionUUID->"1d7c2f44-3dfc-4887-84c4-8e840a417c55",
+ CellID->1966]
+}, Open  ]],
+Cell[88647, 2302, 119, 1, 70, "Caption",ExpressionUUID->"db70a8f2-9e94-4bfd-9aab-8f089ce528be",
+ CellID->1967],
+Cell[88769, 2305, 6679, 155, 70, "DefinitionBox3Col",ExpressionUUID->"4fed2617-1fba-4c96-8545-e00ce4001b44",
+ CellID->1968],
+Cell[95451, 2462, 96, 1, 70, "Section",ExpressionUUID->"9e1dd43f-ce1b-4d8e-b6fc-d92636f3d680",
+ CellID->1969],
+Cell[95550, 2465, 478, 12, 70, "Text",ExpressionUUID->"c6ecd669-4d5a-474d-968a-596d245cc3fa",
+ CellID->1970],
+Cell[96031, 2479, 191, 4, 70, "MathCaption",ExpressionUUID->"b23a7f26-f9be-4816-b090-1e592d451707",
+ CellID->1971],
+Cell[CellGroupData[{
+Cell[96247, 2487, 149, 3, 70, "Input",ExpressionUUID->"c63a760c-c356-4856-8000-8fdc4274e190",
+ CellID->1972],
+Cell[96399, 2492, 3647, 107, 70, "Output",ExpressionUUID->"773a061e-87ee-4fcf-93e1-b670c2911c4f",
+ CellID->1973]
+}, Open  ]],
+Cell[100061, 2602, 119, 1, 70, "Caption",ExpressionUUID->"2943501d-93c8-44ab-8c98-58eeeab99a9f",
+ CellID->1974],
+Cell[100183, 2605, 3826, 92, 70, "DefinitionBox3Col",ExpressionUUID->"205dad1f-5dd0-4e5e-bf46-d39e53d72f67",
+ CellID->1975],
+Cell[104012, 2699, 98, 1, 70, "Section",ExpressionUUID->"63b2d662-f76f-46a7-93c0-2bc46d73d8fb",
+ CellID->1976],
+Cell[104113, 2702, 745, 21, 70, "Text",ExpressionUUID->"cef7c18b-6753-487c-8b15-675531e7b173",
+ CellID->1977],
+Cell[104861, 2725, 191, 4, 70, "MathCaption",ExpressionUUID->"87ec2537-e7de-4d86-aeb5-1ab98f0bb306",
+ CellID->1978],
+Cell[CellGroupData[{
+Cell[105077, 2733, 151, 3, 70, "Input",ExpressionUUID->"028ead3c-4fa9-4311-9345-031f570cb60e",
+ CellID->1979],
+Cell[105231, 2738, 859, 20, 70, "Output",ExpressionUUID->"05c17962-552c-40ea-9022-3b45bf5a0652",
+ CellID->1980]
+}, Open  ]],
+Cell[106105, 2761, 121, 1, 70, "Caption",ExpressionUUID->"984cde84-873b-4931-ad4a-c0bf9a7e7f79",
+ CellID->1981],
+Cell[106229, 2764, 2631, 60, 70, "DefinitionBox3Col",ExpressionUUID->"8671ea99-d78b-4a72-b755-ce98c7256b81",
+ CellID->1982],
+Cell[108863, 2826, 98, 1, 70, "Section",ExpressionUUID->"d70a785d-f8bc-4d66-a9cf-0511e3e12c7d",
+ CellID->1983],
+Cell[108964, 2829, 558, 17, 70, "Text",ExpressionUUID->"552e791d-d2b1-469f-a284-c67a884163c0",
+ CellID->1984],
+Cell[109525, 2848, 191, 4, 70, "MathCaption",ExpressionUUID->"665e93e2-c18e-4f86-9ee8-fa314d904b0e",
+ CellID->1985],
+Cell[CellGroupData[{
+Cell[109741, 2856, 151, 3, 70, "Input",ExpressionUUID->"4e7f3c4e-2901-42a6-8c0f-250c7d8aefd9",
+ CellID->1986],
+Cell[109895, 2861, 778, 18, 70, "Output",ExpressionUUID->"d59fcc77-c718-4f2d-8c7b-434adc7a607d",
+ CellID->1987]
+}, Open  ]],
+Cell[110688, 2882, 121, 1, 70, "Caption",ExpressionUUID->"0a13de3c-a2af-4e1f-a1dc-cbafa747230f",
+ CellID->1988],
+Cell[110812, 2885, 2394, 55, 70, "DefinitionBox3Col",ExpressionUUID->"fa20ac4c-6f86-44f9-8788-d305fb3adfd5",
+ CellID->1989],
+Cell[113209, 2942, 100, 1, 70, "Section",ExpressionUUID->"a1d2b408-d6dd-4ca5-a41d-aa8fdb2f2a83",
+ CellID->1990],
+Cell[113312, 2945, 478, 12, 70, "Text",ExpressionUUID->"1cb69639-5d69-4fe0-b06b-eca9f9735899",
+ CellID->1991],
+Cell[113793, 2959, 191, 4, 70, "MathCaption",ExpressionUUID->"5e33a028-e317-4e98-86db-8c4be89962c4",
+ CellID->1992],
+Cell[CellGroupData[{
+Cell[114009, 2967, 153, 3, 70, "Input",ExpressionUUID->"13b0c45b-e98a-42dc-a49d-5a74bb660f21",
+ CellID->1993],
+Cell[114165, 2972, 1497, 34, 70, "Output",ExpressionUUID->"425de484-f1ff-47f2-82ea-e3a0e8b1ccd0",
+ CellID->1994]
+}, Open  ]],
+Cell[115677, 3009, 123, 1, 70, "Caption",ExpressionUUID->"d65549ea-923f-41e0-9922-967a503b09b1",
+ CellID->1995],
+Cell[115803, 3012, 820, 16, 70, "DefinitionBox3Col",ExpressionUUID->"e5c2fccd-ad61-4455-bc95-bbaaf6fa8717",
+ CellID->1996],
+Cell[116626, 3030, 94, 1, 70, "Section",ExpressionUUID->"a1492bcd-e306-4ca9-afe1-7fa16acec93d",
+ CellID->1997],
+Cell[116723, 3033, 214, 4, 70, "Text",ExpressionUUID->"bb4c3222-fce8-4608-863a-870b1a26dbcd",
+ CellID->1998],
+Cell[116940, 3039, 191, 4, 70, "MathCaption",ExpressionUUID->"828030fd-1e5d-417d-93ac-45d63c2e01f9",
+ CellID->1999],
+Cell[CellGroupData[{
+Cell[117156, 3047, 147, 3, 70, "Input",ExpressionUUID->"77769b5e-661c-4ecf-98a3-fe946a12b04e",
+ CellID->2000],
+Cell[117306, 3052, 285, 7, 70, "Output",ExpressionUUID->"b792e0c4-b167-4c18-9f02-da738dffc2ce",
+ CellID->2001]
+}, Open  ]],
+Cell[117606, 3062, 117, 1, 70, "Caption",ExpressionUUID->"ff14149f-a8bd-47a6-9742-ea13ff6b16da",
+ CellID->2002],
+Cell[117726, 3065, 820, 16, 70, "DefinitionBox3Col",ExpressionUUID->"6d23d096-e8bf-406d-8b5c-f2bc1e3a9f54",
+ CellID->2003],
+Cell[118549, 3083, 93, 1, 70, "Section",ExpressionUUID->"a186eb01-709e-4890-8aa9-afa67d9dfa8f",
+ CellID->2004],
+Cell[118645, 3086, 793, 21, 70, "Text",ExpressionUUID->"d5f2d226-34b4-465f-8147-e27a9a667269",
+ CellID->2005],
+Cell[119441, 3109, 191, 4, 70, "MathCaption",ExpressionUUID->"955d6d11-6773-443f-9513-a485921f6b9c",
+ CellID->2006],
+Cell[CellGroupData[{
+Cell[119657, 3117, 146, 3, 70, "Input",ExpressionUUID->"a3adb64f-3341-4213-90ea-77aa4c47327d",
+ CellID->2007],
+Cell[119806, 3122, 340, 9, 70, "Output",ExpressionUUID->"3cacfc43-0eff-42c7-b368-80e25f59005b",
+ CellID->2008]
+}, Open  ]],
+Cell[120161, 3134, 116, 1, 70, "Caption",ExpressionUUID->"3d06fcd0-9412-4a50-99f4-8c6c4fc42df7",
+ CellID->2009],
+Cell[120280, 3137, 820, 16, 70, "DefinitionBox3Col",ExpressionUUID->"4fafc338-8534-4088-b390-0db6945f83df",
+ CellID->2010]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[121137, 3158, 116, 1, 70, "TutorialMoreAboutSection",ExpressionUUID->"a1be8e97-a7ad-4889-9086-8df456186aca",
+ CellID->2011],
+Cell[121256, 3161, 209, 4, 70, "MoreAbout",ExpressionUUID->"af409d11-22ff-40a8-9212-d8785382c007",
+ CellID->2012]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[121502, 3170, 123, 1, 70, "RelatedTutorialsSection",ExpressionUUID->"18aa82c6-1199-4fe6-8960-f08c409b5ad1",
+ CellID->2013],
+Cell[121628, 3173, 220, 4, 70, "Tutorials",ExpressionUUID->"284e8a09-bf1d-4eed-b742-202ae13ff85f",
+ CellID->2014],
+Cell[121851, 3179, 235, 5, 70, "Tutorials",ExpressionUUID->"211d4330-0d30-455c-96ac-45b57ce49379",
+ CellID->2015],
+Cell[122089, 3186, 251, 5, 70, "Tutorials",ExpressionUUID->"b142bff9-148f-424a-a0aa-2ec3b4056e18",
+ CellID->2016],
+Cell[122343, 3193, 237, 5, 70, "Tutorials",ExpressionUUID->"cc9d189d-d1d6-44fb-9be6-9cb1cfaa5a94",
+ CellID->2017]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

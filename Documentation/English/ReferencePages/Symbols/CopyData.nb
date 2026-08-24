@@ -1,0 +1,359 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     12978,        350]
+NotebookOptionsPosition[      8578,        251]
+NotebookOutlinePosition[      9657,        282]
+CellTagsIndexPosition[      9573,        277]
+WindowTitle->CopyData
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Categorization", "CategorizationSection",
+ CellID->724,ExpressionUUID->"1c66b68e-af5a-43b5-aec9-511fbb2ef7d4"],
+
+Cell["Symbol", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->725,ExpressionUUID->"f09f12a1-3d83-4d70-9a6c-78d45c9fa991"],
+
+Cell["VasilDimitrov/SolutionsX", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->726,ExpressionUUID->"995a212b-3348-4243-81cb-e1cf56e3a537"],
+
+Cell["VasilDimitrov`SolutionsX`", "Categorization",
+ CellLabel->"Context",
+ CellID->727,ExpressionUUID->"c2908546-212f-4072-8e0b-ebbcfd6bf03e"],
+
+Cell["VasilDimitrov/SolutionsX/ref/CopyData", "Categorization",
+ CellLabel->"URI",
+ CellID->728,ExpressionUUID->"5011f604-5285-47af-b952-0f09a9496bfb"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->733,ExpressionUUID->"6c62ad42-c3c1-44dc-b018-62e3b0baddc3"],
+
+Cell["CopyData", "Keywords",
+ CellID->729,ExpressionUUID->"add5a8f2-5d57-4b81-b147-ad326c98b295"],
+
+Cell["SolutionsX", "Keywords",
+ CellID->730,ExpressionUUID->"66cadf79-d859-4c01-a79a-52b36a9c682a"],
+
+Cell["supergravity", "Keywords",
+ CellID->731,ExpressionUUID->"91b18d22-647d-4a4d-9cd7-b18f6a0eac55"],
+
+Cell["xAct", "Keywords",
+ CellID->732,ExpressionUUID->"3de0e8dc-f76d-4f73-9975-5b8de6bbc644"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["CopyData", "ObjectName",
+ CellID->734,ExpressionUUID->"c14b6fa3-3465-41a7-9ae0-8b1b2bc37035"],
+
+Cell[TextData[{
+ Cell["   ", "ModInfo",ExpressionUUID->"62b9090c-95c0-4723-a677-97dc29cdae00"],
+ Cell[BoxData[
+  RowBox[{
+   TemplateBox[{
+     Cell[
+      TextData["CopyData"]], "paclet:VasilDimitrov/SolutionsX/ref/CopyData", 
+     "VasilDimitrov Package Symbol"},
+    "PackageLink",
+    BaseStyle->"InlineFormula"], "[", 
+   StyleBox["\"\<alias/name\>\"", "TI"], "]"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "872eb8e7-ffa7-4a47-b6f7-a2dd342d7dc6"],
+ "\[LineSeparator]copies the entry ",
+ Cell[BoxData[
+  StyleBox["name", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "ae4d9af7-68de-4522-84c0-d68c51434fa4"],
+ " of another alias into your own alias, notebook and all; the source is \
+never touched.\n",
+ Cell["   ", "ModInfo",ExpressionUUID->"b9a4541b-7de5-4b47-aa8c-239039924028"],
+ Cell[BoxData[
+  RowBox[{
+   TemplateBox[{
+     Cell[
+      TextData["CopyData"]], "paclet:VasilDimitrov/SolutionsX/ref/CopyData", 
+     "VasilDimitrov Package Symbol"},
+    "PackageLink",
+    BaseStyle->"InlineFormula"], "[", 
+   StyleBox["\"\<alias\>\"", "TI"], "]"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "4a4460ab-241d-46c7-b8e0-3d54715250a7"],
+ "\[LineSeparator]copies every entry of that alias into yours, one by one."
+}], "Usage",
+ CellID->735,ExpressionUUID->"06beeb34-3ef2-4cf4-88df-4605a4c56095"],
+
+Cell["\<\
+CopyData[\"alias/name\"] copies one entry -- the record and its notebook, the \
+whole entry directory -- into $DataDirectory/$Alias/name. The source is never \
+touched.\
+\>", "Notes",
+ CellID->736,ExpressionUUID->"70a58a49-0e06-4036-9549-599bd6c23776"],
+
+Cell["\<\
+CopyData[\"alias\"] copies every entry of that alias, one by one, echoing \
+each.\
+\>", "Notes",
+ CellID->737,ExpressionUUID->"7b4805e6-685e-4765-ab75-6a328f9bcf19"],
+
+Cell["\<\
+Names you already have are collected and confirmed one by one. Overwrite -> \
+Automatic (the default) asks in a front end -- per entry, with overwrite-all \
+and skip-all -- and skips duplicates when there is no front end; Overwrite -> \
+False always skips; Overwrite -> True replaces silently.\
+\>", "Notes",
+ CellID->738,ExpressionUUID->"fe4ee0b2-9a52-46e5-8ee6-90bd4892780b"],
+
+Cell["A whole entry directory is replaced or kept, never merged.", "Notes",
+ CellID->739,ExpressionUUID->"962e2c82-113c-428b-bf6d-981302d1f628"],
+
+Cell[TextData[{
+ "A slashless argument can only be an alias: entry names always contain \
+\"__\" (they are computed by ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["SaveData"]], "paclet:VasilDimitrov/SolutionsX/ref/SaveData", 
+    "VasilDimitrov Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "1fb0a426-d238-43cb-8bd1-6ee1dd9ede6c"],
+ "), and a bare entry name is refused -- bare names resolve to your own \
+alias, and copying from yourself is meaningless."
+}], "Notes",
+ CellID->740,ExpressionUUID->"b74cceed-e6db-4de1-8c7e-28c02d8131b8"],
+
+Cell[TextData[{
+ "CopyData copies into your own alias, so it refuses until ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["$Alias"]], "paclet:VasilDimitrov/SolutionsX/ref/$Alias", 
+    "VasilDimitrov Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "f5370f34-0def-4602-a1ac-6365c8fafe2a"],
+ " is set."
+}], "Notes",
+ CellID->741,ExpressionUUID->"aa20aaea-f904-491a-95e5-fecc7af782b4"],
+
+Cell[TextData[{
+ "The stored $info of a copied entry travels verbatim: provenance (Author) \
+stays with the original author. Your alias appears as LastEdit on your next \
+",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["SaveData"]], "paclet:VasilDimitrov/SolutionsX/ref/SaveData", 
+    "VasilDimitrov Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "d4925a08-00d4-4732-afa8-ce70d9988b5d"],
+ "."
+}], "Notes",
+ CellID->742,ExpressionUUID->"0a06e6ca-970b-453e-a376-ef3f38fd3407"],
+
+Cell["CopyData returns nothing: the echoes are the record.", "Notes",
+ CellID->743,ExpressionUUID->"0e2d0cb6-bb43-425b-b630-acce5d49f865"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Examples", "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->744,ExpressionUUID->"ec729fb2-7104-465b-8444-8e85d10ed437"],
+
+Cell["\<\
+The following requires a front end, or a populated data directory, and so is \
+shown without output.\
+\>", "ExampleText",
+ CellID->745,ExpressionUUID->"089b8969-8ffc-41e6-ab57-d94878d30004"],
+
+Cell["Basic Examples", "ExampleSection",
+ CellID->746,ExpressionUUID->"ac5062f8-8eb8-4e08-bc67-a06be7c8b901"],
+
+Cell[BoxData[
+ RowBox[{"CopyData", "[", "\"\<Curated/Thr__5dL__STU-gauged\>\"", 
+  "]"}]], "Input",
+ CellLabel->"In[ ]:=",
+ CellID->747,ExpressionUUID->"10149f64-6395-48cb-8663-41787bbfa1ae"],
+
+Cell[BoxData[
+ RowBox[{"CopyData", "[", "\"\<Curated\>\"", "]"}]], "Input",
+ CellLabel->"In[ ]:=",
+ CellID->748,ExpressionUUID->"aecc30e0-3f53-4c7b-9fc0-4d37c3874125"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["See Also", "SeeAlsoSection",
+ CellID->749,ExpressionUUID->"a675e766-2768-4da6-b85c-6db1c7cb10ae"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["CurateData",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/CurateData"]], 
+  "InlineFormula",ExpressionUUID->"cd791cb5-00e3-4719-aeb2-42bddeebd9d0"],
+ " \[FilledVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["GetData",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/GetData"]], 
+  "InlineFormula",ExpressionUUID->"51d1345c-b781-41f4-8e58-86d4ec410ac1"],
+ " \[FilledVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["SaveData",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/SaveData"]], 
+  "InlineFormula",ExpressionUUID->"3c5933ef-a075-4c5b-a6b7-c644a66fd638"],
+ " \[FilledVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["$Alias",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/$Alias"]], 
+  "InlineFormula",ExpressionUUID->"e6f45498-53fe-4ba0-bb5b-fa4f433ebdde"]
+}], "SeeAlso",
+ CellID->750,ExpressionUUID->"3b9f7201-9f47-4b22-ad21-89bd55dbfd71"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Tech Notes", "TechNotesSection",
+ CellID->751,ExpressionUUID->"2d31d35b-6f51-4faa-9421-eee2ab17ea27"],
+
+Cell[TextData[ButtonBox["Welcome to SolutionsX",
+ BaseStyle->"Link",
+ ButtonData->"paclet:VasilDimitrov/SolutionsX/tutorial/Welcome"]], "Tutorials",\
+
+ CellID->752,ExpressionUUID->"8a73ac3a-bd45-4e90-b043-a0ed9be2a13c"]
+}, Open  ]]
+},
+WindowTitle->"CopyData",
+TaggingRules-><|
+ "Metadata" -> <|
+   "title" -> "CopyData", "summary" -> 
+    "copies entries of another alias into your own", "context" -> 
+    "VasilDimitrov`SolutionsX`", "paclet" -> "VasilDimitrov/SolutionsX", 
+    "type" -> "Symbol", "language" -> "en", "status" -> "None", "index" -> 
+    True, "uri" -> "VasilDimitrov/SolutionsX/ref/CopyData", 
+    "keywords" -> {"CopyData"}, "synonyms" -> {}, "titlemodifier" -> ""|>|>,
+FrontEndVersion->"13.3 for Mac OS X ARM (64-bit) (July 24, 2023)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"90fc236b-a7fc-4e8a-8a0f-3f1f628efdb9"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[6229, 181, 148, 2, 70, "PrimaryExamplesSection",ExpressionUUID->"ec729fb2-7104-465b-8444-8e85d10ed437",
+   CellTags->"PrimaryExamplesSection",
+   CellID->744]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 9382, 270}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[602, 23, 116, 1, 70, "CategorizationSection",ExpressionUUID->"1c66b68e-af5a-43b5-aec9-511fbb2ef7d4",
+ CellID->724],
+Cell[721, 26, 128, 2, 70, "Categorization",ExpressionUUID->"f09f12a1-3d83-4d70-9a6c-78d45c9fa991",
+ CellID->725],
+Cell[852, 30, 146, 2, 70, "Categorization",ExpressionUUID->"995a212b-3348-4243-81cb-e1cf56e3a537",
+ CellID->726],
+Cell[1001, 34, 143, 2, 70, "Categorization",ExpressionUUID->"c2908546-212f-4072-8e0b-ebbcfd6bf03e",
+ CellID->727],
+Cell[1147, 38, 151, 2, 70, "Categorization",ExpressionUUID->"5011f604-5285-47af-b952-0f09a9496bfb",
+ CellID->728]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1335, 45, 104, 1, 70, "KeywordsSection",ExpressionUUID->"6c62ad42-c3c1-44dc-b018-62e3b0baddc3",
+ CellID->733],
+Cell[1442, 48, 97, 1, 70, "Keywords",ExpressionUUID->"add5a8f2-5d57-4b81-b147-ad326c98b295",
+ CellID->729],
+Cell[1542, 51, 99, 1, 70, "Keywords",ExpressionUUID->"66cadf79-d859-4c01-a79a-52b36a9c682a",
+ CellID->730],
+Cell[1644, 54, 101, 1, 70, "Keywords",ExpressionUUID->"91b18d22-647d-4a4d-9cd7-b18f6a0eac55",
+ CellID->731],
+Cell[1748, 57, 93, 1, 70, "Keywords",ExpressionUUID->"3de0e8dc-f76d-4f73-9975-5b8de6bbc644",
+ CellID->732]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1878, 63, 99, 1, 70, "ObjectName",ExpressionUUID->"c14b6fa3-3465-41a7-9ae0-8b1b2bc37035",
+ CellID->734],
+Cell[1980, 66, 1383, 34, 70, "Usage",ExpressionUUID->"06beeb34-3ef2-4cf4-88df-4605a4c56095",
+ CellID->735],
+Cell[3366, 102, 262, 5, 70, "Notes",ExpressionUUID->"70a58a49-0e06-4036-9549-599bd6c23776",
+ CellID->736],
+Cell[3631, 109, 175, 4, 70, "Notes",ExpressionUUID->"7b4805e6-685e-4765-ab75-6a328f9bcf19",
+ CellID->737],
+Cell[3809, 115, 387, 6, 70, "Notes",ExpressionUUID->"fe4ee0b2-9a52-46e5-8ee6-90bd4892780b",
+ CellID->738],
+Cell[4199, 123, 144, 1, 70, "Notes",ExpressionUUID->"962e2c82-113c-428b-bf6d-981302d1f628",
+ CellID->739],
+Cell[4346, 126, 642, 15, 70, "Notes",ExpressionUUID->"b74cceed-e6db-4de1-8c7e-28c02d8131b8",
+ CellID->740],
+Cell[4991, 143, 482, 13, 70, "Notes",ExpressionUUID->"aa20aaea-f904-491a-95e5-fecc7af782b4",
+ CellID->741],
+Cell[5476, 158, 575, 15, 70, "Notes",ExpressionUUID->"0a06e6ca-970b-453e-a376-ef3f38fd3407",
+ CellID->742],
+Cell[6054, 175, 138, 1, 70, "Notes",ExpressionUUID->"0e2d0cb6-bb43-425b-b630-acce5d49f865",
+ CellID->743]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[6229, 181, 148, 2, 70, "PrimaryExamplesSection",ExpressionUUID->"ec729fb2-7104-465b-8444-8e85d10ed437",
+ CellTags->"PrimaryExamplesSection",
+ CellID->744],
+Cell[6380, 185, 200, 4, 70, "ExampleText",ExpressionUUID->"089b8969-8ffc-41e6-ab57-d94878d30004",
+ CellID->745],
+Cell[6583, 191, 109, 1, 70, "ExampleSection",ExpressionUUID->"ac5062f8-8eb8-4e08-bc67-a06be7c8b901",
+ CellID->746],
+Cell[6695, 194, 191, 4, 70, "Input",ExpressionUUID->"10149f64-6395-48cb-8663-41787bbfa1ae",
+ CellID->747],
+Cell[6889, 200, 167, 3, 70, "Input",ExpressionUUID->"aecc30e0-3f53-4c7b-9fc0-4d37c3874125",
+ CellID->748]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[7093, 208, 103, 1, 70, "SeeAlsoSection",ExpressionUUID->"a675e766-2768-4da6-b85c-6db1c7cb10ae",
+ CellID->749],
+Cell[7199, 211, 997, 25, 70, "SeeAlso",ExpressionUUID->"3b9f7201-9f47-4b22-ad21-89bd55dbfd71",
+ CellID->750]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[8233, 241, 107, 1, 70, "TechNotesSection",ExpressionUUID->"2d31d35b-6f51-4faa-9421-eee2ab17ea27",
+ CellID->751],
+Cell[8343, 244, 219, 4, 70, "Tutorials",ExpressionUUID->"8a73ac3a-bd45-4e90-b043-a0ed9be2a13c",
+ CellID->752]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
