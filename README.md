@@ -1,5 +1,9 @@
 # SolutionsX
 
+<p align="center">
+  <img src="images/apples.jpg" width="400" alt="Two apples comparing notes under a burst of curvature">
+</p>
+
 A Wolfram Language paclet for **storing, verifying and reusing
 supergravity solutions**, built on the [xAct](http://www.xact.es) tensor
 computer algebra suite.
