@@ -6,7 +6,7 @@ PacletObject[
     "Version" -> "2.1.0",
     "WolframVersion" -> "13.3+",
     "PublisherID" -> "VasilDimitrov",
-    "License" -> "AGPL-3.0-or-later (code); CC-BY-4.0 (Data/Curated)",
+    "License" -> "AGPL-3.0-or-later",
     "PrimaryContext" -> "VasilDimitrov`SolutionsX`",
     "Extensions" -> {
       {
