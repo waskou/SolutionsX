@@ -3,10 +3,10 @@ PacletObject[
     "Name" -> "VasilDimitrov/SolutionsX",
     "Description" -> "Storing, verifying and reusing supergravity solutions",
     "Creator" -> "Vasil Dimitrov",
-    "Version" -> "2.0.0",
+    "Version" -> "2.1.0",
     "WolframVersion" -> "13.3+",
     "PublisherID" -> "VasilDimitrov",
-    "License" -> "MIT",
+    "License" -> "AGPL-3.0-or-later (code); CC-BY-4.0 (Data/Curated)",
     "PrimaryContext" -> "VasilDimitrov`SolutionsX`",
     "Extensions" -> {
       {

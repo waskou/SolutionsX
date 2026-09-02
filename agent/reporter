@@ -1,0 +1,55 @@
+#!/bin/bash
+# reporter -- cold-replay a script on a FRESH kernel and report what
+# happened. EXPERIMENTAL (agent kit).
+#
+# A live session's success is testimony; the reporter turns it into a
+# record: it re-runs the script from nothing and reports (a) the full
+# output, (b) every kernel-message-looking line, (c) a diff against a
+# reference transcript if you have one. It renders NO verdict and refuses
+# nothing -- judging the report is the agent's (or the human's) job.
+#
+#   reporter <script.wl> [15|13] [reference.txt]
+#
+# Exit code: 0 if the replay RAN (whatever it printed); 1 only if the
+# replay itself could not be performed. Uses an isolated sxk session
+# (never touches a live one). Long scripts: set SXK_TIMEOUT (seconds).
+
+set -uo pipefail
+
+HERE="$(cd "$(dirname "$0")" && pwd)"
+[ $# -ge 1 ] || { sed -n '2,15p' "$0" | sed 's/^# \?//'; exit 1; }
+SCRIPT=$1; K="${2:-15}"; REF="${3:-}"
+
+[ -f "$SCRIPT" ] || { echo "reporter: no such script: $SCRIPT" >&2; exit 1; }
+
+export SXK_DIR="/tmp/sxk-reporter-$USER-$$"
+SXK="$HERE/sxk"
+OUTFILE="$SXK_DIR/replay-output.txt"
+
+"$SXK" start "$K" >/dev/null 2>&1 || { echo "reporter: kernel $K did not start" >&2; exit 1; }
+started=$(date '+%Y-%m-%d %H:%M:%S')
+"$SXK" do "$SCRIPT" > "$OUTFILE" 2>&1
+rc=$?
+"$SXK" stop >/dev/null 2>&1
+
+echo "==================== REPORTER ===================="
+echo "script:   $SCRIPT"
+echo "kernel:   $K (fresh, isolated session)"
+echo "started:  $started"
+echo "run:      $( [ $rc -eq 0 ] && echo "completed" || echo "DID NOT COMPLETE within timeout (rc=$rc)" )"
+echo
+echo "---- output ----"
+cat "$OUTFILE"
+echo
+echo "---- message-looking lines (pattern '::'; judge each) ----"
+msgs=$(grep -n '::' "$OUTFILE" || true)
+if [ -n "$msgs" ]; then printf '%s\n' "$msgs"; else echo "(none)"; fi
+if [ -n "$REF" ]; then
+    echo
+    echo "---- diff vs reference: $REF ----"
+    if diff "$REF" "$OUTFILE"; then echo "(identical)"; fi
+fi
+echo "=================================================="
+
+rm -rf "$SXK_DIR"
+exit 0

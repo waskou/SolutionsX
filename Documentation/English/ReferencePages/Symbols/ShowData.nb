@@ -1,0 +1,448 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.3' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[     15843,        439]
+NotebookOptionsPosition[     11901,        350]
+NotebookOutlinePosition[     12984,        381]
+CellTagsIndexPosition[     12899,        376]
+WindowTitle->ShowData
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell["Categorization", "CategorizationSection",
+ CellID->781,ExpressionUUID->"4532f9ea-7782-410f-9f35-b588a7b3159d"],
+
+Cell["Symbol", "Categorization",
+ CellLabel->"Entity Type",
+ CellID->782,ExpressionUUID->"8d5f8388-b7f3-40f8-9adb-53384d08bc4d"],
+
+Cell["VasilDimitrov/SolutionsX", "Categorization",
+ CellLabel->"Paclet Name",
+ CellID->783,ExpressionUUID->"d3da738a-3f56-4815-9a27-f34829784fe5"],
+
+Cell["VasilDimitrov`SolutionsX`", "Categorization",
+ CellLabel->"Context",
+ CellID->784,ExpressionUUID->"6859e0ae-64eb-4273-a9d3-1fd44b8aa302"],
+
+Cell["VasilDimitrov/SolutionsX/ref/ShowData", "Categorization",
+ CellLabel->"URI",
+ CellID->785,ExpressionUUID->"f5e957e6-cb30-4417-b2e4-c9dfb97de0bf"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["Keywords", "KeywordsSection",
+ CellID->790,ExpressionUUID->"30948f2a-fb5b-47da-bda7-402fbe896350"],
+
+Cell["ShowData", "Keywords",
+ CellID->786,ExpressionUUID->"6439a448-3ff4-472a-81cd-87b294de953b"],
+
+Cell["SolutionsX", "Keywords",
+ CellID->787,ExpressionUUID->"f38cead9-0941-4d23-9d84-e505773ca94b"],
+
+Cell["supergravity", "Keywords",
+ CellID->788,ExpressionUUID->"cef3c266-1be3-4414-8c0b-d85ef38e984d"],
+
+Cell["xAct", "Keywords",
+ CellID->789,ExpressionUUID->"73d6d34b-31b9-4389-a5ca-a26d0ec9ba60"]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["ShowData", "ObjectName",
+ CellID->791,ExpressionUUID->"20637118-1fbc-4c1d-a97c-53346a24b58e"],
+
+Cell[TextData[{
+ Cell["   ", "ModInfo",ExpressionUUID->"5fda6f9c-d4be-45f9-a195-4b6d236fdfc6"],
+ Cell[BoxData[
+  RowBox[{
+   TemplateBox[{
+     Cell[
+      TextData["ShowData"]], "paclet:VasilDimitrov/SolutionsX/ref/ShowData", 
+     "VasilDimitrov Package Symbol"},
+    "PackageLink",
+    BaseStyle->"InlineFormula"], "[", "]"}]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "faee0ef3-16d1-4659-9b35-ffa2d5e61d7f"],
+ "\[LineSeparator]displays an interactive browser of the data tree: one \
+button per alias \[LongDash] your own first, marked with a pencil \[LongDash] \
+and the entries of the chosen alias with their ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["OpenData"]], "paclet:VasilDimitrov/SolutionsX/ref/OpenData", 
+    "VasilDimitrov Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "ff153909-2765-402d-b01b-b6d822609bef"],
+ ", CopyName, ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["CopyData"]], "paclet:VasilDimitrov/SolutionsX/ref/CopyData", 
+    "VasilDimitrov Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "4b0a1b05-c51d-4a44-893a-bbacef8874a8"],
+ " and ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["DeleteData"]], 
+    "paclet:VasilDimitrov/SolutionsX/ref/DeleteData", 
+    "VasilDimitrov Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "1401e50a-5c3d-4654-ac69-564887d594a2"],
+ " actions.\n",
+ Cell["   ", "ModInfo",ExpressionUUID->"615f07ef-d5b0-46d4-9436-00b4adce6302"],
+ "Every entry shows the name ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetData"]], "paclet:VasilDimitrov/SolutionsX/ref/GetData", 
+    "VasilDimitrov Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "7e27902e-24d8-4f92-8b30-99bdffd7ba7d"],
+ " takes, and CopyName copies it as a quoted string, ready to paste. The \
+search field filters across every alias as you type. Without a front end \
+ShowData[] prints the same tree as text."
+}], "Usage",
+ CellID->792,ExpressionUUID->"facbd040-35c2-49e8-84a4-32149fe0759e"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["ShowData"]], "paclet:VasilDimitrov/SolutionsX/ref/ShowData", 
+    "VasilDimitrov Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "0982399a-f385-42ff-9523-b403a2571ec5"],
+ "[] displays a browser panel of the data tree: one button per alias \
+\[LongDash] your own first, permanently marked with a pencil \[LongDash] and \
+the entries of the chosen alias with their ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["OpenData"]], "paclet:VasilDimitrov/SolutionsX/ref/OpenData", 
+    "VasilDimitrov Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "bf92739a-d568-4e13-9110-21ac5c50e128"],
+ ", CopyName, ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["CopyData"]], "paclet:VasilDimitrov/SolutionsX/ref/CopyData", 
+    "VasilDimitrov Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "03c6a1ef-810a-421e-a94b-d2097509e1b9"],
+ " and ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["DeleteData"]], 
+    "paclet:VasilDimitrov/SolutionsX/ref/DeleteData", 
+    "VasilDimitrov Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "12f06d2a-e34a-406e-ae2b-f21e37533308"],
+ " actions."
+}], "Notes",
+ CellID->793,ExpressionUUID->"1b9160b0-a8b4-4194-b232-3151d7006e73"],
+
+Cell[TextData[{
+ "Every entry shows exactly the name ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetData"]], "paclet:VasilDimitrov/SolutionsX/ref/GetData", 
+    "VasilDimitrov Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "c5e3a308-91c4-403b-bec9-016a62e7faa5"],
+ " takes \[LongDash] bare under your own alias, \"",
+ Cell[BoxData[
+  StyleBox["alias", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "b831fa6e-7616-4b0e-973c-bbfd9f668854"],
+ "/",
+ Cell[BoxData[
+  StyleBox["name", "TI"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "4e45cd93-2d8b-460d-a70b-82b112eafd1a"],
+ "\" elsewhere \[LongDash] and CopyName copies it as a quoted string, ready \
+to paste into ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["GetData"]], "paclet:VasilDimitrov/SolutionsX/ref/GetData", 
+    "VasilDimitrov Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "e57ccf7b-10cb-4651-9bf8-b787ba314b39"],
+ "."
+}], "Notes",
+ CellID->794,ExpressionUUID->"215cba60-a5c2-4d84-9ef1-77cb366bb3a8"],
+
+Cell[TextData[{
+ "Each button is enabled exactly where the verb itself would act: ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["CopyData"]], "paclet:VasilDimitrov/SolutionsX/ref/CopyData", 
+    "VasilDimitrov Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "4527e01d-9d00-451a-9d57-d6e6b27b3699"],
+ " on foreign entries only, ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["DeleteData"]], 
+    "paclet:VasilDimitrov/SolutionsX/ref/DeleteData", 
+    "VasilDimitrov Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "94caf1fc-70b0-4e84-8de7-c344b7676ad0"],
+ " on your own only (with a confirmation the bare verb does not have), and ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["CurateData"]], 
+    "paclet:VasilDimitrov/SolutionsX/ref/CurateData", 
+    "VasilDimitrov Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "5801a9a9-7b96-4c10-be5e-568a87471c6c"],
+ " appears for curators."
+}], "Notes",
+ CellID->795,ExpressionUUID->"a7bb24aa-be72-41b8-903c-29b2a6468a31"],
+
+Cell[TextData[{
+ "The Curated corpus bundled with the paclet is listed even when the data \
+tree has no Curated alias, marked \"(bundled)\"; only ",
+ Cell[BoxData[
+  TemplateBox[{
+    Cell[
+     TextData["CopyData"]], "paclet:VasilDimitrov/SolutionsX/ref/CopyData", 
+    "VasilDimitrov Package Symbol"},
+   "PackageLink",
+   BaseStyle->"InlineFormula"]], "InlineFormula",
+  FontFamily->"Source Sans Pro",ExpressionUUID->
+  "9d3447e9-fc97-4a0a-8d99-ca50459ef617"],
+ " is live on bundled entries."
+}], "Notes",
+ CellID->796,ExpressionUUID->"58b4b9e1-ecef-4658-b394-f6c5b67e356b"],
+
+Cell["\<\
+The search field filters across every alias as you type, on \
+whitespace-separated case-insensitive fragments.\
+\>", "Notes",
+ CellID->797,ExpressionUUID->"0e68b703-8e4e-434e-a269-286d03fe8da3"],
+
+Cell["\<\
+Without a front end ShowData[] prints the same tree as text \[LongDash] never \
+a silent no-op.\
+\>", "Notes",
+ CellID->798,ExpressionUUID->"ed775c6a-82d3-4ddd-9265-b4e989d166ed"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Examples", "PrimaryExamplesSection",
+ CellTags->"PrimaryExamplesSection",
+ CellID->799,ExpressionUUID->"e3cdb697-7423-48a2-bc63-98068cbb58e6"],
+
+Cell["\<\
+The following requires a front end, or a populated data directory, and so is \
+shown without output.\
+\>", "ExampleText",
+ CellID->800,ExpressionUUID->"33549242-3847-455a-87b5-99b3a9d1a219"],
+
+Cell["Basic Examples", "ExampleSection",
+ CellID->801,ExpressionUUID->"b5bf793b-6a3b-4818-83ad-74412af42f2b"],
+
+Cell["\<\
+Browse the data tree \[LongDash] aliases across the top, the chosen alias's \
+entries below, each with its actions:\
+\>", "ExampleText",
+ CellID->802,ExpressionUUID->"75ccfa07-b86e-445c-8b89-728590e6b69c"],
+
+Cell[BoxData[
+ RowBox[{"ShowData", "[", "]"}]], "Input",
+ CellLabel->"In[ ]:=",
+ CellID->803,ExpressionUUID->"93a11c36-4ecd-4fb3-b0d8-cbcb9a3ed827"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["See Also", "SeeAlsoSection",
+ CellID->804,ExpressionUUID->"a68ef895-4877-463e-ad12-369e234f473d"],
+
+Cell[TextData[{
+ Cell[BoxData[
+  ButtonBox["GetData",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/GetData"]], 
+  "InlineFormula",ExpressionUUID->"20fd7bec-d195-4649-aba7-c20451f25c51"],
+ " \[FilledVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["OpenData",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/OpenData"]], 
+  "InlineFormula",ExpressionUUID->"1ff6d8d8-3ab8-479e-b37d-02772aeda68e"],
+ " \[FilledVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["CopyData",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/CopyData"]], 
+  "InlineFormula",ExpressionUUID->"0e69caaa-142e-4495-9b7d-3e95f9d0fbab"],
+ " \[FilledVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["DeleteData",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/DeleteData"]], 
+  "InlineFormula",ExpressionUUID->"4a5b4261-c4d2-4667-aa3c-8ac3d8a27166"],
+ " \[FilledVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["CurateData",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/CurateData"]], 
+  "InlineFormula",ExpressionUUID->"64028bfb-f54d-4bb0-9521-a3affcba8e81"],
+ " \[FilledVerySmallSquare] ",
+ Cell[BoxData[
+  ButtonBox["LocateData",
+   BaseStyle->"Link",
+   ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/LocateData"]], 
+  "InlineFormula",ExpressionUUID->"9f1e7c0b-29f8-4051-b519-220f8b9b3a4c"]
+}], "SeeAlso",
+ CellID->805,ExpressionUUID->"1250054e-dab0-4a7e-b8f5-e1c4a27de386"]
+}, Open  ]]
+},
+WindowTitle->"ShowData",
+TaggingRules-><|
+ "Metadata" -> <|
+   "title" -> "ShowData", "summary" -> 
+    "displays an interactive browser of the data tree", "context" -> 
+    "VasilDimitrov`SolutionsX`", "paclet" -> "VasilDimitrov/SolutionsX", 
+    "type" -> "Symbol", "language" -> "en", "status" -> "None", "index" -> 
+    True, "uri" -> "VasilDimitrov/SolutionsX/ref/ShowData", 
+    "keywords" -> {"ShowData"}, "synonyms" -> {}, "titlemodifier" -> ""|>|>,
+FrontEndVersion->"13.3 for Mac OS X ARM (64-bit) (July 24, 2023)",
+StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
+  CharacterEncoding -> "UTF-8"],
+ExpressionUUID->"bdde21bd-005b-409d-a18d-6f870e030af4"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{
+ "PrimaryExamplesSection"->{
+  Cell[9435, 280, 148, 2, 70, "PrimaryExamplesSection",ExpressionUUID->"e3cdb697-7423-48a2-bc63-98068cbb58e6",
+   CellTags->"PrimaryExamplesSection",
+   CellID->799]}
+ }
+*)
+(*CellTagsIndex
+CellTagsIndex->{
+ {"PrimaryExamplesSection", 12708, 369}
+ }
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[602, 23, 116, 1, 70, "CategorizationSection",ExpressionUUID->"4532f9ea-7782-410f-9f35-b588a7b3159d",
+ CellID->781],
+Cell[721, 26, 128, 2, 70, "Categorization",ExpressionUUID->"8d5f8388-b7f3-40f8-9adb-53384d08bc4d",
+ CellID->782],
+Cell[852, 30, 146, 2, 70, "Categorization",ExpressionUUID->"d3da738a-3f56-4815-9a27-f34829784fe5",
+ CellID->783],
+Cell[1001, 34, 143, 2, 70, "Categorization",ExpressionUUID->"6859e0ae-64eb-4273-a9d3-1fd44b8aa302",
+ CellID->784],
+Cell[1147, 38, 151, 2, 70, "Categorization",ExpressionUUID->"f5e957e6-cb30-4417-b2e4-c9dfb97de0bf",
+ CellID->785]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1335, 45, 104, 1, 70, "KeywordsSection",ExpressionUUID->"30948f2a-fb5b-47da-bda7-402fbe896350",
+ CellID->790],
+Cell[1442, 48, 97, 1, 70, "Keywords",ExpressionUUID->"6439a448-3ff4-472a-81cd-87b294de953b",
+ CellID->786],
+Cell[1542, 51, 99, 1, 70, "Keywords",ExpressionUUID->"f38cead9-0941-4d23-9d84-e505773ca94b",
+ CellID->787],
+Cell[1644, 54, 101, 1, 70, "Keywords",ExpressionUUID->"cef3c266-1be3-4414-8c0b-d85ef38e984d",
+ CellID->788],
+Cell[1748, 57, 93, 1, 70, "Keywords",ExpressionUUID->"73d6d34b-31b9-4389-a5ca-a26d0ec9ba60",
+ CellID->789]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[1878, 63, 99, 1, 70, "ObjectName",ExpressionUUID->"20637118-1fbc-4c1d-a97c-53346a24b58e",
+ CellID->791],
+Cell[1980, 66, 2339, 61, 70, "Usage",ExpressionUUID->"facbd040-35c2-49e8-84a4-32149fe0759e",
+ CellID->792],
+Cell[4322, 129, 1602, 45, 70, "Notes",ExpressionUUID->"1b9160b0-a8b4-4194-b232-3151d7006e73",
+ CellID->793],
+Cell[5927, 176, 1225, 34, 70, "Notes",ExpressionUUID->"215cba60-a5c2-4d84-9ef1-77cb366bb3a8",
+ CellID->794],
+Cell[7155, 212, 1264, 35, 70, "Notes",ExpressionUUID->"a7bb24aa-be72-41b8-903c-29b2a6468a31",
+ CellID->795],
+Cell[8422, 249, 577, 14, 70, "Notes",ExpressionUUID->"58b4b9e1-ecef-4658-b394-f6c5b67e356b",
+ CellID->796],
+Cell[9002, 265, 204, 4, 70, "Notes",ExpressionUUID->"0e68b703-8e4e-434e-a269-286d03fe8da3",
+ CellID->797],
+Cell[9209, 271, 189, 4, 70, "Notes",ExpressionUUID->"ed775c6a-82d3-4ddd-9265-b4e989d166ed",
+ CellID->798]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[9435, 280, 148, 2, 70, "PrimaryExamplesSection",ExpressionUUID->"e3cdb697-7423-48a2-bc63-98068cbb58e6",
+ CellTags->"PrimaryExamplesSection",
+ CellID->799],
+Cell[9586, 284, 200, 4, 70, "ExampleText",ExpressionUUID->"33549242-3847-455a-87b5-99b3a9d1a219",
+ CellID->800],
+Cell[9789, 290, 109, 1, 70, "ExampleSection",ExpressionUUID->"b5bf793b-6a3b-4818-83ad-74412af42f2b",
+ CellID->801],
+Cell[9901, 293, 215, 4, 70, "ExampleText",ExpressionUUID->"75ccfa07-b86e-445c-8b89-728590e6b69c",
+ CellID->802],
+Cell[10119, 299, 148, 3, 70, "Input",ExpressionUUID->"93a11c36-4ecd-4fb3-b0d8-cbcb9a3ed827",
+ CellID->803]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[10304, 307, 103, 1, 70, "SeeAlsoSection",ExpressionUUID->"a68ef895-4877-463e-ad12-369e234f473d",
+ CellID->804],
+Cell[10410, 310, 1475, 37, 70, "SeeAlso",ExpressionUUID->"1250054e-dab0-4a7e-b8f5-e1c4a27de386",
+ CellID->805]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)

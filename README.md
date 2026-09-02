@@ -83,8 +83,29 @@ Entries live under `Data/<alias>/`, one directory per entry, holding the
 machine-readable record (`.m`) and its evaluation notebook (`.nb`).
 `Data/Curated/` is the published corpus, maintained by the curator;
 everything you save goes under your own alias and is never touched by a
-`git pull`.
+`git pull`. `Data/Vasko-bot/` is an agent-produced corpus, published so
+that the claims of the companion paper can be checked by opening the
+notebooks that produced them.
 
-## License
+## Agent toolkit
 
-MIT — see [LICENSE](LICENSE). Contact: vasildimi@gmail.com.
+`agent/` is an experimental toolkit for driving SolutionsX with an AI
+agent the way a human drives it — a persistent kernel (`agent/sxk`:
+load once, `Compute` once, then iterate; budgets instead of hung
+waits), a notebook transcriber and author, method and trap notes, and a
+configuration file whose levers the owner sets. It is self-contained in
+the clone; `agent/README.md` is the entry point.
+
+## License and citation
+
+The SolutionsX code is licensed under the GNU Affero General Public
+License v3.0 or later — see [LICENSE](LICENSE). The data corpora that
+ship with the repository, `Data/Curated/` and `Data/Vasko-bot/`, are
+licensed under Creative Commons Attribution 4.0 International (CC BY
+4.0) — see [Data/Curated/LICENSE](Data/Curated/LICENSE) and
+[Data/Vasko-bot/LICENSE](Data/Vasko-bot/LICENSE); each entry names its
+author in its `$info` record, and attribution credits that author.
+Versions up to and including 2.0.0 were released under the MIT license.
+
+If SolutionsX contributes to a publication, please cite it — see
+[CITATION.cff](CITATION.cff). Contact: vasildimi@gmail.com.

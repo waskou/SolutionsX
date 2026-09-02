@@ -1,0 +1,360 @@
+#!/bin/bash
+# sxk -- a persistent Wolfram kernel for agents driving SolutionsX.
+# EXPERIMENTAL (ships with the agent kit; macOS/Linux, bash).
+#
+# Load the xAct stack once, Compute once, then iterate cheaply: cells are
+# submissions, budgets replace hung waits, and the human can reach into the
+# loop at any moment. Fresh design 2026-08-26 over the dev-tree original;
+# rationale in SolutionsX_Developement/lab/agent-tools/DESIGN.md.
+#
+#   sxk start [15|13]        start (or restart) a session; 15 default
+#   sxk do   '<code>'|file|- evaluate, block, print output (InputForm)
+#   sxk try  [secs] <code>   evaluate under a TimeConstrained budget
+#                            (default TRY_SECONDS, kit.conf); on timeout the
+#                            kernel and its state survive and you are
+#                            pointed at the hints
+#   sxk bg   '<code>'|file   evaluate without blocking (long Computes)
+#   sxk watch [int] [max]    stream new output every int s (default 5)
+#                            until idle or max s (default 600)
+#   sxk wait [seconds]       block until idle (default 3600)
+#   sxk out  [lines]         tail the transcript (default 80)
+#   sxk log                  the session so far: every submission, no
+#                            plumbing tokens -- the replayable draft script
+#   sxk status               kernel alive? which stack? busy or idle?
+#   sxk tell '<message>'     (for the human) leave a note; EVERY subsequent
+#                            sxk command shows it until the agent acks
+#   sxk ack                  acknowledge the user note (archived, not lost)
+#   sxk chan on|off          point the SolutionsX Compute progress channel
+#                            at this session's compute.log (package must be
+#                            loaded first; a later load resets it) -- then
+#                            status/watch show a per-component pulse
+#   sxk set <KEY> <value>    session-only config override (integer levers,
+#                            explained in agent/kit.conf); surfaced to the
+#                            agent like a user note until acked
+#   sxk config               every effective config value and where it
+#                            comes from (session > env SXK_<KEY> >
+#                            kit.conf > default)
+#   sxk again [prefix.wl]    restart the same kernel and replay a prefix
+#                            file -- the cheap recovery after a kill
+#   sxk stop                 kill THIS session's kernel (nothing else)
+#
+# Rules the transport imposes (learned, not chosen):
+#   - Needs[...] gets its own submission; %-chains live within ONE
+#     submission; results return in InputForm.
+#   - `try` cells are single expressions (compound with ; is fine); no %
+#     inside -- the budget wrapper evaluates them via Get.
+#   - There is NO graceful abort: SIGINT KILLS a -noprompt kernel
+#     (tested 2026-08-26). The abort of last resort is `stop` + `again`
+#     with a prefix -- seconds, if you keep your prefix current.
+#   - A stuck/wrong-shaped attempt is a prompt to CONSULT THE HINTS
+#     (agent/METHODS.md, agent/TRAPS.md): is the approach the right shape?
+#
+# Kernel discovery: SXK_KERNEL_15 / SXK_KERNEL_13 env vars override; else
+# the macOS default app paths; else whatever `WolframKernel` is on PATH.
+
+set -euo pipefail
+
+DIR="${SXK_DIR:-/tmp/sxk-agent-$USER}"
+CMDS="$DIR/cmds.wl"
+OUT="$DIR/out.txt"
+OFF="$DIR/offset"
+KERN="$DIR/kernel"
+KPID="$DIR/kpid"
+NOTE="$DIR/usernote.txt"
+CHAN="$DIR/compute.log"
+KITCONF="$(cd "$(dirname "$0")" && pwd)/kit.conf"
+SESSCONF="$DIR/config"
+CFG_KEYS="TRY_SECONDS DO_TIMEOUT WATCH_INTERVAL WATCH_MAX WAIT_MAX STALL_SHAPES STALL_MINUTES"
+
+usage() { sed -n '2,50p' "$0" | sed 's/^# \{0,1\}//'; exit 2; }
+
+find_kernel() {  # find_kernel 15|13 -> path on stdout, or fail loudly
+    local which=$1 k
+    case "$which" in
+      15) k="${SXK_KERNEL_15:-/Applications/Wolfram.app/Contents/MacOS/WolframKernel}" ;;
+      13) k="${SXK_KERNEL_13:-/Applications/Mathematica.app/Contents/MacOS/WolframKernel}" ;;
+      *)  usage ;;
+    esac
+    [ -x "$k" ] || k="$(command -v WolframKernel || true)"
+    [ -n "$k" ] && [ -x "$k" ] || {
+        echo "sxk: no kernel for '$which' -- set SXK_KERNEL_$which=/path/to/WolframKernel" >&2
+        exit 127; }
+    printf '%s\n' "$k"
+}
+
+# -- config: session (sxk set) > env SXK_<KEY> > kit.conf > built-in --
+cfg_default() {
+    case "$1" in
+      TRY_SECONDS)    echo 120 ;;
+      DO_TIMEOUT)     echo 600 ;;
+      WATCH_INTERVAL) echo 5 ;;
+      WATCH_MAX)      echo 600 ;;
+      WAIT_MAX)       echo 3600 ;;
+      STALL_SHAPES)   echo 3 ;;
+      STALL_MINUTES)  echo 30 ;;
+      *) return 1 ;;
+    esac
+}
+cfg_file() {  # cfg_file <file> <key> -> value, or fail; integers only
+    [ -f "$1" ] || return 1
+    local v; v=$(grep -E "^$2=[0-9]+$" "$1" | tail -1 | cut -d= -f2)
+    [ -n "$v" ] && printf '%s\n' "$v"
+}
+cfg() {  # cfg <key> -> effective value
+    local v
+    v=$(cfg_file "$SESSCONF" "$1") && { printf '%s\n' "$v"; return; }
+    eval "v=\${SXK_$1:-}"
+    [ -n "$v" ] && { printf '%s\n' "$v"; return; }
+    v=$(cfg_file "$KITCONF" "$1") && { printf '%s\n' "$v"; return; }
+    cfg_default "$1"
+}
+cfg_src() {  # cfg_src <key> -> provenance of the effective value
+    local v
+    cfg_file "$SESSCONF" "$1" >/dev/null && { echo "session, sxk set"; return; }
+    eval "v=\${SXK_$1:-}"
+    [ -n "$v" ] && { echo "env SXK_$1"; return; }
+    cfg_file "$KITCONF" "$1" >/dev/null && { echo "kit.conf"; return; }
+    echo "built-in default"
+}
+
+launcher_alive() { [ -f "$DIR/pid" ] && kill -0 "$(cat "$DIR/pid")" 2>/dev/null; }
+kernel_alive()   { [ -f "$KPID" ] && kill -0 "$(cat "$KPID")" 2>/dev/null; }
+
+pulse() {  # one line on the newest Compute channel entry, prefix as $1
+    [ -s "$CHAN" ] || return 0
+    local last ts age stallm
+    last=$(tail -1 "$CHAN"); ts=$(printf '%s' "$last" | cut -f1)
+    case "$ts" in ''|*[!0-9]*) return 0 ;; esac
+    age=$(( $(date +%s) - ts )); stallm=$(cfg STALL_MINUTES)
+    if [ "$age" -gt $(( stallm * 60 )) ]; then
+        printf '%scompute pulse %ss ago -- OLDER than STALL_MINUTES=%s min (a report, not a verdict: judge it, see agent/LADDER.md): %s\n' \
+            "$1" "$age" "$stallm" "$last"
+    else
+        printf '%scompute pulse %ss ago: %s\n' "$1" "$age" "$last"
+    fi
+}
+
+surface_note() {  # every command shows a pending user note until acked
+    if [ -s "$NOTE" ]; then
+        echo "================ USER NOTE (respond, then 'sxk ack') ================"
+        cat "$NOTE"
+        echo "====================================================================="
+    fi
+}
+
+# read the code argument: a file, stdin, or a literal
+code_of() {
+    if [ "$1" = "-" ]; then cat
+    elif [ -f "$1" ]; then cat "$1"
+    else printf '%s\n' "$1"
+    fi
+}
+
+drain() {  # print everything the kernel emitted since the last read
+    local off; off=$(cat "$OFF")
+    tail -c "+$((off+1))" "$OUT" | { grep -v '__sxk_[a-z0-9]*__' || true; }
+    wc -c < "$OUT" | tr -d ' ' > "$OFF"
+}
+
+submit() {  # submit <code> <token>
+    { printf '%s\n' "$1"; printf 'Print["%s"]\n' "$2"; } >> "$CMDS"
+}
+
+await() {  # await <token> <timeout-seconds>
+    local n=0 max=$(( ${2:-600} * 5 ))
+    until grep -q "$1" "$OUT" 2>/dev/null; do
+        sleep 0.2; n=$((n+1))
+        [ $n -lt $max ] || return 1
+    done
+}
+
+busy() {  # 0 = busy, 1 = idle
+    local sent done
+    sent=$(grep -c '__sxk_t' "$CMDS" 2>/dev/null | tr -d ' \n' || echo 0)
+    done=$(grep -c '__sxk_t' "$OUT" 2>/dev/null | tr -d ' \n' || echo 0)
+    [ "$sent" -gt "$done" ]
+}
+
+need_kernel() {
+    launcher_alive || { echo "sxk: no session -- run 'sxk start'" >&2; exit 1; }
+    kernel_alive   || { echo "sxk: KERNEL IS DEAD (killed or crashed) -- 'sxk again' to recover" >&2; exit 1; }
+}
+
+start() {
+    local which="${1:-15}" k
+    k=$(find_kernel "$which")
+    stop >/dev/null 2>&1 || true
+    mkdir -p "$DIR"
+    : > "$CMDS"; : > "$OUT"; echo 0 > "$OFF"; echo "$which" > "$KERN"
+    rm -f "$CHAN"   # a fresh kernel has the channel unset; no stale pulses
+    nohup sh -c "tail -n +1 -f '$CMDS' | '$k' -noprompt >> '$OUT' 2>&1" \
+        >/dev/null 2>&1 &
+    echo $! > "$DIR/pid"
+    local tok="__sxk_ready__" n=0
+    echo "Print[\"$tok\"]" >> "$CMDS"
+    until grep -q "$tok" "$OUT" 2>/dev/null; do
+        sleep 0.3; n=$((n+1))
+        [ $n -lt 200 ] || { echo "sxk: kernel did not come up" >&2; exit 1; }
+    done
+    wc -c < "$OUT" | tr -d ' ' > "$OFF"
+    # record the actual kernel pid (child of the launcher shell) so status
+    # can tell the truth after an external kill
+    local shpid kids
+    shpid=$(cat "$DIR/pid")
+    kids=$(pgrep -P "$shpid" 2>/dev/null || true)
+    : > "$KPID"
+    for p in $kids; do
+        case "$(ps -o comm= -p "$p" 2>/dev/null)" in
+            *WolframKernel*|*wolfram*|*MathKernel*) echo "$p" > "$KPID" ;;
+        esac
+    done
+    echo "sxk: kernel $which up (pid $(cat "$KPID" 2>/dev/null || echo '?')), session $DIR"
+}
+
+stop() {
+    # kill ONLY this session's processes: the recorded kernel pid and the
+    # tail feeder matched on OUR cmds path -- never a pattern-wide kill.
+    kernel_alive && kill -9 "$(cat "$KPID")" 2>/dev/null || true
+    launcher_alive && kill "$(cat "$DIR/pid")" 2>/dev/null || true
+    ps ax -o pid=,command= | grep -F "tail -n +1 -f $CMDS" | grep -v grep \
+        | awk '{print $1}' | xargs kill -9 2>/dev/null || true
+    rm -f "$DIR/pid" "$KPID"
+    sleep 0.3
+    echo "sxk: stopped"
+}
+
+[ $# -ge 1 ] || usage
+cmd=$1; shift
+
+case "$cmd" in
+  start)  start "${1:-15}" ;;
+  stop)   stop ;;
+  status)
+    surface_note
+    if ! launcher_alive; then echo "sxk: no session"; exit 1; fi
+    if ! kernel_alive; then
+        echo "sxk: session $DIR: KERNEL IS DEAD (killed or crashed) -- 'sxk again' to recover"
+        exit 1
+    fi
+    echo "sxk: kernel $(cat "$KERN") alive (pid $(cat "$KPID")), session $DIR"
+    if busy; then echo "sxk: BUSY"; pulse "sxk: "; else echo "sxk: idle"; fi ;;
+  out)
+    surface_note
+    tail -n "${1:-80}" "$OUT" | { grep -v '__sxk_[a-z0-9]*__' || true; } ;;
+  log)
+    grep -v '__sxk_[a-z0-9]*__' "$CMDS" 2>/dev/null || true ;;
+  do)
+    [ $# -ge 1 ] || usage
+    surface_note; need_kernel
+    tok="__sxk_t$(date +%s)${RANDOM}__"
+    submit "$(code_of "$1")" "$tok"
+    to=$(cfg DO_TIMEOUT)
+    if await "$tok" "$to"; then drain
+    else echo "sxk: still running after ${to}s (DO_TIMEOUT; the kernel keeps computing) -- 'sxk watch' to observe, 'sxk stop' + 'sxk again' to recover; consult the hints on whether the approach is the right shape" >&2
+         drain; exit 2; fi ;;
+  try)
+    [ $# -ge 1 ] || usage
+    surface_note; need_kernel
+    secs=$(cfg TRY_SECONDS)
+    case "$1" in ''|*[!0-9]*) ;; *) secs=$1; shift ;; esac
+    [ $# -ge 1 ] || usage
+    id="$(date +%s)${RANDOM}"
+    tok="__sxk_t${id}__"
+    cell="$DIR/try-${id}.wl"
+    code_of "$1" > "$cell"
+    submit "With[{sxkTry$id = AbsoluteTiming[TimeConstrained[Get[\"$cell\"], $secs, \$sxkTimedOut]]},
+Print[\"[sxk try] \", First[sxkTry$id], \" s\"];
+If[Last[sxkTry$id] === \$sxkTimedOut,
+Print[\"[sxk try] TIMED OUT after $secs s -- kernel and state intact. Consult the hints (agent/METHODS.md, agent/TRAPS.md): is the approach the right shape? After a few failed shapes on one obstacle: agent/LADDER.md.\"],
+Last[sxkTry$id]]]" "$tok"
+    if await "$tok" $((secs + 60)); then drain
+    else echo "sxk: try did not return (TimeConstrained could not interrupt this call) -- 'sxk stop' + 'sxk again'" >&2
+         drain; exit 2; fi ;;
+  bg)
+    [ $# -ge 1 ] || usage
+    surface_note; need_kernel
+    tok="__sxk_t$(date +%s)${RANDOM}__"
+    submit "$(code_of "$1")" "$tok"
+    echo "sxk: submitted, not waiting (token $tok)" ;;
+  watch)
+    surface_note; need_kernel
+    int="${1:-$(cfg WATCH_INTERVAL)}"; max="${2:-$(cfg WATCH_MAX)}"; spent=0
+    while :; do
+        off=$(cat "$OFF")
+        new=$(tail -c "+$((off+1))" "$OUT" | { grep -v '__sxk_[a-z0-9]*__' || true; })
+        [ -n "$new" ] && { echo "[$(date +%T)]"; printf '%s\n' "$new"; }
+        wc -c < "$OUT" | tr -d ' ' > "$OFF"
+        busy || { echo "sxk: idle"; break; }
+        pulse "[$(date +%T)] "
+        [ "$spent" -lt "$max" ] || { echo "sxk: watch limit ${max}s reached, still BUSY"; exit 2; }
+        sleep "$int"; spent=$((spent + int))
+    done ;;
+  wait)
+    surface_note; need_kernel
+    tok="__sxk_t$(date +%s)${RANDOM}__"
+    submit 'Null' "$tok"
+    if await "$tok" "${1:-$(cfg WAIT_MAX)}"; then drain; else echo "sxk: still busy" >&2; exit 2; fi ;;
+  set)
+    [ $# -ge 2 ] || usage
+    key=$1; val=$2
+    case " $CFG_KEYS " in
+      *" $key "*) ;;
+      *) echo "sxk: unknown config key '$key' -- known keys: $CFG_KEYS (explained in agent/kit.conf)" >&2; exit 2 ;;
+    esac
+    case "$val" in
+      ''|*[!0-9]*) echo "sxk: config values are positive integers, got '$val'" >&2; exit 2 ;;
+    esac
+    old=$(cfg "$key")
+    mkdir -p "$DIR"
+    echo "$key=$val" >> "$SESSCONF"
+    printf '[%s] CONFIG: %s %s -> %s (session-only)\n' \
+        "$(date '+%Y-%m-%d %H:%M:%S')" "$key" "$old" "$val" >> "$NOTE"
+    echo "sxk: $key $old -> $val (session-only; surfaced to the agent until 'sxk ack')" ;;
+  config)
+    surface_note
+    echo "sxk config -- effective values (precedence: session > env SXK_<KEY> > kit.conf > default; levers explained in agent/kit.conf)"
+    for k in $CFG_KEYS; do
+        printf '  %-16s %-6s (%s)\n' "$k" "$(cfg "$k")" "$(cfg_src "$k")"
+    done
+    keypat=$(echo "$CFG_KEYS" | tr ' ' '|')
+    for f in "$KITCONF" "$SESSCONF"; do
+        [ -f "$f" ] || continue
+        bad=$(grep -vE "^(($keypat)=[0-9]+|#.*|[[:space:]]*)$" "$f" || true)
+        [ -n "$bad" ] && { echo "sxk: WARNING -- ignored (malformed or unknown) lines in $f:"; printf '%s\n' "$bad"; }
+    done ;;
+  chan)
+    [ $# -ge 1 ] || usage
+    surface_note; need_kernel
+    case "$1" in
+      on)  target="\"$CHAN\"" ;;
+      off) target='None' ;;
+      *)   usage ;;
+    esac
+    "$0" do "If[MemberQ[\$Packages, \"VasilDimitrov\`SolutionsX\`\"],
+VasilDimitrov\`SolutionsX\`\$computeChannel = $target;
+Print[\"[sxk chan] compute channel -> \" <> ToString[VasilDimitrov\`SolutionsX\`\$computeChannel]],
+Print[\"[sxk chan] SolutionsX is NOT loaded -- Needs it first, then rerun 'sxk chan on' (any package load resets the channel to None)\"]]" ;;
+  tell)
+    [ $# -ge 1 ] || usage
+    mkdir -p "$DIR"
+    printf '[%s] %s\n' "$(date '+%Y-%m-%d %H:%M:%S')" "$*" >> "$NOTE"
+    echo "sxk: noted -- the agent will see this on its next sxk command" ;;
+  ack)
+    if [ -s "$NOTE" ]; then
+        mv "$NOTE" "$DIR/usernote-acked-$(date +%s).txt"
+        echo "sxk: user note acknowledged (archived in $DIR)"
+    else
+        echo "sxk: no pending user note"
+    fi ;;
+  again)
+    prefix="${1:-$DIR/prefix.wl}"
+    which=$( [ -f "$KERN" ] && cat "$KERN" || echo 15 )
+    start "$which"
+    if [ -f "$prefix" ]; then
+        echo "sxk: replaying prefix $prefix"
+        "$0" do "$prefix"
+    else
+        echo "sxk: no prefix file ($prefix) -- fresh kernel only"
+    fi ;;
+  *) usage ;;
+esac

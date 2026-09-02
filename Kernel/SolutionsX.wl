@@ -7,7 +7,7 @@
 (* ::Input::Initialization:: *)
 VasilDimitrov`SolutionsX`$FieldsXVersionExpected={"1.1.4",{2021,8,26}};
 VasilDimitrov`SolutionsX`$xTeriorVersionExpected={"0.9.1",{2019,5,17}};
-VasilDimitrov`SolutionsX`$Version={"2.0.0",{2026,8,24}};
+VasilDimitrov`SolutionsX`$Version={"2.1.0",{2026,9,2}};
 
 
 (* ::Input::Initialization:: *)
@@ -79,7 +79,7 @@ BeginPackage["VasilDimitrov`SolutionsX`",{"xAct`FieldsX`","xAct`xTerior`","xAct`
 (* ::Input::Initialization:: *)
 If[!TrueQ[$Notebooks],Print[xAct`xCore`Private`bars]];
 bannerPrint["Package VasilDimitrov`SolutionsX` version ",$Version[[1]],", ",$Version[[2]]];
-bannerPrint["Copyright \[Copyright] 2025 Vasil Dimitrov under the MIT License."];
+bannerPrint["Copyright \[Copyright] 2026 Vasil Dimitrov under the GNU Affero General Public License v3.0 or later."];
 
 
 (* ::Input::Initialization:: *)
@@ -178,7 +178,7 @@ body];
 
 (* ::Input::Initialization:: *)
 Off[General::shdw]
-VasilDimitrov`SolutionsX`Disclaimer[]:=Print["This is the warranty and liability text of the MIT License:\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.\n\nIN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE."]
+VasilDimitrov`SolutionsX`Disclaimer[]:=Print["This is the warranty and liability text of the GNU Affero General Public License (sections 15 and 16):\n\nTHERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW. EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM \"AS IS\" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU. SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION.\n\nIN NO EVENT UNLESS REQUIRED BY APPLICABLE LAW OR AGREED TO IN WRITING WILL ANY COPYRIGHT HOLDER, OR ANY OTHER PARTY WHO MODIFIES AND/OR CONVEYS THE PROGRAM AS PERMITTED ABOVE, BE LIABLE TO YOU FOR DAMAGES, INCLUDING ANY GENERAL, SPECIAL, INCIDENTAL OR CONSEQUENTIAL DAMAGES ARISING OUT OF THE USE OR INABILITY TO USE THE PROGRAM (INCLUDING BUT NOT LIMITED TO LOSS OF DATA OR DATA BEING RENDERED INACCURATE OR LOSSES SUSTAINED BY YOU OR THIRD PARTIES OR A FAILURE OF THE PROGRAM TO OPERATE WITH ANY OTHER PROGRAMS), EVEN IF SUCH HOLDER OR OTHER PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES."]
 On[General::shdw]
 
 
@@ -186,7 +186,7 @@ On[General::shdw]
 If[xAct`xCore`Private`$LastPackage==="VasilDimitrov`SolutionsX`",
 Unset[xAct`xCore`Private`$LastPackage];
 If[!TrueQ[$Notebooks],Print[xAct`xCore`Private`bars]];
-bannerPrint["These packages come with ABSOLUTELY NO WARRANTY; for details type Disclaimer[]. This is free software, and you are welcome to redistribute it under certain conditions. See the MIT License for details."];
+bannerPrint["These packages come with ABSOLUTELY NO WARRANTY; for details type Disclaimer[]. This is free software, and you are welcome to redistribute it under certain conditions. See the GNU Affero General Public License for details."];
 If[!TrueQ[$Notebooks],Print[xAct`xCore`Private`bars]];
 ]
 
@@ -221,7 +221,24 @@ $Objects={$manifold,$parameter,$metric,$frame,$spinStructure,$spinConnection,$bu
 
 
 (* ::Input::Initialization:: *)
-enableParallelComputations="HoldForm[applyMaps[apply_, symbol_, valId_] := Module[{slot, ind, basis, dep, keys, values, assumptions = $Assumptions, applyValues, applyKeys}, basis = Map[If[Head[#1] === Times && First[#1] === -1, Times @@ Rest[#1], #1] & , valId, All]; slot = valId/basis; ind = {}; Do[AppendTo[ind, Flatten[(GetIndicesOfVBundle @@ #1 & ) /@ MapAt[VBundleOfBasis, Tally[basis[[ii]]], {All, 1}]]], {ii, 1, Length[basis]}]; dep = First[TensorValues[symbol, valId]]; keys = Keys[Last[TensorValues[symbol, valId]]]; values = Values[Last[TensorValues[symbol, valId]]]; applyValues = Values[apply]; applyKeys = Keys[apply]; Do[Which[applyKeys[[aa]] === Map, Monitor[Do[values[[ii]] = applyValues[[aa]][values[[ii]]]; , {ii, 1, Length[values]}]; , Row[{\"Applying \", $PrintColor[applyValues[[aa]]], \" to the independent values of \", Row[Riffle[Table[ToBases[symbol @@ (slot[[ii]]*ind[[ii]])], {ii, 1, Length[basis]}], \", \"]], \" \", ProgressIndicator[ii/Length[values], ImageSize -> {200, 20}], \" \", ii, \"/\", Length[values]}]], applyKeys[[aa]] === ParallelMap, values = ParallelMap[Block[{$Assumptions = assumptions}, applyValues[[aa]][#1]] & , values, Method -> Automatic, ProgressReporting -> True]; ], {aa, 1, Length[applyKeys]}]; Quiet[symbol /: TensorValues[symbol, valId] = FoldedRule[dep, Thread[keys -> values]]]; ]]";
+(*applyMaps was, until 2026-08-27, stored HERE as a string and
+ToExpression'd at call time by EnableParallelComputations[], so that it and its
+Module locals were created in Global`. That was deliberate and it was correct
+for the call it contained: $DistributedContexts defaults to {"Global`"},
+ParallelMap auto-distributes only Global` symbols, and the call closed over the
+Module locals. Moving that same call into a private context made the subkernels
+unable to resolve them and ParallelMap fell back to SERIAL, silently, with
+correct answers -- measured 98.6 s against 67.9 s for the Global` version and
+72.8 s for honest serial.
+It is the CALL that was fixed instead (see applyMaps below): With[] substitutes
+the simplifier and the assumptions in literally, the pure function closes over
+nothing, and DistributedContexts->None then stops ParallelMap scanning the whole
+argument -- 244022 leaves on the 4d benchmark -- for symbols to ship, once per
+ValID. Level M 67.9 s -> 35.6 s, identical output. Context no longer matters:
+36.0 s in Global`, 35.6 s in a private context. Full record in the development
+project's benchmark/.
+EnableParallelComputations then had nothing left to enable, and was removed
+outright on 2026-08-28 along with the engine it used to patch.*)
 
 
 (* ::Section:: *)
@@ -311,6 +328,9 @@ SetDataDirectory::usage=usagerows[
 SetCurator::usage=usagerows[
 {"SetCurator[True] marks this user as the curator of the Curated corpus and records it in the user configuration file; SetCurator[False] removes the mark."},
 {"SetCurator[",it["flag"],", Permanent->False] sets it for this session only."}];
+WorkAs::usage=usagerows[
+{"WorkAs[",it["\"owner-bot\""],"] switches this session to an agent identity: $Alias is set to the given agent alias and the curator flag is dropped. The user configuration file is never written, so the switch ends with the kernel."},
+{"Only aliases of the shape ",it["\"<owner>-bot\""]," are accepted \[LongDash] one agent alias per human, e.g. \"Vasko-bot\"; your own identity is set with SetAlias. A refused alias, or a switch that does not take, aborts the evaluation. Experimental, part of the agent kit."}];
 CopyData::usage=usagerows[
 {"CopyData[",it["\"alias/name\""],"] copies the entry ",it["name"]," of another alias into your own alias, notebook and all; the source is never touched."},
 {"CopyData[",it["\"alias\""],"] copies every entry of that alias into yours, one by one."},
@@ -326,6 +346,10 @@ DeleteData::usage=usagerows[
 OpenData::usage=usagerows[
 {"OpenData[",it["name"],"] opens the notebook of the entry ",it["name"]," under the user's own alias."},
 {"OpenData[",it["\"alias/name\""],"] (or the option Alias->",it["\"alias\""],") opens another alias's entry."}];
+ShowData::usage=usagerows[
+{"ShowData[] displays an interactive browser of the data tree: one button per alias \[LongDash] your own first, marked with a pencil \[LongDash] and the entries of the chosen alias with their OpenData, CopyName, CopyData and DeleteData actions."},
+{"Every entry shows the name GetData takes \[LongDash] bare under your own alias, \"alias/name\" elsewhere \[LongDash] and CopyName copies it as a quoted string, ready to paste into GetData. The search field filters across every alias as you type, on whitespace-separated case-insensitive fragments."},
+{"The Curated corpus is listed even when the data tree has no Curated alias, read directly from the installed paclet; those bundled entries are fetched with CopyData. Without a front end ShowData[] prints the same tree as text."}];
 BasisOfVBundle::usage=usagerows[
 {"BasisOfVBundle[",it["bundle"],"] gives the first basis or chart defined over ",it["bundle"],", or None if there is none."},
 {"It issues a message and throws $Failed if ",it["bundle"]," is not a vector bundle."}];
@@ -339,8 +363,8 @@ Compute::usage=usagerows[
 {"Compute[",it["sol"],"[",it["object"],",",it["key"],",$auto,",it["autoKey"],"]] computes the components of ",it["autoKey"]," by walking its stored Chain, and stores them under Value."},
 {"Compute[",it["sol"],"[",it["object"],",",it["key"],"]] does this for every automatic tensor of the entry."},
 {"A Chain entry HoldForm[",it["expr"],"]->{",it["slots"],"} takes the components from ",it["expr"],"; an entry {",it["slots"],"}->{",it["slots"],"} raises or lowers indices with the metric. Nothing is computed if the Chain is unset."},
-{"Options are Chain, which overrides and stores the recipe, Using, which chooses the metric of each bundle, and Apply, which defaults to $Apply."}];
-EnableParallelComputations::usage=usagerow[{"EnableParallelComputations[] defines Global`applyMaps, letting Compute apply ParallelMap entries of Apply across parallel kernels."}];
+{"Options are Chain, which overrides and stores the recipe, Using, which chooses the metric of each bundle, and Apply, which defaults to $Apply."},
+{"Compute checks the Chain's slot specification against the object, reports an Apply key that is neither Map nor ParallelMap, and refuses to raise a slot whose vector bundle has no metric."}];
 SolutionsXHelp::usage=usagerow[{"SolutionsXHelp[] opens the SolutionsX guide page in the Documentation Center."}];
 Welcome::usage=usagerows[
 {"Welcome[] guides a first session: it asks where your data should live and what your alias is, records both in the user configuration, and offers the curated entries \[LongDash] individually selectable \[LongDash] to copy under your alias."},
@@ -371,7 +395,7 @@ ComputeDiffs::usage=usagerow[{"ComputeDiffs[",it["chart"],"] installs the rules 
 
 
 (* ::Input::Initialization:: *)
-{xActSymbols,optionIfSupported,conditionalKeysOf,evaluateInHeld,makeKey,include,load,unload,drop,makeSymbolPanel,hook,giveName,extractAllSymbols,myUndefMetric,transformAssociation,addCompletion,makeTensorFromForm,makeMetricArray,dcoeff,makeFormArray,toBasis,myPart,applyTensorSymmetries,includeIndependentValuesFromArray,includeIndependentValuesFromSlot,selector,computeFromArray,computeFromSlot,attachTVs,generatePermutations,overwriteOld,overwriteSame,saveNew,configFile,readConfig,writeConfig,setDataDir,curatedSource,curatorIdentity,welcomeAskDirectory,welcomeAskAlias,welcomeAskCurated,welcomeRecipe,printDataStatus,printLoadPanel,bannerPrint,resolveEntry,makeInfo,$loadedSymbols,withoutGradeGuard,$gradeGuardRule};
+{xActSymbols,optionIfSupported,conditionalKeysOf,evaluateInHeld,makeKey,include,load,unload,drop,makeSymbolPanel,hook,giveName,extractAllSymbols,myUndefMetric,transformAssociation,addCompletion,makeTensorFromForm,makeMetricArray,dcoeff,makeFormArray,toBasis,feMonitor,applyMaps,applyScalar,nonSystemSymbols,applyKeyQ,warnApplyKeys,checkSlotSpec,niceChain,unsignBasis,depRulesGroup,depRulesCNumbers,depRulesValID,depRules,componentKey,representativeKey,keyConfig,wantedPositions,emptyGrid,catchValues,installSkeleton,installValues,fillFromArray,fillFromSlot,raiseOne,$toValuesCap,markSubkernels,subkernelDeclared,$subkernelMarkerChecked,$computeChannel,computeEmit,computeFromArray,computeFromSlot,attachTVs,generatePermutations,overwriteOld,overwriteSame,saveNew,configFile,readConfig,writeConfig,setDataDir,curatedSource,curatorIdentity,welcomeAskDirectory,welcomeAskAlias,welcomeAskCurated,welcomeRecipe,printDataStatus,printLoadPanel,bannerPrint,resolveEntry,makeInfo,$loadedSymbols,withoutGradeGuard,$gradeGuardRule,dataAliases,dataEntries,curatedBundledQ,searchEntries,showDataButton,showDataAliasTab,showDataRow,showDataPanel,showDataListing};
 
 
 (* ::Section:: *)
@@ -538,6 +562,35 @@ SetCurator[_,OptionsPattern[]]:=(
 Message[SetCurator::invalid];
 Throw[$Failed];
 )
+
+
+(* ::Input::Initialization:: *)
+(*The agent identity switch (experimental, part of the agent kit): the one
+verb an agent runs first. Bot-shaped aliases only -- the convention is
+<owner>-bot, one agent alias per human; humans keep SetAlias. Session-only
+by construction: $Alias/$Curator are set directly, writeConfig is not on
+the code path, and the configuration file's bytes are compared before and
+after as a tripwire -- any discrepancy, or a switch that did not take,
+aborts rather than let an agent work under the wrong identity. Design
+contract: lab/agent-tools/DESIGN.md in the development project.*)
+WorkAs::invalid="Argument of WorkAs should be a string of the shape \"<owner>-bot\", e.g. \"Vasko-bot\".";
+WorkAs::notbot="WorkAs is for agent identities and accepts only aliases of the shape \"<owner>-bot\", e.g. \"Vasko-bot\". Your own identity is set with SetAlias.";
+WorkAs::failed="The identity switch did not take; aborting.";
+WorkAs[alias_]:=Module[{before,after},
+If[!StringQ[alias],Message[WorkAs::invalid];Abort[]];
+If[!StringMatchQ[alias,RegularExpression["[A-Za-z][A-Za-z0-9]*-bot"]],
+Message[WorkAs::notbot];Abort[]];
+before=If[FileExistsQ[configFile[]],ReadByteArray[configFile[]],None];
+Unprotect[$Alias,$Curator];
+$Alias=alias;
+$Curator=False;
+Protect[$Alias,$Curator];
+addCompletion[];
+after=If[FileExistsQ[configFile[]],ReadByteArray[configFile[]],None];
+If[$Alias=!=alias||$Curator=!=False||before=!=after,
+Message[WorkAs::failed];Abort[]];
+Echo[Row[{"Working as ",$PrintColor[alias],Style[" (agent, this session; curator off)",Italic]}]];
+]
 
 
 (* ::Input::Initialization:: *)
@@ -763,10 +816,6 @@ not=OptionValue[Not]
 },
 ToValues@ToValues@ToValues@ComponentArray@TraceBasisDummy@ToBases[expr,Not->not]
 ]
-
-
-(* ::Input::Initialization:: *)
-EnableParallelComputations[]:=ReleaseHold@ToExpression@enableParallelComputations
 
 
 (* ::Input::Initialization:: *)
@@ -2182,55 +2231,186 @@ finalize[ContractMetric[deg! ex],targets]
 (*Computations*)
 
 
+(* ::Text:: *)
+(*The previous compute engine -- myPart, selector, applyMaps, *)
+(*applyTensorSymmetries, the two includeIndependentValues workers and Compute *)
+(*itself -- was retired on 2026-08-28, when the reworked engine of the next *)
+(*section took the name Compute. It is kept here verbatim, commented out, and *)
+(*marked RETIRED cell by cell; the comments of the next section refer to it as *)
+(*"the retired engine". Restoring it means uncommenting those cells AND putting *)
+(*its private names back in the Temporary public private names list, from which *)
+(*they were removed. Everything still live in this section -- $PrintColor, *)
+(*feMonitor, the computeEmit channel, markSubkernels -- is shared with the *)
+(*engine that replaced it. Record: lab/compute2/ and benchmark-compute2/ in the *)
+(*development project.*)
+
+
 (* ::Input::Initialization:: *)
 $PrintColor=Style[#,FontColor->Darker@Brown,FontFamily->"Source Code Pro Semibold"]&;
 
 
 (* ::Input::Initialization:: *)
+(*RETIRED 2026-08-28 -- kept verbatim, see the section note above.
 myPart[expr_,indices_List,bases_List]:=Module[{
 rules=Thread[CNumbersOf[#]->Range[Length@CNumbersOf[#]]]&/@bases
 },
 expr[[Sequence@@Table[indices[[ii]]/.rules[[ii]],{ii,1,Length@indices}]]]
 ]
+*)
 
 
 (* ::Input::Initialization:: *)
+(*RETIRED 2026-08-28 -- kept verbatim, see the section note above.
 selector[symbol_,slot_,basis_]:=SelectFirst[Last[Level[#,1]]&/@TensorValIDs[symbol],MemberQ[#,slot*basis]&]
+*)
 
 
 (* ::Input::Initialization:: *)
+(*Monitor needs a front end; headless it only messages FrontEndObject::notavail, so run the body bare*)
+SetAttributes[feMonitor,HoldAll];
+feMonitor[expr_,mon_]:=If[TrueQ[$Notebooks],Monitor[expr,mon],expr]
+
+
+(* ::Input::Initialization:: *)
+(*The Compute progress channel (experimental, part of the agent kit).
+Default None, and Compute behaves exactly as before: computeEmit evaluates
+to Null, no output, no side effect. Set to a file path -- by a driver such
+as agent/sxk, never by the package itself -- each component lands as one
+appended tab-separated line: unixtime, event, tensor, detail. Events:
+"entry" (chain entry starts; last field array|slots|scalar), "sym"/"val"/
+"map" (component i of N done in symmetries/values/apply-maps), "pmap"
+(handed to ParallelMap, opaque from here), "maps" (entering apply-maps),
+"done" (chain entry finished, seconds). Emissions are passive by hard rule:
+a write failure is silenced -- the driver's stall detection is the observer,
+and Compute must never die of its own monitoring. Contract and trace proof:
+lab/agent-tools/DESIGN.md in the development project.*)
+$computeChannel=None;
+computeEmit[args___]:=If[StringQ[$computeChannel],
+Quiet@Check[
+Module[{sxch=OpenAppend[$computeChannel]},
+WriteString[sxch,StringRiffle[ToString/@{UnixTime[],args},"\t"]<>"\n"];
+Close[sxch]],
+Null]]
+
+
+(* ::Input::Initialization:: *)
+(*Subkernels get the component values and $Assumptions but, under
+DistributedContexts->None, no definitions at all.  Simplify will only use an
+assumption about Fc[rho[]] if it treats Fc[rho[]] as one opaque quantity, and
+its test for that is whether the HEAD carries an UpValue -- not what the
+UpValue says.  A bare head is looked through instead, and Sqrt[A]/Sqrt[B] then
+never recombines: CCLP-susy's spin connection came back 3067 -> 12632 leaves,
+mathematically identical and useless downstream.  Full record in
+benchmark-orthotoric/ in the development project (X8).
+
+So mark, do not ship.  One meaningless UpValue per loaded symbol is the whole
+requirement; shipping the real definitions costs 12.6 s (one fixed transitive
+closure through xAct, the same for 1 symbol or 176) and buys nothing.  Marking
+is ~0.01 s, so it runs on every call and can never go stale.
+
+$loadedSymbols -- what load actually made live -- rather than a harvest of the
+record, which states intent and can disagree with the kernel.  It also carries
+HoldForm[$Assumptions], hence the Head filter.
+
+The trigger is OBSERVED Simplify behaviour, not documented, and it fails
+silently: output degrades, nothing errors, every battery passes.  So it is
+checked once per session against fresh symbols, the way the Grade guard checks
+for xTensor's catch-all.*)
+General::solxmarker="Marking subkernel symbols no longer restores Simplify's recombination, so parallel Apply entries may return less simplified values; report this (see benchmark-orthotoric in the development project, X8).";
+$subkernelMarkerChecked=False;
+markSubkernels[]:=Module[{syms},
+syms=Select[$loadedSymbols,Head[#]===Symbol&];
+If[syms==={},Return[Null]];
+With[{ss=syms},
+ParallelEvaluate[Scan[Function[talasam,talasam/:subkernelDeclared[talasam]=True],ss],DistributedContexts->None]];
+If[!$subkernelMarkerChecked,
+$subkernelMarkerChecked=True;
+Module[{aa,bb,cc,probe},
+aa/:subkernelDeclared[aa]=True;
+bb/:subkernelDeclared[bb]=True;
+cc/:subkernelDeclared[cc]=True;
+probe=Block[{$Assumptions={aa[]>0,bb[]>0,cc[]>0}},Simplify[Sqrt[aa[]bb[]]/Sqrt[cc[]]]];
+If[LeafCount[probe]>10,Message[General::solxmarker]]]];
+Null]
+
+
+(* ::Input::Initialization:: *)
+(*RETIRED 2026-08-28 -- kept verbatim, see the section note above.
+applyMaps[apply_,symbol_,valId_]:=Module[{
+slot,ind,basis,dep,keys,values,assumptions=$Assumptions,applyValues,applyKeys
+},
+basis=Map[If[Head[#]===Times&&First[#]===-1,Times@@Rest[#],#]&,valId,All];
+slot=valId/basis;
+ind={};
+Do[AppendTo[ind,Flatten[(GetIndicesOfVBundle@@#&)/@MapAt[VBundleOfBasis,Tally[basis[[ii]]],{All,1}]]],{ii,1,Length@basis}];
+dep=First@TensorValues[symbol,valId];
+keys=Keys@Last@TensorValues[symbol,valId];
+values=Values@Last@TensorValues[symbol,valId];
+applyValues=Values@apply;
+applyKeys=Keys@apply;
+Do[
+Which[
+applyKeys[[aa]]===Map,
+feMonitor[
+Do[
+values[[ii]]=applyValues[[aa]][values[[ii]]];
+computeEmit["map",symbol,ii,Length@values];
+,{ii,1,Length@values}];
+,Row[{"Applying ",$PrintColor[applyValues[[aa]]]," to the independent values of ",Row[Riffle[Table[ToBases[symbol@@(slot[[ii]]*ind[[ii]])],{ii,1,Length@basis}],", "]]," ",ProgressIndicator[ii/Length@values,ImageSize->{200,20}]," ",ii,"/",Length@values}]],
+applyKeys[[aa]]===ParallelMap,
+computeEmit["pmap",symbol,Length@values];
+markSubkernels[];
+values=With[{fn=applyValues[[aa]],asm=assumptions},
+If[FreeQ[Hold[fn],talasam_Symbol/;Context[talasam]=!="System`",{0,Infinity},Heads->True],
+ParallelMap[Block[{$Assumptions=asm},fn[#]]&,values,Method->Automatic,ProgressReporting->True,DistributedContexts->None],
+ParallelMap[Block[{$Assumptions=asm},fn[#]]&,values,Method->Automatic,ProgressReporting->True]]];
+]
+,{aa,1,Length@applyKeys}];
+Quiet[symbol/:TensorValues[symbol,valId]=FoldedRule[dep,Thread[keys->values]]];
+]
+*)
+
+
+(* ::Input::Initialization:: *)
+(*RETIRED 2026-08-28 -- kept verbatim, see the section note above.
 applyTensorSymmetries[autoKey_,slots_,indices_,bases_]:=Module[{all},
 Do[
 all=Flatten@ComponentArray@Fold[toBasis,autoKey@@(slot*indices),Reverse[bases]];
-Monitor[
+feMonitor[
 Do[
 (*Pause[1];*)
 ComponentValue[all[[ii]]];
+computeEmit["sym",autoKey,ii,Length@all];
 ,{ii,1,Length@all}
 ],
 Row[{"Applying tensor symmetries to ",ToBases[autoKey@@(slot*indices)]," ",ProgressIndicator[ii/Length@all,ImageSize->{200,20}]," ",ii,"/",Length@all}]]
 ,{slot,slots}
 ]
 ]
+*)
 
 
 (* ::Input::Initialization:: *)
+(*RETIRED 2026-08-28 -- kept verbatim, see the section note above.
 includeIndependentValuesFromArray[symbol_,array_->slot_,ind_,basis_]:=Module[{keys,positions},
 keys=Keys@Last@TensorValues[symbol,slot*basis];
 positions=Map[#[[1]]&,#]&/@(Level[#,1]&/@keys);
 $CVSimplify=Identity;
-Monitor[Do[
+feMonitor[Do[
 (*Pause[0.1];*)
 ComponentValue[keys[[ii]],myPart[array,positions[[ii]],basis]];
+computeEmit["val",symbol,ii,Length@keys];
 ,
 {ii,1,Length@keys}
 ],Row[{"Including independent values of ",ToBases[symbol@@(slot*ind)]," ",ProgressIndicator[ii/Length@keys,ImageSize->{200,20}]," ",ii,"/",Length@keys}]
 ];
 $CVSimplify=Simplify;
 ]
+*)
 
 
 (* ::Input::Initialization:: *)
+(*RETIRED 2026-08-28 -- kept verbatim, see the section note above.
 includeIndependentValuesFromSlot[autoKey_,fromSlots_->slots_,indices_,bases_,using_]:=Module[{
 fromSlot,
 pos,
@@ -2246,9 +2426,10 @@ keys=Keys@Last@TensorValues[autoKey,selector[autoKey,slot,bases]];
 values=(using[VBundleOfIndex@indices[[pos]]])[#[[pos]],If[raiseQ,indices[[pos]],-indices[[pos]]]]autoKey@@ReplacePart[#,pos->If[raiseQ,-indices[[pos]],indices[[pos]]]]&/@keys;
 
 $CVSimplify=Identity;
-Monitor[Do[
+feMonitor[Do[
 (*Pause[0.1];*)
 ComponentValue[keys[[ii]],ToArray[values[[ii]]]];
+computeEmit["val",autoKey,ii,Length@keys];
 ,
 {ii,1,Length@keys}
 ],Row[{"Including independent values of ",ToBases[autoKey@@(slot*indices)]," ",ProgressIndicator[ii/Length@keys,ImageSize->{200,20}]," ",ii,"/",Length@keys}]
@@ -2257,9 +2438,11 @@ $CVSimplify=Simplify;
 ,{slot,slots}
 ]
 ]
+*)
 
 
 (* ::Input::Initialization:: *)
+(*RETIRED 2026-08-28 -- kept verbatim, see the section note above.
 Clear[Compute](*not ClearAll: it would wipe the ::usage*)
 Attributes[Compute]={HoldFirst};
 Options[Compute]={Using->Automatic,Chain->Automatic,Apply:>$Apply};
@@ -2306,9 +2489,11 @@ Module[{array=ReleaseHold[Keys@chainEntry/.$self->sol],scalar,time,nicePrint},
 Module[{},
 If[SlotsOfTensor@autoKey=!={},
 time=AbsoluteTime[];
+computeEmit["entry",autoKey,"array"];
 applyTensorSymmetries[autoKey,Values@chainEntry,indices,bases];
 includeIndependentValuesFromArray[autoKey,array->First@Values@chainEntry,indices,bases];
-Global`applyMaps[apply,autoKey,selector[autoKey,First@Values@chainEntry,bases]];
+computeEmit["maps",autoKey];
+applyMaps[apply,autoKey,selector[autoKey,First@Values@chainEntry,bases]];
 (*the pretty branch evaluates a doctored copy of the fed expression, which is
 faithful only while nothing fires on abstract tensors; always-fire rewriter
 heads (D, ReplaceAll, Gen) would half-execute and print nonsense (a stray 0),
@@ -2318,10 +2503,12 @@ Keys@chainEntry,
 ScreenDollarIndices@MapAll[ToBases,Keys@chainEntry/.ToArray->Identity//ReleaseHold]
 ];
 Echo[Row[{"Applied ",Row[Riffle[$PrintColor[#]&/@Values@apply," and "]]," to ",ToBases[autoKey@@(First@Values@chainEntry*indices)]," = ",nicePrint," in ",UnitConvert[Quantity[Round[AbsoluteTime[]-time],"Seconds"],MixedRadix["Minutes","Seconds"]]}]];
+computeEmit["done",autoKey,Round[AbsoluteTime[]-time]];
 ,
 TensorValIDs[autoKey]^={ValID[autoKey,{}]};
 time=AbsoluteTime[];
-Monitor[
+computeEmit["entry",autoKey,"scalar"];
+feMonitor[
 scalar=(Composition@@(Reverse@Values@apply))[array];
 (*Do[
 (*Pause[3];*)
@@ -2335,6 +2522,7 @@ scalar=map@array;
 (Evaluate@autoKey)/:TensorValues[(Evaluate@autoKey),{}]=FoldedRule[{},{(Evaluate@autoKey)[]->scalar}];
 nicePrint=If[StringContainsQ[ToString[Keys@chainEntry],{"MakeArray","Expression","DiagonalMatrix","Pauli"}]||!FreeQ[Keys@chainEntry,D|ReplaceAll|ReplaceRepeated|Gen],Keys@chainEntry,MapAll[ToBases,Keys@chainEntry/.ToArray->Identity//ReleaseHold]];
 Echo[Row[{"Applied ",Row[Riffle[$PrintColor[#]&/@Values@apply," and "]]," to ",ToBases[autoKey[]]," = ",nicePrint," in ",UnitConvert[Quantity[Round[AbsoluteTime[]-time],"Seconds"],MixedRadix["Minutes","Seconds"]]}]];
+computeEmit["done",autoKey,Round[AbsoluteTime[]-time]];
 ]
 ]
 ],
@@ -2342,10 +2530,13 @@ Echo[Row[{"Applied ",Row[Riffle[$PrintColor[#]&/@Values@apply," and "]]," to ",T
 True,
 Module[{allFromSlots=#&/@(Keys@chainEntry),allSlots=#&/@(Values@chainEntry),fromSlot,time},
 time=AbsoluteTime[];
+computeEmit["entry",autoKey,"slots"];
 applyTensorSymmetries[autoKey,Values@chainEntry,indices,bases];
 includeIndependentValuesFromSlot[autoKey,chainEntry,indices,bases,using];
-Global`applyMaps[apply,autoKey,#]&/@(DeleteDuplicates[selector[autoKey,#,bases]&/@allSlots]);
+computeEmit["maps",autoKey];
+applyMaps[apply,autoKey,#]&/@(DeleteDuplicates[selector[autoKey,#,bases]&/@allSlots]);
 Echo[Row[{"Applied ",Row[Riffle[$PrintColor[#]&/@Values@apply," and "]]," to ",Row[Riffle[Table[ToBases[autoKey@@(allSlots[[ii]]*indices)],{ii,1,Length@allSlots}],", "]]," obtained from ",Row[Riffle[Table[ToBases[autoKey@@(allFromSlots[[ii]]*indices)],{ii,1,Length@allFromSlots}],", "]]," using metrics ",Row[Riffle[Normal@using,", "]]," in ",UnitConvert[Quantity[Round[AbsoluteTime[]-time],"Seconds"],MixedRadix["Minutes","Seconds"]]}]];
+computeEmit["done",autoKey,Round[AbsoluteTime[]-time]];
 ]
 ]
 ,{chainEntry,chain}
@@ -2383,6 +2574,513 @@ Compute[sol[object,key,$auto,autoKey],Using->usingOpt,Apply:>applyOpt]
 ,{autoKey,autoKeys}
 ]
 ]
+*)
+
+
+
+(* ::Section:: *)
+(*Compute*)
+
+
+(* ::Input::Initialization:: *)
+(*Compute -- the engine. Reworked over 2026-08-27/28 as Compute, verified
+differentially against the engine it replaces, and given the name on
+2026-08-28; that engine is kept verbatim but commented out at the end of the
+Computations section above, and "the retired engine" below means it.
+
+The shape is "empty grid -> wanted -> caught":
+
+EMPTY GRID  ComponentArray@TraceBasisDummy@ToBases builds the grid of
+UNFINISHED components -- each entry a small formula with the numbers not yet
+substituted. That is ~16% of ToArray's cost, and building components one at a
+time instead is SLOWER (measured: 2x worse on a tensor with no overbuild,
+because one bulk SplitIndex beats many singleton calls). So the grid is eager
+on purpose; only the resolving is lazy.
+
+WANTED  the dependent rules come from the tensor's symmetry GROUP with no
+evaluation at all -- no ToCanonical, no ComponentValue, no pattern matching on
+symbolic index structure. A ValID is the ORBIT of a slot configuration under
+the signed group (xCoba's own definition, xCoba.m:1979); the group acts
+diagonally on (configuration, index tuple); and the tensor symmetry says
+T[PermuteList[inds,s]] == sign[s] T[inds]. Orbits are the independent
+components, every other member is a dependent rule carrying the relative sign,
+and an orbit whose stabiliser contains a sign -1 element is identically zero.
+Cost is (#configs * prod d_i) * |G| integer operations. This is where the
+retired engine spent its time: applyTensorSymmetries ran one ToCanonical per
+component -- 17.8 s against 0.36 s for the whole CCLP-susy record.
+
+Raising and lowering need nothing extra. A permutation that does not preserve
+the up/down pattern does not vanish and does not restrict; it maps the
+configuration to another member of the same ValID. Nothing about the metric
+enters, so inert spinor slots, mixed vbundles and metricless tensors are all
+handled by the same code.
+
+CAUGHT  only the wanted components are resolved, and ToValues iterates to a
+FIXED POINT rather than the hard-coded three of ToArray. One pass sufficed in
+every case measured (8 array chain entries and 83 raise expressions); three was
+never wrong, but two of those passes are waste on the stage that is ~84% of the
+cost. The cap exists so a pathological case reports itself instead of hanging.
+
+The retired engine's order is inverted here: it evaluated the whole array in a
+Module initialiser, hence BEFORE anything knew which components were wanted.
+
+The per-component loops are kept -- not batched -- so the front-end Monitor
+counter advances and the computeEmit channel pulses. Batching would win nothing
+anyway: the saving comes from resolving the independent components instead of
+all of them, not from doing them in one call.
+
+Verified differentially against the retired engine, per autoKey, on both kernels
+and both CCLP records: 6/6 and 17/17 agree on every component of every ValID.
+Full
+record, including the measurements quoted above: lab/compute2/ in the
+development project.*)
+$toValuesCap=12;
+General::solxcap="ToValues did not reach a fixed point in `1` passes for `2`; the value may be incomplete. Report this (lab/compute2 in the development project).";
+General::solxorbit="An independent component of `1` has no counterpart in the slot configuration `2`, so an array supplied for that configuration cannot fill its ValID and the value stored may be wrong. This should be impossible -- a component orbit meets every configuration of its ValID. Report this (lab/compute2 in the development project).";
+Compute::slots="Chain entry for `1` specifies `2` slot(s), `3`, but `1` has `4` slot(s). Slots are written one sign per slot, e.g. `5` for all-down.";
+Compute::scalar="`1` has no tensor slots -- it is a form or a scalar, and a form carries its indices in its degree, not in slots (its components live in the paired tensor T`1`). The slot specification `2` is meaningless here: write {} or {{}}.";
+Compute::applykey="Apply entry `1` is not Map or ParallelMap and is ignored. Apply is a list of rules; the order is significant and a key may repeat.";
+Compute::nometric="Cannot raise or lower slot `1` of `2`: its vector bundle `3` has no metric in Using.";
+Compute::nosource="No source slot at Hamming distance 1 from `1` for `2`.";
+Compute::nomatch="Compute expects sol[object,key,$auto,autoKey] or sol[object,key], and got `1`. Compute holds its first argument, so an argument that merely evaluates to $auto does not match the pattern.";
+
+
+(* ::Input::Initialization:: *)
+(*the unsigned basis of a slot: a down slot carries -basis*)
+unsignBasis[talasam_]:=If[Head[talasam]===Times,Last[talasam],talasam];
+(*the full SIGNED group, memoised per tensor. Dimino returns group elements
+that may carry a leading minus; that minus IS the sign character, read off
+rather than guessed. PermuteList ignores it, which is what makes the same call
+usable for both the configuration and the index tuple -- and that in turn is
+why the direction of the permutation never has to be decided.*)
+depRulesGroup[talasam_]:=depRulesGroup[talasam]=List@@Dimino[GenSet[SymmetryGroupOfTensor[talasam]]];
+depRulesCNumbers[talasam_]:=depRulesCNumbers[talasam]=CNumbersOf[unsignBasis[talasam]];
+(*a rank-0 tensor has no configurations at all: its stored ValID is {}, not {{}}*)
+depRulesValID[_,{}]:={};
+depRulesValID[talasam_,cfg_List]:=depRulesValID[talasam,cfg]=Union@Map[PermuteList[cfg,#]&,depRulesGroup[talasam]];
+
+
+(* ::Input::Initialization:: *)
+(*the stored key of a component: T[{n1,b1},{n2,b2},..]*)
+componentKey[talasam_,cfg_List,n_List]:=talasam@@Transpose[{n,cfg}];
+(*Representative selection. Reproduces the choice ToCanonical makes -- verified
+bit-identical on 43/43 ValIDs of the two CCLP records, both kernels -- without
+canonicalising anything: sort on the index numbers first, break a tie by
+preferring an UP slot, then by basis name for the multi-chart case.*)
+representativeKey[cfg_List,n_List]:={n,Boole[Head[#]===Times]&/@cfg,SymbolName[unsignBasis[#]]&/@cfg};
+
+
+(* ::Input::Initialization:: *)
+depRules[talasam_,cfg0_List]:=Module[{grp,vid,done,dep,indep,zero,nComp,orbit,reps,rep,srep,x,img,s,bad},
+grp=depRulesGroup[talasam];
+vid=depRulesValID[talasam,cfg0];
+If[cfg0==={},
+Return[<|"valID"->{},"dep"->{},"indep"->{talasam[]},"nDep"->0,"nIndep"->1,"nZero"->0,"nComp"->1|>]];
+done=<||>;dep={};indep={};zero=0;nComp=0;
+Do[
+Do[
+nComp++;
+x={cfg,n};
+If[!KeyExistsQ[done,x],
+orbit=<||>;bad=False;
+Do[
+img={PermuteList[cfg,g],PermuteList[n,g]};
+s=If[Head[g]===Times,First[g],1];
+If[KeyExistsQ[orbit,img],
+If[orbit[img]=!=s,bad=True],
+orbit[img]=s]
+,{g,grp}];
+Scan[(done[#]=True)&,Keys@orbit];
+If[bad,
+(*the stabiliser contains a sign -1 element, so the whole orbit vanishes*)
+zero+=Length@orbit;
+dep=Join[dep,(componentKey[talasam,First@#,Last@#]->0)&/@Keys@orbit]
+,
+reps=Keys@orbit;
+rep=First@SortBy[reps,representativeKey[First@#,Last@#]&];
+srep=orbit[rep];
+AppendTo[indep,componentKey[talasam,First@rep,Last@rep]];
+Do[
+If[m=!=rep,
+AppendTo[dep,componentKey[talasam,First@m,Last@m]->(orbit[m] srep) componentKey[talasam,First@rep,Last@rep]]]
+,{m,reps}]
+]
+]
+,{n,Tuples[depRulesCNumbers/@cfg]}]
+,{cfg,vid}];
+<|"valID"->vid,"dep"->dep,"indep"->indep,"nDep"->Length@dep,"nIndep"->Length@indep,"nZero"->zero,"nComp"->nComp|>
+]
+
+
+(* ::Input::Initialization:: *)
+(*the signed bases of a stored component key, in slot order*)
+keyConfig[talasamKey_]:=#[[2]]&/@(List@@talasamKey);
+(*the independent keys AND, for each, WHERE IN AN ARRAY SUPPLIED FOR cfg its
+value sits, with the sign relating the two. The retired engine's myPart rebuilt
+its cnumber->position map on every single fetch (13.7us against 0.18us for a
+bare Part, 59% of it that rebuild); the map is a property of the ValID, so it is
+built once, here. xCoba does the same -- SetValueFromArray at xCoba.m:3578 is a
+bare Part[array,pos], because its pointers are 1-based by construction.
+
+The signs, and the mate lookup they come with, are the fix to a silent wrong
+answer (found 2026-08-28, benchmark-compute2/COMPUTE2-BUG.md). A ValID is an
+ORBIT of slot configurations and its independent representatives need not all
+sit in cfg -- Riemann's {-c,-c,-c,c} spreads 96 representatives over all four
+of its configurations, only 15 in the named one. Reading position {a,b,c,d} of
+the supplied array for a representative that means R^a{}_bcd is right shape,
+wrong placement, and nothing downstream can tell: measured 12 of 256 components
+wrong, no message, no unresolved head, LeafCount 3% high.
+
+Every component orbit MEETS cfg, so the repair is exact and needs neither a
+metric nor a raise: the configurations occurring in a component's orbit are the
+image of cfg under the whole group, which is the ValID itself. So each
+representative has an orbit mate in cfg, and the mate and its sign are already
+in the dependency rules -- T[m]=s T[rep] read backwards is T[rep]=s T[m].
+
+For a SINGLETON-orbit ValID every representative is its own mate and every sign
+is 1, so this is a no-op there -- and every array-branch chain entry in the
+corpus targets a singleton (all 41 (tensor,configuration) pairs checked,
+2026-08-28), which is why no stored record moves.*)
+wantedPositions[talasam_,cfg_List]:=wantedPositions[talasam,cfg]=Module[{gen,cmap,mate,src},
+gen=depRules[talasam,cfg];
+cmap=Association@Table[b->Association@Thread[depRulesCNumbers[b]->Range[Length@depRulesCNumbers[b]]],{b,DeleteDuplicates@Flatten@{gen["valID"],cfg}}];
+(*rep -> {sign, the orbit mate of rep that sits in cfg}*)
+mate=<||>;
+Do[
+Module[{lhs=First@rule,rhs=Last@rule,s,rep},
+If[rhs=!=0&&keyConfig[lhs]===cfg,
+s=If[Head[rhs]===Times,First@rhs,1];
+rep=If[Head[rhs]===Times,Last@rhs,rhs];
+If[!KeyExistsQ[mate,rep],mate[rep]={s,lhs}]]]
+,{rule,gen["dep"]}];
+src=Function[talasamKey,
+Which[
+keyConfig[talasamKey]===cfg,{1,talasamKey},
+KeyExistsQ[mate,talasamKey],mate[talasamKey],
+True,Message[General::solxorbit,talasam,cfg];{1,talasamKey}]]/@gen["indep"];
+<|"gen"->gen,"keys"->gen["indep"],"signs"->First/@src,
+"positions"->Map[Function[talasamKey,cmap[#[[2]]][#[[1]]]&/@(List@@talasamKey)],Last/@src]|>
+]
+
+
+(* ::Input::Initialization:: *)
+emptyGrid[expr_]:=ComponentArray@TraceBasisDummy@ToBases[expr];
+(*iterate ToValues instead of guessing three*)
+catchValues[expr_,label_:None]:=Module[{prev=expr,next,k=0},
+While[k<$toValuesCap,
+next=ToValues[prev];
+If[next===prev,Return[prev]];
+prev=next;k++];
+Message[General::solxcap,$toValuesCap,label];
+prev
+]
+
+
+(* ::Input::Initialization:: *)
+(*xTagSet, not TagSet: it is HoldFirst and resolves the symbol through SubHead,
+so it works when the tensor arrives in a variable. A bare TagSet would set the
+tag on the variable instead and the assignment would silently not take.*)
+installSkeleton[talasam_,gen_]:=(
+xAct`xCoba`Private`UpdateTensorValIDs[talasam,gen["valID"]];
+xTagSet[{talasam,TensorValues[talasam,gen["valID"]]},FoldedRule[gen["dep"],#->#&/@gen["indep"]]]);
+installValues[talasam_,gen_,keys_,values_]:=xTagSet[{talasam,TensorValues[talasam,gen["valID"]]},FoldedRule[gen["dep"],MapThread[Rule,{keys,values}]]];
+
+
+(* ::Input::Initialization:: *)
+(*The retired engine never checked the chain's slot specification against the
+object. For a slot-less object anything was accepted and silently ignored; for a
+slotted one a wrong length died with a TAGLESS Throw further down, which
+Catch[e,_,f] does not even catch. One length comparison turns both into a
+sentence.*)
+checkSlotSpec[talasam_,chain_]:=Module[{n=Length@SlotsOfTensor[talasam],ok=True},
+Do[
+Module[{slots=Values@chainEntry},
+If[ListQ[slots],
+If[n===0,
+If[slots=!={}&&slots=!={{}},Message[Compute::scalar,talasam,slots];ok=False]
+,
+Do[
+If[Length[slot]=!=n,
+Message[Compute::slots,talasam,Length[slot],slot,n,ConstantArray[-1,n]];ok=False]
+,{slot,slots}]
+]]]
+,{chainEntry,chain}];
+ok
+]
+
+
+(* ::Input::Initialization:: *)
+applyKeyQ[talasam_]:=(talasam===Map||talasam===ParallelMap);
+warnApplyKeys[apply_]:=Scan[If[!applyKeyQ[#],Message[Compute::applykey,#]]&,Keys@apply];
+(*the same dispatch as applyMaps, for a scalar: a ParallelMap entry on one value
+is a documented serial run rather than an accident of Composition, and an
+unrecognised key is skipped here too. The retired engine's scalar branch
+composed every entry regardless of its key, which was a second and inconsistent
+Apply.*)
+applyScalar[apply_,x_]:=Module[{v=x},
+Do[
+Module[{k=Keys[apply][[aa]],f=Values[apply][[aa]]},If[applyKeyQ[k],v=f[v]]]
+,{aa,1,Length@apply}];
+v
+]
+
+
+(* ::Input::Initialization:: *)
+(*The symbols in a simplifier that are NOT System`, with With[] substituting
+the function in first: Hold[f] on a bare variable sees only the variable, and
+the scan then reports nothing.*)
+nonSystemSymbols[f_]:=With[{fn=f},
+DeleteDuplicates@Cases[Hold[fn],talasam_Symbol/;Context[talasam]=!="System`":>Context[talasam]<>SymbolName[Unevaluated@talasam],{0,Infinity},Heads->True]];
+Compute::serial="The ParallelMap entry of Apply mentions `1`, which is not in System`. Subkernels get no definitions for those, so the function would come home unevaluated and an unresolved value would be stored; it is being run serially on the master instead. To keep the parallelism, do the substitution in a Map entry first and leave only a built-in simplifier under ParallelMap.";
+
+
+(* ::Input::Initialization:: *)
+(*applyMaps applies the Apply option's functions to the independent values of one
+ValID and writes the FoldedRule back.
+
+The ParallelMap branch. With[] substitutes the simplifier and the assumptions
+into the pure function LITERALLY, so it closes over no Module local and no
+context is involved -- that is what lets DistributedContexts->None be used, and
+None is the whole speedup: without it ParallelMap scans its entire argument for
+symbols to auto-distribute, once per ValID, and the argument is the component
+values (244022 leaves on the 4d benchmark). Level M 67.9 s -> 35.6 s, output
+identical. But None ships NO definitions, so it is only safe when the simplifier
+is built from System` symbols -- see the branch itself for what happens
+otherwise, and markSubkernels above for why marking is still needed under it.*)
+applyMaps[apply_,symbol_,valId_]:=Module[{
+slot,ind,basis,dep,keys,values,assumptions=$Assumptions
+},
+basis=Map[If[Head[#]===Times&&First[#]===-1,Times@@Rest[#],#]&,valId,All];
+slot=valId/basis;
+ind={};
+Do[AppendTo[ind,Flatten[(GetIndicesOfVBundle@@#&)/@MapAt[VBundleOfBasis,Tally[basis[[ii]]],{All,1}]]],{ii,1,Length@basis}];
+dep=First@TensorValues[symbol,valId];
+keys=Keys@Last@TensorValues[symbol,valId];
+values=Values@Last@TensorValues[symbol,valId];
+Do[
+Module[{k=Keys[apply][[aa]],f=Values[apply][[aa]]},
+Which[
+k===Map,
+feMonitor[
+Do[
+values[[ii]]=f[values[[ii]]];
+computeEmit["map",symbol,ii,Length@values];
+,{ii,1,Length@values}],
+Row[{"Applying ",$PrintColor[f]," to the independent values of ",Row[Riffle[Table[ToBases[symbol@@(slot[[ii]]*ind[[ii]])],{ii,1,Length@basis}],", "]]," ",ProgressIndicator[ii/Length@values,ImageSize->{200,20}]," ",ii,"/",Length@values}]]
+,
+k===ParallelMap,
+(*A simplifier built from System` symbols is shipped with
+DistributedContexts->None -- no definitions, which is the whole speed-up, and
+markSubkernels makes Simplify still recombine radicals (X8).
+
+Anything else CANNOT be shipped. Auto-distribution, which the retired engine
+fell back to, only ships $DistributedContexts = {"Global`"}: a package symbol
+such as
+Gen arrives undefined, Gen[assoc] comes home unevaluated, ReplaceAll is handed
+a non-rule-list and an UNRESOLVED value is stored. Measured 2026-08-28 on
+Apply->{ParallelMap->(Simplify[Together[#/.Gen@sol[$rule,der3]]]&)}: wrong
+values, both engines. DistributedContexts->All is correct but took 488 s
+against 0.08 s for the same work split as Map-then-ParallelMap. So: run it on
+the master, correctly, and say why.*)
+If[FreeQ[With[{fn=f},Hold[fn]],talasam_Symbol/;Context[talasam]=!="System`",{0,Infinity},Heads->True],
+computeEmit["pmap",symbol,Length@values];
+markSubkernels[];
+values=With[{fn=f,asm=assumptions},
+ParallelMap[Block[{$Assumptions=asm},fn[#]]&,values,Method->Automatic,ProgressReporting->True,DistributedContexts->None]]
+,
+Message[Compute::serial,nonSystemSymbols[f]];
+feMonitor[
+Do[
+values[[ii]]=f[values[[ii]]];
+computeEmit["map",symbol,ii,Length@values];
+,{ii,1,Length@values}],
+Row[{"Applying ",$PrintColor[f]," serially (it is not a built-in simplifier) to the independent values of ",Row[Riffle[Table[ToBases[symbol@@(slot[[ii]]*ind[[ii]])],{ii,1,Length@basis}],", "]]," ",ProgressIndicator[ii/Length@values,ImageSize->{200,20}]," ",ii,"/",Length@values}]]
+]
+,
+True,
+Null(*already reported by warnApplyKeys*)
+]]
+,{aa,1,Length@apply}];
+Quiet[symbol/:TensorValues[symbol,valId]=FoldedRule[dep,Thread[keys->values]]];
+]
+
+
+(* ::Input::Initialization:: *)
+(*The verbatim-vs-doctored Echo rule, on the RAW chain key: $self must NOT be
+substituted first, or ToString stringifies the whole solution.*)
+niceChain[held_]:=If[
+StringContainsQ[ToString[held],{"MakeArray","Expression","DiagonalMatrix","Pauli"}]||!FreeQ[held,D|ReplaceAll|ReplaceRepeated|Gen],
+held,
+ScreenDollarIndices@MapAll[ToBases,ReleaseHold[held/.ToArray->Identity]]];
+
+
+(* ::Input::Initialization:: *)
+(*one array-branch chain entry: symmetries first, grid second, resolve only the
+wanted third*)
+fillFromArray[talasam_,heldKey_,slots_,indices_,bases_]:=Module[{cfg,w,gen,keys,pos,signs,grid,values,lazyQ},
+Do[
+cfg=MapThread[If[#1<0,-#2,#2]&,{slot,bases}];
+installSkeleton[talasam,wantedPositions[talasam,cfg]["gen"]];
+computeEmit["sym",talasam,1,1];
+,{slot,slots}];
+cfg=MapThread[If[#1<0,-#2,#2]&,{First@slots,bases}];
+w=wantedPositions[talasam,cfg];gen=w["gen"];keys=w["keys"];pos=w["positions"];signs=w["signs"];
+(*lazy only when ToArray is the HEAD. Inverse[ToArray[gg]], Det[ToArray[gg]]
+and Tr[ToArray[Ricci]] contain a ToArray and still need every component;
+literal arrays (MakeArray, DiagonalMatrix, ..) never had one. Those fall back
+to eager, which is what the retired engine did throughout.*)
+lazyQ=With[{ta=ToArray},MatchQ[heldKey,HoldForm[_ta]]];
+grid=If[lazyQ,emptyGrid[ReleaseHold[heldKey/.ToArray->Identity]],ReleaseHold[heldKey]];
+values=ConstantArray[Null,Length@keys];
+feMonitor[
+Do[
+values[[ii]]=signs[[ii]] If[lazyQ,catchValues[Extract[grid,pos[[ii]]],talasam],Extract[grid,pos[[ii]]]];
+computeEmit["val",talasam,ii,Length@keys];
+,{ii,1,Length@keys}],
+Row[{"Including independent values of ",ToBases[talasam@@(First@slots*indices)]," ",ProgressIndicator[ii/Length@keys,ImageSize->{200,20}]," ",ii,"/",Length@keys}]];
+installValues[talasam,gen,keys,values];
+gen["valID"]
+]
+
+
+(* ::Input::Initialization:: *)
+(*one raise or lower, with pos and raiseQ taken from THE KEY'S OWN
+configuration. A ValID is an orbit, so its representatives can sit in different
+configurations -- Christoffel's {{-c,-c,c},{-c,c,-c}} has them in both -- and
+one pos per target slot applies the wrong slot to half of them.*)
+raiseOne[talasam_,talasamKey_,fromSlots_,indices_,using_]:=Module[{cfgK,fromSlot,pos,raiseQ,vb},
+cfgK=If[Head[#[[2]]]===Times,-1,1]&/@(List@@talasamKey);
+fromSlot=SelectFirst[fromSlots,HammingDistance[#,cfgK]===1&];
+If[!ListQ[fromSlot],Message[Compute::nosource,cfgK,talasam];Abort[]];
+pos=First@First@Position[fromSlot+cfgK,0];
+raiseQ=(fromSlot-cfgK)[[pos]]<0;
+vb=VBundleOfIndex@indices[[pos]];
+(*The retired engine omitted metricless bundles when building Using and then
+indexed into it anyway; the lookup returned UNEVALUATED and multiplied into the
+stored value.*)
+If[!KeyExistsQ[using,vb],Message[Compute::nometric,pos,talasam,vb];Abort[]];
+catchValues[emptyGrid[
+(using[vb])[talasamKey[[pos]],If[raiseQ,indices[[pos]],-indices[[pos]]]] talasam@@ReplacePart[List@@talasamKey,pos->If[raiseQ,-indices[[pos]],indices[[pos]]]]],talasam]
+]
+
+
+(* ::Input::Initialization:: *)
+fillFromSlot[talasam_,chainEntry_,indices_,bases_,using_]:=Module[{fromSlots=Keys@chainEntry,slots=Values@chainEntry,done={},out={}},
+Do[
+Module[{cfg,w,gen,keys,values},
+cfg=MapThread[If[#1<0,-#2,#2]&,{slot,bases}];
+w=wantedPositions[talasam,cfg];gen=w["gen"];keys=w["keys"];
+(*several target slots can share one ValID; fill it once, or the second pass
+installs a fresh skeleton over the first pass's values*)
+If[MemberQ[done,gen["valID"]],Continue[]];
+AppendTo[done,gen["valID"]];
+installSkeleton[talasam,gen];
+computeEmit["sym",talasam,1,1];
+values=ConstantArray[Null,Length@keys];
+feMonitor[
+Do[
+values[[ii]]=raiseOne[talasam,keys[[ii]],fromSlots,indices,using];
+computeEmit["val",talasam,ii,Length@keys];
+,{ii,1,Length@keys}],
+Row[{"Including independent values of ",ToBases[talasam@@(slot*indices)]," ",ProgressIndicator[ii/Length@keys,ImageSize->{200,20}]," ",ii,"/",Length@keys}]];
+installValues[talasam,gen,keys,values];
+AppendTo[out,gen["valID"]]]
+,{slot,slots}];
+out
+]
+
+
+(* ::Input::Initialization:: *)
+Clear[Compute](*not ClearAll: it would wipe the ::usage*)
+Attributes[Compute]={HoldFirst};
+Options[Compute]={Using->Automatic,Chain->Automatic,Apply:>$Apply};
+Compute[sol_[object_,key_,$auto,autoKey_],OptionsPattern[]]:=Module[{
+bases,
+indices,
+usingOpt=OptionValue[Using],
+using,
+chainOpt=OptionValue[Chain],
+chain,
+applyOpt=OptionValue[Apply],
+apply,
+bundles,
+valIDs
+},
+If[chainOpt===Automatic,
+chain=sol[object,key,$auto,autoKey,Routine,Chain],
+sol[object,key,$auto,autoKey,Routine,Chain]=chainOpt;chain=chainOpt;
+];
+(*an unset chain computes nothing, and must not prefetch either: the slot/index
+prefetch on an unset chain iterates into the metric's Labels-slotted automatic
+tensors, where IndicesOfVBundle[Labels] is empty*)
+If[chain=!=$routine[][Chain],
+If[!checkSlotSpec[autoKey,chain],Return[$Failed]];
+warnApplyKeys[applyOpt];
+bundles=(Abs[SlotsOfTensor@autoKey]/.Abs[talasam_]:>talasam);
+bases=BasisOfVBundle[#]&/@bundles;
+indices={};
+Do[AppendTo[indices,(First@IndicesOfVBundle@bundles[[ii]])[[ii]]],{ii,1,Length@bases}];
+If[usingOpt===Automatic,
+using=<||>;
+Do[If[Length@MetricsOfVBundle[bundle]=!=0,AppendTo[using,bundle->First@MetricsOfVBundle[bundle]]],{bundle,bundles}];
+,
+using=usingOpt;
+];
+sol[object,key,$auto,autoKey,Routine,Apply]=applyOpt;
+apply=applyOpt;
+
+Do[
+Module[{heldKey=Keys@chainEntry,slots=Values@chainEntry,time=AbsoluteTime[],vid,vids,scalar},
+Which[
+Head@heldKey===HoldForm&&SlotsOfTensor@autoKey=!={},
+computeEmit["entry",autoKey,"array"];
+vid=fillFromArray[autoKey,heldKey/.$self->sol,slots,indices,bases];
+computeEmit["maps",autoKey];
+applyMaps[apply,autoKey,vid];
+Echo[Row[{"Applied ",Row[Riffle[$PrintColor[#]&/@Values@apply," and "]]," to ",ToBases[autoKey@@(First@slots*indices)]," = ",niceChain[heldKey]," in ",UnitConvert[Quantity[Round[AbsoluteTime[]-time],"Seconds"],MixedRadix["Minutes","Seconds"]]}]];
+computeEmit["done",autoKey,Round[AbsoluteTime[]-time]];
+,
+Head@heldKey===HoldForm,
+computeEmit["entry",autoKey,"scalar"];
+(*With, because Compute holds its first argument: autoKey is bound to the
+caller's unevaluated argument, and a bare TagSet would set the tag on that*)
+With[{tt=autoKey},
+TensorValIDs[tt]^={ValID[tt,{}]};
+feMonitor[
+scalar=applyScalar[apply,ReleaseHold[heldKey/.$self->sol]],
+Row[{"Applying ",Row[Riffle[$PrintColor[#]&/@Values@apply," and "]]," to ",ToBases[tt[]]}]];
+tt/:TensorValues[tt,{}]=FoldedRule[{},{tt[]->scalar}]];
+Echo[Row[{"Applied ",Row[Riffle[$PrintColor[#]&/@Values@apply," and "]]," to ",ToBases[autoKey[]]," = ",niceChain[heldKey]," in ",UnitConvert[Quantity[Round[AbsoluteTime[]-time],"Seconds"],MixedRadix["Minutes","Seconds"]]}]];
+computeEmit["done",autoKey,Round[AbsoluteTime[]-time]];
+,
+True,
+computeEmit["entry",autoKey,"slots"];
+vids=fillFromSlot[autoKey,chainEntry,indices,bases,using];
+computeEmit["maps",autoKey];
+applyMaps[apply,autoKey,#]&/@DeleteDuplicates[vids];
+Echo[Row[{"Applied ",Row[Riffle[$PrintColor[#]&/@Values@apply," and "]]," to ",Row[Riffle[Table[ToBases[autoKey@@(slots[[ii]]*indices)],{ii,1,Length@slots}],", "]]," obtained from ",Row[Riffle[Table[ToBases[autoKey@@((Keys@chainEntry)[[ii]]*indices)],{ii,1,Length@Keys@chainEntry}],", "]]," using metrics ",Row[Riffle[Normal@using,", "]]," in ",UnitConvert[Quantity[Round[AbsoluteTime[]-time],"Seconds"],MixedRadix["Minutes","Seconds"]]}]];
+computeEmit["done",autoKey,Round[AbsoluteTime[]-time]];
+]]
+,{chainEntry,chain}];
+
+Module[{values},
+values={};
+valIDs=TensorValIDs[autoKey];
+Do[
+AppendTo[values,valID->TensorValues[autoKey,Last[Level[valID,1]]]]
+,{valID,valIDs}];
+sol[object,key,$auto,autoKey,Value]=values;
+];
+];
+]
+Compute[sol_[object_,key_],OptionsPattern[]]:=Module[{usingOpt=OptionValue[Using],applyOpt=OptionValue[Apply],autoKeys},
+autoKeys=Keys@sol[object,key,$auto];
+Do[
+Compute[sol[object,key,$auto,autoKey],Using->usingOpt,Apply:>applyOpt]
+,{autoKey,autoKeys}
+]
+]
+Compute[talasam_,___]:=(Message[Compute::nomatch,HoldForm[talasam]];$Failed)
 
 
 (* ::Section:: *)
@@ -2733,6 +3431,181 @@ NotebookOpen[FileNameJoin[{$DataDirectory,alias,entry,entry<>".nb"}]]
 
 
 (* ::Input::Initialization:: *)
+(*ShowData: the data-tree browser. Every displayed head is exactly the
+string GetData takes -- resolveEntry's grammar: bare under the user's own
+alias, "alias/name" elsewhere -- and CopyName copies it quoted. The
+Curated alias is present even without a tree directory, resolved through
+curatedSource to the corpus bundled in the installed paclet; bundled
+entries exist only inside the paclet, so CopyData is their one live
+action. The filesystem is consulted on a button press or a search
+keystroke (ContinuousAction), never on a Dynamic timer: the body is
+plain state, refreshed by the user's own events, so a stale panel is an
+old record, like any Echo. The verbs
+behind the buttons announce themselves with their own Echoes and ask
+their own overwrite questions; only DeleteData's confirmation is the
+panel's, since the verb itself has none.*)
+dataAliases[]:=Module[{aliases},
+aliases=If[StringQ[$DataDirectory]&&DirectoryQ[$DataDirectory],
+FileNameTake/@Select[FileNames["*",$DataDirectory],DirectoryQ],{}];
+If[StringQ[$DataDirectory]&&!MemberQ[aliases,"Curated"]&&StringQ[curatedSource[]],AppendTo[aliases,"Curated"]];
+If[StringQ[$Alias]&&MemberQ[aliases,$Alias],aliases=Prepend[DeleteCases[aliases,$Alias],$Alias]];
+aliases]
+
+curatedBundledQ[]:=StringQ[$DataDirectory]&&!DirectoryQ[FileNameJoin[{$DataDirectory,"Curated"}]]&&StringQ[curatedSource[]]
+
+dataEntries[alias_String]:=With[{dir=Which[
+!StringQ[$DataDirectory],$Failed,
+alias==="Curated",curatedSource[],
+True,FileNameJoin[{$DataDirectory,alias}]]},
+If[StringQ[dir]&&DirectoryQ[dir],FileNameTake/@Select[FileNames["*",dir],DirectoryQ],{}]]
+
+(*Search: whitespace-separated tokens, each a case-insensitive substring
+of the qualified "alias/name"; the giveName grammar makes plain substring
+matching effectively structural ("5dL CCLP" finds the solution).*)
+searchEntries[query_String]:=Module[{tokens=StringSplit[query],all},
+all=Flatten[Table[{a,e},{a,dataAliases[]},{e,dataEntries[a]}],1];
+If[tokens==={},all,
+Select[all,Function[ae,AllTrue[tokens,StringContainsQ[ae[[1]]<>"/"<>ae[[2]],#,IgnoreCase->True]&]]]]]
+
+(*The action-button look: frameless Button, Framed label with rounded
+corners and a light tint blended toward white ("transparent" that
+renders identically on both kernels -- a real Opacity background is
+unreliable under 13.3). Blue for every action, red for DeleteData;
+disabled renders gray so unclickable reads as unclickable. HoldRest
+keeps the action unevaluated on the way into Button.*)
+Attributes[showDataButton]={HoldRest};
+showDataButton[label_,action_,enabled_,color_,opts___]:=Button[
+If[TrueQ[enabled],
+Framed[Style[label,FontFamily->"Source Code Pro",FontSize->11,FontColor->color],
+Background->Blend[{White,color},0.09],
+FrameStyle->Directive[AbsoluteThickness[1],Blend[{White,color},0.45]],
+RoundingRadius->4,FrameMargins->{{7,7},{3,3}}],
+Framed[Style[label,FontFamily->"Source Code Pro",FontSize->11,FontColor->GrayLevel[0.62]],
+Background->GrayLevel[0.965],
+FrameStyle->Directive[AbsoluteThickness[1],GrayLevel[0.85]],
+RoundingRadius->4,FrameMargins->{{7,7},{3,3}}]],
+action,Enabled->enabled,Appearance->"Frameless",ImageMargins->1,opts]
+
+(*One alias tab. Identity is permanent: the writable alias -- the one
+place SaveData and DeleteData act -- wears the pencil and the brown of
+the status Echo, whether selected or not. Selection is transient: a
+tinted pill in the action-button look, brown around the own alias, blue
+around the others. With no alias set there is no pencil and the strip
+is all blue. HoldRest keeps the click action unevaluated on the way
+into Button.*)
+Attributes[showDataAliasTab]={HoldRest};
+showDataAliasTab[a_String,selected_,action_]:=With[{
+own=StringQ[$Alias]&&a===$Alias},
+With[{c=If[own,Darker@Brown,Darker@Blue],
+lbl=If[own,"\:270e ",""]<>a<>If[a==="Curated"&&curatedBundledQ[]," (bundled)",""]},
+Button[
+If[TrueQ[selected],
+Framed[Style[lbl,FontFamily->"Source Code Pro",FontWeight->"SemiBold",c],
+Background->Blend[{White,c},0.10],
+FrameStyle->Directive[AbsoluteThickness[1],Blend[{White,c},0.45]],
+RoundingRadius->4,FrameMargins->{{6,6},{2,2}}],
+Style[lbl,FontFamily->"Source Code Pro",FontWeight->"SemiBold",c]],
+action,ImageMargins->2,Appearance->"Frameless"]]]
+
+(*One body row: the GetData-ready head plus the action buttons, enabled
+exactly where the verb itself would act. refresh is the panel's closure
+re-reading the filesystem after a mutating action. Everything a held
+button action needs is inlined by With as a literal -- a Module variable
+here is a kernel Temporary that the front end's copy of the action still
+names after the kernel has garbage-collected it, so the click sends back
+a dead symbol and the verb silently fails to match (found live,
+2026-08-25: OpenData "did nothing"). CopyName copies the name QUOTED, so
+a paste drops a ready string into GetData[...]. pad is the corpus-wide
+longest head: every displayed name is StringPadRight-ed to it, and in a
+monospace font that pins the button block to one x in every view -- no
+jitter, no wrapping, no font measurement. The Max guard keeps a pad
+smaller than the name from truncating it; actions and CopyName always
+carry the unpadded literal.*)
+showDataRow[a_String,e_String,refresh_,pad_:0]:=With[{
+own=StringQ[$Alias]&&a===$Alias,
+bundled=a==="Curated"&&curatedBundledQ[]},
+With[{head=If[own,e,a<>"/"<>e]},
+With[{quoted="\""<>head<>"\""},
+{$PrintColor[StringPadRight[head,Max[pad,StringLength[head]]]],
+Tooltip[showDataButton["OpenData",Catch[OpenData[head]],!bundled,Darker@Blue,Method->"Queued"],
+If[bundled,"bundled inside the paclet \[LongDash] CopyData it first","open the entry notebook"]],
+Tooltip[showDataButton["CopyName",CopyToClipboard[quoted],!bundled,Darker@Blue],
+If[bundled,"bundled inside the paclet \[LongDash] CopyData it first",Row[{"copy ",$PrintColor[quoted]," \[LongDash] paste it straight into GetData"}]]],
+Tooltip[showDataButton["CopyData",(Catch[CopyData[a<>"/"<>e]];refresh[]),!own&&StringQ[$Alias],Darker@Blue,Method->"Queued"],
+Which[own,"already yours",!StringQ[$Alias],"set your alias first \[LongDash] SetAlias[\"you\"]",True,"copy under your own alias"]],
+Tooltip[showDataButton["DeleteData",
+If[ChoiceDialog[Row[{"Permanently delete ",$PrintColor[e]," and all of its contents?"}],WindowTitle->"SolutionsX \[LongDash] DeleteData"],
+Catch[DeleteData[e]];refresh[]],own,Darker@Red,Method->"Queued"],
+If[own,"delete the entry \[LongDash] asks first","only your own entries can be deleted"]],
+If[TrueQ[$Curator],
+Tooltip[showDataButton["CurateData",(Catch[CurateData[e]];refresh[]),own&&a=!="Curated",Darker@Blue,Method->"Queued"],
+If[own&&a=!="Curated","publish into the Curated corpus","publishes from your own alias only"]],
+Nothing]}]]]
+
+showDataPanel[]:=With[{iAliases=dataAliases[]},
+With[{iCurrent=If[iAliases==={},None,First[iAliases]]},
+DynamicModule[{aliases=iAliases,current=iCurrent,query=Null,searching=False,
+rows={},pad=0,refresh},
+refresh[]:=(aliases=dataAliases[];
+pad=Max[Prepend[StringLength/@Flatten[Table[
+If[StringQ[$Alias]&&aa===$Alias,ee,aa<>"/"<>ee],
+{aa,aliases},{ee,dataEntries[aa]}]],0]];
+rows=If[searching,searchEntries[query],
+If[StringQ[current],Function[e,{current,e}]/@dataEntries[current],{}]]);
+refresh[];
+Panel[Column[{
+(*the search field must sit OUTSIDE every rebuilt Dynamic: a keystroke
+triggers refresh, and were the InputField's own box regenerated by
+that, the front end would replace it and the caret's focus would die
+with the old box (found live, 2026-08-25 -- one character per click).
+Only the alias strip is dynamic; the field's content still tracks
+query through its own first argument, which updates in place.*)
+Row[{
+(*FieldHint shows only when the field is empty AND not being edited,
+so abandoning a search must also blur the field -- SelectionMove out
+of it -- or the bar stays hintless until a click lands elsewhere.
+Guarded on an actual abandonment: plain tab browsing never moves the
+user's notebook selection.*)
+Dynamic@Row[Riffle[Function[a,showDataAliasTab[a,a===current&&!searching,
+(If[searching||StringQ[query],Quiet@SelectionMove[ButtonNotebook[],After,Cell]];
+current=a;query=Null;searching=False;refresh[])]]/@aliases," | "]],
+Spacer[25],
+(*abandoning a search by clicking an alias resets query to Null, not
+"": the front end shows FieldHint again only for Null content -- a
+programmatic "" leaves the field blank and hintless. The handler
+guards on StringQ so Null never reaches StringSplit.*)
+InputField[Dynamic[query,Function[q,query=q;searching=StringQ[q]&&q=!="";refresh[]]],
+String,ContinuousAction->True,FieldHint->"search all aliases",ImageSize->{200,Automatic}]}],
+Dynamic@If[rows==={},
+Style[Which[
+searching,"no matches",
+aliases==={},"no data \[LongDash] SaveData creates Data/<alias> on the first save; Welcome[] gives a guided start",
+True,"(empty)"],Italic],
+Grid[Function[ae,showDataRow[ae[[1]],ae[[2]],refresh,pad]]/@rows,
+Alignment->Left,Spacings->{1.5,0.5}]]
+},Spacings->1],ImageSize->Full]]]]
+
+(*Headless: the same tree as text, one greppable block -- never a silent
+no-op. Entries print bare under their alias heading; the closing line
+states the qualified grammar once.*)
+showDataListing[]:=Module[{aliases=dataAliases[]},
+Print["Data directory "<>If[StringQ[$DataDirectory],$DataDirectory,"not set"]<>If[StringQ[$Alias]," with alias "<>$Alias,""]];
+If[aliases==={},
+Print["  (no data \[LongDash] SaveData creates Data/<alias> on the first save; Welcome[] gives a guided start)"],
+Scan[Function[a,
+Print["  "<>a<>Which[
+StringQ[$Alias]&&a===$Alias," (you)",
+a==="Curated"&&curatedBundledQ[]," (bundled in the paclet; reach entries with CopyData)",
+True,""]<>":"];
+With[{es=dataEntries[a]},
+If[es==={},Print["    (empty)"],Scan[Print["    "<>#]&,es]]]],aliases];
+Print["  foreign entries read as \"alias/name\" in GetData, OpenData and CopyData"]];
+]
+
+ShowData[]:=If[TrueQ[$Notebooks],showDataPanel[],showDataListing[]]
+
+
+(* ::Input::Initialization:: *)
 (*The init cell carries no identity and no absolute paths: LocateData[] derives
 the location from the notebook's own position, session-only; $Alias always
 comes from the user configuration.*)
@@ -2742,8 +3615,7 @@ If[!TrueQ[$Notebooks],Message[NewData::nofe];Throw[$Failed]];
 nb=NotebookCreate[];
 code=StringJoin[
 "Needs[\"VasilDimitrov`SolutionsX`\"]\n",
-"LocateData[]\n",
-"EnableParallelComputations[]"
+"LocateData[]"
 ];
 cellExpr=Cell[TextData@{code},"Input",InitializationCell->True];
 NotebookWrite[nb,cellExpr];
@@ -2778,6 +3650,7 @@ Which[
 sel===All,Catch[CopyData["Curated"]],
 ListQ[sel]&&sel=!={},Scan[Function[n,Catch[CopyData["Curated/"<>n]]],sel]];
 Echo["Ready \[LongDash] NewData[] opens a fresh working notebook; OpenData[\"name\"] opens a copied entry; GetData[\"name\"] then Load makes it live"];
+Echo["If SolutionsX contributes to a publication, please cite it \[LongDash] see CITATION.cff at https://github.com/waskou/SolutionsX"];
 ]
 
 (*The xTras idiom (xTrasHelp, xCore.m): one verb to the guide page.*)
@@ -2820,7 +3693,8 @@ Print["SolutionsX first steps:"];
 Print["  SetAlias[\"you\"]            -- your entries live under Data/you; recorded in your configuration"];
 Print["  SetDataDirectory[\"path\"]   -- optional; the default is "<>$DefaultDataDirectory];
 Print["  CopyData[\"Curated\"]        -- copy the curated entries under your alias"];
-Print["  sol=GetData[\"name\"]; Load[sol]   -- make a stored entry live; see the SolutionsX guide for more"];)
+Print["  sol=GetData[\"name\"]; Load[sol]   -- make a stored entry live; see the SolutionsX guide for more"];
+Print["If SolutionsX contributes to a publication, please cite it -- see CITATION.cff at https://github.com/waskou/SolutionsX"];)
 
 (*The curated picker: every entry of the curated source (tree or the
 paclet bundle, via curatedSource) as a vertical checkbox list, all

@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If SolutionsX contributes to a publication, please cite it as below."
+title: "SolutionsX"
+abstract: "A Wolfram Language paclet for storing, verifying and reusing supergravity solutions, built on the xAct suite."
+authors:
+  - family-names: "Dimitrov"
+    given-names: "Vasil"
+    email: "vasildimi@gmail.com"
+type: software
+version: "2.1.0"
+date-released: "2026-09-02"
+url: "https://github.com/waskou/SolutionsX"
+repository-code: "https://github.com/waskou/SolutionsX"
+license: AGPL-3.0-or-later
+keywords:
+  - supergravity
+  - xAct
+  - tensor calculus
+  - Wolfram Language
+# When the companion paper is published, it becomes the preferred
+# citation; a preferred-citation block with its arXiv number will be
+# added here at that point.

@@ -1,0 +1,2048 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Wolfram 15.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       154,          7]
+NotebookDataLength[     86377,       2038]
+NotebookOptionsPosition[     83192,       1979]
+NotebookOutlinePosition[     83583,       1995]
+CellTagsIndexPosition[     83540,       1992]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+
+Cell[CellGroupData[{
+Cell[BoxData[{
+ RowBox[{"Needs", "[", "\"\<VasilDimitrov`SolutionsX`\>\"", "]"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"If", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"StringQ", "[", "#", "]"}], "&&", 
+      RowBox[{"#", "=!=", "$Alias"}]}], ",", 
+     RowBox[{
+      RowBox[{"SetAlias", "[", 
+       RowBox[{"#", ",", 
+        RowBox[{"Permanent", "->", "False"}]}], "]"}], ";", 
+      RowBox[{"SetCurator", "[", 
+       RowBox[{"False", ",", 
+        RowBox[{"Permanent", "->", "False"}]}], "]"}]}]}], "]"}], "&"}], "@", 
+  
+  RowBox[{"Quiet", "@", 
+   RowBox[{"FileNameTake", "@", 
+    RowBox[{"DirectoryName", "[", 
+     RowBox[{
+      RowBox[{"NotebookFileName", "[", "]"}], ",", "2"}], "]"}]}]}]}], "\n", 
+ RowBox[{"LocateData", "[", "]"}]}], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.9969142702822123`*^9, 3.996914270630858*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"9b070d2e-14ed-4e07-9973-de62b2105a21"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ TemplateBox[{"\"Alias set to \"", 
+   StyleBox[
+   "\"Vasko-bot\"", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False]},
+  "RowDefault"]], "Echo",
+ CellChangeTimes->{
+  3.9969142819747963`*^9},ExpressionUUID->"8b66e829-778a-4c34-ae64-\
+d58b41b2d319"],
+
+Cell[BoxData["\<\"Curator disabled\"\>"], "Echo",
+ CellChangeTimes->{
+  3.996914281979609*^9},ExpressionUUID->"21c4392d-2a32-4097-8ac4-\
+bc7c42fbbe43"],
+
+Cell[BoxData[
+ DynamicModuleBox[{VasilDimitrov`SolutionsX`Private`info$$ = "", 
+  VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+  VasilDimitrov`SolutionsX`Private`current$$ = ""}, 
+  PanelBox[
+   TagBox[GridBox[{
+      {"\<\"Loaded:\"\>"},
+      {
+       TemplateBox[{" , ", "\" , \"", 
+         ButtonBox[
+          StyleBox[
+          "\"xAct`xPerm`\"", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`current$$ === "xAct`xPerm`", 
+             VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`current$$ = "xAct`xPerm`"; 
+            VasilDimitrov`SolutionsX`Private`info$$ = Style[
+               VasilDimitrov`SolutionsX`$LoadLog["xAct`xPerm`"], FontFamily -> 
+               "Source Code Pro", FontSize -> 11]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "\"xAct`xTensor`\"", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`current$$ === "xAct`xTensor`", 
+             VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`current$$ = "xAct`xTensor`"; 
+            VasilDimitrov`SolutionsX`Private`info$$ = Style[
+               VasilDimitrov`SolutionsX`$LoadLog["xAct`xTensor`"], FontFamily -> 
+               "Source Code Pro", FontSize -> 11]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "\"xAct`xPert`\"", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`current$$ === "xAct`xPert`", 
+             VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`current$$ = "xAct`xPert`"; 
+            VasilDimitrov`SolutionsX`Private`info$$ = Style[
+               VasilDimitrov`SolutionsX`$LoadLog["xAct`xPert`"], FontFamily -> 
+               "Source Code Pro", FontSize -> 11]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "\"xAct`Invar`\"", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`current$$ === "xAct`Invar`", 
+             VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`current$$ = "xAct`Invar`"; 
+            VasilDimitrov`SolutionsX`Private`info$$ = Style[
+               VasilDimitrov`SolutionsX`$LoadLog["xAct`Invar`"], FontFamily -> 
+               "Source Code Pro", FontSize -> 11]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "\"xAct`xCoba`\"", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`current$$ === "xAct`xCoba`", 
+             VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`current$$ = "xAct`xCoba`"; 
+            VasilDimitrov`SolutionsX`Private`info$$ = Style[
+               VasilDimitrov`SolutionsX`$LoadLog["xAct`xCoba`"], FontFamily -> 
+               "Source Code Pro", FontSize -> 11]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "\"xAct`SymManipulator`\"", FontFamily -> "Source Code Pro", 
+           FontWeight -> "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`current$$ === 
+             "xAct`SymManipulator`", 
+             VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`current$$ = 
+             "xAct`SymManipulator`"; 
+            VasilDimitrov`SolutionsX`Private`info$$ = Style[
+               VasilDimitrov`SolutionsX`$LoadLog["xAct`SymManipulator`"], 
+               FontFamily -> "Source Code Pro", FontSize -> 11]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "\"xAct`xTras`\"", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`current$$ === "xAct`xTras`", 
+             VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`current$$ = "xAct`xTras`"; 
+            VasilDimitrov`SolutionsX`Private`info$$ = Style[
+               VasilDimitrov`SolutionsX`$LoadLog["xAct`xTras`"], FontFamily -> 
+               "Source Code Pro", FontSize -> 11]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "\"xAct`TexAct`\"", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`current$$ === "xAct`TexAct`", 
+             VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`current$$ = "xAct`TexAct`"; 
+            VasilDimitrov`SolutionsX`Private`info$$ = Style[
+               VasilDimitrov`SolutionsX`$LoadLog["xAct`TexAct`"], FontFamily -> 
+               "Source Code Pro", FontSize -> 11]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "\"xAct`FieldsX`\"", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`current$$ === "xAct`FieldsX`", 
+             VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`current$$ = "xAct`FieldsX`"; 
+            VasilDimitrov`SolutionsX`Private`info$$ = Style[
+               VasilDimitrov`SolutionsX`$LoadLog["xAct`FieldsX`"], FontFamily -> 
+               "Source Code Pro", FontSize -> 11]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "\"xAct`xTerior`\"", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`current$$ === "xAct`xTerior`", 
+             VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`current$$ = "xAct`xTerior`"; 
+            VasilDimitrov`SolutionsX`Private`info$$ = Style[
+               VasilDimitrov`SolutionsX`$LoadLog["xAct`xTerior`"], FontFamily -> 
+               "Source Code Pro", FontSize -> 11]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "\"VasilDimitrov`SolutionsX`\"", FontFamily -> "Source Code Pro", 
+           FontWeight -> "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`current$$ === 
+             "VasilDimitrov`SolutionsX`", 
+             VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`current$$ = 
+             "VasilDimitrov`SolutionsX`"; 
+            VasilDimitrov`SolutionsX`Private`info$$ = Style[
+               VasilDimitrov`SolutionsX`$LoadLog["VasilDimitrov`SolutionsX`"],
+                FontFamily -> "Source Code Pro", FontSize -> 11]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"]},
+        "RowWithSeparators"]},
+      {
+       DynamicBox[ToBoxes[
+         If[
+         VasilDimitrov`SolutionsX`Private`showInfo$$, 
+          VasilDimitrov`SolutionsX`Private`info$$, "Info[...]"], StandardForm],
+        ImageSizeCache->{35.08984375, {1.783203125, 7.47119140625}}]}
+     },
+     DefaultBaseStyle->"Column",
+     GridBoxAlignment->{"Columns" -> {{Left}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+     GridBoxSpacings->{"Columns" -> {{Automatic}}, "Rows" -> {{1}}}],
+    "Column"],
+   ImageSize->Full],
+  DynamicModuleValues:>{}]], "Print",
+ CellChangeTimes->{3.996735187672229*^9, 3.996914282015335*^9},
+ CellLabel->
+  "During evaluation of \
+In[1]:=",ExpressionUUID->"aa10fe12-410a-4647-8528-7d688efcfae2"],
+
+Cell[BoxData[
+ TemplateBox[{"\"Data directory \"", 
+   StyleBox[
+   "\"/Users/vasko/000/SolutionsX/Data\"", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" with alias \"", 
+   StyleBox[
+   "\"Vasko-bot\"", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False]},
+  "RowDefault"]], "Echo",
+ CellChangeTimes->{
+  3.996914282017756*^9},ExpressionUUID->"245c2cd8-3e44-41f4-9d17-\
+a0c60b192ca7"]
+}, Open  ]]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Setup", "Section",ExpressionUUID->"204dc99e-2f83-4b03-8bc6-fc6829de07a1"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{"Instantiate", "[", "sol", "]"}], "\n", 
+ RowBox[{"IncludeTo", "[", 
+  RowBox[{
+   RowBox[{"sol", "[", "$manifold", "]"}], ",", " ", 
+   RowBox[{"{", 
+    RowBox[{"<|", 
+     RowBox[{
+      RowBox[{"Symbol", " ", "->", " ", "\[ScriptCapitalM]"}], ",", " ", 
+      RowBox[{"Dimension", " ", "->", " ", "3"}], ",", " ", 
+      RowBox[{"Index", " ", "->", " ", 
+       RowBox[{"{", 
+        RowBox[{
+        "\[ScriptM]", ",", " ", "\[ScriptN]", ",", " ", "\[ScriptO]", ",", 
+         " ", "\[ScriptP]", ",", " ", "\[ScriptQ]", ",", " ", "\[ScriptR]", ",",
+          " ", "\[ScriptS]", ",", " ", "\[ScriptT]", ",", " ", "\[ScriptU]", ",",
+          " ", "\[ScriptV]", ",", " ", "\[ScriptW]", ",", " ", "\[ScriptX]", ",",
+          " ", "\[ScriptY]", ",", " ", "\[ScriptZ]"}], "}"}]}], ",", " ", 
+      RowBox[{"Name", " ", "->", " ", "\"\<Einstein-AdS\>\""}]}], "|>"}], 
+    "}"}]}], "]"}], "\n", 
+ RowBox[{"IncludeTo", "[", 
+  RowBox[{
+   RowBox[{"sol", "[", "$metric", "]"}], ",", " ", 
+   RowBox[{"<|", 
+    RowBox[{
+     RowBox[{"Signature", " ", "->", " ", 
+      RowBox[{"-", "1"}]}], ",", " ", 
+     RowBox[{"Symbol", " ", "->", " ", 
+      RowBox[{"gg", "[", 
+       RowBox[{
+        RowBox[{"-", "\[ScriptM]"}], ",", " ", 
+        RowBox[{"-", "\[ScriptN]"}]}], "]"}]}], ",", " ", 
+     RowBox[{"CovD", " ", "->", " ", "cd"}], ",", " ", 
+     RowBox[{"SymbolOfCovD", " ", "->", " ", 
+      RowBox[{"{", 
+       RowBox[{"\"\<;\>\"", ",", " ", "\"\<\[Del]\>\""}], "}"}]}]}], "|>"}]}],
+   "]"}], "\n", 
+ RowBox[{"IncludeTo", "[", 
+  RowBox[{
+   RowBox[{"sol", "[", "$constant", "]"}], ",", " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"<|", 
+       RowBox[{"Symbol", " ", "->", " ", "#"}], "|>"}], " ", "&"}], " ", "/@",
+      " ", 
+     RowBox[{"{", 
+      RowBox[{"G3", ",", " ", "l3"}], "}"}]}], ")"}]}], "]"}]}], "Input",
+ CellLabel->"In[4]:=",ExpressionUUID->"a2941f32-3511-4efc-b926-a7d40c5924d2"],
+
+Cell[BoxData[
+ DynamicModuleBox[{
+  VasilDimitrov`SolutionsX`Private`names$$ = {$CellContext`\[ScriptCapitalM], \
+$CellContext`Tangent\[ScriptCapitalM], $CellContext`\[ScriptM], $CellContext`\
+\[ScriptN], $CellContext`\[ScriptO], $CellContext`\[ScriptP], $CellContext`\
+\[ScriptQ], $CellContext`\[ScriptR], $CellContext`\[ScriptS], $CellContext`\
+\[ScriptT], $CellContext`\[ScriptU], $CellContext`\[ScriptV], $CellContext`\
+\[ScriptW], $CellContext`\[ScriptX], $CellContext`\[ScriptY], $CellContext`\
+\[ScriptZ]}, VasilDimitrov`SolutionsX`Private`info$$ = "", 
+  VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+  VasilDimitrov`SolutionsX`Private`currentSymbol$$ = ""}, 
+  PanelBox[
+   TagBox[GridBox[{
+      {"\<\"Loaded:\"\>"},
+      {
+       TemplateBox[{" , ", "\" , \"", 
+         ButtonBox[
+          StyleBox[
+          "\[ScriptCapitalM]", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`\[ScriptCapitalM], VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = $CellContext`\
+\[ScriptCapitalM]; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`\[ScriptCapitalM] === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`\[ScriptCapitalM]]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+           InterpretationBox[
+            StyleBox[
+            "\[DoubleStruckCapitalT]\[ScriptCapitalM]", AutoSpacing -> False, 
+             ShowAutoStyles -> False], $CellContext`Tangent\[ScriptCapitalM], 
+            Editable -> False], FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`Tangent\[ScriptCapitalM], 
+             VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`Tangent\[ScriptCapitalM]; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`Tangent\[ScriptCapitalM] === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`Tangent\[ScriptCapitalM]]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "\[ScriptM]", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`\[ScriptM], VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = $CellContext`\
+\[ScriptM]; VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`\[ScriptM] === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`\[ScriptM]]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "\[ScriptN]", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`\[ScriptN], VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = $CellContext`\
+\[ScriptN]; VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`\[ScriptN] === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`\[ScriptN]]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "\[ScriptO]", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`\[ScriptO], VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = $CellContext`\
+\[ScriptO]; VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`\[ScriptO] === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`\[ScriptO]]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "\[ScriptP]", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`\[ScriptP], VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = $CellContext`\
+\[ScriptP]; VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`\[ScriptP] === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`\[ScriptP]]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "\[ScriptQ]", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`\[ScriptQ], VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = $CellContext`\
+\[ScriptQ]; VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`\[ScriptQ] === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`\[ScriptQ]]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "\[ScriptR]", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`\[ScriptR], VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = $CellContext`\
+\[ScriptR]; VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`\[ScriptR] === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`\[ScriptR]]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "\[ScriptS]", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`\[ScriptS], VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = $CellContext`\
+\[ScriptS]; VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`\[ScriptS] === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`\[ScriptS]]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "\[ScriptT]", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`\[ScriptT], VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = $CellContext`\
+\[ScriptT]; VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`\[ScriptT] === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`\[ScriptT]]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "\[ScriptU]", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`\[ScriptU], VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = $CellContext`\
+\[ScriptU]; VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`\[ScriptU] === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`\[ScriptU]]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "\[ScriptV]", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`\[ScriptV], VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = $CellContext`\
+\[ScriptV]; VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`\[ScriptV] === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`\[ScriptV]]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "\[ScriptW]", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`\[ScriptW], VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = $CellContext`\
+\[ScriptW]; VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`\[ScriptW] === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`\[ScriptW]]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "\[ScriptX]", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`\[ScriptX], VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = $CellContext`\
+\[ScriptX]; VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`\[ScriptX] === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`\[ScriptX]]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "\[ScriptY]", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`\[ScriptY], VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = $CellContext`\
+\[ScriptY]; VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`\[ScriptY] === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`\[ScriptY]]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "\[ScriptZ]", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`\[ScriptZ], VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = $CellContext`\
+\[ScriptZ]; VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`\[ScriptZ] === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`\[ScriptZ]]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"]},
+        "RowWithSeparators"]},
+      {
+       DynamicBox[ToBoxes[
+         If[
+         VasilDimitrov`SolutionsX`Private`showInfo$$, 
+          VasilDimitrov`SolutionsX`Private`info$$, "Info[...]"], StandardForm],
+        ImageSizeCache->{35.08984375, {1.783203125, 7.47119140625}}]}
+     },
+     DefaultBaseStyle->"Column",
+     GridBoxAlignment->{"Columns" -> {{Left}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+     GridBoxSpacings->{"Columns" -> {{Automatic}}, "Rows" -> {{1}}}],
+    "Column"],
+   ImageSize->Full],
+  DynamicModuleValues:>{}]], "Output",
+ CellChangeTimes->{3.99673519002319*^9, 3.996914288791613*^9},
+ CellLabel->"Out[5]=",ExpressionUUID->"72da37e2-a326-4b70-a288-1595444b5359"],
+
+Cell[BoxData[
+ DynamicModuleBox[{
+  VasilDimitrov`SolutionsX`Private`names$$ = \
+{$CellContext`PerturbationParametergg, $CellContext`gg, $CellContext`cd, \
+$CellContext`epsilongg, $CellContext`Torsioncd, $CellContext`Christoffelcd, \
+$CellContext`Riemanncd, $CellContext`Riccicd, $CellContext`RicciScalarcd, \
+$CellContext`Einsteincd, $CellContext`Weylcd, $CellContext`TFRiccicd, \
+$CellContext`Kretschmanncd, $CellContext`SymRiemanncd, \
+$CellContext`Schoutencd, $CellContext`SchoutenCCcd, \
+$CellContext`EinsteinCCcd, $CellContext`Detgg, $CellContext`Perturbationgg, \
+$CellContext`Koszulcd, $CellContext`CovDcd}, 
+  VasilDimitrov`SolutionsX`Private`info$$ = "", 
+  VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+  VasilDimitrov`SolutionsX`Private`currentSymbol$$ = ""}, 
+  PanelBox[
+   TagBox[GridBox[{
+      {"\<\"Loaded:\"\>"},
+      {
+       TemplateBox[{" , ", "\" , \"", 
+         ButtonBox[
+          StyleBox[
+           InterpretationBox[
+            StyleBox[
+             RowBox[{"PerturbationParametergg"}], AutoSpacing -> False, 
+             ShowAutoStyles -> False], $CellContext`PerturbationParametergg, 
+            Editable -> False], FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`PerturbationParametergg, 
+             VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`PerturbationParametergg; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`PerturbationParametergg === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`PerturbationParametergg]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "gg", FontFamily -> "Source Code Pro", FontWeight -> "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`gg, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`gg; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`gg === HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`gg]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "cd", FontFamily -> "Source Code Pro", FontWeight -> "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`cd, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`cd; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`cd === HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`cd]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "epsilongg", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`epsilongg, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`epsilongg; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`epsilongg === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`epsilongg]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "Torsioncd", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`Torsioncd, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`Torsioncd; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`Torsioncd === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`Torsioncd]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "Christoffelcd", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`Christoffelcd, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`Christoffelcd; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`Christoffelcd === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`Christoffelcd]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "Riemanncd", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`Riemanncd, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`Riemanncd; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`Riemanncd === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`Riemanncd]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "Riccicd", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`Riccicd, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`Riccicd; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`Riccicd === HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`Riccicd]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "RicciScalarcd", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`RicciScalarcd, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`RicciScalarcd; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`RicciScalarcd === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`RicciScalarcd]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "Einsteincd", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`Einsteincd, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`Einsteincd; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`Einsteincd === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`Einsteincd]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "Weylcd", FontFamily -> "Source Code Pro", FontWeight -> "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`Weylcd, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`Weylcd; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`Weylcd === HoldForm[$Assumptions], $Assumptions, 
+               
+               Information[$CellContext`Weylcd]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "TFRiccicd", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`TFRiccicd, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`TFRiccicd; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`TFRiccicd === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`TFRiccicd]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "Kretschmanncd", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`Kretschmanncd, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`Kretschmanncd; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`Kretschmanncd === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`Kretschmanncd]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "SymRiemanncd", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`SymRiemanncd, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`SymRiemanncd; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`SymRiemanncd === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`SymRiemanncd]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "Schoutencd", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`Schoutencd, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`Schoutencd; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`Schoutencd === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`Schoutencd]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "SchoutenCCcd", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`SchoutenCCcd, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`SchoutenCCcd; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`SchoutenCCcd === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`SchoutenCCcd]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "EinsteinCCcd", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`EinsteinCCcd, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`EinsteinCCcd; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`EinsteinCCcd === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`EinsteinCCcd]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "Detgg", FontFamily -> "Source Code Pro", FontWeight -> "SemiBold", 
+           
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`Detgg, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`Detgg; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`Detgg === HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`Detgg]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "Perturbationgg", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`Perturbationgg, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`Perturbationgg; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`Perturbationgg === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`Perturbationgg]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "Koszulcd", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`Koszulcd, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`Koszulcd; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`Koszulcd === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`Koszulcd]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "CovDcd", FontFamily -> "Source Code Pro", FontWeight -> "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`CovDcd, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`CovDcd; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`CovDcd === HoldForm[$Assumptions], $Assumptions, 
+               
+               Information[$CellContext`CovDcd]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"]},
+        "RowWithSeparators"]},
+      {
+       DynamicBox[ToBoxes[
+         If[
+         VasilDimitrov`SolutionsX`Private`showInfo$$, 
+          VasilDimitrov`SolutionsX`Private`info$$, "Info[...]"], StandardForm],
+        ImageSizeCache->{35.08984375, {1.783203125, 7.47119140625}}]}
+     },
+     DefaultBaseStyle->"Column",
+     GridBoxAlignment->{"Columns" -> {{Left}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+     GridBoxSpacings->{"Columns" -> {{Automatic}}, "Rows" -> {{1}}}],
+    "Column"],
+   ImageSize->Full],
+  DynamicModuleValues:>{}]], "Output",
+ CellChangeTimes->{3.99673519002319*^9, 3.996914288923821*^9},
+ CellLabel->"Out[6]=",ExpressionUUID->"8df644f0-2ee8-493d-b00c-144fc364d9ef"],
+
+Cell[BoxData[
+ DynamicModuleBox[{
+  VasilDimitrov`SolutionsX`Private`names$$ = {$CellContext`G3, \
+$CellContext`l3}, VasilDimitrov`SolutionsX`Private`info$$ = "", 
+  VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+  VasilDimitrov`SolutionsX`Private`currentSymbol$$ = ""}, 
+  PanelBox[
+   TagBox[GridBox[{
+      {"\<\"Loaded:\"\>"},
+      {
+       TemplateBox[{" , ", "\" , \"", 
+         ButtonBox[
+          StyleBox[
+           InterpretationBox[
+            StyleBox[
+             RowBox[{"G3"}], AutoSpacing -> False, ShowAutoStyles -> 
+             False], $CellContext`G3, Editable -> False], FontFamily -> 
+           "Source Code Pro", FontWeight -> "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`G3, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`G3; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`G3 === HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`G3]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+           InterpretationBox[
+            StyleBox[
+             RowBox[{"l3"}], AutoSpacing -> False, ShowAutoStyles -> 
+             False], $CellContext`l3, Editable -> False], FontFamily -> 
+           "Source Code Pro", FontWeight -> "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`l3, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`l3; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`l3 === HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`l3]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"]},
+        "RowWithSeparators"]},
+      {
+       DynamicBox[ToBoxes[
+         If[
+         VasilDimitrov`SolutionsX`Private`showInfo$$, 
+          VasilDimitrov`SolutionsX`Private`info$$, "Info[...]"], StandardForm],
+        ImageSizeCache->{35.08984375, {1.783203125, 7.47119140625}}]}
+     },
+     DefaultBaseStyle->"Column",
+     GridBoxAlignment->{"Columns" -> {{Left}}},
+     GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
+     GridBoxSpacings->{"Columns" -> {{Automatic}}, "Rows" -> {{1}}}],
+    "Column"],
+   ImageSize->Full],
+  DynamicModuleValues:>{}]], "Output",
+ CellChangeTimes->{3.99673519002319*^9, 3.996914288927896*^9},
+ CellLabel->"Out[7]=",ExpressionUUID->"01eba2ac-15f2-4154-bce1-6f3ab32429e4"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"sol", "[", 
+   RowBox[{
+   "$metric", ",", " ", "gg", ",", " ", "$auto", ",", " ", "gg", ",", " ", 
+    "Routine", ",", " ", "Chain"}], "]"}], " ", "=", " ", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"HoldForm", "[", 
+      RowBox[{"MakeArray", "[", 
+       RowBox[{"$self", "[", 
+        RowBox[{"$metric", ",", " ", "gg", ",", " ", "Expression"}], "]"}], 
+       "]"}], "]"}], " ", "->", " ", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", " ", 
+        RowBox[{"-", "1"}]}], "}"}], "}"}]}], ",", " ", 
+    RowBox[{
+     RowBox[{"HoldForm", "[", 
+      RowBox[{"Inverse", "[", 
+       RowBox[{"ToArray", "[", 
+        RowBox[{"gg", "[", 
+         RowBox[{
+          RowBox[{"-", "\[ScriptM]"}], ",", " ", 
+          RowBox[{"-", "\[ScriptN]"}]}], "]"}], "]"}], "]"}], "]"}], " ", "->",
+      " ", 
+     RowBox[{"{", 
+      RowBox[{"{", 
+       RowBox[{"1", ",", " ", "1"}], "}"}], "}"}]}]}], "}"}]}], "\n", 
+ RowBox[{
+  RowBox[{"sol", "[", 
+   RowBox[{
+   "$metric", ",", " ", "gg", ",", " ", "$auto", ",", " ", "Christoffelcd", ",",
+     " ", "Routine", ",", " ", "Chain"}], "]"}], " ", "=", " ", 
+  RowBox[{"RulesToChain", " ", "@@", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"HoldForm", "[", 
+      RowBox[{"ToArray", "@", 
+       RowBox[{"ChristoffelToGradMetric", "@", 
+        RowBox[{"Christoffelcd", "[", 
+         RowBox[{
+          RowBox[{"-", "\[ScriptM]"}], ",", " ", 
+          RowBox[{"-", "\[ScriptN]"}], ",", " ", 
+          RowBox[{"-", "\[ScriptO]"}]}], "]"}]}]}], "]"}], " ", "->", " ", 
+     RowBox[{
+      RowBox[{"Permutations", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1"}], ",", " ", 
+         RowBox[{"-", "1"}], ",", " ", 
+         RowBox[{"-", "1"}]}], "}"}], "]"}], " ", "->", " ", 
+      RowBox[{"Permutations", "[", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", " ", 
+         RowBox[{"-", "1"}], ",", " ", 
+         RowBox[{"-", "1"}]}], "}"}], "]"}]}]}], "}"}]}]}], "\n", 
+ RowBox[{
+  RowBox[{"sol", "[", 
+   RowBox[{
+   "$metric", ",", " ", "gg", ",", " ", "$auto", ",", " ", "Riccicd", ",", 
+    " ", "Routine", ",", " ", "Chain"}], "]"}], " ", "=", " ", 
+  RowBox[{"RulesToChain", " ", "@@", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"HoldForm", "[", 
+      RowBox[{"ToArray", "@", 
+       RowBox[{"RiemannToChristoffel", "@", 
+        RowBox[{"Riccicd", "[", 
+         RowBox[{
+          RowBox[{"-", "\[ScriptM]"}], ",", " ", 
+          RowBox[{"-", "\[ScriptN]"}]}], "]"}]}]}], "]"}], " ", "->", " ", 
+     RowBox[{
+      RowBox[{"Permutations", "[", 
+       RowBox[{"{", 
+        RowBox[{
+         RowBox[{"-", "1"}], ",", " ", 
+         RowBox[{"-", "1"}]}], "}"}], "]"}], " ", "->", " ", 
+      RowBox[{"Permutations", "[", 
+       RowBox[{"{", 
+        RowBox[{"1", ",", " ", 
+         RowBox[{"-", "1"}]}], "}"}], "]"}]}]}], "}"}]}]}], "\n", 
+ RowBox[{
+  RowBox[{"sol", "[", 
+   RowBox[{
+   "$metric", ",", " ", "gg", ",", " ", "$auto", ",", " ", "RicciScalarcd", ",",
+     " ", "Routine", ",", " ", "Chain"}], "]"}], " ", "=", " ", 
+  RowBox[{"{", 
+   RowBox[{
+    RowBox[{"HoldForm", "[", 
+     RowBox[{"Tr", "@", 
+      RowBox[{"ToArray", "@", 
+       RowBox[{"Riccicd", "[", 
+        RowBox[{"\[ScriptM]", ",", " ", 
+         RowBox[{"-", "\[ScriptN]"}]}], "]"}]}]}], "]"}], " ", "->", " ", 
+    RowBox[{"{", "}"}]}], "}"}]}], "\n", 
+ RowBox[{
+  RowBox[{"sol", "[", 
+   RowBox[{
+   "$metric", ",", " ", "gg", ",", " ", "$auto", ",", " ", "Riemanncd", ",", 
+    " ", "Routine", ",", " ", "Chain"}], "]"}], " ", "=", " ", 
+  RowBox[{"RulesToChain", " ", "@@", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"HoldForm", "[", 
+      RowBox[{"ToArray", "@", 
+       RowBox[{"ContractMetric", "@", 
+        RowBox[{"RiemannToChristoffel", "@", 
+         RowBox[{"Riemanncd", "[", 
+          RowBox[{
+           RowBox[{"-", "\[ScriptM]"}], ",", " ", 
+           RowBox[{"-", "\[ScriptN]"}], ",", " ", 
+           RowBox[{"-", "\[ScriptO]"}], ",", " ", 
+           RowBox[{"-", "\[ScriptP]"}]}], "]"}]}]}]}], "]"}], " ", "->", " ", 
+     
+     RowBox[{"Permutations", "[", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", " ", 
+        RowBox[{"-", "1"}], ",", " ", 
+        RowBox[{"-", "1"}], ",", " ", 
+        RowBox[{"-", "1"}]}], "}"}], "]"}]}], "}"}]}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"sol", "[", 
+    RowBox[{
+    "$metric", ",", " ", "gg", ",", " ", "$auto", ",", " ", "Detgg", ",", " ",
+      "Routine", ",", " ", "Chain"}], "]"}], " ", "=", " ", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"HoldForm", "[", 
+      RowBox[{"Det", "[", 
+       RowBox[{"ToArray", "[", 
+        RowBox[{"gg", "[", 
+         RowBox[{
+          RowBox[{"-", "\[ScriptM]"}], ",", " ", 
+          RowBox[{"-", "\[ScriptN]"}]}], "]"}], "]"}], "]"}], "]"}], " ", "->",
+      " ", 
+     RowBox[{"{", "}"}]}], "}"}]}], ";"}]}], "Input",
+ CellLabel->"In[8]:=",ExpressionUUID->"580c6691-0432-48cc-a428-b5add76d03db"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    TagBox[
+     RowBox[{"MakeArray", "[", 
+      RowBox[{"$self", "[", 
+       RowBox[{"$metric", ",", "gg", ",", "Expression"}], "]"}], "]"}],
+     HoldForm], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", 
+       RowBox[{"-", "1"}]}], "}"}], "}"}]}], ",", 
+   RowBox[{
+    TagBox[
+     TemplateBox[{
+       RowBox[{"ToArray", "[", 
+         InterpretationBox[
+          StyleBox[
+           GridBox[{{"gg", 
+              StyleBox[
+               
+               GridBox[{{" ", " "}, {"\[ScriptM]", "\[ScriptN]"}}, 
+                RowSpacings -> 0, ColumnSpacings -> 0.05, 
+                GridFrameMargins -> {{0, 0}, {0, 0}}], FontSize -> 
+               Rational[39, 4]]}}, ColumnSpacings -> 0.05, RowAlignments -> 
+            Center], AutoSpacing -> False, ShowAutoStyles -> False], 
+          $CellContext`gg[-$CellContext`\[ScriptM], -$CellContext`\[ScriptN]],
+           Editable -> False], "]"}]},
+      "Inverse"],
+     HoldForm], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{"1", ",", "1"}], "}"}], "}"}]}]}], "}"}]], "Output",
+ CellChangeTimes->{3.99673519169512*^9, 3.996914290366022*^9},
+ CellLabel->"Out[8]=",ExpressionUUID->"26b9a398-37fe-4d57-a084-3fb35cc4f1d1"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    TagBox[
+     RowBox[{"ToArray", "[", 
+      RowBox[{"ChristoffelToGradMetric", "[", 
+       InterpretationBox[
+        StyleBox[GridBox[{
+           {
+            RowBox[{"\[CapitalGamma]", "[", "\[Del]", "]"}], 
+            StyleBox[GridBox[{
+               {" ", " ", " "},
+               {"\[ScriptM]", "\[ScriptN]", "\[ScriptO]"}
+              },
+              GridBoxSpacings->{"Columns" -> {
+                  Offset[0.], {
+                   Offset[0.034999999999999996`]}, 
+                  Offset[0.]}, "Rows" -> {{
+                   Offset[0.]}}}],
+             FontSize->Rational[39, 4]]}
+          },
+          GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.034999999999999996`]}, 
+              Offset[0.27999999999999997`]}, "Rows" -> {
+              Offset[0.2], {
+               Offset[0.4]}, 
+              Offset[0.2]}}],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`Christoffelcd[-$CellContext`\[ScriptM], -$CellContext`\
+\[ScriptN], -$CellContext`\[ScriptO]],
+        Editable->False], "]"}], "]"}],
+     HoldForm], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", 
+       RowBox[{"-", "1"}], ",", 
+       RowBox[{"-", "1"}]}], "}"}], "}"}]}], ",", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", 
+       RowBox[{"-", "1"}], ",", 
+       RowBox[{"-", "1"}]}], "}"}], "}"}], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"1", ",", 
+        RowBox[{"-", "1"}], ",", 
+        RowBox[{"-", "1"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", "1", ",", 
+        RowBox[{"-", "1"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", 
+        RowBox[{"-", "1"}], ",", "1"}], "}"}]}], "}"}]}]}], "}"}]], "Output",
+ CellChangeTimes->{3.99673519169512*^9, 3.996914290370262*^9},
+ CellLabel->"Out[9]=",ExpressionUUID->"1c68ee2f-532c-400c-8f86-b56f352c16f0"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{
+    TagBox[
+     RowBox[{"ToArray", "[", 
+      RowBox[{"RiemannToChristoffel", "[", 
+       InterpretationBox[
+        StyleBox[GridBox[{
+           {
+            RowBox[{"R", "[", "\[Del]", "]"}], 
+            StyleBox[GridBox[{
+               {" ", " "},
+               {"\[ScriptM]", "\[ScriptN]"}
+              },
+              GridBoxSpacings->{"Columns" -> {
+                  Offset[0.], {
+                   Offset[0.034999999999999996`]}, 
+                  Offset[0.]}, "Rows" -> {{
+                   Offset[0.]}}}],
+             FontSize->Rational[39, 4]]}
+          },
+          GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.034999999999999996`]}, 
+              Offset[0.27999999999999997`]}, "Rows" -> {
+              Offset[0.2], {
+               Offset[0.4]}, 
+              Offset[0.2]}}],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`Riccicd[-$CellContext`\[ScriptM], -$CellContext`\
+\[ScriptN]],
+        Editable->False], "]"}], "]"}],
+     HoldForm], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", 
+       RowBox[{"-", "1"}]}], "}"}], "}"}]}], ",", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"-", "1"}], ",", 
+       RowBox[{"-", "1"}]}], "}"}], "}"}], "\[Rule]", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{"1", ",", 
+        RowBox[{"-", "1"}]}], "}"}], ",", 
+      RowBox[{"{", 
+       RowBox[{
+        RowBox[{"-", "1"}], ",", "1"}], "}"}]}], "}"}]}]}], "}"}]], "Output",
+ CellChangeTimes->{3.99673519169512*^9, 3.996914290391281*^9},
+ CellLabel->"Out[10]=",ExpressionUUID->"d3df5999-702b-491b-86ba-3eafd095dc38"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TagBox[
+    RowBox[{"Tr", "[", 
+     RowBox[{"ToArray", "[", 
+      InterpretationBox[
+       StyleBox[GridBox[{
+          {
+           RowBox[{"R", "[", "\[Del]", "]"}], 
+           StyleBox[GridBox[{
+              {"\[ScriptM]", " "},
+              {" ", "\[ScriptN]"}
+             },
+             GridBoxSpacings->{"Columns" -> {
+                 Offset[0.], {
+                  Offset[0.034999999999999996`]}, 
+                 Offset[0.]}, "Rows" -> {{
+                  Offset[0.]}}}],
+            FontSize->Rational[39, 4]]}
+         },
+         GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.27999999999999997`], {
+              Offset[0.034999999999999996`]}, 
+             Offset[0.27999999999999997`]}, "Rows" -> {
+             Offset[0.2], {
+              Offset[0.4]}, 
+             Offset[0.2]}}],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`Riccicd[$CellContext`\[ScriptM], -$CellContext`\[ScriptN]],
+       Editable->False], "]"}], "]"}],
+    HoldForm], "\[Rule]", 
+   RowBox[{"{", "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.99673519169512*^9, 3.9969142903937798`*^9},
+ CellLabel->"Out[11]=",ExpressionUUID->"ae2d5b73-89e0-4fce-80f2-fc6b2ae5c914"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   TagBox[
+    RowBox[{"ToArray", "[", 
+     RowBox[{"ContractMetric", "[", 
+      RowBox[{"RiemannToChristoffel", "[", 
+       InterpretationBox[
+        StyleBox[GridBox[{
+           {
+            RowBox[{"R", "[", "\[Del]", "]"}], 
+            StyleBox[GridBox[{
+               {" ", " ", " ", " "},
+               {"\[ScriptM]", "\[ScriptN]", "\[ScriptO]", "\[ScriptP]"}
+              },
+              GridBoxSpacings->{"Columns" -> {
+                  Offset[0.], {
+                   Offset[0.034999999999999996`]}, 
+                  Offset[0.]}, "Rows" -> {{
+                   Offset[0.]}}}],
+             FontSize->Rational[39, 4]]}
+          },
+          GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.27999999999999997`], {
+               Offset[0.034999999999999996`]}, 
+              Offset[0.27999999999999997`]}, "Rows" -> {
+              Offset[0.2], {
+               Offset[0.4]}, 
+              Offset[0.2]}}],
+         ShowAutoStyles->False,
+         AutoSpacing->False],
+        $CellContext`Riemanncd[-$CellContext`\[ScriptM], -$CellContext`\
+\[ScriptN], -$CellContext`\[ScriptO], -$CellContext`\[ScriptP]],
+        Editable->False], "]"}], "]"}], "]"}],
+    HoldForm], "\[Rule]", 
+   RowBox[{"{", 
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"-", "1"}], ",", 
+      RowBox[{"-", "1"}], ",", 
+      RowBox[{"-", "1"}], ",", 
+      RowBox[{"-", "1"}]}], "}"}], "}"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.99673519169512*^9, 3.99691429039465*^9},
+ CellLabel->"Out[12]=",ExpressionUUID->"22be320d-979e-4d95-9904-3a6dda4a1efd"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"RicciScalarcd", "[", "]"}], " ", "+", " ", 
+    RowBox[{"2", "/", 
+     SuperscriptBox["l3", "2"]}]}], ")"}], " ", 
+  RowBox[{
+   RowBox[{"Hodge", "[", "gg", "]"}], "[", "1", "]"}]}], "\n", 
+ RowBox[{"IncludeTo", "[", 
+  RowBox[{
+   RowBox[{"sol", "[", "$set", "]"}], ",", " ", 
+   RowBox[{"<|", 
+    RowBox[{
+     RowBox[{"Symbol", " ", "->", " ", "\[ScriptCapitalL]"}], ",", " ", 
+     RowBox[{"Expression", " ", "->", " ", 
+      RowBox[{"{", 
+       RowBox[{"HoldForm", "[", 
+        RowBox[{"IndexSet", "[", 
+         RowBox[{
+          RowBox[{"\[ScriptCapitalL]", "[", "]"}], ",", " ", 
+          RowBox[{"Evaluate", "[", "%", "]"}]}], "]"}], "]"}], "}"}]}]}], 
+    "|>"}]}], "]"}]}], "Input",
+ CellLabel->"In[14]:=",ExpressionUUID->"a5079a94-c182-4921-ade6-ed3f285bbf91"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(", 
+   RowBox[{
+    FractionBox["2", 
+     SuperscriptBox[
+      InterpretationBox[
+       StyleBox["l3",
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`l3,
+       Editable->False], "2"]], "+", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{"R", "[", "\[Del]", "]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`RicciScalarcd[],
+     Editable->False]}], ")"}], " ", 
+  InterpretationBox[
+   StyleBox[
+    RowBox[{
+     SubscriptBox["*", "gg"], "[", "1", "]"}],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   xAct`xTerior`Hodge[$CellContext`gg][1],
+   Editable->False]}]], "Output",
+ CellChangeTimes->{3.996735194446217*^9, 3.9969142919126787`*^9},
+ CellLabel->"Out[14]=",ExpressionUUID->"a78035ec-423a-4e34-981c-4c4240ed7504"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{
+     RowBox[{"-", 
+      RowBox[{"\[ScriptCapitalL]", "[", "]"}]}], " ", "//", " ", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"ExpandForms", "[", "sol", "]"}], "[", "#", "]"}], " ", 
+      "&"}]}], " ", "//", " ", 
+    RowBox[{
+     RowBox[{"ExpandHodgeDual", "[", 
+      RowBox[{"#", ",", " ", 
+       RowBox[{"dx", "[", "\[ScriptCapitalM]", "]"}], ",", " ", "gg"}], "]"}],
+      " ", "&"}]}], " ", "//", " ", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"WedgeCoeff", "[", "sol", "]"}], "[", "#", "]"}], " ", "&"}]}], 
+  " ", "//", " ", "Simplification"}], "\n", 
+ RowBox[{"IncludeTo", "[", 
+  RowBox[{
+   RowBox[{"sol", "[", "$set", "]"}], ",", " ", 
+   RowBox[{"<|", 
+    RowBox[{
+     RowBox[{"Symbol", " ", "->", " ", "T\[ScriptCapitalL]"}], ",", " ", 
+     RowBox[{"Expression", " ", "->", " ", 
+      RowBox[{"{", 
+       RowBox[{"HoldForm", "[", 
+        RowBox[{"IndexSet", "[", 
+         RowBox[{
+          RowBox[{"T\[ScriptCapitalL]", "[", "]"}], ",", " ", 
+          RowBox[{"Evaluate", "[", "%", "]"}]}], "]"}], "]"}], "}"}]}]}], 
+    "|>"}]}], "]"}]}], "Input",
+ CellLabel->"In[16]:=",ExpressionUUID->"e0cd9ae4-394b-4d06-a4df-31a849b93b12"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["2", 
+   SuperscriptBox[
+    InterpretationBox[
+     StyleBox["l3",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`l3,
+     Editable->False], "2"]], "+", 
+  InterpretationBox[
+   StyleBox[
+    RowBox[{"R", "[", "\[Del]", "]"}],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   $CellContext`RicciScalarcd[],
+   Editable->False]}]], "Output",
+ CellChangeTimes->{3.996735195683035*^9, 3.996914293137937*^9},
+ CellLabel->"Out[16]=",ExpressionUUID->"8c0d3d3c-1329-47a6-9006-71957145a16c"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"T\[ScriptCapitalL]", "[", "]"}], " ", "//", " ", 
+  "Simplification"}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{
+    RowBox[{"1", "/", 
+     SqrtBox[
+      RowBox[{"-", 
+       RowBox[{"Detgg", "[", "]"}]}]]}], " ", 
+    RowBox[{
+     RowBox[{"VarD", "[", 
+      RowBox[{
+       RowBox[{"gg", "[", 
+        RowBox[{"\[ScriptM]", ",", " ", "\[ScriptN]"}], "]"}], ",", " ", 
+       "cd"}], "]"}], "[", 
+     RowBox[{
+      SqrtBox[
+       RowBox[{"-", 
+        RowBox[{"Detgg", "[", "]"}]}]], " ", "%"}], "]"}]}], " ", "//", " ", 
+   "ContractMetric"}], " ", "//", " ", "Simplification"}], "\n", 
+ RowBox[{"First", "@", 
+  RowBox[{"SolveTensors", "[", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"gg", "[", 
+         RowBox[{"\[ScriptM]", ",", " ", "\[ScriptN]"}], "]"}], " ", "%"}], 
+       " ", "//", " ", "ContractMetric"}], ")"}], " ", "==", " ", "0"}], ",", 
+    " ", 
+    RowBox[{"RicciScalarcd", "[", "]"}]}], "]"}]}], "\n", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"%%", " ", "/.", " ", "%"}], " ", "/.", " ", 
+   RowBox[{"Scalar", " ", "->", " ", "Identity"}]}], " ", "//", " ", 
+  "Simplification"}], "\n", 
+ RowBox[{"IncludeTo", "[", 
+  RowBox[{
+   RowBox[{"sol", "[", "$set", "]"}], ",", " ", 
+   RowBox[{"<|", 
+    RowBox[{
+     RowBox[{"Symbol", " ", "->", " ", "\[ScriptCapitalE]gg"}], ",", " ", 
+     RowBox[{"Expression", " ", "->", " ", 
+      RowBox[{"{", 
+       RowBox[{"HoldForm", "[", 
+        RowBox[{"IndexSet", "[", 
+         RowBox[{
+          RowBox[{"\[ScriptCapitalE]gg", "[", 
+           RowBox[{
+            RowBox[{"-", "\[ScriptM]_"}], ",", " ", 
+            RowBox[{"-", "\[ScriptN]_"}]}], "]"}], ",", " ", 
+          RowBox[{"Evaluate", "[", "%", "]"}]}], "]"}], "]"}], "}"}]}]}], 
+    "|>"}]}], "]"}]}], "Input",
+ CellLabel->"In[18]:=",ExpressionUUID->"f8db40b0-a430-48e9-acf5-56c7445c7bad"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["2", 
+   SuperscriptBox[
+    InterpretationBox[
+     StyleBox["l3",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`l3,
+     Editable->False], "2"]], "+", 
+  InterpretationBox[
+   StyleBox[
+    RowBox[{"R", "[", "\[Del]", "]"}],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   $CellContext`RicciScalarcd[],
+   Editable->False]}]], "Output",
+ CellChangeTimes->{3.996735201785619*^9, 3.996914294242094*^9},
+ CellLabel->"Out[18]=",ExpressionUUID->"09862492-1685-44a3-a8a3-446d784a5e44"],
+
+Cell[BoxData[
+ RowBox[{
+  InterpretationBox[
+   StyleBox[GridBox[{
+      {
+       RowBox[{"R", "[", "\[Del]", "]"}], 
+       StyleBox[GridBox[{
+          {" ", " "},
+          {"\[ScriptM]", "\[ScriptN]"}
+         },
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.], {
+              Offset[0.034999999999999996`]}, 
+             Offset[0.]}, "Rows" -> {{
+              Offset[0.]}}}],
+        FontSize->Rational[39, 4]]}
+     },
+     GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.034999999999999996`]}, 
+         Offset[0.27999999999999997`]}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}}],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   $CellContext`Riccicd[-$CellContext`\[ScriptM], -$CellContext`\[ScriptN]],
+   Editable->False], "+", 
+  RowBox[{
+   InterpretationBox[
+    StyleBox[GridBox[{
+       {"gg", 
+        StyleBox[GridBox[{
+           {" ", " "},
+           {"\[ScriptM]", "\[ScriptN]"}
+          },
+          GridBoxSpacings->{"Columns" -> {
+              Offset[0.], {
+               Offset[0.034999999999999996`]}, 
+              Offset[0.]}, "Rows" -> {{
+               Offset[0.]}}}],
+         FontSize->Rational[39, 4]]}
+      },
+      GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+      GridBoxSpacings->{"Columns" -> {
+          Offset[0.27999999999999997`], {
+           Offset[0.034999999999999996`]}, 
+          Offset[0.27999999999999997`]}, "Rows" -> {
+          Offset[0.2], {
+           Offset[0.4]}, 
+          Offset[0.2]}}],
+     ShowAutoStyles->False,
+     AutoSpacing->False],
+    $CellContext`gg[-$CellContext`\[ScriptM], -$CellContext`\[ScriptN]],
+    Editable->False], " ", 
+   RowBox[{"(", 
+    RowBox[{
+     RowBox[{"-", 
+      FractionBox["1", 
+       SuperscriptBox[
+        InterpretationBox[
+         StyleBox["l3",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`l3,
+         Editable->False], "2"]]}], "-", 
+     FractionBox[
+      InterpretationBox[
+       StyleBox[
+        RowBox[{"R", "[", "\[Del]", "]"}],
+        ShowAutoStyles->False,
+        AutoSpacing->False],
+       $CellContext`RicciScalarcd[],
+       Editable->False], "2"]}], ")"}]}]}]], "Output",
+ CellChangeTimes->{3.996735201785619*^9, 3.99691429427672*^9},
+ CellLabel->"Out[19]=",ExpressionUUID->"e00d1356-c080-439b-bd63-52ee30d73596"],
+
+Cell[BoxData[
+ RowBox[{"{", 
+  RowBox[{
+   RowBox[{"HoldPattern", "[", 
+    InterpretationBox[
+     StyleBox[
+      RowBox[{"R", "[", "\[Del]", "]"}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`RicciScalarcd[],
+     Editable->False], "]"}], "\[RuleDelayed]", 
+   RowBox[{"Module", "[", 
+    RowBox[{
+     RowBox[{"{", "}"}], ",", 
+     RowBox[{"-", 
+      FractionBox["6", 
+       SuperscriptBox[
+        InterpretationBox[
+         StyleBox["l3",
+          ShowAutoStyles->False,
+          AutoSpacing->False],
+         $CellContext`l3,
+         Editable->False], "2"]]}]}], "]"}]}], "}"}]], "Output",
+ CellChangeTimes->{3.996735201785619*^9, 3.996914294281708*^9},
+ CellLabel->"Out[20]=",ExpressionUUID->"426f1b72-93e1-4ab0-9bd4-c65db78c77d8"],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox[
+   RowBox[{"2", " ", 
+    InterpretationBox[
+     StyleBox[GridBox[{
+        {"gg", 
+         StyleBox[GridBox[{
+            {" ", " "},
+            {"\[ScriptM]", "\[ScriptN]"}
+           },
+           GridBoxSpacings->{"Columns" -> {
+               Offset[0.], {
+                Offset[0.034999999999999996`]}, 
+               Offset[0.]}, "Rows" -> {{
+                Offset[0.]}}}],
+          FontSize->Rational[39, 4]]}
+       },
+       GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+       GridBoxSpacings->{"Columns" -> {
+           Offset[0.27999999999999997`], {
+            Offset[0.034999999999999996`]}, 
+           Offset[0.27999999999999997`]}, "Rows" -> {
+           Offset[0.2], {
+            Offset[0.4]}, 
+           Offset[0.2]}}],
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`gg[-$CellContext`\[ScriptM], -$CellContext`\[ScriptN]],
+     Editable->False]}], 
+   SuperscriptBox[
+    InterpretationBox[
+     StyleBox["l3",
+      ShowAutoStyles->False,
+      AutoSpacing->False],
+     $CellContext`l3,
+     Editable->False], "2"]], "+", 
+  InterpretationBox[
+   StyleBox[GridBox[{
+      {
+       RowBox[{"R", "[", "\[Del]", "]"}], 
+       StyleBox[GridBox[{
+          {" ", " "},
+          {"\[ScriptM]", "\[ScriptN]"}
+         },
+         GridBoxSpacings->{"Columns" -> {
+             Offset[0.], {
+              Offset[0.034999999999999996`]}, 
+             Offset[0.]}, "Rows" -> {{
+              Offset[0.]}}}],
+        FontSize->Rational[39, 4]]}
+     },
+     GridBoxAlignment->{"Columns" -> {{Center}}, "Rows" -> {{Center}}},
+     GridBoxSpacings->{"Columns" -> {
+         Offset[0.27999999999999997`], {
+          Offset[0.034999999999999996`]}, 
+         Offset[0.27999999999999997`]}, "Rows" -> {
+         Offset[0.2], {
+          Offset[0.4]}, 
+         Offset[0.2]}}],
+    ShowAutoStyles->False,
+    AutoSpacing->False],
+   $CellContext`Riccicd[-$CellContext`\[ScriptM], -$CellContext`\[ScriptN]],
+   Editable->False]}]], "Output",
+ CellChangeTimes->{3.996735201785619*^9, 3.99691429430847*^9},
+ CellLabel->"Out[21]=",ExpressionUUID->"d355d7a4-0d8b-42b8-ae0f-4d535aaee05e"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SaveData", "@", "sol"}]], "Input",
+ CellLabel->"In[23]:=",ExpressionUUID->"da2dd5ab-186c-4f12-b499-d7136fdfad50"],
+
+Cell[BoxData[
+ TemplateBox[{"\"Saved \"", 
+   StyleBox[
+   "\"Vasko-bot/Thr__3dL__Einstein-AdS\"", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" under \"", 
+   StyleBox[
+   "\"/Users/vasko/000/SolutionsX/Data\"", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False]},
+  "RowDefault"]], "Echo",
+ CellChangeTimes->{
+  3.996914296828306*^9},ExpressionUUID->"3063bfa4-b8cd-40ec-898f-\
+58446237bc64"]
+}, Open  ]]
+}, Open  ]]
+},
+WindowSize->{1512, 915},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
+FrontEndVersion->"15.0 for Mac OS X ARM (64-bit) (July 2, 2026)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"5d10b5de-0ff0-4b57-91dc-32bff7be9432"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[CellGroupData[{
+Cell[576, 22, 937, 25, 106, "Input",ExpressionUUID->"9b070d2e-14ed-4e07-9973-de62b2105a21",
+ InitializationCell->True],
+Cell[CellGroupData[{
+Cell[1538, 51, 359, 9, 23, "Echo",ExpressionUUID->"8b66e829-778a-4c34-ae64-d58b41b2d319"],
+Cell[1900, 62, 151, 3, 23, "Echo",ExpressionUUID->"21c4392d-2a32-4097-8ac4-bc7c42fbbe43"],
+Cell[2054, 67, 11242, 218, 82, "Print",ExpressionUUID->"aa10fe12-410a-4647-8528-7d688efcfae2"],
+Cell[13299, 287, 582, 13, 23, "Echo",ExpressionUUID->"245c2cd8-3e44-41f4-9d17-a0c60b192ca7"]
+}, Open  ]]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[13930, 306, 79, 0, 66, "Section",ExpressionUUID->"204dc99e-2f83-4b03-8bc6-fc6829de07a1"],
+Cell[CellGroupData[{
+Cell[14034, 310, 1949, 48, 90, "Input",ExpressionUUID->"a2941f32-3511-4efc-b926-a7d40c5924d2"],
+Cell[15986, 360, 16759, 328, 91, "Output",ExpressionUUID->"72da37e2-a326-4b70-a288-1595444b5359"],
+Cell[32748, 690, 21495, 431, 117, "Output",ExpressionUUID->"8df644f0-2ee8-493d-b00c-144fc364d9ef"],
+Cell[54246, 1123, 3222, 69, 91, "Output",ExpressionUUID->"01eba2ac-15f2-4154-bce1-6f3ab32429e4"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[57505, 1197, 5006, 141, 172, "Input",ExpressionUUID->"580c6691-0432-48cc-a428-b5add76d03db"],
+Cell[62514, 1340, 1302, 36, 35, "Output",ExpressionUUID->"26b9a398-37fe-4d57-a084-3fb35cc4f1d1"],
+Cell[63819, 1378, 2197, 64, 35, "Output",ExpressionUUID->"1c68ee2f-532c-400c-8f86-b56f352c16f0"],
+Cell[66019, 1444, 1873, 56, 35, "Output",ExpressionUUID->"d3df5999-702b-491b-86ba-3eafd095dc38"],
+Cell[67895, 1502, 1331, 36, 35, "Output",ExpressionUUID->"ae2d5b73-89e0-4fce-80f2-fc6b2ae5c914"],
+Cell[69229, 1540, 1677, 44, 35, "Output",ExpressionUUID->"22be320d-979e-4d95-9904-3a6dda4a1efd"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[70943, 1589, 845, 23, 51, "Input",ExpressionUUID->"a5079a94-c182-4921-ade6-ed3f285bbf91"],
+Cell[71791, 1614, 839, 28, 47, "Output",ExpressionUUID->"a78035ec-423a-4e34-981c-4c4240ed7504"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[72667, 1647, 1214, 34, 49, "Input",ExpressionUUID->"e0cd9ae4-394b-4d06-a4df-31a849b93b12"],
+Cell[73884, 1683, 554, 18, 47, "Output",ExpressionUUID->"8c0d3d3c-1329-47a6-9006-71957145a16c"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[74475, 1706, 1901, 56, 118, "Input",ExpressionUUID->"f8db40b0-a430-48e9-acf5-56c7445c7bad"],
+Cell[76379, 1764, 554, 18, 47, "Output",ExpressionUUID->"09862492-1685-44a3-a8a3-446d784a5e44"],
+Cell[76936, 1784, 2490, 76, 47, "Output",ExpressionUUID->"e00d1356-c080-439b-bd63-52ee30d73596"],
+Cell[79429, 1862, 776, 24, 47, "Output",ExpressionUUID->"426f1b72-93e1-4ab0-9bd4-c65db78c77d8"],
+Cell[80208, 1888, 2188, 65, 53, "Output",ExpressionUUID->"d355d7a4-0d8b-42b8-ae0f-4d535aaee05e"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[82433, 1958, 137, 2, 29, "Input",ExpressionUUID->"da2dd5ab-186c-4f12-b499-d7136fdfad50"],
+Cell[82573, 1962, 591, 13, 23, "Echo",ExpressionUUID->"3063bfa4-b8cd-40ec-898f-58446237bc64"]
+}, Open  ]]
+}, Open  ]]
+}
+]
+*)
+
+(* End of internal cache information *)
+

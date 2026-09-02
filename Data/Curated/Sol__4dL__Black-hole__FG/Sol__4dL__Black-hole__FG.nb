@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       154,          7]
-NotebookDataLength[    738414,      17180]
-NotebookOptionsPosition[    729288,      17023]
-NotebookOutlinePosition[    729679,      17039]
-CellTagsIndexPosition[    729636,      17036]
+NotebookDataLength[    740259,      17212]
+NotebookOptionsPosition[    730906,      17051]
+NotebookOutlinePosition[    731297,      17067]
+CellTagsIndexPosition[    731254,      17064]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -22,10 +22,10 @@ Notebook[{
 Cell[CellGroupData[{
 Cell["\<\
 Needs[\"VasilDimitrov`SolutionsX`\"]
-LocateData[]
-EnableParallelComputations[]\
+LocateData[]\
 \>", "Input",
  InitializationCell->True,
+ CellChangeTimes->{{3.996910937265688*^9, 3.996910937830525*^9}},
  CellLabel->"In[1]:=",ExpressionUUID->"ca371cc9-03b1-4631-a0c4-3bb996c00b25"],
 
 Cell[CellGroupData[{
@@ -247,10 +247,11 @@ Cell[BoxData[
   DynamicModuleValues:>{}]], "Print",
  CellChangeTimes->{3.9965570570950193`*^9, 3.996557090585257*^9, 
   3.996558388119399*^9, 3.996558616927682*^9, 3.996558693780849*^9, 
-  3.996558725448908*^9, 3.996559022077351*^9, 3.9965590949938183`*^9},
+  3.996558725448908*^9, 3.996559022077351*^9, 3.9965590949938183`*^9, 
+  3.996910946109223*^9},
  CellLabel->
   "During evaluation of \
-In[1]:=",ExpressionUUID->"68223d8b-9fd6-4084-b3c4-5e3c08194684"],
+In[1]:=",ExpressionUUID->"7adc97ee-a154-4787-8de1-179848ba5b55"],
 
 Cell[BoxData[
  TemplateBox[{"\"Data directory \"", 
@@ -265,8 +266,8 @@ Cell[BoxData[
    StyleBox["\"[curator]\"", Italic, StripOnInput -> False]},
   "RowDefault"]], "Echo",
  CellChangeTimes->{
-  3.9965590949967947`*^9},ExpressionUUID->"48c50c13-9805-4064-9029-\
-956fb413bad7"]
+  3.996910946111671*^9},ExpressionUUID->"7eb64961-a6a9-4726-a47b-\
+149c0584385c"]
 }, Open  ]]
 }, Open  ]],
 
@@ -292,7 +293,7 @@ Cell[BoxData[{
  CellChangeTimes->{{3.9885481686663637`*^9, 3.98854818203629*^9}, {
   3.9886509287832317`*^9, 3.988650930920451*^9}, {3.996557091746644*^9, 
   3.9965571240048723`*^9}},
- CellLabel->"In[4]:=",ExpressionUUID->"c0015f2b-dc99-4537-9591-80cc184713cf"],
+ CellLabel->"In[3]:=",ExpressionUUID->"c0015f2b-dc99-4537-9591-80cc184713cf"],
 
 Cell[BoxData[
  DynamicModuleBox[{
@@ -2794,8 +2795,8 @@ $CellContext`\[CurlyTheta], VasilDimitrov`SolutionsX`Private`showInfo$$],
   3.988551618257073*^9, 3.988552257543543*^9, 3.9885524287650967`*^9, 
   3.988552824945754*^9, 3.98855592317489*^9, 3.988650932271618*^9, 
   3.995616297612895*^9, 3.996557127711012*^9, 3.9965583902445793`*^9, 
-  3.996558619405485*^9, 3.9965590244262533`*^9},
- CellLabel->"Out[6]=",ExpressionUUID->"2a8ad94e-1975-48ba-9115-5d6e46ae8564"]
+  3.996558619405485*^9, 3.9965590244262533`*^9, 3.996910951984696*^9},
+ CellLabel->"Out[5]=",ExpressionUUID->"e9883133-b9c1-4594-b212-0365155edd6e"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -2822,7 +2823,7 @@ Cell[BoxData[
       RowBox[{"ChartColor", "->", "Red"}]}], "|>"}], "\[IndentingNewLine]", 
     "}"}]}], "]"}]], "Input",
  CellChangeTimes->{{3.988547873662121*^9, 3.988547873733623*^9}},
- CellLabel->"In[7]:=",ExpressionUUID->"9a0843bd-95a9-49cd-9bef-af00c40b7af3"],
+ CellLabel->"In[6]:=",ExpressionUUID->"9a0843bd-95a9-49cd-9bef-af00c40b7af3"],
 
 Cell[BoxData[
  DynamicModuleBox[{
@@ -3246,8 +3247,8 @@ $CellContext`CovDPDcurved;
   3.988551619476289*^9, 3.9885522584168367`*^9, 3.9885524303860903`*^9, 
   3.988552826468664*^9, 3.988555924014564*^9, 3.988650949625202*^9, 
   3.995616298764162*^9, 3.996557130783773*^9, 3.9965583912783537`*^9, 
-  3.9965586205241737`*^9, 3.9965590265711727`*^9},
- CellLabel->"Out[7]=",ExpressionUUID->"382e5709-9def-4a5b-8881-397edd887a8c"]
+  3.9965586205241737`*^9, 3.9965590265711727`*^9, 3.996910955080686*^9},
+ CellLabel->"Out[6]=",ExpressionUUID->"c290239f-92e1-4e0a-a8a4-0c25943910d8"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -3287,7 +3288,7 @@ Cell[BoxData[{
  CellChangeTimes->{{3.988548187450602*^9, 3.988548245164666*^9}, 
    3.988548740184409*^9, {3.988650960464031*^9, 3.988650962992545*^9}, {
    3.988651009559361*^9, 3.988651013530758*^9}},
- CellLabel->"In[8]:=",ExpressionUUID->"49ff6a1e-75c8-4553-816f-ac303976460a"],
+ CellLabel->"In[7]:=",ExpressionUUID->"49ff6a1e-75c8-4553-816f-ac303976460a"],
 
 Cell[BoxData[
  DynamicModuleBox[{
@@ -3381,8 +3382,8 @@ $CellContext`az;
   3.9885522603541822`*^9, 3.988552432554613*^9, 3.988552827118555*^9, 
   3.9885559249454823`*^9, 3.988651083973484*^9, 3.9956162995702763`*^9, 
   3.9965571398303013`*^9, 3.99655839212848*^9, 3.9965586212893744`*^9, 
-  3.996559028754005*^9},
- CellLabel->"Out[8]=",ExpressionUUID->"41bb9415-73f8-4d9d-b5bd-513388ac81e6"],
+  3.996559028754005*^9, 3.996910956000156*^9},
+ CellLabel->"Out[7]=",ExpressionUUID->"c034b966-27cf-45d6-81f0-457c52a98645"],
 
 Cell[BoxData[
  DynamicModuleBox[{
@@ -3455,8 +3456,8 @@ $CellContext`H, VasilDimitrov`SolutionsX`Private`showInfo$$],
   3.9885522603541822`*^9, 3.988552432554613*^9, 3.988552827118555*^9, 
   3.9885559249454823`*^9, 3.988651083973484*^9, 3.9956162995702763`*^9, 
   3.9965571398303013`*^9, 3.99655839212848*^9, 3.9965586212893744`*^9, 
-  3.996559028756036*^9},
- CellLabel->"Out[9]=",ExpressionUUID->"14d14d2d-7144-4034-914b-afda379857a4"],
+  3.996559028754005*^9, 3.996910956001718*^9},
+ CellLabel->"Out[8]=",ExpressionUUID->"20599491-1d24-4e1e-adae-562187c29ea7"],
 
 Cell[BoxData[
  DynamicModuleBox[{
@@ -3530,8 +3531,8 @@ $CellContext`\[Kappa], VasilDimitrov`SolutionsX`Private`showInfo$$],
   3.9885522603541822`*^9, 3.988552432554613*^9, 3.988552827118555*^9, 
   3.9885559249454823`*^9, 3.988651083973484*^9, 3.9956162995702763`*^9, 
   3.9965571398303013`*^9, 3.99655839212848*^9, 3.9965586212893744`*^9, 
-  3.99655902877903*^9},
- CellLabel->"Out[10]=",ExpressionUUID->"841c5a97-ddb1-4ca4-8d10-357cc785f75c"]
+  3.996559028754005*^9, 3.996910956025676*^9},
+ CellLabel->"Out[9]=",ExpressionUUID->"59a8492a-d5f2-4b7f-8c42-71c41a554da0"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -3612,7 +3613,7 @@ Cell[BoxData[{
  CellChangeTimes->{{3.988547998830958*^9, 3.988548133316193*^9}, {
   3.9885482155226507`*^9, 3.9885482161486692`*^9}, {3.9885498995168123`*^9, 
   3.988549899828141*^9}, {3.988651077175379*^9, 3.988651129356681*^9}},
- CellLabel->"In[11]:=",ExpressionUUID->"fcc6b7db-7690-472c-a056-b37f1ea1c2bb"],
+ CellLabel->"In[10]:=",ExpressionUUID->"fcc6b7db-7690-472c-a056-b37f1ea1c2bb"],
 
 Cell[BoxData[
  RowBox[{
@@ -3819,8 +3820,8 @@ Cell[BoxData[
    3.9885522630708313`*^9, 3.988552434136405*^9, 3.9885528288437433`*^9, 
    3.9885559260467157`*^9, 3.9886511314943953`*^9, 3.995616300436182*^9, 
    3.996557146258753*^9, 3.996558394496829*^9, 3.996558622208564*^9, 
-   3.996559030159892*^9},
- CellLabel->"Out[11]=",ExpressionUUID->"4dfe28cb-1fe7-4e7e-a449-d199b7da4c5f"],
+   3.996559030159892*^9, 3.996910957009534*^9},
+ CellLabel->"Out[10]=",ExpressionUUID->"44708dfd-6ff3-461f-8927-b252e66ac91a"],
 
 Cell[BoxData[
  RowBox[{
@@ -3892,8 +3893,8 @@ Cell[BoxData[
    3.9885522630708313`*^9, 3.988552434136405*^9, 3.9885528288437433`*^9, 
    3.9885559260467157`*^9, 3.9886511314943953`*^9, 3.995616300436182*^9, 
    3.996557146258753*^9, 3.996558394496829*^9, 3.996558622208564*^9, 
-   3.996559030161399*^9},
- CellLabel->"Out[12]=",ExpressionUUID->"46b4b9a5-92ac-4fb9-861c-0c7dc39cf365"],
+   3.996559030159892*^9, 3.9969109570109587`*^9},
+ CellLabel->"Out[11]=",ExpressionUUID->"5f6fe6a8-0cf9-407b-a75e-489b340d16e5"],
 
 Cell[BoxData[
  RowBox[{
@@ -3998,8 +3999,8 @@ Cell[BoxData[
    3.9885522630708313`*^9, 3.988552434136405*^9, 3.9885528288437433`*^9, 
    3.9885559260467157`*^9, 3.9886511314943953`*^9, 3.995616300436182*^9, 
    3.996557146258753*^9, 3.996558394496829*^9, 3.996558622208564*^9, 
-   3.996559030162554*^9},
- CellLabel->"Out[13]=",ExpressionUUID->"98ee068c-9a49-47b1-993a-d39059207dc0"]
+   3.996559030159892*^9, 3.9969109570120792`*^9},
+ CellLabel->"Out[12]=",ExpressionUUID->"09fa5775-7a4b-4fe0-b60a-d17bb2e3de18"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -4013,7 +4014,7 @@ Cell[BoxData[
      RowBox[{"R", "[", 
       RowBox[{"z", "[", "]"}], "]"}]}], "|>"}]}], "]"}]], "Input",
  CellChangeTimes->{{3.988550552168371*^9, 3.988550564957117*^9}},
- CellLabel->"In[14]:=",ExpressionUUID->"93617086-f9a9-42f3-a30b-3aba8460fdd5"],
+ CellLabel->"In[13]:=",ExpressionUUID->"93617086-f9a9-42f3-a30b-3aba8460fdd5"],
 
 Cell[BoxData[
  DynamicModuleBox[{
@@ -4065,8 +4066,8 @@ $CellContext`R, VasilDimitrov`SolutionsX`Private`showInfo$$],
   3.988552264244442*^9, 3.988552435699409*^9, 3.98855283040786*^9, 
   3.988555927145238*^9, 3.988651137019231*^9, 3.995616301377615*^9, 
   3.996557150336853*^9, 3.996558396552249*^9, 3.996558622991144*^9, 
-  3.996559031266923*^9},
- CellLabel->"Out[14]=",ExpressionUUID->"f846d1ae-45fb-4b9b-864d-09bdd48242b1"]
+  3.996559031266923*^9, 3.99691095787208*^9},
+ CellLabel->"Out[13]=",ExpressionUUID->"8f5eb979-9e8c-4e0e-bdc6-7f7ad7922253"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -4097,7 +4098,7 @@ Cell[BoxData[{
   "Simplify"}]}], "Input",
  CellChangeTimes->{{3.988550567380398*^9, 3.988550650632249*^9}, {
    3.988651143916835*^9, 3.988651146415965*^9}, 3.996557156016214*^9},
- CellLabel->"In[15]:=",ExpressionUUID->"9a988fe9-e698-4159-acda-98fbe874557d"],
+ CellLabel->"In[14]:=",ExpressionUUID->"9a988fe9-e698-4159-acda-98fbe874557d"],
 
 Cell[BoxData[
  RowBox[{
@@ -4300,8 +4301,8 @@ Cell[BoxData[
    3.988551642532213*^9, 3.988552266151021*^9, 3.988552437540715*^9, 
    3.9885528310957527`*^9, 3.988555927989687*^9, 3.988651147747156*^9, 
    3.995616302191307*^9, 3.996557161061144*^9, 3.996558398252054*^9, 
-   3.9965586238086653`*^9, 3.996559032309667*^9},
- CellLabel->"Out[15]=",ExpressionUUID->"18132f9d-d2e9-489c-b8d2-9bcae3c8df55"],
+   3.9965586238086653`*^9, 3.996559032309667*^9, 3.996910958743778*^9},
+ CellLabel->"Out[14]=",ExpressionUUID->"3c594fc3-b678-4b83-9dd4-c0610a5a2d68"],
 
 Cell[BoxData[
  RowBox[{
@@ -4506,8 +4507,8 @@ Cell[BoxData[
    3.988551642532213*^9, 3.988552266151021*^9, 3.988552437540715*^9, 
    3.9885528310957527`*^9, 3.988555927989687*^9, 3.988651147747156*^9, 
    3.995616302191307*^9, 3.996557161061144*^9, 3.996558398252054*^9, 
-   3.9965586238086653`*^9, 3.996559032311573*^9},
- CellLabel->"Out[16]=",ExpressionUUID->"b3ead286-66f9-4510-a385-8ca49790a825"],
+   3.9965586238086653`*^9, 3.996559032309667*^9, 3.9969109587458553`*^9},
+ CellLabel->"Out[15]=",ExpressionUUID->"89a4fc50-da6e-4eda-bafd-48cb00c0b731"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -4721,8 +4722,8 @@ Cell[BoxData[
    3.988551642532213*^9, 3.988552266151021*^9, 3.988552437540715*^9, 
    3.9885528310957527`*^9, 3.988555927989687*^9, 3.988651147747156*^9, 
    3.995616302191307*^9, 3.996557161061144*^9, 3.996558398252054*^9, 
-   3.9965586238086653`*^9, 3.996559032341824*^9},
- CellLabel->"Out[17]=",ExpressionUUID->"9e27cd4d-68ba-4deb-abc7-804af4aac6cc"],
+   3.9965586238086653`*^9, 3.996559032309667*^9, 3.996910958778513*^9},
+ CellLabel->"Out[16]=",ExpressionUUID->"42deb7a1-619b-44bd-9611-5868ef123d7e"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -5002,8 +5003,8 @@ Cell[BoxData[
    3.988551642532213*^9, 3.988552266151021*^9, 3.988552437540715*^9, 
    3.9885528310957527`*^9, 3.988555927989687*^9, 3.988651147747156*^9, 
    3.995616302191307*^9, 3.996557161061144*^9, 3.996558398252054*^9, 
-   3.9965586238086653`*^9, 3.996559032343286*^9},
- CellLabel->"Out[18]=",ExpressionUUID->"e17c9d96-8106-41a8-838a-bb37dd3b96d1"]
+   3.9965586238086653`*^9, 3.996559032309667*^9, 3.996910958785005*^9},
+ CellLabel->"Out[17]=",ExpressionUUID->"529c27a9-6142-49f1-b69f-41a62a985389"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -5029,7 +5030,7 @@ Cell[BoxData[{
       RowBox[{"az", "[", "]"}], "}"}]}], "]"}], "//", "Simplify"}], "//", 
   "First"}]}], "Input",
  CellChangeTimes->{{3.9885522772637043`*^9, 3.988552315461905*^9}},
- CellLabel->"In[19]:=",ExpressionUUID->"6ba7de32-4d7c-4c61-8210-48a283f14bf1"],
+ CellLabel->"In[18]:=",ExpressionUUID->"6ba7de32-4d7c-4c61-8210-48a283f14bf1"],
 
 Cell[BoxData[
  RowBox[{
@@ -5099,8 +5100,9 @@ Cell[BoxData[
  CellChangeTimes->{{3.988552280065604*^9, 3.988552315851728*^9}, 
    3.988552438678397*^9, 3.9885528326825237`*^9, 3.9885559288992453`*^9, 
    3.9886511567945023`*^9, 3.99561630308506*^9, 3.996557171406967*^9, 
-   3.99655840342314*^9, 3.9965586247207193`*^9, 3.9965590338288393`*^9},
- CellLabel->"Out[19]=",ExpressionUUID->"9438ea82-6b36-4d6b-8be6-c2df487a8f17"],
+   3.99655840342314*^9, 3.9965586247207193`*^9, 3.9965590338288393`*^9, 
+   3.996910959706937*^9},
+ CellLabel->"Out[18]=",ExpressionUUID->"2e0895e8-c465-4d51-95e6-fffcbfcb0c30"],
 
 Cell[BoxData[
  RowBox[{
@@ -5169,8 +5171,9 @@ Cell[BoxData[
  CellChangeTimes->{{3.988552280065604*^9, 3.988552315851728*^9}, 
    3.988552438678397*^9, 3.9885528326825237`*^9, 3.9885559288992453`*^9, 
    3.9886511567945023`*^9, 3.99561630308506*^9, 3.996557171406967*^9, 
-   3.99655840342314*^9, 3.9965586247207193`*^9, 3.9965590338302717`*^9},
- CellLabel->"Out[20]=",ExpressionUUID->"0c6e604e-7b6d-4626-ba23-55dc6fd9e6c5"],
+   3.99655840342314*^9, 3.9965586247207193`*^9, 3.9965590338288393`*^9, 
+   3.996910959708714*^9},
+ CellLabel->"Out[19]=",ExpressionUUID->"2e02f685-5a16-4706-acd2-07145a55611a"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -5207,8 +5210,9 @@ Cell[BoxData[
  CellChangeTimes->{{3.988552280065604*^9, 3.988552315851728*^9}, 
    3.988552438678397*^9, 3.9885528326825237`*^9, 3.9885559288992453`*^9, 
    3.9886511567945023`*^9, 3.99561630308506*^9, 3.996557171406967*^9, 
-   3.99655840342314*^9, 3.9965586247207193`*^9, 3.9965590338312597`*^9},
- CellLabel->"Out[21]=",ExpressionUUID->"2e83fecb-76b6-48b1-8d34-d7af5a613dd4"],
+   3.99655840342314*^9, 3.9965586247207193`*^9, 3.9965590338288393`*^9, 
+   3.9969109597099867`*^9},
+ CellLabel->"Out[20]=",ExpressionUUID->"703b8027-cc50-47e6-9030-f11e19048842"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -5243,8 +5247,9 @@ Cell[BoxData[
  CellChangeTimes->{{3.988552280065604*^9, 3.988552315851728*^9}, 
    3.988552438678397*^9, 3.9885528326825237`*^9, 3.9885559288992453`*^9, 
    3.9886511567945023`*^9, 3.99561630308506*^9, 3.996557171406967*^9, 
-   3.99655840342314*^9, 3.9965586247207193`*^9, 3.9965590338321037`*^9},
- CellLabel->"Out[22]=",ExpressionUUID->"8a7d464c-61f0-460d-9cab-165d3e71f8b7"]
+   3.99655840342314*^9, 3.9965586247207193`*^9, 3.9965590338288393`*^9, 
+   3.996910959711074*^9},
+ CellLabel->"Out[21]=",ExpressionUUID->"ba2ed4cb-4d0c-4717-952c-6b13f738f179"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -5363,7 +5368,7 @@ Cell[BoxData[{
  CellChangeTimes->{{3.988551749450015*^9, 3.988551781343666*^9}, {
   3.988552444116102*^9, 3.988552464624608*^9}, {3.988651172589813*^9, 
   3.988651184158165*^9}},
- CellLabel->"In[23]:=",ExpressionUUID->"caa2fbd2-199b-4f09-a143-25909c2ba16e"],
+ CellLabel->"In[22]:=",ExpressionUUID->"caa2fbd2-199b-4f09-a143-25909c2ba16e"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -5674,8 +5679,9 @@ $CellContext`q^2 - 2 $CellContext`l4^2 $CellContext`\[Kappa]
  CellChangeTimes->{{3.98855176480478*^9, 3.9885517818690968`*^9}, 
    3.988552318348731*^9, 3.988552466148535*^9, 3.988552834576518*^9, 
    3.988555929842904*^9, 3.988651192938168*^9, 3.995616303945311*^9, 
-   3.996558419633114*^9, 3.9965586296836348`*^9, 3.996559038452691*^9},
- CellLabel->"Out[25]=",ExpressionUUID->"560391d5-be2f-4e0a-825a-9af6d3e96e95"]
+   3.996558419633114*^9, 3.9965586296836348`*^9, 3.996559038452691*^9, 
+   3.996910960735819*^9},
+ CellLabel->"Out[24]=",ExpressionUUID->"291a7b94-27c5-4c22-b19c-e6e9aa49c081"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -5824,7 +5830,7 @@ Cell[BoxData[{
  CellChangeTimes->{{3.9885516533788357`*^9, 3.988551742718583*^9}, {
   3.988551786750511*^9, 3.988551843318061*^9}, {3.988552475859159*^9, 
   3.9885525339108133`*^9}},
- CellLabel->"In[26]:=",ExpressionUUID->"a3d63614-867c-4137-a139-c36caefbc19c"],
+ CellLabel->"In[25]:=",ExpressionUUID->"a3d63614-867c-4137-a139-c36caefbc19c"],
 
 Cell[BoxData[
  RowBox[{
@@ -5959,8 +5965,8 @@ Cell[BoxData[
    3.988551831745854*^9, 3.988551844215002*^9}, 3.9885523195587807`*^9, 
    3.988552540950684*^9, 3.988552836083206*^9, 3.988555930790436*^9, 
    3.988651223246436*^9, 3.995616304844491*^9, 3.996558637184515*^9, 
-   3.9965590420464153`*^9},
- CellLabel->"Out[26]=",ExpressionUUID->"fdce2b46-7f31-45a4-9241-8eb1b4c45cfe"],
+   3.9965590420464153`*^9, 3.996910961558239*^9},
+ CellLabel->"Out[25]=",ExpressionUUID->"e73fbf30-e935-4236-b51e-216342870657"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -6946,8 +6952,8 @@ Cell[BoxData[
    3.988551831745854*^9, 3.988551844215002*^9}, 3.9885523195587807`*^9, 
    3.988552540950684*^9, 3.988552836083206*^9, 3.988555930790436*^9, 
    3.988651223246436*^9, 3.995616304844491*^9, 3.996558637184515*^9, 
-   3.996559042620009*^9},
- CellLabel->"Out[29]=",ExpressionUUID->"7c43d6f3-76c0-47c9-ba7c-d48ece145051"]
+   3.9965590420464153`*^9, 3.9969109621323137`*^9},
+ CellLabel->"Out[28]=",ExpressionUUID->"65afd07e-86e1-4ebd-b1ef-4400561a7679"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -7161,7 +7167,7 @@ Cell[BoxData[{
    3.98855234520894*^9}, {3.9885525548242807`*^9, 3.988552576553472*^9}, {
    3.9885526155044537`*^9, 3.9885526379160767`*^9}, 3.988651304180768*^9, {
    3.988651357422785*^9, 3.988651393305038*^9}},
- CellLabel->"In[30]:=",ExpressionUUID->"fed16dcc-2b63-400b-a142-79ec7980a4b3"],
+ CellLabel->"In[29]:=",ExpressionUUID->"fed16dcc-2b63-400b-a142-79ec7980a4b3"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -7288,8 +7294,8 @@ Cell[BoxData[
    3.9885525773152657`*^9}, {3.988552616515785*^9, 3.988552646085868*^9}, 
    3.988552838235973*^9, 3.988555932150078*^9, {3.988651370733423*^9, 
    3.988651393913837*^9}, 3.9956163064033546`*^9, 3.996558646927352*^9, 
-   3.996559045776991*^9},
- CellLabel->"Out[30]=",ExpressionUUID->"986ac15a-2429-48c0-992f-2c6dde1aaa5f"],
+   3.996559045776991*^9, 3.996910962487372*^9},
+ CellLabel->"Out[29]=",ExpressionUUID->"04732f96-a079-4c9c-80fe-592c389e8dc5"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -8473,8 +8479,8 @@ Cell[BoxData[
    3.9885525773152657`*^9}, {3.988552616515785*^9, 3.988552646085868*^9}, 
    3.988552838235973*^9, 3.988555932150078*^9, {3.988651370733423*^9, 
    3.988651393913837*^9}, 3.9956163064033546`*^9, 3.996558646927352*^9, 
-   3.99655904583779*^9},
- CellLabel->"Out[31]=",ExpressionUUID->"241763dd-122a-4c4c-9dd1-f3fceec2f088"]
+   3.996559045776991*^9, 3.996910962551621*^9},
+ CellLabel->"Out[30]=",ExpressionUUID->"5008e8cd-44ab-428a-82d6-e0e4c4d603c3"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -8555,7 +8561,7 @@ Cell[BoxData[{
  CellChangeTimes->{{3.988552853863304*^9, 3.9885529162075777`*^9}, {
   3.988552957659286*^9, 3.98855299266579*^9}, {3.988651413606164*^9, 
   3.988651415131178*^9}},
- CellLabel->"In[33]:=",ExpressionUUID->"fb9c4cfe-4a1c-4a98-b37c-b6447e4bd092"],
+ CellLabel->"In[32]:=",ExpressionUUID->"fb9c4cfe-4a1c-4a98-b37c-b6447e4bd092"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -9094,8 +9100,8 @@ Cell[BoxData[
  CellChangeTimes->{{3.988552879629067*^9, 3.9885529164657373`*^9}, {
    3.988552971678823*^9, 3.988552995358725*^9}, 3.988555933174417*^9, 
    3.988651417716733*^9, 3.995616307872579*^9, 3.9965586561298447`*^9, 
-   3.996559054620912*^9},
- CellLabel->"Out[34]=",ExpressionUUID->"8084a072-0d7a-46bb-ba1d-2e38898e5a30"]
+   3.996559054620912*^9, 3.996910963693674*^9},
+ CellLabel->"Out[33]=",ExpressionUUID->"f250ae6a-8ebf-4be6-a215-f3a619002c2f"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -9117,7 +9123,7 @@ Cell[BoxData[
         RowBox[{"l4", ">", "0"}]}], "}"}]}]}], "|>"}]}], "]"}]], "Input",
  CellChangeTimes->{{3.988548780805579*^9, 3.988548786232727*^9}, {
   3.988651438052595*^9, 3.988651440988689*^9}},
- CellLabel->"In[36]:=",ExpressionUUID->"72f716ab-3794-42bb-841c-04ff558db3bb"],
+ CellLabel->"In[35]:=",ExpressionUUID->"72f716ab-3794-42bb-841c-04ff558db3bb"],
 
 Cell[BoxData[
  DynamicModuleBox[{VasilDimitrov`SolutionsX`Private`names$$ = {
@@ -9169,8 +9175,9 @@ Cell[BoxData[
   3.988548812652245*^9, 3.988549916375721*^9, 3.9885521613786907`*^9, 
    3.988552356438439*^9, {3.9885526426528797`*^9, 3.988552649330744*^9}, 
    3.988552997179946*^9, 3.9885559341447163`*^9, 3.988651442370679*^9, 
-   3.995616308721999*^9, 3.996558663283391*^9, 3.9965590640682707`*^9},
- CellLabel->"Out[36]=",ExpressionUUID->"e7fcea41-e7f1-424c-811f-b85d07dccc41"]
+   3.995616308721999*^9, 3.996558663283391*^9, 3.9965590640682707`*^9, 
+   3.9969109644175253`*^9},
+ CellLabel->"Out[35]=",ExpressionUUID->"521cf88c-231a-4698-b992-42c227fea6c0"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -9189,7 +9196,7 @@ Cell[BoxData[{
  RowBox[{"SaveData", "@", "sol"}]}], "Input",
  CellChangeTimes->{{3.988548821624013*^9, 3.988548821824882*^9}, 
    3.9886514467570744`*^9, {3.9965586675389643`*^9, 3.996558667957512*^9}},
- CellLabel->"In[37]:=",ExpressionUUID->"9abfe6e6-2936-4b58-9b16-8ecaf982e07f"],
+ CellLabel->"In[36]:=",ExpressionUUID->"9abfe6e6-2936-4b58-9b16-8ecaf982e07f"],
 
 Cell[BoxData[
  TemplateBox[{"\"Saved \"", 
@@ -9203,8 +9210,8 @@ Cell[BoxData[
     "Source Code Pro Semibold", StripOnInput -> False]},
   "RowDefault"]], "Echo",
  CellChangeTimes->{
-  3.996559064825962*^9},ExpressionUUID->"2d7315b5-df53-4c87-8185-\
-ec543dd32f50"]
+  3.996910965440372*^9},ExpressionUUID->"064d88c0-5875-4695-925d-\
+9690d7a7b58b"]
 }, Open  ]]
 }, Open  ]],
 
@@ -9221,7 +9228,7 @@ Cell[BoxData[
  RowBox[{"ResumeAs", "@", "sol"}]], "Input",
  CellChangeTimes->{{3.9789750709026947`*^9, 3.978975075470664*^9}, {
   3.996558692386641*^9, 3.996558696254115*^9}},
- CellLabel->"In[40]:=",ExpressionUUID->"cd6b749c-6c5e-4b6c-859a-7f6d4438a31c"],
+ CellLabel->"In[39]:=",ExpressionUUID->"cd6b749c-6c5e-4b6c-859a-7f6d4438a31c"],
 
 Cell[BoxData[
  DynamicModuleBox[{
@@ -12297,8 +12304,8 @@ $CellContext`R, VasilDimitrov`SolutionsX`Private`showInfo$$],
   3.98854992719*^9, 3.9885521739511337`*^9, 3.98855236765812*^9, 
   3.988552663156296*^9, 3.9885530094562283`*^9, 3.988555954202718*^9, 
   3.988653313461739*^9, 3.995616322231448*^9, 3.9965586981575212`*^9, 
-  3.996559067607409*^9},
- CellLabel->"Out[40]=",ExpressionUUID->"4c935f66-55bc-4603-a851-7e97c22265fe"]
+  3.996559067607409*^9, 3.996910967005987*^9},
+ CellLabel->"Out[39]=",ExpressionUUID->"6391e4ce-a31a-4788-af31-25808886946e"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -12310,7 +12317,7 @@ Cell[BoxData[
  CellChangeTimes->{{3.962030521812818*^9, 3.962030542736546*^9}, {
    3.974201864962883*^9, 3.9742018672801733`*^9}, {3.978964997616527*^9, 
    3.978964999274612*^9}, 3.978974130777686*^9},
- CellLabel->"In[41]:=",ExpressionUUID->"7c051df6-378d-4c36-bf96-de4510248ee2"],
+ CellLabel->"In[40]:=",ExpressionUUID->"7c051df6-378d-4c36-bf96-de4510248ee2"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -12319,8 +12326,8 @@ Cell[BoxData[
   3.988549927605216*^9, 3.988552175898522*^9, 3.988552368666799*^9, 
   3.988552664311426*^9, 3.988553010168827*^9, 3.9885559553382387`*^9, 
   3.9886533161533957`*^9, 3.9956163245904903`*^9, 3.996558701057344*^9, 
-  3.9965590685344887`*^9},
- CellLabel->"Out[41]=",ExpressionUUID->"d92d86ec-2065-4ea6-a1eb-421910874063"]
+  3.9965590685344887`*^9, 3.9969109678512697`*^9},
+ CellLabel->"Out[40]=",ExpressionUUID->"963ea18f-e2c6-4721-8aac-16ca7271f78b"]
 }, Open  ]],
 
 Cell[BoxData[
@@ -12332,7 +12339,7 @@ Cell[BoxData[
    RowBox[{"h", "[", "\[Theta]", "]"}]}]}]], "Input",
  CellChangeTimes->{{3.988645459382244*^9, 3.988645470208387*^9}, {
   3.988645580300315*^9, 3.988645581447528*^9}},
- CellLabel->"In[42]:=",ExpressionUUID->"f0d81b1e-036e-4972-874a-c8c47e13f18a"],
+ CellLabel->"In[41]:=",ExpressionUUID->"f0d81b1e-036e-4972-874a-c8c47e13f18a"],
 
 Cell[CellGroupData[{
 
@@ -12348,7 +12355,7 @@ Cell[BoxData[
     RowBox[{
     "gg", ",", "Detgg", ",", "Christoffelcd", ",", "Riccicd", ",", 
      "RicciScalarcd"}], "}"}]}], ";"}]], "Input",
- CellLabel->"In[43]:=",ExpressionUUID->"293949e3-6515-4a89-9e0e-0b2a6c95bd43"],
+ CellLabel->"In[42]:=",ExpressionUUID->"293949e3-6515-4a89-9e0e-0b2a6c95bd43"],
 
 Cell[CellGroupData[{
 
@@ -12392,8 +12399,8 @@ Cell[BoxData[
     "QuantityMixedUnit2"]},
   "RowDefault"]], "Echo",
  CellChangeTimes->{
-  3.9965590710569468`*^9},ExpressionUUID->"a149439d-77a6-4478-8dbe-\
-90aa140835b4"],
+  3.996910969840095*^9},ExpressionUUID->"c6146a9b-7ee4-4b43-ab3e-\
+f0923077bc94"],
 
 Cell[BoxData[
  TemplateBox[{"\"Applied \"", 
@@ -12441,8 +12448,8 @@ Cell[BoxData[
     "QuantityMixedUnit2"]},
   "RowDefault"]], "Echo",
  CellChangeTimes->{
-  3.9965590711938963`*^9},ExpressionUUID->"5d56225e-49cc-43d8-b982-\
-ec4a720df232"],
+  3.996910969919434*^9},ExpressionUUID->"c3f98fd5-5f57-4541-b4a8-\
+398a16bfc2cf"],
 
 Cell[BoxData[
  TemplateBox[{"\"Applied \"", 
@@ -12482,8 +12489,8 @@ Cell[BoxData[
     "QuantityMixedUnit2"]},
   "RowDefault"]], "Echo",
  CellChangeTimes->{
-  3.996559071251361*^9},ExpressionUUID->"e7ab38c1-7b94-49b5-83e8-\
-0e3f8cef974f"],
+  3.996910969961887*^9},ExpressionUUID->"bca6334e-8adc-4f50-a1c0-\
+49c0d6cb7725"],
 
 Cell[BoxData[
  TemplateBox[{"\"Applied \"", 
@@ -12587,8 +12594,8 @@ Cell[BoxData[
     "QuantityMixedUnit2"]},
   "RowDefault"]], "Echo",
  CellChangeTimes->{
-  3.9965590714144278`*^9},ExpressionUUID->"a5457227-f3a6-467c-9051-\
-b580583802ba"],
+  3.9969109700565042`*^9},ExpressionUUID->"20de0331-cf14-4e30-909b-\
+11818664fc93"],
 
 Cell[BoxData[
  TemplateBox[{"\"Applied \"", 
@@ -12679,7 +12686,7 @@ $CellContext`curved}, {-$CellContext`\[ScriptN], -$CellContext`curved}, \
         "\[DoubleStruckCapitalT]\[ScriptCapitalM]", AutoSpacing -> False, 
          ShowAutoStyles -> False], $CellContext`Tangent\[ScriptCapitalM], 
         Editable -> False], "\[Rule]", "gg"}]}, "RowDefault"], "\" in \"", 
-   TemplateBox[{"0", "1", 
+   TemplateBox[{"0", "0", 
      RowBox[{"\[VeryThinSpace]", "\"min\""}], 
      RowBox[{"\[VeryThinSpace]", "\"s\""}], "minutes,seconds", 
      RowBox[{"{", 
@@ -12687,8 +12694,8 @@ $CellContext`curved}, {-$CellContext`\[ScriptN], -$CellContext`curved}, \
     "QuantityMixedUnit2"]},
   "RowDefault"]], "Echo",
  CellChangeTimes->{
-  3.996559072086187*^9},ExpressionUUID->"c83cea7e-18f1-425c-be4e-\
-e8243399a6d8"],
+  3.996910970413609*^9},ExpressionUUID->"6a099020-5123-4ddc-a398-\
+9d8dc134094b"],
 
 Cell[BoxData[
  TemplateBox[{"\"Applied \"", 
@@ -12846,8 +12853,8 @@ $CellContext`curved}, {-$CellContext`\[ScriptM], -$CellContext`curved}, \
     "QuantityMixedUnit2"]},
   "RowDefault"]], "Echo",
  CellChangeTimes->{
-  3.996559072330859*^9},ExpressionUUID->"5b78003d-722d-4e89-b546-\
-ccf2dba68402"],
+  3.9969109705927973`*^9},ExpressionUUID->"b3201d9a-9fcd-42fc-8598-\
+ea5870492db6"],
 
 Cell[BoxData[
  TemplateBox[{"\"Applied \"", 
@@ -12920,8 +12927,8 @@ Cell[BoxData[
     "QuantityMixedUnit2"]},
   "RowDefault"]], "Echo",
  CellChangeTimes->{
-  3.9965590726400633`*^9},ExpressionUUID->"8e4fb02c-9204-4725-a43d-\
-af272f35ef10"],
+  3.996910970702729*^9},ExpressionUUID->"41b999e8-5b39-4006-8bea-\
+bb27423abf1c"],
 
 Cell[BoxData[
  TemplateBox[{"\"Applied \"", 
@@ -12959,8 +12966,8 @@ Cell[BoxData[
     "QuantityMixedUnit2"]},
   "RowDefault"]], "Echo",
  CellChangeTimes->{
-  3.9965590726964417`*^9},ExpressionUUID->"cce66a4c-2458-4ec9-a801-\
-26619a246901"]
+  3.996910970792304*^9},ExpressionUUID->"2c8b2a3d-f87b-4dd0-9b3e-\
+f2fe641d5489"]
 }, Open  ]]
 }, Open  ]],
 
@@ -12977,9 +12984,7 @@ Cell[BoxData[{
       RowBox[{"HoldForm", "[", 
        RowBox[{"$self", "[", 
         RowBox[{"$form", ",", "F", ",", "Expression"}], "]"}], "]"}], "->", 
-      RowBox[{"{", 
-       RowBox[{"{", "1", "}"}], "}"}]}], "\[IndentingNewLine]", "}"}]}], ",", 
-   
+      RowBox[{"{", "}"}]}], "\[IndentingNewLine]", "}"}]}], ",", 
    RowBox[{"Apply", "->", 
     RowBox[{"{", 
      RowBox[{"Map", "->", "Identity"}], "}"}]}]}], "]"}], "\[IndentingNewLine]", 
@@ -12993,13 +12998,12 @@ Cell[BoxData[{
       RowBox[{"HoldForm", "[", 
        RowBox[{"$self", "[", 
         RowBox[{"$form", ",", "A", ",", "Expression"}], "]"}], "]"}], "->", 
-      RowBox[{"{", 
-       RowBox[{"{", "1", "}"}], "}"}]}], "\[IndentingNewLine]", "}"}]}], ",", 
-   
+      RowBox[{"{", "}"}]}], "\[IndentingNewLine]", "}"}]}], ",", 
    RowBox[{"Apply", "->", 
     RowBox[{"{", 
      RowBox[{"Map", "->", "Identity"}], "}"}]}]}], "]"}]}], "Input",
- CellLabel->"In[44]:=",ExpressionUUID->"f4957bde-2f3c-4ee6-9712-7a2d991ba333"],
+ CellChangeTimes->{{3.996910973982773*^9, 3.9969109767075863`*^9}},
+ CellLabel->"In[45]:=",ExpressionUUID->"f4957bde-2f3c-4ee6-9712-7a2d991ba333"],
 
 Cell[CellGroupData[{
 
@@ -13026,8 +13030,8 @@ Cell[BoxData[
     "QuantityMixedUnit2"]},
   "RowDefault"]], "Echo",
  CellChangeTimes->{
-  3.9965590736486273`*^9},ExpressionUUID->"abb67bdd-03a7-494d-94a3-\
-56ef7a73fdde"],
+  3.996910977303154*^9},ExpressionUUID->"1dd332c6-b7d0-496e-b5cb-\
+03f4c7ac6bb5"],
 
 Cell[BoxData[
  TemplateBox[{"\"Applied \"", 
@@ -13052,8 +13056,8 @@ Cell[BoxData[
     "QuantityMixedUnit2"]},
   "RowDefault"]], "Echo",
  CellChangeTimes->{
-  3.996559073702264*^9},ExpressionUUID->"23e655f2-1d20-400a-8c22-\
-e69266e332b5"]
+  3.996910977339303*^9},ExpressionUUID->"12a90876-c51c-4cee-9f37-\
+f92e42f8bc71"]
 }, Open  ]]
 }, Open  ]],
 
@@ -13112,7 +13116,7 @@ Cell[BoxData[{
       "}"}]}]}]}], "]"}]}], "Input",
  CellChangeTimes->{{3.988532712587594*^9, 3.988532730092511*^9}, {
   3.988555964488247*^9, 3.98855596736582*^9}},
- CellLabel->"In[46]:=",ExpressionUUID->"d199f388-0350-4a9f-a375-9586a0fd1317"],
+ CellLabel->"In[47]:=",ExpressionUUID->"d199f388-0350-4a9f-a375-9586a0fd1317"],
 
 Cell[CellGroupData[{
 
@@ -13153,8 +13157,8 @@ Cell[BoxData[
     "QuantityMixedUnit2"]},
   "RowDefault"]], "Echo",
  CellChangeTimes->{
-  3.996559074728261*^9},ExpressionUUID->"1d2ddf29-19e1-4aaa-94a0-\
-27de40ed8863"],
+  3.9969109787948523`*^9},ExpressionUUID->"1d92dce9-99ee-4b84-a460-\
+563e771f0d0c"],
 
 Cell[BoxData[
  TemplateBox[{"\"Applied \"", 
@@ -13227,8 +13231,8 @@ Cell[BoxData[
     "QuantityMixedUnit2"]},
   "RowDefault"]], "Echo",
  CellChangeTimes->{
-  3.996559075000176*^9},ExpressionUUID->"a05e0721-1644-4fbc-bf87-\
-ac6394a13af0"],
+  3.996910978884507*^9},ExpressionUUID->"e48bb513-cf5f-4d2b-a202-\
+19da58fb0b30"],
 
 Cell[BoxData[
  TemplateBox[{"\"Applied \"", 
@@ -13301,8 +13305,8 @@ Cell[BoxData[
     "QuantityMixedUnit2"]},
   "RowDefault"]], "Echo",
  CellChangeTimes->{
-  3.9965590751215277`*^9},ExpressionUUID->"38895245-2f11-4d8a-a89b-\
-ea7dcc288620"],
+  3.996910978988346*^9},ExpressionUUID->"b97732e9-35be-4848-8214-\
+75bd8d75b171"],
 
 Cell[BoxData[
  TemplateBox[{"\"Applied \"", 
@@ -13339,8 +13343,8 @@ Cell[BoxData[
     "QuantityMixedUnit2"]},
   "RowDefault"]], "Echo",
  CellChangeTimes->{
-  3.996559075247551*^9},ExpressionUUID->"78b49ae6-d705-4055-a145-\
-1c0a7d8fcc35"],
+  3.996910979058447*^9},ExpressionUUID->"54865a5a-35c8-484f-a6ee-\
+34e82673ba7a"],
 
 Cell[BoxData[
  TemplateBox[{"\"Applied \"", 
@@ -13393,8 +13397,8 @@ Cell[BoxData[
     "QuantityMixedUnit2"]},
   "RowDefault"]], "Echo",
  CellChangeTimes->{
-  3.996559075354053*^9},ExpressionUUID->"dda4a474-3c5e-4274-a6ee-\
-9c83771ca768"]
+  3.9969109791537333`*^9},ExpressionUUID->"95516126-77e9-40a3-9096-\
+d087abc45674"]
 }, Open  ]]
 }, Open  ]],
 
@@ -13402,7 +13406,7 @@ Cell[CellGroupData[{
 
 Cell[BoxData[
  RowBox[{"SaveData", "@", "sol"}]], "Input",
- CellLabel->"In[48]:=",ExpressionUUID->"3ab2b349-87ad-4580-98a0-86affe84d75f"],
+ CellLabel->"In[49]:=",ExpressionUUID->"3ab2b349-87ad-4580-98a0-86affe84d75f"],
 
 Cell[BoxData[
  TemplateBox[{"\"Saved \"", 
@@ -13416,8 +13420,8 @@ Cell[BoxData[
     "Source Code Pro Semibold", StripOnInput -> False]},
   "RowDefault"]], "Echo",
  CellChangeTimes->{
-  3.996559076586501*^9},ExpressionUUID->"a8001316-40f3-45cf-ac02-\
-c7acbb4ee524"]
+  3.9969109804844723`*^9},ExpressionUUID->"ba00b3ca-9d71-4a3e-b7b3-\
+da64d855b4b2"]
 }, Open  ]]
 }, Open  ]],
 
@@ -13434,7 +13438,7 @@ Cell[CellGroupData[{
 Cell[BoxData[
  RowBox[{"ResumeAs", "@", "sol"}]], "Input",
  CellChangeTimes->{{3.996559085092661*^9, 3.9965590886515207`*^9}},
- CellLabel->"In[4]:=",ExpressionUUID->"11a72f93-1155-430d-88e3-7c4ba05c2cb1"],
+ CellLabel->"In[50]:=",ExpressionUUID->"11a72f93-1155-430d-88e3-7c4ba05c2cb1"],
 
 Cell[BoxData[
  DynamicModuleBox[{
@@ -13474,15 +13478,7 @@ $CellContext`GammaggStar, $CellContext`Gamma\[Eta]\[Eta]Star, $CellContext`\
 \[DoubleStruckCapitalK], $CellContext`\[DoubleStruckCapitalL], $CellContext`\
 \[Omega]\[Omega], $CellContext`Riemann\[Omega]\[Omega], $CellContext`Ricci\
 \[Omega]\[Omega], $CellContext`RicciScalar\[Omega]\[Omega], \
-$CellContext`PDcurved, $CellContext`curved, $CellContext`t, $CellContext`z, \
-$CellContext`\[Theta], $CellContext`\[Phi], $CellContext`dicurved, \
-$CellContext`dcurved, $CellContext`TorsionPDcurved, \
-$CellContext`ChristoffelPDcurved, $CellContext`RiemannPDcurved, \
-$CellContext`RicciPDcurved, $CellContext`etaUpcurved, \
-$CellContext`etaDowncurved, $CellContext`curved0, $CellContext`curved1, \
-$CellContext`curved2, $CellContext`curved3, $CellContext`icurved, \
-$CellContext`KoszulPDcurved, $CellContext`CovDPDcurved, $CellContext`PDflat, \
-$CellContext`flat, $CellContext`TorsionPDflat, \
+$CellContext`PDflat, $CellContext`flat, $CellContext`TorsionPDflat, \
 $CellContext`ChristoffelPDflat, $CellContext`RiemannPDflat, \
 $CellContext`RicciPDflat, $CellContext`AChristoffelPDflat, \
 $CellContext`FRiemannPDflat, $CellContext`etaUpflat, \
@@ -13496,10 +13492,17 @@ $CellContext`etaUpspin, $CellContext`etaDownspin, $CellContext`spin1, \
 $CellContext`spin2, $CellContext`spin3, $CellContext`spin4, \
 $CellContext`KoszulPDspin, $CellContext`CovDPDspin, $CellContext`TA, \
 $CellContext`A, $CellContext`TF, $CellContext`F, $CellContext`\[Epsilon]\
-\[Epsilon], $CellContext`bar\[Epsilon]\[Epsilon], $CellContext`u, \
-$CellContext`v, $CellContext`az, $CellContext`h, $CellContext`H, \
-$CellContext`R, $CellContext`G4, $CellContext`l4, $CellContext`\[CurlyTheta], \
-$CellContext`p, $CellContext`\[Kappa], 
+\[Epsilon], $CellContext`bar\[Epsilon]\[Epsilon], $CellContext`G4, \
+$CellContext`l4, $CellContext`\[CurlyTheta], $CellContext`PDcurved, \
+$CellContext`curved, $CellContext`t, $CellContext`z, $CellContext`\[Theta], \
+$CellContext`\[Phi], $CellContext`dicurved, $CellContext`dcurved, \
+$CellContext`TorsionPDcurved, $CellContext`ChristoffelPDcurved, \
+$CellContext`RiemannPDcurved, $CellContext`RicciPDcurved, \
+$CellContext`etaUpcurved, $CellContext`etaDowncurved, $CellContext`curved0, \
+$CellContext`curved1, $CellContext`curved2, $CellContext`curved3, \
+$CellContext`icurved, $CellContext`KoszulPDcurved, $CellContext`CovDPDcurved, \
+$CellContext`u, $CellContext`v, $CellContext`az, $CellContext`h, \
+$CellContext`H, $CellContext`p, $CellContext`\[Kappa], $CellContext`R, 
    HoldForm[$Assumptions]}, VasilDimitrov`SolutionsX`Private`info$$ = "", 
   VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
   VasilDimitrov`SolutionsX`Private`currentSymbol$$ = ""}, 
@@ -15163,390 +15166,6 @@ $CellContext`RicciScalar\[Omega]\[Omega];
           "Preemptive"], 
          ButtonBox[
           StyleBox[
-          "PDcurved", FontFamily -> "Source Code Pro", FontWeight -> 
-           "SemiBold", 
-           RGBColor[0, 0, 
-            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
-            And[
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
-$CellContext`PDcurved, VasilDimitrov`SolutionsX`Private`showInfo$$], 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
-$CellContext`PDcurved; 
-            VasilDimitrov`SolutionsX`Private`info$$ = 
-             If[$CellContext`PDcurved === 
-               HoldForm[$Assumptions], $Assumptions, 
-               Information[$CellContext`PDcurved]]; 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
-          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
-          "Preemptive"], 
-         ButtonBox[
-          StyleBox[
-          "curved", FontFamily -> "Source Code Pro", FontWeight -> "SemiBold", 
-           RGBColor[0, 0, 
-            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
-            And[
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
-$CellContext`curved, VasilDimitrov`SolutionsX`Private`showInfo$$], 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
-$CellContext`curved; 
-            VasilDimitrov`SolutionsX`Private`info$$ = 
-             If[$CellContext`curved === HoldForm[$Assumptions], $Assumptions, 
-               
-               Information[$CellContext`curved]]; 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
-          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
-          "Preemptive"], 
-         ButtonBox[
-          StyleBox[
-          "t", FontFamily -> "Source Code Pro", FontWeight -> "SemiBold", 
-           RGBColor[0, 0, 
-            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
-            And[
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
-$CellContext`t, VasilDimitrov`SolutionsX`Private`showInfo$$], 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = $CellContext`t; 
-            VasilDimitrov`SolutionsX`Private`info$$ = 
-             If[$CellContext`t === HoldForm[$Assumptions], $Assumptions, 
-               Information[$CellContext`t]]; 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
-          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
-          "Preemptive"], 
-         ButtonBox[
-          StyleBox[
-          "z", FontFamily -> "Source Code Pro", FontWeight -> "SemiBold", 
-           RGBColor[0, 0, 
-            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
-            And[
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
-$CellContext`z, VasilDimitrov`SolutionsX`Private`showInfo$$], 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = $CellContext`z; 
-            VasilDimitrov`SolutionsX`Private`info$$ = 
-             If[$CellContext`z === HoldForm[$Assumptions], $Assumptions, 
-               Information[$CellContext`z]]; 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
-          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
-          "Preemptive"], 
-         ButtonBox[
-          StyleBox[
-          "\[Theta]", FontFamily -> "Source Code Pro", FontWeight -> 
-           "SemiBold", 
-           RGBColor[0, 0, 
-            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
-            And[
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
-$CellContext`\[Theta], VasilDimitrov`SolutionsX`Private`showInfo$$], 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = $CellContext`\
-\[Theta]; VasilDimitrov`SolutionsX`Private`info$$ = 
-             If[$CellContext`\[Theta] === 
-               HoldForm[$Assumptions], $Assumptions, 
-               Information[$CellContext`\[Theta]]]; 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
-          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
-          "Preemptive"], 
-         ButtonBox[
-          StyleBox[
-          "\[Phi]", FontFamily -> "Source Code Pro", FontWeight -> "SemiBold", 
-           RGBColor[0, 0, 
-            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
-            And[
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
-$CellContext`\[Phi], VasilDimitrov`SolutionsX`Private`showInfo$$], 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = $CellContext`\
-\[Phi]; VasilDimitrov`SolutionsX`Private`info$$ = 
-             If[$CellContext`\[Phi] === HoldForm[$Assumptions], $Assumptions, 
-               
-               Information[$CellContext`\[Phi]]]; 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
-          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
-          "Preemptive"], 
-         ButtonBox[
-          StyleBox[
-          "dicurved", FontFamily -> "Source Code Pro", FontWeight -> 
-           "SemiBold", 
-           RGBColor[0, 0, 
-            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
-            And[
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
-$CellContext`dicurved, VasilDimitrov`SolutionsX`Private`showInfo$$], 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
-$CellContext`dicurved; 
-            VasilDimitrov`SolutionsX`Private`info$$ = 
-             If[$CellContext`dicurved === 
-               HoldForm[$Assumptions], $Assumptions, 
-               Information[$CellContext`dicurved]]; 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
-          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
-          "Preemptive"], 
-         ButtonBox[
-          StyleBox[
-          "dcurved", FontFamily -> "Source Code Pro", FontWeight -> 
-           "SemiBold", 
-           RGBColor[0, 0, 
-            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
-            And[
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
-$CellContext`dcurved, VasilDimitrov`SolutionsX`Private`showInfo$$], 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
-$CellContext`dcurved; 
-            VasilDimitrov`SolutionsX`Private`info$$ = 
-             If[$CellContext`dcurved === HoldForm[$Assumptions], $Assumptions, 
-               Information[$CellContext`dcurved]]; 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
-          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
-          "Preemptive"], 
-         ButtonBox[
-          StyleBox[
-          "TorsionPDcurved", FontFamily -> "Source Code Pro", FontWeight -> 
-           "SemiBold", 
-           RGBColor[0, 0, 
-            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
-            And[
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
-$CellContext`TorsionPDcurved, VasilDimitrov`SolutionsX`Private`showInfo$$], 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
-$CellContext`TorsionPDcurved; 
-            VasilDimitrov`SolutionsX`Private`info$$ = 
-             If[$CellContext`TorsionPDcurved === 
-               HoldForm[$Assumptions], $Assumptions, 
-               Information[$CellContext`TorsionPDcurved]]; 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
-          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
-          "Preemptive"], 
-         ButtonBox[
-          StyleBox[
-          "ChristoffelPDcurved", FontFamily -> "Source Code Pro", FontWeight -> 
-           "SemiBold", 
-           RGBColor[0, 0, 
-            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
-            And[
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
-$CellContext`ChristoffelPDcurved, 
-             VasilDimitrov`SolutionsX`Private`showInfo$$], 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
-$CellContext`ChristoffelPDcurved; 
-            VasilDimitrov`SolutionsX`Private`info$$ = 
-             If[$CellContext`ChristoffelPDcurved === 
-               HoldForm[$Assumptions], $Assumptions, 
-               Information[$CellContext`ChristoffelPDcurved]]; 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
-          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
-          "Preemptive"], 
-         ButtonBox[
-          StyleBox[
-          "RiemannPDcurved", FontFamily -> "Source Code Pro", FontWeight -> 
-           "SemiBold", 
-           RGBColor[0, 0, 
-            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
-            And[
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
-$CellContext`RiemannPDcurved, VasilDimitrov`SolutionsX`Private`showInfo$$], 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
-$CellContext`RiemannPDcurved; 
-            VasilDimitrov`SolutionsX`Private`info$$ = 
-             If[$CellContext`RiemannPDcurved === 
-               HoldForm[$Assumptions], $Assumptions, 
-               Information[$CellContext`RiemannPDcurved]]; 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
-          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
-          "Preemptive"], 
-         ButtonBox[
-          StyleBox[
-          "RicciPDcurved", FontFamily -> "Source Code Pro", FontWeight -> 
-           "SemiBold", 
-           RGBColor[0, 0, 
-            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
-            And[
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
-$CellContext`RicciPDcurved, VasilDimitrov`SolutionsX`Private`showInfo$$], 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
-$CellContext`RicciPDcurved; 
-            VasilDimitrov`SolutionsX`Private`info$$ = 
-             If[$CellContext`RicciPDcurved === 
-               HoldForm[$Assumptions], $Assumptions, 
-               Information[$CellContext`RicciPDcurved]]; 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
-          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
-          "Preemptive"], 
-         ButtonBox[
-          StyleBox[
-          "etaUpcurved", FontFamily -> "Source Code Pro", FontWeight -> 
-           "SemiBold", 
-           RGBColor[0, 0, 
-            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
-            And[
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
-$CellContext`etaUpcurved, VasilDimitrov`SolutionsX`Private`showInfo$$], 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
-$CellContext`etaUpcurved; 
-            VasilDimitrov`SolutionsX`Private`info$$ = 
-             If[$CellContext`etaUpcurved === 
-               HoldForm[$Assumptions], $Assumptions, 
-               Information[$CellContext`etaUpcurved]]; 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
-          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
-          "Preemptive"], 
-         ButtonBox[
-          StyleBox[
-          "etaDowncurved", FontFamily -> "Source Code Pro", FontWeight -> 
-           "SemiBold", 
-           RGBColor[0, 0, 
-            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
-            And[
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
-$CellContext`etaDowncurved, VasilDimitrov`SolutionsX`Private`showInfo$$], 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
-$CellContext`etaDowncurved; 
-            VasilDimitrov`SolutionsX`Private`info$$ = 
-             If[$CellContext`etaDowncurved === 
-               HoldForm[$Assumptions], $Assumptions, 
-               Information[$CellContext`etaDowncurved]]; 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
-          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
-          "Preemptive"], 
-         ButtonBox[
-          StyleBox[
-          "curved0", FontFamily -> "Source Code Pro", FontWeight -> 
-           "SemiBold", 
-           RGBColor[0, 0, 
-            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
-            And[
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
-$CellContext`curved0, VasilDimitrov`SolutionsX`Private`showInfo$$], 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
-$CellContext`curved0; 
-            VasilDimitrov`SolutionsX`Private`info$$ = 
-             If[$CellContext`curved0 === HoldForm[$Assumptions], $Assumptions, 
-               Information[$CellContext`curved0]]; 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
-          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
-          "Preemptive"], 
-         ButtonBox[
-          StyleBox[
-          "curved1", FontFamily -> "Source Code Pro", FontWeight -> 
-           "SemiBold", 
-           RGBColor[0, 0, 
-            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
-            And[
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
-$CellContext`curved1, VasilDimitrov`SolutionsX`Private`showInfo$$], 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
-$CellContext`curved1; 
-            VasilDimitrov`SolutionsX`Private`info$$ = 
-             If[$CellContext`curved1 === HoldForm[$Assumptions], $Assumptions, 
-               Information[$CellContext`curved1]]; 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
-          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
-          "Preemptive"], 
-         ButtonBox[
-          StyleBox[
-          "curved2", FontFamily -> "Source Code Pro", FontWeight -> 
-           "SemiBold", 
-           RGBColor[0, 0, 
-            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
-            And[
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
-$CellContext`curved2, VasilDimitrov`SolutionsX`Private`showInfo$$], 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
-$CellContext`curved2; 
-            VasilDimitrov`SolutionsX`Private`info$$ = 
-             If[$CellContext`curved2 === HoldForm[$Assumptions], $Assumptions, 
-               Information[$CellContext`curved2]]; 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
-          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
-          "Preemptive"], 
-         ButtonBox[
-          StyleBox[
-          "curved3", FontFamily -> "Source Code Pro", FontWeight -> 
-           "SemiBold", 
-           RGBColor[0, 0, 
-            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
-            And[
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
-$CellContext`curved3, VasilDimitrov`SolutionsX`Private`showInfo$$], 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
-$CellContext`curved3; 
-            VasilDimitrov`SolutionsX`Private`info$$ = 
-             If[$CellContext`curved3 === HoldForm[$Assumptions], $Assumptions, 
-               Information[$CellContext`curved3]]; 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
-          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
-          "Preemptive"], 
-         ButtonBox[
-          StyleBox[
-          "icurved", FontFamily -> "Source Code Pro", FontWeight -> 
-           "SemiBold", 
-           RGBColor[0, 0, 
-            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
-            And[
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
-$CellContext`icurved, VasilDimitrov`SolutionsX`Private`showInfo$$], 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
-$CellContext`icurved; 
-            VasilDimitrov`SolutionsX`Private`info$$ = 
-             If[$CellContext`icurved === HoldForm[$Assumptions], $Assumptions, 
-               Information[$CellContext`icurved]]; 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
-          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
-          "Preemptive"], 
-         ButtonBox[
-          StyleBox[
-          "KoszulPDcurved", FontFamily -> "Source Code Pro", FontWeight -> 
-           "SemiBold", 
-           RGBColor[0, 0, 
-            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
-            And[
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
-$CellContext`KoszulPDcurved, VasilDimitrov`SolutionsX`Private`showInfo$$], 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
-$CellContext`KoszulPDcurved; 
-            VasilDimitrov`SolutionsX`Private`info$$ = 
-             If[$CellContext`KoszulPDcurved === 
-               HoldForm[$Assumptions], $Assumptions, 
-               Information[$CellContext`KoszulPDcurved]]; 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
-          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
-          "Preemptive"], 
-         ButtonBox[
-          StyleBox[
-          "CovDPDcurved", FontFamily -> "Source Code Pro", FontWeight -> 
-           "SemiBold", 
-           RGBColor[0, 0, 
-            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
-            And[
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
-$CellContext`CovDPDcurved, VasilDimitrov`SolutionsX`Private`showInfo$$], 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
-$CellContext`CovDPDcurved; 
-            VasilDimitrov`SolutionsX`Private`info$$ = 
-             If[$CellContext`CovDPDcurved === 
-               HoldForm[$Assumptions], $Assumptions, 
-               Information[$CellContext`CovDPDcurved]]; 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
-          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
-          "Preemptive"], 
-         ButtonBox[
-          StyleBox[
           "PDflat", FontFamily -> "Source Code Pro", FontWeight -> "SemiBold", 
            RGBColor[0, 0, 
             Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
@@ -16249,6 +15868,454 @@ $CellContext`bar\[Epsilon]\[Epsilon];
           StyleBox[
            InterpretationBox[
             StyleBox[
+             RowBox[{"G4"}], AutoSpacing -> False, ShowAutoStyles -> 
+             False], $CellContext`G4, Editable -> False], FontFamily -> 
+           "Source Code Pro", FontWeight -> "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`G4, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`G4; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`G4 === HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`G4]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+           InterpretationBox[
+            StyleBox[
+             RowBox[{"l4"}], AutoSpacing -> False, ShowAutoStyles -> 
+             False], $CellContext`l4, Editable -> False], FontFamily -> 
+           "Source Code Pro", FontWeight -> "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`l4, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`l4; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`l4 === HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`l4]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+           InterpretationBox[
+            StyleBox[
+             RowBox[{"\[CurlyTheta]"}], AutoSpacing -> False, ShowAutoStyles -> 
+             False], $CellContext`\[CurlyTheta], Editable -> False], 
+           FontFamily -> "Source Code Pro", FontWeight -> "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`\[CurlyTheta], VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = $CellContext`\
+\[CurlyTheta]; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`\[CurlyTheta] === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`\[CurlyTheta]]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "PDcurved", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`PDcurved, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`PDcurved; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`PDcurved === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`PDcurved]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "curved", FontFamily -> "Source Code Pro", FontWeight -> "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`curved, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`curved; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`curved === HoldForm[$Assumptions], $Assumptions, 
+               
+               Information[$CellContext`curved]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "t", FontFamily -> "Source Code Pro", FontWeight -> "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`t, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = $CellContext`t; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`t === HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`t]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "z", FontFamily -> "Source Code Pro", FontWeight -> "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`z, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = $CellContext`z; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`z === HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`z]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "\[Theta]", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`\[Theta], VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = $CellContext`\
+\[Theta]; VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`\[Theta] === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`\[Theta]]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "\[Phi]", FontFamily -> "Source Code Pro", FontWeight -> "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`\[Phi], VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = $CellContext`\
+\[Phi]; VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`\[Phi] === HoldForm[$Assumptions], $Assumptions, 
+               
+               Information[$CellContext`\[Phi]]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "dicurved", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`dicurved, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`dicurved; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`dicurved === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`dicurved]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "dcurved", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`dcurved, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`dcurved; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`dcurved === HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`dcurved]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "TorsionPDcurved", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`TorsionPDcurved, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`TorsionPDcurved; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`TorsionPDcurved === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`TorsionPDcurved]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "ChristoffelPDcurved", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`ChristoffelPDcurved, 
+             VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`ChristoffelPDcurved; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`ChristoffelPDcurved === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`ChristoffelPDcurved]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "RiemannPDcurved", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`RiemannPDcurved, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`RiemannPDcurved; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`RiemannPDcurved === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`RiemannPDcurved]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "RicciPDcurved", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`RicciPDcurved, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`RicciPDcurved; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`RicciPDcurved === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`RicciPDcurved]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "etaUpcurved", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`etaUpcurved, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`etaUpcurved; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`etaUpcurved === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`etaUpcurved]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "etaDowncurved", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`etaDowncurved, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`etaDowncurved; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`etaDowncurved === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`etaDowncurved]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "curved0", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`curved0, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`curved0; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`curved0 === HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`curved0]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "curved1", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`curved1, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`curved1; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`curved1 === HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`curved1]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "curved2", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`curved2, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`curved2; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`curved2 === HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`curved2]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "curved3", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`curved3, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`curved3; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`curved3 === HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`curved3]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "icurved", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`icurved, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`icurved; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`icurved === HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`icurved]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "KoszulPDcurved", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`KoszulPDcurved, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`KoszulPDcurved; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`KoszulPDcurved === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`KoszulPDcurved]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+          "CovDPDcurved", FontFamily -> "Source Code Pro", FontWeight -> 
+           "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`CovDPDcurved, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
+$CellContext`CovDPDcurved; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`CovDPDcurved === 
+               HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`CovDPDcurved]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+           InterpretationBox[
+            StyleBox[
              RowBox[{"u"}], AutoSpacing -> False, ShowAutoStyles -> 
              False], $CellContext`u, Editable -> False], FontFamily -> 
            "Source Code Pro", FontWeight -> "SemiBold", 
@@ -16350,90 +16417,6 @@ $CellContext`H, VasilDimitrov`SolutionsX`Private`showInfo$$],
           StyleBox[
            InterpretationBox[
             StyleBox[
-             RowBox[{"R"}], AutoSpacing -> False, ShowAutoStyles -> 
-             False], $CellContext`R, Editable -> False], FontFamily -> 
-           "Source Code Pro", FontWeight -> "SemiBold", 
-           RGBColor[0, 0, 
-            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
-            And[
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
-$CellContext`R, VasilDimitrov`SolutionsX`Private`showInfo$$], 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = $CellContext`R; 
-            VasilDimitrov`SolutionsX`Private`info$$ = 
-             If[$CellContext`R === HoldForm[$Assumptions], $Assumptions, 
-               Information[$CellContext`R]]; 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
-          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
-          "Preemptive"], 
-         ButtonBox[
-          StyleBox[
-           InterpretationBox[
-            StyleBox[
-             RowBox[{"G4"}], AutoSpacing -> False, ShowAutoStyles -> 
-             False], $CellContext`G4, Editable -> False], FontFamily -> 
-           "Source Code Pro", FontWeight -> "SemiBold", 
-           RGBColor[0, 0, 
-            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
-            And[
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
-$CellContext`G4, VasilDimitrov`SolutionsX`Private`showInfo$$], 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
-$CellContext`G4; 
-            VasilDimitrov`SolutionsX`Private`info$$ = 
-             If[$CellContext`G4 === HoldForm[$Assumptions], $Assumptions, 
-               Information[$CellContext`G4]]; 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
-          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
-          "Preemptive"], 
-         ButtonBox[
-          StyleBox[
-           InterpretationBox[
-            StyleBox[
-             RowBox[{"l4"}], AutoSpacing -> False, ShowAutoStyles -> 
-             False], $CellContext`l4, Editable -> False], FontFamily -> 
-           "Source Code Pro", FontWeight -> "SemiBold", 
-           RGBColor[0, 0, 
-            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
-            And[
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
-$CellContext`l4, VasilDimitrov`SolutionsX`Private`showInfo$$], 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = \
-$CellContext`l4; 
-            VasilDimitrov`SolutionsX`Private`info$$ = 
-             If[$CellContext`l4 === HoldForm[$Assumptions], $Assumptions, 
-               Information[$CellContext`l4]]; 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
-          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
-          "Preemptive"], 
-         ButtonBox[
-          StyleBox[
-           InterpretationBox[
-            StyleBox[
-             RowBox[{"\[CurlyTheta]"}], AutoSpacing -> False, ShowAutoStyles -> 
-             False], $CellContext`\[CurlyTheta], Editable -> False], 
-           FontFamily -> "Source Code Pro", FontWeight -> "SemiBold", 
-           RGBColor[0, 0, 
-            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
-            And[
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
-$CellContext`\[CurlyTheta], VasilDimitrov`SolutionsX`Private`showInfo$$], 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
-            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = $CellContext`\
-\[CurlyTheta]; 
-            VasilDimitrov`SolutionsX`Private`info$$ = 
-             If[$CellContext`\[CurlyTheta] === 
-               HoldForm[$Assumptions], $Assumptions, 
-               Information[$CellContext`\[CurlyTheta]]]; 
-            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
-          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
-          "Preemptive"], 
-         ButtonBox[
-          StyleBox[
-           InterpretationBox[
-            StyleBox[
              RowBox[{"p"}], AutoSpacing -> False, ShowAutoStyles -> 
              False], $CellContext`p, Editable -> False], FontFamily -> 
            "Source Code Pro", FontWeight -> "SemiBold", 
@@ -16468,6 +16451,26 @@ $CellContext`\[Kappa], VasilDimitrov`SolutionsX`Private`showInfo$$],
              If[$CellContext`\[Kappa] === 
                HoldForm[$Assumptions], $Assumptions, 
                Information[$CellContext`\[Kappa]]]; 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
+          2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
+          "Preemptive"], 
+         ButtonBox[
+          StyleBox[
+           InterpretationBox[
+            StyleBox[
+             RowBox[{"R"}], AutoSpacing -> False, ShowAutoStyles -> 
+             False], $CellContext`R, Editable -> False], FontFamily -> 
+           "Source Code Pro", FontWeight -> "SemiBold", 
+           RGBColor[0, 0, 
+            Rational[2, 3]], StripOnInput -> False], ButtonFunction :> If[
+            And[
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ === \
+$CellContext`R, VasilDimitrov`SolutionsX`Private`showInfo$$], 
+            VasilDimitrov`SolutionsX`Private`showInfo$$ = False, 
+            VasilDimitrov`SolutionsX`Private`currentSymbol$$ = $CellContext`R; 
+            VasilDimitrov`SolutionsX`Private`info$$ = 
+             If[$CellContext`R === HoldForm[$Assumptions], $Assumptions, 
+               Information[$CellContext`R]]; 
             VasilDimitrov`SolutionsX`Private`showInfo$$ = True], ImageMargins -> 
           2, Appearance -> "Frameless", Evaluator -> Automatic, Method -> 
           "Preemptive"], 
@@ -16512,8 +16515,8 @@ $CellContext`\[Kappa], VasilDimitrov`SolutionsX`Private`showInfo$$],
    3.9885521992707443`*^9, 3.988552389120522*^9, 3.988552679948945*^9, 
    3.988553024868271*^9, 3.988555981281879*^9, 3.988653352908019*^9, 
    3.9956163418566313`*^9, 3.9965587288338757`*^9, {3.996559078202537*^9, 
-   3.996559095854508*^9}},
- CellLabel->"Out[4]=",ExpressionUUID->"164dbfc8-c908-4d89-a332-e54224ea6e32"]
+   3.996559095854508*^9}, 3.996910982423612*^9},
+ CellLabel->"Out[50]=",ExpressionUUID->"fe19af2b-a54b-44bc-a241-308b0c4e3f01"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -16536,7 +16539,7 @@ Cell[BoxData[{
       RowBox[{"DeleteCases", "[", "0", "]"}]}], ")"}], "//", "Simplify"}]}], 
   ";"}]}], "Input",
  CellChangeTimes->{{3.996558733949004*^9, 3.9965587346799107`*^9}},
- CellLabel->"In[5]:=",ExpressionUUID->"14ef6d51-2c74-41fd-a2fc-1e9cf2586990"],
+ CellLabel->"In[51]:=",ExpressionUUID->"14ef6d51-2c74-41fd-a2fc-1e9cf2586990"],
 
 Cell[BoxData[
  RowBox[{
@@ -16715,8 +16718,9 @@ Cell[BoxData[
   3.988548887169859*^9, 3.9885499432828693`*^9, 3.988552201160767*^9, 
    3.988552390255972*^9, 3.988552681938327*^9, 3.9885530254798927`*^9, 
    3.988555982402183*^9, 3.9886533552504187`*^9, 3.99561634234032*^9, {
-   3.996558730731482*^9, 3.996558735483164*^9}, 3.996559099175693*^9},
- CellLabel->"Out[5]=",ExpressionUUID->"45069515-e881-4867-a79c-3694d44a0bcf"]
+   3.996558730731482*^9, 3.996558735483164*^9}, 3.996559099175693*^9, 
+   3.996910983748848*^9},
+ CellLabel->"Out[51]=",ExpressionUUID->"8d8efa45-565a-43a6-96ee-fb9cc7125c7e"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -16741,7 +16745,7 @@ Cell[BoxData[{
       RowBox[{"DeleteCases", "[", "0", "]"}]}], ")"}], "//", "Simplify"}]}], 
   ";"}]}], "Input",
  CellChangeTimes->{3.99655873883305*^9},
- CellLabel->"In[7]:=",ExpressionUUID->"e7e9e788-50ba-4869-b4cf-1720b0ff1c4b"],
+ CellLabel->"In[53]:=",ExpressionUUID->"e7e9e788-50ba-4869-b4cf-1720b0ff1c4b"],
 
 Cell[BoxData[
  RowBox[{
@@ -16887,8 +16891,9 @@ Cell[BoxData[
  CellChangeTimes->{3.98854889262639*^9, 3.988549944175295*^9, 
   3.98855220259092*^9, 3.9885523913501787`*^9, 3.988552682815206*^9, 
   3.988553026348742*^9, 3.988555983236761*^9, 3.988653356924901*^9, 
-  3.995616343072047*^9, 3.996558740083848*^9, 3.996559099964077*^9},
- CellLabel->"Out[7]=",ExpressionUUID->"edb1958c-6ffa-494e-9a84-c43eaadaa8ca"]
+  3.995616343072047*^9, 3.996558740083848*^9, 3.996559099964077*^9, 
+  3.996910984462899*^9},
+ CellLabel->"Out[53]=",ExpressionUUID->"1d8380ed-11bc-425d-a493-e22c6d5a44b3"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -16915,7 +16920,7 @@ Cell[BoxData[{
   3.9885523979027576`*^9, 3.988552400476953*^9}, {3.98855268658733*^9, 
   3.988552712434836*^9}, {3.988653359779193*^9, 3.988653362175659*^9}, {
   3.996558859582838*^9, 3.9965588602427464`*^9}},
- CellLabel->"In[9]:=",ExpressionUUID->"621fdf83-5ff0-4b8e-bf59-4675163d680f"],
+ CellLabel->"In[55]:=",ExpressionUUID->"621fdf83-5ff0-4b8e-bf59-4675163d680f"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -16972,8 +16977,8 @@ Cell[BoxData[
    3.988552395863587*^9, 3.98855240099955*^9}, {3.988552683916156*^9, 
    3.9885527143931723`*^9}, 3.988553027273327*^9, 3.988555984223568*^9, 
    3.988653363689271*^9, 3.995616344037162*^9, 3.996558746376131*^9, 
-   3.99655886079151*^9, 3.996559101295639*^9},
- CellLabel->"Out[10]=",ExpressionUUID->"74011e0b-46f4-4d89-a07d-b00e2901f662"]
+   3.99655886079151*^9, 3.996559101295639*^9, 3.9969109853818007`*^9},
+ CellLabel->"Out[56]=",ExpressionUUID->"24a95f09-49fb-4190-b19b-6aa743b11dd9"]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -16998,7 +17003,7 @@ Cell[BoxData[{
   "Simplify"}]}], "Input",
  CellChangeTimes->{{3.988552719661689*^9, 3.988552720789461*^9}, {
   3.9886533664605837`*^9, 3.9886533684743137`*^9}},
- CellLabel->"In[11]:=",ExpressionUUID->"36a0d25a-db33-49c3-a2e6-6bc62601b64a"],
+ CellLabel->"In[57]:=",ExpressionUUID->"36a0d25a-db33-49c3-a2e6-6bc62601b64a"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -17016,8 +17021,31 @@ Cell[BoxData[
    Editable->False], "}"}]], "Output",
  CellChangeTimes->{3.988552721735403*^9, 3.988553028286689*^9, 
   3.9885559850190487`*^9, 3.988653369564623*^9, 3.9956163479664907`*^9, 
-  3.9965588687489767`*^9, 3.996559102111292*^9},
- CellLabel->"Out[12]=",ExpressionUUID->"d4594bd6-2680-40d3-9a1d-45f2c5364e6b"]
+  3.9965588687489767`*^9, 3.996559102111292*^9, 3.996910985982347*^9},
+ CellLabel->"Out[58]=",ExpressionUUID->"fbc0f233-fe72-48be-836f-f2fdca2dcc94"]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"SaveData", "@", "sol"}]], "Input",
+ CellChangeTimes->{{3.996910989474503*^9, 3.996910993487537*^9}},
+ CellLabel->"In[59]:=",ExpressionUUID->"fce75654-623b-41f0-a476-e710d1a6626a"],
+
+Cell[BoxData[
+ TemplateBox[{"\"Saved \"", 
+   StyleBox[
+   "\"Vasko/Sol__4dL__Black-hole__FG\"", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False], "\" under \"", 
+   StyleBox[
+   "\"/Users/vasko/000/SolutionsX/Data\"", FontColor -> 
+    RGBColor[0.4, 0.2666666666666667, 0.13333333333333336`], FontFamily -> 
+    "Source Code Pro Semibold", StripOnInput -> False]},
+  "RowDefault"]], "Echo",
+ CellChangeTimes->{
+  3.996910994320277*^9},ExpressionUUID->"2d68596d-2853-41c8-8690-\
+9c6a4e52bd1a"]
 }, Open  ]]
 }, Open  ]]
 },
@@ -17039,147 +17067,151 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[576, 22, 208, 6, 80, "Input",ExpressionUUID->"ca371cc9-03b1-4631-a0c4-3bb996c00b25",
+Cell[576, 22, 245, 6, 62, "Input",ExpressionUUID->"ca371cc9-03b1-4631-a0c4-3bb996c00b25",
  InitializationCell->True],
 Cell[CellGroupData[{
-Cell[809, 32, 11384, 220, 82, "Print",ExpressionUUID->"68223d8b-9fd6-4084-b3c4-5e3c08194684"],
-Cell[12196, 254, 651, 14, 23, "Echo",ExpressionUUID->"48c50c13-9805-4064-9029-956fb413bad7"]
+Cell[846, 32, 11409, 221, 82, "Print",ExpressionUUID->"7adc97ee-a154-4787-8de1-179848ba5b55"],
+Cell[12258, 255, 649, 14, 23, "Echo",ExpressionUUID->"7eb64961-a6a9-4726-a47b-149c0584385c"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[12896, 274, 152, 3, 66, "Section",ExpressionUUID->"784f50b1-d0b5-4cf4-9532-2276a5e8b8fb"],
+Cell[12956, 275, 152, 3, 66, "Section",ExpressionUUID->"784f50b1-d0b5-4cf4-9532-2276a5e8b8fb"],
 Cell[CellGroupData[{
-Cell[13073, 281, 586, 13, 70, "Input",ExpressionUUID->"c0015f2b-dc99-4537-9591-80cc184713cf"],
-Cell[13662, 296, 127777, 2501, 244, "Output",ExpressionUUID->"2a8ad94e-1975-48ba-9115-5d6e46ae8564"]
+Cell[13133, 282, 586, 13, 70, "Input",ExpressionUUID->"c0015f2b-dc99-4537-9591-80cc184713cf"],
+Cell[13722, 297, 127799, 2501, 244, "Output",ExpressionUUID->"e9883133-b9c1-4594-b212-0365155edd6e"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[141476, 2802, 915, 22, 70, "Input",ExpressionUUID->"9a0843bd-95a9-49cd-9bef-af00c40b7af3"],
-Cell[142394, 2826, 21467, 423, 117, "Output",ExpressionUUID->"382e5709-9def-4a5b-8881-397edd887a8c"]
+Cell[141558, 2803, 915, 22, 70, "Input",ExpressionUUID->"9a0843bd-95a9-49cd-9bef-af00c40b7af3"],
+Cell[142476, 2827, 21489, 423, 117, "Output",ExpressionUUID->"c290239f-92e1-4e0a-a8a4-0c25943910d8"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[163898, 3254, 1262, 35, 70, "Input",ExpressionUUID->"49ff6a1e-75c8-4553-816f-ac303976460a"],
-Cell[165163, 3291, 4584, 93, 91, "Output",ExpressionUUID->"41bb9415-73f8-4d9d-b5bd-513388ac81e6"],
-Cell[169750, 3386, 3517, 72, 91, "Output",ExpressionUUID->"14d14d2d-7144-4034-914b-afda379857a4"],
-Cell[173270, 3460, 3570, 73, 91, "Output",ExpressionUUID->"841c5a97-ddb1-4ca4-8d10-357cc785f75c"]
+Cell[164002, 3255, 1262, 35, 70, "Input",ExpressionUUID->"49ff6a1e-75c8-4553-816f-ac303976460a"],
+Cell[165267, 3292, 4606, 93, 91, "Output",ExpressionUUID->"c034b966-27cf-45d6-81f0-457c52a98645"],
+Cell[169876, 3387, 3539, 72, 91, "Output",ExpressionUUID->"20599491-1d24-4e1e-adae-562187c29ea7"],
+Cell[173418, 3461, 3592, 73, 91, "Output",ExpressionUUID->"59a8492a-d5f2-4b7f-8c42-71c41a554da0"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[176877, 3538, 2576, 76, 92, "Input",ExpressionUUID->"fcc6b7db-7690-472c-a056-b37f1ea1c2bb"],
-Cell[179456, 3616, 6503, 206, 51, "Output",ExpressionUUID->"4dfe28cb-1fe7-4e7e-a449-d199b7da4c5f"],
-Cell[185962, 3824, 2087, 71, 33, "Output",ExpressionUUID->"46b4b9a5-92ac-4fb9-861c-0c7dc39cf365"],
-Cell[188052, 3897, 3038, 104, 33, "Output",ExpressionUUID->"98ee068c-9a49-47b1-993a-d39059207dc0"]
+Cell[177047, 3539, 2576, 76, 92, "Input",ExpressionUUID->"fcc6b7db-7690-472c-a056-b37f1ea1c2bb"],
+Cell[179626, 3617, 6525, 206, 51, "Output",ExpressionUUID->"44708dfd-6ff3-461f-8927-b252e66ac91a"],
+Cell[186154, 3825, 2111, 71, 33, "Output",ExpressionUUID->"5f6fe6a8-0cf9-407b-a75e-489b340d16e5"],
+Cell[188268, 3898, 3062, 104, 33, "Output",ExpressionUUID->"09fa5775-7a4b-4fe0-b60a-d17bb2e3de18"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[191127, 4006, 384, 9, 29, "Input",ExpressionUUID->"93617086-f9a9-42f3-a30b-3aba8460fdd5"],
-Cell[191514, 4017, 2379, 51, 91, "Output",ExpressionUUID->"f846d1ae-45fb-4b9b-864d-09bdd48242b1"]
+Cell[191367, 4007, 384, 9, 29, "Input",ExpressionUUID->"93617086-f9a9-42f3-a30b-3aba8460fdd5"],
+Cell[191754, 4018, 2400, 51, 91, "Output",ExpressionUUID->"8f5eb979-9e8c-4e0e-bdc6-7f7ad7922253"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[193930, 4073, 988, 26, 90, "Input",ExpressionUUID->"9a988fe9-e698-4159-acda-98fbe874557d"],
-Cell[194921, 4101, 5887, 202, 51, "Output",ExpressionUUID->"18132f9d-d2e9-489c-b8d2-9bcae3c8df55"],
-Cell[200811, 4305, 6424, 204, 51, "Output",ExpressionUUID->"b3ead286-66f9-4510-a385-8ca49790a825"],
-Cell[207238, 4511, 6435, 213, 52, "Output",ExpressionUUID->"9e27cd4d-68ba-4deb-abc7-804af4aac6cc"],
-Cell[213676, 4726, 8171, 279, 51, "Output",ExpressionUUID->"e17c9d96-8106-41a8-838a-bb37dd3b96d1"]
+Cell[194191, 4074, 988, 26, 90, "Input",ExpressionUUID->"9a988fe9-e698-4159-acda-98fbe874557d"],
+Cell[195182, 4102, 5909, 202, 51, "Output",ExpressionUUID->"3c594fc3-b678-4b83-9dd4-c0610a5a2d68"],
+Cell[201094, 4306, 6448, 204, 51, "Output",ExpressionUUID->"89a4fc50-da6e-4eda-bafd-48cb00c0b731"],
+Cell[207545, 4512, 6457, 213, 52, "Output",ExpressionUUID->"42deb7a1-619b-44bd-9611-5868ef123d7e"],
+Cell[214005, 4727, 8193, 279, 51, "Output",ExpressionUUID->"529c27a9-6142-49f1-b69f-41a62a985389"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[221884, 5010, 799, 21, 90, "Input",ExpressionUUID->"6ba7de32-4d7c-4c61-8210-48a283f14bf1"],
-Cell[222686, 5033, 2005, 69, 33, "Output",ExpressionUUID->"9438ea82-6b36-4d6b-8be6-c2df487a8f17"],
-Cell[224694, 5104, 1964, 68, 33, "Output",ExpressionUUID->"0c6e604e-7b6d-4626-ba23-55dc6fd9e6c5"],
-Cell[226661, 5174, 1169, 36, 33, "Output",ExpressionUUID->"2e83fecb-76b6-48b1-8d34-d7af5a613dd4"],
-Cell[227833, 5212, 1101, 34, 33, "Output",ExpressionUUID->"8a7d464c-61f0-460d-9cab-165d3e71f8b7"]
+Cell[222235, 5011, 799, 21, 90, "Input",ExpressionUUID->"6ba7de32-4d7c-4c61-8210-48a283f14bf1"],
+Cell[223037, 5034, 2031, 70, 33, "Output",ExpressionUUID->"2e0895e8-c465-4d51-95e6-fffcbfcb0c30"],
+Cell[225071, 5106, 1990, 69, 33, "Output",ExpressionUUID->"2e02f685-5a16-4706-acd2-07145a55611a"],
+Cell[227064, 5177, 1197, 37, 33, "Output",ExpressionUUID->"703b8027-cc50-47e6-9030-f11e19048842"],
+Cell[228264, 5216, 1127, 35, 33, "Output",ExpressionUUID->"ba2ed4cb-4d0c-4717-952c-6b13f738f179"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[228971, 5251, 3528, 114, 101, "Input",ExpressionUUID->"caa2fbd2-199b-4f09-a143-25909c2ba16e"],
-Cell[232502, 5367, 9341, 310, 51, "Output",ExpressionUUID->"560391d5-be2f-4e0a-825a-9af6d3e96e95"]
+Cell[229428, 5256, 3528, 114, 101, "Input",ExpressionUUID->"caa2fbd2-199b-4f09-a143-25909c2ba16e"],
+Cell[232959, 5372, 9367, 311, 51, "Output",ExpressionUUID->"291a7b94-27c5-4c22-b19c-e6e9aa49c081"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[241880, 5682, 4493, 144, 121, "Input",ExpressionUUID->"a3d63614-867c-4137-a139-c36caefbc19c"],
-Cell[246376, 5828, 3633, 134, 33, "Output",ExpressionUUID->"fdce2b46-7f31-45a4-9241-8eb1b4c45cfe"],
-Cell[250012, 5964, 31121, 985, 243, "Output",ExpressionUUID->"7c43d6f3-76c0-47c9-ba7c-d48ece145051"]
+Cell[242363, 5688, 4493, 144, 121, "Input",ExpressionUUID->"a3d63614-867c-4137-a139-c36caefbc19c"],
+Cell[246859, 5834, 3655, 134, 33, "Output",ExpressionUUID->"e73fbf30-e935-4236-b51e-216342870657"],
+Cell[250517, 5970, 31147, 985, 243, "Output",ExpressionUUID->"65afd07e-86e1-4ebd-b1ef-4400561a7679"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[281170, 6954, 6513, 209, 157, "Input",ExpressionUUID->"fed16dcc-2b63-400b-a142-79ec7980a4b3"],
-Cell[287686, 7165, 3640, 126, 49, "Output",ExpressionUUID->"986ac15a-2429-48c0-992f-2c6dde1aaa5f"],
-Cell[291329, 7293, 36355, 1183, 224, "Output",ExpressionUUID->"241763dd-122a-4c4c-9dd1-f3fceec2f088"]
+Cell[281701, 6960, 6513, 209, 157, "Input",ExpressionUUID->"fed16dcc-2b63-400b-a142-79ec7980a4b3"],
+Cell[288217, 7171, 3662, 126, 49, "Output",ExpressionUUID->"04732f96-a079-4c9c-80fe-592c389e8dc5"],
+Cell[291882, 7299, 36378, 1183, 224, "Output",ExpressionUUID->"5008e8cd-44ab-428a-82d6-e0e4c4d603c3"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[327721, 8481, 2466, 76, 72, "Input",ExpressionUUID->"fb9c4cfe-4a1c-4a98-b37c-b6447e4bd092"],
-Cell[330190, 8559, 16491, 538, 137, "Output",ExpressionUUID->"8084a072-0d7a-46bb-ba1d-2e38898e5a30"]
+Cell[328297, 8487, 2466, 76, 72, "Input",ExpressionUUID->"fb9c4cfe-4a1c-4a98-b37c-b6447e4bd092"],
+Cell[330766, 8565, 16513, 538, 137, "Output",ExpressionUUID->"f250ae6a-8ebf-4be6-a215-f3a619002c2f"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[346718, 9102, 656, 17, 29, "Input",ExpressionUUID->"72f716ab-3794-42bb-841c-04ff558db3bb"],
-Cell[347377, 9121, 2371, 51, 91, "Output",ExpressionUUID->"e7fcea41-e7f1-424c-811f-b85d07dccc41"]
+Cell[347316, 9108, 656, 17, 29, "Input",ExpressionUUID->"72f716ab-3794-42bb-841c-04ff558db3bb"],
+Cell[347975, 9127, 2399, 52, 91, "Output",ExpressionUUID->"521cf88c-231a-4698-b992-42c227fea6c0"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[349785, 9177, 623, 14, 70, "Input",ExpressionUUID->"9abfe6e6-2936-4b58-9b16-8ecaf982e07f"],
-Cell[350411, 9193, 589, 13, 23, "Echo",ExpressionUUID->"2d7315b5-df53-4c87-8185-ec543dd32f50"]
+Cell[350411, 9184, 623, 14, 70, "Input",ExpressionUUID->"9abfe6e6-2936-4b58-9b16-8ecaf982e07f"],
+Cell[351037, 9200, 589, 13, 23, "Echo",ExpressionUUID->"064d88c0-5875-4695-925d-9690d7a7b58b"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[351049, 9212, 152, 3, 66, "Section",ExpressionUUID->"bec0a860-b703-495a-84ab-6ef7c2f6a165"],
+Cell[351675, 9219, 152, 3, 66, "Section",ExpressionUUID->"bec0a860-b703-495a-84ab-6ef7c2f6a165"],
 Cell[CellGroupData[{
-Cell[351226, 9219, 254, 4, 29, "Input",ExpressionUUID->"cd6b749c-6c5e-4b6c-859a-7f6d4438a31c"],
-Cell[351483, 9225, 157291, 3075, 295, "Output",ExpressionUUID->"4c935f66-55bc-4603-a851-7e97c22265fe"]
+Cell[351852, 9226, 254, 4, 29, "Input",ExpressionUUID->"cd6b749c-6c5e-4b6c-859a-7f6d4438a31c"],
+Cell[352109, 9232, 157313, 3075, 295, "Output",ExpressionUUID->"6391e4ce-a31a-4788-af31-25808886946e"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[508811, 12305, 380, 7, 29, "Input",ExpressionUUID->"7c051df6-378d-4c36-bf96-de4510248ee2"],
-Cell[509194, 12314, 473, 8, 33, "Output",ExpressionUUID->"d92d86ec-2065-4ea6-a1eb-421910874063"]
+Cell[509459, 12312, 380, 7, 29, "Input",ExpressionUUID->"7c051df6-378d-4c36-bf96-de4510248ee2"],
+Cell[509842, 12321, 497, 8, 33, "Output",ExpressionUUID->"963ea18f-e2c6-4721-8aac-16ca7271f78b"]
 }, Open  ]],
-Cell[509682, 12325, 385, 9, 29, "Input",ExpressionUUID->"f0d81b1e-036e-4972-874a-c8c47e13f18a"],
+Cell[510354, 12332, 385, 9, 29, "Input",ExpressionUUID->"f0d81b1e-036e-4972-874a-c8c47e13f18a"],
 Cell[CellGroupData[{
-Cell[510092, 12338, 417, 12, 29, "Input",ExpressionUUID->"293949e3-6515-4a89-9e0e-0b2a6c95bd43"],
+Cell[510764, 12345, 417, 12, 29, "Input",ExpressionUUID->"293949e3-6515-4a89-9e0e-0b2a6c95bd43"],
 Cell[CellGroupData[{
-Cell[510534, 12354, 1672, 41, 26, "Echo",ExpressionUUID->"a149439d-77a6-4478-8dbe-90aa140835b4"],
-Cell[512209, 12397, 2083, 47, 26, "Echo",ExpressionUUID->"5d56225e-49cc-43d8-b982-ec4a720df232"],
-Cell[514295, 12446, 1648, 39, 26, "Echo",ExpressionUUID->"e7ab38c1-7b94-49b5-83e8-0e3f8cef974f"],
-Cell[515946, 12487, 4691, 103, 35, "Echo",ExpressionUUID->"a5457227-f3a6-467c-9051-b580583802ba"],
-Cell[520640, 12592, 4538, 98, 26, "Echo",ExpressionUUID->"c83cea7e-18f1-425c-be4e-e8243399a6d8"],
-Cell[525181, 12692, 7252, 157, 26, "Echo",ExpressionUUID->"5b78003d-722d-4e89-b546-ccf2dba68402"],
-Cell[532436, 12851, 3192, 72, 26, "Echo",ExpressionUUID->"8e4fb02c-9204-4725-a43d-af272f35ef10"],
-Cell[535631, 12925, 1562, 37, 26, "Echo",ExpressionUUID->"cce66a4c-2458-4ec9-a801-26619a246901"]
+Cell[511206, 12361, 1670, 41, 26, "Echo",ExpressionUUID->"c6146a9b-7ee4-4b43-ab3e-f0923077bc94"],
+Cell[512879, 12404, 2081, 47, 26, "Echo",ExpressionUUID->"c3f98fd5-5f57-4541-b4a8-398a16bfc2cf"],
+Cell[514963, 12453, 1648, 39, 26, "Echo",ExpressionUUID->"bca6334e-8adc-4f50-a1c0-49c0d6cb7725"],
+Cell[516614, 12494, 4691, 103, 35, "Echo",ExpressionUUID->"20de0331-cf14-4e30-909b-11818664fc93"],
+Cell[521308, 12599, 4538, 98, 26, "Echo",ExpressionUUID->"6a099020-5123-4ddc-a398-9d8dc134094b"],
+Cell[525849, 12699, 7254, 157, 26, "Echo",ExpressionUUID->"b3201d9a-9fcd-42fc-8598-ea5870492db6"],
+Cell[533106, 12858, 3190, 72, 26, "Echo",ExpressionUUID->"41b999e8-5b39-4006-8bea-bb27423abf1c"],
+Cell[536299, 12932, 1560, 37, 26, "Echo",ExpressionUUID->"2c8b2a3d-f87b-4dd0-9b3e-f2fe641d5489"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[537242, 12968, 1244, 33, 131, "Input",ExpressionUUID->"f4957bde-2f3c-4ee6-9712-7a2d991ba333"],
+Cell[537908, 12975, 1238, 30, 131, "Input",ExpressionUUID->"f4957bde-2f3c-4ee6-9712-7a2d991ba333"],
 Cell[CellGroupData[{
-Cell[538511, 13005, 922, 24, 23, "Echo",ExpressionUUID->"abb67bdd-03a7-494d-94a3-56ef7a73fdde"],
-Cell[539436, 13031, 920, 24, 23, "Echo",ExpressionUUID->"23e655f2-1d20-400a-8c22-e69266e332b5"]
+Cell[539171, 13009, 920, 24, 23, "Echo",ExpressionUUID->"1dd332c6-b7d0-496e-b5cb-03f4c7ac6bb5"],
+Cell[540094, 13035, 920, 24, 23, "Echo",ExpressionUUID->"12a90876-c51c-4cee-9f37-f92e42f8bc71"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[540405, 13061, 1900, 53, 131, "Input",ExpressionUUID->"d199f388-0350-4a9f-a375-9586a0fd1317"],
+Cell[541063, 13065, 1900, 53, 131, "Input",ExpressionUUID->"d199f388-0350-4a9f-a375-9586a0fd1317"],
 Cell[CellGroupData[{
-Cell[542330, 13118, 1581, 38, 26, "Echo",ExpressionUUID->"1d2ddf29-19e1-4aaa-94a0-27de40ed8863"],
-Cell[543914, 13158, 3154, 72, 26, "Echo",ExpressionUUID->"a05e0721-1644-4fbc-bf87-ac6394a13af0"],
-Cell[547071, 13232, 3141, 72, 26, "Echo",ExpressionUUID->"38895245-2f11-4d8a-a89b-ea7dcc288620"],
-Cell[550215, 13306, 1444, 36, 26, "Echo",ExpressionUUID->"78b49ae6-d705-4055-a145-1c0a7d8fcc35"],
-Cell[551662, 13344, 2175, 52, 26, "Echo",ExpressionUUID->"dda4a474-3c5e-4274-a6ee-9c83771ca768"]
+Cell[542988, 13122, 1583, 38, 26, "Echo",ExpressionUUID->"1d92dce9-99ee-4b84-a460-563e771f0d0c"],
+Cell[544574, 13162, 3154, 72, 26, "Echo",ExpressionUUID->"e48bb513-cf5f-4d2b-a202-19da58fb0b30"],
+Cell[547731, 13236, 3139, 72, 26, "Echo",ExpressionUUID->"b97732e9-35be-4848-8214-75bd8d75b171"],
+Cell[550873, 13310, 1444, 36, 26, "Echo",ExpressionUUID->"54865a5a-35c8-484f-a6ee-34e82673ba7a"],
+Cell[552320, 13348, 2177, 52, 26, "Echo",ExpressionUUID->"95516126-77e9-40a3-9096-d087abc45674"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[553886, 13402, 137, 2, 29, "Input",ExpressionUUID->"3ab2b349-87ad-4580-98a0-86affe84d75f"],
-Cell[554026, 13406, 589, 13, 23, "Echo",ExpressionUUID->"a8001316-40f3-45cf-ac02-c7acbb4ee524"]
+Cell[554546, 13406, 137, 2, 29, "Input",ExpressionUUID->"3ab2b349-87ad-4580-98a0-86affe84d75f"],
+Cell[554686, 13410, 591, 13, 23, "Echo",ExpressionUUID->"ba00b3ca-9d71-4a3e-b7b3-da64d855b4b2"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[554664, 13425, 207, 4, 66, "Section",ExpressionUUID->"faa6095d-084f-4614-a5f0-0105674b5182"],
+Cell[555326, 13429, 207, 4, 66, "Section",ExpressionUUID->"faa6095d-084f-4614-a5f0-0105674b5182"],
 Cell[CellGroupData[{
-Cell[554896, 13433, 204, 3, 29, "Input",ExpressionUUID->"11a72f93-1155-430d-88e3-7c4ba05c2cb1"],
-Cell[555103, 13438, 157329, 3077, 295, "Output",ExpressionUUID->"164dbfc8-c908-4d89-a332-e54224ea6e32"]
+Cell[555558, 13437, 205, 3, 29, "Input",ExpressionUUID->"11a72f93-1155-430d-88e3-7c4ba05c2cb1"],
+Cell[555766, 13442, 157350, 3076, 295, "Output",ExpressionUUID->"fe19af2b-a54b-44bc-a241-308b0c4e3f01"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[712469, 16520, 672, 18, 49, "Input",ExpressionUUID->"14ef6d51-2c74-41fd-a2fc-1e9cf2586990"],
-Cell[713144, 16540, 6221, 178, 47, "Output",ExpressionUUID->"45069515-e881-4867-a79c-3694d44a0bcf"]
+Cell[713153, 16523, 673, 18, 49, "Input",ExpressionUUID->"14ef6d51-2c74-41fd-a2fc-1e9cf2586990"],
+Cell[713829, 16543, 6248, 179, 47, "Output",ExpressionUUID->"8d8efa45-565a-43a6-96ee-fb9cc7125c7e"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[719402, 16723, 715, 20, 49, "Input",ExpressionUUID->"e7e9e788-50ba-4869-b4cf-1720b0ff1c4b"],
-Cell[720120, 16745, 5136, 145, 35, "Output",ExpressionUUID->"edb1958c-6ffa-494e-9a84-c43eaadaa8ca"]
+Cell[720114, 16727, 716, 20, 49, "Input",ExpressionUUID->"e7e9e788-50ba-4869-b4cf-1720b0ff1c4b"],
+Cell[720833, 16749, 5162, 146, 35, "Output",ExpressionUUID->"1d8380ed-11bc-425d-a493-e22c6d5a44b3"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[725293, 16895, 859, 22, 49, "Input",ExpressionUUID->"621fdf83-5ff0-4b8e-bf59-4675163d680f"],
-Cell[726155, 16919, 1734, 56, 35, "Output",ExpressionUUID->"74011e0b-46f4-4d89-a07d-b00e2901f662"]
+Cell[726032, 16900, 860, 22, 49, "Input",ExpressionUUID->"621fdf83-5ff0-4b8e-bf59-4675163d680f"],
+Cell[726895, 16924, 1758, 56, 35, "Output",ExpressionUUID->"24a95f09-49fb-4190-b19b-6aa743b11dd9"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[727926, 16980, 716, 20, 49, "Input",ExpressionUUID->"36a0d25a-db33-49c3-a2e6-6bc62601b64a"],
-Cell[728645, 17002, 615, 17, 35, "Output",ExpressionUUID->"d4594bd6-2680-40d3-9a1d-45f2c5364e6b"]
+Cell[728690, 16985, 716, 20, 49, "Input",ExpressionUUID->"36a0d25a-db33-49c3-a2e6-6bc62601b64a"],
+Cell[729409, 17007, 637, 17, 35, "Output",ExpressionUUID->"fbc0f233-fe72-48be-836f-f2fdca2dcc94"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[730083, 17029, 203, 3, 29, "Input",ExpressionUUID->"fce75654-623b-41f0-a476-e710d1a6626a"],
+Cell[730289, 17034, 589, 13, 23, "Echo",ExpressionUUID->"2d68596d-2853-41c8-8690-9c6a4e52bd1a"]
 }, Open  ]]
 }, Open  ]]
 }

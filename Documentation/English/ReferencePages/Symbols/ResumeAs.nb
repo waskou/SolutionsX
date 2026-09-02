@@ -22,50 +22,50 @@ Notebook[{
 
 Cell[CellGroupData[{
 Cell["Categorization", "CategorizationSection",
- CellID->532,ExpressionUUID->"893a492e-a2f9-4e81-b2c3-675033d4c43f"],
+ CellID->513,ExpressionUUID->"681b18bc-b838-4c78-9085-298b61f17169"],
 
 Cell["Symbol", "Categorization",
  CellLabel->"Entity Type",
- CellID->533,ExpressionUUID->"68bd6940-d127-452a-9287-ce51643f9fdb"],
+ CellID->514,ExpressionUUID->"32b70552-d091-4cd9-8524-10c13a9c7d7e"],
 
 Cell["VasilDimitrov/SolutionsX", "Categorization",
  CellLabel->"Paclet Name",
- CellID->534,ExpressionUUID->"61820ab0-b9b1-43fb-8e35-d85c60bb5adb"],
+ CellID->515,ExpressionUUID->"f1f5354a-d77e-4866-9c56-4ad945b2343d"],
 
 Cell["VasilDimitrov`SolutionsX`", "Categorization",
  CellLabel->"Context",
- CellID->535,ExpressionUUID->"24f26582-d16f-49c8-9619-c6e84a41e4d5"],
+ CellID->516,ExpressionUUID->"b80bee69-a9ca-488f-8f9b-d426aa024772"],
 
 Cell["VasilDimitrov/SolutionsX/ref/ResumeAs", "Categorization",
  CellLabel->"URI",
- CellID->536,ExpressionUUID->"aa8183cc-aa6e-4932-9fd4-bdcb74cb5812"]
+ CellID->517,ExpressionUUID->"383bb6a6-b4dc-42fc-b5ed-420282f406e8"]
 }, Closed]],
 
 Cell[CellGroupData[{
 
 Cell["Keywords", "KeywordsSection",
- CellID->541,ExpressionUUID->"89fd4ecc-7541-46c0-bb31-eaffc2b213f6"],
+ CellID->522,ExpressionUUID->"4a45449d-9e98-4f3e-874e-1d342dac297a"],
 
 Cell["ResumeAs", "Keywords",
- CellID->537,ExpressionUUID->"99f8ef90-c976-4cdb-b80d-bf71c32891c0"],
+ CellID->518,ExpressionUUID->"d4a7168b-ef61-4265-a703-9ff5936b323b"],
 
 Cell["SolutionsX", "Keywords",
- CellID->538,ExpressionUUID->"94d96b3b-6616-40d9-b494-cbe28d2d453e"],
+ CellID->519,ExpressionUUID->"cb219c70-5cf6-42f5-8e32-3a1cab37e86d"],
 
 Cell["supergravity", "Keywords",
- CellID->539,ExpressionUUID->"813ae72b-5972-499e-86c6-5bf114850ac9"],
+ CellID->520,ExpressionUUID->"cecb369f-3993-437a-9f14-f6e0c0bd004e"],
 
 Cell["xAct", "Keywords",
- CellID->540,ExpressionUUID->"d8a398f8-73aa-4eaa-b3e1-d449f30406e1"]
+ CellID->521,ExpressionUUID->"b83c21a9-a47a-4522-8a9c-ccd9cb9c6a20"]
 }, Closed]],
 
 Cell[CellGroupData[{
 
 Cell["ResumeAs", "ObjectName",
- CellID->542,ExpressionUUID->"43ac3944-2182-44fc-9238-d709f1a0d811"],
+ CellID->523,ExpressionUUID->"15bfec01-0adf-438a-bda6-2a1c1c7e1b0c"],
 
 Cell[TextData[{
- Cell["   ", "ModInfo",ExpressionUUID->"84ba7ab4-54bb-4408-b62d-e4867dbeb02a"],
+ Cell["   ", "ModInfo",ExpressionUUID->"5b3ae1fd-916d-4b4a-aacc-087f25d1b6b3"],
  Cell[BoxData[
   RowBox[{
    TemplateBox[{
@@ -76,12 +76,12 @@ Cell[TextData[{
     BaseStyle->"InlineFormula"], "[", 
    StyleBox["sol", "TI"], "]"}]], "InlineFormula",
   FontFamily->"Source Sans Pro",ExpressionUUID->
-  "90943032-9aaf-4d45-9d34-0ca4598b2be9"],
+  "9fc62fe6-51f7-43be-b59c-31791f2f8dd2"],
  "\[LineSeparator]restores the current notebook's entry into ",
  Cell[BoxData[
   StyleBox["sol", "TI"]], "InlineFormula",
   FontFamily->"Source Sans Pro",ExpressionUUID->
-  "31fb7305-25f6-4b61-b37c-d15a158373a9"],
+  "7b9f8e8d-c38a-4301-a566-185a26af792c"],
  " (",
  Cell[BoxData[
   TemplateBox[{
@@ -91,7 +91,7 @@ Cell[TextData[{
    "PackageLink",
    BaseStyle->"InlineFormula"]], "InlineFormula",
   FontFamily->"Source Sans Pro",ExpressionUUID->
-  "5ccca9e3-a7be-4ab6-ad4c-7caeb9096ec3"],
+  "1ac37ad3-f4c1-4044-a38a-954b85801b52"],
  "[] followed by ",
  Cell[BoxData[
   TemplateBox[{
@@ -101,15 +101,15 @@ Cell[TextData[{
    "PackageLink",
    BaseStyle->"InlineFormula"]], "InlineFormula",
   FontFamily->"Source Sans Pro",ExpressionUUID->
-  "26602ad7-9c9a-47ee-a33a-f6da7c862cfa"],
+  "6c2f7b9d-b3a5-434a-aa0f-e5f74d2e175e"],
  ") when nothing has been loaded in this kernel yet, and rebuilds the Load \
 banner of everything loaded so far otherwise.\n",
- Cell["   ", "ModInfo",ExpressionUUID->"7c9dccf7-f5bd-4e45-8efb-172e3db9d409"],
+ Cell["   ", "ModInfo",ExpressionUUID->"faffc29f-cf3a-4385-89e4-91aadf4716a7"],
  "Put it at the top of a notebook section: after a kernel quit it resumes \
 from disk; in a full top-to-bottom run it only re-shows the banner, so the \
 same notebook supports both workflows."
 }], "Usage",
- CellID->543,ExpressionUUID->"50b5d2f1-6bb7-4e27-8199-651b933ff582"],
+ CellID->524,ExpressionUUID->"c246a4e3-6996-4c58-9f64-5050fc4a96c6"],
 
 Cell[TextData[{
  Cell[BoxData[
@@ -120,17 +120,17 @@ Cell[TextData[{
    "PackageLink",
    BaseStyle->"InlineFormula"]], "InlineFormula",
   FontFamily->"Source Sans Pro",ExpressionUUID->
-  "2baa2bbc-4971-4b26-8633-30e3e8af1746"],
+  "d531c45c-5909-4a13-b472-7b9e99350485"],
  "[",
  Cell[BoxData[
   StyleBox["sol", "TI"]], "InlineFormula",
   FontFamily->"Source Sans Pro",ExpressionUUID->
-  "1752222a-6b48-44fa-b045-a4548a2f10ae"],
+  "81a0e42c-18fb-4ae5-b4ec-2604b8819450"],
  "] restores the current notebook's entry into ",
  Cell[BoxData[
   StyleBox["sol", "TI"]], "InlineFormula",
   FontFamily->"Source Sans Pro",ExpressionUUID->
-  "5a21c07b-2f42-41a0-8094-60c6f96ea425"],
+  "118f2c3d-edde-413f-9e2b-d916f3c6191a"],
  " \[LongDash] ",
  Cell[BoxData[
   TemplateBox[{
@@ -140,7 +140,7 @@ Cell[TextData[{
    "PackageLink",
    BaseStyle->"InlineFormula"]], "InlineFormula",
   FontFamily->"Source Sans Pro",ExpressionUUID->
-  "c556e380-9edc-4b5f-bbbc-9073da1c2d1f"],
+  "d118c4ea-5802-4552-86f7-3b1ad9ef359a"],
  "[] followed by ",
  Cell[BoxData[
   TemplateBox[{
@@ -150,12 +150,12 @@ Cell[TextData[{
    "PackageLink",
    BaseStyle->"InlineFormula"]], "InlineFormula",
   FontFamily->"Source Sans Pro",ExpressionUUID->
-  "99fdc305-af51-4056-9247-7436b644220d"],
+  "b00c2f65-cbcc-4a6c-8b94-af759e8e7ba4"],
  " \[LongDash] when nothing has been loaded in this kernel yet; on a kernel \
 with loaded work it rebuilds the Loaded: panel of everything loaded so far \
 instead."
 }], "Notes",
- CellID->544,ExpressionUUID->"3dbfa8a8-521e-43d5-bc38-51b53844f12c"],
+ CellID->525,ExpressionUUID->"c5479a7d-242b-4fe3-a545-94520eef16fc"],
 
 Cell["\<\
 Put it at the top of every notebook section. After a kernel quit the section \
@@ -163,7 +163,7 @@ resumes from disk; in a full top-to-bottom run it only re-shows the banner \
 \[LongDash] the same notebook supports both workflows, and quitting the \
 kernel between sections is the intended hygiene.\
 \>", "Notes",
- CellID->545,ExpressionUUID->"8746e690-7267-4efe-81fb-201b677879c8"],
+ CellID->526,ExpressionUUID->"367a1769-b5cf-4bfd-ab3c-6c9903b114a4"],
 
 Cell[TextData[{
  "The decision is state-aware but ",
@@ -175,103 +175,103 @@ Cell[TextData[{
    "PackageLink",
    BaseStyle->"InlineFormula"]], "InlineFormula",
   FontFamily->"Source Sans Pro",ExpressionUUID->
-  "8e802817-5e1a-4830-8c4e-27f554d49a5a"],
+  "b96805df-6433-441a-b98f-7a0765f9acb4"],
  " itself is not: when ResumeAs does load, it replays the stored record \
 exactly. Both paths end in the same Load banner."
 }], "Notes",
- CellID->546,ExpressionUUID->"1621d52e-f09c-4788-872c-ea13e6a94b95"],
+ CellID->527,ExpressionUUID->"74a1d41e-1118-452b-a7cf-b6ca25e0e089"],
 
 Cell["\<\
 The liveness record it consults is accumulated by the loader on every \
 success; a kernel quit is the only thing that resets it.\
 \>", "Notes",
- CellID->547,ExpressionUUID->"f9d4460f-d3d1-4886-817b-19b43c8730a4"],
+ CellID->528,ExpressionUUID->"f3515572-4647-461f-a889-4d40b756d0c7"],
 
 Cell["\<\
 ResumeAs has the attribute HoldFirst: the symbol receives the entry, it does \
 not have to hold one already.\
 \>", "Notes",
- CellID->548,ExpressionUUID->"b11e7b09-a671-4d1f-bbd6-7201af7e52e4"]
+ CellID->529,ExpressionUUID->"36d4c4e0-56df-4446-945c-69ac7f3b1059"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell["Examples", "PrimaryExamplesSection",
  CellTags->"PrimaryExamplesSection",
- CellID->549,ExpressionUUID->"bdd3e294-6288-4c17-9898-c6ec6a94b9e3"],
+ CellID->530,ExpressionUUID->"f3cea4fb-67f9-4e44-b7f6-8c97e06bb392"],
 
 Cell["\<\
 The following requires a front end, or a populated data directory, and so is \
 shown without output.\
 \>", "ExampleText",
- CellID->550,ExpressionUUID->"096d27a8-c7c9-4df9-9076-cc3d398ba11f"],
+ CellID->531,ExpressionUUID->"a4eb9e54-b0f6-4ba3-9d13-4ef4bc1d93aa"],
 
 Cell["Basic Examples", "ExampleSection",
- CellID->551,ExpressionUUID->"e2e3dd66-a3ea-4be5-b7de-4bb965bd553c"],
+ CellID->532,ExpressionUUID->"030fdabb-a2df-49a9-b907-da57349edee9"],
 
 Cell["\<\
 At the top of a notebook section \[LongDash] on a virgin kernel this reads \
 the notebook's entry from disk and loads it; on a live kernel it re-shows the \
 Loaded: panel:\
 \>", "ExampleText",
- CellID->552,ExpressionUUID->"79aa20d9-b419-450b-a29e-6fffeaadc554"],
+ CellID->533,ExpressionUUID->"b2f6c5f8-07fd-4153-b420-4525f3beb689"],
 
 Cell[BoxData[
  RowBox[{"ResumeAs", "[", "sol", "]"}]], "Input",
  CellLabel->"In[ ]:=",
- CellID->553,ExpressionUUID->"22a43b32-4a0c-467f-a7e5-87f83194381f"]
+ CellID->534,ExpressionUUID->"1801f43f-1352-46d5-aaca-ef253727c78d"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell["See Also", "SeeAlsoSection",
- CellID->554,ExpressionUUID->"2d4085fc-0545-4ec3-a3f8-db584be47687"],
+ CellID->535,ExpressionUUID->"1097e3bc-3402-478f-bc25-4950c718f30e"],
 
 Cell[TextData[{
  Cell[BoxData[
   ButtonBox["Load",
    BaseStyle->"Link",
    ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/Load"]], "InlineFormula",
-  ExpressionUUID->"144c2640-1c08-40c8-852f-40ed1a0dab5a"],
+  ExpressionUUID->"fc943d1f-865f-420e-be4f-55800e04739a"],
  " \[FilledVerySmallSquare] ",
  Cell[BoxData[
   ButtonBox["GetData",
    BaseStyle->"Link",
    ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/GetData"]], 
-  "InlineFormula",ExpressionUUID->"eb728998-d424-49e2-90a6-1285bf923bbf"],
+  "InlineFormula",ExpressionUUID->"27aaf46d-76d3-4e46-8108-941c907be233"],
  " \[FilledVerySmallSquare] ",
  Cell[BoxData[
   ButtonBox["LocateData",
    BaseStyle->"Link",
    ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/LocateData"]], 
-  "InlineFormula",ExpressionUUID->"2cf3ce49-acc7-44dd-b068-6988b586c2ec"],
+  "InlineFormula",ExpressionUUID->"9aaff16a-317e-4d6c-89a7-8dbe61946989"],
  " \[FilledVerySmallSquare] ",
  Cell[BoxData[
   ButtonBox["SaveData",
    BaseStyle->"Link",
    ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/SaveData"]], 
-  "InlineFormula",ExpressionUUID->"8e206023-8e5f-42c3-80a2-2beeaacd8a7a"],
+  "InlineFormula",ExpressionUUID->"6aa049ec-23ee-4497-a8bd-7881f5a9bf76"],
  " \[FilledVerySmallSquare] ",
  Cell[BoxData[
   ButtonBox["Unload",
    BaseStyle->"Link",
    ButtonData->"paclet:VasilDimitrov/SolutionsX/ref/Unload"]], 
-  "InlineFormula",ExpressionUUID->"0baf4685-d06e-4e1c-948a-f6b2a8e5c1cf"]
+  "InlineFormula",ExpressionUUID->"2bccc9dc-5b5a-4521-a5dd-3a6acbaaeac4"]
 }], "SeeAlso",
- CellID->555,ExpressionUUID->"f92e3ed7-389e-4dad-ad0c-a43343a2b4b4"]
+ CellID->536,ExpressionUUID->"d018c40f-3b54-4e63-a9da-f90d7efb7437"]
 }, Open  ]],
 
 Cell[CellGroupData[{
 
 Cell["Tech Notes", "TechNotesSection",
- CellID->556,ExpressionUUID->"7acfedf3-3db9-424f-b39b-9503729f09ef"],
+ CellID->537,ExpressionUUID->"b8667a4a-bd89-47d3-8382-bb8223027e9b"],
 
 Cell[TextData[ButtonBox["Storing and retrieving",
  BaseStyle->"Link",
  ButtonData->
   "paclet:VasilDimitrov/SolutionsX/tutorial/StoringAndRetrieving"]], \
 "Tutorials",
- CellID->557,ExpressionUUID->"61c8b461-1286-4619-b9ae-021c8903672a"]
+ CellID->538,ExpressionUUID->"df966889-d102-4255-b0fc-f56de8b3a06c"]
 }, Open  ]]
 },
 WindowTitle->"ResumeAs",
@@ -287,7 +287,7 @@ loaded", "context" -> "VasilDimitrov`SolutionsX`", "paclet" ->
 FrontEndVersion->"13.3 for Mac OS X ARM (64-bit) (July 24, 2023)",
 StyleDefinitions->FrontEnd`FileName[{"Wolfram"}, "Reference.nb", 
   CharacterEncoding -> "UTF-8"],
-ExpressionUUID->"90fc236b-a7fc-4e8a-8a0f-3f1f628efdb9"
+ExpressionUUID->"bdde21bd-005b-409d-a18d-6f870e030af4"
 ]
 (* End of Notebook Content *)
 
@@ -295,9 +295,9 @@ ExpressionUUID->"90fc236b-a7fc-4e8a-8a0f-3f1f628efdb9"
 (*CellTagsOutline
 CellTagsIndex->{
  "PrimaryExamplesSection"->{
-  Cell[6793, 198, 148, 2, 70, "PrimaryExamplesSection",ExpressionUUID->"bdd3e294-6288-4c17-9898-c6ec6a94b9e3",
+  Cell[6793, 198, 148, 2, 70, "PrimaryExamplesSection",ExpressionUUID->"f3cea4fb-67f9-4e44-b7f6-8c97e06bb392",
    CellTags->"PrimaryExamplesSection",
-   CellID->549]}
+   CellID->530]}
  }
 *)
 (*CellTagsIndex
@@ -308,69 +308,69 @@ CellTagsIndex->{
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[602, 23, 116, 1, 70, "CategorizationSection",ExpressionUUID->"893a492e-a2f9-4e81-b2c3-675033d4c43f",
- CellID->532],
-Cell[721, 26, 128, 2, 70, "Categorization",ExpressionUUID->"68bd6940-d127-452a-9287-ce51643f9fdb",
- CellID->533],
-Cell[852, 30, 146, 2, 70, "Categorization",ExpressionUUID->"61820ab0-b9b1-43fb-8e35-d85c60bb5adb",
- CellID->534],
-Cell[1001, 34, 143, 2, 70, "Categorization",ExpressionUUID->"24f26582-d16f-49c8-9619-c6e84a41e4d5",
- CellID->535],
-Cell[1147, 38, 151, 2, 70, "Categorization",ExpressionUUID->"aa8183cc-aa6e-4932-9fd4-bdcb74cb5812",
- CellID->536]
+Cell[602, 23, 116, 1, 70, "CategorizationSection",ExpressionUUID->"681b18bc-b838-4c78-9085-298b61f17169",
+ CellID->513],
+Cell[721, 26, 128, 2, 70, "Categorization",ExpressionUUID->"32b70552-d091-4cd9-8524-10c13a9c7d7e",
+ CellID->514],
+Cell[852, 30, 146, 2, 70, "Categorization",ExpressionUUID->"f1f5354a-d77e-4866-9c56-4ad945b2343d",
+ CellID->515],
+Cell[1001, 34, 143, 2, 70, "Categorization",ExpressionUUID->"b80bee69-a9ca-488f-8f9b-d426aa024772",
+ CellID->516],
+Cell[1147, 38, 151, 2, 70, "Categorization",ExpressionUUID->"383bb6a6-b4dc-42fc-b5ed-420282f406e8",
+ CellID->517]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[1335, 45, 104, 1, 70, "KeywordsSection",ExpressionUUID->"89fd4ecc-7541-46c0-bb31-eaffc2b213f6",
- CellID->541],
-Cell[1442, 48, 97, 1, 70, "Keywords",ExpressionUUID->"99f8ef90-c976-4cdb-b80d-bf71c32891c0",
- CellID->537],
-Cell[1542, 51, 99, 1, 70, "Keywords",ExpressionUUID->"94d96b3b-6616-40d9-b494-cbe28d2d453e",
- CellID->538],
-Cell[1644, 54, 101, 1, 70, "Keywords",ExpressionUUID->"813ae72b-5972-499e-86c6-5bf114850ac9",
- CellID->539],
-Cell[1748, 57, 93, 1, 70, "Keywords",ExpressionUUID->"d8a398f8-73aa-4eaa-b3e1-d449f30406e1",
- CellID->540]
+Cell[1335, 45, 104, 1, 70, "KeywordsSection",ExpressionUUID->"4a45449d-9e98-4f3e-874e-1d342dac297a",
+ CellID->522],
+Cell[1442, 48, 97, 1, 70, "Keywords",ExpressionUUID->"d4a7168b-ef61-4265-a703-9ff5936b323b",
+ CellID->518],
+Cell[1542, 51, 99, 1, 70, "Keywords",ExpressionUUID->"cb219c70-5cf6-42f5-8e32-3a1cab37e86d",
+ CellID->519],
+Cell[1644, 54, 101, 1, 70, "Keywords",ExpressionUUID->"cecb369f-3993-437a-9f14-f6e0c0bd004e",
+ CellID->520],
+Cell[1748, 57, 93, 1, 70, "Keywords",ExpressionUUID->"b83c21a9-a47a-4522-8a9c-ccd9cb9c6a20",
+ CellID->521]
 }, Closed]],
 Cell[CellGroupData[{
-Cell[1878, 63, 99, 1, 70, "ObjectName",ExpressionUUID->"43ac3944-2182-44fc-9238-d709f1a0d811",
- CellID->542],
-Cell[1980, 66, 1809, 45, 70, "Usage",ExpressionUUID->"50b5d2f1-6bb7-4e27-8199-651b933ff582",
- CellID->543],
-Cell[3792, 113, 1591, 44, 70, "Notes",ExpressionUUID->"3dbfa8a8-521e-43d5-bc38-51b53844f12c",
- CellID->544],
-Cell[5386, 159, 372, 6, 70, "Notes",ExpressionUUID->"8746e690-7267-4efe-81fb-201b677879c8",
- CellID->545],
-Cell[5761, 167, 565, 14, 70, "Notes",ExpressionUUID->"1621d52e-f09c-4788-872c-ea13e6a94b95",
- CellID->546],
-Cell[6329, 183, 222, 4, 70, "Notes",ExpressionUUID->"f9d4460f-d3d1-4886-817b-19b43c8730a4",
- CellID->547],
-Cell[6554, 189, 202, 4, 70, "Notes",ExpressionUUID->"b11e7b09-a671-4d1f-bbd6-7201af7e52e4",
- CellID->548]
+Cell[1878, 63, 99, 1, 70, "ObjectName",ExpressionUUID->"15bfec01-0adf-438a-bda6-2a1c1c7e1b0c",
+ CellID->523],
+Cell[1980, 66, 1809, 45, 70, "Usage",ExpressionUUID->"c246a4e3-6996-4c58-9f64-5050fc4a96c6",
+ CellID->524],
+Cell[3792, 113, 1591, 44, 70, "Notes",ExpressionUUID->"c5479a7d-242b-4fe3-a545-94520eef16fc",
+ CellID->525],
+Cell[5386, 159, 372, 6, 70, "Notes",ExpressionUUID->"367a1769-b5cf-4bfd-ab3c-6c9903b114a4",
+ CellID->526],
+Cell[5761, 167, 565, 14, 70, "Notes",ExpressionUUID->"74a1d41e-1118-452b-a7cf-b6ca25e0e089",
+ CellID->527],
+Cell[6329, 183, 222, 4, 70, "Notes",ExpressionUUID->"f3515572-4647-461f-a889-4d40b756d0c7",
+ CellID->528],
+Cell[6554, 189, 202, 4, 70, "Notes",ExpressionUUID->"36d4c4e0-56df-4446-945c-69ac7f3b1059",
+ CellID->529]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[6793, 198, 148, 2, 70, "PrimaryExamplesSection",ExpressionUUID->"bdd3e294-6288-4c17-9898-c6ec6a94b9e3",
+Cell[6793, 198, 148, 2, 70, "PrimaryExamplesSection",ExpressionUUID->"f3cea4fb-67f9-4e44-b7f6-8c97e06bb392",
  CellTags->"PrimaryExamplesSection",
- CellID->549],
-Cell[6944, 202, 200, 4, 70, "ExampleText",ExpressionUUID->"096d27a8-c7c9-4df9-9076-cc3d398ba11f",
- CellID->550],
-Cell[7147, 208, 109, 1, 70, "ExampleSection",ExpressionUUID->"e2e3dd66-a3ea-4be5-b7de-4bb965bd553c",
- CellID->551],
-Cell[7259, 211, 271, 5, 70, "ExampleText",ExpressionUUID->"79aa20d9-b419-450b-a29e-6fffeaadc554",
- CellID->552],
-Cell[7533, 218, 155, 3, 70, "Input",ExpressionUUID->"22a43b32-4a0c-467f-a7e5-87f83194381f",
- CellID->553]
+ CellID->530],
+Cell[6944, 202, 200, 4, 70, "ExampleText",ExpressionUUID->"a4eb9e54-b0f6-4ba3-9d13-4ef4bc1d93aa",
+ CellID->531],
+Cell[7147, 208, 109, 1, 70, "ExampleSection",ExpressionUUID->"030fdabb-a2df-49a9-b907-da57349edee9",
+ CellID->532],
+Cell[7259, 211, 271, 5, 70, "ExampleText",ExpressionUUID->"b2f6c5f8-07fd-4153-b420-4525f3beb689",
+ CellID->533],
+Cell[7533, 218, 155, 3, 70, "Input",ExpressionUUID->"1801f43f-1352-46d5-aaca-ef253727c78d",
+ CellID->534]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[7725, 226, 103, 1, 70, "SeeAlsoSection",ExpressionUUID->"2d4085fc-0545-4ec3-a3f8-db584be47687",
- CellID->554],
-Cell[7831, 229, 1222, 31, 70, "SeeAlso",ExpressionUUID->"f92e3ed7-389e-4dad-ad0c-a43343a2b4b4",
- CellID->555]
+Cell[7725, 226, 103, 1, 70, "SeeAlsoSection",ExpressionUUID->"1097e3bc-3402-478f-bc25-4950c718f30e",
+ CellID->535],
+Cell[7831, 229, 1222, 31, 70, "SeeAlso",ExpressionUUID->"d018c40f-3b54-4e63-a9da-f90d7efb7437",
+ CellID->536]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[9090, 265, 107, 1, 70, "TechNotesSection",ExpressionUUID->"7acfedf3-3db9-424f-b39b-9503729f09ef",
- CellID->556],
-Cell[9200, 268, 236, 5, 70, "Tutorials",ExpressionUUID->"61c8b461-1286-4619-b9ae-021c8903672a",
- CellID->557]
+Cell[9090, 265, 107, 1, 70, "TechNotesSection",ExpressionUUID->"b8667a4a-bd89-47d3-8382-bb8223027e9b",
+ CellID->537],
+Cell[9200, 268, 236, 5, 70, "Tutorials",ExpressionUUID->"df966889-d102-4255-b0fc-f56de8b3a06c",
+ CellID->538]
 }, Open  ]]
 }
 ]
